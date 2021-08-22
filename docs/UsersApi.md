@@ -1,0 +1,407 @@
+# UsersApi
+
+All URIs are relative to *https://api.vrchat.cloud/api/1*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID
+[**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username
+[**searchActiveUsers**](UsersApi.md#searchActiveUsers) | **GET** /users/active | Search Active Users
+[**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users
+[**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info
+
+
+<a name="getUser"></a>
+# **getUser**
+> User getUser(userId)
+
+Get User by ID
+
+Get public user information about a specific user using their ID.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    try {
+      User result = apiInstance.getUser(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  |
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+
+<a name="getUserByName"></a>
+# **getUserByName**
+> User getUserByName(username)
+
+Get User by Username
+
+Get public user information about a specific user using their name.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String username = "username_example"; // String | 
+    try {
+      User result = apiInstance.getUserByName(username);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserByName");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **username** | **String**|  |
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+
+<a name="searchActiveUsers"></a>
+# **searchActiveUsers**
+> List&lt;LimitedUser&gt; searchActiveUsers(search, developerType, offset, n)
+
+Search Active Users
+
+Search and list any Active users by text query.  **Has been locked down and now always respond with \&quot;Invalid Admin Credentials\&quot;.**
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String search = "search_example"; // String | Username to search for
+    String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Integer n = 60; // Integer | The number of objects to return.
+    try {
+      List<LimitedUser> result = apiInstance.searchActiveUsers(search, developerType, offset, n);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#searchActiveUsers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search** | **String**| Username to search for |
+ **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional]
+ **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
+ **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
+
+### Return type
+
+[**List&lt;LimitedUser&gt;**](LimitedUser.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Error response due to missing Administrator credentials. |  -  |
+
+<a name="searchUsers"></a>
+# **searchUsers**
+> List&lt;LimitedUser&gt; searchUsers(search, developerType, n, offset)
+
+Search All Users
+
+Search and list any users by text query
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String search = "search_example"; // String | Searches by `displayName`. Will return empty array if search query is empty or missing.
+    String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<LimitedUser> result = apiInstance.searchUsers(search, developerType, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#searchUsers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search** | **String**| Searches by &#x60;displayName&#x60;. Will return empty array if search query is empty or missing. | [optional]
+ **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional]
+ **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
+
+### Return type
+
+[**List&lt;LimitedUser&gt;**](LimitedUser.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Error response when trying to search list of users with an invalid request. |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+
+<a name="updateUser"></a>
+# **updateUser**
+> CurrentUser updateUser(userId, inlineObject2)
+
+Update User Info
+
+Update a users information such as the email and birthday.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    InlineObject2 inlineObject2 = new InlineObject2(); // InlineObject2 | 
+    try {
+      CurrentUser result = apiInstance.updateUser(userId, inlineObject2);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#updateUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  |
+ **inlineObject2** | [**InlineObject2**](InlineObject2.md)|  | [optional]
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
