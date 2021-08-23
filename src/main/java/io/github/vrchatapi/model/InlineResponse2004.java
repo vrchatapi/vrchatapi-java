@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * InlineResponse2004
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-23T11:11:56.906580800+02:00[Europe/Stockholm]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-23T12:06:12.536997800+02:00[Europe/Stockholm]")
 public class InlineResponse2004 {
   public static final String SERIALIZED_NAME_UPLOAD_ID = "uploadId";
   @SerializedName(SERIALIZED_NAME_UPLOAD_ID)
