@@ -3,7 +3,7 @@ on: [push, pull_request]
 name: OpenAPI Java SDK CI
 
 jobs:
-  gradle-build:
+  gradle:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Build with Gradle
         run: chmod ugo+x gradlew; ./gradlew build
-  maven-build:
+  maven:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,3 +27,8 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode verify
+      - name: Deploy to Maven repo
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
