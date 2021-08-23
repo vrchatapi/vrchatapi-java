@@ -9,3 +9,16 @@ openapi-generator-cli generate \
 -o . \
 -i https://vrchatapi.github.io/specification/openapi.yaml \
 --http-user-agent="vrchatapi-java"
+
+sed -i '/<\/dependencies>/i \
+        <!-- Custom VRChat API dependencies -->\
+        <dependency>\
+            <groupId>com.squareup.okhttp3</groupId>\
+            <artifactId>okhttp-urlconnection</artifactId>\
+            <version>${okhttp-version}</version>\
+        </dependency>' pom.xml
+
+addNetworkInterceptor
+
+sed -i '/addNetworkInterceptor/a \
+        builder.cookieJar(new JavaNetCookieJar(new java.net.CookieManager()));' src/main/java/io/github/vrchatapi/ApiClient.java
