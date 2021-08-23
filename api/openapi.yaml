@@ -91,7 +91,7 @@ info:
     url: https://github.com/vrchatapi/specification/blob/master/LICENSE
   termsOfService: https://vrchat.com/legal/
   title: VRChat API Documentation
-  version: 1.0.1
+  version: 1.0.2
 servers:
 - url: https://api.vrchat.cloud/api/1
 tags:
@@ -335,7 +335,7 @@ paths:
         **VRC+ NOTE:** Despite the 14-days cooldown, any VRC+ subscription will be cancelled **immediately**.
 
         **METHOD NOTE:** Despite this being a Delete action, the method type required is PUT.
-      operationId: deleteUserById
+      operationId: deleteUser
       parameters:
       - explode: false
         in: path

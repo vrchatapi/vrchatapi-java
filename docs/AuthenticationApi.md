@@ -4,7 +4,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUserById**](AuthenticationApi.md#deleteUserById) | **PUT** /user/{userId}/delete | Delete User
+[**deleteUser**](AuthenticationApi.md#deleteUser) | **PUT** /user/{userId}/delete | Delete User
 [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
 
 
-<a name="deleteUserById"></a>
-# **deleteUserById**
-> CurrentUser deleteUserById(userId)
+<a name="deleteUser"></a>
+# **deleteUser**
+> CurrentUser deleteUser(userId)
 
 Delete User
 
@@ -50,10 +50,10 @@ public class Example {
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     String userId = "userId_example"; // String | 
     try {
-      CurrentUser result = apiInstance.deleteUserById(userId);
+      CurrentUser result = apiInstance.deleteUser(userId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AuthenticationApi#deleteUserById");
+      System.err.println("Exception when calling AuthenticationApi#deleteUser");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
