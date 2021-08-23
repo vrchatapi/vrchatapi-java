@@ -60,9 +60,6 @@ AuthenticationApi authApi = new AuthenticationApi(defaultClient);
 HttpBasicAuth authHeader = (HttpBasicAuth) defaultClient.getAuthentication("authHeader");
 authHeader.setUsername("username");
 authHeader.setPassword("password");
-// Also configure API key
-ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-authCookie.setApiKey("JlE5Jldo5Jibnk5O5hTx6XVqsJu4WJ26");
 
 // Step 3. Call getCurrentUser on Authentication API.
 // This logs you in if the user isn't already logged in.
