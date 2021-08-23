@@ -18,7 +18,5 @@ sed -i '/<\/dependencies>/i \
             <version>${okhttp-version}</version>\
         </dependency>' pom.xml
 
-addNetworkInterceptor
-
 sed -i '/addNetworkInterceptor/a \
-        builder.cookieJar(new JavaNetCookieJar(new java.net.CookieManager()));' src/main/java/io/github/vrchatapi/ApiClient.java
+        builder.cookieJar(new okhttp3.JavaNetCookieJar(new java.net.CookieManager()));' src/main/java/io/github/vrchatapi/ApiClient.java
