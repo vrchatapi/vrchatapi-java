@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>com.github.vrchatapi</groupId>
 			<artifactId>vrchatapi-java</artifactId>
-			<version>1.0.1-globalcookie2</version>
+			<version>1.0.1-globalcookie3</version>
 		</dependency>
 	</dependencies>
 </project>
