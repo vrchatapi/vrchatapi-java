@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * InlineObject4
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-23T12:06:12.536997800+02:00[Europe/Stockholm]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InlineObject4 {
   public static final String SERIALIZED_NAME_SIGNATURE_MD5 = "signatureMd5";
   @SerializedName(SERIALIZED_NAME_SIGNATURE_MD5)

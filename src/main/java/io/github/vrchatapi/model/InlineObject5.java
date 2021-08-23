@@ -30,7 +30,7 @@ import java.util.Set;
 /**
  * InlineObject5
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-23T12:06:12.536997800+02:00[Europe/Stockholm]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InlineObject5 {
   public static final String SERIALIZED_NAME_ETAGS = "etags";
   @SerializedName(SERIALIZED_NAME_ETAGS)
