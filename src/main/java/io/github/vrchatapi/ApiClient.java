@@ -120,7 +120,7 @@ public class ApiClient {
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
-        builder.cookieJar(new okhttp3.JavaNetCookieJar(new java.net.CookieManager()));
+        builder.cookieJar(new io.github.vrchatapi.util.SimpleOkHttpCookieJar());
         for (Interceptor interceptor: interceptors) {
             builder.addInterceptor(interceptor);
         }
