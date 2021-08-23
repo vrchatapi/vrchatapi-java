@@ -20,16 +20,30 @@ As stated, this documentation was not created with the help of the official VRCh
 
 First add the package to to your project:
 ```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
 <dependency>
-  <groupId>io.github.vrchatapi</groupId>
-  <artifactId>vrchatapi</artifactId>
+  <groupId>com.github.vrchatapi</groupId>
+  <artifactId>vrchatapi-java</artifactId>
   <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
 or
 ```groovy
-compile "io.github.vrchatapi:vrchatapi:1.0.1"
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+dependencies {
+  implementation 'com.github.vrchatapi:vrchatapi-java:1.0.1'
+}
 ```
 
 Below is an example on how to login to the API and fetch your own user information.
