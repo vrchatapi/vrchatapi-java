@@ -19,40 +19,41 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.Error;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineObject1
+ * InlineResponse403
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class InlineObject1 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+public class InlineResponse403 {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private Error error;
 
 
-  public InlineObject1 code(String code) {
+  public InlineResponse403 error(Error error) {
     
-    this.code = code;
+    this.error = error;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get error
+   * @return error
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public String getCode() {
-    return code;
+  public Error getError() {
+    return error;
   }
 
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setError(Error error) {
+    this.error = error;
   }
 
 
@@ -64,20 +65,20 @@ public class InlineObject1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineObject1 inlineObject1 = (InlineObject1) o;
-    return Objects.equals(this.code, inlineObject1.code);
+    InlineResponse403 inlineResponse403 = (InlineResponse403) o;
+    return Objects.equals(this.error, inlineResponse403.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(error);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineObject1 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("class InlineResponse403 {\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }

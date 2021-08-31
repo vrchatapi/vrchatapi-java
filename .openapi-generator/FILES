@@ -47,7 +47,7 @@ docs/InlineResponse2004.md
 docs/InlineResponse2005.md
 docs/InlineResponse2006.md
 docs/InlineResponse2007.md
-docs/InlineResponse401.md
+docs/InlineResponse403.md
 docs/Instance.md
 docs/InstancePlatforms.md
 docs/LimitedUnityPackage.md
@@ -57,6 +57,9 @@ docs/MIMEType.md
 docs/Notification.md
 docs/NotificationType.md
 docs/NotificationsApi.md
+docs/PastDisplayName.md
+docs/Permission.md
+docs/PermissionsApi.md
 docs/Platform.md
 docs/PlayerModeration.md
 docs/PlayerModerationType.md
@@ -100,6 +103,7 @@ src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java
 src/main/java/io/github/vrchatapi/api/FriendsApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
+src/main/java/io/github/vrchatapi/api/PermissionsApi.java
 src/main/java/io/github/vrchatapi/api/PlayermoderationApi.java
 src/main/java/io/github/vrchatapi/api/SystemApi.java
 src/main/java/io/github/vrchatapi/api/UsersApi.java
@@ -148,7 +152,7 @@ src/main/java/io/github/vrchatapi/model/InlineResponse2004.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2005.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2006.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2007.java
-src/main/java/io/github/vrchatapi/model/InlineResponse401.java
+src/main/java/io/github/vrchatapi/model/InlineResponse403.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
@@ -157,6 +161,8 @@ src/main/java/io/github/vrchatapi/model/LimitedWorld.java
 src/main/java/io/github/vrchatapi/model/MIMEType.java
 src/main/java/io/github/vrchatapi/model/Notification.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
+src/main/java/io/github/vrchatapi/model/PastDisplayName.java
+src/main/java/io/github/vrchatapi/model/Permission.java
 src/main/java/io/github/vrchatapi/model/Platform.java
 src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
