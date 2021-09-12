@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  |  [readonly]
+**id** | **String** |  | 
 **type** | **FavoriteType** |  | 
 **favoriteId** | **String** | MUST be either AvatarID, UserID or WorldID. | 
 **tags** | **List&lt;String&gt;** |  | 

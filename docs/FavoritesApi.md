@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="clearFavoriteGroup"></a>
 # **clearFavoriteGroup**
-> Error clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId)
+> Success clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId)
 
 Clear Favorite Group
 
@@ -131,7 +131,7 @@ public class Example {
     String favoriteGroupName = "favoriteGroupName_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      Error result = apiInstance.clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
+      Success result = apiInstance.clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#clearFavoriteGroup");
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Error**](Error.md)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 <a name="removeFavorite"></a>
 # **removeFavorite**
-> Error removeFavorite(favoriteId)
+> Success removeFavorite(favoriteId)
 
 Remove Favorite
 
@@ -526,7 +526,7 @@ public class Example {
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
     String favoriteId = "favoriteId_example"; // String | 
     try {
-      Error result = apiInstance.removeFavorite(favoriteId);
+      Success result = apiInstance.removeFavorite(favoriteId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#removeFavorite");
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Error**](Error.md)
+[**Success**](Success.md)
 
 ### Authorization
 

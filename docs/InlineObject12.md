@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**moderated** | **String** |  |  [readonly]
+**moderated** | **String** |  | 
 **type** | **PlayerModerationType** |  | 
 
 

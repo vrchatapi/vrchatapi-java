@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 <a name="getFriendStatus"></a>
 # **getFriendStatus**
-> InlineResponse2003 getFriendStatus(userId)
+> FriendStatus getFriendStatus(userId)
 
 Check Friend Status
 
@@ -203,7 +203,7 @@ public class Example {
     FriendsApi apiInstance = new FriendsApi(defaultClient);
     String userId = "userId_example"; // String | 
     try {
-      InlineResponse2003 result = apiInstance.getFriendStatus(userId);
+      FriendStatus result = apiInstance.getFriendStatus(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FriendsApi#getFriendStatus");
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FriendStatus**](FriendStatus.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Friend Status |  -  |
+**200** | Returns a users Friend Status. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getFriends"></a>

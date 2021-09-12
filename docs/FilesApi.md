@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 <a name="getFileDataUploadStatus"></a>
 # **getFileDataUploadStatus**
-> InlineResponse2004 getFileDataUploadStatus(fileId, versionId, fileType)
+> InlineResponse2003 getFileDataUploadStatus(fileId, versionId, fileType)
 
 Check FileData Upload Status
 
@@ -596,7 +596,7 @@ public class Example {
     Integer versionId = 1; // Integer | 
     String fileType = "file"; // String | 
     try {
-      InlineResponse2004 result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
+      InlineResponse2003 result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#getFileDataUploadStatus");
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 <a name="startFileDataUpload"></a>
 # **startFileDataUpload**
-> InlineResponse2005 startFileDataUpload(fileId, versionId, fileType, partNumber)
+> InlineResponse2004 startFileDataUpload(fileId, versionId, fileType, partNumber)
 
 Start FileData Upload
 
@@ -757,7 +757,7 @@ public class Example {
     String fileType = "file"; // String | 
     Integer partNumber = 1; // Integer | 
     try {
-      InlineResponse2005 result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
+      InlineResponse2004 result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#startFileDataUpload");
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **nUsers** | **BigDecimal** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  |  [optional]
-**ownerId** | **String** |  |  [readonly]
+**ownerId** | **String** |  | 
 **permanent** | **Boolean** |  | 
 **photonRegion** | **String** |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 

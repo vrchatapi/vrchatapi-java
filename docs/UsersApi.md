@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID
 [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username
-[**searchActiveUsers**](UsersApi.md#searchActiveUsers) | **GET** /users/active | Search Active Users
 [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users
 [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info
 
@@ -162,88 +161,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
-
-<a name="searchActiveUsers"></a>
-# **searchActiveUsers**
-> List&lt;LimitedUser&gt; searchActiveUsers(search, developerType, offset, n)
-
-Search Active Users
-
-Search and list any Active users by text query.  **Has been locked down and now always respond with \&quot;Invalid Admin Credentials\&quot;.**
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.UsersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: apiKeyCookie
-    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
-    apiKeyCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apiKeyCookie.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    UsersApi apiInstance = new UsersApi(defaultClient);
-    String search = "search_example"; // String | Username to search for
-    String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
-    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    Integer n = 60; // Integer | The number of objects to return.
-    try {
-      List<LimitedUser> result = apiInstance.searchActiveUsers(search, developerType, offset, n);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling UsersApi#searchActiveUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **String**| Username to search for |
- **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
-
-### Return type
-
-[**List&lt;LimitedUser&gt;**](LimitedUser.md)
-
-### Authorization
-
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Error response due to missing Administrator credentials. |  -  |
 
 <a name="searchUsers"></a>
 # **searchUsers**

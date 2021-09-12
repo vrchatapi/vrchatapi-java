@@ -24,6 +24,7 @@ docs/FileData.md
 docs/FileStatus.md
 docs/FileVersion.md
 docs/FilesApi.md
+docs/FriendStatus.md
 docs/FriendsApi.md
 docs/InlineObject.md
 docs/InlineObject1.md
@@ -46,10 +47,12 @@ docs/InlineResponse2003.md
 docs/InlineResponse2004.md
 docs/InlineResponse2005.md
 docs/InlineResponse2006.md
-docs/InlineResponse2007.md
-docs/InlineResponse403.md
+docs/InlineResponse400.md
 docs/Instance.md
 docs/InstancePlatforms.md
+docs/InviteApi.md
+docs/InviteMessage.md
+docs/InviteMessageType.md
 docs/LimitedUnityPackage.md
 docs/LimitedUser.md
 docs/LimitedWorld.md
@@ -60,7 +63,6 @@ docs/NotificationsApi.md
 docs/PastDisplayName.md
 docs/Permission.md
 docs/PermissionsApi.md
-docs/Platform.md
 docs/PlayerModeration.md
 docs/PlayerModerationType.md
 docs/PlayermoderationApi.md
@@ -102,6 +104,7 @@ src/main/java/io/github/vrchatapi/api/AvatarsApi.java
 src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java
 src/main/java/io/github/vrchatapi/api/FriendsApi.java
+src/main/java/io/github/vrchatapi/api/InviteApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
 src/main/java/io/github/vrchatapi/api/PermissionsApi.java
 src/main/java/io/github/vrchatapi/api/PlayermoderationApi.java
@@ -130,6 +133,7 @@ src/main/java/io/github/vrchatapi/model/FavoriteType.java
 src/main/java/io/github/vrchatapi/model/FileData.java
 src/main/java/io/github/vrchatapi/model/FileStatus.java
 src/main/java/io/github/vrchatapi/model/FileVersion.java
+src/main/java/io/github/vrchatapi/model/FriendStatus.java
 src/main/java/io/github/vrchatapi/model/InlineObject.java
 src/main/java/io/github/vrchatapi/model/InlineObject1.java
 src/main/java/io/github/vrchatapi/model/InlineObject10.java
@@ -151,10 +155,11 @@ src/main/java/io/github/vrchatapi/model/InlineResponse2003.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2004.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2005.java
 src/main/java/io/github/vrchatapi/model/InlineResponse2006.java
-src/main/java/io/github/vrchatapi/model/InlineResponse2007.java
-src/main/java/io/github/vrchatapi/model/InlineResponse403.java
+src/main/java/io/github/vrchatapi/model/InlineResponse400.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
+src/main/java/io/github/vrchatapi/model/InviteMessage.java
+src/main/java/io/github/vrchatapi/model/InviteMessageType.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
 src/main/java/io/github/vrchatapi/model/LimitedUser.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java
@@ -163,7 +168,6 @@ src/main/java/io/github/vrchatapi/model/Notification.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/PastDisplayName.java
 src/main/java/io/github/vrchatapi/model/Permission.java
-src/main/java/io/github/vrchatapi/model/Platform.java
 src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java

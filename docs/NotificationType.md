@@ -5,17 +5,15 @@
 ## Enum
 
 
-* `ALL` (value: `"all"`)
-
-* `BROADCAST` (value: `"broadcast"`)
-
 * `FRIENDREQUEST` (value: `"friendRequest"`)
 
 * `INVITE` (value: `"invite"`)
 
-* `MESSAGE` (value: `"message"`)
+* `INVITERESPONSE` (value: `"inviteResponse"`)
 
-* `REQUESTINVITE` (value: `"RequestInvite"`)
+* `REQUESTINVITE` (value: `"requestInvite"`)
+
+* `REQUESTINVITERESPONSE` (value: `"requestInviteResponse"`)
 
 * `VOTETOKICK` (value: `"votetokick"`)
 

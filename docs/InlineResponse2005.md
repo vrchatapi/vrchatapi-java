@@ -7,7 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **String** |  | 
+**id** | **String** |  | 
+**metadata** | **Object** |  |  [readonly]
 
 
 

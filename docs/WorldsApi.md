@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Returns a list of LimitedWorld objects. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to see favourites of another user without sufficient admin permissions. |  -  |
+**403** | Error response when trying to see favourited worlds of another user without sufficient admin permissions. |  -  |
 
 <a name="getRecentWorlds"></a>
 # **getRecentWorlds**
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Returns a list of LimitedWorld objects. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to accept a see recently visited worlds of another user without sufficient admin permissions. |  -  |
+**403** | Error response when trying to see recently visited worlds of another user without sufficient admin permissions. |  -  |
 
 <a name="getWorld"></a>
 # **getWorld**
@@ -602,7 +602,7 @@ Name | Type | Description  | Notes
 
 <a name="getWorldMetadata"></a>
 # **getWorldMetadata**
-> InlineResponse2006 getWorldMetadata(worldId)
+> InlineResponse2005 getWorldMetadata(worldId)
 
 Get World Metadata
 
@@ -638,7 +638,7 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | 
     try {
-      InlineResponse2006 result = apiInstance.getWorldMetadata(worldId);
+      InlineResponse2005 result = apiInstance.getWorldMetadata(worldId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getWorldMetadata");
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 <a name="getWorldPublishStatus"></a>
 # **getWorldPublishStatus**
-> InlineResponse2007 getWorldPublishStatus(worldId)
+> InlineResponse2006 getWorldPublishStatus(worldId)
 
 Get World Publish Status
 
@@ -714,7 +714,7 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | 
     try {
-      InlineResponse2007 result = apiInstance.getWorldPublishStatus(worldId);
+      InlineResponse2006 result = apiInstance.getWorldPublishStatus(worldId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getWorldPublishStatus");
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

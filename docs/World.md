@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetUrl** | **String** |  | 
 **assetUrlObject** | **Object** |  | 
-**authorId** | **String** |  |  [readonly]
+**authorId** | **String** |  | 
 **authorName** | **String** |  |  [readonly]
 **capacity** | **BigDecimal** |  |  [readonly]
 **createdAt** | **OffsetDateTime** |  |  [readonly]

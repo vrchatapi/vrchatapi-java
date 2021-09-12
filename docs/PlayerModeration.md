@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **type** | **PlayerModerationType** |  | 
-**sourceUserId** | **String** |  |  [readonly]
+**sourceUserId** | **String** |  | 
 **sourceDisplayName** | **String** |  | 
-**targetUserId** | **String** |  |  [readonly]
+**targetUserId** | **String** |  | 
 **targetDisplayName** | **String** |  | 
 **created** | **OffsetDateTime** |  | 
 

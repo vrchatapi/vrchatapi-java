@@ -7,8 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  |  [readonly]
-**ownerId** | **String** |  |  [readonly]
+**id** | **String** |  | 
+**ownerId** | **String** |  | 
 **ownerDisplayName** | **String** |  | 
 **name** | **String** |  | 
 **displayName** | **String** |  | 

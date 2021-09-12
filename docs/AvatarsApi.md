@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 <a name="getFavoritedAvatars"></a>
 # **getFavoritedAvatars**
-> getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
+> List&lt;Avatar&gt; getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
 List Favorited Avatars
 
@@ -293,7 +293,8 @@ public class Example {
     String platform = "platform_example"; // String | The platform the asset supports.
     String userId = "userId_example"; // String | Target user to see information on, admin-only.
     try {
-      apiInstance.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
+      List<Avatar> result = apiInstance.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AvatarsApi#getFavoritedAvatars");
       System.err.println("Status code: " + e.getCode());
@@ -325,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Avatar&gt;**](Avatar.md)
 
 ### Authorization
 
@@ -339,8 +340,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a list of Avatar objects. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
+**403** | Error response when trying to see favourited avatars of another user without sufficient admin permissions. |  -  |
 
 <a name="searchAvatars"></a>
 # **searchAvatars**

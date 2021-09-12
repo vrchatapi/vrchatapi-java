@@ -1,24 +1,25 @@
-# PlayermoderationApi
+# InviteApi
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**clearAllPlayerModerations**](PlayermoderationApi.md#clearAllPlayerModerations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations
-[**deletePlayerModeration**](PlayermoderationApi.md#deletePlayerModeration) | **DELETE** /auth/user/playermoderations/{playerModerationId} | Delete Player Moderation
-[**getPlayerModeration**](PlayermoderationApi.md#getPlayerModeration) | **GET** /auth/user/playermoderations/{playerModerationId} | Get Player Moderation
-[**getPlayerModerations**](PlayermoderationApi.md#getPlayerModerations) | **GET** /auth/user/playermoderations | Search Player Moderations
-[**moderateUser**](PlayermoderationApi.md#moderateUser) | **POST** /auth/user/playermoderations | Moderate User
-[**unmoderateUser**](PlayermoderationApi.md#unmoderateUser) | **PUT** /auth/user/unplayermoderate | Unmoderate User
+[**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/message/{messageId} | Get Invite Messages
+[**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/message | List Invite Messages
+[**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User
+[**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite
+[**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/message/{messageId} | Reset Invite Message
+[**respondInvite**](InviteApi.md#respondInvite) | **POST** /invite/{notificationId}/response | Respond Invite
+[**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/message/{messageId} | Update Invite Message
 
 
-<a name="clearAllPlayerModerations"></a>
-# **clearAllPlayerModerations**
-> Error clearAllPlayerModerations()
+<a name="getInviteMessage"></a>
+# **getInviteMessage**
+> InviteMessage getInviteMessage(userId, messageId)
 
-Clear All Player Moderations
+Get Invite Messages
 
-⚠️ **This will delete every single player moderation you&#39;ve ever made.**
+Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!
 
 ### Example
 ```java
@@ -28,7 +29,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -47,12 +48,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    Integer messageId = 56; // Integer | 
     try {
-      Error result = apiInstance.clearAllPlayerModerations();
+      InviteMessage result = apiInstance.getInviteMessage(userId, messageId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#clearAllPlayerModerations");
+      System.err.println("Exception when calling InviteApi#getInviteMessage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -63,11 +66,15 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  |
+ **messageId** | **Integer**|  |
 
 ### Return type
 
-[**Error**](Error.md)
+[**InviteMessage**](InviteMessage.md)
 
 ### Authorization
 
@@ -81,16 +88,17 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after e.g. clearing all player moderations. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**200** | Returns a single InviteMessage object. |  -  |
+**400** | Error response when trying to update an Invite Message with invalid slot number. |  -  |
+**401** | Error response due to missing authorization to perform that action. |  -  |
 
-<a name="deletePlayerModeration"></a>
-# **deletePlayerModeration**
-> Success deletePlayerModeration(playerModerationId)
+<a name="getInviteMessages"></a>
+# **getInviteMessages**
+> List&lt;InviteMessage&gt; getInviteMessages(userId)
 
-Delete Player Moderation
+List Invite Messages
 
-Deletes a specific player moderation based on it&#39;s &#x60;pmod_&#x60; ID. The website uses &#x60;unmoderateUser&#x60; instead. You can delete the same player moderation multiple times successfully.
+Returns a list of all that users Invite Messages. Admin Credentials are required to view messages of other users!
 
 ### Example
 ```java
@@ -100,7 +108,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -119,13 +127,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    String playerModerationId = "playerModerationId_example"; // String | 
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
     try {
-      Success result = apiInstance.deletePlayerModeration(playerModerationId);
+      List<InviteMessage> result = apiInstance.getInviteMessages(userId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#deletePlayerModeration");
+      System.err.println("Exception when calling InviteApi#getInviteMessages");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -139,11 +147,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  |
+ **userId** | **String**|  |
 
 ### Return type
 
-[**Success**](Success.md)
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
 
 ### Authorization
 
@@ -157,17 +165,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after removing a PlayerModeration by ID. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to delete someone else&#39;s player moderation. |  -  |
+**200** | Returns a list of InviteMessage objects. |  -  |
+**400** | Error response when trying to update an Invite Message with invalid slot number. |  -  |
+**401** | Error response due to missing authorization to perform that action. |  -  |
 
-<a name="getPlayerModeration"></a>
-# **getPlayerModeration**
-> PlayerModeration getPlayerModeration(playerModerationId)
+<a name="inviteUser"></a>
+# **inviteUser**
+> Notification inviteUser(userId)
 
-Get Player Moderation
+Invite User
 
-Returns a single Player Moderation. This returns the exact same amount of information as the more generalised &#x60;getPlayerModerations&#x60;.
+Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
 
 ### Example
 ```java
@@ -177,7 +185,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -196,13 +204,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    String playerModerationId = "playerModerationId_example"; // String | 
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
     try {
-      PlayerModeration result = apiInstance.getPlayerModeration(playerModerationId);
+      Notification result = apiInstance.inviteUser(userId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#getPlayerModeration");
+      System.err.println("Exception when calling InviteApi#inviteUser");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -216,11 +224,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  |
+ **userId** | **String**|  |
 
 ### Return type
 
-[**PlayerModeration**](PlayerModeration.md)
+[**Notification**](Notification.md)
 
 ### Authorization
 
@@ -234,17 +242,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single PlayerModeration object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to show information about a non-existent player moderation. |  -  |
+**200** | Returns a single Notifcation object. |  -  |
+**403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
-<a name="getPlayerModerations"></a>
-# **getPlayerModerations**
-> List&lt;PlayerModeration&gt; getPlayerModerations(type, targetUserId)
+<a name="requestInvite"></a>
+# **requestInvite**
+> Notification requestInvite(userId)
 
-Search Player Moderations
+Request Invite
 
-Returns a list of all player moderations made by **you**.  This endpoint does not have pagination, and will return *all* results. Use query parameters to limit your query if needed.
+Requests an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
 
 ### Example
 ```java
@@ -254,7 +261,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -273,14 +280,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    String type = "type_example"; // String | Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block.
-    String targetUserId = "targetUserId_example"; // String | Must be valid UserID.
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
     try {
-      List<PlayerModeration> result = apiInstance.getPlayerModerations(type, targetUserId);
+      Notification result = apiInstance.requestInvite(userId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#getPlayerModerations");
+      System.err.println("Exception when calling InviteApi#requestInvite");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -294,12 +300,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block. | [optional]
- **targetUserId** | **String**| Must be valid UserID. | [optional]
+ **userId** | **String**|  |
 
 ### Return type
 
-[**List&lt;PlayerModeration&gt;**](PlayerModeration.md)
+[**Notification**](Notification.md)
 
 ### Authorization
 
@@ -313,16 +318,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of PlayerModeration objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**200** | Returns a single Notifcation object. |  -  |
+**403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
-<a name="moderateUser"></a>
-# **moderateUser**
-> PlayerModeration moderateUser(inlineObject12)
+<a name="resetInviteMessage"></a>
+# **resetInviteMessage**
+> List&lt;InviteMessage&gt; resetInviteMessage(userId, messageId)
 
-Moderate User
+Reset Invite Message
 
-Moderate a user, e.g. unmute them or show their avatar.
+Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
 
 ### Example
 ```java
@@ -332,7 +337,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -351,13 +356,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    InlineObject12 inlineObject12 = new InlineObject12(); // InlineObject12 | 
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    Integer messageId = 56; // Integer | 
     try {
-      PlayerModeration result = apiInstance.moderateUser(inlineObject12);
+      List<InviteMessage> result = apiInstance.resetInviteMessage(userId, messageId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#moderateUser");
+      System.err.println("Exception when calling InviteApi#resetInviteMessage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -371,11 +377,12 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional]
+ **userId** | **String**|  |
+ **messageId** | **Integer**|  |
 
 ### Return type
 
-[**PlayerModeration**](PlayerModeration.md)
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
 
 ### Authorization
 
@@ -383,22 +390,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single PlayerModeration object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**200** | Returns a list of InviteMessage objects. |  -  |
+**400** | Error response when trying to update an Invite Message with invalid slot number. |  -  |
+**401** | Error response due to missing authorization to perform that action. |  -  |
+**429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
 
-<a name="unmoderateUser"></a>
-# **unmoderateUser**
-> Success unmoderateUser(inlineObject13)
+<a name="respondInvite"></a>
+# **respondInvite**
+> Notification respondInvite(notificationId)
 
-Unmoderate User
+Respond Invite
 
-Removes a player moderation previously added through &#x60;moderateUser&#x60;. E.g if you previuosly have shown their avatar, but now want to reset it to default.
+Sends a world invite to a user.
 
 ### Example
 ```java
@@ -408,7 +417,7 @@ import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.PlayermoderationApi;
+import io.github.vrchatapi.api.InviteApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -427,13 +436,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //authCookie.setApiKeyPrefix("Token");
 
-    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    InlineObject13 inlineObject13 = new InlineObject13(); // InlineObject13 | 
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String notificationId = "notificationId_example"; // String | 
     try {
-      Success result = apiInstance.unmoderateUser(inlineObject13);
+      Notification result = apiInstance.respondInvite(notificationId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PlayermoderationApi#unmoderateUser");
+      System.err.println("Exception when calling InviteApi#respondInvite");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -447,11 +456,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional]
+ **notificationId** | **String**|  |
 
 ### Return type
 
-[**Success**](Success.md)
+[**Notification**](Notification.md)
 
 ### Authorization
 
@@ -459,12 +468,92 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after unmoderating a player moderation. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**200** | Returns a single Notifcation object. |  -  |
+**400** | Error response when trying to respond to an invite and something went wrong. |  -  |
+
+<a name="updateInviteMessage"></a>
+# **updateInviteMessage**
+> List&lt;InviteMessage&gt; updateInviteMessage(userId, messageId)
+
+Update Invite Message
+
+Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InviteApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    Integer messageId = 56; // Integer | 
+    try {
+      List<InviteMessage> result = apiInstance.updateInviteMessage(userId, messageId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InviteApi#updateInviteMessage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  |
+ **messageId** | **Integer**|  |
+
+### Return type
+
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a list of InviteMessage objects. |  -  |
+**400** | Error response when trying to update an Invite Message with invalid slot number. |  -  |
+**401** | Error response due to missing authorization to perform that action. |  -  |
+**429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
 

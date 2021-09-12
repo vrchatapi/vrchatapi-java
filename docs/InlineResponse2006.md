@@ -7,8 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**metadata** | **Object** |  |  [readonly]
+**canPubilsh** | **Boolean** |  |  [readonly]
 
 
 
