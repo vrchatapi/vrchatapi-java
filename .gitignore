@@ -19,3 +19,6 @@ hs_err_pid*
 target
 .gradle
 build
+
+# Dependency directory
+node_modules
