@@ -1,4 +1,3 @@
-.gitignore
 api/openapi.yaml
 build.gradle
 build.sbt
@@ -53,6 +52,8 @@ docs/InstancePlatforms.md
 docs/InviteApi.md
 docs/InviteMessage.md
 docs/InviteMessageType.md
+docs/InviteRequest.md
+docs/InviteResponse.md
 docs/LimitedUnityPackage.md
 docs/LimitedUser.md
 docs/LimitedWorld.md
@@ -72,6 +73,7 @@ docs/Success.md
 docs/SystemApi.md
 docs/UnityPackage.md
 docs/User.md
+docs/UserExists.md
 docs/UserState.md
 docs/UserStatus.md
 docs/UsersApi.md
@@ -160,6 +162,8 @@ src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java
 src/main/java/io/github/vrchatapi/model/InviteMessageType.java
+src/main/java/io/github/vrchatapi/model/InviteRequest.java
+src/main/java/io/github/vrchatapi/model/InviteResponse.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
 src/main/java/io/github/vrchatapi/model/LimitedUser.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java
@@ -175,6 +179,7 @@ src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/Success.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/User.java
+src/main/java/io/github/vrchatapi/model/UserExists.java
 src/main/java/io/github/vrchatapi/model/UserState.java
 src/main/java/io/github/vrchatapi/model/UserStatus.java
 src/main/java/io/github/vrchatapi/model/World.java

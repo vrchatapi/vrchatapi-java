@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **friendGroupNames** | **List&lt;String&gt;** | Always empty array. | 
 **currentAvatarImageUrl** | **String** |  | 
 **currentAvatarThumbnailImageUrl** | **String** |  | 
-**fallbackAvatar** | **String** |  | 
+**fallbackAvatar** | **String** |  |  [optional]
 **currentAvatar** | **String** |  | 
 **currentAvatarAssetUrl** | **String** |  | 
 **accountDeletionDate** | **LocalDate** |  |  [optional]

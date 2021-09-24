@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUser"></a>
 # **inviteUser**
-> Notification inviteUser(userId)
+> Notification inviteUser(userId, inviteRequest)
 
 Invite User
 
@@ -206,8 +206,9 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    InviteRequest inviteRequest = new InviteRequest(); // InviteRequest | Instance ID when inviting a user.
     try {
-      Notification result = apiInstance.inviteUser(userId);
+      Notification result = apiInstance.inviteUser(userId, inviteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#inviteUser");
@@ -225,6 +226,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Instance ID when inviting a user. | [optional]
 
 ### Return type
 
@@ -236,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -403,7 +405,7 @@ Name | Type | Description  | Notes
 
 <a name="respondInvite"></a>
 # **respondInvite**
-> Notification respondInvite(notificationId)
+> Notification respondInvite(notificationId, inviteResponse)
 
 Respond Invite
 
@@ -438,8 +440,9 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String notificationId = "notificationId_example"; // String | 
+    InviteResponse inviteResponse = new InviteResponse(); // InviteResponse | Instance ID when inviting a user.
     try {
-      Notification result = apiInstance.respondInvite(notificationId);
+      Notification result = apiInstance.respondInvite(notificationId, inviteResponse);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#respondInvite");
@@ -457,6 +460,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationId** | **String**|  |
+ **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Instance ID when inviting a user. | [optional]
 
 ### Return type
 
@@ -468,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

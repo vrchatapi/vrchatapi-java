@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **statusDescription** | **String** |  | 
 **currentAvatarImageUrl** | **String** |  | 
 **currentAvatarThumbnailImageUrl** | **String** |  | 
-**fallbackAvatar** | **String** |  | 
 **state** | **UserState** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **developerType** | **DeveloperType** |  | 
