@@ -36,10 +36,6 @@ jobs:
           branch: main
           folder: .
           commit-message: "Upgrade Java SDK to spec ${{ env.spec_version }}"
-      - name: Upload to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
 
 #  gradle:
 #    runs-on: ubuntu-latest
