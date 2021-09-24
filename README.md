@@ -29,7 +29,7 @@ First add the package to to your project:
 <dependency>
   <groupId>com.github.vrchatapi</groupId>
   <artifactId>vrchatapi-java</artifactId>
-  <version>1.0.2</version>
+  <version>main-SNAPSHOT</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ allprojects {
   }
 }
 dependencies {
-  implementation 'com.github.vrchatapi:vrchatapi-java:1.0.2'
+  implementation 'com.github.vrchatapi:vrchatapi-java:main-SNAPSHOT'
 }
 ```
 
