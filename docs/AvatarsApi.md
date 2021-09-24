@@ -383,7 +383,7 @@ public class Example {
     String featured = "featured_example"; // String | Filters on featured results.
     String sort = "popularity"; // String | 
     String user = "user_example"; // String | Set to `me` for searching own avatars.
-    String userId = "userId_example"; // String | Filter by author UserID
+    String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
     String order = "descending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
  **featured** | **String**| Filters on featured results. | [optional]
  **sort** | **String**|  | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name]
  **user** | **String**| Set to &#x60;me&#x60; for searching own avatars. | [optional] [enum: me]
- **userId** | **String**| Filter by author UserID | [optional]
+ **userId** | **String**| Filter by UserID. | [optional]
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
  **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]

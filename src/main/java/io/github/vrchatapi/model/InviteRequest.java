@@ -19,41 +19,40 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.github.vrchatapi.model.Error;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse400
+ * InviteRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class InlineResponse400 {
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
-  private Error error;
+public class InviteRequest {
+  public static final String SERIALIZED_NAME_INSTANCE_ID = "instanceId";
+  @SerializedName(SERIALIZED_NAME_INSTANCE_ID)
+  private String instanceId;
 
 
-  public InlineResponse400 error(Error error) {
+  public InviteRequest instanceId(String instanceId) {
     
-    this.error = error;
+    this.instanceId = instanceId;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * Get instanceId
+   * @return instanceId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "wrld_ba913a96-fac4-4048-a062-9aa5db092812:123456", required = true, value = "")
 
-  public Error getError() {
-    return error;
+  public String getInstanceId() {
+    return instanceId;
   }
 
 
-  public void setError(Error error) {
-    this.error = error;
+  public void setInstanceId(String instanceId) {
+    this.instanceId = instanceId;
   }
 
 
@@ -65,20 +64,20 @@ public class InlineResponse400 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse400 inlineResponse400 = (InlineResponse400) o;
-    return Objects.equals(this.error, inlineResponse400.error);
+    InviteRequest inviteRequest = (InviteRequest) o;
+    return Objects.equals(this.instanceId, inviteRequest.instanceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error);
+    return Objects.hash(instanceId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse400 {\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("class InviteRequest {\n");
+    sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

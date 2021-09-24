@@ -19,68 +19,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.github.vrchatapi.model.PlayerModerationType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineObject13
+ * InviteResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class InlineObject13 {
-  public static final String SERIALIZED_NAME_MODERATED = "moderated";
-  @SerializedName(SERIALIZED_NAME_MODERATED)
-  private String moderated;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private PlayerModerationType type = PlayerModerationType.SHOWAVATAR;
+public class InviteResponse {
+  public static final String SERIALIZED_NAME_RESPONSE_SLOT = "responseSlot";
+  @SerializedName(SERIALIZED_NAME_RESPONSE_SLOT)
+  private Integer responseSlot;
 
 
-  public InlineObject13 moderated(String moderated) {
+  public InviteResponse responseSlot(Integer responseSlot) {
     
-    this.moderated = moderated;
+    this.responseSlot = responseSlot;
     return this;
   }
 
    /**
-   * Get moderated
-   * @return moderated
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", value = "")
-
-  public String getModerated() {
-    return moderated;
-  }
-
-
-  public void setModerated(String moderated) {
-    this.moderated = moderated;
-  }
-
-
-  public InlineObject13 type(PlayerModerationType type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
+   * Get responseSlot
+   * minimum: 0
+   * maximum: 11
+   * @return responseSlot
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public PlayerModerationType getType() {
-    return type;
+  public Integer getResponseSlot() {
+    return responseSlot;
   }
 
 
-  public void setType(PlayerModerationType type) {
-    this.type = type;
+  public void setResponseSlot(Integer responseSlot) {
+    this.responseSlot = responseSlot;
   }
 
 
@@ -92,22 +66,20 @@ public class InlineObject13 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineObject13 inlineObject13 = (InlineObject13) o;
-    return Objects.equals(this.moderated, inlineObject13.moderated) &&
-        Objects.equals(this.type, inlineObject13.type);
+    InviteResponse inviteResponse = (InviteResponse) o;
+    return Objects.equals(this.responseSlot, inviteResponse.responseSlot);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(moderated, type);
+    return Objects.hash(responseSlot);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineObject13 {\n");
-    sb.append("    moderated: ").append(toIndentedString(moderated)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("class InviteResponse {\n");
+    sb.append("    responseSlot: ").append(toIndentedString(responseSlot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

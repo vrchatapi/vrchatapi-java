@@ -19,41 +19,41 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.github.vrchatapi.model.Error;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse400
+ * Status object representing if a queried user by username or userId exists or not. This model is primarily used by the &#x60;/auth/exists&#x60; endpoint, which in turn is used during registration. Please see the documentation on that endpoint for more information on usage.
  */
+@ApiModel(description = "Status object representing if a queried user by username or userId exists or not. This model is primarily used by the `/auth/exists` endpoint, which in turn is used during registration. Please see the documentation on that endpoint for more information on usage.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class InlineResponse400 {
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
-  private Error error;
+public class UserExists {
+  public static final String SERIALIZED_NAME_USER_EXISTS = "userExists";
+  @SerializedName(SERIALIZED_NAME_USER_EXISTS)
+  private Boolean userExists = false;
 
 
-  public InlineResponse400 error(Error error) {
+  public UserExists userExists(Boolean userExists) {
     
-    this.error = error;
+    this.userExists = userExists;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * Status if a user exist with that username or userId.
+   * @return userExists
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Status if a user exist with that username or userId.")
 
-  public Error getError() {
-    return error;
+  public Boolean getUserExists() {
+    return userExists;
   }
 
 
-  public void setError(Error error) {
-    this.error = error;
+  public void setUserExists(Boolean userExists) {
+    this.userExists = userExists;
   }
 
 
@@ -65,20 +65,20 @@ public class InlineResponse400 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse400 inlineResponse400 = (InlineResponse400) o;
-    return Objects.equals(this.error, inlineResponse400.error);
+    UserExists userExists = (UserExists) o;
+    return Objects.equals(this.userExists, userExists.userExists);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error);
+    return Objects.hash(userExists);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse400 {\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("class UserExists {\n");
+    sb.append("    userExists: ").append(toIndentedString(userExists)).append("\n");
     sb.append("}");
     return sb.toString();
   }
