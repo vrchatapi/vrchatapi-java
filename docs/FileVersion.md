@@ -7,13 +7,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **BigDecimal** | Incremental version counter, can only be increased. | 
-**status** | **FileStatus** |  | 
-**createdAt** | **OffsetDateTime** |  |  [readonly]
-**file** | [**FileData**](FileData.md) |  |  [optional]
-**delta** | [**FileData**](FileData.md) |  |  [optional]
-**signature** | [**FileData**](FileData.md) |  |  [optional]
+**createdAt** | **OffsetDateTime** |  | 
 **deleted** | **Boolean** | Usually only present if &#x60;true&#x60; |  [optional]
+**delta** | [**FileData**](FileData.md) |  |  [optional]
+**file** | [**FileData**](FileData.md) |  |  [optional]
+**signature** | [**FileData**](FileData.md) |  |  [optional]
+**status** | **FileStatus** |  | 
+**version** | **Integer** | Incremental version counter, can only be increased. | 
 
 
 

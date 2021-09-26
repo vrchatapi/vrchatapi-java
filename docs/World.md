@@ -10,26 +10,26 @@ Name | Type | Description | Notes
 **assetUrl** | **String** |  | 
 **assetUrlObject** | **Object** |  | 
 **authorId** | **String** |  | 
-**authorName** | **String** |  |  [readonly]
-**capacity** | **BigDecimal** |  |  [readonly]
-**createdAt** | **OffsetDateTime** |  |  [readonly]
+**authorName** | **String** |  | 
+**capacity** | **Integer** |  | 
+**createdAt** | **OffsetDateTime** |  | 
 **description** | **String** |  | 
-**favorites** | **BigDecimal** |  |  [optional] [readonly]
+**favorites** | **Integer** |  |  [optional]
 **featured** | **Boolean** |  | 
-**heat** | **BigDecimal** |  |  [readonly]
+**heat** | **Integer** |  | 
 **id** | **String** |  | 
 **imageUrl** | **String** |  | 
 **instances** | **List&lt;List&lt;Object&gt;&gt;** |  |  [optional]
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **namespace** | **String** |  | 
-**occupants** | **BigDecimal** |  |  [optional] [readonly]
+**occupants** | **Integer** |  |  [optional]
 **organization** | **String** |  | 
 **pluginUrlObject** | **Object** |  | 
-**popularity** | **BigDecimal** |  |  [readonly]
+**popularity** | **Integer** |  | 
 **previewYoutubeId** | **String** |  |  [optional]
-**privateOccupants** | **BigDecimal** |  |  [optional] [readonly]
-**publicOccupants** | **BigDecimal** |  |  [optional] [readonly]
+**privateOccupants** | **Integer** |  |  [optional]
+**publicOccupants** | **Integer** |  |  [optional]
 **publicationDate** | **OffsetDateTime** |  | 
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 
@@ -37,8 +37,8 @@ Name | Type | Description | Notes
 **unityPackageUrlObject** | **Object** |  | 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **updatedAt** | **OffsetDateTime** |  | 
-**version** | **BigDecimal** |  | 
-**visits** | **BigDecimal** |  |  [readonly]
+**version** | **Integer** |  | 
+**visits** | **Integer** |  | 
 
 
 

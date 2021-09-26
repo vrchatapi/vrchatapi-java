@@ -7,8 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**android** | **BigDecimal** |  | 
-**standalonewindows** | **BigDecimal** |  | 
+**android** | **Integer** |  | 
+**standalonewindows** | **Integer** |  | 
 
 
 

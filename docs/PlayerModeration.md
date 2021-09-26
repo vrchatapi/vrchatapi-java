@@ -7,13 +7,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**type** | **PlayerModerationType** |  | 
-**sourceUserId** | **String** |  | 
-**sourceDisplayName** | **String** |  | 
-**targetUserId** | **String** |  | 
-**targetDisplayName** | **String** |  | 
 **created** | **OffsetDateTime** |  | 
+**id** | **String** |  | 
+**sourceDisplayName** | **String** |  | 
+**sourceUserId** | **String** |  | 
+**targetDisplayName** | **String** |  | 
+**targetUserId** | **String** |  | 
+**type** | **PlayerModerationType** |  | 
 
 
 

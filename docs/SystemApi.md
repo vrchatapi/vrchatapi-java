@@ -4,15 +4,82 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.js | Download Frontend CSS
 [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users
 [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health
+[**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download Frontend JavaScript
 [**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time
 
 
+<a name="getCSS"></a>
+# **getCSS**
+> String getCSS(variant, branch)
+
+Download Frontend CSS
+
+Fetches the CSS code to the frontend React website.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.SystemApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    SystemApi apiInstance = new SystemApi(defaultClient);
+    String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+    String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
+    try {
+      String result = apiInstance.getCSS(variant, branch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SystemApi#getCSS");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal]
+ **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main]
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/css, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
+**400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
+
 <a name="getConfig"></a>
 # **getConfig**
-> Config getConfig()
+> APIConfig getConfig()
 
 Fetch API Config
 
@@ -34,7 +101,7 @@ public class Example {
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {
-      Config result = apiInstance.getConfig();
+      APIConfig result = apiInstance.getConfig();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemApi#getConfig");
@@ -52,7 +119,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Config**](Config.md)
+[**APIConfig**](APIConfig.md)
 
 ### Authorization
 
@@ -132,7 +199,7 @@ No authorization required
 
 Check API Health
 
-Gets the overall health status, the server name, and the current build version tag of the API.
+~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
 
 ### Example
 ```java
@@ -183,6 +250,71 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | API&#39;s Health |  -  |
+
+<a name="getJavaScript"></a>
+# **getJavaScript**
+> String getJavaScript(variant, branch)
+
+Download Frontend JavaScript
+
+Fetches the JavaScript code to the frontend React website.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.SystemApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    SystemApi apiInstance = new SystemApi(defaultClient);
+    String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+    String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
+    try {
+      String result = apiInstance.getJavaScript(variant, branch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SystemApi#getJavaScript");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal]
+ **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main]
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/javascript, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
+**400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
 <a name="getSystemTime"></a>
 # **getSystemTime**

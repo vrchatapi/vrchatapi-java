@@ -7,10 +7,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**ownerId** | **String** |  | 
-**name** | **String** |  | 
 **data** | **Object** |  |  [optional]
+**id** | **String** |  | 
+**name** | **String** |  | 
+**ownerId** | **String** |  | 
 
 
 

@@ -1,6 +1,6 @@
 
 
-# ConfigAnnouncements
+# PublicAnnouncement
 
 Public Announcement
 
@@ -8,8 +8,8 @@ Public Announcement
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Announcement name |  [readonly]
-**text** | **String** | Announcement text |  [readonly]
+**name** | **String** | Announcement name | 
+**text** | **String** | Announcement text | 
 
 
 

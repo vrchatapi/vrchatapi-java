@@ -7,25 +7,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**name** | **String** |  | 
 **authorId** | **String** |  | 
 **authorName** | **String** |  | 
-**capacity** | **BigDecimal** |  | 
-**imageUrl** | **String** |  | 
-**thumbnailImageUrl** | **String** |  | 
-**releaseStatus** | **String** |  | 
-**organization** | **String** |  | 
-**tags** | **List&lt;String&gt;** |  | 
-**favorites** | **BigDecimal** |  | 
+**capacity** | **Integer** |  | 
 **createdAt** | **OffsetDateTime** |  | 
-**updatedAt** | **OffsetDateTime** |  | 
-**publicationDate** | **String** |  |  [readonly]
+**favorites** | **Integer** |  | 
+**heat** | **Integer** |  | 
+**id** | **String** |  | 
+**imageUrl** | **String** |  | 
 **labsPublicationDate** | **String** |  | 
+**name** | **String** |  | 
+**occupants** | **Integer** |  | 
+**organization** | **String** |  | 
+**popularity** | **Integer** |  | 
+**publicationDate** | **OffsetDateTime** |  | 
+**releaseStatus** | **ReleaseStatus** |  | 
+**tags** | **List&lt;String&gt;** |  | 
+**thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
-**popularity** | **BigDecimal** |  | 
-**heat** | **BigDecimal** |  | 
-**occupants** | **BigDecimal** |  | 
+**updatedAt** | **OffsetDateTime** |  | 
 
 
 

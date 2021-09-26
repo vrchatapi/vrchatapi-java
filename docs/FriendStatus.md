@@ -7,9 +7,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**incomingRequest** | **Boolean** |  | 
 **isFriend** | **Boolean** |  | 
 **outgoingRequest** | **Boolean** |  | 
-**incomingRequest** | **Boolean** |  | 
 
 
 

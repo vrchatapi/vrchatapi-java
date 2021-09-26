@@ -287,7 +287,7 @@ public class Example {
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated).
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    String releaseStatus = "hidden"; // String | Filter by ReleaseStatus.
+    String releaseStatus = "public"; // String | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
  **search** | **String**| Filters by world name. | [optional]
  **tag** | **String**| Tags to include (comma-separated). | [optional]
  **notag** | **String**| Tags to exclude (comma-separated). | [optional]
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to hidden] [enum: public, private, hidden]
+ **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all]
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional]
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional]
  **platform** | **String**| The platform the asset supports. | [optional]
@@ -389,7 +389,7 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String tag = "tag_example"; // String | Tags to include (comma-separated).
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    String releaseStatus = "hidden"; // String | Filter by ReleaseStatus.
+    String releaseStatus = "public"; // String | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
  **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
  **tag** | **String**| Tags to include (comma-separated). | [optional]
  **notag** | **String**| Tags to exclude (comma-separated). | [optional]
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to hidden] [enum: public, private, hidden]
+ **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all]
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional]
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional]
  **platform** | **String**| The platform the asset supports. | [optional]

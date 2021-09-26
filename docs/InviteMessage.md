@@ -7,13 +7,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**canBeUpdated** | **Boolean** |  | 
 **id** | **String** |  | 
-**slot** | **Integer** |  | 
 **message** | **String** |  | 
 **messageType** | **InviteMessageType** |  | 
-**updatedAt** | **OffsetDateTime** |  | 
 **remainingCooldownMinutes** | **Integer** | Changes to 60 when updated, although probably server-side configurable. | 
-**canBeUpdated** | **Boolean** |  | 
+**slot** | **Integer** |  | 
+**updatedAt** | **OffsetDateTime** |  | 
 
 
 

@@ -20,11 +20,11 @@ Name | Type | Description | Notes
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackages** | [**Set&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **unityPackageUrl** | **String** |  | 
 **unityPackageUrlObject** | [**AvatarUnityPackageUrlObject**](AvatarUnityPackageUrlObject.md) |  | 
+**unityPackages** | [**Set&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **updatedAt** | **OffsetDateTime** |  | 
-**version** | **BigDecimal** |  |  [readonly]
+**version** | **Integer** |  |  [readonly]
 
 
 

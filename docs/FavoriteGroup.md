@@ -7,14 +7,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**ownerId** | **String** |  | 
-**ownerDisplayName** | **String** |  | 
-**name** | **String** |  | 
 **displayName** | **String** |  | 
+**id** | **String** |  | 
+**name** | **String** |  | 
+**ownerDisplayName** | **String** |  | 
+**ownerId** | **String** |  | 
+**tags** | **List&lt;String&gt;** |  | 
 **type** | **FavoriteType** |  | 
 **visibility** | **FavoriteGroupVisibility** |  | 
-**tags** | **List&lt;String&gt;** |  | 
 
 
 

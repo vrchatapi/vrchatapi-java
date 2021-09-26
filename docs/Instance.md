@@ -9,13 +9,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **Boolean** |  | 
 **canRequestInvite** | **Boolean** |  | 
-**capacity** | **BigDecimal** |  | 
-**clientNumber** | **String** |  | 
+**capacity** | **Integer** |  | 
+**clientNumber** | **Integer** |  | 
 **full** | **Boolean** |  | 
 **id** | **String** |  | 
 **instanceId** | **String** |  | 
 **location** | **String** |  | 
-**nUsers** | **BigDecimal** |  | 
+**nUsers** | **Integer** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  |  [optional]
 **ownerId** | **String** |  | 

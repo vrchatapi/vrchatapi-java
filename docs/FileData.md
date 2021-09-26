@@ -7,13 +7,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fileName** | **String** |  | 
-**url** | **String** |  | 
-**md5** | **String** |  | 
-**sizeInBytes** | **BigDecimal** |  | 
-**status** | **FileStatus** |  | 
 **category** | [**CategoryEnum**](#CategoryEnum) |  |  [readonly]
+**fileName** | **String** |  | 
+**md5** | **String** |  | 
+**sizeInBytes** | **Integer** |  | 
+**status** | **FileStatus** |  | 
 **uploadId** | **String** |  | 
+**url** | **String** |  | 
 
 
 

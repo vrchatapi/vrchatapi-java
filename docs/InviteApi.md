@@ -4,22 +4,22 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/message/{messageId} | Get Invite Messages
-[**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/message | List Invite Messages
+[**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/{messageType}/{messageId} | Get Invite Messages
+[**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
 [**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User
 [**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite
-[**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/message/{messageId} | Reset Invite Message
+[**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/{messageType}/{messageId} | Reset Invite Message
 [**respondInvite**](InviteApi.md#respondInvite) | **POST** /invite/{notificationId}/response | Respond Invite
-[**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/message/{messageId} | Update Invite Message
+[**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/{messageType}/{messageId} | Update Invite Message
 
 
 <a name="getInviteMessage"></a>
 # **getInviteMessage**
-> InviteMessage getInviteMessage(userId, messageId)
+> InviteMessage getInviteMessage(userId, messageType, messageId)
 
 Get Invite Messages
 
-Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!
+Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
 
 ### Example
 ```java
@@ -50,9 +50,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    String messageType = "messageType_example"; // String | 
     Integer messageId = 56; // Integer | 
     try {
-      InviteMessage result = apiInstance.getInviteMessage(userId, messageId);
+      InviteMessage result = apiInstance.getInviteMessage(userId, messageType, messageId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#getInviteMessage");
@@ -70,6 +71,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **messageType** | **String**|  | [enum: message, response, request, requestResponse]
  **messageId** | **Integer**|  |
 
 ### Return type
@@ -94,11 +96,11 @@ Name | Type | Description  | Notes
 
 <a name="getInviteMessages"></a>
 # **getInviteMessages**
-> List&lt;InviteMessage&gt; getInviteMessages(userId)
+> List&lt;InviteMessage&gt; getInviteMessages(userId, messageType)
 
 List Invite Messages
 
-Returns a list of all that users Invite Messages. Admin Credentials are required to view messages of other users!
+Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
 
 ### Example
 ```java
@@ -129,8 +131,9 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    String messageType = "messageType_example"; // String | 
     try {
-      List<InviteMessage> result = apiInstance.getInviteMessages(userId);
+      List<InviteMessage> result = apiInstance.getInviteMessages(userId, messageType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#getInviteMessages");
@@ -148,6 +151,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **messageType** | **String**|  | [enum: message, response, request, requestResponse]
 
 ### Return type
 
@@ -325,11 +329,11 @@ Name | Type | Description  | Notes
 
 <a name="resetInviteMessage"></a>
 # **resetInviteMessage**
-> List&lt;InviteMessage&gt; resetInviteMessage(userId, messageId)
+> List&lt;InviteMessage&gt; resetInviteMessage(userId, messageType, messageId)
 
 Reset Invite Message
 
-Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
 
 ### Example
 ```java
@@ -360,9 +364,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    String messageType = "messageType_example"; // String | 
     Integer messageId = 56; // Integer | 
     try {
-      List<InviteMessage> result = apiInstance.resetInviteMessage(userId, messageId);
+      List<InviteMessage> result = apiInstance.resetInviteMessage(userId, messageType, messageId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#resetInviteMessage");
@@ -380,6 +385,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **messageType** | **String**|  | [enum: message, response, request, requestResponse]
  **messageId** | **Integer**|  |
 
 ### Return type
@@ -483,11 +489,11 @@ Name | Type | Description  | Notes
 
 <a name="updateInviteMessage"></a>
 # **updateInviteMessage**
-> List&lt;InviteMessage&gt; updateInviteMessage(userId, messageId)
+> List&lt;InviteMessage&gt; updateInviteMessage(userId, messageType, messageId)
 
 Update Invite Message
 
-Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
 
 ### Example
 ```java
@@ -518,9 +524,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    String messageType = "messageType_example"; // String | 
     Integer messageId = 56; // Integer | 
     try {
-      List<InviteMessage> result = apiInstance.updateInviteMessage(userId, messageId);
+      List<InviteMessage> result = apiInstance.updateInviteMessage(userId, messageType, messageId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#updateInviteMessage");
@@ -538,6 +545,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **messageType** | **String**|  | [enum: message, response, request, requestResponse]
  **messageId** | **Integer**|  |
 
 ### Return type
