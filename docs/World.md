@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **previewYoutubeId** | **String** |  |  [optional]
 **privateOccupants** | **Integer** |  |  [optional]
 **publicOccupants** | **Integer** |  |  [optional]
-**publicationDate** | **OffsetDateTime** |  | 
+**publicationDate** | **String** |  | 
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 

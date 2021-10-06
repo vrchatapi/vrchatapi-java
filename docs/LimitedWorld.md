@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **occupants** | **Integer** |  | 
 **organization** | **String** |  | 
 **popularity** | **Integer** |  | 
-**publicationDate** | **OffsetDateTime** |  | 
+**publicationDate** | **String** |  | 
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
