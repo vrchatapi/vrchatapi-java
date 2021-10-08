@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **active** | **Boolean** |  | 
 **canRequestInvite** | **Boolean** |  | 
 **capacity** | **Integer** |  | 
-**clientNumber** | **Integer** |  | 
+**clientNumber** | **String** |  | 
 **full** | **Boolean** |  | 
 **id** | **String** |  | 
 **instanceId** | **String** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **nUsers** | **Integer** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  |  [optional]
-**ownerId** | **String** |  | 
+**ownerId** | **String** |  |  [optional]
 **permanent** | **Boolean** |  | 
 **photonRegion** | **String** |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 
