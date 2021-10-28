@@ -310,7 +310,7 @@ This endpoint does not need any parameter.
 
 <a name="verify2FA"></a>
 # **verify2FA**
-> InlineResponse2001 verify2FA(inlineObject)
+> Verify2FAResult verify2FA(twoFactorAuthCode)
 
 Verify 2FA code
 
@@ -338,9 +338,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    InlineObject inlineObject = new InlineObject(); // InlineObject | 
+    TwoFactorAuthCode twoFactorAuthCode = new TwoFactorAuthCode(); // TwoFactorAuthCode | 
     try {
-      InlineResponse2001 result = apiInstance.verify2FA(inlineObject);
+      Verify2FAResult result = apiInstance.verify2FA(twoFactorAuthCode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#verify2FA");
@@ -357,11 +357,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional]
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional]
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Verify2FAResult**](Verify2FAResult.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 <a name="verifyAuthToken"></a>
 # **verifyAuthToken**
-> InlineResponse200 verifyAuthToken()
+> VerifyAuthTokenResult verifyAuthToken()
 
 Verify Auth Token
 
@@ -409,7 +409,7 @@ public class Example {
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     try {
-      InlineResponse200 result = apiInstance.verifyAuthToken();
+      VerifyAuthTokenResult result = apiInstance.verifyAuthToken();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#verifyAuthToken");
@@ -427,7 +427,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**VerifyAuthTokenResult**](VerifyAuthTokenResult.md)
 
 ### Authorization
 
@@ -441,12 +441,12 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns wether a provided auth token is valid or not. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="verifyRecoveryCode"></a>
 # **verifyRecoveryCode**
-> InlineResponse2001 verifyRecoveryCode(inlineObject1)
+> Verify2FAResult verifyRecoveryCode(twoFactorAuthCode)
 
 Verify 2FA code with Recovery code
 
@@ -474,9 +474,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    InlineObject1 inlineObject1 = new InlineObject1(); // InlineObject1 | 
+    TwoFactorAuthCode twoFactorAuthCode = new TwoFactorAuthCode(); // TwoFactorAuthCode | 
     try {
-      InlineResponse2001 result = apiInstance.verifyRecoveryCode(inlineObject1);
+      Verify2FAResult result = apiInstance.verifyRecoveryCode(twoFactorAuthCode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#verifyRecoveryCode");
@@ -493,11 +493,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | [optional]
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional]
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Verify2FAResult**](Verify2FAResult.md)
 
 ### Authorization
 

@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a single User object. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getUserByName"></a>
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a single User object. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="searchUsers"></a>
@@ -241,13 +241,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a list of LimitedUser objects. |  -  |
 **400** | Error response when trying to search list of users with an invalid request. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="updateUser"></a>
 # **updateUser**
-> CurrentUser updateUser(userId, inlineObject2)
+> CurrentUser updateUser(userId, updateUserRequest)
 
 Update User Info
 
@@ -282,9 +282,9 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | 
-    InlineObject2 inlineObject2 = new InlineObject2(); // InlineObject2 | 
+    UpdateUserRequest updateUserRequest = new UpdateUserRequest(); // UpdateUserRequest | 
     try {
-      CurrentUser result = apiInstance.updateUser(userId, inlineObject2);
+      CurrentUser result = apiInstance.updateUser(userId, updateUserRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#updateUser");
@@ -302,7 +302,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
- **inlineObject2** | [**InlineObject2**](InlineObject2.md)|  | [optional]
+ **updateUserRequest** | [**UpdateUserRequest**](UpdateUserRequest.md)|  | [optional]
 
 ### Return type
 
@@ -320,5 +320,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a single CurrentUser object. |  -  |
 

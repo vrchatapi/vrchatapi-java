@@ -210,7 +210,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
-    InviteRequest inviteRequest = new InviteRequest(); // InviteRequest | Instance ID when inviting a user.
+    InviteRequest inviteRequest = new InviteRequest(); // InviteRequest | Slot number of the Invite Message to use when inviting a user.
     try {
       Notification result = apiInstance.inviteUser(userId, inviteRequest);
       System.out.println(result);
@@ -230,7 +230,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
- **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Instance ID when inviting a user. | [optional]
+ **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Slot number of the Invite Message to use when inviting a user. | [optional]
 
 ### Return type
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 Respond Invite
 
-Sends a world invite to a user.
+Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
 
 ### Example
 ```java

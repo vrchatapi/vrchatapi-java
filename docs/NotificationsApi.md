@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**clearNotifications**](NotificationsApi.md#clearNotifications) | **PUT** /auth/user/notifications/clear | Clear All Notifications
 [**deleteNotification**](NotificationsApi.md#deleteNotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification
 [**getNotifications**](NotificationsApi.md#getNotifications) | **GET** /auth/user/notifications | List Notifications
-[**markNotificationAsRead**](NotificationsApi.md#markNotificationAsRead) | **PUT** /auth/user/notifications/{notificationId}/see | Mark As Read
+[**markNotificationAsRead**](NotificationsApi.md#markNotificationAsRead) | **PUT** /auth/user/notifications/{notificationId}/see | Mark Notification As Read
 
 
 <a name="acceptFriendRequest"></a>
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 # **markNotificationAsRead**
 > Notification markNotificationAsRead(notificationId)
 
-Mark As Read
+Mark Notification As Read
 
 Mark a notification as seen.
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.js | Download Frontend CSS
+[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.js | Download CSS
 [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users
 [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health
-[**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download Frontend JavaScript
+[**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript
 [**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **getCSS**
 > String getCSS(variant, branch)
 
-Download Frontend CSS
+Download CSS
 
 Fetches the CSS code to the frontend React website.
 
@@ -133,7 +133,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Set-Cookie -  <br>  |
+**200** | Returns the API&#39;s config. |  * Set-Cookie -  <br>  |
 
 <a name="getCurrentOnlineUsers"></a>
 # **getCurrentOnlineUsers**
@@ -195,7 +195,7 @@ No authorization required
 
 <a name="getHealth"></a>
 # **getHealth**
-> InlineResponse2002 getHealth()
+> APIHealth getHealth()
 
 Check API Health
 
@@ -217,7 +217,7 @@ public class Example {
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {
-      InlineResponse2002 result = apiInstance.getHealth();
+      APIHealth result = apiInstance.getHealth();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SystemApi#getHealth");
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**APIHealth**](APIHealth.md)
 
 ### Authorization
 
@@ -249,13 +249,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | API&#39;s Health |  -  |
+**200** | Returns the API&#39;s health. |  -  |
 
 <a name="getJavaScript"></a>
 # **getJavaScript**
 > String getJavaScript(variant, branch)
 
-Download Frontend JavaScript
+Download JavaScript
 
 Fetches the JavaScript code to the frontend React website.
 
