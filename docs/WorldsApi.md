@@ -198,7 +198,7 @@ public class Example {
     String featured = "featured_example"; // String | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
-    String order = "descending"; // String | 
+    String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated).
@@ -296,7 +296,7 @@ public class Example {
     String featured = "featured_example"; // String | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
-    String order = "descending"; // String | 
+    String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated).
@@ -397,7 +397,7 @@ public class Example {
     String featured = "featured_example"; // String | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
-    String order = "descending"; // String | 
+    String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated).
@@ -874,10 +874,10 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String featured = "featured_example"; // String | Filters on featured results.
     String sort = "popularity"; // String | 
-    String user = "user_example"; // String | Set to `me` for searching own worlds.
+    String user = "me"; // String | Set to `me` for searching own worlds.
     String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
-    String order = "descending"; // String | 
+    String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated).

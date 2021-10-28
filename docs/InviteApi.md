@@ -50,7 +50,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
-    String messageType = "messageType_example"; // String | 
+    String messageType = "message"; // String | 
     Integer messageId = 56; // Integer | 
     try {
       InviteMessage result = apiInstance.getInviteMessage(userId, messageType, messageId);
@@ -131,7 +131,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
-    String messageType = "messageType_example"; // String | 
+    String messageType = "message"; // String | 
     try {
       List<InviteMessage> result = apiInstance.getInviteMessages(userId, messageType);
       System.out.println(result);
@@ -364,7 +364,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
-    String messageType = "messageType_example"; // String | 
+    String messageType = "message"; // String | 
     Integer messageId = 56; // Integer | 
     try {
       List<InviteMessage> result = apiInstance.resetInviteMessage(userId, messageType, messageId);
@@ -524,7 +524,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
-    String messageType = "messageType_example"; // String | 
+    String messageType = "message"; // String | 
     Integer messageId = 56; // Integer | 
     try {
       List<InviteMessage> result = apiInstance.updateInviteMessage(userId, messageType, messageId);

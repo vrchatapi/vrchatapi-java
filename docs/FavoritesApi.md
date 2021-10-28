@@ -127,7 +127,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "favoriteGroupType_example"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
@@ -283,7 +283,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "favoriteGroupType_example"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
@@ -601,7 +601,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "favoriteGroupType_example"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | 
     String userId = "userId_example"; // String | 
     InlineObject9 inlineObject9 = new InlineObject9(); // InlineObject9 | 
