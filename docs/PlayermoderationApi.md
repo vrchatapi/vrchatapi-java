@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 <a name="moderateUser"></a>
 # **moderateUser**
-> PlayerModeration moderateUser(inlineObject12)
+> PlayerModeration moderateUser(moderateUserRequest)
 
 Moderate User
 
@@ -352,9 +352,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    InlineObject12 inlineObject12 = new InlineObject12(); // InlineObject12 | 
+    ModerateUserRequest moderateUserRequest = new ModerateUserRequest(); // ModerateUserRequest | 
     try {
-      PlayerModeration result = apiInstance.moderateUser(inlineObject12);
+      PlayerModeration result = apiInstance.moderateUser(moderateUserRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayermoderationApi#moderateUser");
@@ -371,7 +371,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional]
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional]
 
 ### Return type
 
@@ -394,11 +394,11 @@ Name | Type | Description  | Notes
 
 <a name="unmoderateUser"></a>
 # **unmoderateUser**
-> Success unmoderateUser(inlineObject13)
+> Success unmoderateUser(moderateUserRequest)
 
 Unmoderate User
 
-Removes a player moderation previously added through &#x60;moderateUser&#x60;. E.g if you previuosly have shown their avatar, but now want to reset it to default.
+Removes a player moderation previously added through &#x60;moderateUser&#x60;. E.g if you previously have shown their avatar, but now want to reset it to default.
 
 ### Example
 ```java
@@ -428,9 +428,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    InlineObject13 inlineObject13 = new InlineObject13(); // InlineObject13 | 
+    ModerateUserRequest moderateUserRequest = new ModerateUserRequest(); // ModerateUserRequest | 
     try {
-      Success result = apiInstance.unmoderateUser(inlineObject13);
+      Success result = apiInstance.unmoderateUser(moderateUserRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayermoderationApi#unmoderateUser");
@@ -447,7 +447,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional]
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional]
 
 ### Return type
 

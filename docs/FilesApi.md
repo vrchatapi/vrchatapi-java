@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createFile"></a>
 # **createFile**
-> java.io.File createFile(inlineObject3)
+> java.io.File createFile(createFileRequest)
 
 Create File
 
@@ -52,9 +52,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    InlineObject3 inlineObject3 = new InlineObject3(); // InlineObject3 | 
+    CreateFileRequest createFileRequest = new CreateFileRequest(); // CreateFileRequest | 
     try {
-      java.io.File result = apiInstance.createFile(inlineObject3);
+      java.io.File result = apiInstance.createFile(createFileRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#createFile");
@@ -71,7 +71,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject3** | [**InlineObject3**](InlineObject3.md)|  | [optional]
+ **createFileRequest** | [**CreateFileRequest**](CreateFileRequest.md)|  | [optional]
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="createFileVersion"></a>
 # **createFileVersion**
-> java.io.File createFileVersion(fileId, inlineObject4)
+> java.io.File createFileVersion(fileId, createFileVersionRequest)
 
 Create File Version
 
@@ -128,9 +128,9 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | 
-    InlineObject4 inlineObject4 = new InlineObject4(); // InlineObject4 | 
+    CreateFileVersionRequest createFileVersionRequest = new CreateFileVersionRequest(); // CreateFileVersionRequest | 
     try {
-      java.io.File result = apiInstance.createFileVersion(fileId, inlineObject4);
+      java.io.File result = apiInstance.createFileVersion(fileId, createFileVersionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#createFileVersion");
@@ -148,7 +148,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **String**|  |
- **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional]
+ **createFileVersionRequest** | [**CreateFileVersionRequest**](CreateFileVersionRequest.md)|  | [optional]
 
 ### Return type
 
@@ -401,7 +401,7 @@ null (empty response body)
 
 <a name="finishFileDataUpload"></a>
 # **finishFileDataUpload**
-> java.io.File finishFileDataUpload(fileId, versionId, fileType, inlineObject5)
+> java.io.File finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest)
 
 Finish FileData Upload
 
@@ -438,9 +438,9 @@ public class Example {
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | 
     Integer versionId = 1; // Integer | 
     String fileType = "file"; // String | 
-    InlineObject5 inlineObject5 = new InlineObject5(); // InlineObject5 | 
+    FinishFileDataUploadRequest finishFileDataUploadRequest = new FinishFileDataUploadRequest(); // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
     try {
-      java.io.File result = apiInstance.finishFileDataUpload(fileId, versionId, fileType, inlineObject5);
+      java.io.File result = apiInstance.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#finishFileDataUpload");
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
  **fileId** | **String**|  |
  **versionId** | **Integer**|  |
  **fileType** | **String**|  | [enum: file, signature, delta]
- **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional]
+ **finishFileDataUploadRequest** | [**FinishFileDataUploadRequest**](FinishFileDataUploadRequest.md)| Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. | [optional]
 
 ### Return type
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 <a name="getFileDataUploadStatus"></a>
 # **getFileDataUploadStatus**
-> InlineResponse2003 getFileDataUploadStatus(fileId, versionId, fileType)
+> FileVersionUploadStatus getFileDataUploadStatus(fileId, versionId, fileType)
 
 Check FileData Upload Status
 
@@ -596,7 +596,7 @@ public class Example {
     Integer versionId = 1; // Integer | 
     String fileType = "file"; // String | 
     try {
-      InlineResponse2003 result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
+      FileVersionUploadStatus result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#getFileDataUploadStatus");
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FileVersionUploadStatus**](FileVersionUploadStatus.md)
 
 ### Authorization
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 <a name="startFileDataUpload"></a>
 # **startFileDataUpload**
-> InlineResponse2004 startFileDataUpload(fileId, versionId, fileType, partNumber)
+> FileUploadURL startFileDataUpload(fileId, versionId, fileType, partNumber)
 
 Start FileData Upload
 
@@ -757,7 +757,7 @@ public class Example {
     String fileType = "file"; // String | 
     Integer partNumber = 1; // Integer | 
     try {
-      InlineResponse2004 result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
+      FileUploadURL result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#startFileDataUpload");
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**FileUploadURL**](FileUploadURL.md)
 
 ### Authorization
 

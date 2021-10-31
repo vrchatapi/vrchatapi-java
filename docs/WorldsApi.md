@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="createWorld"></a>
 # **createWorld**
-> World createWorld(inlineObject6)
+> World createWorld(createWorldRequest)
 
 Create World
 
@@ -42,9 +42,9 @@ public class Example {
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
-    InlineObject6 inlineObject6 = new InlineObject6(); // InlineObject6 | 
+    CreateWorldRequest createWorldRequest = new CreateWorldRequest(); // CreateWorldRequest | 
     try {
-      World result = apiInstance.createWorld(inlineObject6);
+      World result = apiInstance.createWorld(createWorldRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#createWorld");
@@ -61,7 +61,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | [optional]
+ **createWorldRequest** | [**CreateWorldRequest**](CreateWorldRequest.md)|  | [optional]
 
 ### Return type
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 <a name="getWorldMetadata"></a>
 # **getWorldMetadata**
-> InlineResponse2005 getWorldMetadata(worldId)
+> WorldMetadata getWorldMetadata(worldId)
 
 Get World Metadata
 
@@ -645,7 +645,7 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | 
     try {
-      InlineResponse2005 result = apiInstance.getWorldMetadata(worldId);
+      WorldMetadata result = apiInstance.getWorldMetadata(worldId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getWorldMetadata");
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**WorldMetadata**](WorldMetadata.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 <a name="getWorldPublishStatus"></a>
 # **getWorldPublishStatus**
-> InlineResponse2006 getWorldPublishStatus(worldId)
+> WorldPublishStatus getWorldPublishStatus(worldId)
 
 Get World Publish Status
 
@@ -721,7 +721,7 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | 
     try {
-      InlineResponse2006 result = apiInstance.getWorldPublishStatus(worldId);
+      WorldPublishStatus result = apiInstance.getWorldPublishStatus(worldId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getWorldPublishStatus");
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**WorldPublishStatus**](WorldPublishStatus.md)
 
 ### Authorization
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a single WorldPublishStatus object. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
@@ -1016,7 +1016,7 @@ null (empty response body)
 
 <a name="updateWorld"></a>
 # **updateWorld**
-> World updateWorld(worldId, inlineObject7)
+> World updateWorld(worldId, updateWorldRequest)
 
 Update World
 
@@ -1051,9 +1051,9 @@ public class Example {
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | 
-    InlineObject7 inlineObject7 = new InlineObject7(); // InlineObject7 | 
+    UpdateWorldRequest updateWorldRequest = new UpdateWorldRequest(); // UpdateWorldRequest | 
     try {
-      World result = apiInstance.updateWorld(worldId, inlineObject7);
+      World result = apiInstance.updateWorld(worldId, updateWorldRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#updateWorld");
@@ -1071,7 +1071,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**|  |
- **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | [optional]
+ **updateWorldRequest** | [**UpdateWorldRequest**](UpdateWorldRequest.md)|  | [optional]
 
 ### Return type
 

@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | &lt;- Always empty. | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
+**location** | **String** |  |  [optional]
+**friendKey** | **String** |  |  [optional]
 
 
 

@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 <a name="addFavorite"></a>
 # **addFavorite**
-> Favorite addFavorite(inlineObject8)
+> Favorite addFavorite(addFavoriteRequest)
 
 Add Favorite
 
-Add a new favorite.  Friend groups are named &#x60;group_0&#x60; through &#x60;group_3&#x60;. Avatar and World groups are named &#x60;avatars1&#x60; to &#x60;avatar4&#x60; and &#x60;worlds1&#x60; to &#x60;worlds4&#x60;.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
+Add a new favorite.  Friend groups are named &#x60;group_0&#x60; through &#x60;group_3&#x60;. Avatar and World groups are named &#x60;avatars1&#x60; to &#x60;avatars4&#x60; and &#x60;worlds1&#x60; to &#x60;worlds4&#x60;.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
 
 ### Example
 ```java
@@ -50,9 +50,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    InlineObject8 inlineObject8 = new InlineObject8(); // InlineObject8 | 
+    AddFavoriteRequest addFavoriteRequest = new AddFavoriteRequest(); // AddFavoriteRequest | 
     try {
-      Favorite result = apiInstance.addFavorite(inlineObject8);
+      Favorite result = apiInstance.addFavorite(addFavoriteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#addFavorite");
@@ -69,7 +69,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | [optional]
+ **addFavoriteRequest** | [**AddFavoriteRequest**](AddFavoriteRequest.md)|  | [optional]
 
 ### Return type
 
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 <a name="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**
-> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject9)
+> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
 
 Update Favorite Group
 
@@ -604,9 +604,9 @@ public class Example {
     String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | 
     String userId = "userId_example"; // String | 
-    InlineObject9 inlineObject9 = new InlineObject9(); // InlineObject9 | 
+    UpdateFavoriteGroupRequest updateFavoriteGroupRequest = new UpdateFavoriteGroupRequest(); // UpdateFavoriteGroupRequest | 
     try {
-      apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject9);
+      apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#updateFavoriteGroup");
       System.err.println("Status code: " + e.getCode());
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
  **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar]
  **favoriteGroupName** | **String**|  |
  **userId** | **String**|  |
- **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | [optional]
+ **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional]
 
 ### Return type
 

@@ -10,12 +10,13 @@ Method | HTTP request | Description
 [**getFavoritedAvatars**](AvatarsApi.md#getFavoritedAvatars) | **GET** /avatars/favorites | List Favorited Avatars
 [**searchAvatars**](AvatarsApi.md#searchAvatars) | **GET** /avatars | Search Avatars
 [**selectAvatar**](AvatarsApi.md#selectAvatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
+[**selectFallbackAvatar**](AvatarsApi.md#selectFallbackAvatar) | **PUT** /avatars/{avatarId}/selectFallback | Select Fallback Avatar
 [**updateAvatar**](AvatarsApi.md#updateAvatar) | **PUT** /avatars/{avatarId} | Update Avatar
 
 
 <a name="createAvatar"></a>
 # **createAvatar**
-> Avatar createAvatar(inlineObject10)
+> Avatar createAvatar(createAvatarRequest)
 
 Create Avatar
 
@@ -49,9 +50,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
-    InlineObject10 inlineObject10 = new InlineObject10(); // InlineObject10 | 
+    CreateAvatarRequest createAvatarRequest = new CreateAvatarRequest(); // CreateAvatarRequest | 
     try {
-      Avatar result = apiInstance.createAvatar(inlineObject10);
+      Avatar result = apiInstance.createAvatar(createAvatarRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AvatarsApi#createAvatar");
@@ -68,7 +69,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional]
+ **createAvatarRequest** | [**CreateAvatarRequest**](CreateAvatarRequest.md)|  | [optional]
 
 ### Return type
 
@@ -521,9 +522,87 @@ Name | Type | Description  | Notes
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
+<a name="selectFallbackAvatar"></a>
+# **selectFallbackAvatar**
+> CurrentUser selectFallbackAvatar(avatarId)
+
+Select Fallback Avatar
+
+Switches into that avatar as your fallback avatar.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    String avatarId = "avatarId_example"; // String | 
+    try {
+      CurrentUser result = apiInstance.selectFallbackAvatar(avatarId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#selectFallbackAvatar");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **avatarId** | **String**|  |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single CurrentUser object. |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**403** | Error response when trying to select a fallback avatar that is missing the fallback tag. |  -  |
+**404** | Error response when trying to show information about a non-existent avatar. |  -  |
+
 <a name="updateAvatar"></a>
 # **updateAvatar**
-> Avatar updateAvatar(avatarId, inlineObject11)
+> Avatar updateAvatar(avatarId, updateAvatarRequest)
 
 Update Avatar
 
@@ -558,9 +637,9 @@ public class Example {
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
     String avatarId = "avatarId_example"; // String | 
-    InlineObject11 inlineObject11 = new InlineObject11(); // InlineObject11 | 
+    UpdateAvatarRequest updateAvatarRequest = new UpdateAvatarRequest(); // UpdateAvatarRequest | 
     try {
-      Avatar result = apiInstance.updateAvatar(avatarId, inlineObject11);
+      Avatar result = apiInstance.updateAvatar(avatarId, updateAvatarRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AvatarsApi#updateAvatar");
@@ -578,7 +657,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **avatarId** | **String**|  |
- **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional]
+ **updateAvatarRequest** | [**UpdateAvatarRequest**](UpdateAvatarRequest.md)|  | [optional]
 
 ### Return type
 

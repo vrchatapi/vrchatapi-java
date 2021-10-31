@@ -4,7 +4,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAssignedPermissions**](PermissionsApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permission
+[**getAssignedPermissions**](PermissionsApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions
 [**getPermission**](PermissionsApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **getAssignedPermissions**
 > List&lt;Permission&gt; getAssignedPermissions()
 
-Get Assigned Permission
+Get Assigned Permissions
 
 Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
 
