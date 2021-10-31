@@ -14,7 +14,7 @@ rm src/main/java/io/github/vrchatapi/model -rf
 --git-user-id=vrchatapi \
 --git-repo-id=vrchatapi-java \
 -o . \
--i https://vrchatapi.github.io/specification/openapi.yaml \
+-i https://raw.githubusercontent.com/vrchatapi/specification/gh-pages/openapi.yaml \
 --http-user-agent="vrchatapi-java"
 
 # Remove unneccesary copy of spec
