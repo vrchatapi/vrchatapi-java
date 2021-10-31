@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="clearAllPlayerModerations"></a>
 # **clearAllPlayerModerations**
-> Error clearAllPlayerModerations()
+> Success clearAllPlayerModerations()
 
 Clear All Player Moderations
 
@@ -49,7 +49,7 @@ public class Example {
 
     PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
     try {
-      Error result = apiInstance.clearAllPlayerModerations();
+      Success result = apiInstance.clearAllPlayerModerations();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayermoderationApi#clearAllPlayerModerations");
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Error**](Error.md)
+[**Success**](Success.md)
 
 ### Authorization
 

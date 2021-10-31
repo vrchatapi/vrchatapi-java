@@ -19,43 +19,41 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.Error;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * **Deprecation:** &#x60;Object&#x60; has unknown usage/fields, and is always empty. Use normal &#x60;Url&#x60; field instead.
- * @deprecated
+ * InlineResponse404
  */
-@Deprecated
-@ApiModel(description = "**Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class AvatarUnityPackageUrlObject {
-  public static final String SERIALIZED_NAME_UNITY_PACKAGE_URL = "unityPackageUrl";
-  @SerializedName(SERIALIZED_NAME_UNITY_PACKAGE_URL)
-  private String unityPackageUrl;
+public class InlineResponse404 {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private Error error;
 
 
-  public AvatarUnityPackageUrlObject unityPackageUrl(String unityPackageUrl) {
+  public InlineResponse404 error(Error error) {
     
-    this.unityPackageUrl = unityPackageUrl;
+    this.error = error;
     return this;
   }
 
    /**
-   * Get unityPackageUrl
-   * @return unityPackageUrl
+   * Get error
+   * @return error
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public String getUnityPackageUrl() {
-    return unityPackageUrl;
+  public Error getError() {
+    return error;
   }
 
 
-  public void setUnityPackageUrl(String unityPackageUrl) {
-    this.unityPackageUrl = unityPackageUrl;
+  public void setError(Error error) {
+    this.error = error;
   }
 
 
@@ -67,20 +65,20 @@ public class AvatarUnityPackageUrlObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AvatarUnityPackageUrlObject avatarUnityPackageUrlObject = (AvatarUnityPackageUrlObject) o;
-    return Objects.equals(this.unityPackageUrl, avatarUnityPackageUrlObject.unityPackageUrl);
+    InlineResponse404 inlineResponse404 = (InlineResponse404) o;
+    return Objects.equals(this.error, inlineResponse404.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unityPackageUrl);
+    return Objects.hash(error);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AvatarUnityPackageUrlObject {\n");
-    sb.append("    unityPackageUrl: ").append(toIndentedString(unityPackageUrl)).append("\n");
+    sb.append("class InlineResponse404 {\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }

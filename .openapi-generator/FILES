@@ -33,8 +33,10 @@ docs/FilesApi.md
 docs/FinishFileDataUploadRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
+docs/InlineResponse404.md
 docs/Instance.md
 docs/InstancePlatforms.md
+docs/InstancesApi.md
 docs/InviteApi.md
 docs/InviteMessage.md
 docs/InviteMessageType.md
@@ -63,6 +65,7 @@ docs/TwoFactorAuthCode.md
 docs/UnityPackage.md
 docs/UpdateAvatarRequest.md
 docs/UpdateFavoriteGroupRequest.md
+docs/UpdateInviteMessageRequest.md
 docs/UpdateUserRequest.md
 docs/UpdateWorldRequest.md
 docs/User.md
@@ -103,6 +106,7 @@ src/main/java/io/github/vrchatapi/api/AvatarsApi.java
 src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java
 src/main/java/io/github/vrchatapi/api/FriendsApi.java
+src/main/java/io/github/vrchatapi/api/InstancesApi.java
 src/main/java/io/github/vrchatapi/api/InviteApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
 src/main/java/io/github/vrchatapi/api/PermissionsApi.java
@@ -141,6 +145,7 @@ src/main/java/io/github/vrchatapi/model/FileVersion.java
 src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
+src/main/java/io/github/vrchatapi/model/InlineResponse404.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java
@@ -166,6 +171,7 @@ src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/User.java

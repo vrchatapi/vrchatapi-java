@@ -4,7 +4,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.js | Download CSS
+[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.css | Download CSS
 [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users
 [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health
@@ -141,7 +141,7 @@ No authorization required
 
 Current Online Users
 
-Returns in plain format the number of currently online users.  **NOTE:** The response type is not of JSON, but is an integer in plain ASCII format.
+Returns the current number of online users.  **NOTE:** The response type is not a JSON object, but a simple JSON integer.
 
 ### Example
 ```java
@@ -186,7 +186,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -322,7 +322,7 @@ No authorization required
 
 Current System Time
 
-Returns in plain format the current time of the API server.  **NOTE:** The response type is not of JSON, but is a string in plain ASCII format.
+Returns the current time of the API server.  **NOTE:** The response type is not a JSON object, but a simple JSON string.
 
 ### Example
 ```java
@@ -367,7 +367,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
