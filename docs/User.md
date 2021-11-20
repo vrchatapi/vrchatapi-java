@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **allowAvatarCopying** | **Boolean** |  | 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |  | 
-**currentAvatarImageUrl** | **String** |  | 
-**currentAvatarThumbnailImageUrl** | **String** |  | 
+**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **dateJoined** | **LocalDate** |  |  [readonly]
 **developerType** | **DeveloperType** |  | 
 **displayName** | **String** |  | 

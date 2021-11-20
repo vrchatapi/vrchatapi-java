@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **bioLinks** | **List&lt;String&gt;** |  | 
 **currentAvatar** | **String** |  | 
 **currentAvatarAssetUrl** | **String** |  | 
-**currentAvatarImageUrl** | **String** |  | 
-**currentAvatarThumbnailImageUrl** | **String** |  | 
+**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **dateJoined** | **LocalDate** |  | 
 **developerType** | **DeveloperType** |  | 
 **displayName** | **String** |  | 

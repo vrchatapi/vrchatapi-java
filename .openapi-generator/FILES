@@ -17,7 +17,7 @@ docs/CurrentUser.md
 docs/DeploymentGroup.md
 docs/DeveloperType.md
 docs/DownloadURLList.md
-docs/DynamicWorldRow.md
+docs/DynamicContentRow.md
 docs/EconomyApi.md
 docs/Error.md
 docs/Favorite.md
@@ -34,6 +34,11 @@ docs/FilesApi.md
 docs/FinishFileDataUploadRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
+docs/InfoPush.md
+docs/InfoPushData.md
+docs/InfoPushDataArticle.md
+docs/InfoPushDataArticleContent.md
+docs/InfoPushDataClickable.md
 docs/Instance.md
 docs/InstancePlatforms.md
 docs/InstancesApi.md
@@ -145,7 +150,7 @@ src/main/java/io/github/vrchatapi/model/CurrentUser.java
 src/main/java/io/github/vrchatapi/model/DeploymentGroup.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
 src/main/java/io/github/vrchatapi/model/DownloadURLList.java
-src/main/java/io/github/vrchatapi/model/DynamicWorldRow.java
+src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroup.java
@@ -158,6 +163,11 @@ src/main/java/io/github/vrchatapi/model/FileVersion.java
 src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
+src/main/java/io/github/vrchatapi/model/InfoPush.java
+src/main/java/io/github/vrchatapi/model/InfoPushData.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataArticle.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java

@@ -8,8 +8,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bio** | **String** |  |  [optional]
-**currentAvatarImageUrl** | **String** |  | 
-**currentAvatarThumbnailImageUrl** | **String** |  | 
+**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **developerType** | **DeveloperType** |  | 
 **displayName** | **String** |  | 
 **fallbackAvatar** | **String** |  | 

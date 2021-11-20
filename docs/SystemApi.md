@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users
 [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health
+[**getInfoPush**](SystemApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices
 [**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript
 [**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time
 
@@ -250,6 +251,70 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Returns the API&#39;s health. |  -  |
+
+<a name="getInfoPush"></a>
+# **getInfoPush**
+> List&lt;InfoPush&gt; getInfoPush(require, include)
+
+Show Information Notices
+
+IPS (Info Push System) is a system for VRChat to push out dynamic information to the client. This is primarily used by the Quick-Menu info banners, but can also be used to e.g. alert you to update your game to the latest version.  &#x60;include&#x60; is used to query what Information Pushes should be included in the response. If include is missing or empty, then no notices will normally be returned. This is an \&quot;any of\&quot; search.  &#x60;require&#x60; is used to limit what Information Pushes should be included in the response. This is usually used in combination with &#x60;include&#x60;, and is an \&quot;all of\&quot; search.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.SystemApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    SystemApi apiInstance = new SystemApi(defaultClient);
+    String require = "require_example"; // String | Tags to include (comma-separated). All of the tags needs to be present.
+    String include = "include_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
+    try {
+      List<InfoPush> result = apiInstance.getInfoPush(require, include);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SystemApi#getInfoPush");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **require** | **String**| Tags to include (comma-separated). All of the tags needs to be present. | [optional]
+ **include** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
+
+### Return type
+
+[**List&lt;InfoPush&gt;**](InfoPush.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a list of InfoPush objects. |  -  |
 
 <a name="getJavaScript"></a>
 # **getJavaScript**

@@ -286,7 +286,7 @@ public class Example {
     String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
-    String tag = "tag_example"; // String | Tags to include (comma-separated).
+    String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
     String releaseStatus = "public"; // String | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
  **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
  **search** | **String**| Filters by world name. | [optional]
- **tag** | **String**| Tags to include (comma-separated). | [optional]
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
  **notag** | **String**| Tags to exclude (comma-separated). | [optional]
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all]
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional]
@@ -388,7 +388,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     String order = "ascending"; // String | 
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    String tag = "tag_example"; // String | Tags to include (comma-separated).
+    String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
     String releaseStatus = "public"; // String | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
  **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **tag** | **String**| Tags to include (comma-separated). | [optional]
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
  **notag** | **String**| Tags to exclude (comma-separated). | [optional]
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all]
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional]

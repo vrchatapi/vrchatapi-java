@@ -445,7 +445,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String type = "type_example"; // String | The type of favorites to return, FavoriteType.
-    String tag = "tag_example"; // String | Tags to include (comma-separated).
+    String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     try {
       List<Favorite> result = apiInstance.getFavorites(n, offset, type, tag);
       System.out.println(result);
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
  **type** | **String**| The type of favorites to return, FavoriteType. | [optional]
- **tag** | **String**| Tags to include (comma-separated). | [optional]
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
 
 ### Return type
 
