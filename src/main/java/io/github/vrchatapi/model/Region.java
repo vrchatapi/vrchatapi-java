@@ -14,6 +14,7 @@ package io.github.vrchatapi.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -23,24 +24,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets SubscriptionPeriod
+ * API/Photon region.
  */
-@JsonAdapter(SubscriptionPeriod.Adapter.class)
-public enum SubscriptionPeriod {
+@JsonAdapter(Region.Adapter.class)
+public enum Region {
   
-  HOUR("hour"),
+  US("us"),
   
-  DAY("day"),
+  USE("use"),
   
-  WEEK("week"),
+  EU("eu"),
   
-  MONTH("month"),
-  
-  YEAR("year");
+  JP("jp");
 
   private String value;
 
-  SubscriptionPeriod(String value) {
+  Region(String value) {
     this.value = value;
   }
 
@@ -53,8 +52,8 @@ public enum SubscriptionPeriod {
     return String.valueOf(value);
   }
 
-  public static SubscriptionPeriod fromValue(String value) {
-    for (SubscriptionPeriod b : SubscriptionPeriod.values()) {
+  public static Region fromValue(String value) {
+    for (Region b : Region.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -62,16 +61,16 @@ public enum SubscriptionPeriod {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<SubscriptionPeriod> {
+  public static class Adapter extends TypeAdapter<Region> {
     @Override
-    public void write(final JsonWriter jsonWriter, final SubscriptionPeriod enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final Region enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public SubscriptionPeriod read(final JsonReader jsonReader) throws IOException {
+    public Region read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return SubscriptionPeriod.fromValue(value);
+      return Region.fromValue(value);
     }
   }
 }

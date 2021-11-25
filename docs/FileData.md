@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | [**CategoryEnum**](#CategoryEnum) |  |  [readonly]
+**category** | [**CategoryEnum**](#CategoryEnum) |  | 
 **fileName** | **String** |  | 
 **md5** | **String** |  | 
 **sizeInBytes** | **Integer** |  | 

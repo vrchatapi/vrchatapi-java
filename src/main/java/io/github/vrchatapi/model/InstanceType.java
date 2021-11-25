@@ -23,24 +23,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets SubscriptionPeriod
+ * Gets or Sets InstanceType
  */
-@JsonAdapter(SubscriptionPeriod.Adapter.class)
-public enum SubscriptionPeriod {
+@JsonAdapter(InstanceType.Adapter.class)
+public enum InstanceType {
   
-  HOUR("hour"),
+  PUBLIC("public"),
   
-  DAY("day"),
+  HIDDEN("hidden"),
   
-  WEEK("week"),
+  FRIENDS("friends"),
   
-  MONTH("month"),
-  
-  YEAR("year");
+  PRIVATE("private");
 
   private String value;
 
-  SubscriptionPeriod(String value) {
+  InstanceType(String value) {
     this.value = value;
   }
 
@@ -53,8 +51,8 @@ public enum SubscriptionPeriod {
     return String.valueOf(value);
   }
 
-  public static SubscriptionPeriod fromValue(String value) {
-    for (SubscriptionPeriod b : SubscriptionPeriod.values()) {
+  public static InstanceType fromValue(String value) {
+    for (InstanceType b : InstanceType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -62,16 +60,16 @@ public enum SubscriptionPeriod {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<SubscriptionPeriod> {
+  public static class Adapter extends TypeAdapter<InstanceType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final SubscriptionPeriod enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final InstanceType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public SubscriptionPeriod read(final JsonReader jsonReader) throws IOException {
+    public InstanceType read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return SubscriptionPeriod.fromValue(value);
+      return InstanceType.fromValue(value);
     }
   }
 }

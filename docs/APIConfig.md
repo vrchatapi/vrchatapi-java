@@ -50,9 +50,9 @@ Name | Type | Description | Notes
 **dynamicWorldRows** | [**Set&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows | 
 **events** | [**APIEventConfig**](APIEventConfig.md) |  | 
 **gearDemoRoomId** | **String** | Unknown | 
-**homeWorldId** | **String** |  | 
+**homeWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 
 **homepageRedirectTarget** | **String** | Redirect target if you try to open the base API domain in your browser | 
-**hubWorldId** | **String** |  | 
+**hubWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 
 **jobsEmail** | **String** | VRChat&#39;s job application email | 
 **messageOfTheDay** | **String** | MOTD | 
 **moderationEmail** | **String** | VRChat&#39;s moderation related email | 
@@ -69,8 +69,8 @@ Name | Type | Description | Notes
 **sdkUnityVersion** | **String** | Unity version supported by the SDK | 
 **serverName** | **String** | Server name of the API server currently responding | 
 **supportEmail** | **String** | VRChat&#39;s support email | 
-**timeOutWorldId** | **String** |  | 
-**tutorialWorldId** | **String** |  | 
+**timeOutWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 
+**tutorialWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 
 **updateRateMsMaximum** | **Integer** | Unknown | 
 **updateRateMsMinimum** | **Integer** | Unknown | 
 **updateRateMsNormal** | **Integer** | Unknown | 
