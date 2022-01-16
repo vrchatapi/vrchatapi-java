@@ -24,62 +24,37 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * VerifyAuthTokenResult
+ * RequestInviteRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class VerifyAuthTokenResult {
-  public static final String SERIALIZED_NAME_OK = "ok";
-  @SerializedName(SERIALIZED_NAME_OK)
-  private Boolean ok;
-
-  public static final String SERIALIZED_NAME_TOKEN = "token";
-  @SerializedName(SERIALIZED_NAME_TOKEN)
-  private String token;
+public class RequestInviteRequest {
+  public static final String SERIALIZED_NAME_MESSAGE_SLOT = "messageSlot";
+  @SerializedName(SERIALIZED_NAME_MESSAGE_SLOT)
+  private Integer messageSlot;
 
 
-  public VerifyAuthTokenResult ok(Boolean ok) {
+  public RequestInviteRequest messageSlot(Integer messageSlot) {
     
-    this.ok = ok;
+    this.messageSlot = messageSlot;
     return this;
   }
 
    /**
-   * Get ok
-   * @return ok
+   * Get messageSlot
+   * minimum: 0
+   * maximum: 11
+   * @return messageSlot
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public Boolean getOk() {
-    return ok;
+  public Integer getMessageSlot() {
+    return messageSlot;
   }
 
 
-  public void setOk(Boolean ok) {
-    this.ok = ok;
-  }
-
-
-  public VerifyAuthTokenResult token(String token) {
-    
-    this.token = token;
-    return this;
-  }
-
-   /**
-   * Get token
-   * @return token
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public String getToken() {
-    return token;
-  }
-
-
-  public void setToken(String token) {
-    this.token = token;
+  public void setMessageSlot(Integer messageSlot) {
+    this.messageSlot = messageSlot;
   }
 
 
@@ -91,22 +66,20 @@ public class VerifyAuthTokenResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VerifyAuthTokenResult verifyAuthTokenResult = (VerifyAuthTokenResult) o;
-    return Objects.equals(this.ok, verifyAuthTokenResult.ok) &&
-        Objects.equals(this.token, verifyAuthTokenResult.token);
+    RequestInviteRequest requestInviteRequest = (RequestInviteRequest) o;
+    return Objects.equals(this.messageSlot, requestInviteRequest.messageSlot);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ok, token);
+    return Objects.hash(messageSlot);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VerifyAuthTokenResult {\n");
-    sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("class RequestInviteRequest {\n");
+    sb.append("    messageSlot: ").append(toIndentedString(messageSlot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

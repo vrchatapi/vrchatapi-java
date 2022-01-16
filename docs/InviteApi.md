@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 <a name="requestInvite"></a>
 # **requestInvite**
-> Notification requestInvite(userId)
+> Notification requestInvite(userId, requestInviteRequest)
 
 Request Invite
 
@@ -289,8 +289,9 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | 
+    RequestInviteRequest requestInviteRequest = new RequestInviteRequest(); // RequestInviteRequest | Slot number of the Request Message to use when request an invite.
     try {
-      Notification result = apiInstance.requestInvite(userId);
+      Notification result = apiInstance.requestInvite(userId, requestInviteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#requestInvite");
@@ -308,6 +309,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  |
+ **requestInviteRequest** | [**RequestInviteRequest**](RequestInviteRequest.md)| Slot number of the Request Message to use when request an invite. | [optional]
 
 ### Return type
 
@@ -319,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -448,7 +450,7 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String notificationId = "notificationId_example"; // String | 
-    InviteResponse inviteResponse = new InviteResponse(); // InviteResponse | Instance ID when inviting a user.
+    InviteResponse inviteResponse = new InviteResponse(); // InviteResponse | Slot number of the Response Message to use when responding to a user.
     try {
       Notification result = apiInstance.respondInvite(notificationId, inviteResponse);
       System.out.println(result);
@@ -468,7 +470,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationId** | **String**|  |
- **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Instance ID when inviting a user. | [optional]
+ **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Slot number of the Response Message to use when responding to a user. | [optional]
 
 ### Return type
 

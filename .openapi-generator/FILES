@@ -69,6 +69,7 @@ docs/PlayermoderationApi.md
 docs/PublicAnnouncement.md
 docs/Region.md
 docs/ReleaseStatus.md
+docs/RequestInviteRequest.md
 docs/Response.md
 docs/Subscription.md
 docs/SubscriptionPeriod.md
@@ -195,6 +196,7 @@ src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
 src/main/java/io/github/vrchatapi/model/PublicAnnouncement.java
 src/main/java/io/github/vrchatapi/model/Region.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java
+src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
 src/main/java/io/github/vrchatapi/model/SubscriptionPeriod.java
