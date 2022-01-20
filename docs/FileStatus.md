@@ -11,5 +11,7 @@
 
 * `NONE` (value: `"none"`)
 
+* `QUEUED` (value: `"queued"`)
+
 
 

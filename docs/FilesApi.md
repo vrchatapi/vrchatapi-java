@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
  **fileId** | **String**|  |
  **versionId** | **Integer**|  |
  **fileType** | **String**|  | [enum: file, signature, delta]
- **partNumber** | **Integer**|  |
+ **partNumber** | **Integer**|  | [optional]
 
 ### Return type
 
