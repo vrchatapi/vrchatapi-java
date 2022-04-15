@@ -17,5 +17,9 @@
 
 * `SHOWAVATAR` (value: `"showAvatar"`)
 
+* `INTERACTON` (value: `"interactOn"`)
+
+* `INTERACTOFF` (value: `"interactOff"`)
+
 
 

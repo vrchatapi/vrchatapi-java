@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **steamId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **twoFactorAuthEnabled** | **Boolean** |  | 
-**twoFactorAuthEnabledDate** | **OffsetDateTime** |  | 
+**twoFactorAuthEnabledDate** | **OffsetDateTime** |  |  [optional]
 **unsubscribe** | **Boolean** |  | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
