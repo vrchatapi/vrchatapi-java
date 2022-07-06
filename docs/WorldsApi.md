@@ -195,7 +195,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
-    String featured = "featured_example"; // String | Filters on featured results.
+    Boolean featured = true; // Boolean | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
     String order = "ascending"; // String | 
@@ -225,7 +225,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **String**| Filters on featured results. | [optional]
+ **featured** | **Boolean**| Filters on featured results. | [optional]
  **sort** | **String**|  | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name]
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
@@ -293,7 +293,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
-    String featured = "featured_example"; // String | Filters on featured results.
+    Boolean featured = true; // Boolean | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
     String order = "ascending"; // String | 
@@ -324,7 +324,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **String**| Filters on featured results. | [optional]
+ **featured** | **Boolean**| Filters on featured results. | [optional]
  **sort** | **String**|  | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name]
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
@@ -394,7 +394,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
-    String featured = "featured_example"; // String | Filters on featured results.
+    Boolean featured = true; // Boolean | Filters on featured results.
     String sort = "popularity"; // String | 
     Integer n = 60; // Integer | The number of objects to return.
     String order = "ascending"; // String | 
@@ -425,7 +425,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **String**| Filters on featured results. | [optional]
+ **featured** | **Boolean**| Filters on featured results. | [optional]
  **sort** | **String**|  | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name]
  **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to descending] [enum: ascending, descending]
@@ -872,7 +872,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
-    String featured = "featured_example"; // String | Filters on featured results.
+    Boolean featured = true; // Boolean | Filters on featured results.
     String sort = "popularity"; // String | 
     String user = "me"; // String | Set to `me` for searching own worlds.
     String userId = "userId_example"; // String | Filter by UserID.
@@ -904,7 +904,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **String**| Filters on featured results. | [optional]
+ **featured** | **Boolean**| Filters on featured results. | [optional]
  **sort** | **String**|  | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name]
  **user** | **String**| Set to &#x60;me&#x60; for searching own worlds. | [optional] [enum: me]
  **userId** | **String**| Filter by UserID. | [optional]
