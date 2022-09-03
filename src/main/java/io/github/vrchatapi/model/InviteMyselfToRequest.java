@@ -24,38 +24,35 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * **Deprecation:** &#x60;Object&#x60; has unknown usage/fields, and is always empty. Use normal &#x60;Url&#x60; field instead.
- * @deprecated
+ * InviteMyselfToRequest
  */
-@Deprecated
-@ApiModel(description = "**Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class AvatarUnityPackageUrlObject {
-  public static final String SERIALIZED_NAME_UNITY_PACKAGE_URL = "unityPackageUrl";
-  @SerializedName(SERIALIZED_NAME_UNITY_PACKAGE_URL)
-  private String unityPackageUrl;
+public class InviteMyselfToRequest {
+  public static final String SERIALIZED_NAME_SHORT_NAME = "shortName";
+  @SerializedName(SERIALIZED_NAME_SHORT_NAME)
+  private String shortName;
 
 
-  public AvatarUnityPackageUrlObject unityPackageUrl(String unityPackageUrl) {
+  public InviteMyselfToRequest shortName(String shortName) {
     
-    this.unityPackageUrl = unityPackageUrl;
+    this.shortName = shortName;
     return this;
   }
 
    /**
-   * Get unityPackageUrl
-   * @return unityPackageUrl
+   * Short Name of the Instance; can be retrieved from the Get Instance Short Name endpoint.
+   * @return shortName
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Short Name of the Instance; can be retrieved from the Get Instance Short Name endpoint.")
 
-  public String getUnityPackageUrl() {
-    return unityPackageUrl;
+  public String getShortName() {
+    return shortName;
   }
 
 
-  public void setUnityPackageUrl(String unityPackageUrl) {
-    this.unityPackageUrl = unityPackageUrl;
+  public void setShortName(String shortName) {
+    this.shortName = shortName;
   }
 
 
@@ -67,20 +64,20 @@ public class AvatarUnityPackageUrlObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AvatarUnityPackageUrlObject avatarUnityPackageUrlObject = (AvatarUnityPackageUrlObject) o;
-    return Objects.equals(this.unityPackageUrl, avatarUnityPackageUrlObject.unityPackageUrl);
+    InviteMyselfToRequest inviteMyselfToRequest = (InviteMyselfToRequest) o;
+    return Objects.equals(this.shortName, inviteMyselfToRequest.shortName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unityPackageUrl);
+    return Objects.hash(shortName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AvatarUnityPackageUrlObject {\n");
-    sb.append("    unityPackageUrl: ").append(toIndentedString(unityPackageUrl)).append("\n");
+    sb.append("class InviteMyselfToRequest {\n");
+    sb.append("    shortName: ").append(toIndentedString(shortName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

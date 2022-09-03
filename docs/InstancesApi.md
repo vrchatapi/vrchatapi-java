@@ -5,6 +5,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
+[**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name
 [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
 [**sendSelfInvite**](InstancesApi.md#sendSelfInvite) | **POST** /instances/{worldId}:{instanceId}/invite | Send Self Invite
 
@@ -86,6 +87,83 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Returns a single Instance object. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
+
+<a name="getInstanceByShortName"></a>
+# **getInstanceByShortName**
+> Instance getInstanceByShortName(shortName)
+
+Get Instance By Short Name
+
+Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    String shortName = "shortName_example"; // String | 
+    try {
+      Instance result = apiInstance.getInstanceByShortName(shortName);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getInstanceByShortName");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **shortName** | **String**|  |
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single Instance object. |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**404** | Error response due to non existant instance |  -  |
 
 <a name="getShortName"></a>
 # **getShortName**

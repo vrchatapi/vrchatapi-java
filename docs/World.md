@@ -8,7 +8,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetUrl** | **String** | Empty if unauthenticated. | 
-**assetUrlObject** | **Object** |  | 
 **authorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. | 
 **authorName** | **String** |  | 
 **capacity** | **Integer** |  | 
@@ -25,7 +24,6 @@ Name | Type | Description | Notes
 **namespace** | **String** |  | 
 **occupants** | **Integer** |  |  [optional]
 **organization** | **String** |  | 
-**pluginUrlObject** | **Object** |  | 
 **popularity** | **Integer** |  | 
 **previewYoutubeId** | **String** |  |  [optional]
 **privateOccupants** | **Integer** |  |  [optional]
@@ -34,7 +32,6 @@ Name | Type | Description | Notes
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackageUrlObject** | **Object** |  | 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | 
 **updatedAt** | **OffsetDateTime** |  | 
 **version** | **Integer** |  | 

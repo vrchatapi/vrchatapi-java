@@ -85,8 +85,8 @@ Name | Type | Description | Notes
 **viveWindowsUrl** | **String** | Download link for game on the Steam website. | 
 **whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets | 
 **worldUpdatePeriod** | **Integer** | Unknown | 
-**youtubedlHash** | **String** | Currently used youtube-dl.exe hash in SHA-256-delimited format | 
-**youtubedlVersion** | **String** | Currently used youtube-dl.exe version | 
+**playerUrlResolverHash** | **String** | Currently used youtube-dl.exe hash in SHA-256-delimited format | 
+**playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version | 
 
 
 

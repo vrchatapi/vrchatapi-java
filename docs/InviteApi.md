@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/{messageType}/{slot} | Get Invite Message
 [**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
+[**inviteMyselfTo**](InviteApi.md#inviteMyselfTo) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance
 [**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User
 [**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite
 [**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message
@@ -174,9 +175,90 @@ Name | Type | Description  | Notes
 **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
 **401** | Error response due to missing authorization to perform that action. |  -  |
 
+<a name="inviteMyselfTo"></a>
+# **inviteMyselfTo**
+> SentNotification inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest)
+
+Invite Myself To Instance
+
+Sends self an invite to an instance
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InviteApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String worldId = "worldId_example"; // String | 
+    String instanceId = "instanceId_example"; // String | 
+    InviteMyselfToRequest inviteMyselfToRequest = new InviteMyselfToRequest(); // InviteMyselfToRequest | 
+    try {
+      SentNotification result = apiInstance.inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InviteApi#inviteMyselfTo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**|  |
+ **instanceId** | **String**|  |
+ **inviteMyselfToRequest** | [**InviteMyselfToRequest**](InviteMyselfToRequest.md)|  | [optional]
+
+### Return type
+
+[**SentNotification**](SentNotification.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single SentNotifcation object. |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**404** | Error response due to non existant instance |  -  |
+
 <a name="inviteUser"></a>
 # **inviteUser**
-> Notification inviteUser(userId, inviteRequest)
+> SentNotification inviteUser(userId, inviteRequest)
 
 Invite User
 
@@ -213,7 +295,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     InviteRequest inviteRequest = new InviteRequest(); // InviteRequest | Slot number of the Invite Message to use when inviting a user.
     try {
-      Notification result = apiInstance.inviteUser(userId, inviteRequest);
+      SentNotification result = apiInstance.inviteUser(userId, inviteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#inviteUser");
@@ -235,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Notification**](Notification.md)
+[**SentNotification**](SentNotification.md)
 
 ### Authorization
 
@@ -249,7 +331,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Notifcation object. |  -  |
+**200** | Returns a single SentNotifcation object. |  -  |
 **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
 <a name="requestInvite"></a>

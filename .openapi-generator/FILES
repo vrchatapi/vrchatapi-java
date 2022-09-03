@@ -46,6 +46,7 @@ docs/InstancesApi.md
 docs/InviteApi.md
 docs/InviteMessage.md
 docs/InviteMessageType.md
+docs/InviteMyselfToRequest.md
 docs/InviteRequest.md
 docs/InviteResponse.md
 docs/License.md
@@ -71,6 +72,7 @@ docs/Region.md
 docs/ReleaseStatus.md
 docs/RequestInviteRequest.md
 docs/Response.md
+docs/SentNotification.md
 docs/Subscription.md
 docs/SubscriptionPeriod.md
 docs/Success.md
@@ -176,6 +178,7 @@ src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java
 src/main/java/io/github/vrchatapi/model/InviteMessageType.java
+src/main/java/io/github/vrchatapi/model/InviteMyselfToRequest.java
 src/main/java/io/github/vrchatapi/model/InviteRequest.java
 src/main/java/io/github/vrchatapi/model/InviteResponse.java
 src/main/java/io/github/vrchatapi/model/License.java
@@ -198,6 +201,7 @@ src/main/java/io/github/vrchatapi/model/Region.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/Response.java
+src/main/java/io/github/vrchatapi/model/SentNotification.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
 src/main/java/io/github/vrchatapi/model/SubscriptionPeriod.java
 src/main/java/io/github/vrchatapi/model/Success.java

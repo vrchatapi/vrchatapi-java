@@ -26,10 +26,10 @@ import java.io.IOException;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * Notification
+ * SentNotification
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class Notification {
+public class SentNotification {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
@@ -46,9 +46,9 @@ public class Notification {
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
-  public static final String SERIALIZED_NAME_SEEN = "seen";
-  @SerializedName(SERIALIZED_NAME_SEEN)
-  private Boolean seen = false;
+  public static final String SERIALIZED_NAME_RECIEVER_USER_ID = "recieverUserId";
+  @SerializedName(SERIALIZED_NAME_RECIEVER_USER_ID)
+  private String recieverUserId;
 
   public static final String SERIALIZED_NAME_SENDER_USER_ID = "senderUserId";
   @SerializedName(SERIALIZED_NAME_SENDER_USER_ID)
@@ -63,7 +63,7 @@ public class Notification {
   private NotificationType type = NotificationType.FRIENDREQUEST;
 
 
-  public Notification createdAt(OffsetDateTime createdAt) {
+  public SentNotification createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -86,7 +86,7 @@ public class Notification {
   }
 
 
-  public Notification details(String details) {
+  public SentNotification details(String details) {
     
     this.details = details;
     return this;
@@ -109,7 +109,7 @@ public class Notification {
   }
 
 
-  public Notification id(String id) {
+  public SentNotification id(String id) {
     
     this.id = id;
     return this;
@@ -132,7 +132,7 @@ public class Notification {
   }
 
 
-  public Notification message(String message) {
+  public SentNotification message(String message) {
     
     this.message = message;
     return this;
@@ -155,30 +155,30 @@ public class Notification {
   }
 
 
-  public Notification seen(Boolean seen) {
+  public SentNotification recieverUserId(String recieverUserId) {
     
-    this.seen = seen;
+    this.recieverUserId = recieverUserId;
     return this;
   }
 
    /**
-   * Get seen
-   * @return seen
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return recieverUserId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", required = true, value = "A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.")
 
-  public Boolean getSeen() {
-    return seen;
+  public String getRecieverUserId() {
+    return recieverUserId;
   }
 
 
-  public void setSeen(Boolean seen) {
-    this.seen = seen;
+  public void setRecieverUserId(String recieverUserId) {
+    this.recieverUserId = recieverUserId;
   }
 
 
-  public Notification senderUserId(String senderUserId) {
+  public SentNotification senderUserId(String senderUserId) {
     
     this.senderUserId = senderUserId;
     return this;
@@ -201,7 +201,7 @@ public class Notification {
   }
 
 
-  public Notification senderUsername(String senderUsername) {
+  public SentNotification senderUsername(String senderUsername) {
     
     this.senderUsername = senderUsername;
     return this;
@@ -224,7 +224,7 @@ public class Notification {
   }
 
 
-  public Notification type(NotificationType type) {
+  public SentNotification type(NotificationType type) {
     
     this.type = type;
     return this;
@@ -255,31 +255,31 @@ public class Notification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Notification notification = (Notification) o;
-    return Objects.equals(this.createdAt, notification.createdAt) &&
-        Objects.equals(this.details, notification.details) &&
-        Objects.equals(this.id, notification.id) &&
-        Objects.equals(this.message, notification.message) &&
-        Objects.equals(this.seen, notification.seen) &&
-        Objects.equals(this.senderUserId, notification.senderUserId) &&
-        Objects.equals(this.senderUsername, notification.senderUsername) &&
-        Objects.equals(this.type, notification.type);
+    SentNotification sentNotification = (SentNotification) o;
+    return Objects.equals(this.createdAt, sentNotification.createdAt) &&
+        Objects.equals(this.details, sentNotification.details) &&
+        Objects.equals(this.id, sentNotification.id) &&
+        Objects.equals(this.message, sentNotification.message) &&
+        Objects.equals(this.recieverUserId, sentNotification.recieverUserId) &&
+        Objects.equals(this.senderUserId, sentNotification.senderUserId) &&
+        Objects.equals(this.senderUsername, sentNotification.senderUsername) &&
+        Objects.equals(this.type, sentNotification.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, details, id, message, seen, senderUserId, senderUsername, type);
+    return Objects.hash(createdAt, details, id, message, recieverUserId, senderUserId, senderUsername, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Notification {\n");
+    sb.append("class SentNotification {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    seen: ").append(toIndentedString(seen)).append("\n");
+    sb.append("    recieverUserId: ").append(toIndentedString(recieverUserId)).append("\n");
     sb.append("    senderUserId: ").append(toIndentedString(senderUserId)).append("\n");
     sb.append("    senderUsername: ").append(toIndentedString(senderUsername)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
