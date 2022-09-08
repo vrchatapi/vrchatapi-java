@@ -23,7 +23,8 @@ Name | Type | Description | Notes
 **photonRegion** | **Region** |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 
 **region** | **Region** |  | 
-**shortName** | **String** |  | 
+**secureName** | **String** |  | 
+**shortName** | **String** |  |  [optional]
 **tags** | **List&lt;String&gt;** | The tags array on Instances usually contain the language tags of the people in the instance.  | 
 **type** | **InstanceType** |  | 
 **worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 

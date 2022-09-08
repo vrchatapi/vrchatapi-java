@@ -41,12 +41,12 @@ docs/InfoPushDataArticleContent.md
 docs/InfoPushDataClickable.md
 docs/Instance.md
 docs/InstancePlatforms.md
+docs/InstanceShortNameResponse.md
 docs/InstanceType.md
 docs/InstancesApi.md
 docs/InviteApi.md
 docs/InviteMessage.md
 docs/InviteMessageType.md
-docs/InviteMyselfToRequest.md
 docs/InviteRequest.md
 docs/InviteResponse.md
 docs/License.md
@@ -175,10 +175,10 @@ src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
+src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java
 src/main/java/io/github/vrchatapi/model/InviteMessageType.java
-src/main/java/io/github/vrchatapi/model/InviteMyselfToRequest.java
 src/main/java/io/github/vrchatapi/model/InviteRequest.java
 src/main/java/io/github/vrchatapi/model/InviteResponse.java
 src/main/java/io/github/vrchatapi/model/License.java

@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteMyselfTo"></a>
 # **inviteMyselfTo**
-> SentNotification inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest)
+> SentNotification inviteMyselfTo(worldId, instanceId)
 
 Invite Myself To Instance
 
@@ -213,9 +213,8 @@ public class Example {
     InviteApi apiInstance = new InviteApi(defaultClient);
     String worldId = "worldId_example"; // String | 
     String instanceId = "instanceId_example"; // String | 
-    InviteMyselfToRequest inviteMyselfToRequest = new InviteMyselfToRequest(); // InviteMyselfToRequest | 
     try {
-      SentNotification result = apiInstance.inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest);
+      SentNotification result = apiInstance.inviteMyselfTo(worldId, instanceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#inviteMyselfTo");
@@ -234,7 +233,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**|  |
  **instanceId** | **String**|  |
- **inviteMyselfToRequest** | [**InviteMyselfToRequest**](InviteMyselfToRequest.md)|  | [optional]
 
 ### Return type
 
@@ -246,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

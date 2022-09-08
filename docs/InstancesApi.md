@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 <a name="getShortName"></a>
 # **getShortName**
-> String getShortName(worldId, instanceId)
+> InstanceShortNameResponse getShortName(worldId, instanceId)
 
 Get Instance Short Name
 
@@ -204,7 +204,7 @@ public class Example {
     String worldId = "worldId_example"; // String | 
     String instanceId = "instanceId_example"; // String | 
     try {
-      String result = apiInstance.getShortName(worldId, instanceId);
+      InstanceShortNameResponse result = apiInstance.getShortName(worldId, instanceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getShortName");
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**InstanceShortNameResponse**](InstanceShortNameResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns an instance short name. |  -  |
+**200** | Returns an instance secureName and/or shortName. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="sendSelfInvite"></a>
