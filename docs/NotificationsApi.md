@@ -272,7 +272,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
-    String type = "all"; // String | Only send notifications of this type (can use `all` for all).
+    String type = "all"; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
     Boolean sent = true; // Boolean | Return notifications sent by the user. Must be false or omitted.
     Boolean hidden = true; // Boolean | Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`.
     String after = "five_minutes_ago"; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
@@ -296,7 +296,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Only send notifications of this type (can use &#x60;all&#x60; for all). | [optional]
+ **type** | **String**| Only send notifications of this type (can use &#x60;all&#x60; for all). This parameter no longer does anything, and is deprecated. | [optional]
  **sent** | **Boolean**| Return notifications sent by the user. Must be false or omitted. | [optional]
  **hidden** | **Boolean**| Whether to return hidden or non-hidden notifications. True only allowed on type &#x60;friendRequest&#x60;. | [optional]
  **after** | **String**| Only return notifications sent after this Date. Ignored if type is &#x60;friendRequest&#x60;. | [optional]

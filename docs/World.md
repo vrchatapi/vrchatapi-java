@@ -17,16 +17,16 @@ Name | Type | Description | Notes
 **heat** | **Integer** |  | 
 **id** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
-**instances** | **List&lt;List&lt;Object&gt;&gt;** |  |  [optional]
+**instances** | **List&lt;List&lt;Object&gt;&gt;** | Will always be an empty list when unauthenticated. |  [optional]
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **namespace** | **String** |  | 
-**occupants** | **Integer** |  |  [optional]
+**occupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional]
 **organization** | **String** |  | 
 **popularity** | **Integer** |  | 
 **previewYoutubeId** | **String** |  |  [optional]
-**privateOccupants** | **Integer** |  |  [optional]
-**publicOccupants** | **Integer** |  |  [optional]
+**privateOccupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional]
+**publicOccupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional]
 **publicationDate** | **String** |  | 
 **releaseStatus** | **ReleaseStatus** |  | 
 **tags** | **List&lt;String&gt;** |  | 

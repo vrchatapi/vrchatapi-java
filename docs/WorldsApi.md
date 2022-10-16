@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 Get World by ID
 
-Get information about a specific World.
+Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
 
 ### Example
 ```java
