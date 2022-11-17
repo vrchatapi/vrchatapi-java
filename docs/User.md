@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **developerType** | **DeveloperType** |  | 
 **displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their &#x60;username&#x60;. Changing display name is restricted to a cooldown period. | 
 **friendKey** | **String** |  | 
-**friendRequestStatus** | **String** |  | 
+**friendRequestStatus** | **String** |  |  [optional]
 **id** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. | 
 **instanceId** | **String** | InstanceID can be \&quot;offline\&quot; on User profiles if you are not friends with that user and \&quot;private\&quot; if you are friends and user is in private instance. |  [optional]
 **isFriend** | **Boolean** | Either their &#x60;friendKey&#x60;, or empty string if you are not friends. Unknown usage. | 
