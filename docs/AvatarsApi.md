@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteAvatar**](AvatarsApi.md#deleteAvatar) | **DELETE** /avatars/{avatarId} | Delete Avatar
 [**getAvatar**](AvatarsApi.md#getAvatar) | **GET** /avatars/{avatarId} | Get Avatar
 [**getFavoritedAvatars**](AvatarsApi.md#getFavoritedAvatars) | **GET** /avatars/favorites | List Favorited Avatars
+[**getOwnAvatar**](AvatarsApi.md#getOwnAvatar) | **GET** /users/{userId}/avatar | Get Own Avatar
 [**searchAvatars**](AvatarsApi.md#searchAvatars) | **GET** /avatars | Search Avatars
 [**selectAvatar**](AvatarsApi.md#selectAvatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
 [**selectFallbackAvatar**](AvatarsApi.md#selectFallbackAvatar) | **PUT** /avatars/{avatarId}/selectFallback | Select Fallback Avatar
@@ -344,6 +345,83 @@ Name | Type | Description  | Notes
 **200** | Returns a list of Avatar objects. |  -  |
 **401** | Error response due to missing apiKey or auth cookie. |  -  |
 **403** | Error response when trying to see favourited avatars of another user without sufficient admin permissions. |  -  |
+
+<a name="getOwnAvatar"></a>
+# **getOwnAvatar**
+> Avatar getOwnAvatar(userId)
+
+Get Own Avatar
+
+Get the current avatar for the user. This will return an error for any other user than the one logged in.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: apiKeyCookie
+    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
+    apiKeyCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKeyCookie.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    String userId = "userId_example"; // String | 
+    try {
+      Avatar result = apiInstance.getOwnAvatar(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#getOwnAvatar");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  |
+
+### Return type
+
+[**Avatar**](Avatar.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single Avatar object. |  -  |
+**401** | Error response due to missing apiKey or auth cookie. |  -  |
+**403** | Error response when trying to see another users current avatar without sufficient admin permissions. |  -  |
 
 <a name="searchAvatars"></a>
 # **searchAvatars**

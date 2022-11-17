@@ -13,10 +13,6 @@
 
 * `UNBLOCK` (value: `"unblock"`)
 
-* `HIDEAVATAR` (value: `"hideAvatar"`)
-
-* `SHOWAVATAR` (value: `"showAvatar"`)
-
 * `INTERACTON` (value: `"interactOn"`)
 
 * `INTERACTOFF` (value: `"interactOff"`)
