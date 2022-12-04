@@ -23,11 +23,33 @@ import io.github.vrchatapi.model.InviteMessageType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
- * InviteMessage
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InviteMessage {
   public static final String SERIALIZED_NAME_CAN_BE_UPDATED = "canBeUpdated";
@@ -58,6 +80,8 @@ public class InviteMessage {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public InviteMessage() {
+  }
 
   public InviteMessage canBeUpdated(Boolean canBeUpdated) {
     
@@ -223,6 +247,7 @@ public class InviteMessage {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -272,5 +297,114 @@ public class InviteMessage {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("canBeUpdated");
+    openapiFields.add("id");
+    openapiFields.add("message");
+    openapiFields.add("messageType");
+    openapiFields.add("remainingCooldownMinutes");
+    openapiFields.add("slot");
+    openapiFields.add("updatedAt");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("canBeUpdated");
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("message");
+    openapiRequiredFields.add("messageType");
+    openapiRequiredFields.add("remainingCooldownMinutes");
+    openapiRequiredFields.add("slot");
+    openapiRequiredFields.add("updatedAt");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to InviteMessage
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!InviteMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in InviteMessage is not found in the empty JSON string", InviteMessage.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!InviteMessage.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InviteMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : InviteMessage.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if (!jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!InviteMessage.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'InviteMessage' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<InviteMessage> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(InviteMessage.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<InviteMessage>() {
+           @Override
+           public void write(JsonWriter out, InviteMessage value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public InviteMessage read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of InviteMessage given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of InviteMessage
+  * @throws IOException if the JSON string is invalid with respect to InviteMessage
+  */
+  public static InviteMessage fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, InviteMessage.class);
+  }
+
+ /**
+  * Convert an instance of InviteMessage to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

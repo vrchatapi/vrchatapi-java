@@ -27,6 +27,27 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
+
 /**
  * UpdateGroupRequest
  */
@@ -50,11 +71,11 @@ public class UpdateGroupRequest {
 
   public static final String SERIALIZED_NAME_ICON_ID = "iconId";
   @SerializedName(SERIALIZED_NAME_ICON_ID)
-  private String iconId = "null";
+  private String iconId;
 
   public static final String SERIALIZED_NAME_BANNER_ID = "bannerId";
   @SerializedName(SERIALIZED_NAME_BANNER_ID)
-  private String bannerId = "null";
+  private String bannerId;
 
   public static final String SERIALIZED_NAME_LANGUAGES = "languages";
   @SerializedName(SERIALIZED_NAME_LANGUAGES)
@@ -72,6 +93,8 @@ public class UpdateGroupRequest {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = null;
 
+  public UpdateGroupRequest() {
+  }
 
   public UpdateGroupRequest name(String name) {
     
@@ -219,7 +242,7 @@ public class UpdateGroupRequest {
 
   public UpdateGroupRequest addLanguagesItem(String languagesItem) {
     if (this.languages == null) {
-      this.languages = new ArrayList<String>();
+      this.languages = new ArrayList<>();
     }
     this.languages.add(languagesItem);
     return this;
@@ -250,7 +273,7 @@ public class UpdateGroupRequest {
 
   public UpdateGroupRequest addLinksItem(String linksItem) {
     if (this.links == null) {
-      this.links = new ArrayList<String>();
+      this.links = new ArrayList<>();
     }
     this.links.add(linksItem);
     return this;
@@ -304,18 +327,18 @@ public class UpdateGroupRequest {
 
   public UpdateGroupRequest addTagsItem(String tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<String>();
+      this.tags = new ArrayList<>();
     }
     this.tags.add(tagsItem);
     return this;
   }
 
    /**
-   * Get tags
+   *  
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<String> getTags() {
     return tags;
@@ -325,6 +348,7 @@ public class UpdateGroupRequest {
   public void setTags(List<String> tags) {
     this.tags = tags;
   }
+
 
 
   @Override
@@ -393,5 +417,127 @@ public class UpdateGroupRequest {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("name");
+    openapiFields.add("shortCode");
+    openapiFields.add("description");
+    openapiFields.add("joinState");
+    openapiFields.add("iconId");
+    openapiFields.add("bannerId");
+    openapiFields.add("languages");
+    openapiFields.add("links");
+    openapiFields.add("rules");
+    openapiFields.add("tags");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to UpdateGroupRequest
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!UpdateGroupRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateGroupRequest is not found in the empty JSON string", UpdateGroupRequest.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!UpdateGroupRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateGroupRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("shortCode") != null && !jsonObj.get("shortCode").isJsonNull()) && !jsonObj.get("shortCode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shortCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortCode").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("iconId") != null && !jsonObj.get("iconId").isJsonNull()) && !jsonObj.get("iconId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `iconId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconId").toString()));
+      }
+      if ((jsonObj.get("bannerId") != null && !jsonObj.get("bannerId").isJsonNull()) && !jsonObj.get("bannerId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bannerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("languages") != null && !jsonObj.get("languages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `languages` to be an array in the JSON string but got `%s`", jsonObj.get("languages").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `links` to be an array in the JSON string but got `%s`", jsonObj.get("links").toString()));
+      }
+      if ((jsonObj.get("rules") != null && !jsonObj.get("rules").isJsonNull()) && !jsonObj.get("rules").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rules` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rules").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!UpdateGroupRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateGroupRequest' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<UpdateGroupRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateGroupRequest.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<UpdateGroupRequest>() {
+           @Override
+           public void write(JsonWriter out, UpdateGroupRequest value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public UpdateGroupRequest read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of UpdateGroupRequest given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of UpdateGroupRequest
+  * @throws IOException if the JSON string is invalid with respect to UpdateGroupRequest
+  */
+  public static UpdateGroupRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateGroupRequest.class);
+  }
+
+ /**
+  * Convert an instance of UpdateGroupRequest to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
-[**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name
-[**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
-[**sendSelfInvite**](InstancesApi.md#sendSelfInvite) | **POST** /instances/{worldId}:{instanceId}/invite | Send Self Invite
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
+| [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
+| [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name |
+| [**sendSelfInvite**](InstancesApi.md#sendSelfInvite) | **POST** /instances/{worldId}:{instanceId}/invite | Send Self Invite |
 
 
 <a name="getInstance"></a>
@@ -64,10 +64,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **worldId** | **String**| Must be a valid world ID. |
- **instanceId** | **String**| Must be a valid instance ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **instanceId** | **String**| Must be a valid instance ID. | |
 
 ### Return type
 
@@ -85,8 +85,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Instance object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single Instance object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getInstanceByShortName"></a>
 # **getInstanceByShortName**
@@ -141,9 +141,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shortName** | **String**| Must be a valid instance short name. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **shortName** | **String**| Must be a valid instance short name. | |
 
 ### Return type
 
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Instance object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response due to non existant instance |  -  |
+| **200** | Returns a single Instance object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response due to non existant instance |  -  |
 
 <a name="getShortName"></a>
 # **getShortName**
@@ -219,10 +219,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **worldId** | **String**| Must be a valid world ID. |
- **instanceId** | **String**| Must be a valid instance ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **instanceId** | **String**| Must be a valid instance ID. | |
 
 ### Return type
 
@@ -240,8 +240,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns an instance secureName and/or shortName. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns an instance secureName and/or shortName. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="sendSelfInvite"></a>
 # **sendSelfInvite**
@@ -297,10 +297,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **worldId** | **String**| Must be a valid world ID. |
- **instanceId** | **String**| Must be a valid instance ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **instanceId** | **String**| Must be a valid instance ID. | |
 
 ### Return type
 
@@ -318,6 +318,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after sending an invite to yourself to the instance. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Success response after sending an invite to yourself to the instance. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 

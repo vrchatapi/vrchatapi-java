@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**android** | **Integer** |  | 
-**standalonewindows** | **Integer** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**android** | **Integer** |  |  |
+|**standalonewindows** | **Integer** |  |  |
 
 
 

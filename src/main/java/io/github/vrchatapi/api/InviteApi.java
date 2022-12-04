@@ -41,9 +41,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class InviteApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public InviteApi() {
         this(Configuration.getDefaultApiClient());
@@ -59,6 +62,22 @@ public class InviteApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
+    }
+
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
     }
 
     /**
@@ -79,13 +98,26 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call getInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
-            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
-            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
+            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
+            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -102,36 +134,34 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling getInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling getInviteMessage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getInviteMessageCall(userId, messageType, slot, _callback);
-        return localVarCall;
+        return getInviteMessageCall(userId, messageType, slot, _callback);
 
     }
 
@@ -221,12 +251,25 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call getInviteMessagesCall(String userId, InviteMessageType messageType, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
-            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
+            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -243,31 +286,29 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getInviteMessagesValidateBeforeCall(String userId, InviteMessageType messageType, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getInviteMessages(Async)");
         }
-        
+
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling getInviteMessages(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getInviteMessagesCall(userId, messageType, _callback);
-        return localVarCall;
+        return getInviteMessagesCall(userId, messageType, _callback);
 
     }
 
@@ -351,12 +392,25 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call inviteMyselfToCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/invite/myself/to/{worldId}:{instanceId}"
-            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
-            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
+            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
+            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -373,31 +427,29 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call inviteMyselfToValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling inviteMyselfTo(Async)");
         }
-        
+
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling inviteMyselfTo(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = inviteMyselfToCall(worldId, instanceId, _callback);
-        return localVarCall;
+        return inviteMyselfToCall(worldId, instanceId, _callback);
 
     }
 
@@ -480,11 +532,24 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call inviteUserCall(String userId, InviteRequest inviteRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = inviteRequest;
 
         // create path and map variables
         String localVarPath = "/invite/{userId}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -504,23 +569,22 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call inviteUserValidateBeforeCall(String userId, InviteRequest inviteRequest, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling inviteUser(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = inviteUserCall(userId, inviteRequest, _callback);
-        return localVarCall;
+        return inviteUserCall(userId, inviteRequest, _callback);
 
     }
 
@@ -600,11 +664,24 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call requestInviteCall(String userId, RequestInviteRequest requestInviteRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = requestInviteRequest;
 
         // create path and map variables
         String localVarPath = "/requestInvite/{userId}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -624,23 +701,22 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call requestInviteValidateBeforeCall(String userId, RequestInviteRequest requestInviteRequest, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling requestInvite(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = requestInviteCall(userId, requestInviteRequest, _callback);
-        return localVarCall;
+        return requestInviteCall(userId, requestInviteRequest, _callback);
 
     }
 
@@ -724,13 +800,26 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call resetInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
-            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
-            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
+            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
+            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -747,36 +836,34 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call resetInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling resetInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling resetInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling resetInviteMessage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = resetInviteMessageCall(userId, messageType, slot, _callback);
-        return localVarCall;
+        return resetInviteMessageCall(userId, messageType, slot, _callback);
 
     }
 
@@ -868,11 +955,24 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call respondInviteCall(String notificationId, InviteResponse inviteResponse, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = inviteResponse;
 
         // create path and map variables
         String localVarPath = "/invite/{notificationId}/response"
-            .replaceAll("\\{" + "notificationId" + "\\}", localVarApiClient.escapeString(notificationId.toString()));
+            .replace("{" + "notificationId" + "}", localVarApiClient.escapeString(notificationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -892,23 +992,22 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call respondInviteValidateBeforeCall(String notificationId, InviteResponse inviteResponse, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'notificationId' is set
         if (notificationId == null) {
             throw new ApiException("Missing the required parameter 'notificationId' when calling respondInvite(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = respondInviteCall(notificationId, inviteResponse, _callback);
-        return localVarCall;
+        return respondInviteCall(notificationId, inviteResponse, _callback);
 
     }
 
@@ -992,13 +1091,26 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call updateInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = updateInviteMessageRequest;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
-            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
-            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
+            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
+            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1018,33 +1130,32 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling updateInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling updateInviteMessage(Async)");
         }
-        
+
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling updateInviteMessage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateInviteMessageCall(userId, messageType, slot, updateInviteMessageRequest, _callback);
-        return localVarCall;
+        return updateInviteMessageCall(userId, messageType, slot, updateInviteMessageRequest, _callback);
 
     }
 

@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addFavorite**](FavoritesApi.md#addFavorite) | **POST** /favorites | Add Favorite
-[**clearFavoriteGroup**](FavoritesApi.md#clearFavoriteGroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
-[**getFavorite**](FavoritesApi.md#getFavorite) | **GET** /favorites/{favoriteId} | Show Favorite
-[**getFavoriteGroup**](FavoritesApi.md#getFavoriteGroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
-[**getFavoriteGroups**](FavoritesApi.md#getFavoriteGroups) | **GET** /favorite/groups | List Favorite Groups
-[**getFavorites**](FavoritesApi.md#getFavorites) | **GET** /favorites | List Favorites
-[**removeFavorite**](FavoritesApi.md#removeFavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite
-[**updateFavoriteGroup**](FavoritesApi.md#updateFavoriteGroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**addFavorite**](FavoritesApi.md#addFavorite) | **POST** /favorites | Add Favorite |
+| [**clearFavoriteGroup**](FavoritesApi.md#clearFavoriteGroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group |
+| [**getFavorite**](FavoritesApi.md#getFavorite) | **GET** /favorites/{favoriteId} | Show Favorite |
+| [**getFavoriteGroup**](FavoritesApi.md#getFavoriteGroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group |
+| [**getFavoriteGroups**](FavoritesApi.md#getFavoriteGroups) | **GET** /favorite/groups | List Favorite Groups |
+| [**getFavorites**](FavoritesApi.md#getFavorites) | **GET** /favorites | List Favorites |
+| [**removeFavorite**](FavoritesApi.md#removeFavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite |
+| [**updateFavoriteGroup**](FavoritesApi.md#updateFavoriteGroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group |
 
 
 <a name="addFavorite"></a>
@@ -67,9 +67,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **addFavoriteRequest** | [**AddFavoriteRequest**](AddFavoriteRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **addFavoriteRequest** | [**AddFavoriteRequest**](AddFavoriteRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -87,9 +87,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Favorite object. |  -  |
-**400** | Error response when trying favorite someone or something when already having it/them favorited. |  -  |
-**403** | Error response when trying favorite someone whom you are not friends with. |  -  |
+| **200** | Returns a single Favorite object. |  -  |
+| **400** | Error response when trying favorite someone or something when already having it/them favorited. |  -  |
+| **403** | Error response when trying favorite someone whom you are not friends with. |  -  |
 
 <a name="clearFavoriteGroup"></a>
 # **clearFavoriteGroup**
@@ -146,11 +146,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar]
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after clearing a favorite group. |  -  |
+| **200** | Success response after clearing a favorite group. |  -  |
 
 <a name="getFavorite"></a>
 # **getFavorite**
@@ -223,9 +223,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteId** | **String**| Must be a valid favorite ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteId** | **String**| Must be a valid favorite ID. | |
 
 ### Return type
 
@@ -243,9 +243,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Favorite object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to show information about a non-existent favorite. |  -  |
+| **200** | Returns a single Favorite object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent favorite. |  -  |
 
 <a name="getFavoriteGroup"></a>
 # **getFavoriteGroup**
@@ -302,11 +302,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar]
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single FavoriteGroup object. |  -  |
+| **200** | Returns a single FavoriteGroup object. |  -  |
 
 <a name="getFavoriteGroups"></a>
 # **getFavoriteGroups**
@@ -381,11 +381,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional] |
 
 ### Return type
 
@@ -403,8 +403,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of FavoriteGroup objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of FavoriteGroup objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getFavorites"></a>
 # **getFavorites**
@@ -462,12 +462,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **type** | **String**| The type of favorites to return, FavoriteType. | [optional]
- **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **type** | **String**| The type of favorites to return, FavoriteType. | [optional] |
+| **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 
 ### Return type
 
@@ -485,8 +485,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of Favorite objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of Favorite objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="removeFavorite"></a>
 # **removeFavorite**
@@ -541,9 +541,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteId** | **String**| Must be a valid favorite ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteId** | **String**| Must be a valid favorite ID. | |
 
 ### Return type
 
@@ -561,9 +561,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after removing a favorite. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to show information about a non-existent favorite. |  -  |
+| **200** | Success response after removing a favorite. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent favorite. |  -  |
 
 <a name="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**
@@ -620,12 +620,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar]
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. |
- **userId** | **String**| Must be a valid user ID. |
- **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **userId** | **String**| Must be a valid user ID. | |
+| **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -643,5 +643,5 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

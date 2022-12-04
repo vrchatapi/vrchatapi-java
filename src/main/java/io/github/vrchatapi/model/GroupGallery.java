@@ -22,10 +22,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
  * GroupGallery
@@ -72,6 +93,8 @@ public class GroupGallery {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public GroupGallery() {
+  }
 
   public GroupGallery id(String id) {
     
@@ -173,18 +196,18 @@ public class GroupGallery {
 
   public GroupGallery addRoleIdsToViewItem(String roleIdsToViewItem) {
     if (this.roleIdsToView == null) {
-      this.roleIdsToView = new ArrayList<String>();
+      this.roleIdsToView = new ArrayList<>();
     }
     this.roleIdsToView.add(roleIdsToViewItem);
     return this;
   }
 
    /**
-   * Get roleIdsToView
+   *  
    * @return roleIdsToView
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<String> getRoleIdsToView() {
     return roleIdsToView;
@@ -204,18 +227,18 @@ public class GroupGallery {
 
   public GroupGallery addRoleIdsToSubmitItem(String roleIdsToSubmitItem) {
     if (this.roleIdsToSubmit == null) {
-      this.roleIdsToSubmit = new ArrayList<String>();
+      this.roleIdsToSubmit = new ArrayList<>();
     }
     this.roleIdsToSubmit.add(roleIdsToSubmitItem);
     return this;
   }
 
    /**
-   * Get roleIdsToSubmit
+   *  
    * @return roleIdsToSubmit
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<String> getRoleIdsToSubmit() {
     return roleIdsToSubmit;
@@ -235,18 +258,18 @@ public class GroupGallery {
 
   public GroupGallery addRoleIdsToAutoApproveItem(String roleIdsToAutoApproveItem) {
     if (this.roleIdsToAutoApprove == null) {
-      this.roleIdsToAutoApprove = new ArrayList<String>();
+      this.roleIdsToAutoApprove = new ArrayList<>();
     }
     this.roleIdsToAutoApprove.add(roleIdsToAutoApproveItem);
     return this;
   }
 
    /**
-   * Get roleIdsToAutoApprove
+   *  
    * @return roleIdsToAutoApprove
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<String> getRoleIdsToAutoApprove() {
     return roleIdsToAutoApprove;
@@ -266,18 +289,18 @@ public class GroupGallery {
 
   public GroupGallery addRoleIdsToManageItem(String roleIdsToManageItem) {
     if (this.roleIdsToManage == null) {
-      this.roleIdsToManage = new ArrayList<String>();
+      this.roleIdsToManage = new ArrayList<>();
     }
     this.roleIdsToManage.add(roleIdsToManageItem);
     return this;
   }
 
    /**
-   * Get roleIdsToManage
+   *  
    * @return roleIdsToManage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<String> getRoleIdsToManage() {
     return roleIdsToManage;
@@ -333,6 +356,7 @@ public class GroupGallery {
   public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
+
 
 
   @Override
@@ -401,5 +425,122 @@ public class GroupGallery {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("id");
+    openapiFields.add("name");
+    openapiFields.add("description");
+    openapiFields.add("membersOnly");
+    openapiFields.add("roleIdsToView");
+    openapiFields.add("roleIdsToSubmit");
+    openapiFields.add("roleIdsToAutoApprove");
+    openapiFields.add("roleIdsToManage");
+    openapiFields.add("createdAt");
+    openapiFields.add("updatedAt");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GroupGallery
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!GroupGallery.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupGallery is not found in the empty JSON string", GroupGallery.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GroupGallery.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupGallery` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIdsToView") != null && !jsonObj.get("roleIdsToView").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleIdsToView` to be an array in the JSON string but got `%s`", jsonObj.get("roleIdsToView").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIdsToSubmit") != null && !jsonObj.get("roleIdsToSubmit").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleIdsToSubmit` to be an array in the JSON string but got `%s`", jsonObj.get("roleIdsToSubmit").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIdsToAutoApprove") != null && !jsonObj.get("roleIdsToAutoApprove").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleIdsToAutoApprove` to be an array in the JSON string but got `%s`", jsonObj.get("roleIdsToAutoApprove").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIdsToManage") != null && !jsonObj.get("roleIdsToManage").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleIdsToManage` to be an array in the JSON string but got `%s`", jsonObj.get("roleIdsToManage").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GroupGallery.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GroupGallery' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GroupGallery> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GroupGallery.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GroupGallery>() {
+           @Override
+           public void write(JsonWriter out, GroupGallery value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GroupGallery read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GroupGallery given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GroupGallery
+  * @throws IOException if the JSON string is invalid with respect to GroupGallery
+  */
+  public static GroupGallery fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GroupGallery.class);
+  }
+
+ /**
+  * Convert an instance of GroupGallery to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

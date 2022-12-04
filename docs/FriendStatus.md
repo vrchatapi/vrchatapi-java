@@ -5,11 +5,11 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**incomingRequest** | **Boolean** |  | 
-**isFriend** | **Boolean** |  | 
-**outgoingRequest** | **Boolean** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**incomingRequest** | **Boolean** |  |  |
+|**isFriend** | **Boolean** |  |  |
+|**outgoingRequest** | **Boolean** |  |  |
 
 
 

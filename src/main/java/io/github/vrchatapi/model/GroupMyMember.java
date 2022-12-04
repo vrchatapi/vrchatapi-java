@@ -22,10 +22,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
  * GroupMyMember
@@ -84,6 +105,8 @@ public class GroupMyMember {
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   private List<String> permissions = null;
 
+  public GroupMyMember() {
+  }
 
   public GroupMyMember id(String id) {
     
@@ -162,7 +185,7 @@ public class GroupMyMember {
 
   public GroupMyMember addRoleIdsItem(String roleIdsItem) {
     if (this.roleIds == null) {
-      this.roleIds = new ArrayList<String>();
+      this.roleIds = new ArrayList<>();
     }
     this.roleIds.add(roleIdsItem);
     return this;
@@ -377,7 +400,7 @@ public class GroupMyMember {
 
   public GroupMyMember addPermissionsItem(String permissionsItem) {
     if (this.permissions == null) {
-      this.permissions = new ArrayList<String>();
+      this.permissions = new ArrayList<>();
     }
     this.permissions.add(permissionsItem);
     return this;
@@ -398,6 +421,7 @@ public class GroupMyMember {
   public void setPermissions(List<String> permissions) {
     this.permissions = permissions;
   }
+
 
 
   @Override
@@ -472,5 +496,129 @@ public class GroupMyMember {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("id");
+    openapiFields.add("groupId");
+    openapiFields.add("userId");
+    openapiFields.add("roleIds");
+    openapiFields.add("managerNotes");
+    openapiFields.add("membershipStatus");
+    openapiFields.add("isSubscribedToAnnouncements");
+    openapiFields.add("visibility");
+    openapiFields.add("isRepresenting");
+    openapiFields.add("joinedAt");
+    openapiFields.add("bannedAt");
+    openapiFields.add("has2FA");
+    openapiFields.add("permissions");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GroupMyMember
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!GroupMyMember.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupMyMember is not found in the empty JSON string", GroupMyMember.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GroupMyMember.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupMyMember` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("groupId") != null && !jsonObj.get("groupId").isJsonNull()) && !jsonObj.get("groupId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `groupId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("groupId").toString()));
+      }
+      if ((jsonObj.get("userId") != null && !jsonObj.get("userId").isJsonNull()) && !jsonObj.get("userId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleIds` to be an array in the JSON string but got `%s`", jsonObj.get("roleIds").toString()));
+      }
+      if ((jsonObj.get("managerNotes") != null && !jsonObj.get("managerNotes").isJsonNull()) && !jsonObj.get("managerNotes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managerNotes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managerNotes").toString()));
+      }
+      if ((jsonObj.get("membershipStatus") != null && !jsonObj.get("membershipStatus").isJsonNull()) && !jsonObj.get("membershipStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `membershipStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("membershipStatus").toString()));
+      }
+      if ((jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) && !jsonObj.get("visibility").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `visibility` to be a primitive type in the JSON string but got `%s`", jsonObj.get("visibility").toString()));
+      }
+      if ((jsonObj.get("bannedAt") != null && !jsonObj.get("bannedAt").isJsonNull()) && !jsonObj.get("bannedAt").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bannedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannedAt").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GroupMyMember.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GroupMyMember' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GroupMyMember> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GroupMyMember.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GroupMyMember>() {
+           @Override
+           public void write(JsonWriter out, GroupMyMember value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GroupMyMember read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GroupMyMember given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GroupMyMember
+  * @throws IOException if the JSON string is invalid with respect to GroupMyMember
+  */
+  public static GroupMyMember fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GroupMyMember.class);
+  }
+
+ /**
+  * Convert an instance of GroupMyMember to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

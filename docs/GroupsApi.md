@@ -2,44 +2,44 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addGroupGalleryImage**](GroupsApi.md#addGroupGalleryImage) | **POST** /groups/{groupId}/galleries/{groupGalleryId}/images | Add Group Gallery Image
-[**addGroupMemberRole**](GroupsApi.md#addGroupMemberRole) | **PUT** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Add Role to GroupMember
-[**banGroupMember**](GroupsApi.md#banGroupMember) | **POST** /groups/{groupId}/bans | Ban Group Member
-[**cancelGroupRequest**](GroupsApi.md#cancelGroupRequest) | **DELETE** /groups/{groupId}/requests | Cancel Group Join Request
-[**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Create Group
-[**createGroupAnnouncement**](GroupsApi.md#createGroupAnnouncement) | **POST** /groups/{groupId}/announcement | Create Group Announcement
-[**createGroupGallery**](GroupsApi.md#createGroupGallery) | **POST** /groups/{groupId}/galleries | Create Group Gallery
-[**createGroupInvite**](GroupsApi.md#createGroupInvite) | **POST** /groups/{groupId}/invites | Invite User to Group
-[**createGroupRole**](GroupsApi.md#createGroupRole) | **POST** /groups/{groupId}/roles | Create GroupRole
-[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | Delete Group
-[**deleteGroupAnnouncement**](GroupsApi.md#deleteGroupAnnouncement) | **DELETE** /groups/{groupId}/announcement | Delete Group Announcement
-[**deleteGroupGallery**](GroupsApi.md#deleteGroupGallery) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId} | Delete Group Gallery
-[**deleteGroupGalleryImage**](GroupsApi.md#deleteGroupGalleryImage) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId}/images/{groupGalleryImageId} | Delete Group Gallery Image
-[**deleteGroupInvite**](GroupsApi.md#deleteGroupInvite) | **DELETE** /groups/{groupId}/invites/{userId} | Delete User Invite
-[**deleteGroupRole**](GroupsApi.md#deleteGroupRole) | **DELETE** /groups/{groupId}/roles/{groupRoleId} | Delete Group Role
-[**getGroup**](GroupsApi.md#getGroup) | **GET** /groups/{groupId} | Get Group by ID
-[**getGroupAnnouncements**](GroupsApi.md#getGroupAnnouncements) | **GET** /groups/{groupId}/announcement | Get Group Announcement
-[**getGroupAuditLogs**](GroupsApi.md#getGroupAuditLogs) | **GET** /groups/{groupId}/auditLogs | Get Group Audit Logs
-[**getGroupBans**](GroupsApi.md#getGroupBans) | **GET** /groups/{groupId}/bans | Get Group Bans
-[**getGroupGalleryImages**](GroupsApi.md#getGroupGalleryImages) | **GET** /groups/{groupId}/galleries/{groupGalleryId} | Get Group Gallery Images
-[**getGroupInvites**](GroupsApi.md#getGroupInvites) | **GET** /groups/{groupId}/invites | Get Group Invites Sent
-[**getGroupMember**](GroupsApi.md#getGroupMember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member
-[**getGroupMembers**](GroupsApi.md#getGroupMembers) | **GET** /groups/{groupId}/members | List Group Members
-[**getGroupPermissions**](GroupsApi.md#getGroupPermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions
-[**getGroupRequests**](GroupsApi.md#getGroupRequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
-[**getGroupRoles**](GroupsApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get Group Roles
-[**joinGroup**](GroupsApi.md#joinGroup) | **POST** /groups/{groupId}/join | Join Group
-[**kickGroupMember**](GroupsApi.md#kickGroupMember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member
-[**leaveGroup**](GroupsApi.md#leaveGroup) | **POST** /groups/{groupId}/leave | Leave Group
-[**removeGroupMemberRole**](GroupsApi.md#removeGroupMemberRole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember
-[**respondGroupJoinRequest**](GroupsApi.md#respondGroupJoinRequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request
-[**unbanGroupMember**](GroupsApi.md#unbanGroupMember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member
-[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Update Group
-[**updateGroupGallery**](GroupsApi.md#updateGroupGallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery
-[**updateGroupMember**](GroupsApi.md#updateGroupMember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member
-[**updateGroupRole**](GroupsApi.md#updateGroupRole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**addGroupGalleryImage**](GroupsApi.md#addGroupGalleryImage) | **POST** /groups/{groupId}/galleries/{groupGalleryId}/images | Add Group Gallery Image |
+| [**addGroupMemberRole**](GroupsApi.md#addGroupMemberRole) | **PUT** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Add Role to GroupMember |
+| [**banGroupMember**](GroupsApi.md#banGroupMember) | **POST** /groups/{groupId}/bans | Ban Group Member |
+| [**cancelGroupRequest**](GroupsApi.md#cancelGroupRequest) | **DELETE** /groups/{groupId}/requests | Cancel Group Join Request |
+| [**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Create Group |
+| [**createGroupAnnouncement**](GroupsApi.md#createGroupAnnouncement) | **POST** /groups/{groupId}/announcement | Create Group Announcement |
+| [**createGroupGallery**](GroupsApi.md#createGroupGallery) | **POST** /groups/{groupId}/galleries | Create Group Gallery |
+| [**createGroupInvite**](GroupsApi.md#createGroupInvite) | **POST** /groups/{groupId}/invites | Invite User to Group |
+| [**createGroupRole**](GroupsApi.md#createGroupRole) | **POST** /groups/{groupId}/roles | Create GroupRole |
+| [**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | Delete Group |
+| [**deleteGroupAnnouncement**](GroupsApi.md#deleteGroupAnnouncement) | **DELETE** /groups/{groupId}/announcement | Delete Group Announcement |
+| [**deleteGroupGallery**](GroupsApi.md#deleteGroupGallery) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId} | Delete Group Gallery |
+| [**deleteGroupGalleryImage**](GroupsApi.md#deleteGroupGalleryImage) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId}/images/{groupGalleryImageId} | Delete Group Gallery Image |
+| [**deleteGroupInvite**](GroupsApi.md#deleteGroupInvite) | **DELETE** /groups/{groupId}/invites/{userId} | Delete User Invite |
+| [**deleteGroupRole**](GroupsApi.md#deleteGroupRole) | **DELETE** /groups/{groupId}/roles/{groupRoleId} | Delete Group Role |
+| [**getGroup**](GroupsApi.md#getGroup) | **GET** /groups/{groupId} | Get Group by ID |
+| [**getGroupAnnouncements**](GroupsApi.md#getGroupAnnouncements) | **GET** /groups/{groupId}/announcement | Get Group Announcement |
+| [**getGroupAuditLogs**](GroupsApi.md#getGroupAuditLogs) | **GET** /groups/{groupId}/auditLogs | Get Group Audit Logs |
+| [**getGroupBans**](GroupsApi.md#getGroupBans) | **GET** /groups/{groupId}/bans | Get Group Bans |
+| [**getGroupGalleryImages**](GroupsApi.md#getGroupGalleryImages) | **GET** /groups/{groupId}/galleries/{groupGalleryId} | Get Group Gallery Images |
+| [**getGroupInvites**](GroupsApi.md#getGroupInvites) | **GET** /groups/{groupId}/invites | Get Group Invites Sent |
+| [**getGroupMember**](GroupsApi.md#getGroupMember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member |
+| [**getGroupMembers**](GroupsApi.md#getGroupMembers) | **GET** /groups/{groupId}/members | List Group Members |
+| [**getGroupPermissions**](GroupsApi.md#getGroupPermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions |
+| [**getGroupRequests**](GroupsApi.md#getGroupRequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests |
+| [**getGroupRoles**](GroupsApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get Group Roles |
+| [**joinGroup**](GroupsApi.md#joinGroup) | **POST** /groups/{groupId}/join | Join Group |
+| [**kickGroupMember**](GroupsApi.md#kickGroupMember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member |
+| [**leaveGroup**](GroupsApi.md#leaveGroup) | **POST** /groups/{groupId}/leave | Leave Group |
+| [**removeGroupMemberRole**](GroupsApi.md#removeGroupMemberRole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember |
+| [**respondGroupJoinRequest**](GroupsApi.md#respondGroupJoinRequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request |
+| [**unbanGroupMember**](GroupsApi.md#unbanGroupMember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member |
+| [**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Update Group |
+| [**updateGroupGallery**](GroupsApi.md#updateGroupGallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery |
+| [**updateGroupMember**](GroupsApi.md#updateGroupMember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member |
+| [**updateGroupRole**](GroupsApi.md#updateGroupRole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role |
 
 
 <a name="addGroupGalleryImage"></a>
@@ -97,11 +97,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupGalleryId** | **String**| Must be a valid group gallery ID. |
- **addGroupGalleryImageRequest** | [**AddGroupGalleryImageRequest**](AddGroupGalleryImageRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
+| **addGroupGalleryImageRequest** | [**AddGroupGalleryImageRequest**](AddGroupGalleryImageRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -119,9 +119,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupGalleryImage object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupGalleryImage object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="addGroupMemberRole"></a>
 # **addGroupMemberRole**
@@ -178,11 +178,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
- **groupRoleId** | **String**| Must be a valid group role ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
+| **groupRoleId** | **String**| Must be a valid group role ID. | |
 
 ### Return type
 
@@ -200,9 +200,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupRoleID objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupRoleID objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="banGroupMember"></a>
 # **banGroupMember**
@@ -258,10 +258,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **banGroupMemberRequest** | [**BanGroupMemberRequest**](BanGroupMemberRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **banGroupMemberRequest** | [**BanGroupMemberRequest**](BanGroupMemberRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -279,9 +279,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="cancelGroupRequest"></a>
 # **cancelGroupRequest**
@@ -335,9 +335,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -355,10 +355,10 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | You can&#39;t cancel a join request if you didn&#39;t request to join․ |  -  |
-**403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | OK |  -  |
+| **400** | You can&#39;t cancel a join request if you didn&#39;t request to join․ |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroup"></a>
 # **createGroup**
@@ -413,9 +413,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -433,8 +433,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Group object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single Group object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="createGroupAnnouncement"></a>
 # **createGroupAnnouncement**
@@ -490,10 +490,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **createGroupAnnouncementRequest** | [**CreateGroupAnnouncementRequest**](CreateGroupAnnouncementRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **createGroupAnnouncementRequest** | [**CreateGroupAnnouncementRequest**](CreateGroupAnnouncementRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -511,9 +511,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupAnnouncement object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupAnnouncement object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroupGallery"></a>
 # **createGroupGallery**
@@ -569,10 +569,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **createGroupGalleryRequest** | [**CreateGroupGalleryRequest**](CreateGroupGalleryRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **createGroupGalleryRequest** | [**CreateGroupGalleryRequest**](CreateGroupGalleryRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -590,9 +590,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupGallery object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupGallery object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroupInvite"></a>
 # **createGroupInvite**
@@ -647,10 +647,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **createGroupInviteRequest** | [**CreateGroupInviteRequest**](CreateGroupInviteRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **createGroupInviteRequest** | [**CreateGroupInviteRequest**](CreateGroupInviteRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -668,10 +668,10 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | User &lt;displayName&gt; is already invited |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | OK |  -  |
+| **400** | User &lt;displayName&gt; is already invited |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroupRole"></a>
 # **createGroupRole**
@@ -727,10 +727,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **createGroupRoleRequest** | [**CreateGroupRoleRequest**](CreateGroupRoleRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **createGroupRoleRequest** | [**CreateGroupRoleRequest**](CreateGroupRoleRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -748,9 +748,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupRole object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupRole object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="deleteGroup"></a>
 # **deleteGroup**
@@ -805,9 +805,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -825,9 +825,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response after deleting a Group. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Successful response after deleting a Group. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="deleteGroupAnnouncement"></a>
 # **deleteGroupAnnouncement**
@@ -882,9 +882,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -902,9 +902,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response after deleting/clearing the group announcement. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Successful response after deleting/clearing the group announcement. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="deleteGroupGallery"></a>
 # **deleteGroupGallery**
@@ -960,10 +960,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupGalleryId** | **String**| Must be a valid group gallery ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
 
 ### Return type
 
@@ -981,9 +981,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response after deleting a group gallery. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Successful response after deleting a group gallery. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="deleteGroupGalleryImage"></a>
 # **deleteGroupGalleryImage**
@@ -1040,11 +1040,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupGalleryId** | **String**| Must be a valid group gallery ID. |
- **groupGalleryImageId** | **String**| Must be a valid group gallery image ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
+| **groupGalleryImageId** | **String**| Must be a valid group gallery image ID. | |
 
 ### Return type
 
@@ -1062,10 +1062,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response after deleting a group gallery image. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Successful response after deleting a group gallery image. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **403** | Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="deleteGroupInvite"></a>
 # **deleteGroupInvite**
@@ -1120,10 +1120,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -1141,8 +1141,8 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="deleteGroupRole"></a>
 # **deleteGroupRole**
@@ -1198,10 +1198,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupRoleId** | **String**| Must be a valid group role ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupRoleId** | **String**| Must be a valid group role ID. | |
 
 ### Return type
 
@@ -1219,9 +1219,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupRole objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **200** | Returns a list of GroupRole objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a group you are not member of. |  -  |
 
 <a name="getGroup"></a>
 # **getGroup**
@@ -1277,10 +1277,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **includeRoles** | **Boolean**| Include roles for the Group object. Defaults to false. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **includeRoles** | **Boolean**| Include roles for the Group object. Defaults to false. | [optional] |
 
 ### Return type
 
@@ -1298,9 +1298,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Group object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single Group object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupAnnouncements"></a>
 # **getGroupAnnouncements**
@@ -1355,9 +1355,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -1375,9 +1375,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupAnnouncement object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupAnnouncement object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupAuditLogs"></a>
 # **getGroupAuditLogs**
@@ -1436,13 +1436,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **startDate** | **OffsetDateTime**| The start date of the search range. | [optional]
- **endDate** | **OffsetDateTime**| The end date of the search range. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **startDate** | **OffsetDateTime**| The start date of the search range. | [optional] |
+| **endDate** | **OffsetDateTime**| The end date of the search range. | [optional] |
 
 ### Return type
 
@@ -1460,9 +1460,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupAudit objects, wrapped in new pagination format. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupAudit objects, wrapped in new pagination format. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupBans"></a>
 # **getGroupBans**
@@ -1519,11 +1519,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 
 ### Return type
 
@@ -1541,9 +1541,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
@@ -1602,13 +1602,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupGalleryId** | **String**| Must be a valid group gallery ID. |
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
- **approved** | **Boolean**| If specified, only returns images that have been approved or not approved. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **approved** | **Boolean**| If specified, only returns images that have been approved or not approved. | [optional] |
 
 ### Return type
 
@@ -1626,9 +1626,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupGalleryImage objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupGalleryImage objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupInvites"></a>
 # **getGroupInvites**
@@ -1683,9 +1683,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -1703,10 +1703,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupMember"></a>
 # **getGroupMember**
@@ -1762,10 +1762,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -1783,9 +1783,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupMembers"></a>
 # **getGroupMembers**
@@ -1842,11 +1842,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **n** | **Integer**| The number of objects to return. | [optional] [default to 60]
- **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 
 ### Return type
 
@@ -1864,10 +1864,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**400** | Error response when trying to search list of users with an invalid request. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **400** | Error response when trying to search list of users with an invalid request. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupPermissions"></a>
 # **getGroupPermissions**
@@ -1922,9 +1922,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -1942,10 +1942,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupPermission objects. |  -  |
-**400** | Error response when trying to search list of users with an invalid request. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupPermission objects. |  -  |
+| **400** | Error response when trying to search list of users with an invalid request. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupRequests"></a>
 # **getGroupRequests**
@@ -2000,9 +2000,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -2020,9 +2020,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupRoles"></a>
 # **getGroupRoles**
@@ -2077,9 +2077,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -2097,9 +2097,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupRole objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupRole objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="joinGroup"></a>
 # **joinGroup**
@@ -2154,9 +2154,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -2174,10 +2174,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Group object. |  -  |
-**400** | Error response when trying to join a group that the user is already a member of. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single Group object. |  -  |
+| **400** | Error response when trying to join a group that the user is already a member of. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="kickGroupMember"></a>
 # **kickGroupMember**
@@ -2232,10 +2232,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -2253,10 +2253,10 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | OK |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="leaveGroup"></a>
 # **leaveGroup**
@@ -2310,9 +2310,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -2330,9 +2330,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | OK |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="removeGroupMemberRole"></a>
 # **removeGroupMemberRole**
@@ -2389,11 +2389,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
- **groupRoleId** | **String**| Must be a valid group role ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
+| **groupRoleId** | **String**| Must be a valid group role ID. | |
 
 ### Return type
 
@@ -2411,9 +2411,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupRoleID objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupRoleID objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="respondGroupJoinRequest"></a>
 # **respondGroupJoinRequest**
@@ -2469,11 +2469,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
- **respondGroupJoinRequest** | [**RespondGroupJoinRequest**](RespondGroupJoinRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
+| **respondGroupJoinRequest** | [**RespondGroupJoinRequest**](RespondGroupJoinRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2491,9 +2491,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | OK |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="unbanGroupMember"></a>
 # **unbanGroupMember**
@@ -2549,10 +2549,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -2570,9 +2570,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="updateGroup"></a>
 # **updateGroup**
@@ -2628,10 +2628,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2649,9 +2649,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Group object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single Group object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="updateGroupGallery"></a>
 # **updateGroupGallery**
@@ -2708,11 +2708,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupGalleryId** | **String**| Must be a valid group gallery ID. |
- **updateGroupGalleryRequest** | [**UpdateGroupGalleryRequest**](UpdateGroupGalleryRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
+| **updateGroupGalleryRequest** | [**UpdateGroupGalleryRequest**](UpdateGroupGalleryRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2730,9 +2730,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single GroupGallery object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a single GroupGallery object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="updateGroupMember"></a>
 # **updateGroupMember**
@@ -2789,11 +2789,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **userId** | **String**| Must be a valid user ID. |
- **updateGroupMemberRequest** | [**UpdateGroupMemberRequest**](UpdateGroupMemberRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **userId** | **String**| Must be a valid user ID. | |
+| **updateGroupMemberRequest** | [**UpdateGroupMemberRequest**](UpdateGroupMemberRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2811,9 +2811,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupMember objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="updateGroupRole"></a>
 # **updateGroupRole**
@@ -2870,11 +2870,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| Must be a valid group ID. |
- **groupRoleId** | **String**| Must be a valid group role ID. |
- **updateGroupRoleRequest** | [**UpdateGroupRoleRequest**](UpdateGroupRoleRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **groupRoleId** | **String**| Must be a valid group role ID. | |
+| **updateGroupRoleRequest** | [**UpdateGroupRoleRequest**](UpdateGroupRoleRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2892,6 +2892,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of GroupRole objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of GroupRole objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 

@@ -26,9 +26,31 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
+
 /**
- * FileVersionUploadStatus
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FileVersionUploadStatus {
   public static final String SERIALIZED_NAME_UPLOAD_ID = "uploadId";
@@ -49,12 +71,14 @@ public class FileVersionUploadStatus {
 
   public static final String SERIALIZED_NAME_PARTS = "parts";
   @SerializedName(SERIALIZED_NAME_PARTS)
-  private List<Object> parts = new ArrayList<Object>();
+  private List<Object> parts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ETAGS = "etags";
   @SerializedName(SERIALIZED_NAME_ETAGS)
-  private List<Object> etags = new ArrayList<Object>();
+  private List<Object> etags = new ArrayList<>();
 
+  public FileVersionUploadStatus() {
+  }
 
   public FileVersionUploadStatus uploadId(String uploadId) {
     
@@ -206,6 +230,7 @@ public class FileVersionUploadStatus {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -253,5 +278,124 @@ public class FileVersionUploadStatus {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("uploadId");
+    openapiFields.add("fileName");
+    openapiFields.add("nextPartNumber");
+    openapiFields.add("maxParts");
+    openapiFields.add("parts");
+    openapiFields.add("etags");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("uploadId");
+    openapiRequiredFields.add("fileName");
+    openapiRequiredFields.add("nextPartNumber");
+    openapiRequiredFields.add("maxParts");
+    openapiRequiredFields.add("parts");
+    openapiRequiredFields.add("etags");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to FileVersionUploadStatus
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!FileVersionUploadStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in FileVersionUploadStatus is not found in the empty JSON string", FileVersionUploadStatus.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!FileVersionUploadStatus.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FileVersionUploadStatus` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FileVersionUploadStatus.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (!jsonObj.get("uploadId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uploadId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uploadId").toString()));
+      }
+      if (!jsonObj.get("fileName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fileName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileName").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("parts") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("parts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `parts` to be an array in the JSON string but got `%s`", jsonObj.get("parts").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("etags") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("etags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `etags` to be an array in the JSON string but got `%s`", jsonObj.get("etags").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!FileVersionUploadStatus.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'FileVersionUploadStatus' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<FileVersionUploadStatus> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(FileVersionUploadStatus.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<FileVersionUploadStatus>() {
+           @Override
+           public void write(JsonWriter out, FileVersionUploadStatus value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public FileVersionUploadStatus read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of FileVersionUploadStatus given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of FileVersionUploadStatus
+  * @throws IOException if the JSON string is invalid with respect to FileVersionUploadStatus
+  */
+  public static FileVersionUploadStatus fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, FileVersionUploadStatus.class);
+  }
+
+ /**
+  * Convert an instance of FileVersionUploadStatus to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

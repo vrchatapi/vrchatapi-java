@@ -26,6 +26,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
+
 /**
  * PaginatedGroupAuditLogEntryList
  */
@@ -43,6 +64,8 @@ public class PaginatedGroupAuditLogEntryList {
   @SerializedName(SERIALIZED_NAME_HAS_NEXT)
   private Boolean hasNext;
 
+  public PaginatedGroupAuditLogEntryList() {
+  }
 
   public PaginatedGroupAuditLogEntryList results(List<GroupAuditLogEntry> results) {
     
@@ -52,18 +75,18 @@ public class PaginatedGroupAuditLogEntryList {
 
   public PaginatedGroupAuditLogEntryList addResultsItem(GroupAuditLogEntry resultsItem) {
     if (this.results == null) {
-      this.results = new ArrayList<GroupAuditLogEntry>();
+      this.results = new ArrayList<>();
     }
     this.results.add(resultsItem);
     return this;
   }
 
    /**
-   * Get results
+   *  
    * @return results
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = " ")
 
   public List<GroupAuditLogEntry> getResults() {
     return results;
@@ -121,6 +144,7 @@ public class PaginatedGroupAuditLogEntryList {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -162,5 +186,104 @@ public class PaginatedGroupAuditLogEntryList {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("results");
+    openapiFields.add("totalCount");
+    openapiFields.add("hasNext");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to PaginatedGroupAuditLogEntryList
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!PaginatedGroupAuditLogEntryList.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedGroupAuditLogEntryList is not found in the empty JSON string", PaginatedGroupAuditLogEntryList.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!PaginatedGroupAuditLogEntryList.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaginatedGroupAuditLogEntryList` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            GroupAuditLogEntry.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
+          };
+        }
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!PaginatedGroupAuditLogEntryList.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PaginatedGroupAuditLogEntryList' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<PaginatedGroupAuditLogEntryList> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PaginatedGroupAuditLogEntryList.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<PaginatedGroupAuditLogEntryList>() {
+           @Override
+           public void write(JsonWriter out, PaginatedGroupAuditLogEntryList value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public PaginatedGroupAuditLogEntryList read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of PaginatedGroupAuditLogEntryList given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of PaginatedGroupAuditLogEntryList
+  * @throws IOException if the JSON string is invalid with respect to PaginatedGroupAuditLogEntryList
+  */
+  public static PaginatedGroupAuditLogEntryList fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PaginatedGroupAuditLogEntryList.class);
+  }
+
+ /**
+  * Convert an instance of PaginatedGroupAuditLogEntryList to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

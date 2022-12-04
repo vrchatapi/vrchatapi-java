@@ -1,3 +1,4 @@
+.github/workflows/maven.yml
 api/openapi.yaml
 build.gradle
 build.sbt
@@ -82,6 +83,7 @@ docs/LimitedUnityPackage.md
 docs/LimitedUser.md
 docs/LimitedWorld.md
 docs/MIMEType.md
+docs/ModelFile.md
 docs/ModerateUserRequest.md
 docs/Notification.md
 docs/NotificationType.md
@@ -179,6 +181,7 @@ src/main/java/io/github/vrchatapi/model/APIConfigAnnouncement.java
 src/main/java/io/github/vrchatapi/model/APIConfigDownloadURLList.java
 src/main/java/io/github/vrchatapi/model/APIConfigEvents.java
 src/main/java/io/github/vrchatapi/model/APIHealth.java
+src/main/java/io/github/vrchatapi/model/AbstractOpenApiSchema.java
 src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/Avatar.java
@@ -246,6 +249,7 @@ src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
 src/main/java/io/github/vrchatapi/model/LimitedUser.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java
 src/main/java/io/github/vrchatapi/model/MIMEType.java
+src/main/java/io/github/vrchatapi/model/ModelFile.java
 src/main/java/io/github/vrchatapi/model/ModerateUserRequest.java
 src/main/java/io/github/vrchatapi/model/Notification.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java

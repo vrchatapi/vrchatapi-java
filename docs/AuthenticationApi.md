@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**checkUserExists**](AuthenticationApi.md#checkUserExists) | **GET** /auth/exists | Check User Exists
-[**deleteUser**](AuthenticationApi.md#deleteUser) | **PUT** /user/{userId}/delete | Delete User
-[**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info
-[**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
-[**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
-[**verifyAuthToken**](AuthenticationApi.md#verifyAuthToken) | **GET** /auth | Verify Auth Token
-[**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**checkUserExists**](AuthenticationApi.md#checkUserExists) | **GET** /auth/exists | Check User Exists |
+| [**deleteUser**](AuthenticationApi.md#deleteUser) | **PUT** /user/{userId}/delete | Delete User |
+| [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
+| [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout |
+| [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code |
+| [**verifyAuthToken**](AuthenticationApi.md#verifyAuthToken) | **GET** /auth | Verify Auth Token |
+| [**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code |
 
 
 <a name="checkUserExists"></a>
@@ -63,12 +63,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Filter by email. | [optional]
- **displayName** | **String**| Filter by displayName. | [optional]
- **userId** | **String**| Filter by UserID. | [optional]
- **excludeUserId** | **String**| Exclude by UserID. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Filter by email. | [optional] |
+| **displayName** | **String**| Filter by displayName. | [optional] |
+| **userId** | **String**| Filter by UserID. | [optional] |
+| **excludeUserId** | **String**| Exclude by UserID. | [optional] |
 
 ### Return type
 
@@ -86,8 +86,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a response if a user exists or not. |  -  |
-**400** | Error response when missing at least 1 of the required parameters. |  -  |
+| **200** | Returns a response if a user exists or not. |  -  |
+| **400** | Error response when missing at least 1 of the required parameters. |  -  |
 
 <a name="deleteUser"></a>
 # **deleteUser**
@@ -142,9 +142,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**| Must be a valid user ID. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
 
@@ -162,8 +162,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getCurrentUser"></a>
 # **getCurrentUser**
@@ -239,8 +239,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - This endpoint **always** sets the &#x60;apiKey&#x60; irrespective if it is already set. <br>  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - This endpoint **always** sets the &#x60;apiKey&#x60; irrespective if it is already set. <br>  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="logout"></a>
 # **logout**
@@ -305,8 +305,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Set-Cookie - Clears the &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - Clears the &#x60;age&#x60; cookie. <br>  * \0\0Set-Cookie - Clears the &#x60;tos&#x60; cookie. <br>  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  * Set-Cookie - Clears the &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - Clears the &#x60;age&#x60; cookie. <br>  * \0\0Set-Cookie - Clears the &#x60;tos&#x60; cookie. <br>  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="verify2FA"></a>
 # **verify2FA**
@@ -355,9 +355,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] |
 
 ### Return type
 
@@ -375,8 +375,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="verifyAuthToken"></a>
 # **verifyAuthToken**
@@ -441,8 +441,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns wether a provided auth token is valid or not. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns wether a provided auth token is valid or not. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="verifyRecoveryCode"></a>
 # **verifyRecoveryCode**
@@ -491,9 +491,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] |
 
 ### Return type
 
@@ -511,6 +511,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
