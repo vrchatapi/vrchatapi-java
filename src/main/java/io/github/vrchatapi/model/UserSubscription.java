@@ -25,35 +25,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
+import org.threeten.bp.OffsetDateTime;
 
 /**
- * 
+ * UserSubscription
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UserSubscription {
   public static final String SERIALIZED_NAME_ID = "id";
@@ -110,14 +88,12 @@ public class UserSubscription {
 
   public static final String SERIALIZED_NAME_LICENSE_GROUPS = "licenseGroups";
   @SerializedName(SERIALIZED_NAME_LICENSE_GROUPS)
-  private List<String> licenseGroups = new ArrayList<>();
+  private List<String> licenseGroups = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_IS_GIFT = "isGift";
   @SerializedName(SERIALIZED_NAME_IS_GIFT)
   private Boolean isGift = false;
 
-  public UserSubscription() {
-  }
 
   public UserSubscription id(String id) {
     
@@ -469,7 +445,6 @@ public class UserSubscription {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -535,144 +510,5 @@ public class UserSubscription {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("transactionId");
-    openapiFields.add("store");
-    openapiFields.add("steamItemId");
-    openapiFields.add("amount");
-    openapiFields.add("description");
-    openapiFields.add("period");
-    openapiFields.add("tier");
-    openapiFields.add("active");
-    openapiFields.add("status");
-    openapiFields.add("expires");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
-    openapiFields.add("licenseGroups");
-    openapiFields.add("isGift");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("transactionId");
-    openapiRequiredFields.add("store");
-    openapiRequiredFields.add("amount");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("period");
-    openapiRequiredFields.add("tier");
-    openapiRequiredFields.add("active");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("expires");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
-    openapiRequiredFields.add("licenseGroups");
-    openapiRequiredFields.add("isGift");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UserSubscription
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!UserSubscription.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserSubscription is not found in the empty JSON string", UserSubscription.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UserSubscription.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UserSubscription` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UserSubscription.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (!jsonObj.get("transactionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
-      }
-      if (!jsonObj.get("store").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `store` to be a primitive type in the JSON string but got `%s`", jsonObj.get("store").toString()));
-      }
-      if ((jsonObj.get("steamItemId") != null && !jsonObj.get("steamItemId").isJsonNull()) && !jsonObj.get("steamItemId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `steamItemId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("steamItemId").toString()));
-      }
-      if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("licenseGroups") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("licenseGroups").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `licenseGroups` to be an array in the JSON string but got `%s`", jsonObj.get("licenseGroups").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UserSubscription.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UserSubscription' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UserSubscription> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UserSubscription.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UserSubscription>() {
-           @Override
-           public void write(JsonWriter out, UserSubscription value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UserSubscription read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UserSubscription given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UserSubscription
-  * @throws IOException if the JSON string is invalid with respect to UserSubscription
-  */
-  public static UserSubscription fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UserSubscription.class);
-  }
-
- /**
-  * Convert an instance of UserSubscription to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

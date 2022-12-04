@@ -32,7 +32,6 @@ import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.FileUploadURL;
 import io.github.vrchatapi.model.FileVersionUploadStatus;
 import io.github.vrchatapi.model.FinishFileDataUploadRequest;
-import io.github.vrchatapi.model.ModelFile;
 import io.github.vrchatapi.model.Success;
 
 import java.lang.reflect.Type;
@@ -40,12 +39,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class FilesApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public FilesApi() {
         this(Configuration.getDefaultApiClient());
@@ -63,22 +59,6 @@ public class FilesApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for createFile
      * @param createFileRequest  (optional)
@@ -92,19 +72,6 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call createFileCall(CreateFileRequest createFileRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = createFileRequest;
 
         // create path and map variables
@@ -128,17 +95,18 @@ public class FilesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createFileValidateBeforeCall(CreateFileRequest createFileRequest, final ApiCallback _callback) throws ApiException {
-        return createFileCall(createFileRequest, _callback);
+        
+
+        okhttp3.Call localVarCall = createFileCall(createFileRequest, _callback);
+        return localVarCall;
 
     }
 
@@ -146,7 +114,7 @@ public class FilesApi {
      * Create File
      * Creates a new File object
      * @param createFileRequest  (optional)
-     * @return ModelFile
+     * @return java.io.File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -154,8 +122,8 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile createFile(CreateFileRequest createFileRequest) throws ApiException {
-        ApiResponse<ModelFile> localVarResp = createFileWithHttpInfo(createFileRequest);
+    public java.io.File createFile(CreateFileRequest createFileRequest) throws ApiException {
+        ApiResponse<java.io.File> localVarResp = createFileWithHttpInfo(createFileRequest);
         return localVarResp.getData();
     }
 
@@ -163,7 +131,7 @@ public class FilesApi {
      * Create File
      * Creates a new File object
      * @param createFileRequest  (optional)
-     * @return ApiResponse&lt;ModelFile&gt;
+     * @return ApiResponse&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -171,9 +139,9 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> createFileWithHttpInfo(CreateFileRequest createFileRequest) throws ApiException {
+    public ApiResponse<java.io.File> createFileWithHttpInfo(CreateFileRequest createFileRequest) throws ApiException {
         okhttp3.Call localVarCall = createFileValidateBeforeCall(createFileRequest, null);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -190,16 +158,16 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFileAsync(CreateFileRequest createFileRequest, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call createFileAsync(CreateFileRequest createFileRequest, final ApiCallback<java.io.File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createFileValidateBeforeCall(createFileRequest, _callback);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for createFileVersion
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param createFileVersionRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -211,24 +179,11 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call createFileVersionCall(String fileId, CreateFileVersionRequest createFileVersionRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = createFileVersionRequest;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -248,31 +203,32 @@ public class FilesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createFileVersionValidateBeforeCall(String fileId, CreateFileVersionRequest createFileVersionRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling createFileVersion(Async)");
         }
+        
 
-        return createFileVersionCall(fileId, createFileVersionRequest, _callback);
+        okhttp3.Call localVarCall = createFileVersionCall(fileId, createFileVersionRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Create File Version
      * Creates a new FileVersion. Once a Version has been created, proceed to the &#x60;/file/{fileId}/{versionId}/file/start&#x60; endpoint to start a file upload.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param createFileVersionRequest  (optional)
-     * @return ModelFile
+     * @return java.io.File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -280,17 +236,17 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile createFileVersion(String fileId, CreateFileVersionRequest createFileVersionRequest) throws ApiException {
-        ApiResponse<ModelFile> localVarResp = createFileVersionWithHttpInfo(fileId, createFileVersionRequest);
+    public java.io.File createFileVersion(String fileId, CreateFileVersionRequest createFileVersionRequest) throws ApiException {
+        ApiResponse<java.io.File> localVarResp = createFileVersionWithHttpInfo(fileId, createFileVersionRequest);
         return localVarResp.getData();
     }
 
     /**
      * Create File Version
      * Creates a new FileVersion. Once a Version has been created, proceed to the &#x60;/file/{fileId}/{versionId}/file/start&#x60; endpoint to start a file upload.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param createFileVersionRequest  (optional)
-     * @return ApiResponse&lt;ModelFile&gt;
+     * @return ApiResponse&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -298,16 +254,16 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> createFileVersionWithHttpInfo(String fileId, CreateFileVersionRequest createFileVersionRequest) throws ApiException {
+    public ApiResponse<java.io.File> createFileVersionWithHttpInfo(String fileId, CreateFileVersionRequest createFileVersionRequest) throws ApiException {
         okhttp3.Call localVarCall = createFileVersionValidateBeforeCall(fileId, createFileVersionRequest, null);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Create File Version (asynchronously)
      * Creates a new FileVersion. Once a Version has been created, proceed to the &#x60;/file/{fileId}/{versionId}/file/start&#x60; endpoint to start a file upload.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param createFileVersionRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -318,16 +274,16 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFileVersionAsync(String fileId, CreateFileVersionRequest createFileVersionRequest, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call createFileVersionAsync(String fileId, CreateFileVersionRequest createFileVersionRequest, final ApiCallback<java.io.File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createFileVersionValidateBeforeCall(fileId, createFileVersionRequest, _callback);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteFile
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -339,24 +295,11 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call deleteFileCall(String fileId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -373,31 +316,33 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteFileValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling deleteFile(Async)");
         }
+        
 
-        return deleteFileCall(fileId, _callback);
+        okhttp3.Call localVarCall = deleteFileCall(fileId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Delete File
      * Deletes a File object.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @return Success
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -415,7 +360,7 @@ public class FilesApi {
     /**
      * Delete File
      * Deletes a File object.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @return ApiResponse&lt;Success&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -434,7 +379,7 @@ public class FilesApi {
     /**
      * Delete File (asynchronously)
      * Deletes a File object.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -454,8 +399,8 @@ public class FilesApi {
     }
     /**
      * Build call for deleteFileVersion
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -468,25 +413,12 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call deleteFileVersionCall(String fileId, Integer versionId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}/{versionId}"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()))
-            .replace("{" + "versionId" + "}", localVarApiClient.escapeString(versionId.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()))
+            .replaceAll("\\{" + "versionId" + "\\}", localVarApiClient.escapeString(versionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -503,38 +435,40 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteFileVersionValidateBeforeCall(String fileId, Integer versionId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling deleteFileVersion(Async)");
         }
-
+        
         // verify the required parameter 'versionId' is set
         if (versionId == null) {
             throw new ApiException("Missing the required parameter 'versionId' when calling deleteFileVersion(Async)");
         }
+        
 
-        return deleteFileVersionCall(fileId, versionId, _callback);
+        okhttp3.Call localVarCall = deleteFileVersionCall(fileId, versionId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Delete File Version
      * Delete a specific version of a file. You can only delete the latest version.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @return ModelFile
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @return java.io.File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -544,17 +478,17 @@ public class FilesApi {
         <tr><td> 500 </td><td> Error response when trying to delete any version of a file that is not hte last one. </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile deleteFileVersion(String fileId, Integer versionId) throws ApiException {
-        ApiResponse<ModelFile> localVarResp = deleteFileVersionWithHttpInfo(fileId, versionId);
+    public java.io.File deleteFileVersion(String fileId, Integer versionId) throws ApiException {
+        ApiResponse<java.io.File> localVarResp = deleteFileVersionWithHttpInfo(fileId, versionId);
         return localVarResp.getData();
     }
 
     /**
      * Delete File Version
      * Delete a specific version of a file. You can only delete the latest version.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @return ApiResponse&lt;ModelFile&gt;
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @return ApiResponse&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -564,17 +498,17 @@ public class FilesApi {
         <tr><td> 500 </td><td> Error response when trying to delete any version of a file that is not hte last one. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> deleteFileVersionWithHttpInfo(String fileId, Integer versionId) throws ApiException {
+    public ApiResponse<java.io.File> deleteFileVersionWithHttpInfo(String fileId, Integer versionId) throws ApiException {
         okhttp3.Call localVarCall = deleteFileVersionValidateBeforeCall(fileId, versionId, null);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Delete File Version (asynchronously)
      * Delete a specific version of a file. You can only delete the latest version.
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -586,17 +520,17 @@ public class FilesApi {
         <tr><td> 500 </td><td> Error response when trying to delete any version of a file that is not hte last one. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFileVersionAsync(String fileId, Integer versionId, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call deleteFileVersionAsync(String fileId, Integer versionId, final ApiCallback<java.io.File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFileVersionValidateBeforeCall(fileId, versionId, _callback);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for downloadFileVersion
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -607,25 +541,12 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call downloadFileVersionCall(String fileId, Integer versionId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}/{versionId}"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()))
-            .replace("{" + "versionId" + "}", localVarApiClient.escapeString(versionId.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()))
+            .replaceAll("\\{" + "versionId" + "\\}", localVarApiClient.escapeString(versionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -634,6 +555,7 @@ public class FilesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -641,37 +563,39 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call downloadFileVersionValidateBeforeCall(String fileId, Integer versionId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling downloadFileVersion(Async)");
         }
-
+        
         // verify the required parameter 'versionId' is set
         if (versionId == null) {
             throw new ApiException("Missing the required parameter 'versionId' when calling downloadFileVersion(Async)");
         }
+        
 
-        return downloadFileVersionCall(fileId, versionId, _callback);
+        okhttp3.Call localVarCall = downloadFileVersionCall(fileId, versionId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Download File Version
      * Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when neccesary.
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -686,8 +610,8 @@ public class FilesApi {
     /**
      * Download File Version
      * Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when neccesary.
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -704,8 +628,8 @@ public class FilesApi {
     /**
      * Download File Version (asynchronously)
      * Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when neccesary.
-     * @param fileId  (required)
-     * @param versionId  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -723,9 +647,9 @@ public class FilesApi {
     }
     /**
      * Build call for finishFileDataUpload
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param finishFileDataUploadRequest Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -737,26 +661,13 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call finishFileDataUploadCall(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = finishFileDataUploadRequest;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}/{versionId}/{fileType}/finish"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()))
-            .replace("{" + "versionId" + "}", localVarApiClient.escapeString(versionId.toString()))
-            .replace("{" + "fileType" + "}", localVarApiClient.escapeString(fileType.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()))
+            .replaceAll("\\{" + "versionId" + "\\}", localVarApiClient.escapeString(versionId.toString()))
+            .replaceAll("\\{" + "fileType" + "\\}", localVarApiClient.escapeString(fileType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -776,43 +687,44 @@ public class FilesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call finishFileDataUploadValidateBeforeCall(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling finishFileDataUpload(Async)");
         }
-
+        
         // verify the required parameter 'versionId' is set
         if (versionId == null) {
             throw new ApiException("Missing the required parameter 'versionId' when calling finishFileDataUpload(Async)");
         }
-
+        
         // verify the required parameter 'fileType' is set
         if (fileType == null) {
             throw new ApiException("Missing the required parameter 'fileType' when calling finishFileDataUpload(Async)");
         }
+        
 
-        return finishFileDataUploadCall(fileId, versionId, fileType, finishFileDataUploadRequest, _callback);
+        okhttp3.Call localVarCall = finishFileDataUploadCall(fileId, versionId, fileType, finishFileDataUploadRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Finish FileData Upload
      * Finish an upload of a FileData. This will mark it as \&quot;complete\&quot;. After uploading the &#x60;file&#x60; for Avatars and Worlds you then have to upload a &#x60;signature&#x60; file.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param finishFileDataUploadRequest Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. (optional)
-     * @return ModelFile
+     * @return java.io.File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -820,19 +732,19 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile finishFileDataUpload(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest) throws ApiException {
-        ApiResponse<ModelFile> localVarResp = finishFileDataUploadWithHttpInfo(fileId, versionId, fileType, finishFileDataUploadRequest);
+    public java.io.File finishFileDataUpload(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest) throws ApiException {
+        ApiResponse<java.io.File> localVarResp = finishFileDataUploadWithHttpInfo(fileId, versionId, fileType, finishFileDataUploadRequest);
         return localVarResp.getData();
     }
 
     /**
      * Finish FileData Upload
      * Finish an upload of a FileData. This will mark it as \&quot;complete\&quot;. After uploading the &#x60;file&#x60; for Avatars and Worlds you then have to upload a &#x60;signature&#x60; file.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param finishFileDataUploadRequest Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. (optional)
-     * @return ApiResponse&lt;ModelFile&gt;
+     * @return ApiResponse&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -840,18 +752,18 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> finishFileDataUploadWithHttpInfo(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest) throws ApiException {
+    public ApiResponse<java.io.File> finishFileDataUploadWithHttpInfo(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest) throws ApiException {
         okhttp3.Call localVarCall = finishFileDataUploadValidateBeforeCall(fileId, versionId, fileType, finishFileDataUploadRequest, null);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Finish FileData Upload (asynchronously)
      * Finish an upload of a FileData. This will mark it as \&quot;complete\&quot;. After uploading the &#x60;file&#x60; for Avatars and Worlds you then have to upload a &#x60;signature&#x60; file.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param finishFileDataUploadRequest Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -862,16 +774,16 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call finishFileDataUploadAsync(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call finishFileDataUploadAsync(String fileId, Integer versionId, String fileType, FinishFileDataUploadRequest finishFileDataUploadRequest, final ApiCallback<java.io.File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = finishFileDataUploadValidateBeforeCall(fileId, versionId, fileType, finishFileDataUploadRequest, _callback);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getFile
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -883,24 +795,11 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call getFileCall(String fileId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -917,32 +816,34 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFileValidateBeforeCall(String fileId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling getFile(Async)");
         }
+        
 
-        return getFileCall(fileId, _callback);
+        okhttp3.Call localVarCall = getFileCall(fileId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Show File
      * Shows general information about the \&quot;File\&quot; object. Each File can have several \&quot;Version\&quot;&#39;s, and each Version can have multiple real files or \&quot;Data\&quot; blobs.
-     * @param fileId  (required)
-     * @return ModelFile
+     * @param fileId Must be a valid file ID. (required)
+     * @return java.io.File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -951,16 +852,16 @@ public class FilesApi {
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile getFile(String fileId) throws ApiException {
-        ApiResponse<ModelFile> localVarResp = getFileWithHttpInfo(fileId);
+    public java.io.File getFile(String fileId) throws ApiException {
+        ApiResponse<java.io.File> localVarResp = getFileWithHttpInfo(fileId);
         return localVarResp.getData();
     }
 
     /**
      * Show File
      * Shows general information about the \&quot;File\&quot; object. Each File can have several \&quot;Version\&quot;&#39;s, and each Version can have multiple real files or \&quot;Data\&quot; blobs.
-     * @param fileId  (required)
-     * @return ApiResponse&lt;ModelFile&gt;
+     * @param fileId Must be a valid file ID. (required)
+     * @return ApiResponse&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -969,16 +870,16 @@ public class FilesApi {
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> getFileWithHttpInfo(String fileId) throws ApiException {
+    public ApiResponse<java.io.File> getFileWithHttpInfo(String fileId) throws ApiException {
         okhttp3.Call localVarCall = getFileValidateBeforeCall(fileId, null);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Show File (asynchronously)
      * Shows general information about the \&quot;File\&quot; object. Each File can have several \&quot;Version\&quot;&#39;s, and each Version can have multiple real files or \&quot;Data\&quot; blobs.
-     * @param fileId  (required)
+     * @param fileId Must be a valid file ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -989,18 +890,18 @@ public class FilesApi {
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileAsync(String fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call getFileAsync(String fileId, final ApiCallback<java.io.File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFileValidateBeforeCall(fileId, _callback);
-        Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
+        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getFileDataUploadStatus
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1011,26 +912,13 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call getFileDataUploadStatusCall(String fileId, Integer versionId, String fileType, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}/{versionId}/{fileType}/status"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()))
-            .replace("{" + "versionId" + "}", localVarApiClient.escapeString(versionId.toString()))
-            .replace("{" + "fileType" + "}", localVarApiClient.escapeString(fileType.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()))
+            .replaceAll("\\{" + "versionId" + "\\}", localVarApiClient.escapeString(versionId.toString()))
+            .replaceAll("\\{" + "fileType" + "\\}", localVarApiClient.escapeString(fileType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1047,43 +935,45 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFileDataUploadStatusValidateBeforeCall(String fileId, Integer versionId, String fileType, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling getFileDataUploadStatus(Async)");
         }
-
+        
         // verify the required parameter 'versionId' is set
         if (versionId == null) {
             throw new ApiException("Missing the required parameter 'versionId' when calling getFileDataUploadStatus(Async)");
         }
-
+        
         // verify the required parameter 'fileType' is set
         if (fileType == null) {
             throw new ApiException("Missing the required parameter 'fileType' when calling getFileDataUploadStatus(Async)");
         }
+        
 
-        return getFileDataUploadStatusCall(fileId, versionId, fileType, _callback);
+        okhttp3.Call localVarCall = getFileDataUploadStatusCall(fileId, versionId, fileType, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Check FileData Upload Status
      * Retrieves the upload status for file upload. Can currently only be accessed when &#x60;status&#x60; is &#x60;waiting&#x60;. Trying to access it on a file version already uploaded currently times out.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @return FileVersionUploadStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1100,9 +990,9 @@ public class FilesApi {
     /**
      * Check FileData Upload Status
      * Retrieves the upload status for file upload. Can currently only be accessed when &#x60;status&#x60; is &#x60;waiting&#x60;. Trying to access it on a file version already uploaded currently times out.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @return ApiResponse&lt;FileVersionUploadStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1120,9 +1010,9 @@ public class FilesApi {
     /**
      * Check FileData Upload Status (asynchronously)
      * Retrieves the upload status for file upload. Can currently only be accessed when &#x60;status&#x60; is &#x60;waiting&#x60;. Trying to access it on a file version already uploaded currently times out.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1155,19 +1045,6 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call getFilesCall(String tag, String userId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1204,19 +1081,21 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFilesValidateBeforeCall(String tag, String userId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        return getFilesCall(tag, userId, n, offset, _callback);
+        
+
+        okhttp3.Call localVarCall = getFilesCall(tag, userId, n, offset, _callback);
+        return localVarCall;
 
     }
 
@@ -1227,7 +1106,7 @@ public class FilesApi {
      * @param userId UserID, will always generate a 500 permission error. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
-     * @return List&lt;ModelFile&gt;
+     * @return List&lt;java.io.File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1235,8 +1114,8 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a list of File objects. </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelFile> getFiles(String tag, String userId, Integer n, Integer offset) throws ApiException {
-        ApiResponse<List<ModelFile>> localVarResp = getFilesWithHttpInfo(tag, userId, n, offset);
+    public List<java.io.File> getFiles(String tag, String userId, Integer n, Integer offset) throws ApiException {
+        ApiResponse<List<java.io.File>> localVarResp = getFilesWithHttpInfo(tag, userId, n, offset);
         return localVarResp.getData();
     }
 
@@ -1247,7 +1126,7 @@ public class FilesApi {
      * @param userId UserID, will always generate a 500 permission error. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
-     * @return ApiResponse&lt;List&lt;ModelFile&gt;&gt;
+     * @return ApiResponse&lt;List&lt;java.io.File&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1255,9 +1134,9 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a list of File objects. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelFile>> getFilesWithHttpInfo(String tag, String userId, Integer n, Integer offset) throws ApiException {
+    public ApiResponse<List<java.io.File>> getFilesWithHttpInfo(String tag, String userId, Integer n, Integer offset) throws ApiException {
         okhttp3.Call localVarCall = getFilesValidateBeforeCall(tag, userId, n, offset, null);
-        Type localVarReturnType = new TypeToken<List<ModelFile>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<java.io.File>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1277,19 +1156,19 @@ public class FilesApi {
         <tr><td> 200 </td><td> Returns a list of File objects. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFilesAsync(String tag, String userId, Integer n, Integer offset, final ApiCallback<List<ModelFile>> _callback) throws ApiException {
+    public okhttp3.Call getFilesAsync(String tag, String userId, Integer n, Integer offset, final ApiCallback<List<java.io.File>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFilesValidateBeforeCall(tag, userId, n, offset, _callback);
-        Type localVarReturnType = new TypeToken<List<ModelFile>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<java.io.File>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for startFileDataUpload
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
-     * @param partNumber  (optional)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
+     * @param partNumber The part number to start uploading. If not provided, the first part will be started. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1301,26 +1180,13 @@ public class FilesApi {
      </table>
      */
     public okhttp3.Call startFileDataUploadCall(String fileId, Integer versionId, String fileType, Integer partNumber, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/file/{fileId}/{versionId}/{fileType}/start"
-            .replace("{" + "fileId" + "}", localVarApiClient.escapeString(fileId.toString()))
-            .replace("{" + "versionId" + "}", localVarApiClient.escapeString(versionId.toString()))
-            .replace("{" + "fileType" + "}", localVarApiClient.escapeString(fileType.toString()));
+            .replaceAll("\\{" + "fileId" + "\\}", localVarApiClient.escapeString(fileId.toString()))
+            .replaceAll("\\{" + "versionId" + "\\}", localVarApiClient.escapeString(versionId.toString()))
+            .replaceAll("\\{" + "fileType" + "\\}", localVarApiClient.escapeString(fileType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1341,44 +1207,46 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call startFileDataUploadValidateBeforeCall(String fileId, Integer versionId, String fileType, Integer partNumber, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling startFileDataUpload(Async)");
         }
-
+        
         // verify the required parameter 'versionId' is set
         if (versionId == null) {
             throw new ApiException("Missing the required parameter 'versionId' when calling startFileDataUpload(Async)");
         }
-
+        
         // verify the required parameter 'fileType' is set
         if (fileType == null) {
             throw new ApiException("Missing the required parameter 'fileType' when calling startFileDataUpload(Async)");
         }
+        
 
-        return startFileDataUploadCall(fileId, versionId, fileType, partNumber, _callback);
+        okhttp3.Call localVarCall = startFileDataUploadCall(fileId, versionId, fileType, partNumber, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Start FileData Upload
      * Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each &#x60;partNumber&#x60;. Please see AWS&#39;s REST documentation on \&quot;PUT Object to S3\&quot; on how to upload. Once all parts has been uploaded, proceed to &#x60;/finish&#x60; endpoint.  **Note:** &#x60;nextPartNumber&#x60; seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
-     * @param partNumber  (optional)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
+     * @param partNumber The part number to start uploading. If not provided, the first part will be started. (optional)
      * @return FileUploadURL
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1396,10 +1264,10 @@ public class FilesApi {
     /**
      * Start FileData Upload
      * Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each &#x60;partNumber&#x60;. Please see AWS&#39;s REST documentation on \&quot;PUT Object to S3\&quot; on how to upload. Once all parts has been uploaded, proceed to &#x60;/finish&#x60; endpoint.  **Note:** &#x60;nextPartNumber&#x60; seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
-     * @param partNumber  (optional)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
+     * @param partNumber The part number to start uploading. If not provided, the first part will be started. (optional)
      * @return ApiResponse&lt;FileUploadURL&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1418,10 +1286,10 @@ public class FilesApi {
     /**
      * Start FileData Upload (asynchronously)
      * Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each &#x60;partNumber&#x60;. Please see AWS&#39;s REST documentation on \&quot;PUT Object to S3\&quot; on how to upload. Once all parts has been uploaded, proceed to &#x60;/finish&#x60; endpoint.  **Note:** &#x60;nextPartNumber&#x60; seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
-     * @param fileId  (required)
-     * @param versionId  (required)
-     * @param fileType  (required)
-     * @param partNumber  (optional)
+     * @param fileId Must be a valid file ID. (required)
+     * @param versionId Version ID of the asset. (required)
+     * @param fileType Type of file. (required)
+     * @param partNumber The part number to start uploading. If not provided, the first part will be started. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

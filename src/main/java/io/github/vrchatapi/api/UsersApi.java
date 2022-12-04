@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import io.github.vrchatapi.model.CurrentUser;
 import io.github.vrchatapi.model.Error;
+import io.github.vrchatapi.model.Group;
 import io.github.vrchatapi.model.LimitedUser;
 import io.github.vrchatapi.model.UpdateUserRequest;
 import io.github.vrchatapi.model.User;
@@ -37,12 +38,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class UsersApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public UsersApi() {
         this(Configuration.getDefaultApiClient());
@@ -60,25 +58,9 @@ public class UsersApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for getUser
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,24 +72,11 @@ public class UsersApi {
      </table>
      */
     public okhttp3.Call getUserCall(String userId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/users/{userId}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -124,31 +93,33 @@ public class UsersApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getUserValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getUser(Async)");
         }
+        
 
-        return getUserCall(userId, _callback);
+        okhttp3.Call localVarCall = getUserCall(userId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get User by ID
      * Get public user information about a specific user using their ID.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -166,7 +137,7 @@ public class UsersApi {
     /**
      * Get User by ID
      * Get public user information about a specific user using their ID.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -185,7 +156,7 @@ public class UsersApi {
     /**
      * Get User by ID (asynchronously)
      * Get public user information about a specific user using their ID.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -205,7 +176,7 @@ public class UsersApi {
     }
     /**
      * Build call for getUserByName
-     * @param username  (required)
+     * @param username Username of the user (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -219,24 +190,11 @@ public class UsersApi {
      */
     @Deprecated
     public okhttp3.Call getUserByNameCall(String username, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/users/{username}/name"
-            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()));
+            .replaceAll("\\{" + "username" + "\\}", localVarApiClient.escapeString(username.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -253,32 +211,34 @@ public class UsersApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getUserByNameValidateBeforeCall(String username, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling getUserByName(Async)");
         }
+        
 
-        return getUserByNameCall(username, _callback);
+        okhttp3.Call localVarCall = getUserByNameCall(username, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get User by Username
      * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
-     * @param username  (required)
+     * @param username Username of the user (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -298,7 +258,7 @@ public class UsersApi {
     /**
      * Get User by Username
      * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
-     * @param username  (required)
+     * @param username Username of the user (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -319,7 +279,7 @@ public class UsersApi {
     /**
      * Get User by Username (asynchronously)
      * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
-     * @param username  (required)
+     * @param username Username of the user (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -336,6 +296,238 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = getUserByNameValidateBeforeCall(username, _callback);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUserGroupRequests
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserGroupRequestsCall(String userId, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/groups/requested"
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserGroupRequestsValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserGroupRequests(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getUserGroupRequestsCall(userId, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get User Group Requests
+     * Returns a list of Groups the user has requested to be invited into.
+     * @param userId Must be a valid user ID. (required)
+     * @return List&lt;Group&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Group> getUserGroupRequests(String userId) throws ApiException {
+        ApiResponse<List<Group>> localVarResp = getUserGroupRequestsWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get User Group Requests
+     * Returns a list of Groups the user has requested to be invited into.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;List&lt;Group&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Group>> getUserGroupRequestsWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserGroupRequestsValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<List<Group>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get User Group Requests (asynchronously)
+     * Returns a list of Groups the user has requested to be invited into.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserGroupRequestsAsync(String userId, final ApiCallback<List<Group>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserGroupRequestsValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<List<Group>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUserGroups
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserGroupsCall(String userId, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/groups"
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserGroupsValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserGroups(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getUserGroupsCall(userId, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get User Groups
+     * Get user&#39;s public groups
+     * @param userId Must be a valid user ID. (required)
+     * @return List&lt;Group&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Group> getUserGroups(String userId) throws ApiException {
+        ApiResponse<List<Group>> localVarResp = getUserGroupsWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get User Groups
+     * Get user&#39;s public groups
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;List&lt;Group&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Group>> getUserGroupsWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserGroupsValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<List<Group>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get User Groups (asynchronously)
+     * Get user&#39;s public groups
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Group objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserGroupsAsync(String userId, final ApiCallback<List<Group>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserGroupsValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<List<Group>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -357,19 +549,6 @@ public class UsersApi {
      </table>
      */
     public okhttp3.Call searchUsersCall(String search, String developerType, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -406,19 +585,21 @@ public class UsersApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchUsersValidateBeforeCall(String search, String developerType, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        return searchUsersCall(search, developerType, n, offset, _callback);
+        
+
+        okhttp3.Call localVarCall = searchUsersCall(search, developerType, n, offset, _callback);
+        return localVarCall;
 
     }
 
@@ -494,7 +675,7 @@ public class UsersApi {
     }
     /**
      * Build call for updateUser
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param updateUserRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -503,27 +684,15 @@ public class UsersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateUserCall(String userId, UpdateUserRequest updateUserRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = updateUserRequest;
 
         // create path and map variables
         String localVarPath = "/users/{userId}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -543,29 +712,30 @@ public class UsersApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateUserValidateBeforeCall(String userId, UpdateUserRequest updateUserRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling updateUser(Async)");
         }
+        
 
-        return updateUserCall(userId, updateUserRequest, _callback);
+        okhttp3.Call localVarCall = updateUserCall(userId, updateUserRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Update User Info
      * Update a users information such as the email and birthday.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param updateUserRequest  (optional)
      * @return CurrentUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -573,6 +743,7 @@ public class UsersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
     public CurrentUser updateUser(String userId, UpdateUserRequest updateUserRequest) throws ApiException {
@@ -583,7 +754,7 @@ public class UsersApi {
     /**
      * Update User Info
      * Update a users information such as the email and birthday.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param updateUserRequest  (optional)
      * @return ApiResponse&lt;CurrentUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -591,6 +762,7 @@ public class UsersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CurrentUser> updateUserWithHttpInfo(String userId, UpdateUserRequest updateUserRequest) throws ApiException {
@@ -602,7 +774,7 @@ public class UsersApi {
     /**
      * Update User Info (asynchronously)
      * Update a users information such as the email and birthday.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param updateUserRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -611,6 +783,7 @@ public class UsersApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateUserAsync(String userId, UpdateUserRequest updateUserRequest, final ApiCallback<CurrentUser> _callback) throws ApiException {

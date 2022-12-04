@@ -36,12 +36,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class InstancesApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public InstancesApi() {
         this(Configuration.getDefaultApiClient());
@@ -59,26 +56,10 @@ public class InstancesApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for getInstance
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,25 +71,12 @@ public class InstancesApi {
      </table>
      */
     public okhttp3.Call getInstanceCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/instances/{worldId}:{instanceId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
-            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
+            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -125,37 +93,39 @@ public class InstancesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getInstanceValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getInstance(Async)");
         }
-
+        
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getInstance(Async)");
         }
+        
 
-        return getInstanceCall(worldId, instanceId, _callback);
+        okhttp3.Call localVarCall = getInstanceCall(worldId, instanceId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Instance
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.  If an invalid instanceId is provided, this endpoint will simply return \&quot;null\&quot;!
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return Instance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -173,8 +143,8 @@ public class InstancesApi {
     /**
      * Get Instance
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.  If an invalid instanceId is provided, this endpoint will simply return \&quot;null\&quot;!
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return ApiResponse&lt;Instance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +163,8 @@ public class InstancesApi {
     /**
      * Get Instance (asynchronously)
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.  If an invalid instanceId is provided, this endpoint will simply return \&quot;null\&quot;!
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,7 +184,7 @@ public class InstancesApi {
     }
     /**
      * Build call for getInstanceByShortName
-     * @param shortName  (required)
+     * @param shortName Must be a valid instance short name. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -227,24 +197,11 @@ public class InstancesApi {
      </table>
      */
     public okhttp3.Call getInstanceByShortNameCall(String shortName, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/instances/s/{shortName}"
-            .replace("{" + "shortName" + "}", localVarApiClient.escapeString(shortName.toString()));
+            .replaceAll("\\{" + "shortName" + "\\}", localVarApiClient.escapeString(shortName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -261,31 +218,33 @@ public class InstancesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getInstanceByShortNameValidateBeforeCall(String shortName, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'shortName' is set
         if (shortName == null) {
             throw new ApiException("Missing the required parameter 'shortName' when calling getInstanceByShortName(Async)");
         }
+        
 
-        return getInstanceByShortNameCall(shortName, _callback);
+        okhttp3.Call localVarCall = getInstanceByShortNameCall(shortName, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Instance By Short Name
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
-     * @param shortName  (required)
+     * @param shortName Must be a valid instance short name. (required)
      * @return Instance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -304,7 +263,7 @@ public class InstancesApi {
     /**
      * Get Instance By Short Name
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
-     * @param shortName  (required)
+     * @param shortName Must be a valid instance short name. (required)
      * @return ApiResponse&lt;Instance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -324,7 +283,7 @@ public class InstancesApi {
     /**
      * Get Instance By Short Name (asynchronously)
      * Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
-     * @param shortName  (required)
+     * @param shortName Must be a valid instance short name. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -345,8 +304,8 @@ public class InstancesApi {
     }
     /**
      * Build call for getShortName
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -358,25 +317,12 @@ public class InstancesApi {
      </table>
      */
     public okhttp3.Call getShortNameCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/instances/{worldId}:{instanceId}/shortName"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
-            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
+            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -385,8 +331,7 @@ public class InstancesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "text/plain",
-            "application/json"
+            "text/plain", "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -394,37 +339,39 @@ public class InstancesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getShortNameValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getShortName(Async)");
         }
-
+        
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getShortName(Async)");
         }
+        
 
-        return getShortNameCall(worldId, instanceId, _callback);
+        okhttp3.Call localVarCall = getShortNameCall(worldId, instanceId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Instance Short Name
      * Returns an instance short name.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return InstanceShortNameResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -442,8 +389,8 @@ public class InstancesApi {
     /**
      * Get Instance Short Name
      * Returns an instance short name.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return ApiResponse&lt;InstanceShortNameResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -462,8 +409,8 @@ public class InstancesApi {
     /**
      * Get Instance Short Name (asynchronously)
      * Returns an instance short name.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -483,8 +430,8 @@ public class InstancesApi {
     }
     /**
      * Build call for sendSelfInvite
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -496,25 +443,12 @@ public class InstancesApi {
      </table>
      */
     public okhttp3.Call sendSelfInviteCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/instances/{worldId}:{instanceId}/invite"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
-            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
+            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -531,37 +465,39 @@ public class InstancesApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call sendSelfInviteValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling sendSelfInvite(Async)");
         }
-
+        
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling sendSelfInvite(Async)");
         }
+        
 
-        return sendSelfInviteCall(worldId, instanceId, _callback);
+        okhttp3.Call localVarCall = sendSelfInviteCall(worldId, instanceId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Send Self Invite
      * Sends an invite to the instance to yourself.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return Success
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -579,8 +515,8 @@ public class InstancesApi {
     /**
      * Send Self Invite
      * Sends an invite to the instance to yourself.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return ApiResponse&lt;Success&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -599,8 +535,8 @@ public class InstancesApi {
     /**
      * Send Self Invite (asynchronously)
      * Sends an invite to the instance to yourself.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

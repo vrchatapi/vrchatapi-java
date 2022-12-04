@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.css | Download CSS |
-| [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config |
-| [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users |
-| [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health |
-| [**getInfoPush**](SystemApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
-| [**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
-| [**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.css | Download CSS
+[**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config
+[**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users
+[**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health
+[**getInfoPush**](SystemApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices
+[**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript
+[**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time
 
 
 <a name="getCSS"></a>
@@ -54,10 +54,10 @@ public class Example {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal] |
-| **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal]
+ **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main]
 
 ### Return type
 
@@ -75,8 +75,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
-| **400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
+**200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
+**400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
 <a name="getConfig"></a>
 # **getConfig**
@@ -134,7 +134,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns the API&#39;s config. |  * Set-Cookie -  <br>  |
+**200** | Returns the API&#39;s config. |  * Set-Cookie -  <br>  |
 
 <a name="getCurrentOnlineUsers"></a>
 # **getCurrentOnlineUsers**
@@ -192,7 +192,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+**200** | OK |  -  |
 
 <a name="getHealth"></a>
 # **getHealth**
@@ -250,7 +250,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns the API&#39;s health. |  -  |
+**200** | Returns the API&#39;s health. |  -  |
 
 <a name="getInfoPush"></a>
 # **getInfoPush**
@@ -293,10 +293,10 @@ public class Example {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **require** | **String**| Tags to include (comma-separated). All of the tags needs to be present. | [optional] |
-| **include** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **require** | **String**| Tags to include (comma-separated). All of the tags needs to be present. | [optional]
+ **include** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional]
 
 ### Return type
 
@@ -314,7 +314,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of InfoPush objects. |  -  |
+**200** | Returns a list of InfoPush objects. |  -  |
 
 <a name="getJavaScript"></a>
 # **getJavaScript**
@@ -357,10 +357,10 @@ public class Example {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal] |
-| **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: public, internal]
+ **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main]
 
 ### Return type
 
@@ -378,8 +378,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
-| **400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
+**200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
+**400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
 <a name="getSystemTime"></a>
 # **getSystemTime**
@@ -437,5 +437,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+**200** | OK |  -  |
 

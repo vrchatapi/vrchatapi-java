@@ -23,32 +23,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
-
 /**
- * APIEventConfig
+ * APIConfigEvents
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class APIEventConfig {
+public class APIConfigEvents {
   public static final String SERIALIZED_NAME_DISTANCE_CLOSE = "distanceClose";
   @SerializedName(SERIALIZED_NAME_DISTANCE_CLOSE)
   private Integer distanceClose;
@@ -89,10 +68,8 @@ public class APIEventConfig {
   @SerializedName(SERIALIZED_NAME_VIEW_SEGMENT_LENGTH)
   private Integer viewSegmentLength;
 
-  public APIEventConfig() {
-  }
 
-  public APIEventConfig distanceClose(Integer distanceClose) {
+  public APIConfigEvents distanceClose(Integer distanceClose) {
     
     this.distanceClose = distanceClose;
     return this;
@@ -115,7 +92,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig distanceFactor(Integer distanceFactor) {
+  public APIConfigEvents distanceFactor(Integer distanceFactor) {
     
     this.distanceFactor = distanceFactor;
     return this;
@@ -138,7 +115,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig distanceFar(Integer distanceFar) {
+  public APIConfigEvents distanceFar(Integer distanceFar) {
     
     this.distanceFar = distanceFar;
     return this;
@@ -161,7 +138,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig groupDistance(Integer groupDistance) {
+  public APIConfigEvents groupDistance(Integer groupDistance) {
     
     this.groupDistance = groupDistance;
     return this;
@@ -184,7 +161,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig maximumBunchSize(Integer maximumBunchSize) {
+  public APIConfigEvents maximumBunchSize(Integer maximumBunchSize) {
     
     this.maximumBunchSize = maximumBunchSize;
     return this;
@@ -207,7 +184,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig notVisibleFactor(Integer notVisibleFactor) {
+  public APIConfigEvents notVisibleFactor(Integer notVisibleFactor) {
     
     this.notVisibleFactor = notVisibleFactor;
     return this;
@@ -230,7 +207,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig playerOrderBucketSize(Integer playerOrderBucketSize) {
+  public APIConfigEvents playerOrderBucketSize(Integer playerOrderBucketSize) {
     
     this.playerOrderBucketSize = playerOrderBucketSize;
     return this;
@@ -253,7 +230,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig playerOrderFactor(Integer playerOrderFactor) {
+  public APIConfigEvents playerOrderFactor(Integer playerOrderFactor) {
     
     this.playerOrderFactor = playerOrderFactor;
     return this;
@@ -276,7 +253,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig slowUpdateFactorThreshold(Integer slowUpdateFactorThreshold) {
+  public APIConfigEvents slowUpdateFactorThreshold(Integer slowUpdateFactorThreshold) {
     
     this.slowUpdateFactorThreshold = slowUpdateFactorThreshold;
     return this;
@@ -299,7 +276,7 @@ public class APIEventConfig {
   }
 
 
-  public APIEventConfig viewSegmentLength(Integer viewSegmentLength) {
+  public APIConfigEvents viewSegmentLength(Integer viewSegmentLength) {
     
     this.viewSegmentLength = viewSegmentLength;
     return this;
@@ -322,7 +299,6 @@ public class APIEventConfig {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -331,17 +307,17 @@ public class APIEventConfig {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    APIEventConfig apIEventConfig = (APIEventConfig) o;
-    return Objects.equals(this.distanceClose, apIEventConfig.distanceClose) &&
-        Objects.equals(this.distanceFactor, apIEventConfig.distanceFactor) &&
-        Objects.equals(this.distanceFar, apIEventConfig.distanceFar) &&
-        Objects.equals(this.groupDistance, apIEventConfig.groupDistance) &&
-        Objects.equals(this.maximumBunchSize, apIEventConfig.maximumBunchSize) &&
-        Objects.equals(this.notVisibleFactor, apIEventConfig.notVisibleFactor) &&
-        Objects.equals(this.playerOrderBucketSize, apIEventConfig.playerOrderBucketSize) &&
-        Objects.equals(this.playerOrderFactor, apIEventConfig.playerOrderFactor) &&
-        Objects.equals(this.slowUpdateFactorThreshold, apIEventConfig.slowUpdateFactorThreshold) &&
-        Objects.equals(this.viewSegmentLength, apIEventConfig.viewSegmentLength);
+    APIConfigEvents apIConfigEvents = (APIConfigEvents) o;
+    return Objects.equals(this.distanceClose, apIConfigEvents.distanceClose) &&
+        Objects.equals(this.distanceFactor, apIConfigEvents.distanceFactor) &&
+        Objects.equals(this.distanceFar, apIConfigEvents.distanceFar) &&
+        Objects.equals(this.groupDistance, apIConfigEvents.groupDistance) &&
+        Objects.equals(this.maximumBunchSize, apIConfigEvents.maximumBunchSize) &&
+        Objects.equals(this.notVisibleFactor, apIConfigEvents.notVisibleFactor) &&
+        Objects.equals(this.playerOrderBucketSize, apIConfigEvents.playerOrderBucketSize) &&
+        Objects.equals(this.playerOrderFactor, apIConfigEvents.playerOrderFactor) &&
+        Objects.equals(this.slowUpdateFactorThreshold, apIConfigEvents.slowUpdateFactorThreshold) &&
+        Objects.equals(this.viewSegmentLength, apIConfigEvents.viewSegmentLength);
   }
 
   @Override
@@ -352,7 +328,7 @@ public class APIEventConfig {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class APIEventConfig {\n");
+    sb.append("class APIConfigEvents {\n");
     sb.append("    distanceClose: ").append(toIndentedString(distanceClose)).append("\n");
     sb.append("    distanceFactor: ").append(toIndentedString(distanceFactor)).append("\n");
     sb.append("    distanceFar: ").append(toIndentedString(distanceFar)).append("\n");
@@ -378,114 +354,5 @@ public class APIEventConfig {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("distanceClose");
-    openapiFields.add("distanceFactor");
-    openapiFields.add("distanceFar");
-    openapiFields.add("groupDistance");
-    openapiFields.add("maximumBunchSize");
-    openapiFields.add("notVisibleFactor");
-    openapiFields.add("playerOrderBucketSize");
-    openapiFields.add("playerOrderFactor");
-    openapiFields.add("slowUpdateFactorThreshold");
-    openapiFields.add("viewSegmentLength");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("distanceClose");
-    openapiRequiredFields.add("distanceFactor");
-    openapiRequiredFields.add("distanceFar");
-    openapiRequiredFields.add("groupDistance");
-    openapiRequiredFields.add("maximumBunchSize");
-    openapiRequiredFields.add("notVisibleFactor");
-    openapiRequiredFields.add("playerOrderBucketSize");
-    openapiRequiredFields.add("playerOrderFactor");
-    openapiRequiredFields.add("slowUpdateFactorThreshold");
-    openapiRequiredFields.add("viewSegmentLength");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to APIEventConfig
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!APIEventConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in APIEventConfig is not found in the empty JSON string", APIEventConfig.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!APIEventConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `APIEventConfig` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : APIEventConfig.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!APIEventConfig.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'APIEventConfig' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<APIEventConfig> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(APIEventConfig.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<APIEventConfig>() {
-           @Override
-           public void write(JsonWriter out, APIEventConfig value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public APIEventConfig read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of APIEventConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of APIEventConfig
-  * @throws IOException if the JSON string is invalid with respect to APIEventConfig
-  */
-  public static APIEventConfig fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, APIEventConfig.class);
-  }
-
- /**
-  * Convert an instance of APIEventConfig to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

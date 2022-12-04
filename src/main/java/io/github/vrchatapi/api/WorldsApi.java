@@ -30,6 +30,9 @@ import io.github.vrchatapi.model.CreateWorldRequest;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Instance;
 import io.github.vrchatapi.model.LimitedWorld;
+import io.github.vrchatapi.model.OrderOption;
+import io.github.vrchatapi.model.ReleaseStatus;
+import io.github.vrchatapi.model.SortOption;
 import io.github.vrchatapi.model.UpdateWorldRequest;
 import io.github.vrchatapi.model.World;
 import io.github.vrchatapi.model.WorldMetadata;
@@ -40,12 +43,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class WorldsApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public WorldsApi() {
         this(Configuration.getDefaultApiClient());
@@ -63,22 +63,6 @@ public class WorldsApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for createWorld
      * @param createWorldRequest  (optional)
@@ -94,19 +78,6 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call createWorldCall(CreateWorldRequest createWorldRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = createWorldRequest;
 
         // create path and map variables
@@ -130,17 +101,18 @@ public class WorldsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createWorldValidateBeforeCall(CreateWorldRequest createWorldRequest, final ApiCallback _callback) throws ApiException {
-        return createWorldCall(createWorldRequest, _callback);
+        
+
+        okhttp3.Call localVarCall = createWorldCall(createWorldRequest, _callback);
+        return localVarCall;
 
     }
 
@@ -207,7 +179,7 @@ public class WorldsApi {
     }
     /**
      * Build call for deleteWorld
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -220,24 +192,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call deleteWorldCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -254,31 +213,33 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteWorldValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling deleteWorld(Async)");
         }
+        
 
-        return deleteWorldCall(worldId, _callback);
+        okhttp3.Call localVarCall = deleteWorldCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Delete World
      * Delete a world. Notice a world is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The WorldID is permanently reserved.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -295,7 +256,7 @@ public class WorldsApi {
     /**
      * Delete World
      * Delete a world. Notice a world is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The WorldID is permanently reserved.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -314,7 +275,7 @@ public class WorldsApi {
     /**
      * Delete World (asynchronously)
      * Delete a world. Notice a world is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The WorldID is permanently reserved.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -335,9 +296,9 @@ public class WorldsApi {
     /**
      * Build call for getActiveWorlds
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -356,20 +317,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getActiveWorldsCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getActiveWorldsCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -438,19 +386,21 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getActiveWorldsValidateBeforeCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        return getActiveWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+    private okhttp3.Call getActiveWorldsValidateBeforeCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getActiveWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+        return localVarCall;
 
     }
 
@@ -458,9 +408,9 @@ public class WorldsApi {
      * List Active Worlds
      * Search and list currently Active worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -478,7 +428,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<LimitedWorld> getActiveWorlds(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public List<LimitedWorld> getActiveWorlds(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         ApiResponse<List<LimitedWorld>> localVarResp = getActiveWorldsWithHttpInfo(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
         return localVarResp.getData();
     }
@@ -487,9 +437,9 @@ public class WorldsApi {
      * List Active Worlds
      * Search and list currently Active worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -507,7 +457,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<LimitedWorld>> getActiveWorldsWithHttpInfo(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public ApiResponse<List<LimitedWorld>> getActiveWorldsWithHttpInfo(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         okhttp3.Call localVarCall = getActiveWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, null);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -517,9 +467,9 @@ public class WorldsApi {
      * List Active Worlds (asynchronously)
      * Search and list currently Active worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -538,7 +488,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getActiveWorldsAsync(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
+    public okhttp3.Call getActiveWorldsAsync(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getActiveWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
@@ -548,9 +498,9 @@ public class WorldsApi {
     /**
      * Build call for getFavoritedWorlds
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -571,20 +521,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoritedWorldsCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getFavoritedWorldsCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -657,19 +594,21 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFavoritedWorldsValidateBeforeCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        return getFavoritedWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+    private okhttp3.Call getFavoritedWorldsValidateBeforeCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getFavoritedWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+        return localVarCall;
 
     }
 
@@ -677,9 +616,9 @@ public class WorldsApi {
      * List Favorited Worlds
      * Search and list favorited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -699,7 +638,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public List<LimitedWorld> getFavoritedWorlds(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public List<LimitedWorld> getFavoritedWorlds(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         ApiResponse<List<LimitedWorld>> localVarResp = getFavoritedWorldsWithHttpInfo(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
         return localVarResp.getData();
     }
@@ -708,9 +647,9 @@ public class WorldsApi {
      * List Favorited Worlds
      * Search and list favorited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -730,7 +669,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<LimitedWorld>> getFavoritedWorldsWithHttpInfo(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public ApiResponse<List<LimitedWorld>> getFavoritedWorldsWithHttpInfo(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         okhttp3.Call localVarCall = getFavoritedWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, null);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -740,9 +679,9 @@ public class WorldsApi {
      * List Favorited Worlds (asynchronously)
      * Search and list favorited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -763,7 +702,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoritedWorldsAsync(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
+    public okhttp3.Call getFavoritedWorldsAsync(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFavoritedWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
@@ -773,9 +712,9 @@ public class WorldsApi {
     /**
      * Build call for getRecentWorlds
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -796,20 +735,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see recently visited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecentWorldsCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getRecentWorldsCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -882,19 +808,21 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecentWorldsValidateBeforeCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        return getRecentWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+    private okhttp3.Call getRecentWorldsValidateBeforeCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getRecentWorldsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+        return localVarCall;
 
     }
 
@@ -902,9 +830,9 @@ public class WorldsApi {
      * List Recent Worlds
      * Search and list recently visited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -924,7 +852,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see recently visited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public List<LimitedWorld> getRecentWorlds(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public List<LimitedWorld> getRecentWorlds(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         ApiResponse<List<LimitedWorld>> localVarResp = getRecentWorldsWithHttpInfo(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
         return localVarResp.getData();
     }
@@ -933,9 +861,9 @@ public class WorldsApi {
      * List Recent Worlds
      * Search and list recently visited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -955,7 +883,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see recently visited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<LimitedWorld>> getRecentWorldsWithHttpInfo(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public ApiResponse<List<LimitedWorld>> getRecentWorldsWithHttpInfo(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         okhttp3.Call localVarCall = getRecentWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, null);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -965,9 +893,9 @@ public class WorldsApi {
      * List Recent Worlds (asynchronously)
      * Search and list recently visited worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -988,7 +916,7 @@ public class WorldsApi {
         <tr><td> 403 </td><td> Error response when trying to see recently visited worlds of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecentWorldsAsync(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
+    public okhttp3.Call getRecentWorldsAsync(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRecentWorldsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
@@ -997,7 +925,7 @@ public class WorldsApi {
     }
     /**
      * Build call for getWorld
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1009,24 +937,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call getWorldCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1043,31 +958,33 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getWorldValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getWorld(Async)");
         }
+        
 
-        return getWorldCall(worldId, _callback);
+        okhttp3.Call localVarCall = getWorldCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get World by ID
      * Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return World
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1085,7 +1002,7 @@ public class WorldsApi {
     /**
      * Get World by ID
      * Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;World&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1104,7 +1021,7 @@ public class WorldsApi {
     /**
      * Get World by ID (asynchronously)
      * Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1124,8 +1041,8 @@ public class WorldsApi {
     }
     /**
      * Build call for getWorldInstance
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1137,25 +1054,12 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call getWorldInstanceCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}/{instanceId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
-            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
+            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1172,37 +1076,39 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getWorldInstanceValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getWorldInstance(Async)");
         }
-
+        
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getWorldInstance(Async)");
         }
+        
 
-        return getWorldInstanceCall(worldId, instanceId, _callback);
+        okhttp3.Call localVarCall = getWorldInstanceCall(worldId, instanceId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get World Instance
      * Returns a worlds instance.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return Instance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1220,8 +1126,8 @@ public class WorldsApi {
     /**
      * Get World Instance
      * Returns a worlds instance.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return ApiResponse&lt;Instance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1240,8 +1146,8 @@ public class WorldsApi {
     /**
      * Get World Instance (asynchronously)
      * Returns a worlds instance.
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1261,7 +1167,7 @@ public class WorldsApi {
     }
     /**
      * Build call for getWorldMetadata
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1275,24 +1181,11 @@ public class WorldsApi {
      */
     @Deprecated
     public okhttp3.Call getWorldMetadataCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}/metadata"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1309,32 +1202,34 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getWorldMetadataValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getWorldMetadata(Async)");
         }
+        
 
-        return getWorldMetadataCall(worldId, _callback);
+        okhttp3.Call localVarCall = getWorldMetadataCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get World Metadata
      * Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return WorldMetadata
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1354,7 +1249,7 @@ public class WorldsApi {
     /**
      * Get World Metadata
      * Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;WorldMetadata&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1375,7 +1270,7 @@ public class WorldsApi {
     /**
      * Get World Metadata (asynchronously)
      * Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1397,7 +1292,7 @@ public class WorldsApi {
     }
     /**
      * Build call for getWorldPublishStatus
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1410,24 +1305,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call getWorldPublishStatusCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}/publish"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1444,31 +1326,33 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getWorldPublishStatusValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling getWorldPublishStatus(Async)");
         }
+        
 
-        return getWorldPublishStatusCall(worldId, _callback);
+        okhttp3.Call localVarCall = getWorldPublishStatusCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get World Publish Status
      * Returns a worlds publish status.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return WorldPublishStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1487,7 +1371,7 @@ public class WorldsApi {
     /**
      * Get World Publish Status
      * Returns a worlds publish status.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;WorldPublishStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1507,7 +1391,7 @@ public class WorldsApi {
     /**
      * Get World Publish Status (asynchronously)
      * Returns a worlds publish status.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1528,7 +1412,7 @@ public class WorldsApi {
     }
     /**
      * Build call for publishWorld
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1541,24 +1425,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call publishWorldCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}/publish"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1575,31 +1446,33 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call publishWorldValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling publishWorld(Async)");
         }
+        
 
-        return publishWorldCall(worldId, _callback);
+        okhttp3.Call localVarCall = publishWorldCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Publish World
      * Publish a world. You can only publish one world per week.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1616,7 +1489,7 @@ public class WorldsApi {
     /**
      * Publish World
      * Publish a world. You can only publish one world per week.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1635,7 +1508,7 @@ public class WorldsApi {
     /**
      * Publish World (asynchronously)
      * Publish a world. You can only publish one world per week.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1656,11 +1529,11 @@ public class WorldsApi {
     /**
      * Build call for searchWorlds
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own worlds. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -1679,20 +1552,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchWorldsCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call searchWorldsCall(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1769,19 +1629,21 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchWorldsValidateBeforeCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        return searchWorldsCall(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+    private okhttp3.Call searchWorldsValidateBeforeCall(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = searchWorldsCall(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+        return localVarCall;
 
     }
 
@@ -1789,11 +1651,11 @@ public class WorldsApi {
      * Search All Worlds
      * Search and list any worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own worlds. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -1811,7 +1673,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<LimitedWorld> searchWorlds(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public List<LimitedWorld> searchWorlds(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         ApiResponse<List<LimitedWorld>> localVarResp = searchWorldsWithHttpInfo(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
         return localVarResp.getData();
     }
@@ -1820,11 +1682,11 @@ public class WorldsApi {
      * Search All Worlds
      * Search and list any worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own worlds. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -1842,7 +1704,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<LimitedWorld>> searchWorldsWithHttpInfo(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public ApiResponse<List<LimitedWorld>> searchWorldsWithHttpInfo(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         okhttp3.Call localVarCall = searchWorldsValidateBeforeCall(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, null);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1852,11 +1714,11 @@ public class WorldsApi {
      * Search All Worlds (asynchronously)
      * Search and list any worlds by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own worlds. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -1875,7 +1737,7 @@ public class WorldsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchWorldsAsync(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
+    public okhttp3.Call searchWorldsAsync(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<LimitedWorld>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchWorldsValidateBeforeCall(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
         Type localVarReturnType = new TypeToken<List<LimitedWorld>>(){}.getType();
@@ -1884,7 +1746,7 @@ public class WorldsApi {
     }
     /**
      * Build call for unpublishWorld
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1897,24 +1759,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call unpublishWorldCall(String worldId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}/publish"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1931,31 +1780,33 @@ public class WorldsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call unpublishWorldValidateBeforeCall(String worldId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling unpublishWorld(Async)");
         }
+        
 
-        return unpublishWorldCall(worldId, _callback);
+        okhttp3.Call localVarCall = unpublishWorldCall(worldId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Unpublish World
      * Unpublish a world.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1972,7 +1823,7 @@ public class WorldsApi {
     /**
      * Unpublish World
      * Unpublish a world.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1991,7 +1842,7 @@ public class WorldsApi {
     /**
      * Unpublish World (asynchronously)
      * Unpublish a world.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2011,7 +1862,7 @@ public class WorldsApi {
     }
     /**
      * Build call for updateWorld
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param updateWorldRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2025,24 +1876,11 @@ public class WorldsApi {
      </table>
      */
     public okhttp3.Call updateWorldCall(String worldId, UpdateWorldRequest updateWorldRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = updateWorldRequest;
 
         // create path and map variables
         String localVarPath = "/worlds/{worldId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2062,29 +1900,30 @@ public class WorldsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateWorldValidateBeforeCall(String worldId, UpdateWorldRequest updateWorldRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling updateWorld(Async)");
         }
+        
 
-        return updateWorldCall(worldId, updateWorldRequest, _callback);
+        okhttp3.Call localVarCall = updateWorldCall(worldId, updateWorldRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Update World
      * Update information about a specific World.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param updateWorldRequest  (optional)
      * @return World
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2104,7 +1943,7 @@ public class WorldsApi {
     /**
      * Update World
      * Update information about a specific World.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param updateWorldRequest  (optional)
      * @return ApiResponse&lt;World&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2125,7 +1964,7 @@ public class WorldsApi {
     /**
      * Update World (asynchronously)
      * Update information about a specific World.
-     * @param worldId  (required)
+     * @param worldId Must be a valid world ID. (required)
      * @param updateWorldRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -28,27 +28,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
-
 /**
  * * &#x60;hidden&#x60; field is only present if InstanceType is &#x60;hidden&#x60; aka \&quot;Friends+\&quot;, and is instance creator. * &#x60;friends&#x60; field is only present if InstanceType is &#x60;friends&#x60; aka \&quot;Friends\&quot;, and is instance creator. * &#x60;private&#x60; field is only present if InstanceType is &#x60;private&#x60; aka \&quot;Invite\&quot; or \&quot;Invite+\&quot;, and is instance creator.
  */
@@ -125,7 +104,7 @@ public class Instance {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = new ArrayList<>();
+  private List<String> tags = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -147,8 +126,6 @@ public class Instance {
   @SerializedName(SERIALIZED_NAME_PRIVATE)
   private String _private;
 
-  public Instance() {
-  }
 
   public Instance active(Boolean active) {
     
@@ -688,7 +665,6 @@ public class Instance {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -770,179 +746,5 @@ public class Instance {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("active");
-    openapiFields.add("canRequestInvite");
-    openapiFields.add("capacity");
-    openapiFields.add("clientNumber");
-    openapiFields.add("full");
-    openapiFields.add("id");
-    openapiFields.add("instanceId");
-    openapiFields.add("location");
-    openapiFields.add("n_users");
-    openapiFields.add("name");
-    openapiFields.add("ownerId");
-    openapiFields.add("permanent");
-    openapiFields.add("photonRegion");
-    openapiFields.add("platforms");
-    openapiFields.add("region");
-    openapiFields.add("secureName");
-    openapiFields.add("shortName");
-    openapiFields.add("tags");
-    openapiFields.add("type");
-    openapiFields.add("worldId");
-    openapiFields.add("hidden");
-    openapiFields.add("friends");
-    openapiFields.add("private");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("active");
-    openapiRequiredFields.add("canRequestInvite");
-    openapiRequiredFields.add("capacity");
-    openapiRequiredFields.add("clientNumber");
-    openapiRequiredFields.add("full");
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("instanceId");
-    openapiRequiredFields.add("location");
-    openapiRequiredFields.add("n_users");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("permanent");
-    openapiRequiredFields.add("photonRegion");
-    openapiRequiredFields.add("platforms");
-    openapiRequiredFields.add("region");
-    openapiRequiredFields.add("secureName");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("worldId");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Instance
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Instance.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Instance is not found in the empty JSON string", Instance.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Instance.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Instance` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Instance.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (!jsonObj.get("clientNumber").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clientNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientNumber").toString()));
-      }
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (!jsonObj.get("instanceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instanceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instanceId").toString()));
-      }
-      if (!jsonObj.get("location").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("location").toString()));
-      }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("ownerId") != null && !jsonObj.get("ownerId").isJsonNull()) && !jsonObj.get("ownerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
-      }
-      // validate the required field `platforms`
-      InstancePlatforms.validateJsonObject(jsonObj.getAsJsonObject("platforms"));
-      if (!jsonObj.get("secureName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secureName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secureName").toString()));
-      }
-      if ((jsonObj.get("shortName") != null && !jsonObj.get("shortName").isJsonNull()) && !jsonObj.get("shortName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `shortName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortName").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("tags") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if (!jsonObj.get("worldId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `worldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldId").toString()));
-      }
-      if ((jsonObj.get("hidden") != null && !jsonObj.get("hidden").isJsonNull()) && !jsonObj.get("hidden").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hidden` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hidden").toString()));
-      }
-      if ((jsonObj.get("friends") != null && !jsonObj.get("friends").isJsonNull()) && !jsonObj.get("friends").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friends` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friends").toString()));
-      }
-      if ((jsonObj.get("private") != null && !jsonObj.get("private").isJsonNull()) && !jsonObj.get("private").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `private` to be a primitive type in the JSON string but got `%s`", jsonObj.get("private").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Instance.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Instance' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Instance> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Instance.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Instance>() {
-           @Override
-           public void write(JsonWriter out, Instance value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Instance read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Instance given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Instance
-  * @throws IOException if the JSON string is invalid with respect to Instance
-  */
-  public static Instance fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Instance.class);
-  }
-
- /**
-  * Convert an instance of Instance to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

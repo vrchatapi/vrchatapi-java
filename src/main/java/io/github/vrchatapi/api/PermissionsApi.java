@@ -34,12 +34,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class PermissionsApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public PermissionsApi() {
         this(Configuration.getDefaultApiClient());
@@ -57,22 +54,6 @@ public class PermissionsApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for getAssignedPermissions
      * @param _callback Callback for upload/download progress
@@ -86,19 +67,6 @@ public class PermissionsApi {
      </table>
      */
     public okhttp3.Call getAssignedPermissionsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -119,19 +87,21 @@ public class PermissionsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getAssignedPermissionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getAssignedPermissionsCall(_callback);
+        
+
+        okhttp3.Call localVarCall = getAssignedPermissionsCall(_callback);
+        return localVarCall;
 
     }
 
@@ -192,7 +162,7 @@ public class PermissionsApi {
     }
     /**
      * Build call for getPermission
-     * @param permissionId  (required)
+     * @param permissionId Must be a valid permission ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -204,24 +174,11 @@ public class PermissionsApi {
      </table>
      */
     public okhttp3.Call getPermissionCall(String permissionId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/permissions/{permissionId}"
-            .replace("{" + "permissionId" + "}", localVarApiClient.escapeString(permissionId.toString()));
+            .replaceAll("\\{" + "permissionId" + "\\}", localVarApiClient.escapeString(permissionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -238,31 +195,33 @@ public class PermissionsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getPermissionValidateBeforeCall(String permissionId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'permissionId' is set
         if (permissionId == null) {
             throw new ApiException("Missing the required parameter 'permissionId' when calling getPermission(Async)");
         }
+        
 
-        return getPermissionCall(permissionId, _callback);
+        okhttp3.Call localVarCall = getPermissionCall(permissionId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Permission
      * Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as &#x60;/auth/permissions&#x60;.
-     * @param permissionId  (required)
+     * @param permissionId Must be a valid permission ID. (required)
      * @return Permission
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -280,7 +239,7 @@ public class PermissionsApi {
     /**
      * Get Permission
      * Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as &#x60;/auth/permissions&#x60;.
-     * @param permissionId  (required)
+     * @param permissionId Must be a valid permission ID. (required)
      * @return ApiResponse&lt;Permission&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -299,7 +258,7 @@ public class PermissionsApi {
     /**
      * Get Permission (asynchronously)
      * Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as &#x60;/auth/permissions&#x60;.
-     * @param permissionId  (required)
+     * @param permissionId Must be a valid permission ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

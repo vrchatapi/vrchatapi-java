@@ -30,6 +30,9 @@ import io.github.vrchatapi.model.Avatar;
 import io.github.vrchatapi.model.CreateAvatarRequest;
 import io.github.vrchatapi.model.CurrentUser;
 import io.github.vrchatapi.model.Error;
+import io.github.vrchatapi.model.OrderOption;
+import io.github.vrchatapi.model.ReleaseStatus;
+import io.github.vrchatapi.model.SortOption;
 import io.github.vrchatapi.model.UpdateAvatarRequest;
 
 import java.lang.reflect.Type;
@@ -37,12 +40,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class AvatarsApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public AvatarsApi() {
         this(Configuration.getDefaultApiClient());
@@ -60,22 +60,6 @@ public class AvatarsApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for createAvatar
      * @param createAvatarRequest  (optional)
@@ -90,19 +74,6 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call createAvatarCall(CreateAvatarRequest createAvatarRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = createAvatarRequest;
 
         // create path and map variables
@@ -126,17 +97,18 @@ public class AvatarsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createAvatarValidateBeforeCall(CreateAvatarRequest createAvatarRequest, final ApiCallback _callback) throws ApiException {
-        return createAvatarCall(createAvatarRequest, _callback);
+        
+
+        okhttp3.Call localVarCall = createAvatarCall(createAvatarRequest, _callback);
+        return localVarCall;
 
     }
 
@@ -200,7 +172,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for deleteAvatar
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -213,24 +185,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call deleteAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
+            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -247,31 +206,33 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling deleteAvatar(Async)");
         }
+        
 
-        return deleteAvatarCall(avatarId, _callback);
+        okhttp3.Call localVarCall = deleteAvatarCall(avatarId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Delete Avatar
      * Delete an avatar. Notice an avatar is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The AvatarID is permanently reserved.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return Avatar
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -290,7 +251,7 @@ public class AvatarsApi {
     /**
      * Delete Avatar
      * Delete an avatar. Notice an avatar is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The AvatarID is permanently reserved.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return ApiResponse&lt;Avatar&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -310,7 +271,7 @@ public class AvatarsApi {
     /**
      * Delete Avatar (asynchronously)
      * Delete an avatar. Notice an avatar is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The AvatarID is permanently reserved.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -331,7 +292,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for getAvatar
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -344,24 +305,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call getAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
+            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -378,31 +326,33 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling getAvatar(Async)");
         }
+        
 
-        return getAvatarCall(avatarId, _callback);
+        okhttp3.Call localVarCall = getAvatarCall(avatarId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Avatar
      * Get information about a specific Avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return Avatar
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -421,7 +371,7 @@ public class AvatarsApi {
     /**
      * Get Avatar
      * Get information about a specific Avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return ApiResponse&lt;Avatar&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -441,7 +391,7 @@ public class AvatarsApi {
     /**
      * Get Avatar (asynchronously)
      * Get information about a specific Avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -463,9 +413,9 @@ public class AvatarsApi {
     /**
      * Build call for getFavoritedAvatars
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -486,20 +436,7 @@ public class AvatarsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited avatars of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoritedAvatarsCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getFavoritedAvatarsCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -572,19 +509,21 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFavoritedAvatarsValidateBeforeCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        return getFavoritedAvatarsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+    private okhttp3.Call getFavoritedAvatarsValidateBeforeCall(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getFavoritedAvatarsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
+        return localVarCall;
 
     }
 
@@ -592,9 +531,9 @@ public class AvatarsApi {
      * List Favorited Avatars
      * Search and list favorited avatars by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -614,7 +553,7 @@ public class AvatarsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited avatars of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Avatar> getFavoritedAvatars(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public List<Avatar> getFavoritedAvatars(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         ApiResponse<List<Avatar>> localVarResp = getFavoritedAvatarsWithHttpInfo(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
         return localVarResp.getData();
     }
@@ -623,9 +562,9 @@ public class AvatarsApi {
      * List Favorited Avatars
      * Search and list favorited avatars by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -645,7 +584,7 @@ public class AvatarsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited avatars of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Avatar>> getFavoritedAvatarsWithHttpInfo(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
+    public ApiResponse<List<Avatar>> getFavoritedAvatarsWithHttpInfo(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId) throws ApiException {
         okhttp3.Call localVarCall = getFavoritedAvatarsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, null);
         Type localVarReturnType = new TypeToken<List<Avatar>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -655,9 +594,9 @@ public class AvatarsApi {
      * List Favorited Avatars (asynchronously)
      * Search and list favorited avatars by query filters.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param search Filters by world name. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
@@ -678,7 +617,7 @@ public class AvatarsApi {
         <tr><td> 403 </td><td> Error response when trying to see favourited avatars of another user without sufficient admin permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoritedAvatarsAsync(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<Avatar>> _callback) throws ApiException {
+    public okhttp3.Call getFavoritedAvatarsAsync(Boolean featured, SortOption sort, Integer n, OrderOption order, Integer offset, String search, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback<List<Avatar>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFavoritedAvatarsValidateBeforeCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
         Type localVarReturnType = new TypeToken<List<Avatar>>(){}.getType();
@@ -687,7 +626,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for getOwnAvatar
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -700,24 +639,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call getOwnAvatarCall(String userId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/users/{userId}/avatar"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -734,31 +660,33 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getOwnAvatarValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getOwnAvatar(Async)");
         }
+        
 
-        return getOwnAvatarCall(userId, _callback);
+        okhttp3.Call localVarCall = getOwnAvatarCall(userId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Own Avatar
      * Get the current avatar for the user. This will return an error for any other user than the one logged in.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @return Avatar
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -777,7 +705,7 @@ public class AvatarsApi {
     /**
      * Get Own Avatar
      * Get the current avatar for the user. This will return an error for any other user than the one logged in.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @return ApiResponse&lt;Avatar&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -797,7 +725,7 @@ public class AvatarsApi {
     /**
      * Get Own Avatar (asynchronously)
      * Get the current avatar for the user. This will return an error for any other user than the one logged in.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -819,11 +747,11 @@ public class AvatarsApi {
     /**
      * Build call for searchAvatars
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own avatars. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
      * @param notag Tags to exclude (comma-separated). (optional)
@@ -841,20 +769,7 @@ public class AvatarsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchAvatarsCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call searchAvatarsCall(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -927,19 +842,21 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchAvatarsValidateBeforeCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        return searchAvatarsCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+    private okhttp3.Call searchAvatarsValidateBeforeCall(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = searchAvatarsCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
+        return localVarCall;
 
     }
 
@@ -947,11 +864,11 @@ public class AvatarsApi {
      * Search Avatars
      * Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own avatars. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
      * @param notag Tags to exclude (comma-separated). (optional)
@@ -968,7 +885,7 @@ public class AvatarsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Avatar> searchAvatars(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public List<Avatar> searchAvatars(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         ApiResponse<List<Avatar>> localVarResp = searchAvatarsWithHttpInfo(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
         return localVarResp.getData();
     }
@@ -977,11 +894,11 @@ public class AvatarsApi {
      * Search Avatars
      * Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own avatars. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
      * @param notag Tags to exclude (comma-separated). (optional)
@@ -998,7 +915,7 @@ public class AvatarsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Avatar>> searchAvatarsWithHttpInfo(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
+    public ApiResponse<List<Avatar>> searchAvatarsWithHttpInfo(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform) throws ApiException {
         okhttp3.Call localVarCall = searchAvatarsValidateBeforeCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, null);
         Type localVarReturnType = new TypeToken<List<Avatar>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1008,11 +925,11 @@ public class AvatarsApi {
      * Search Avatars (asynchronously)
      * Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
      * @param featured Filters on featured results. (optional)
-     * @param sort  (optional, default to popularity)
+     * @param sort The sort order of the results. (optional, default to popularity)
      * @param user Set to &#x60;me&#x60; for searching own avatars. (optional)
      * @param userId Filter by UserID. (optional)
      * @param n The number of objects to return. (optional, default to 60)
-     * @param order  (optional, default to descending)
+     * @param order Result ordering (optional, default to descending)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param tag Tags to include (comma-separated). Any of the tags needs to be present. (optional)
      * @param notag Tags to exclude (comma-separated). (optional)
@@ -1030,7 +947,7 @@ public class AvatarsApi {
         <tr><td> 401 </td><td> Error response due to missing apiKey or auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchAvatarsAsync(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<Avatar>> _callback) throws ApiException {
+    public okhttp3.Call searchAvatarsAsync(Boolean featured, SortOption sort, String user, String userId, Integer n, OrderOption order, Integer offset, String tag, String notag, ReleaseStatus releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback<List<Avatar>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchAvatarsValidateBeforeCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
         Type localVarReturnType = new TypeToken<List<Avatar>>(){}.getType();
@@ -1039,7 +956,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for selectAvatar
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1052,24 +969,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call selectAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}/select"
-            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
+            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1086,31 +990,33 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call selectAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling selectAvatar(Async)");
         }
+        
 
-        return selectAvatarCall(avatarId, _callback);
+        okhttp3.Call localVarCall = selectAvatarCall(avatarId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Select Avatar
      * Switches into that avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return CurrentUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1129,7 +1035,7 @@ public class AvatarsApi {
     /**
      * Select Avatar
      * Switches into that avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return ApiResponse&lt;CurrentUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1149,7 +1055,7 @@ public class AvatarsApi {
     /**
      * Select Avatar (asynchronously)
      * Switches into that avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1170,7 +1076,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for selectFallbackAvatar
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1184,24 +1090,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call selectFallbackAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}/selectFallback"
-            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
+            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1218,31 +1111,33 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call selectFallbackAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling selectFallbackAvatar(Async)");
         }
+        
 
-        return selectFallbackAvatarCall(avatarId, _callback);
+        okhttp3.Call localVarCall = selectFallbackAvatarCall(avatarId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Select Fallback Avatar
      * Switches into that avatar as your fallback avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return CurrentUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1262,7 +1157,7 @@ public class AvatarsApi {
     /**
      * Select Fallback Avatar
      * Switches into that avatar as your fallback avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @return ApiResponse&lt;CurrentUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1283,7 +1178,7 @@ public class AvatarsApi {
     /**
      * Select Fallback Avatar (asynchronously)
      * Switches into that avatar as your fallback avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1305,7 +1200,7 @@ public class AvatarsApi {
     }
     /**
      * Build call for updateAvatar
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param updateAvatarRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1319,24 +1214,11 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call updateAvatarCall(String avatarId, UpdateAvatarRequest updateAvatarRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = updateAvatarRequest;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
+            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1356,29 +1238,30 @@ public class AvatarsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateAvatarValidateBeforeCall(String avatarId, UpdateAvatarRequest updateAvatarRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling updateAvatar(Async)");
         }
+        
 
-        return updateAvatarCall(avatarId, updateAvatarRequest, _callback);
+        okhttp3.Call localVarCall = updateAvatarCall(avatarId, updateAvatarRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Update Avatar
      * Update information about a specific avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param updateAvatarRequest  (optional)
      * @return Avatar
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1398,7 +1281,7 @@ public class AvatarsApi {
     /**
      * Update Avatar
      * Update information about a specific avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param updateAvatarRequest  (optional)
      * @return ApiResponse&lt;Avatar&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1419,7 +1302,7 @@ public class AvatarsApi {
     /**
      * Update Avatar (asynchronously)
      * Update information about a specific avatar.
-     * @param avatarId  (required)
+     * @param avatarId Must be a valid avatar ID. (required)
      * @param updateAvatarRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

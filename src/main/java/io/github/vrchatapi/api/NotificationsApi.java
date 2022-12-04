@@ -35,12 +35,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class NotificationsApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public NotificationsApi() {
         this(Configuration.getDefaultApiClient());
@@ -58,25 +55,9 @@ public class NotificationsApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for acceptFriendRequest
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,24 +70,11 @@ public class NotificationsApi {
      </table>
      */
     public okhttp3.Call acceptFriendRequestCall(String notificationId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/auth/user/notifications/{notificationId}/accept"
-            .replace("{" + "notificationId" + "}", localVarApiClient.escapeString(notificationId.toString()));
+            .replaceAll("\\{" + "notificationId" + "\\}", localVarApiClient.escapeString(notificationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -123,31 +91,33 @@ public class NotificationsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call acceptFriendRequestValidateBeforeCall(String notificationId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'notificationId' is set
         if (notificationId == null) {
             throw new ApiException("Missing the required parameter 'notificationId' when calling acceptFriendRequest(Async)");
         }
+        
 
-        return acceptFriendRequestCall(notificationId, _callback);
+        okhttp3.Call localVarCall = acceptFriendRequestCall(notificationId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Accept Friend Request
      * Accept a friend request by notification &#x60;frq_&#x60; ID. Friend requests can be found using the NotificationsAPI &#x60;getNotifications&#x60; by filtering of type &#x60;friendRequest&#x60;.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return Success
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -166,7 +136,7 @@ public class NotificationsApi {
     /**
      * Accept Friend Request
      * Accept a friend request by notification &#x60;frq_&#x60; ID. Friend requests can be found using the NotificationsAPI &#x60;getNotifications&#x60; by filtering of type &#x60;friendRequest&#x60;.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return ApiResponse&lt;Success&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -186,7 +156,7 @@ public class NotificationsApi {
     /**
      * Accept Friend Request (asynchronously)
      * Accept a friend request by notification &#x60;frq_&#x60; ID. Friend requests can be found using the NotificationsAPI &#x60;getNotifications&#x60; by filtering of type &#x60;friendRequest&#x60;.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -218,19 +188,6 @@ public class NotificationsApi {
      </table>
      */
     public okhttp3.Call clearNotificationsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -251,19 +208,21 @@ public class NotificationsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call clearNotificationsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return clearNotificationsCall(_callback);
+        
+
+        okhttp3.Call localVarCall = clearNotificationsCall(_callback);
+        return localVarCall;
 
     }
 
@@ -324,7 +283,7 @@ public class NotificationsApi {
     }
     /**
      * Build call for deleteNotification
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -336,24 +295,11 @@ public class NotificationsApi {
      </table>
      */
     public okhttp3.Call deleteNotificationCall(String notificationId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/auth/user/notifications/{notificationId}/hide"
-            .replace("{" + "notificationId" + "}", localVarApiClient.escapeString(notificationId.toString()));
+            .replaceAll("\\{" + "notificationId" + "\\}", localVarApiClient.escapeString(notificationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -370,31 +316,33 @@ public class NotificationsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteNotificationValidateBeforeCall(String notificationId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'notificationId' is set
         if (notificationId == null) {
             throw new ApiException("Missing the required parameter 'notificationId' when calling deleteNotification(Async)");
         }
+        
 
-        return deleteNotificationCall(notificationId, _callback);
+        okhttp3.Call localVarCall = deleteNotificationCall(notificationId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Delete Notification
      * Delete a notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -412,7 +360,7 @@ public class NotificationsApi {
     /**
      * Delete Notification
      * Delete a notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -431,7 +379,7 @@ public class NotificationsApi {
     /**
      * Delete Notification (asynchronously)
      * Delete a notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -468,19 +416,6 @@ public class NotificationsApi {
      </table>
      */
     public okhttp3.Call getNotificationsCall(String type, Boolean sent, Boolean hidden, String after, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -525,19 +460,21 @@ public class NotificationsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getNotificationsValidateBeforeCall(String type, Boolean sent, Boolean hidden, String after, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
-        return getNotificationsCall(type, sent, hidden, after, n, offset, _callback);
+        
+
+        okhttp3.Call localVarCall = getNotificationsCall(type, sent, hidden, after, n, offset, _callback);
+        return localVarCall;
 
     }
 
@@ -616,7 +553,7 @@ public class NotificationsApi {
     }
     /**
      * Build call for markNotificationAsRead
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -628,24 +565,11 @@ public class NotificationsApi {
      </table>
      */
     public okhttp3.Call markNotificationAsReadCall(String notificationId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/auth/user/notifications/{notificationId}/see"
-            .replace("{" + "notificationId" + "}", localVarApiClient.escapeString(notificationId.toString()));
+            .replaceAll("\\{" + "notificationId" + "\\}", localVarApiClient.escapeString(notificationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -662,31 +586,33 @@ public class NotificationsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call markNotificationAsReadValidateBeforeCall(String notificationId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'notificationId' is set
         if (notificationId == null) {
             throw new ApiException("Missing the required parameter 'notificationId' when calling markNotificationAsRead(Async)");
         }
+        
 
-        return markNotificationAsReadCall(notificationId, _callback);
+        okhttp3.Call localVarCall = markNotificationAsReadCall(notificationId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Mark Notification As Read
      * Mark a notification as seen.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -704,7 +630,7 @@ public class NotificationsApi {
     /**
      * Mark Notification As Read
      * Mark a notification as seen.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -723,7 +649,7 @@ public class NotificationsApi {
     /**
      * Mark Notification As Read (asynchronously)
      * Mark a notification as seen.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -24,31 +24,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
-
 /**
- * 
+ * TransactionAgreement
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TransactionAgreement {
   public static final String SERIALIZED_NAME_AGREEMENT_ID = "agreementId";
@@ -119,8 +97,6 @@ public class TransactionAgreement {
   @SerializedName(SERIALIZED_NAME_FAILED_ATTEMPTS)
   private BigDecimal failedAttempts;
 
-  public TransactionAgreement() {
-  }
 
   public TransactionAgreement agreementId(String agreementId) {
     
@@ -513,7 +489,6 @@ public class TransactionAgreement {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -583,158 +558,5 @@ public class TransactionAgreement {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("agreementId");
-    openapiFields.add("itemId");
-    openapiFields.add("status");
-    openapiFields.add("period");
-    openapiFields.add("frequency");
-    openapiFields.add("billingType");
-    openapiFields.add("startDate");
-    openapiFields.add("endDate");
-    openapiFields.add("recurringAmt");
-    openapiFields.add("currency");
-    openapiFields.add("timeCreated");
-    openapiFields.add("nextPayment");
-    openapiFields.add("lastPayment");
-    openapiFields.add("lastAmount");
-    openapiFields.add("lastAmountVat");
-    openapiFields.add("outstanding");
-    openapiFields.add("failedAttempts");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("agreementId");
-    openapiRequiredFields.add("itemId");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("period");
-    openapiRequiredFields.add("frequency");
-    openapiRequiredFields.add("billingType");
-    openapiRequiredFields.add("startDate");
-    openapiRequiredFields.add("endDate");
-    openapiRequiredFields.add("recurringAmt");
-    openapiRequiredFields.add("currency");
-    openapiRequiredFields.add("timeCreated");
-    openapiRequiredFields.add("nextPayment");
-    openapiRequiredFields.add("lastPayment");
-    openapiRequiredFields.add("lastAmount");
-    openapiRequiredFields.add("lastAmountVat");
-    openapiRequiredFields.add("outstanding");
-    openapiRequiredFields.add("failedAttempts");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to TransactionAgreement
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!TransactionAgreement.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TransactionAgreement is not found in the empty JSON string", TransactionAgreement.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!TransactionAgreement.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TransactionAgreement` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : TransactionAgreement.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (!jsonObj.get("agreementId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `agreementId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("agreementId").toString()));
-      }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
-      if (!jsonObj.get("period").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `period` to be a primitive type in the JSON string but got `%s`", jsonObj.get("period").toString()));
-      }
-      if (!jsonObj.get("billingType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `billingType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billingType").toString()));
-      }
-      if (!jsonObj.get("startDate").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `startDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("startDate").toString()));
-      }
-      if (!jsonObj.get("endDate").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endDate").toString()));
-      }
-      if (!jsonObj.get("currency").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
-      }
-      if (!jsonObj.get("timeCreated").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timeCreated` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeCreated").toString()));
-      }
-      if (!jsonObj.get("nextPayment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nextPayment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nextPayment").toString()));
-      }
-      if (!jsonObj.get("lastPayment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastPayment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastPayment").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!TransactionAgreement.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'TransactionAgreement' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<TransactionAgreement> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(TransactionAgreement.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<TransactionAgreement>() {
-           @Override
-           public void write(JsonWriter out, TransactionAgreement value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public TransactionAgreement read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of TransactionAgreement given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TransactionAgreement
-  * @throws IOException if the JSON string is invalid with respect to TransactionAgreement
-  */
-  public static TransactionAgreement fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TransactionAgreement.class);
-  }
-
- /**
-  * Convert an instance of TransactionAgreement to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

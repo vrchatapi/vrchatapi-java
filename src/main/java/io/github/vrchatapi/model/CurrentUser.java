@@ -26,32 +26,11 @@ import io.github.vrchatapi.model.UserStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
 
 /**
  * CurrentUser
@@ -80,7 +59,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
   @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  private List<String> bioLinks = new ArrayList<>();
+  private List<String> bioLinks = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_CURRENT_AVATAR = "currentAvatar";
   @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR)
@@ -120,7 +99,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_FRIEND_GROUP_NAMES = "friendGroupNames";
   @SerializedName(SERIALIZED_NAME_FRIEND_GROUP_NAMES)
-  private List<String> friendGroupNames = new ArrayList<>();
+  private List<String> friendGroupNames = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_FRIEND_KEY = "friendKey";
   @SerializedName(SERIALIZED_NAME_FRIEND_KEY)
@@ -128,7 +107,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_FRIENDS = "friends";
   @SerializedName(SERIALIZED_NAME_FRIENDS)
-  private List<String> friends = new ArrayList<>();
+  private List<String> friends = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_HAS_BIRTHDAY = "hasBirthday";
   @SerializedName(SERIALIZED_NAME_HAS_BIRTHDAY)
@@ -188,7 +167,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_PAST_DISPLAY_NAMES = "pastDisplayNames";
   @SerializedName(SERIALIZED_NAME_PAST_DISPLAY_NAMES)
-  private List<PastDisplayName> pastDisplayNames = new ArrayList<>();
+  private List<PastDisplayName> pastDisplayNames = new ArrayList<PastDisplayName>();
 
   public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
   @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
@@ -212,7 +191,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_STATUS_HISTORY = "statusHistory";
   @SerializedName(SERIALIZED_NAME_STATUS_HISTORY)
-  private List<String> statusHistory = new ArrayList<>();
+  private List<String> statusHistory = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_STEAM_DETAILS = "steamDetails";
   @SerializedName(SERIALIZED_NAME_STEAM_DETAILS)
@@ -224,7 +203,7 @@ public class CurrentUser {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = new ArrayList<>();
+  private List<String> tags = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_TWO_FACTOR_AUTH_ENABLED = "twoFactorAuthEnabled";
   @SerializedName(SERIALIZED_NAME_TWO_FACTOR_AUTH_ENABLED)
@@ -246,8 +225,6 @@ public class CurrentUser {
   @SerializedName(SERIALIZED_NAME_USERNAME)
   private String username;
 
-  public CurrentUser() {
-  }
 
   public CurrentUser acceptedTOSVersion(Integer acceptedTOSVersion) {
     
@@ -304,7 +281,7 @@ public class CurrentUser {
 
   public CurrentUser addActiveFriendsItem(String activeFriendsItem) {
     if (this.activeFriends == null) {
-      this.activeFriends = new ArrayList<>();
+      this.activeFriends = new ArrayList<String>();
     }
     this.activeFriends.add(activeFriendsItem);
     return this;
@@ -973,7 +950,7 @@ public class CurrentUser {
 
   public CurrentUser addOfflineFriendsItem(String offlineFriendsItem) {
     if (this.offlineFriends == null) {
-      this.offlineFriends = new ArrayList<>();
+      this.offlineFriends = new ArrayList<String>();
     }
     this.offlineFriends.add(offlineFriendsItem);
     return this;
@@ -1004,7 +981,7 @@ public class CurrentUser {
 
   public CurrentUser addOnlineFriendsItem(String onlineFriendsItem) {
     if (this.onlineFriends == null) {
-      this.onlineFriends = new ArrayList<>();
+      this.onlineFriends = new ArrayList<String>();
     }
     this.onlineFriends.add(onlineFriendsItem);
     return this;
@@ -1039,11 +1016,11 @@ public class CurrentUser {
   }
 
    /**
-   *  
+   * Get pastDisplayNames
    * @return pastDisplayNames
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = " ")
+  @ApiModelProperty(required = true, value = "")
 
   public List<PastDisplayName> getPastDisplayNames() {
     return pastDisplayNames;
@@ -1389,7 +1366,6 @@ public class CurrentUser {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1530,290 +1506,5 @@ public class CurrentUser {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("acceptedTOSVersion");
-    openapiFields.add("accountDeletionDate");
-    openapiFields.add("activeFriends");
-    openapiFields.add("allowAvatarCopying");
-    openapiFields.add("bio");
-    openapiFields.add("bioLinks");
-    openapiFields.add("currentAvatar");
-    openapiFields.add("currentAvatarAssetUrl");
-    openapiFields.add("currentAvatarImageUrl");
-    openapiFields.add("currentAvatarThumbnailImageUrl");
-    openapiFields.add("date_joined");
-    openapiFields.add("developerType");
-    openapiFields.add("displayName");
-    openapiFields.add("emailVerified");
-    openapiFields.add("fallbackAvatar");
-    openapiFields.add("friendGroupNames");
-    openapiFields.add("friendKey");
-    openapiFields.add("friends");
-    openapiFields.add("hasBirthday");
-    openapiFields.add("hasEmail");
-    openapiFields.add("hasLoggedInFromClient");
-    openapiFields.add("hasPendingEmail");
-    openapiFields.add("homeLocation");
-    openapiFields.add("id");
-    openapiFields.add("isFriend");
-    openapiFields.add("last_login");
-    openapiFields.add("last_platform");
-    openapiFields.add("obfuscatedEmail");
-    openapiFields.add("obfuscatedPendingEmail");
-    openapiFields.add("oculusId");
-    openapiFields.add("offlineFriends");
-    openapiFields.add("onlineFriends");
-    openapiFields.add("pastDisplayNames");
-    openapiFields.add("profilePicOverride");
-    openapiFields.add("state");
-    openapiFields.add("status");
-    openapiFields.add("statusDescription");
-    openapiFields.add("statusFirstTime");
-    openapiFields.add("statusHistory");
-    openapiFields.add("steamDetails");
-    openapiFields.add("steamId");
-    openapiFields.add("tags");
-    openapiFields.add("twoFactorAuthEnabled");
-    openapiFields.add("twoFactorAuthEnabledDate");
-    openapiFields.add("unsubscribe");
-    openapiFields.add("userIcon");
-    openapiFields.add("username");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("acceptedTOSVersion");
-    openapiRequiredFields.add("allowAvatarCopying");
-    openapiRequiredFields.add("bio");
-    openapiRequiredFields.add("bioLinks");
-    openapiRequiredFields.add("currentAvatar");
-    openapiRequiredFields.add("currentAvatarAssetUrl");
-    openapiRequiredFields.add("currentAvatarImageUrl");
-    openapiRequiredFields.add("currentAvatarThumbnailImageUrl");
-    openapiRequiredFields.add("date_joined");
-    openapiRequiredFields.add("developerType");
-    openapiRequiredFields.add("displayName");
-    openapiRequiredFields.add("emailVerified");
-    openapiRequiredFields.add("friendGroupNames");
-    openapiRequiredFields.add("friendKey");
-    openapiRequiredFields.add("friends");
-    openapiRequiredFields.add("hasBirthday");
-    openapiRequiredFields.add("hasEmail");
-    openapiRequiredFields.add("hasLoggedInFromClient");
-    openapiRequiredFields.add("hasPendingEmail");
-    openapiRequiredFields.add("homeLocation");
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("isFriend");
-    openapiRequiredFields.add("last_login");
-    openapiRequiredFields.add("last_platform");
-    openapiRequiredFields.add("obfuscatedEmail");
-    openapiRequiredFields.add("obfuscatedPendingEmail");
-    openapiRequiredFields.add("oculusId");
-    openapiRequiredFields.add("pastDisplayNames");
-    openapiRequiredFields.add("profilePicOverride");
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("statusDescription");
-    openapiRequiredFields.add("statusFirstTime");
-    openapiRequiredFields.add("statusHistory");
-    openapiRequiredFields.add("steamDetails");
-    openapiRequiredFields.add("steamId");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("twoFactorAuthEnabled");
-    openapiRequiredFields.add("unsubscribe");
-    openapiRequiredFields.add("userIcon");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CurrentUser
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CurrentUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CurrentUser is not found in the empty JSON string", CurrentUser.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CurrentUser.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CurrentUser` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CurrentUser.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("activeFriends") != null && !jsonObj.get("activeFriends").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `activeFriends` to be an array in the JSON string but got `%s`", jsonObj.get("activeFriends").toString()));
-      }
-      if (!jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("bioLinks") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
-      }
-      if (!jsonObj.get("currentAvatar").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatar").toString()));
-      }
-      if (!jsonObj.get("currentAvatarAssetUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatarAssetUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarAssetUrl").toString()));
-      }
-      if (!jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
-      }
-      if (!jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
-      if (!jsonObj.get("displayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
-      }
-      if ((jsonObj.get("fallbackAvatar") != null && !jsonObj.get("fallbackAvatar").isJsonNull()) && !jsonObj.get("fallbackAvatar").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fallbackAvatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fallbackAvatar").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("friendGroupNames") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("friendGroupNames").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friendGroupNames` to be an array in the JSON string but got `%s`", jsonObj.get("friendGroupNames").toString()));
-      }
-      if (!jsonObj.get("friendKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friendKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendKey").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("friends") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("friends").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friends` to be an array in the JSON string but got `%s`", jsonObj.get("friends").toString()));
-      }
-      if (!jsonObj.get("homeLocation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `homeLocation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homeLocation").toString()));
-      }
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (!jsonObj.get("last_platform").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_platform").toString()));
-      }
-      if (!jsonObj.get("obfuscatedEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `obfuscatedEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("obfuscatedEmail").toString()));
-      }
-      if (!jsonObj.get("obfuscatedPendingEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `obfuscatedPendingEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("obfuscatedPendingEmail").toString()));
-      }
-      if (!jsonObj.get("oculusId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oculusId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oculusId").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("offlineFriends") != null && !jsonObj.get("offlineFriends").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `offlineFriends` to be an array in the JSON string but got `%s`", jsonObj.get("offlineFriends").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("onlineFriends") != null && !jsonObj.get("onlineFriends").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `onlineFriends` to be an array in the JSON string but got `%s`", jsonObj.get("onlineFriends").toString()));
-      }
-      // ensure the json data is an array
-      if (!jsonObj.get("pastDisplayNames").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pastDisplayNames` to be an array in the JSON string but got `%s`", jsonObj.get("pastDisplayNames").toString()));
-      }
-
-      JsonArray jsonArraypastDisplayNames = jsonObj.getAsJsonArray("pastDisplayNames");
-      // validate the required field `pastDisplayNames` (array)
-      for (int i = 0; i < jsonArraypastDisplayNames.size(); i++) {
-        PastDisplayName.validateJsonObject(jsonArraypastDisplayNames.get(i).getAsJsonObject());
-      };
-      if (!jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if (!jsonObj.get("statusDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `statusDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("statusDescription").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("statusHistory") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("statusHistory").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `statusHistory` to be an array in the JSON string but got `%s`", jsonObj.get("statusHistory").toString()));
-      }
-      if (!jsonObj.get("steamId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `steamId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("steamId").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("tags") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if (!jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
-      }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CurrentUser.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CurrentUser' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CurrentUser> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CurrentUser.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CurrentUser>() {
-           @Override
-           public void write(JsonWriter out, CurrentUser value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CurrentUser read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CurrentUser given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CurrentUser
-  * @throws IOException if the JSON string is invalid with respect to CurrentUser
-  */
-  public static CurrentUser fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CurrentUser.class);
-  }
-
- /**
-  * Convert an instance of CurrentUser to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

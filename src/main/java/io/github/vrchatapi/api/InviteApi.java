@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.InviteMessage;
+import io.github.vrchatapi.model.InviteMessageType;
 import io.github.vrchatapi.model.InviteRequest;
 import io.github.vrchatapi.model.InviteResponse;
 import io.github.vrchatapi.model.Notification;
@@ -40,12 +41,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class InviteApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public InviteApi() {
         this(Configuration.getDefaultApiClient());
@@ -63,27 +61,11 @@ public class InviteApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for getInviteMessage
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -96,27 +78,14 @@ public class InviteApi {
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInviteMessageCall(String userId, String messageType, Integer slot, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
-            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
-            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
+            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
+            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -133,43 +102,45 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInviteMessageValidateBeforeCall(String userId, String messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling getInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling getInviteMessage(Async)");
         }
+        
 
-        return getInviteMessageCall(userId, messageType, slot, _callback);
+        okhttp3.Call localVarCall = getInviteMessageCall(userId, messageType, slot, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Invite Message
      * Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @return InviteMessage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -181,7 +152,7 @@ public class InviteApi {
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
-    public InviteMessage getInviteMessage(String userId, String messageType, Integer slot) throws ApiException {
+    public InviteMessage getInviteMessage(String userId, InviteMessageType messageType, Integer slot) throws ApiException {
         ApiResponse<InviteMessage> localVarResp = getInviteMessageWithHttpInfo(userId, messageType, slot);
         return localVarResp.getData();
     }
@@ -189,9 +160,9 @@ public class InviteApi {
     /**
      * Get Invite Message
      * Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @return ApiResponse&lt;InviteMessage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -203,7 +174,7 @@ public class InviteApi {
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InviteMessage> getInviteMessageWithHttpInfo(String userId, String messageType, Integer slot) throws ApiException {
+    public ApiResponse<InviteMessage> getInviteMessageWithHttpInfo(String userId, InviteMessageType messageType, Integer slot) throws ApiException {
         okhttp3.Call localVarCall = getInviteMessageValidateBeforeCall(userId, messageType, slot, null);
         Type localVarReturnType = new TypeToken<InviteMessage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,9 +183,9 @@ public class InviteApi {
     /**
      * Get Invite Message (asynchronously)
      * Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -227,7 +198,7 @@ public class InviteApi {
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInviteMessageAsync(String userId, String messageType, Integer slot, final ApiCallback<InviteMessage> _callback) throws ApiException {
+    public okhttp3.Call getInviteMessageAsync(String userId, InviteMessageType messageType, Integer slot, final ApiCallback<InviteMessage> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInviteMessageValidateBeforeCall(userId, messageType, slot, _callback);
         Type localVarReturnType = new TypeToken<InviteMessage>(){}.getType();
@@ -236,8 +207,8 @@ public class InviteApi {
     }
     /**
      * Build call for getInviteMessages
-     * @param userId  (required)
-     * @param messageType  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -249,26 +220,13 @@ public class InviteApi {
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInviteMessagesCall(String userId, String messageType, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call getInviteMessagesCall(String userId, InviteMessageType messageType, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
-            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
+            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -285,37 +243,39 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInviteMessagesValidateBeforeCall(String userId, String messageType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInviteMessagesValidateBeforeCall(String userId, InviteMessageType messageType, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getInviteMessages(Async)");
         }
-
+        
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling getInviteMessages(Async)");
         }
+        
 
-        return getInviteMessagesCall(userId, messageType, _callback);
+        okhttp3.Call localVarCall = getInviteMessagesCall(userId, messageType, _callback);
+        return localVarCall;
 
     }
 
     /**
      * List Invite Messages
      * Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
      * @return List&lt;InviteMessage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -326,7 +286,7 @@ public class InviteApi {
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
      </table>
      */
-    public List<InviteMessage> getInviteMessages(String userId, String messageType) throws ApiException {
+    public List<InviteMessage> getInviteMessages(String userId, InviteMessageType messageType) throws ApiException {
         ApiResponse<List<InviteMessage>> localVarResp = getInviteMessagesWithHttpInfo(userId, messageType);
         return localVarResp.getData();
     }
@@ -334,8 +294,8 @@ public class InviteApi {
     /**
      * List Invite Messages
      * Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
      * @return ApiResponse&lt;List&lt;InviteMessage&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -346,7 +306,7 @@ public class InviteApi {
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<InviteMessage>> getInviteMessagesWithHttpInfo(String userId, String messageType) throws ApiException {
+    public ApiResponse<List<InviteMessage>> getInviteMessagesWithHttpInfo(String userId, InviteMessageType messageType) throws ApiException {
         okhttp3.Call localVarCall = getInviteMessagesValidateBeforeCall(userId, messageType, null);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -355,8 +315,8 @@ public class InviteApi {
     /**
      * List Invite Messages (asynchronously)
      * Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -368,7 +328,7 @@ public class InviteApi {
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInviteMessagesAsync(String userId, String messageType, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
+    public okhttp3.Call getInviteMessagesAsync(String userId, InviteMessageType messageType, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInviteMessagesValidateBeforeCall(userId, messageType, _callback);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();
@@ -377,8 +337,8 @@ public class InviteApi {
     }
     /**
      * Build call for inviteMyselfTo
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -391,25 +351,12 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call inviteMyselfToCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/invite/myself/to/{worldId}:{instanceId}"
-            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
-            .replace("{" + "instanceId" + "}", localVarApiClient.escapeString(instanceId.toString()));
+            .replaceAll("\\{" + "worldId" + "\\}", localVarApiClient.escapeString(worldId.toString()))
+            .replaceAll("\\{" + "instanceId" + "\\}", localVarApiClient.escapeString(instanceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -426,37 +373,39 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call inviteMyselfToValidateBeforeCall(String worldId, String instanceId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'worldId' is set
         if (worldId == null) {
             throw new ApiException("Missing the required parameter 'worldId' when calling inviteMyselfTo(Async)");
         }
-
+        
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling inviteMyselfTo(Async)");
         }
+        
 
-        return inviteMyselfToCall(worldId, instanceId, _callback);
+        okhttp3.Call localVarCall = inviteMyselfToCall(worldId, instanceId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Invite Myself To Instance
      * Sends self an invite to an instance
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return SentNotification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -475,8 +424,8 @@ public class InviteApi {
     /**
      * Invite Myself To Instance
      * Sends self an invite to an instance
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @return ApiResponse&lt;SentNotification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -496,8 +445,8 @@ public class InviteApi {
     /**
      * Invite Myself To Instance (asynchronously)
      * Sends self an invite to an instance
-     * @param worldId  (required)
-     * @param instanceId  (required)
+     * @param worldId Must be a valid world ID. (required)
+     * @param instanceId Must be a valid instance ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -518,7 +467,7 @@ public class InviteApi {
     }
     /**
      * Build call for inviteUser
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param inviteRequest Slot number of the Invite Message to use when inviting a user. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -531,24 +480,11 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call inviteUserCall(String userId, InviteRequest inviteRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = inviteRequest;
 
         // create path and map variables
         String localVarPath = "/invite/{userId}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -568,29 +504,30 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call inviteUserValidateBeforeCall(String userId, InviteRequest inviteRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling inviteUser(Async)");
         }
+        
 
-        return inviteUserCall(userId, inviteRequest, _callback);
+        okhttp3.Call localVarCall = inviteUserCall(userId, inviteRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Invite User
      * Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param inviteRequest Slot number of the Invite Message to use when inviting a user. (optional)
      * @return SentNotification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -609,7 +546,7 @@ public class InviteApi {
     /**
      * Invite User
      * Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param inviteRequest Slot number of the Invite Message to use when inviting a user. (optional)
      * @return ApiResponse&lt;SentNotification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -629,7 +566,7 @@ public class InviteApi {
     /**
      * Invite User (asynchronously)
      * Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param inviteRequest Slot number of the Invite Message to use when inviting a user. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -650,7 +587,7 @@ public class InviteApi {
     }
     /**
      * Build call for requestInvite
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param requestInviteRequest Slot number of the Request Message to use when request an invite. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -663,24 +600,11 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call requestInviteCall(String userId, RequestInviteRequest requestInviteRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = requestInviteRequest;
 
         // create path and map variables
         String localVarPath = "/requestInvite/{userId}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -700,29 +624,30 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call requestInviteValidateBeforeCall(String userId, RequestInviteRequest requestInviteRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling requestInvite(Async)");
         }
+        
 
-        return requestInviteCall(userId, requestInviteRequest, _callback);
+        okhttp3.Call localVarCall = requestInviteCall(userId, requestInviteRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Request Invite
      * Requests an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param requestInviteRequest Slot number of the Request Message to use when request an invite. (optional)
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -741,7 +666,7 @@ public class InviteApi {
     /**
      * Request Invite
      * Requests an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param requestInviteRequest Slot number of the Request Message to use when request an invite. (optional)
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -761,7 +686,7 @@ public class InviteApi {
     /**
      * Request Invite (asynchronously)
      * Requests an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
-     * @param userId  (required)
+     * @param userId Must be a valid user ID. (required)
      * @param requestInviteRequest Slot number of the Request Message to use when request an invite. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -782,9 +707,9 @@ public class InviteApi {
     }
     /**
      * Build call for resetInviteMessage
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -798,27 +723,14 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetInviteMessageCall(String userId, String messageType, Integer slot, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call resetInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
-            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
-            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
+            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
+            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -835,43 +747,45 @@ public class InviteApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetInviteMessageValidateBeforeCall(String userId, String messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resetInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling resetInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling resetInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling resetInviteMessage(Async)");
         }
+        
 
-        return resetInviteMessageCall(userId, messageType, slot, _callback);
+        okhttp3.Call localVarCall = resetInviteMessageCall(userId, messageType, slot, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Reset Invite Message
      * Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @return List&lt;InviteMessage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -884,7 +798,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public List<InviteMessage> resetInviteMessage(String userId, String messageType, Integer slot) throws ApiException {
+    public List<InviteMessage> resetInviteMessage(String userId, InviteMessageType messageType, Integer slot) throws ApiException {
         ApiResponse<List<InviteMessage>> localVarResp = resetInviteMessageWithHttpInfo(userId, messageType, slot);
         return localVarResp.getData();
     }
@@ -892,9 +806,9 @@ public class InviteApi {
     /**
      * Reset Invite Message
      * Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @return ApiResponse&lt;List&lt;InviteMessage&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -907,7 +821,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<InviteMessage>> resetInviteMessageWithHttpInfo(String userId, String messageType, Integer slot) throws ApiException {
+    public ApiResponse<List<InviteMessage>> resetInviteMessageWithHttpInfo(String userId, InviteMessageType messageType, Integer slot) throws ApiException {
         okhttp3.Call localVarCall = resetInviteMessageValidateBeforeCall(userId, messageType, slot, null);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -916,9 +830,9 @@ public class InviteApi {
     /**
      * Reset Invite Message (asynchronously)
      * Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -932,7 +846,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetInviteMessageAsync(String userId, String messageType, Integer slot, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
+    public okhttp3.Call resetInviteMessageAsync(String userId, InviteMessageType messageType, Integer slot, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resetInviteMessageValidateBeforeCall(userId, messageType, slot, _callback);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();
@@ -941,7 +855,7 @@ public class InviteApi {
     }
     /**
      * Build call for respondInvite
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param inviteResponse Slot number of the Response Message to use when responding to a user. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -954,24 +868,11 @@ public class InviteApi {
      </table>
      */
     public okhttp3.Call respondInviteCall(String notificationId, InviteResponse inviteResponse, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = inviteResponse;
 
         // create path and map variables
         String localVarPath = "/invite/{notificationId}/response"
-            .replace("{" + "notificationId" + "}", localVarApiClient.escapeString(notificationId.toString()));
+            .replaceAll("\\{" + "notificationId" + "\\}", localVarApiClient.escapeString(notificationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -991,29 +892,30 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call respondInviteValidateBeforeCall(String notificationId, InviteResponse inviteResponse, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'notificationId' is set
         if (notificationId == null) {
             throw new ApiException("Missing the required parameter 'notificationId' when calling respondInvite(Async)");
         }
+        
 
-        return respondInviteCall(notificationId, inviteResponse, _callback);
+        okhttp3.Call localVarCall = respondInviteCall(notificationId, inviteResponse, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Respond Invite
      * Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param inviteResponse Slot number of the Response Message to use when responding to a user. (optional)
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1032,7 +934,7 @@ public class InviteApi {
     /**
      * Respond Invite
      * Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param inviteResponse Slot number of the Response Message to use when responding to a user. (optional)
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1052,7 +954,7 @@ public class InviteApi {
     /**
      * Respond Invite (asynchronously)
      * Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
-     * @param notificationId  (required)
+     * @param notificationId Must be a valid notification ID. (required)
      * @param inviteResponse Slot number of the Response Message to use when responding to a user. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1073,9 +975,9 @@ public class InviteApi {
     }
     /**
      * Build call for updateInviteMessage
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param updateInviteMessageRequest Message of what to set the invite message to. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1089,27 +991,14 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateInviteMessageCall(String userId, String messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
+    public okhttp3.Call updateInviteMessageCall(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = updateInviteMessageRequest;
 
         // create path and map variables
         String localVarPath = "/message/{userId}/{messageType}/{slot}"
-            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()))
-            .replace("{" + "messageType" + "}", localVarApiClient.escapeString(messageType.toString()))
-            .replace("{" + "slot" + "}", localVarApiClient.escapeString(slot.toString()));
+            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()))
+            .replaceAll("\\{" + "messageType" + "\\}", localVarApiClient.escapeString(messageType.toString()))
+            .replaceAll("\\{" + "slot" + "\\}", localVarApiClient.escapeString(slot.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1129,41 +1018,42 @@ public class InviteApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateInviteMessageValidateBeforeCall(String userId, String messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateInviteMessageValidateBeforeCall(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling updateInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'messageType' is set
         if (messageType == null) {
             throw new ApiException("Missing the required parameter 'messageType' when calling updateInviteMessage(Async)");
         }
-
+        
         // verify the required parameter 'slot' is set
         if (slot == null) {
             throw new ApiException("Missing the required parameter 'slot' when calling updateInviteMessage(Async)");
         }
+        
 
-        return updateInviteMessageCall(userId, messageType, slot, updateInviteMessageRequest, _callback);
+        okhttp3.Call localVarCall = updateInviteMessageCall(userId, messageType, slot, updateInviteMessageRequest, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Update Invite Message
      * Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param updateInviteMessageRequest Message of what to set the invite message to. (optional)
      * @return List&lt;InviteMessage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1176,7 +1066,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public List<InviteMessage> updateInviteMessage(String userId, String messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest) throws ApiException {
+    public List<InviteMessage> updateInviteMessage(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest) throws ApiException {
         ApiResponse<List<InviteMessage>> localVarResp = updateInviteMessageWithHttpInfo(userId, messageType, slot, updateInviteMessageRequest);
         return localVarResp.getData();
     }
@@ -1184,9 +1074,9 @@ public class InviteApi {
     /**
      * Update Invite Message
      * Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param updateInviteMessageRequest Message of what to set the invite message to. (optional)
      * @return ApiResponse&lt;List&lt;InviteMessage&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1199,7 +1089,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<InviteMessage>> updateInviteMessageWithHttpInfo(String userId, String messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest) throws ApiException {
+    public ApiResponse<List<InviteMessage>> updateInviteMessageWithHttpInfo(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest) throws ApiException {
         okhttp3.Call localVarCall = updateInviteMessageValidateBeforeCall(userId, messageType, slot, updateInviteMessageRequest, null);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1208,9 +1098,9 @@ public class InviteApi {
     /**
      * Update Invite Message (asynchronously)
      * Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
-     * @param userId  (required)
-     * @param messageType  (required)
-     * @param slot  (required)
+     * @param userId Must be a valid user ID. (required)
+     * @param messageType The type of message to fetch, must be a valid InviteMessageType. (required)
+     * @param slot The message slot to fetch of a given message type. (required)
      * @param updateInviteMessageRequest Message of what to set the invite message to. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1224,7 +1114,7 @@ public class InviteApi {
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateInviteMessageAsync(String userId, String messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
+    public okhttp3.Call updateInviteMessageAsync(String userId, InviteMessageType messageType, Integer slot, UpdateInviteMessageRequest updateInviteMessageRequest, final ApiCallback<List<InviteMessage>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateInviteMessageValidateBeforeCall(userId, messageType, slot, updateInviteMessageRequest, _callback);
         Type localVarReturnType = new TypeToken<List<InviteMessage>>(){}.getType();

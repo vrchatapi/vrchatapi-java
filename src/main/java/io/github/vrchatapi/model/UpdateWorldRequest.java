@@ -26,27 +26,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
-
 /**
  * UpdateWorldRequest
  */
@@ -104,8 +83,6 @@ public class UpdateWorldRequest {
   @SerializedName(SERIALIZED_NAME_UNITY_VERSION)
   private String unityVersion = "5.3.4p1";
 
-  public UpdateWorldRequest() {
-  }
 
   public UpdateWorldRequest assetUrl(String assetUrl) {
     
@@ -347,18 +324,18 @@ public class UpdateWorldRequest {
 
   public UpdateWorldRequest addTagsItem(String tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<>();
+      this.tags = new ArrayList<String>();
     }
     this.tags.add(tagsItem);
     return this;
   }
 
    /**
-   *  
+   * Get tags
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = " ")
+  @ApiModelProperty(value = "")
 
   public List<String> getTags() {
     return tags;
@@ -414,7 +391,6 @@ public class UpdateWorldRequest {
   public void setUnityVersion(String unityVersion) {
     this.unityVersion = unityVersion;
   }
-
 
 
   @Override
@@ -478,134 +454,5 @@ public class UpdateWorldRequest {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("assetUrl");
-    openapiFields.add("assetVersion");
-    openapiFields.add("authorId");
-    openapiFields.add("authorName");
-    openapiFields.add("capacity");
-    openapiFields.add("description");
-    openapiFields.add("imageUrl");
-    openapiFields.add("name");
-    openapiFields.add("platform");
-    openapiFields.add("releaseStatus");
-    openapiFields.add("tags");
-    openapiFields.add("unityPackageUrl");
-    openapiFields.add("unityVersion");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateWorldRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!UpdateWorldRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateWorldRequest is not found in the empty JSON string", UpdateWorldRequest.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdateWorldRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateWorldRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("assetUrl") != null && !jsonObj.get("assetUrl").isJsonNull()) && !jsonObj.get("assetUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `assetUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetUrl").toString()));
-      }
-      if ((jsonObj.get("assetVersion") != null && !jsonObj.get("assetVersion").isJsonNull()) && !jsonObj.get("assetVersion").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `assetVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetVersion").toString()));
-      }
-      if ((jsonObj.get("authorId") != null && !jsonObj.get("authorId").isJsonNull()) && !jsonObj.get("authorId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
-      }
-      if ((jsonObj.get("authorName") != null && !jsonObj.get("authorName").isJsonNull()) && !jsonObj.get("authorName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `authorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorName").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("platform") != null && !jsonObj.get("platform").isJsonNull()) && !jsonObj.get("platform").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if ((jsonObj.get("unityPackageUrl") != null && !jsonObj.get("unityPackageUrl").isJsonNull()) && !jsonObj.get("unityPackageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unityPackageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unityPackageUrl").toString()));
-      }
-      if ((jsonObj.get("unityVersion") != null && !jsonObj.get("unityVersion").isJsonNull()) && !jsonObj.get("unityVersion").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unityVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unityVersion").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateWorldRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateWorldRequest' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateWorldRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateWorldRequest.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateWorldRequest>() {
-           @Override
-           public void write(JsonWriter out, UpdateWorldRequest value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateWorldRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdateWorldRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateWorldRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateWorldRequest
-  */
-  public static UpdateWorldRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateWorldRequest.class);
-  }
-
- /**
-  * Convert an instance of UpdateWorldRequest to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

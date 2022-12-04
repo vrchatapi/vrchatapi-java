@@ -27,31 +27,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import io.github.vrchatapi.JSON;
-
 /**
- * 
+ * LimitedUser
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class LimitedUser {
   public static final String SERIALIZED_NAME_BIO = "bio";
@@ -104,7 +82,7 @@ public class LimitedUser {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = new ArrayList<>();
+  private List<String> tags = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
   @SerializedName(SERIALIZED_NAME_USER_ICON)
@@ -122,8 +100,6 @@ public class LimitedUser {
   @SerializedName(SERIALIZED_NAME_FRIEND_KEY)
   private String friendKey;
 
-  public LimitedUser() {
-  }
 
   public LimitedUser bio(String bio) {
     
@@ -523,7 +499,6 @@ public class LimitedUser {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -593,169 +568,5 @@ public class LimitedUser {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bio");
-    openapiFields.add("currentAvatarImageUrl");
-    openapiFields.add("currentAvatarThumbnailImageUrl");
-    openapiFields.add("developerType");
-    openapiFields.add("displayName");
-    openapiFields.add("fallbackAvatar");
-    openapiFields.add("id");
-    openapiFields.add("isFriend");
-    openapiFields.add("last_platform");
-    openapiFields.add("profilePicOverride");
-    openapiFields.add("status");
-    openapiFields.add("statusDescription");
-    openapiFields.add("tags");
-    openapiFields.add("userIcon");
-    openapiFields.add("username");
-    openapiFields.add("location");
-    openapiFields.add("friendKey");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("currentAvatarImageUrl");
-    openapiRequiredFields.add("currentAvatarThumbnailImageUrl");
-    openapiRequiredFields.add("developerType");
-    openapiRequiredFields.add("displayName");
-    openapiRequiredFields.add("fallbackAvatar");
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("isFriend");
-    openapiRequiredFields.add("last_platform");
-    openapiRequiredFields.add("profilePicOverride");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("statusDescription");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("userIcon");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to LimitedUser
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!LimitedUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LimitedUser is not found in the empty JSON string", LimitedUser.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!LimitedUser.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `LimitedUser` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : LimitedUser.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      if (!jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
-      }
-      if (!jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
-      if (!jsonObj.get("displayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
-      }
-      if (!jsonObj.get("fallbackAvatar").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fallbackAvatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fallbackAvatar").toString()));
-      }
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (!jsonObj.get("last_platform").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_platform").toString()));
-      }
-      if (!jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if (!jsonObj.get("statusDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `statusDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("statusDescription").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("tags") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if (!jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
-      }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
-      }
-      if ((jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) && !jsonObj.get("location").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("location").toString()));
-      }
-      if ((jsonObj.get("friendKey") != null && !jsonObj.get("friendKey").isJsonNull()) && !jsonObj.get("friendKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friendKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendKey").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!LimitedUser.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'LimitedUser' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<LimitedUser> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(LimitedUser.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<LimitedUser>() {
-           @Override
-           public void write(JsonWriter out, LimitedUser value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public LimitedUser read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of LimitedUser given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LimitedUser
-  * @throws IOException if the JSON string is invalid with respect to LimitedUser
-  */
-  public static LimitedUser fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, LimitedUser.class);
-  }
-
- /**
-  * Convert an instance of LimitedUser to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

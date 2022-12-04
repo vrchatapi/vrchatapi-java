@@ -37,12 +37,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class EconomyApi {
     private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
 
     public EconomyApi() {
         this(Configuration.getDefaultApiClient());
@@ -60,22 +57,6 @@ public class EconomyApi {
         this.localVarApiClient = apiClient;
     }
 
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
-    }
-
     /**
      * Build call for getCurrentSubscriptions
      * @param _callback Callback for upload/download progress
@@ -89,19 +70,6 @@ public class EconomyApi {
      </table>
      */
     public okhttp3.Call getCurrentSubscriptionsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -122,19 +90,21 @@ public class EconomyApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getCurrentSubscriptionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getCurrentSubscriptionsCall(_callback);
+        
+
+        okhttp3.Call localVarCall = getCurrentSubscriptionsCall(_callback);
+        return localVarCall;
 
     }
 
@@ -195,7 +165,7 @@ public class EconomyApi {
     }
     /**
      * Build call for getLicenseGroup
-     * @param licenseGroupId  (required)
+     * @param licenseGroupId Must be a valid license group ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -207,24 +177,11 @@ public class EconomyApi {
      </table>
      */
     public okhttp3.Call getLicenseGroupCall(String licenseGroupId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/licenseGroups/{licenseGroupId}"
-            .replace("{" + "licenseGroupId" + "}", localVarApiClient.escapeString(licenseGroupId.toString()));
+            .replaceAll("\\{" + "licenseGroupId" + "\\}", localVarApiClient.escapeString(licenseGroupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -241,31 +198,33 @@ public class EconomyApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getLicenseGroupValidateBeforeCall(String licenseGroupId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'licenseGroupId' is set
         if (licenseGroupId == null) {
             throw new ApiException("Missing the required parameter 'licenseGroupId' when calling getLicenseGroup(Async)");
         }
+        
 
-        return getLicenseGroupCall(licenseGroupId, _callback);
+        okhttp3.Call localVarCall = getLicenseGroupCall(licenseGroupId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get License Group
      * Get a single License Group by given ID.
-     * @param licenseGroupId  (required)
+     * @param licenseGroupId Must be a valid license group ID. (required)
      * @return LicenseGroup
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -283,7 +242,7 @@ public class EconomyApi {
     /**
      * Get License Group
      * Get a single License Group by given ID.
-     * @param licenseGroupId  (required)
+     * @param licenseGroupId Must be a valid license group ID. (required)
      * @return ApiResponse&lt;LicenseGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -302,7 +261,7 @@ public class EconomyApi {
     /**
      * Get License Group (asynchronously)
      * Get a single License Group by given ID.
-     * @param licenseGroupId  (required)
+     * @param licenseGroupId Must be a valid license group ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -322,7 +281,7 @@ public class EconomyApi {
     }
     /**
      * Build call for getSteamTransaction
-     * @param transactionId  (required)
+     * @param transactionId Must be a valid transaction ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -336,24 +295,11 @@ public class EconomyApi {
      */
     @Deprecated
     public okhttp3.Call getSteamTransactionCall(String transactionId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/Steam/transactions/{transactionId}"
-            .replace("{" + "transactionId" + "}", localVarApiClient.escapeString(transactionId.toString()));
+            .replaceAll("\\{" + "transactionId" + "\\}", localVarApiClient.escapeString(transactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -370,32 +316,34 @@ public class EconomyApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getSteamTransactionValidateBeforeCall(String transactionId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'transactionId' is set
         if (transactionId == null) {
             throw new ApiException("Missing the required parameter 'transactionId' when calling getSteamTransaction(Async)");
         }
+        
 
-        return getSteamTransactionCall(transactionId, _callback);
+        okhttp3.Call localVarCall = getSteamTransactionCall(transactionId, _callback);
+        return localVarCall;
 
     }
 
     /**
      * Get Steam Transaction
      * Get a single Steam transactions by ID. This returns the exact same information as &#x60;getSteamTransactions&#x60;, so no point in using this endpoint.
-     * @param transactionId  (required)
+     * @param transactionId Must be a valid transaction ID. (required)
      * @return Transaction
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -415,7 +363,7 @@ public class EconomyApi {
     /**
      * Get Steam Transaction
      * Get a single Steam transactions by ID. This returns the exact same information as &#x60;getSteamTransactions&#x60;, so no point in using this endpoint.
-     * @param transactionId  (required)
+     * @param transactionId Must be a valid transaction ID. (required)
      * @return ApiResponse&lt;Transaction&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -436,7 +384,7 @@ public class EconomyApi {
     /**
      * Get Steam Transaction (asynchronously)
      * Get a single Steam transactions by ID. This returns the exact same information as &#x60;getSteamTransactions&#x60;, so no point in using this endpoint.
-     * @param transactionId  (required)
+     * @param transactionId Must be a valid transaction ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -469,19 +417,6 @@ public class EconomyApi {
      </table>
      */
     public okhttp3.Call getSteamTransactionsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -502,19 +437,21 @@ public class EconomyApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getSteamTransactionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getSteamTransactionsCall(_callback);
+        
+
+        okhttp3.Call localVarCall = getSteamTransactionsCall(_callback);
+        return localVarCall;
 
     }
 
@@ -586,19 +523,6 @@ public class EconomyApi {
      </table>
      */
     public okhttp3.Call getSubscriptionsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -619,19 +543,21 @@ public class EconomyApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
+        localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getSubscriptionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getSubscriptionsCall(_callback);
+        
+
+        okhttp3.Call localVarCall = getSubscriptionsCall(_callback);
+        return localVarCall;
 
     }
 
