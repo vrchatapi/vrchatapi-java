@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**clearAllPlayerModerations**](PlayermoderationApi.md#clearAllPlayerModerations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations
-[**deletePlayerModeration**](PlayermoderationApi.md#deletePlayerModeration) | **DELETE** /auth/user/playermoderations/{playerModerationId} | Delete Player Moderation
-[**getPlayerModeration**](PlayermoderationApi.md#getPlayerModeration) | **GET** /auth/user/playermoderations/{playerModerationId} | Get Player Moderation
-[**getPlayerModerations**](PlayermoderationApi.md#getPlayerModerations) | **GET** /auth/user/playermoderations | Search Player Moderations
-[**moderateUser**](PlayermoderationApi.md#moderateUser) | **POST** /auth/user/playermoderations | Moderate User
-[**unmoderateUser**](PlayermoderationApi.md#unmoderateUser) | **PUT** /auth/user/unplayermoderate | Unmoderate User
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**clearAllPlayerModerations**](PlayermoderationApi.md#clearAllPlayerModerations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations |
+| [**deletePlayerModeration**](PlayermoderationApi.md#deletePlayerModeration) | **DELETE** /auth/user/playermoderations/{playerModerationId} | Delete Player Moderation |
+| [**getPlayerModeration**](PlayermoderationApi.md#getPlayerModeration) | **GET** /auth/user/playermoderations/{playerModerationId} | Get Player Moderation |
+| [**getPlayerModerations**](PlayermoderationApi.md#getPlayerModerations) | **GET** /auth/user/playermoderations | Search Player Moderations |
+| [**moderateUser**](PlayermoderationApi.md#moderateUser) | **POST** /auth/user/playermoderations | Moderate User |
+| [**unmoderateUser**](PlayermoderationApi.md#unmoderateUser) | **PUT** /auth/user/unplayermoderate | Unmoderate User |
 
 
 <a name="clearAllPlayerModerations"></a>
@@ -81,8 +81,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after e.g. clearing all player moderations. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Success response after e.g. clearing all player moderations. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="deletePlayerModeration"></a>
 # **deletePlayerModeration**
@@ -137,9 +137,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **playerModerationId** | **String**|  | |
 
 ### Return type
 
@@ -157,9 +157,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after removing a PlayerModeration by ID. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**403** | Error response when trying to delete someone else&#39;s player moderation. |  -  |
+| **200** | Success response after removing a PlayerModeration by ID. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **403** | Error response when trying to delete someone else&#39;s player moderation. |  -  |
 
 <a name="getPlayerModeration"></a>
 # **getPlayerModeration**
@@ -214,9 +214,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **playerModerationId** | **String**|  | |
 
 ### Return type
 
@@ -234,9 +234,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single PlayerModeration object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response when trying to show information about a non-existent player moderation. |  -  |
+| **200** | Returns a single PlayerModeration object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent player moderation. |  -  |
 
 <a name="getPlayerModerations"></a>
 # **getPlayerModerations**
@@ -292,10 +292,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block. | [optional]
- **targetUserId** | **String**| Must be valid UserID. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **type** | **String**| Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block. | [optional] |
+| **targetUserId** | **String**| Must be valid UserID. | [optional] |
 
 ### Return type
 
@@ -313,8 +313,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of PlayerModeration objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of PlayerModeration objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="moderateUser"></a>
 # **moderateUser**
@@ -369,9 +369,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -389,8 +389,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single PlayerModeration object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single PlayerModeration object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="unmoderateUser"></a>
 # **unmoderateUser**
@@ -445,9 +445,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -465,6 +465,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success response after unmoderating a player moderation. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Success response after unmoderating a player moderation. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 

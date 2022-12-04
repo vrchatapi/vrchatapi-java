@@ -22,11 +22,33 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
- * UnityPackage
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UnityPackage {
   public static final String SERIALIZED_NAME_ASSET_URL = "assetUrl";
@@ -69,6 +91,8 @@ public class UnityPackage {
   @SerializedName(SERIALIZED_NAME_UNITY_VERSION)
   private String unityVersion = "5.3.4p1";
 
+  public UnityPackage() {
+  }
 
   public UnityPackage assetUrl(String assetUrl) {
     
@@ -302,6 +326,7 @@ public class UnityPackage {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -357,5 +382,123 @@ public class UnityPackage {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("assetUrl");
+    openapiFields.add("assetUrlObject");
+    openapiFields.add("assetVersion");
+    openapiFields.add("created_at");
+    openapiFields.add("id");
+    openapiFields.add("platform");
+    openapiFields.add("pluginUrl");
+    openapiFields.add("pluginUrlObject");
+    openapiFields.add("unitySortNumber");
+    openapiFields.add("unityVersion");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("assetVersion");
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("platform");
+    openapiRequiredFields.add("unityVersion");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to UnityPackage
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!UnityPackage.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UnityPackage is not found in the empty JSON string", UnityPackage.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!UnityPackage.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UnityPackage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : UnityPackage.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if ((jsonObj.get("assetUrl") != null && !jsonObj.get("assetUrl").isJsonNull()) && !jsonObj.get("assetUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetUrl").toString()));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if (!jsonObj.get("platform").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+      }
+      if ((jsonObj.get("pluginUrl") != null && !jsonObj.get("pluginUrl").isJsonNull()) && !jsonObj.get("pluginUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `pluginUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pluginUrl").toString()));
+      }
+      if (!jsonObj.get("unityVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unityVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unityVersion").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!UnityPackage.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UnityPackage' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<UnityPackage> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UnityPackage.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<UnityPackage>() {
+           @Override
+           public void write(JsonWriter out, UnityPackage value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public UnityPackage read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of UnityPackage given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of UnityPackage
+  * @throws IOException if the JSON string is invalid with respect to UnityPackage
+  */
+  public static UnityPackage fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UnityPackage.class);
+  }
+
+ /**
+  * Convert an instance of UnityPackage to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

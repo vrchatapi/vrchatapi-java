@@ -38,9 +38,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class FavoritesApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public FavoritesApi() {
         this(Configuration.getDefaultApiClient());
@@ -58,6 +61,22 @@ public class FavoritesApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for addFavorite
      * @param addFavoriteRequest  (optional)
@@ -73,6 +92,19 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call addFavoriteCall(AddFavoriteRequest addFavoriteRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = addFavoriteRequest;
 
         // create path and map variables
@@ -96,18 +128,17 @@ public class FavoritesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addFavoriteValidateBeforeCall(AddFavoriteRequest addFavoriteRequest, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = addFavoriteCall(addFavoriteRequest, _callback);
-        return localVarCall;
+        return addFavoriteCall(addFavoriteRequest, _callback);
 
     }
 
@@ -187,13 +218,26 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call clearFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}"
-            .replaceAll("\\{" + "favoriteGroupType" + "\\}", localVarApiClient.escapeString(favoriteGroupType.toString()))
-            .replaceAll("\\{" + "favoriteGroupName" + "\\}", localVarApiClient.escapeString(favoriteGroupName.toString()))
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "favoriteGroupType" + "}", localVarApiClient.escapeString(favoriteGroupType.toString()))
+            .replace("{" + "favoriteGroupName" + "}", localVarApiClient.escapeString(favoriteGroupName.toString()))
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -210,36 +254,34 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call clearFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling clearFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'favoriteGroupName' is set
         if (favoriteGroupName == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupName' when calling clearFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling clearFavoriteGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = clearFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, _callback);
-        return localVarCall;
+        return clearFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, _callback);
 
     }
 
@@ -319,11 +361,24 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call getFavoriteCall(String favoriteId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/favorites/{favoriteId}"
-            .replaceAll("\\{" + "favoriteId" + "\\}", localVarApiClient.escapeString(favoriteId.toString()));
+            .replace("{" + "favoriteId" + "}", localVarApiClient.escapeString(favoriteId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -340,26 +395,24 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFavoriteValidateBeforeCall(String favoriteId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'favoriteId' is set
         if (favoriteId == null) {
             throw new ApiException("Missing the required parameter 'favoriteId' when calling getFavorite(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getFavoriteCall(favoriteId, _callback);
-        return localVarCall;
+        return getFavoriteCall(favoriteId, _callback);
 
     }
 
@@ -439,13 +492,26 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call getFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}"
-            .replaceAll("\\{" + "favoriteGroupType" + "\\}", localVarApiClient.escapeString(favoriteGroupType.toString()))
-            .replaceAll("\\{" + "favoriteGroupName" + "\\}", localVarApiClient.escapeString(favoriteGroupName.toString()))
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "favoriteGroupType" + "}", localVarApiClient.escapeString(favoriteGroupType.toString()))
+            .replace("{" + "favoriteGroupName" + "}", localVarApiClient.escapeString(favoriteGroupName.toString()))
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -462,36 +528,34 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling getFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'favoriteGroupName' is set
         if (favoriteGroupName == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupName' when calling getFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getFavoriteGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, _callback);
-        return localVarCall;
+        return getFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, _callback);
 
     }
 
@@ -572,6 +636,19 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call getFavoriteGroupsCall(Integer n, Integer offset, String ownerId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -604,21 +681,19 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFavoriteGroupsValidateBeforeCall(Integer n, Integer offset, String ownerId, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = getFavoriteGroupsCall(n, offset, ownerId, _callback);
-        return localVarCall;
+        return getFavoriteGroupsCall(n, offset, ownerId, _callback);
 
     }
 
@@ -703,6 +778,19 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call getFavoritesCall(Integer n, Integer offset, String type, String tag, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -739,21 +827,19 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFavoritesValidateBeforeCall(Integer n, Integer offset, String type, String tag, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = getFavoritesCall(n, offset, type, tag, _callback);
-        return localVarCall;
+        return getFavoritesCall(n, offset, type, tag, _callback);
 
     }
 
@@ -839,11 +925,24 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call removeFavoriteCall(String favoriteId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/favorites/{favoriteId}"
-            .replaceAll("\\{" + "favoriteId" + "\\}", localVarApiClient.escapeString(favoriteId.toString()));
+            .replace("{" + "favoriteId" + "}", localVarApiClient.escapeString(favoriteId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -860,26 +959,24 @@ public class FavoritesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call removeFavoriteValidateBeforeCall(String favoriteId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'favoriteId' is set
         if (favoriteId == null) {
             throw new ApiException("Missing the required parameter 'favoriteId' when calling removeFavorite(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = removeFavoriteCall(favoriteId, _callback);
-        return localVarCall;
+        return removeFavoriteCall(favoriteId, _callback);
 
     }
 
@@ -960,13 +1057,26 @@ public class FavoritesApi {
      </table>
      */
     public okhttp3.Call updateFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = updateFavoriteGroupRequest;
 
         // create path and map variables
         String localVarPath = "/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}"
-            .replaceAll("\\{" + "favoriteGroupType" + "\\}", localVarApiClient.escapeString(favoriteGroupType.toString()))
-            .replaceAll("\\{" + "favoriteGroupName" + "\\}", localVarApiClient.escapeString(favoriteGroupName.toString()))
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "favoriteGroupType" + "}", localVarApiClient.escapeString(favoriteGroupType.toString()))
+            .replace("{" + "favoriteGroupName" + "}", localVarApiClient.escapeString(favoriteGroupName.toString()))
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -975,7 +1085,6 @@ public class FavoritesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -986,33 +1095,32 @@ public class FavoritesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling updateFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'favoriteGroupName' is set
         if (favoriteGroupName == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupName' when calling updateFavoriteGroup(Async)");
         }
-        
+
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling updateFavoriteGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest, _callback);
-        return localVarCall;
+        return updateFavoriteGroupCall(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest, _callback);
 
     }
 

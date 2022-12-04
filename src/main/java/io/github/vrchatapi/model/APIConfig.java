@@ -27,15 +27,37 @@ import io.github.vrchatapi.model.PublicAnnouncement;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
- * APIConfig
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class APIConfig {
   public static final String SERIALIZED_NAME_VOICE_ENABLE_DEGRADATION = "VoiceEnableDegradation";
@@ -52,7 +74,7 @@ public class APIConfig {
 
   public static final String SERIALIZED_NAME_ANNOUNCEMENTS = "announcements";
   @SerializedName(SERIALIZED_NAME_ANNOUNCEMENTS)
-  private Set<PublicAnnouncement> announcements = new LinkedHashSet<PublicAnnouncement>();
+  private Set<PublicAnnouncement> announcements = new LinkedHashSet<>();
 
   public static final String SERIALIZED_NAME_API_KEY = "apiKey";
   @SerializedName(SERIALIZED_NAME_API_KEY)
@@ -200,7 +222,7 @@ public class APIConfig {
 
   public static final String SERIALIZED_NAME_DYNAMIC_WORLD_ROWS = "dynamicWorldRows";
   @SerializedName(SERIALIZED_NAME_DYNAMIC_WORLD_ROWS)
-  private Set<DynamicContentRow> dynamicWorldRows = new LinkedHashSet<DynamicContentRow>();
+  private Set<DynamicContentRow> dynamicWorldRows = new LinkedHashSet<>();
 
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
@@ -316,7 +338,7 @@ public class APIConfig {
 
   public static final String SERIALIZED_NAME_URL_LIST = "urlList";
   @SerializedName(SERIALIZED_NAME_URL_LIST)
-  private List<String> urlList = new ArrayList<String>();
+  private List<String> urlList = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USE_RELIABLE_UDP_FOR_VOICE = "useReliableUdpForVoice";
   @SerializedName(SERIALIZED_NAME_USE_RELIABLE_UDP_FOR_VOICE)
@@ -344,7 +366,7 @@ public class APIConfig {
 
   public static final String SERIALIZED_NAME_WHITE_LISTED_ASSET_URLS = "whiteListedAssetUrls";
   @SerializedName(SERIALIZED_NAME_WHITE_LISTED_ASSET_URLS)
-  private List<String> whiteListedAssetUrls = new ArrayList<String>();
+  private List<String> whiteListedAssetUrls = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WORLD_UPDATE_PERIOD = "worldUpdatePeriod";
   @SerializedName(SERIALIZED_NAME_WORLD_UPDATE_PERIOD)
@@ -358,6 +380,8 @@ public class APIConfig {
   @SerializedName(SERIALIZED_NAME_PLAYER_URL_RESOLVER_VERSION)
   private String playerUrlResolverVersion;
 
+  public APIConfig() {
+  }
 
   public APIConfig voiceEnableDegradation(Boolean voiceEnableDegradation) {
     
@@ -2246,6 +2270,7 @@ public class APIConfig {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -2441,5 +2466,404 @@ public class APIConfig {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("VoiceEnableDegradation");
+    openapiFields.add("VoiceEnableReceiverLimiting");
+    openapiFields.add("address");
+    openapiFields.add("announcements");
+    openapiFields.add("apiKey");
+    openapiFields.add("appName");
+    openapiFields.add("buildVersionTag");
+    openapiFields.add("clientApiKey");
+    openapiFields.add("clientBPSCeiling");
+    openapiFields.add("clientDisconnectTimeout");
+    openapiFields.add("clientReservedPlayerBPS");
+    openapiFields.add("clientSentCountAllowance");
+    openapiFields.add("contactEmail");
+    openapiFields.add("copyrightEmail");
+    openapiFields.add("currentTOSVersion");
+    openapiFields.add("defaultAvatar");
+    openapiFields.add("deploymentGroup");
+    openapiFields.add("devAppVersionStandalone");
+    openapiFields.add("devDownloadLinkWindows");
+    openapiFields.add("devSdkUrl");
+    openapiFields.add("devSdkVersion");
+    openapiFields.add("devServerVersionStandalone");
+    openapiFields.add("dis-countdown");
+    openapiFields.add("disableAvatarCopying");
+    openapiFields.add("disableAvatarGating");
+    openapiFields.add("disableCommunityLabs");
+    openapiFields.add("disableCommunityLabsPromotion");
+    openapiFields.add("disableEmail");
+    openapiFields.add("disableEventStream");
+    openapiFields.add("disableFeedbackGating");
+    openapiFields.add("disableFrontendBuilds");
+    openapiFields.add("disableHello");
+    openapiFields.add("disableOculusSubs");
+    openapiFields.add("disableRegistration");
+    openapiFields.add("disableSteamNetworking");
+    openapiFields.add("disableTwoFactorAuth");
+    openapiFields.add("disableUdon");
+    openapiFields.add("disableUpgradeAccount");
+    openapiFields.add("downloadLinkWindows");
+    openapiFields.add("downloadUrls");
+    openapiFields.add("dynamicWorldRows");
+    openapiFields.add("events");
+    openapiFields.add("gearDemoRoomId");
+    openapiFields.add("homeWorldId");
+    openapiFields.add("homepageRedirectTarget");
+    openapiFields.add("hubWorldId");
+    openapiFields.add("jobsEmail");
+    openapiFields.add("messageOfTheDay");
+    openapiFields.add("moderationEmail");
+    openapiFields.add("moderationQueryPeriod");
+    openapiFields.add("notAllowedToSelectAvatarInPrivateWorldMessage");
+    openapiFields.add("plugin");
+    openapiFields.add("releaseAppVersionStandalone");
+    openapiFields.add("releaseSdkUrl");
+    openapiFields.add("releaseSdkVersion");
+    openapiFields.add("releaseServerVersionStandalone");
+    openapiFields.add("sdkDeveloperFaqUrl");
+    openapiFields.add("sdkDiscordUrl");
+    openapiFields.add("sdkNotAllowedToPublishMessage");
+    openapiFields.add("sdkUnityVersion");
+    openapiFields.add("serverName");
+    openapiFields.add("supportEmail");
+    openapiFields.add("timeOutWorldId");
+    openapiFields.add("tutorialWorldId");
+    openapiFields.add("updateRateMsMaximum");
+    openapiFields.add("updateRateMsMinimum");
+    openapiFields.add("updateRateMsNormal");
+    openapiFields.add("updateRateMsUdonManual");
+    openapiFields.add("uploadAnalysisPercent");
+    openapiFields.add("urlList");
+    openapiFields.add("useReliableUdpForVoice");
+    openapiFields.add("userUpdatePeriod");
+    openapiFields.add("userVerificationDelay");
+    openapiFields.add("userVerificationRetry");
+    openapiFields.add("userVerificationTimeout");
+    openapiFields.add("viveWindowsUrl");
+    openapiFields.add("whiteListedAssetUrls");
+    openapiFields.add("worldUpdatePeriod");
+    openapiFields.add("player-url-resolver-hash");
+    openapiFields.add("player-url-resolver-version");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("VoiceEnableDegradation");
+    openapiRequiredFields.add("VoiceEnableReceiverLimiting");
+    openapiRequiredFields.add("address");
+    openapiRequiredFields.add("announcements");
+    openapiRequiredFields.add("apiKey");
+    openapiRequiredFields.add("appName");
+    openapiRequiredFields.add("buildVersionTag");
+    openapiRequiredFields.add("clientApiKey");
+    openapiRequiredFields.add("clientBPSCeiling");
+    openapiRequiredFields.add("clientDisconnectTimeout");
+    openapiRequiredFields.add("clientReservedPlayerBPS");
+    openapiRequiredFields.add("clientSentCountAllowance");
+    openapiRequiredFields.add("contactEmail");
+    openapiRequiredFields.add("copyrightEmail");
+    openapiRequiredFields.add("currentTOSVersion");
+    openapiRequiredFields.add("defaultAvatar");
+    openapiRequiredFields.add("deploymentGroup");
+    openapiRequiredFields.add("devAppVersionStandalone");
+    openapiRequiredFields.add("devDownloadLinkWindows");
+    openapiRequiredFields.add("devSdkUrl");
+    openapiRequiredFields.add("devSdkVersion");
+    openapiRequiredFields.add("devServerVersionStandalone");
+    openapiRequiredFields.add("dis-countdown");
+    openapiRequiredFields.add("disableAvatarCopying");
+    openapiRequiredFields.add("disableAvatarGating");
+    openapiRequiredFields.add("disableCommunityLabs");
+    openapiRequiredFields.add("disableCommunityLabsPromotion");
+    openapiRequiredFields.add("disableEmail");
+    openapiRequiredFields.add("disableEventStream");
+    openapiRequiredFields.add("disableFeedbackGating");
+    openapiRequiredFields.add("disableFrontendBuilds");
+    openapiRequiredFields.add("disableHello");
+    openapiRequiredFields.add("disableOculusSubs");
+    openapiRequiredFields.add("disableRegistration");
+    openapiRequiredFields.add("disableSteamNetworking");
+    openapiRequiredFields.add("disableTwoFactorAuth");
+    openapiRequiredFields.add("disableUdon");
+    openapiRequiredFields.add("disableUpgradeAccount");
+    openapiRequiredFields.add("downloadLinkWindows");
+    openapiRequiredFields.add("downloadUrls");
+    openapiRequiredFields.add("dynamicWorldRows");
+    openapiRequiredFields.add("events");
+    openapiRequiredFields.add("gearDemoRoomId");
+    openapiRequiredFields.add("homeWorldId");
+    openapiRequiredFields.add("homepageRedirectTarget");
+    openapiRequiredFields.add("hubWorldId");
+    openapiRequiredFields.add("jobsEmail");
+    openapiRequiredFields.add("messageOfTheDay");
+    openapiRequiredFields.add("moderationEmail");
+    openapiRequiredFields.add("moderationQueryPeriod");
+    openapiRequiredFields.add("notAllowedToSelectAvatarInPrivateWorldMessage");
+    openapiRequiredFields.add("plugin");
+    openapiRequiredFields.add("releaseAppVersionStandalone");
+    openapiRequiredFields.add("releaseSdkUrl");
+    openapiRequiredFields.add("releaseSdkVersion");
+    openapiRequiredFields.add("releaseServerVersionStandalone");
+    openapiRequiredFields.add("sdkDeveloperFaqUrl");
+    openapiRequiredFields.add("sdkDiscordUrl");
+    openapiRequiredFields.add("sdkNotAllowedToPublishMessage");
+    openapiRequiredFields.add("sdkUnityVersion");
+    openapiRequiredFields.add("serverName");
+    openapiRequiredFields.add("supportEmail");
+    openapiRequiredFields.add("timeOutWorldId");
+    openapiRequiredFields.add("tutorialWorldId");
+    openapiRequiredFields.add("updateRateMsMaximum");
+    openapiRequiredFields.add("updateRateMsMinimum");
+    openapiRequiredFields.add("updateRateMsNormal");
+    openapiRequiredFields.add("updateRateMsUdonManual");
+    openapiRequiredFields.add("uploadAnalysisPercent");
+    openapiRequiredFields.add("urlList");
+    openapiRequiredFields.add("useReliableUdpForVoice");
+    openapiRequiredFields.add("userUpdatePeriod");
+    openapiRequiredFields.add("userVerificationDelay");
+    openapiRequiredFields.add("userVerificationRetry");
+    openapiRequiredFields.add("userVerificationTimeout");
+    openapiRequiredFields.add("viveWindowsUrl");
+    openapiRequiredFields.add("whiteListedAssetUrls");
+    openapiRequiredFields.add("worldUpdatePeriod");
+    openapiRequiredFields.add("player-url-resolver-hash");
+    openapiRequiredFields.add("player-url-resolver-version");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to APIConfig
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!APIConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in APIConfig is not found in the empty JSON string", APIConfig.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!APIConfig.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `APIConfig` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : APIConfig.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (!jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      // ensure the json data is an array
+      if (!jsonObj.get("announcements").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `announcements` to be an array in the JSON string but got `%s`", jsonObj.get("announcements").toString()));
+      }
+
+      JsonArray jsonArrayannouncements = jsonObj.getAsJsonArray("announcements");
+      // validate the required field `announcements` (array)
+      for (int i = 0; i < jsonArrayannouncements.size(); i++) {
+        PublicAnnouncement.validateJsonObject(jsonArrayannouncements.get(i).getAsJsonObject());
+      };
+      if (!jsonObj.get("apiKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `apiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiKey").toString()));
+      }
+      if (!jsonObj.get("appName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `appName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("appName").toString()));
+      }
+      if (!jsonObj.get("buildVersionTag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `buildVersionTag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buildVersionTag").toString()));
+      }
+      if (!jsonObj.get("clientApiKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `clientApiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientApiKey").toString()));
+      }
+      if (!jsonObj.get("contactEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contactEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contactEmail").toString()));
+      }
+      if (!jsonObj.get("copyrightEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `copyrightEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("copyrightEmail").toString()));
+      }
+      if (!jsonObj.get("defaultAvatar").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `defaultAvatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("defaultAvatar").toString()));
+      }
+      if (!jsonObj.get("devAppVersionStandalone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `devAppVersionStandalone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("devAppVersionStandalone").toString()));
+      }
+      if (!jsonObj.get("devDownloadLinkWindows").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `devDownloadLinkWindows` to be a primitive type in the JSON string but got `%s`", jsonObj.get("devDownloadLinkWindows").toString()));
+      }
+      if (!jsonObj.get("devSdkUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `devSdkUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("devSdkUrl").toString()));
+      }
+      if (!jsonObj.get("devSdkVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `devSdkVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("devSdkVersion").toString()));
+      }
+      if (!jsonObj.get("devServerVersionStandalone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `devServerVersionStandalone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("devServerVersionStandalone").toString()));
+      }
+      if (!jsonObj.get("downloadLinkWindows").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `downloadLinkWindows` to be a primitive type in the JSON string but got `%s`", jsonObj.get("downloadLinkWindows").toString()));
+      }
+      // validate the required field `downloadUrls`
+      DownloadURLList.validateJsonObject(jsonObj.getAsJsonObject("downloadUrls"));
+      // ensure the json data is an array
+      if (!jsonObj.get("dynamicWorldRows").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dynamicWorldRows` to be an array in the JSON string but got `%s`", jsonObj.get("dynamicWorldRows").toString()));
+      }
+
+      JsonArray jsonArraydynamicWorldRows = jsonObj.getAsJsonArray("dynamicWorldRows");
+      // validate the required field `dynamicWorldRows` (array)
+      for (int i = 0; i < jsonArraydynamicWorldRows.size(); i++) {
+        DynamicContentRow.validateJsonObject(jsonArraydynamicWorldRows.get(i).getAsJsonObject());
+      };
+      // validate the required field `events`
+      APIEventConfig.validateJsonObject(jsonObj.getAsJsonObject("events"));
+      if (!jsonObj.get("gearDemoRoomId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gearDemoRoomId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gearDemoRoomId").toString()));
+      }
+      if (!jsonObj.get("homeWorldId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `homeWorldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homeWorldId").toString()));
+      }
+      if (!jsonObj.get("homepageRedirectTarget").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `homepageRedirectTarget` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homepageRedirectTarget").toString()));
+      }
+      if (!jsonObj.get("hubWorldId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hubWorldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hubWorldId").toString()));
+      }
+      if (!jsonObj.get("jobsEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jobsEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jobsEmail").toString()));
+      }
+      if (!jsonObj.get("messageOfTheDay").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `messageOfTheDay` to be a primitive type in the JSON string but got `%s`", jsonObj.get("messageOfTheDay").toString()));
+      }
+      if (!jsonObj.get("moderationEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `moderationEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("moderationEmail").toString()));
+      }
+      if (!jsonObj.get("notAllowedToSelectAvatarInPrivateWorldMessage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notAllowedToSelectAvatarInPrivateWorldMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notAllowedToSelectAvatarInPrivateWorldMessage").toString()));
+      }
+      if (!jsonObj.get("plugin").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `plugin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("plugin").toString()));
+      }
+      if (!jsonObj.get("releaseAppVersionStandalone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `releaseAppVersionStandalone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseAppVersionStandalone").toString()));
+      }
+      if (!jsonObj.get("releaseSdkUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `releaseSdkUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseSdkUrl").toString()));
+      }
+      if (!jsonObj.get("releaseSdkVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `releaseSdkVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseSdkVersion").toString()));
+      }
+      if (!jsonObj.get("releaseServerVersionStandalone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `releaseServerVersionStandalone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseServerVersionStandalone").toString()));
+      }
+      if (!jsonObj.get("sdkDeveloperFaqUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdkDeveloperFaqUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkDeveloperFaqUrl").toString()));
+      }
+      if (!jsonObj.get("sdkDiscordUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdkDiscordUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkDiscordUrl").toString()));
+      }
+      if (!jsonObj.get("sdkNotAllowedToPublishMessage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdkNotAllowedToPublishMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkNotAllowedToPublishMessage").toString()));
+      }
+      if (!jsonObj.get("sdkUnityVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdkUnityVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkUnityVersion").toString()));
+      }
+      if (!jsonObj.get("serverName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `serverName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serverName").toString()));
+      }
+      if (!jsonObj.get("supportEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `supportEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("supportEmail").toString()));
+      }
+      if (!jsonObj.get("timeOutWorldId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `timeOutWorldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeOutWorldId").toString()));
+      }
+      if (!jsonObj.get("tutorialWorldId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tutorialWorldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tutorialWorldId").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("urlList") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("urlList").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `urlList` to be an array in the JSON string but got `%s`", jsonObj.get("urlList").toString()));
+      }
+      if (!jsonObj.get("viveWindowsUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `viveWindowsUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("viveWindowsUrl").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("whiteListedAssetUrls") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("whiteListedAssetUrls").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `whiteListedAssetUrls` to be an array in the JSON string but got `%s`", jsonObj.get("whiteListedAssetUrls").toString()));
+      }
+      if (!jsonObj.get("player-url-resolver-hash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `player-url-resolver-hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-hash").toString()));
+      }
+      if (!jsonObj.get("player-url-resolver-version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `player-url-resolver-version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-version").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!APIConfig.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'APIConfig' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<APIConfig> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(APIConfig.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<APIConfig>() {
+           @Override
+           public void write(JsonWriter out, APIConfig value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public APIConfig read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of APIConfig given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of APIConfig
+  * @throws IOException if the JSON string is invalid with respect to APIConfig
+  */
+  public static APIConfig fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, APIConfig.class);
+  }
+
+ /**
+  * Convert an instance of APIConfig to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

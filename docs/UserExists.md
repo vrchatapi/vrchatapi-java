@@ -6,9 +6,9 @@ Status object representing if a queried user by username or userId exists or not
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**userExists** | **Boolean** | Status if a user exist with that username or userId. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**userExists** | **Boolean** | Status if a user exist with that username or userId. |  |
 
 
 

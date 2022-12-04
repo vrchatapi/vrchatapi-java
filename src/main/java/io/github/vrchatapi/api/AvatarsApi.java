@@ -37,9 +37,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class AvatarsApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public AvatarsApi() {
         this(Configuration.getDefaultApiClient());
@@ -57,6 +60,22 @@ public class AvatarsApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for createAvatar
      * @param createAvatarRequest  (optional)
@@ -71,6 +90,19 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call createAvatarCall(CreateAvatarRequest createAvatarRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = createAvatarRequest;
 
         // create path and map variables
@@ -94,18 +126,17 @@ public class AvatarsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createAvatarValidateBeforeCall(CreateAvatarRequest createAvatarRequest, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = createAvatarCall(createAvatarRequest, _callback);
-        return localVarCall;
+        return createAvatarCall(createAvatarRequest, _callback);
 
     }
 
@@ -182,11 +213,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call deleteAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
+            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -203,26 +247,24 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling deleteAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteAvatarCall(avatarId, _callback);
-        return localVarCall;
+        return deleteAvatarCall(avatarId, _callback);
 
     }
 
@@ -302,11 +344,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call getAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
+            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -323,26 +378,24 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling getAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getAvatarCall(avatarId, _callback);
-        return localVarCall;
+        return getAvatarCall(avatarId, _callback);
 
     }
 
@@ -434,6 +487,19 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call getFavoritedAvatarsCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -506,21 +572,19 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getFavoritedAvatarsValidateBeforeCall(Boolean featured, String sort, Integer n, String order, Integer offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = getFavoritedAvatarsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
-        return localVarCall;
+        return getFavoritedAvatarsCall(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId, _callback);
 
     }
 
@@ -636,11 +700,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call getOwnAvatarCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/users/{userId}/avatar"
-            .replaceAll("\\{" + "userId" + "\\}", localVarApiClient.escapeString(userId.toString()));
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -657,26 +734,24 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getOwnAvatarValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getOwnAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = getOwnAvatarCall(userId, _callback);
-        return localVarCall;
+        return getOwnAvatarCall(userId, _callback);
 
     }
 
@@ -767,6 +842,19 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call searchAvatarsCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -839,21 +927,19 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchAvatarsValidateBeforeCall(Boolean featured, String sort, String user, String userId, Integer n, String order, Integer offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = searchAvatarsCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
-        return localVarCall;
+        return searchAvatarsCall(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, _callback);
 
     }
 
@@ -966,11 +1052,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call selectAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}/select"
-            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
+            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -987,26 +1086,24 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call selectAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling selectAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = selectAvatarCall(avatarId, _callback);
-        return localVarCall;
+        return selectAvatarCall(avatarId, _callback);
 
     }
 
@@ -1087,11 +1184,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call selectFallbackAvatarCall(String avatarId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}/selectFallback"
-            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
+            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1108,26 +1218,24 @@ public class AvatarsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call selectFallbackAvatarValidateBeforeCall(String avatarId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling selectFallbackAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = selectFallbackAvatarCall(avatarId, _callback);
-        return localVarCall;
+        return selectFallbackAvatarCall(avatarId, _callback);
 
     }
 
@@ -1211,11 +1319,24 @@ public class AvatarsApi {
      </table>
      */
     public okhttp3.Call updateAvatarCall(String avatarId, UpdateAvatarRequest updateAvatarRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = updateAvatarRequest;
 
         // create path and map variables
         String localVarPath = "/avatars/{avatarId}"
-            .replaceAll("\\{" + "avatarId" + "\\}", localVarApiClient.escapeString(avatarId.toString()));
+            .replace("{" + "avatarId" + "}", localVarApiClient.escapeString(avatarId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1235,23 +1356,22 @@ public class AvatarsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apiKeyCookie", "authCookie" };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateAvatarValidateBeforeCall(String avatarId, UpdateAvatarRequest updateAvatarRequest, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'avatarId' is set
         if (avatarId == null) {
             throw new ApiException("Missing the required parameter 'avatarId' when calling updateAvatar(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateAvatarCall(avatarId, updateAvatarRequest, _callback);
-        return localVarCall;
+        return updateAvatarCall(avatarId, updateAvatarRequest, _callback);
 
     }
 

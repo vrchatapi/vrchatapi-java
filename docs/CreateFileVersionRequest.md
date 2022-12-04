@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**signatureMd5** | **String** |  | 
-**signatureSizeInBytes** | **BigDecimal** |  | 
-**fileMd5** | **String** |  |  [optional]
-**fileSizeInBytes** | **BigDecimal** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**signatureMd5** | **String** |  |  |
+|**signatureSizeInBytes** | **BigDecimal** |  |  |
+|**fileMd5** | **String** |  |  [optional] |
+|**fileSizeInBytes** | **BigDecimal** |  |  [optional] |
 
 
 

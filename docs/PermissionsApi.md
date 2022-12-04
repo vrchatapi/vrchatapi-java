@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAssignedPermissions**](PermissionsApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions
-[**getPermission**](PermissionsApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getAssignedPermissions**](PermissionsApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions |
+| [**getPermission**](PermissionsApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission |
 
 
 <a name="getAssignedPermissions"></a>
@@ -77,8 +77,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of Permission objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of Permission objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getPermission"></a>
 # **getPermission**
@@ -133,9 +133,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **permissionId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **permissionId** | **String**|  | |
 
 ### Return type
 
@@ -153,6 +153,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Permission object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single Permission object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 

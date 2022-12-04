@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCurrentSubscriptions**](EconomyApi.md#getCurrentSubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions
-[**getLicenseGroup**](EconomyApi.md#getLicenseGroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group
-[**getSteamTransaction**](EconomyApi.md#getSteamTransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction
-[**getSteamTransactions**](EconomyApi.md#getSteamTransactions) | **GET** /Steam/transactions | List Steam Transactions
-[**getSubscriptions**](EconomyApi.md#getSubscriptions) | **GET** /subscriptions | List Subscriptions
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getCurrentSubscriptions**](EconomyApi.md#getCurrentSubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions |
+| [**getLicenseGroup**](EconomyApi.md#getLicenseGroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group |
+| [**getSteamTransaction**](EconomyApi.md#getSteamTransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction |
+| [**getSteamTransactions**](EconomyApi.md#getSteamTransactions) | **GET** /Steam/transactions | List Steam Transactions |
+| [**getSubscriptions**](EconomyApi.md#getSubscriptions) | **GET** /subscriptions | List Subscriptions |
 
 
 <a name="getCurrentSubscriptions"></a>
@@ -80,8 +80,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of UserSubscription objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of UserSubscription objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getLicenseGroup"></a>
 # **getLicenseGroup**
@@ -136,9 +136,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **licenseGroupId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **licenseGroupId** | **String**|  | |
 
 ### Return type
 
@@ -156,8 +156,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single LicenseGroup object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single LicenseGroup object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getSteamTransaction"></a>
 # **getSteamTransaction**
@@ -212,9 +212,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **transactionId** | **String**|  | |
 
 ### Return type
 
@@ -232,8 +232,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Transaction object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a single Transaction object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getSteamTransactions"></a>
 # **getSteamTransactions**
@@ -304,8 +304,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of Transaction objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of Transaction objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 
 <a name="getSubscriptions"></a>
 # **getSubscriptions**
@@ -376,6 +376,6 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of Subscription objects. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | Returns a list of Subscription objects. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
 

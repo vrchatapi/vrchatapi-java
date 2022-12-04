@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/{messageType}/{slot} | Get Invite Message
-[**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
-[**inviteMyselfTo**](InviteApi.md#inviteMyselfTo) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance
-[**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User
-[**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite
-[**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message
-[**respondInvite**](InviteApi.md#respondInvite) | **POST** /invite/{notificationId}/response | Respond Invite
-[**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/{messageType}/{slot} | Update Invite Message
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getInviteMessage**](InviteApi.md#getInviteMessage) | **GET** /message/{userId}/{messageType}/{slot} | Get Invite Message |
+| [**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/{messageType} | List Invite Messages |
+| [**inviteMyselfTo**](InviteApi.md#inviteMyselfTo) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance |
+| [**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User |
+| [**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite |
+| [**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message |
+| [**respondInvite**](InviteApi.md#respondInvite) | **POST** /invite/{notificationId}/response | Respond Invite |
+| [**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/{messageType}/{slot} | Update Invite Message |
 
 
 <a name="getInviteMessage"></a>
@@ -69,11 +69,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **messageType** | **String**|  | [enum: message, response, request, requestResponse]
- **slot** | **Integer**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **messageType** | **String**|  | [enum: message, response, request, requestResponse] |
+| **slot** | **Integer**|  | |
 
 ### Return type
 
@@ -91,10 +91,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single InviteMessage object. |  -  |
-**400** | Error response when trying to get an Invite Message with a negative slot number. |  -  |
-**401** | Error response due to missing authorization to perform that action. |  -  |
-**404** | Error response when trying to get an Invite Message with a too high slot number. |  -  |
+| **200** | Returns a single InviteMessage object. |  -  |
+| **400** | Error response when trying to get an Invite Message with a negative slot number. |  -  |
+| **401** | Error response due to missing authorization to perform that action. |  -  |
+| **404** | Error response when trying to get an Invite Message with a too high slot number. |  -  |
 
 <a name="getInviteMessages"></a>
 # **getInviteMessages**
@@ -150,10 +150,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **messageType** | **String**|  | [enum: message, response, request, requestResponse]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **messageType** | **String**|  | [enum: message, response, request, requestResponse] |
 
 ### Return type
 
@@ -171,9 +171,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of InviteMessage objects. |  -  |
-**400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
-**401** | Error response due to missing authorization to perform that action. |  -  |
+| **200** | Returns a list of InviteMessage objects. |  -  |
+| **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
+| **401** | Error response due to missing authorization to perform that action. |  -  |
 
 <a name="inviteMyselfTo"></a>
 # **inviteMyselfTo**
@@ -229,10 +229,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  |
- **instanceId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**|  | |
+| **instanceId** | **String**|  | |
 
 ### Return type
 
@@ -250,9 +250,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single SentNotifcation object. |  -  |
-**401** | Error response due to missing apiKey or auth cookie. |  -  |
-**404** | Error response due to non existant instance |  -  |
+| **200** | Returns a single SentNotifcation object. |  -  |
+| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **404** | Error response due to non existant instance |  -  |
 
 <a name="inviteUser"></a>
 # **inviteUser**
@@ -308,10 +308,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Slot number of the Invite Message to use when inviting a user. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Slot number of the Invite Message to use when inviting a user. | [optional] |
 
 ### Return type
 
@@ -329,8 +329,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single SentNotifcation object. |  -  |
-**403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single SentNotifcation object. |  -  |
+| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
 <a name="requestInvite"></a>
 # **requestInvite**
@@ -386,10 +386,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **requestInviteRequest** | [**RequestInviteRequest**](RequestInviteRequest.md)| Slot number of the Request Message to use when request an invite. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **requestInviteRequest** | [**RequestInviteRequest**](RequestInviteRequest.md)| Slot number of the Request Message to use when request an invite. | [optional] |
 
 ### Return type
 
@@ -407,8 +407,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Notifcation object. |  -  |
-**403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single Notifcation object. |  -  |
+| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
 <a name="resetInviteMessage"></a>
 # **resetInviteMessage**
@@ -465,11 +465,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **messageType** | **String**|  | [enum: message, response, request, requestResponse]
- **slot** | **Integer**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **messageType** | **String**|  | [enum: message, response, request, requestResponse] |
+| **slot** | **Integer**|  | |
 
 ### Return type
 
@@ -487,11 +487,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of InviteMessage objects. |  -  |
-**400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
-**401** | Error response due to missing authorization to perform that action. |  -  |
-**404** | Error response when trying to reset an Invite Message whos slot doesn&#39;t exist. |  -  |
-**429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
+| **200** | Returns a list of InviteMessage objects. |  -  |
+| **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
+| **401** | Error response due to missing authorization to perform that action. |  -  |
+| **404** | Error response when trying to reset an Invite Message whos slot doesn&#39;t exist. |  -  |
+| **429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
 
 <a name="respondInvite"></a>
 # **respondInvite**
@@ -547,10 +547,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **notificationId** | **String**|  |
- **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Slot number of the Response Message to use when responding to a user. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **notificationId** | **String**|  | |
+| **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Slot number of the Response Message to use when responding to a user. | [optional] |
 
 ### Return type
 
@@ -568,8 +568,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a single Notifcation object. |  -  |
-**400** | Error response when trying to respond to an invite and something went wrong. |  -  |
+| **200** | Returns a single Notifcation object. |  -  |
+| **400** | Error response when trying to respond to an invite and something went wrong. |  -  |
 
 <a name="updateInviteMessage"></a>
 # **updateInviteMessage**
@@ -627,12 +627,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **String**|  |
- **messageType** | **String**|  | [enum: message, response, request, requestResponse]
- **slot** | **Integer**|  |
- **updateInviteMessageRequest** | [**UpdateInviteMessageRequest**](UpdateInviteMessageRequest.md)| Message of what to set the invite message to. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**|  | |
+| **messageType** | **String**|  | [enum: message, response, request, requestResponse] |
+| **slot** | **Integer**|  | |
+| **updateInviteMessageRequest** | [**UpdateInviteMessageRequest**](UpdateInviteMessageRequest.md)| Message of what to set the invite message to. | [optional] |
 
 ### Return type
 
@@ -650,8 +650,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns a list of InviteMessage objects. |  -  |
-**400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
-**401** | Error response due to missing authorization to perform that action. |  -  |
-**429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
+| **200** | Returns a list of InviteMessage objects. |  -  |
+| **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
+| **401** | Error response due to missing authorization to perform that action. |  -  |
+| **429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
 

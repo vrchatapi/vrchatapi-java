@@ -6,9 +6,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**unityPackageUrl** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**unityPackageUrl** | **String** |  |  [optional] |
 
 
 

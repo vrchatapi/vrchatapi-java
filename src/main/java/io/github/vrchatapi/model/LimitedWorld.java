@@ -24,13 +24,35 @@ import io.github.vrchatapi.model.ReleaseStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.github.vrchatapi.JSON;
 
 /**
- * LimitedWorld
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class LimitedWorld {
   public static final String SERIALIZED_NAME_AUTHOR_ID = "authorId";
@@ -95,7 +117,7 @@ public class LimitedWorld {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = new ArrayList<String>();
+  private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_THUMBNAIL_IMAGE_URL = "thumbnailImageUrl";
   @SerializedName(SERIALIZED_NAME_THUMBNAIL_IMAGE_URL)
@@ -103,12 +125,14 @@ public class LimitedWorld {
 
   public static final String SERIALIZED_NAME_UNITY_PACKAGES = "unityPackages";
   @SerializedName(SERIALIZED_NAME_UNITY_PACKAGES)
-  private List<LimitedUnityPackage> unityPackages = new ArrayList<LimitedUnityPackage>();
+  private List<LimitedUnityPackage> unityPackages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public LimitedWorld() {
+  }
 
   public LimitedWorld authorId(String authorId) {
     
@@ -473,11 +497,11 @@ public class LimitedWorld {
   }
 
    /**
-   * Get tags
+   *  
    * @return tags
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = " ")
 
   public List<String> getTags() {
     return tags;
@@ -524,11 +548,11 @@ public class LimitedWorld {
   }
 
    /**
-   * Get unityPackages
+   *  
    * @return unityPackages
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = " ")
 
   public List<LimitedUnityPackage> getUnityPackages() {
     return unityPackages;
@@ -561,6 +585,7 @@ public class LimitedWorld {
   public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
+
 
 
   @Override
@@ -636,5 +661,175 @@ public class LimitedWorld {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("authorId");
+    openapiFields.add("authorName");
+    openapiFields.add("capacity");
+    openapiFields.add("created_at");
+    openapiFields.add("favorites");
+    openapiFields.add("heat");
+    openapiFields.add("id");
+    openapiFields.add("imageUrl");
+    openapiFields.add("labsPublicationDate");
+    openapiFields.add("name");
+    openapiFields.add("occupants");
+    openapiFields.add("organization");
+    openapiFields.add("popularity");
+    openapiFields.add("publicationDate");
+    openapiFields.add("releaseStatus");
+    openapiFields.add("tags");
+    openapiFields.add("thumbnailImageUrl");
+    openapiFields.add("unityPackages");
+    openapiFields.add("updated_at");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("authorId");
+    openapiRequiredFields.add("authorName");
+    openapiRequiredFields.add("capacity");
+    openapiRequiredFields.add("created_at");
+    openapiRequiredFields.add("favorites");
+    openapiRequiredFields.add("heat");
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("imageUrl");
+    openapiRequiredFields.add("labsPublicationDate");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("occupants");
+    openapiRequiredFields.add("organization");
+    openapiRequiredFields.add("popularity");
+    openapiRequiredFields.add("publicationDate");
+    openapiRequiredFields.add("releaseStatus");
+    openapiRequiredFields.add("tags");
+    openapiRequiredFields.add("thumbnailImageUrl");
+    openapiRequiredFields.add("unityPackages");
+    openapiRequiredFields.add("updated_at");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to LimitedWorld
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (!LimitedWorld.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in LimitedWorld is not found in the empty JSON string", LimitedWorld.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!LimitedWorld.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `LimitedWorld` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : LimitedWorld.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (!jsonObj.get("authorId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
+      }
+      if (!jsonObj.get("authorName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `authorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorName").toString()));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if (!jsonObj.get("imageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
+      }
+      if (!jsonObj.get("labsPublicationDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `labsPublicationDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labsPublicationDate").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (!jsonObj.get("organization").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+      }
+      if (!jsonObj.get("publicationDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `publicationDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("publicationDate").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("tags") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      if (!jsonObj.get("thumbnailImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `thumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnailImageUrl").toString()));
+      }
+      // ensure the json data is an array
+      if (!jsonObj.get("unityPackages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unityPackages` to be an array in the JSON string but got `%s`", jsonObj.get("unityPackages").toString()));
+      }
+
+      JsonArray jsonArrayunityPackages = jsonObj.getAsJsonArray("unityPackages");
+      // validate the required field `unityPackages` (array)
+      for (int i = 0; i < jsonArrayunityPackages.size(); i++) {
+        LimitedUnityPackage.validateJsonObject(jsonArrayunityPackages.get(i).getAsJsonObject());
+      };
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!LimitedWorld.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'LimitedWorld' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<LimitedWorld> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(LimitedWorld.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<LimitedWorld>() {
+           @Override
+           public void write(JsonWriter out, LimitedWorld value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public LimitedWorld read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of LimitedWorld given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of LimitedWorld
+  * @throws IOException if the JSON string is invalid with respect to LimitedWorld
+  */
+  public static LimitedWorld fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, LimitedWorld.class);
+  }
+
+ /**
+  * Convert an instance of LimitedWorld to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

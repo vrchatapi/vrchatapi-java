@@ -19,13 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.github.vrchatapi.model.FavoriteGroupVisibility;
-import io.github.vrchatapi.model.FavoriteType;
+import io.github.vrchatapi.model.FileVersion;
+import io.github.vrchatapi.model.MIMEType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,22 +55,22 @@ import io.github.vrchatapi.JSON;
  */
 @ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FavoriteGroup {
-  public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
-  @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
-  private String displayName;
+public class ModelFile {
+  public static final String SERIALIZED_NAME_EXTENSION = "extension";
+  @SerializedName(SERIALIZED_NAME_EXTENSION)
+  private String extension;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
+  public static final String SERIALIZED_NAME_MIME_TYPE = "mimeType";
+  @SerializedName(SERIALIZED_NAME_MIME_TYPE)
+  private MIMEType mimeType = MIMEType.IMAGE_JPEG;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_OWNER_DISPLAY_NAME = "ownerDisplayName";
-  @SerializedName(SERIALIZED_NAME_OWNER_DISPLAY_NAME)
-  private String ownerDisplayName;
 
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
@@ -78,41 +80,37 @@ public class FavoriteGroup {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private FavoriteType type = FavoriteType.FRIEND;
+  public static final String SERIALIZED_NAME_VERSIONS = "versions";
+  @SerializedName(SERIALIZED_NAME_VERSIONS)
+  private Set<FileVersion> versions = new LinkedHashSet<>();
 
-  public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
-  @SerializedName(SERIALIZED_NAME_VISIBILITY)
-  private FavoriteGroupVisibility visibility = FavoriteGroupVisibility.PRIVATE;
-
-  public FavoriteGroup() {
+  public ModelFile() {
   }
 
-  public FavoriteGroup displayName(String displayName) {
+  public ModelFile extension(String extension) {
     
-    this.displayName = displayName;
+    this.extension = extension;
     return this;
   }
 
    /**
-   * Get displayName
-   * @return displayName
+   * Get extension
+   * @return extension
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = ".unitypackage", required = true, value = "")
 
-  public String getDisplayName() {
-    return displayName;
+  public String getExtension() {
+    return extension;
   }
 
 
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
+  public void setExtension(String extension) {
+    this.extension = extension;
   }
 
 
-  public FavoriteGroup id(String id) {
+  public ModelFile id(String id) {
     
     this.id = id;
     return this;
@@ -123,7 +121,7 @@ public class FavoriteGroup {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "fvgrp_8a02a44b-dc3a-4a9a-bc77-77fa37996fc7", required = true, value = "")
+  @ApiModelProperty(example = "file_ce35d830-e20a-4df0-a6d4-5aaef4508044", required = true, value = "")
 
   public String getId() {
     return id;
@@ -135,18 +133,41 @@ public class FavoriteGroup {
   }
 
 
-  public FavoriteGroup name(String name) {
+  public ModelFile mimeType(MIMEType mimeType) {
+    
+    this.mimeType = mimeType;
+    return this;
+  }
+
+   /**
+   * Get mimeType
+   * @return mimeType
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public MIMEType getMimeType() {
+    return mimeType;
+  }
+
+
+  public void setMimeType(MIMEType mimeType) {
+    this.mimeType = mimeType;
+  }
+
+
+  public ModelFile name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Get name
+   * 
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Example File", required = true, value = "")
 
   public String getName() {
     return name;
@@ -158,30 +179,7 @@ public class FavoriteGroup {
   }
 
 
-  public FavoriteGroup ownerDisplayName(String ownerDisplayName) {
-    
-    this.ownerDisplayName = ownerDisplayName;
-    return this;
-  }
-
-   /**
-   * Get ownerDisplayName
-   * @return ownerDisplayName
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public String getOwnerDisplayName() {
-    return ownerDisplayName;
-  }
-
-
-  public void setOwnerDisplayName(String ownerDisplayName) {
-    this.ownerDisplayName = ownerDisplayName;
-  }
-
-
-  public FavoriteGroup ownerId(String ownerId) {
+  public ModelFile ownerId(String ownerId) {
     
     this.ownerId = ownerId;
     return this;
@@ -204,13 +202,13 @@ public class FavoriteGroup {
   }
 
 
-  public FavoriteGroup tags(List<String> tags) {
+  public ModelFile tags(List<String> tags) {
     
     this.tags = tags;
     return this;
   }
 
-  public FavoriteGroup addTagsItem(String tagsItem) {
+  public ModelFile addTagsItem(String tagsItem) {
     this.tags.add(tagsItem);
     return this;
   }
@@ -232,49 +230,31 @@ public class FavoriteGroup {
   }
 
 
-  public FavoriteGroup type(FavoriteType type) {
+  public ModelFile versions(Set<FileVersion> versions) {
     
-    this.type = type;
+    this.versions = versions;
+    return this;
+  }
+
+  public ModelFile addVersionsItem(FileVersion versionsItem) {
+    this.versions.add(versionsItem);
     return this;
   }
 
    /**
-   * Get type
-   * @return type
+   *  
+   * @return versions
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = " ")
 
-  public FavoriteType getType() {
-    return type;
+  public Set<FileVersion> getVersions() {
+    return versions;
   }
 
 
-  public void setType(FavoriteType type) {
-    this.type = type;
-  }
-
-
-  public FavoriteGroup visibility(FavoriteGroupVisibility visibility) {
-    
-    this.visibility = visibility;
-    return this;
-  }
-
-   /**
-   * Get visibility
-   * @return visibility
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public FavoriteGroupVisibility getVisibility() {
-    return visibility;
-  }
-
-
-  public void setVisibility(FavoriteGroupVisibility visibility) {
-    this.visibility = visibility;
+  public void setVersions(Set<FileVersion> versions) {
+    this.versions = versions;
   }
 
 
@@ -287,34 +267,32 @@ public class FavoriteGroup {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FavoriteGroup favoriteGroup = (FavoriteGroup) o;
-    return Objects.equals(this.displayName, favoriteGroup.displayName) &&
-        Objects.equals(this.id, favoriteGroup.id) &&
-        Objects.equals(this.name, favoriteGroup.name) &&
-        Objects.equals(this.ownerDisplayName, favoriteGroup.ownerDisplayName) &&
-        Objects.equals(this.ownerId, favoriteGroup.ownerId) &&
-        Objects.equals(this.tags, favoriteGroup.tags) &&
-        Objects.equals(this.type, favoriteGroup.type) &&
-        Objects.equals(this.visibility, favoriteGroup.visibility);
+    ModelFile _file = (ModelFile) o;
+    return Objects.equals(this.extension, _file.extension) &&
+        Objects.equals(this.id, _file.id) &&
+        Objects.equals(this.mimeType, _file.mimeType) &&
+        Objects.equals(this.name, _file.name) &&
+        Objects.equals(this.ownerId, _file.ownerId) &&
+        Objects.equals(this.tags, _file.tags) &&
+        Objects.equals(this.versions, _file.versions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, id, name, ownerDisplayName, ownerId, tags, type, visibility);
+    return Objects.hash(extension, id, mimeType, name, ownerId, tags, versions);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FavoriteGroup {\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("class ModelFile {\n");
+    sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    ownerDisplayName: ").append(toIndentedString(ownerDisplayName)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+    sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -337,65 +315,60 @@ public class FavoriteGroup {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("displayName");
+    openapiFields.add("extension");
     openapiFields.add("id");
+    openapiFields.add("mimeType");
     openapiFields.add("name");
-    openapiFields.add("ownerDisplayName");
     openapiFields.add("ownerId");
     openapiFields.add("tags");
-    openapiFields.add("type");
-    openapiFields.add("visibility");
+    openapiFields.add("versions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("displayName");
+    openapiRequiredFields.add("extension");
     openapiRequiredFields.add("id");
+    openapiRequiredFields.add("mimeType");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("ownerDisplayName");
     openapiRequiredFields.add("ownerId");
     openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("visibility");
+    openapiRequiredFields.add("versions");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FavoriteGroup
+  * @throws IOException if the JSON Object is invalid with respect to ModelFile
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!FavoriteGroup.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FavoriteGroup is not found in the empty JSON string", FavoriteGroup.openapiRequiredFields.toString()));
+        if (!ModelFile.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelFile is not found in the empty JSON string", ModelFile.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!FavoriteGroup.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FavoriteGroup` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ModelFile.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelFile` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : FavoriteGroup.openapiRequiredFields) {
+      for (String requiredField : ModelFile.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (!jsonObj.get("displayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      if (!jsonObj.get("extension").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `extension` to be a primitive type in the JSON string but got `%s`", jsonObj.get("extension").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if (!jsonObj.get("ownerDisplayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ownerDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerDisplayName").toString()));
       }
       if (!jsonObj.get("ownerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
@@ -406,28 +379,38 @@ public class FavoriteGroup {
       } else if (!jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
+      // ensure the json data is an array
+      if (!jsonObj.get("versions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `versions` to be an array in the JSON string but got `%s`", jsonObj.get("versions").toString()));
+      }
+
+      JsonArray jsonArrayversions = jsonObj.getAsJsonArray("versions");
+      // validate the required field `versions` (array)
+      for (int i = 0; i < jsonArrayversions.size(); i++) {
+        FileVersion.validateJsonObject(jsonArrayversions.get(i).getAsJsonObject());
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!FavoriteGroup.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'FavoriteGroup' and its subtypes
+       if (!ModelFile.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelFile' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<FavoriteGroup> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(FavoriteGroup.class));
+       final TypeAdapter<ModelFile> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelFile.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<FavoriteGroup>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelFile>() {
            @Override
-           public void write(JsonWriter out, FavoriteGroup value) throws IOException {
+           public void write(JsonWriter out, ModelFile value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public FavoriteGroup read(JsonReader in) throws IOException {
+           public ModelFile read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -438,18 +421,18 @@ public class FavoriteGroup {
   }
 
  /**
-  * Create an instance of FavoriteGroup given an JSON string
+  * Create an instance of ModelFile given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of FavoriteGroup
-  * @throws IOException if the JSON string is invalid with respect to FavoriteGroup
+  * @return An instance of ModelFile
+  * @throws IOException if the JSON string is invalid with respect to ModelFile
   */
-  public static FavoriteGroup fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, FavoriteGroup.class);
+  public static ModelFile fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelFile.class);
   }
 
  /**
-  * Convert an instance of FavoriteGroup to an JSON string
+  * Convert an instance of ModelFile to an JSON string
   *
   * @return JSON string
   */

@@ -14,6 +14,7 @@ package io.github.vrchatapi.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets InstanceType
+ * 
  */
 @JsonAdapter(InstanceType.Adapter.class)
 public enum InstanceType {

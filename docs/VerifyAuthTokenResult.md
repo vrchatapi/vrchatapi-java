@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**ok** | **Boolean** |  | 
-**token** | **String** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**ok** | **Boolean** |  |  |
+|**token** | **String** |  |  |
 
 
 
