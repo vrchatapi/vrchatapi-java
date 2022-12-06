@@ -7,6 +7,7 @@ docs/APIConfigAnnouncement.md
 docs/APIConfigDownloadURLList.md
 docs/APIConfigEvents.md
 docs/APIHealth.md
+docs/AccountDeletionLog.md
 docs/AddFavoriteRequest.md
 docs/AddGroupGalleryImageRequest.md
 docs/AuthenticationApi.md
@@ -182,6 +183,7 @@ src/main/java/io/github/vrchatapi/model/APIConfigDownloadURLList.java
 src/main/java/io/github/vrchatapi/model/APIConfigEvents.java
 src/main/java/io/github/vrchatapi/model/APIHealth.java
 src/main/java/io/github/vrchatapi/model/AbstractOpenApiSchema.java
+src/main/java/io/github/vrchatapi/model/AccountDeletionLog.java
 src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/Avatar.java

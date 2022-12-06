@@ -9,10 +9,11 @@
 |------------ | ------------- | ------------- | -------------|
 |**acceptedTOSVersion** | **Integer** |  |  |
 |**accountDeletionDate** | **LocalDate** |  |  [optional] |
-|**activeFriends** | **List&lt;String&gt;** |  |  [optional] |
+|**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   |  [optional] |
+|**activeFriends** | **List&lt;String&gt;** |   |  [optional] |
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**bio** | **String** |  |  |
-|**bioLinks** | **List&lt;String&gt;** |  |  |
+|**bioLinks** | **List&lt;String&gt;** |   |  |
 |**currentAvatar** | **String** |  |  |
 |**currentAvatarAssetUrl** | **String** |  |  |
 |**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
