@@ -114,6 +114,7 @@ docs/TransactionStatus.md
 docs/TransactionSteamInfo.md
 docs/TransactionSteamWalletInfo.md
 docs/TwoFactorAuthCode.md
+docs/TwoFactorEmailCode.md
 docs/UnityPackage.md
 docs/UpdateAvatarRequest.md
 docs/UpdateFavoriteGroupRequest.md
@@ -130,6 +131,7 @@ docs/UserState.md
 docs/UserStatus.md
 docs/UserSubscription.md
 docs/UsersApi.md
+docs/Verify2FAEmailCodeResult.md
 docs/Verify2FAResult.md
 docs/VerifyAuthTokenResult.md
 docs/World.md
@@ -277,6 +279,7 @@ src/main/java/io/github/vrchatapi/model/TransactionStatus.java
 src/main/java/io/github/vrchatapi/model/TransactionSteamInfo.java
 src/main/java/io/github/vrchatapi/model/TransactionSteamWalletInfo.java
 src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
+src/main/java/io/github/vrchatapi/model/TwoFactorEmailCode.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java
@@ -292,6 +295,7 @@ src/main/java/io/github/vrchatapi/model/UserExists.java
 src/main/java/io/github/vrchatapi/model/UserState.java
 src/main/java/io/github/vrchatapi/model/UserStatus.java
 src/main/java/io/github/vrchatapi/model/UserSubscription.java
+src/main/java/io/github/vrchatapi/model/Verify2FAEmailCodeResult.java
 src/main/java/io/github/vrchatapi/model/Verify2FAResult.java
 src/main/java/io/github/vrchatapi/model/VerifyAuthTokenResult.java
 src/main/java/io/github/vrchatapi/model/World.java

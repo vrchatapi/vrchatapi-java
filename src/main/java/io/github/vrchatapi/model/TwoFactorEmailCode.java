@@ -45,38 +45,37 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * TwoFactorEmailCode
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class FileUploadURL {
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
-  private String url;
+public class TwoFactorEmailCode {
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private String code;
 
-  public FileUploadURL() {
+  public TwoFactorEmailCode() {
   }
 
-  public FileUploadURL url(String url) {
+  public TwoFactorEmailCode code(String code) {
     
-    this.url = url;
+    this.code = code;
     return this;
   }
 
    /**
-   * 
-   * @return url
+   * Get code
+   * @return code
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public String getUrl() {
-    return url;
+  public String getCode() {
+    return code;
   }
 
 
-  public void setUrl(String url) {
-    this.url = url;
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -89,20 +88,20 @@ public class FileUploadURL {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FileUploadURL fileUploadURL = (FileUploadURL) o;
-    return Objects.equals(this.url, fileUploadURL.url);
+    TwoFactorEmailCode twoFactorEmailCode = (TwoFactorEmailCode) o;
+    return Objects.equals(this.code, twoFactorEmailCode.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url);
+    return Objects.hash(code);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FileUploadURL {\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("class TwoFactorEmailCode {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -125,42 +124,42 @@ public class FileUploadURL {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("url");
+    openapiFields.add("code");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("url");
+    openapiRequiredFields.add("code");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FileUploadURL
+  * @throws IOException if the JSON Object is invalid with respect to TwoFactorEmailCode
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!FileUploadURL.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FileUploadURL is not found in the empty JSON string", FileUploadURL.openapiRequiredFields.toString()));
+        if (!TwoFactorEmailCode.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in TwoFactorEmailCode is not found in the empty JSON string", TwoFactorEmailCode.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!FileUploadURL.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FileUploadURL` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!TwoFactorEmailCode.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TwoFactorEmailCode` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : FileUploadURL.openapiRequiredFields) {
+      for (String requiredField : TwoFactorEmailCode.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      if (!jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
   }
 
@@ -168,22 +167,22 @@ public class FileUploadURL {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!FileUploadURL.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'FileUploadURL' and its subtypes
+       if (!TwoFactorEmailCode.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'TwoFactorEmailCode' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<FileUploadURL> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(FileUploadURL.class));
+       final TypeAdapter<TwoFactorEmailCode> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(TwoFactorEmailCode.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<FileUploadURL>() {
+       return (TypeAdapter<T>) new TypeAdapter<TwoFactorEmailCode>() {
            @Override
-           public void write(JsonWriter out, FileUploadURL value) throws IOException {
+           public void write(JsonWriter out, TwoFactorEmailCode value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public FileUploadURL read(JsonReader in) throws IOException {
+           public TwoFactorEmailCode read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -194,18 +193,18 @@ public class FileUploadURL {
   }
 
  /**
-  * Create an instance of FileUploadURL given an JSON string
+  * Create an instance of TwoFactorEmailCode given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of FileUploadURL
-  * @throws IOException if the JSON string is invalid with respect to FileUploadURL
+  * @return An instance of TwoFactorEmailCode
+  * @throws IOException if the JSON string is invalid with respect to TwoFactorEmailCode
   */
-  public static FileUploadURL fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, FileUploadURL.class);
+  public static TwoFactorEmailCode fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TwoFactorEmailCode.class);
   }
 
  /**
-  * Convert an instance of FileUploadURL to an JSON string
+  * Convert an instance of TwoFactorEmailCode to an JSON string
   *
   * @return JSON string
   */
