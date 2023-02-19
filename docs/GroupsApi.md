@@ -2103,11 +2103,11 @@ public class Example {
 
 <a name="joinGroup"></a>
 # **joinGroup**
-> Group joinGroup(groupId)
+> GroupMember joinGroup(groupId)
 
 Join Group
 
-Join a Group by ID and returns the joined Group.
+Join a Group by ID and returns the member object.
 
 ### Example
 ```java
@@ -2139,7 +2139,7 @@ public class Example {
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
     try {
-      Group result = apiInstance.joinGroup(groupId);
+      GroupMember result = apiInstance.joinGroup(groupId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#joinGroup");
@@ -2160,7 +2160,7 @@ public class Example {
 
 ### Return type
 
-[**Group**](Group.md)
+[**GroupMember**](GroupMember.md)
 
 ### Authorization
 
@@ -2174,7 +2174,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Group object. |  -  |
+| **200** | Returns a list of GroupMember objects. |  -  |
 | **400** | Error response when trying to join a group that the user is already a member of. |  -  |
 | **401** | Error response due to missing apiKey or auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
