@@ -12,7 +12,6 @@
 |**voiceEnableReceiverLimiting** | **Boolean** | Unknown, probably voice optimization testing |  |
 |**address** | **String** | VRChat&#39;s office address |  |
 |**announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements |  |
-|**apiKey** | **String** | apiKey to be used for all other requests |  |
 |**appName** | **String** | Game name |  |
 |**buildVersionTag** | **String** | Build tag of the API server |  |
 |**clientApiKey** | **String** | apiKey to be used for all other requests |  |

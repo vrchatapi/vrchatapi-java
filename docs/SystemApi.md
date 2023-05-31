@@ -134,7 +134,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns the API&#39;s config. |  * Set-Cookie -  <br>  |
+| **200** | Returns the API&#39;s config. |  -  |
 
 <a name="getCurrentOnlineUsers"></a>
 # **getCurrentOnlineUsers**

@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "io.github.vrchatapi",
     name := "vrchatapi",
-    version := "1.11.1",
+    version := "1.12.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

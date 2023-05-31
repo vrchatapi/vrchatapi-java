@@ -28,7 +28,6 @@ Checks if a user by a given &#x60;username&#x60;, &#x60;displayName&#x60; or &#x
 import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
 import io.github.vrchatapi.api.AuthenticationApi;
 
@@ -36,12 +35,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: apiKeyCookie
-    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
-    apiKeyCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apiKeyCookie.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     String email = "email_example"; // String | Filter by email.
@@ -77,7 +70,7 @@ public class Example {
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie)
+No authorization required
 
 ### HTTP request headers
 
@@ -113,12 +106,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
     
-    // Configure API key authorization: apiKeyCookie
-    ApiKeyAuth apiKeyCookie = (ApiKeyAuth) defaultClient.getAuthentication("apiKeyCookie");
-    apiKeyCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apiKeyCookie.setApiKeyPrefix("Token");
-
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
     authCookie.setApiKey("YOUR API KEY");
@@ -153,7 +140,7 @@ public class Example {
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -164,7 +151,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getCurrentUser"></a>
 # **getCurrentUser**
@@ -240,8 +227,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - This endpoint **always** sets the &#x60;apiKey&#x60; irrespective if it is already set. <br>  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="logout"></a>
 # **logout**
@@ -307,7 +294,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Set-Cookie - Clears the &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - Clears the &#x60;age&#x60; cookie. <br>  * \0\0Set-Cookie - Clears the &#x60;tos&#x60; cookie. <br>  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verify2FA"></a>
 # **verify2FA**
@@ -377,7 +364,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verify2FAEmailCode"></a>
 # **verify2FAEmailCode**
@@ -447,7 +434,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verifyAuthToken"></a>
 # **verifyAuthToken**
@@ -513,7 +500,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns wether a provided auth token is valid or not. |  -  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verifyRecoveryCode"></a>
 # **verifyRecoveryCode**
@@ -583,5 +570,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
-| **401** | Error response due to missing apiKey or auth cookie. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 

@@ -11,5 +11,7 @@
 
 * `HIDDEN` (value: `"hidden"`)
 
+* `ALL` (value: `"all"`)
+
 
 
