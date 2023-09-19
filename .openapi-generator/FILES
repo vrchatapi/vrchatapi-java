@@ -25,6 +25,7 @@ docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
+docs/CurrentUserPresence.md
 docs/DeploymentGroup.md
 docs/DeveloperType.md
 docs/DynamicContentRow.md
@@ -201,6 +202,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
+src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeploymentGroup.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
