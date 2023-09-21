@@ -13,5 +13,7 @@
 
 * `PRIVATE` (value: `"private"`)
 
+* `GROUP` (value: `"group"`)
+
 
 
