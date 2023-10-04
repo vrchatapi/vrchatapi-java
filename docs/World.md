@@ -33,7 +33,7 @@
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |
-|**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. |  |
+|**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**version** | **Integer** |  |  |
 |**visits** | **Integer** |  |  |
