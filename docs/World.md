@@ -37,6 +37,7 @@
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**version** | **Integer** |  |  |
 |**visits** | **Integer** |  |  |
+|**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
