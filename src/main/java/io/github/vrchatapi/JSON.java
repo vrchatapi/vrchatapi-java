@@ -148,6 +148,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InviteResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.License.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.LicenseGroup.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.LimitedGroup.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.LimitedUnityPackage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.LimitedUser.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.LimitedWorld.CustomTypeAdapterFactory());

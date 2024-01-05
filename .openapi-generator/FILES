@@ -81,6 +81,7 @@ docs/License.md
 docs/LicenseAction.md
 docs/LicenseGroup.md
 docs/LicenseType.md
+docs/LimitedGroup.md
 docs/LimitedUnityPackage.md
 docs/LimitedUser.md
 docs/LimitedWorld.md
@@ -251,6 +252,7 @@ src/main/java/io/github/vrchatapi/model/License.java
 src/main/java/io/github/vrchatapi/model/LicenseAction.java
 src/main/java/io/github/vrchatapi/model/LicenseGroup.java
 src/main/java/io/github/vrchatapi/model/LicenseType.java
+src/main/java/io/github/vrchatapi/model/LimitedGroup.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
 src/main/java/io/github/vrchatapi/model/LimitedUser.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java

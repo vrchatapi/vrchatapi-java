@@ -35,6 +35,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**leaveGroup**](GroupsApi.md#leaveGroup) | **POST** /groups/{groupId}/leave | Leave Group |
 | [**removeGroupMemberRole**](GroupsApi.md#removeGroupMemberRole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember |
 | [**respondGroupJoinRequest**](GroupsApi.md#respondGroupJoinRequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request |
+| [**searchGroups**](GroupsApi.md#searchGroups) | **GET** /groups | Search Group |
 | [**unbanGroupMember**](GroupsApi.md#unbanGroupMember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member |
 | [**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Update Group |
 | [**updateGroupGallery**](GroupsApi.md#updateGroupGallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery |
@@ -2308,6 +2309,73 @@ null (empty response body)
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="searchGroups"></a>
+# **searchGroups**
+> List&lt;LimitedGroup&gt; searchGroups(query, offset, n)
+
+Search Group
+
+Searches Groups by name or shortCode
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String query = "query_example"; // String | Query to search for, can be either Group Name or Group shortCode
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Integer n = 60; // Integer | The number of objects to return.
+    try {
+      List<LimitedGroup> result = apiInstance.searchGroups(query, offset, n);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#searchGroups");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **query** | **String**| Query to search for, can be either Group Name or Group shortCode | [optional] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+
+### Return type
+
+[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of LimitedGroup objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="unbanGroupMember"></a>
 # **unbanGroupMember**

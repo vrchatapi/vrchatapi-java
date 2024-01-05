@@ -42,6 +42,7 @@ import io.github.vrchatapi.model.GroupLimitedMember;
 import io.github.vrchatapi.model.GroupMember;
 import io.github.vrchatapi.model.GroupPermission;
 import io.github.vrchatapi.model.GroupRole;
+import io.github.vrchatapi.model.LimitedGroup;
 import java.time.OffsetDateTime;
 import io.github.vrchatapi.model.PaginatedGroupAuditLogEntryList;
 import io.github.vrchatapi.model.RespondGroupJoinRequest;
@@ -4420,6 +4421,147 @@ public class GroupsApi {
 
         okhttp3.Call localVarCall = respondGroupJoinRequestValidateBeforeCall(groupId, userId, respondGroupJoinRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for searchGroups
+     * @param query Query to search for, can be either Group Name or Group shortCode (optional)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of LimitedGroup objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchGroupsCall(String query, Integer offset, Integer n, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/groups";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (query != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("query", query));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (n != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("n", n));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call searchGroupsValidateBeforeCall(String query, Integer offset, Integer n, final ApiCallback _callback) throws ApiException {
+        return searchGroupsCall(query, offset, n, _callback);
+
+    }
+
+    /**
+     * Search Group
+     * Searches Groups by name or shortCode
+     * @param query Query to search for, can be either Group Name or Group shortCode (optional)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @return List&lt;LimitedGroup&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of LimitedGroup objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<LimitedGroup> searchGroups(String query, Integer offset, Integer n) throws ApiException {
+        ApiResponse<List<LimitedGroup>> localVarResp = searchGroupsWithHttpInfo(query, offset, n);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search Group
+     * Searches Groups by name or shortCode
+     * @param query Query to search for, can be either Group Name or Group shortCode (optional)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @return ApiResponse&lt;List&lt;LimitedGroup&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of LimitedGroup objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<LimitedGroup>> searchGroupsWithHttpInfo(String query, Integer offset, Integer n) throws ApiException {
+        okhttp3.Call localVarCall = searchGroupsValidateBeforeCall(query, offset, n, null);
+        Type localVarReturnType = new TypeToken<List<LimitedGroup>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search Group (asynchronously)
+     * Searches Groups by name or shortCode
+     * @param query Query to search for, can be either Group Name or Group shortCode (optional)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of LimitedGroup objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchGroupsAsync(String query, Integer offset, Integer n, final ApiCallback<List<LimitedGroup>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = searchGroupsValidateBeforeCall(query, offset, n, _callback);
+        Type localVarReturnType = new TypeToken<List<LimitedGroup>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
