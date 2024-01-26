@@ -11,6 +11,8 @@
 
 * `INVITERESPONSE` (value: `"inviteResponse"`)
 
+* `MESSAGE` (value: `"message"`)
+
 * `REQUESTINVITE` (value: `"requestInvite"`)
 
 * `REQUESTINVITERESPONSE` (value: `"requestInviteResponse"`)
