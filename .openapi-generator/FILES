@@ -60,6 +60,7 @@ docs/GroupPermission.md
 docs/GroupPrivacy.md
 docs/GroupRole.md
 docs/GroupRoleTemplate.md
+docs/GroupSearchSort.md
 docs/GroupUserVisibility.md
 docs/GroupsApi.md
 docs/InfoPush.md
@@ -234,6 +235,7 @@ src/main/java/io/github/vrchatapi/model/GroupPermission.java
 src/main/java/io/github/vrchatapi/model/GroupPrivacy.java
 src/main/java/io/github/vrchatapi/model/GroupRole.java
 src/main/java/io/github/vrchatapi/model/GroupRoleTemplate.java
+src/main/java/io/github/vrchatapi/model/GroupSearchSort.java
 src/main/java/io/github/vrchatapi/model/GroupUserVisibility.java
 src/main/java/io/github/vrchatapi/model/InfoPush.java
 src/main/java/io/github/vrchatapi/model/InfoPushData.java

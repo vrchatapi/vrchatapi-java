@@ -12,6 +12,9 @@ Only visible via the /groups/:groupId/members endpoint, **not** when fetching a 
 |**displayName** | **String** |  |  [optional] |
 |**thumbnailUrl** | **String** |  |  [optional] |
 |**iconUrl** | **String** |  |  [optional] |
+|**profilePicOverride** | **String** |  |  [optional] |
+|**currentAvatarThumbnailImageUrl** | **String** |  |  [optional] |
+|**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

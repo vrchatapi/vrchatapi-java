@@ -23,22 +23,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets TransactionStatus
+ * Gets or Sets GroupSearchSort
  */
-@JsonAdapter(TransactionStatus.Adapter.class)
-public enum TransactionStatus {
+@JsonAdapter(GroupSearchSort.Adapter.class)
+public enum GroupSearchSort {
   
-  ACTIVE("active"),
+  ASC("joinedAt:asc"),
   
-  FAILED("failed"),
-  
-  EXPIRED("expired"),
-  
-  CHARGEBACK("chargeback");
+  DESC("joinedAt:desc");
 
   private String value;
 
-  TransactionStatus(String value) {
+  GroupSearchSort(String value) {
     this.value = value;
   }
 
@@ -51,8 +47,8 @@ public enum TransactionStatus {
     return String.valueOf(value);
   }
 
-  public static TransactionStatus fromValue(String value) {
-    for (TransactionStatus b : TransactionStatus.values()) {
+  public static GroupSearchSort fromValue(String value) {
+    for (GroupSearchSort b : GroupSearchSort.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -60,16 +56,16 @@ public enum TransactionStatus {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<TransactionStatus> {
+  public static class Adapter extends TypeAdapter<GroupSearchSort> {
     @Override
-    public void write(final JsonWriter jsonWriter, final TransactionStatus enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final GroupSearchSort enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public TransactionStatus read(final JsonReader jsonReader) throws IOException {
+    public GroupSearchSort read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return TransactionStatus.fromValue(value);
+      return GroupSearchSort.fromValue(value);
     }
   }
 }

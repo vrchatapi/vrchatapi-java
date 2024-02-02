@@ -1658,7 +1658,7 @@ public class Example {
 
 <a name="getGroupMembers"></a>
 # **getGroupMembers**
-> List&lt;GroupMember&gt; getGroupMembers(groupId, n, offset)
+> List&lt;GroupMember&gt; getGroupMembers(groupId, n, offset, sort)
 
 List Group Members
 
@@ -1689,8 +1689,9 @@ public class Example {
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    GroupSearchSort sort = GroupSearchSort.fromValue("joinedAt:asc"); // GroupSearchSort | The sort order of Group Member results
     try {
-      List<GroupMember> result = apiInstance.getGroupMembers(groupId, n, offset);
+      List<GroupMember> result = apiInstance.getGroupMembers(groupId, n, offset, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupMembers");
@@ -1710,6 +1711,7 @@ public class Example {
 | **groupId** | **String**| Must be a valid group ID. | |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **sort** | [**GroupSearchSort**](.md)| The sort order of Group Member results | [optional] [enum: joinedAt:asc, joinedAt:desc] |
 
 ### Return type
 

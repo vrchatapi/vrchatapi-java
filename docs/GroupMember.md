@@ -13,6 +13,7 @@
 |**isRepresenting** | **Boolean** | Whether the user is representing the group. This makes the group show up above the name tag in-game. |  [optional] |
 |**user** | [**GroupMemberLimitedUser**](GroupMemberLimitedUser.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** |  |  [optional] |
+|**mRoleIds** | **List&lt;String&gt;** |  |  [optional] |
 |**joinedAt** | **OffsetDateTime** |  |  [optional] |
 |**membershipStatus** | **String** |  |  [optional] |
 |**visibility** | **String** |  |  [optional] |
@@ -20,6 +21,8 @@
 |**createdAt** | **OffsetDateTime** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
 |**bannedAt** | **OffsetDateTime** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
 |**managerNotes** | **String** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
+|**lastPostReadAt** | **OffsetDateTime** |  |  [optional] |
+|**hasJoinedFromPurchase** | **Boolean** |  |  [optional] |
 
 
 
