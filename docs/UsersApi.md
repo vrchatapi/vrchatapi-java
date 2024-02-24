@@ -8,6 +8,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username |
 | [**getUserGroupRequests**](UsersApi.md#getUserGroupRequests) | **GET** /users/{userId}/groups/requested | Get User Group Requests |
 | [**getUserGroups**](UsersApi.md#getUserGroups) | **GET** /users/{userId}/groups | Get User Groups |
+| [**getUserRepresentedGroup**](UsersApi.md#getUserRepresentedGroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group |
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info |
 
@@ -290,6 +291,76 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of Group objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getUserRepresentedGroup"></a>
+# **getUserRepresentedGroup**
+> RepresentedGroup getUserRepresentedGroup(userId)
+
+Get user&#39;s current represented group
+
+Returns the current group that the user is currently representing
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      RepresentedGroup result = apiInstance.getUserRepresentedGroup(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserRepresentedGroup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**RepresentedGroup**](RepresentedGroup.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="searchUsers"></a>

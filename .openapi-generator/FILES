@@ -102,6 +102,7 @@ docs/PlayerModerationType.md
 docs/PlayermoderationApi.md
 docs/Region.md
 docs/ReleaseStatus.md
+docs/RepresentedGroup.md
 docs/RequestInviteRequest.md
 docs/RespondGroupJoinRequest.md
 docs/Response.md
@@ -271,6 +272,7 @@ src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
 src/main/java/io/github/vrchatapi/model/Region.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java
+src/main/java/io/github/vrchatapi/model/RepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/Response.java

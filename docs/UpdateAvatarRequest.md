@@ -16,6 +16,7 @@
 |**releaseStatus** | **ReleaseStatus** |  |  [optional] |
 |**version** | **BigDecimal** |  |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
+|**unityVersion** | **String** |  |  [optional] |
 
 
 
