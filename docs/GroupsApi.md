@@ -1513,7 +1513,7 @@ public class Example {
 
 <a name="getGroupInvites"></a>
 # **getGroupInvites**
-> List&lt;GroupMember&gt; getGroupInvites(groupId)
+> List&lt;GroupMember&gt; getGroupInvites(groupId, n, offset)
 
 Get Group Invites Sent
 
@@ -1542,8 +1542,10 @@ public class Example {
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
-      List<GroupMember> result = apiInstance.getGroupInvites(groupId);
+      List<GroupMember> result = apiInstance.getGroupInvites(groupId, n, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupInvites");
@@ -1561,6 +1563,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 
 ### Return type
 
@@ -1808,7 +1812,7 @@ public class Example {
 
 <a name="getGroupRequests"></a>
 # **getGroupRequests**
-> List&lt;GroupMember&gt; getGroupRequests(groupId)
+> List&lt;GroupMember&gt; getGroupRequests(groupId, n, offset)
 
 Get Group Join Requests
 
@@ -1837,8 +1841,10 @@ public class Example {
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
-      List<GroupMember> result = apiInstance.getGroupRequests(groupId);
+      List<GroupMember> result = apiInstance.getGroupRequests(groupId, n, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupRequests");
@@ -1856,6 +1862,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 
 ### Return type
 
