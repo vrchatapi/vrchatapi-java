@@ -345,7 +345,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] |
+| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | |
 
 ### Return type
 
@@ -415,7 +415,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **twoFactorEmailCode** | [**TwoFactorEmailCode**](TwoFactorEmailCode.md)|  | [optional] |
+| **twoFactorEmailCode** | [**TwoFactorEmailCode**](TwoFactorEmailCode.md)|  | |
 
 ### Return type
 
@@ -551,7 +551,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] |
+| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | |
 
 ### Return type
 

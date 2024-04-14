@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**action** | **String** |  |  [optional] |
+|**action** | **GroupJoinRequestAction** |  |  |
 
 
 

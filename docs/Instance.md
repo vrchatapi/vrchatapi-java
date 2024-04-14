@@ -31,6 +31,14 @@
 |**hidden** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
 |**friends** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
 |**_private** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
+|**queueEnabled** | **Boolean** |  |  |
+|**queueSize** | **Integer** |  |  |
+|**recommendedCapacity** | **Integer** |  |  |
+|**roleRestricted** | **Boolean** |  |  |
+|**strict** | **Boolean** |  |  |
+|**userCount** | **Integer** |  |  |
+|**world** | [**World**](World.md) |  |  |
+|**users** | [**List&lt;LimitedUser&gt;**](LimitedUser.md) | The users field is present on instances created by the requesting user. |  [optional] |
 
 
 

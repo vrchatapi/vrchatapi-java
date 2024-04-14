@@ -341,7 +341,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] |
+| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | |
 
 ### Return type
 
@@ -411,7 +411,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] |
+| **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | |
 
 ### Return type
 

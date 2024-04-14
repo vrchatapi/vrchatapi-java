@@ -23,20 +23,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets FavoriteType
+ * Gets or Sets GroupJoinRequestAction
  */
-@JsonAdapter(FavoriteType.Adapter.class)
-public enum FavoriteType {
+@JsonAdapter(GroupJoinRequestAction.Adapter.class)
+public enum GroupJoinRequestAction {
   
-  WORLD("world"),
+  ACCEPT("accept"),
   
-  FRIEND("friend"),
-  
-  AVATAR("avatar");
+  REJECT("reject");
 
   private String value;
 
-  FavoriteType(String value) {
+  GroupJoinRequestAction(String value) {
     this.value = value;
   }
 
@@ -49,8 +47,8 @@ public enum FavoriteType {
     return String.valueOf(value);
   }
 
-  public static FavoriteType fromValue(String value) {
-    for (FavoriteType b : FavoriteType.values()) {
+  public static GroupJoinRequestAction fromValue(String value) {
+    for (GroupJoinRequestAction b : GroupJoinRequestAction.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -58,16 +56,16 @@ public enum FavoriteType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<FavoriteType> {
+  public static class Adapter extends TypeAdapter<GroupJoinRequestAction> {
     @Override
-    public void write(final JsonWriter jsonWriter, final FavoriteType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final GroupJoinRequestAction enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public FavoriteType read(final JsonReader jsonReader) throws IOException {
+    public GroupJoinRequestAction read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return FavoriteType.fromValue(value);
+      return GroupJoinRequestAction.fromValue(value);
     }
   }
 }

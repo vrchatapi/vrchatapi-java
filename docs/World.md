@@ -22,7 +22,7 @@
 |**instances** | **List&lt;List&lt;Object&gt;&gt;** | Will always be an empty list when unauthenticated. |  [optional] |
 |**labsPublicationDate** | **String** |  |  |
 |**name** | **String** |  |  |
-|**namespace** | **String** |  |  |
+|**namespace** | **String** |  |  [optional] |
 |**occupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional] |
 |**organization** | **String** |  |  |
 |**popularity** | **Integer** |  |  |

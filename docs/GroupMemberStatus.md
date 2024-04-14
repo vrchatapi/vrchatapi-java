@@ -13,5 +13,7 @@
 
 * `INVITED` (value: `"invited"`)
 
+* `BANNED` (value: `"banned"`)
+
 
 

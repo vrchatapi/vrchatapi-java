@@ -96,7 +96,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
 | **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
-| **addGroupGalleryImageRequest** | [**AddGroupGalleryImageRequest**](AddGroupGalleryImageRequest.md)|  | [optional] |
+| **addGroupGalleryImageRequest** | [**AddGroupGalleryImageRequest**](AddGroupGalleryImageRequest.md)|  | |
 
 ### Return type
 
@@ -244,7 +244,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
-| **banGroupMemberRequest** | [**BanGroupMemberRequest**](BanGroupMemberRequest.md)|  | [optional] |
+| **banGroupMemberRequest** | [**BanGroupMemberRequest**](BanGroupMemberRequest.md)|  | |
 
 ### Return type
 
@@ -386,7 +386,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)|  | [optional] |
+| **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)|  | |
 
 ### Return type
 
@@ -458,7 +458,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
-| **createGroupAnnouncementRequest** | [**CreateGroupAnnouncementRequest**](CreateGroupAnnouncementRequest.md)|  | [optional] |
+| **createGroupAnnouncementRequest** | [**CreateGroupAnnouncementRequest**](CreateGroupAnnouncementRequest.md)|  | |
 
 ### Return type
 
@@ -531,7 +531,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
-| **createGroupGalleryRequest** | [**CreateGroupGalleryRequest**](CreateGroupGalleryRequest.md)|  | [optional] |
+| **createGroupGalleryRequest** | [**CreateGroupGalleryRequest**](CreateGroupGalleryRequest.md)|  | |
 
 ### Return type
 
@@ -603,7 +603,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
-| **createGroupInviteRequest** | [**CreateGroupInviteRequest**](CreateGroupInviteRequest.md)|  | [optional] |
+| **createGroupInviteRequest** | [**CreateGroupInviteRequest**](CreateGroupInviteRequest.md)|  | |
 
 ### Return type
 
@@ -677,7 +677,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
-| **createGroupRoleRequest** | [**CreateGroupRoleRequest**](CreateGroupRoleRequest.md)|  | [optional] |
+| **createGroupRoleRequest** | [**CreateGroupRoleRequest**](CreateGroupRoleRequest.md)|  | |
 
 ### Return type
 
@@ -2298,7 +2298,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
 | **userId** | **String**| Must be a valid user ID. | |
-| **respondGroupJoinRequest** | [**RespondGroupJoinRequest**](RespondGroupJoinRequest.md)|  | [optional] |
+| **respondGroupJoinRequest** | [**RespondGroupJoinRequest**](RespondGroupJoinRequest.md)|  | |
 
 ### Return type
 
