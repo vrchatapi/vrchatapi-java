@@ -46,6 +46,7 @@ docs/FinishFileDataUploadRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
 docs/Group.md
+docs/GroupAccessType.md
 docs/GroupAnnouncement.md
 docs/GroupAuditLogEntry.md
 docs/GroupGallery.md
@@ -223,6 +224,7 @@ src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
 src/main/java/io/github/vrchatapi/model/Group.java
+src/main/java/io/github/vrchatapi/model/GroupAccessType.java
 src/main/java/io/github/vrchatapi/model/GroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntry.java
 src/main/java/io/github/vrchatapi/model/GroupGallery.java

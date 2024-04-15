@@ -14,6 +14,7 @@ package io.github.vrchatapi.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -23,22 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets LicenseType
+ * Group access type when the instance type is \&quot;group\&quot;
  */
-@JsonAdapter(LicenseType.Adapter.class)
-public enum LicenseType {
+@JsonAdapter(GroupAccessType.Adapter.class)
+public enum GroupAccessType {
   
-  AVATAR("avatar"),
+  PUBLIC("public"),
   
-  LICENSEGROUP("licenseGroup"),
+  PLUS("plus"),
   
-  PERMISSION("permission"),
-  
-  PRODUCT("product");
+  MEMBER("member");
 
   private String value;
 
-  LicenseType(String value) {
+  GroupAccessType(String value) {
     this.value = value;
   }
 
@@ -51,8 +50,8 @@ public enum LicenseType {
     return String.valueOf(value);
   }
 
-  public static LicenseType fromValue(String value) {
-    for (LicenseType b : LicenseType.values()) {
+  public static GroupAccessType fromValue(String value) {
+    for (GroupAccessType b : GroupAccessType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -60,16 +59,16 @@ public enum LicenseType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<LicenseType> {
+  public static class Adapter extends TypeAdapter<GroupAccessType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final LicenseType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final GroupAccessType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public LicenseType read(final JsonReader jsonReader) throws IOException {
+    public GroupAccessType read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return LicenseType.fromValue(value);
+      return GroupAccessType.fromValue(value);
     }
   }
 }

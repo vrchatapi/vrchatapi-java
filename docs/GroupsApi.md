@@ -622,8 +622,9 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | User &lt;displayName&gt; is already invited |  -  |
+| **400** | Bad request error response when creating a group invite. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Forbidden error response when creating a group invite. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroupRole"></a>
@@ -1882,6 +1883,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupMember objects. |  -  |
+| **400** | Bad request error response when responding to a group join request |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
