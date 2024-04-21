@@ -51,6 +51,7 @@ docs/GroupAnnouncement.md
 docs/GroupAuditLogEntry.md
 docs/GroupGallery.md
 docs/GroupGalleryImage.md
+docs/GroupInstance.md
 docs/GroupJoinRequestAction.md
 docs/GroupJoinState.md
 docs/GroupLimitedMember.md
@@ -229,6 +230,7 @@ src/main/java/io/github/vrchatapi/model/GroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntry.java
 src/main/java/io/github/vrchatapi/model/GroupGallery.java
 src/main/java/io/github/vrchatapi/model/GroupGalleryImage.java
+src/main/java/io/github/vrchatapi/model/GroupInstance.java
 src/main/java/io/github/vrchatapi/model/GroupJoinRequestAction.java
 src/main/java/io/github/vrchatapi/model/GroupJoinState.java
 src/main/java/io/github/vrchatapi/model/GroupLimitedMember.java
