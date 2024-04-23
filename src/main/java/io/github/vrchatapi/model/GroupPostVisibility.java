@@ -23,42 +23,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets MIMEType
+ * Gets or Sets GroupPostVisibility
  */
-@JsonAdapter(MIMEType.Adapter.class)
-public enum MIMEType {
+@JsonAdapter(GroupPostVisibility.Adapter.class)
+public enum GroupPostVisibility {
   
-  IMAGE_JPEG("image/jpeg"),
+  GROUP("group"),
   
-  IMAGE_JPG("image/jpg"),
-  
-  IMAGE_PNG("image/png"),
-  
-  IMAGE_WEBP("image/webp"),
-  
-  IMAGE_GIF("image/gif"),
-  
-  IMAGE_BMP("image/bmp"),
-  
-  IMAGE_SVG_XML("image/svg＋xml"),
-  
-  IMAGE_TIFF("image/tiff"),
-  
-  APPLICATION_X_AVATAR("application/x-avatar"),
-  
-  APPLICATION_X_WORLD("application/x-world"),
-  
-  APPLICATION_GZIP("application/gzip"),
-  
-  APPLICATION_X_RSYNC_SIGNATURE("application/x-rsync-signature"),
-  
-  APPLICATION_X_RSYNC_DELTA("application/x-rsync-delta"),
-  
-  APPLICATION_OCTET_STREAM("application/octet-stream");
+  PUBLIC("public");
 
   private String value;
 
-  MIMEType(String value) {
+  GroupPostVisibility(String value) {
     this.value = value;
   }
 
@@ -71,8 +47,8 @@ public enum MIMEType {
     return String.valueOf(value);
   }
 
-  public static MIMEType fromValue(String value) {
-    for (MIMEType b : MIMEType.values()) {
+  public static GroupPostVisibility fromValue(String value) {
+    for (GroupPostVisibility b : GroupPostVisibility.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -80,16 +56,16 @@ public enum MIMEType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<MIMEType> {
+  public static class Adapter extends TypeAdapter<GroupPostVisibility> {
     @Override
-    public void write(final JsonWriter jsonWriter, final MIMEType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final GroupPostVisibility enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public MIMEType read(final JsonReader jsonReader) throws IOException {
+    public GroupPostVisibility read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return MIMEType.fromValue(value);
+      return GroupPostVisibility.fromValue(value);
     }
   }
 }

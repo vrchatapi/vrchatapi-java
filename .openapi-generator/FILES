@@ -21,6 +21,7 @@ docs/CreateFileVersionRequest.md
 docs/CreateGroupAnnouncementRequest.md
 docs/CreateGroupGalleryRequest.md
 docs/CreateGroupInviteRequest.md
+docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateWorldRequest.md
@@ -60,6 +61,8 @@ docs/GroupMemberLimitedUser.md
 docs/GroupMemberStatus.md
 docs/GroupMyMember.md
 docs/GroupPermission.md
+docs/GroupPost.md
+docs/GroupPostVisibility.md
 docs/GroupPrivacy.md
 docs/GroupRole.md
 docs/GroupRoleTemplate.md
@@ -204,6 +207,7 @@ src/main/java/io/github/vrchatapi/model/CreateFileVersionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupAnnouncementRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupGalleryRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupInviteRequest.java
+src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
@@ -239,6 +243,8 @@ src/main/java/io/github/vrchatapi/model/GroupMemberLimitedUser.java
 src/main/java/io/github/vrchatapi/model/GroupMemberStatus.java
 src/main/java/io/github/vrchatapi/model/GroupMyMember.java
 src/main/java/io/github/vrchatapi/model/GroupPermission.java
+src/main/java/io/github/vrchatapi/model/GroupPost.java
+src/main/java/io/github/vrchatapi/model/GroupPostVisibility.java
 src/main/java/io/github/vrchatapi/model/GroupPrivacy.java
 src/main/java/io/github/vrchatapi/model/GroupRole.java
 src/main/java/io/github/vrchatapi/model/GroupRoleTemplate.java

@@ -19,10 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.GroupPostVisibility;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -47,10 +50,10 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * GroupAnnouncement
+ * GroupPost
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class GroupAnnouncement {
+public class GroupPost {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -62,6 +65,18 @@ public class GroupAnnouncement {
   public static final String SERIALIZED_NAME_AUTHOR_ID = "authorId";
   @SerializedName(SERIALIZED_NAME_AUTHOR_ID)
   private String authorId;
+
+  public static final String SERIALIZED_NAME_EDITOR_ID = "editorId";
+  @SerializedName(SERIALIZED_NAME_EDITOR_ID)
+  private String editorId;
+
+  public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
+  @SerializedName(SERIALIZED_NAME_VISIBILITY)
+  private GroupPostVisibility visibility;
+
+  public static final String SERIALIZED_NAME_ROLE_ID = "roleId";
+  @SerializedName(SERIALIZED_NAME_ROLE_ID)
+  private List<String> roleId = null;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -87,10 +102,10 @@ public class GroupAnnouncement {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
-  public GroupAnnouncement() {
+  public GroupPost() {
   }
 
-  public GroupAnnouncement id(String id) {
+  public GroupPost id(String id) {
     
     this.id = id;
     return this;
@@ -101,7 +116,7 @@ public class GroupAnnouncement {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "gpos_71a7ff59-112c-4e78-a990-c7cc650776e5", value = "")
+  @ApiModelProperty(example = "not_00000000-0000-0000-0000-000000000000", value = "")
 
   public String getId() {
     return id;
@@ -113,7 +128,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement groupId(String groupId) {
+  public GroupPost groupId(String groupId) {
     
     this.groupId = groupId;
     return this;
@@ -136,7 +151,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement authorId(String authorId) {
+  public GroupPost authorId(String authorId) {
     
     this.authorId = authorId;
     return this;
@@ -159,7 +174,84 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement title(String title) {
+  public GroupPost editorId(String editorId) {
+    
+    this.editorId = editorId;
+    return this;
+  }
+
+   /**
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return editorId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", value = "A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.")
+
+  public String getEditorId() {
+    return editorId;
+  }
+
+
+  public void setEditorId(String editorId) {
+    this.editorId = editorId;
+  }
+
+
+  public GroupPost visibility(GroupPostVisibility visibility) {
+    
+    this.visibility = visibility;
+    return this;
+  }
+
+   /**
+   * Get visibility
+   * @return visibility
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public GroupPostVisibility getVisibility() {
+    return visibility;
+  }
+
+
+  public void setVisibility(GroupPostVisibility visibility) {
+    this.visibility = visibility;
+  }
+
+
+  public GroupPost roleId(List<String> roleId) {
+    
+    this.roleId = roleId;
+    return this;
+  }
+
+  public GroupPost addRoleIdItem(String roleIdItem) {
+    if (this.roleId == null) {
+      this.roleId = new ArrayList<>();
+    }
+    this.roleId.add(roleIdItem);
+    return this;
+  }
+
+   /**
+   *  
+   * @return roleId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = " ")
+
+  public List<String> getRoleId() {
+    return roleId;
+  }
+
+
+  public void setRoleId(List<String> roleId) {
+    this.roleId = roleId;
+  }
+
+
+  public GroupPost title(String title) {
     
     this.title = title;
     return this;
@@ -182,7 +274,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement text(String text) {
+  public GroupPost text(String text) {
     
     this.text = text;
     return this;
@@ -205,7 +297,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement imageId(String imageId) {
+  public GroupPost imageId(String imageId) {
     
     this.imageId = imageId;
     return this;
@@ -228,7 +320,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement imageUrl(String imageUrl) {
+  public GroupPost imageUrl(String imageUrl) {
     
     this.imageUrl = imageUrl;
     return this;
@@ -251,7 +343,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement createdAt(OffsetDateTime createdAt) {
+  public GroupPost createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -274,7 +366,7 @@ public class GroupAnnouncement {
   }
 
 
-  public GroupAnnouncement updatedAt(OffsetDateTime updatedAt) {
+  public GroupPost updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -306,16 +398,19 @@ public class GroupAnnouncement {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupAnnouncement groupAnnouncement = (GroupAnnouncement) o;
-    return Objects.equals(this.id, groupAnnouncement.id) &&
-        Objects.equals(this.groupId, groupAnnouncement.groupId) &&
-        Objects.equals(this.authorId, groupAnnouncement.authorId) &&
-        Objects.equals(this.title, groupAnnouncement.title) &&
-        Objects.equals(this.text, groupAnnouncement.text) &&
-        Objects.equals(this.imageId, groupAnnouncement.imageId) &&
-        Objects.equals(this.imageUrl, groupAnnouncement.imageUrl) &&
-        Objects.equals(this.createdAt, groupAnnouncement.createdAt) &&
-        Objects.equals(this.updatedAt, groupAnnouncement.updatedAt);
+    GroupPost groupPost = (GroupPost) o;
+    return Objects.equals(this.id, groupPost.id) &&
+        Objects.equals(this.groupId, groupPost.groupId) &&
+        Objects.equals(this.authorId, groupPost.authorId) &&
+        Objects.equals(this.editorId, groupPost.editorId) &&
+        Objects.equals(this.visibility, groupPost.visibility) &&
+        Objects.equals(this.roleId, groupPost.roleId) &&
+        Objects.equals(this.title, groupPost.title) &&
+        Objects.equals(this.text, groupPost.text) &&
+        Objects.equals(this.imageId, groupPost.imageId) &&
+        Objects.equals(this.imageUrl, groupPost.imageUrl) &&
+        Objects.equals(this.createdAt, groupPost.createdAt) &&
+        Objects.equals(this.updatedAt, groupPost.updatedAt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -324,7 +419,7 @@ public class GroupAnnouncement {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, groupId, authorId, title, text, imageId, imageUrl, createdAt, updatedAt);
+    return Objects.hash(id, groupId, authorId, editorId, visibility, roleId, title, text, imageId, imageUrl, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -337,10 +432,13 @@ public class GroupAnnouncement {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupAnnouncement {\n");
+    sb.append("class GroupPost {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
+    sb.append("    editorId: ").append(toIndentedString(editorId)).append("\n");
+    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+    sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
@@ -372,6 +470,9 @@ public class GroupAnnouncement {
     openapiFields.add("id");
     openapiFields.add("groupId");
     openapiFields.add("authorId");
+    openapiFields.add("editorId");
+    openapiFields.add("visibility");
+    openapiFields.add("roleId");
     openapiFields.add("title");
     openapiFields.add("text");
     openapiFields.add("imageId");
@@ -387,20 +488,20 @@ public class GroupAnnouncement {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GroupAnnouncement
+  * @throws IOException if the JSON Object is invalid with respect to GroupPost
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!GroupAnnouncement.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupAnnouncement is not found in the empty JSON string", GroupAnnouncement.openapiRequiredFields.toString()));
+        if (!GroupPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupPost is not found in the empty JSON string", GroupPost.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!GroupAnnouncement.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupAnnouncement` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!GroupPost.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupPost` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
@@ -411,6 +512,13 @@ public class GroupAnnouncement {
       }
       if ((jsonObj.get("authorId") != null && !jsonObj.get("authorId").isJsonNull()) && !jsonObj.get("authorId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
+      }
+      if ((jsonObj.get("editorId") != null && !jsonObj.get("editorId").isJsonNull()) && !jsonObj.get("editorId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `editorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("editorId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleId") != null && !jsonObj.get("roleId").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `roleId` to be an array in the JSON string but got `%s`", jsonObj.get("roleId").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
@@ -430,22 +538,22 @@ public class GroupAnnouncement {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GroupAnnouncement.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GroupAnnouncement' and its subtypes
+       if (!GroupPost.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GroupPost' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GroupAnnouncement> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GroupAnnouncement.class));
+       final TypeAdapter<GroupPost> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GroupPost.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<GroupAnnouncement>() {
+       return (TypeAdapter<T>) new TypeAdapter<GroupPost>() {
            @Override
-           public void write(JsonWriter out, GroupAnnouncement value) throws IOException {
+           public void write(JsonWriter out, GroupPost value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public GroupAnnouncement read(JsonReader in) throws IOException {
+           public GroupPost read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -456,18 +564,18 @@ public class GroupAnnouncement {
   }
 
  /**
-  * Create an instance of GroupAnnouncement given an JSON string
+  * Create an instance of GroupPost given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of GroupAnnouncement
-  * @throws IOException if the JSON string is invalid with respect to GroupAnnouncement
+  * @return An instance of GroupPost
+  * @throws IOException if the JSON string is invalid with respect to GroupPost
   */
-  public static GroupAnnouncement fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GroupAnnouncement.class);
+  public static GroupPost fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GroupPost.class);
   }
 
  /**
-  * Convert an instance of GroupAnnouncement to an JSON string
+  * Convert an instance of GroupPost to an JSON string
   *
   * @return JSON string
   */
