@@ -44,6 +44,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Update Group |
 | [**updateGroupGallery**](GroupsApi.md#updateGroupGallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery |
 | [**updateGroupMember**](GroupsApi.md#updateGroupMember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member |
+| [**updateGroupPost**](GroupsApi.md#updateGroupPost) | **PUT** /groups/{groupId}/posts/{notificationId} | Edits a Group post |
 | [**updateGroupRole**](GroupsApi.md#updateGroupRole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role |
 
 
@@ -2982,6 +2983,81 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="updateGroupPost"></a>
+# **updateGroupPost**
+> GroupPost updateGroupPost(groupId, notificationId, createGroupPostRequest)
+
+Edits a Group post
+
+Edits a Group post
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
+    CreateGroupPostRequest createGroupPostRequest = new CreateGroupPostRequest(); // CreateGroupPostRequest | 
+    try {
+      GroupPost result = apiInstance.updateGroupPost(groupId, notificationId, createGroupPostRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#updateGroupPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **notificationId** | **String**| Must be a valid notification ID. | |
+| **createGroupPostRequest** | [**CreateGroupPostRequest**](CreateGroupPostRequest.md)|  | |
+
+### Return type
+
+[**GroupPost**](GroupPost.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a GroupPost object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Response after deleting a group post. |  -  |
 
 <a name="updateGroupRole"></a>
 # **updateGroupRole**

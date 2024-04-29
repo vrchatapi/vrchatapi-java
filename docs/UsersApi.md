@@ -225,7 +225,7 @@ public class Example {
 
 <a name="getUserGroups"></a>
 # **getUserGroups**
-> List&lt;Group&gt; getUserGroups(userId)
+> List&lt;LimitedGroup&gt; getUserGroups(userId)
 
 Get User Groups
 
@@ -255,7 +255,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      List<Group> result = apiInstance.getUserGroups(userId);
+      List<LimitedGroup> result = apiInstance.getUserGroups(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserGroups");
@@ -276,7 +276,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;Group&gt;**](Group.md)
+[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Group objects. |  -  |
+| **200** | Returns a list of LimitedGroup objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getUserRepresentedGroup"></a>

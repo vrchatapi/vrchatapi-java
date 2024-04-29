@@ -24,6 +24,7 @@ docs/CreateGroupInviteRequest.md
 docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
+docs/CreateInstanceRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
 docs/CurrentUserPresence.md
@@ -96,6 +97,11 @@ docs/MIMEType.md
 docs/ModelFile.md
 docs/ModerateUserRequest.md
 docs/Notification.md
+docs/NotificationDetailInvite.md
+docs/NotificationDetailInviteResponse.md
+docs/NotificationDetailRequestInvite.md
+docs/NotificationDetailRequestInviteResponse.md
+docs/NotificationDetailVoteToKick.md
 docs/NotificationType.md
 docs/NotificationsApi.md
 docs/OrderOption.md
@@ -210,6 +216,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupInviteRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
+src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
@@ -275,6 +282,11 @@ src/main/java/io/github/vrchatapi/model/MIMEType.java
 src/main/java/io/github/vrchatapi/model/ModelFile.java
 src/main/java/io/github/vrchatapi/model/ModerateUserRequest.java
 src/main/java/io/github/vrchatapi/model/Notification.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailInvite.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailInviteResponse.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInvite.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInviteResponse.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailVoteToKick.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
 src/main/java/io/github/vrchatapi/model/PaginatedGroupAuditLogEntryList.java
