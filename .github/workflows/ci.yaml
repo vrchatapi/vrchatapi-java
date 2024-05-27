@@ -33,7 +33,7 @@ jobs:
       - name: Print version number
         run: echo ${{ env.spec_version }}
       - name: Deploy SDK back into main branch and make tag
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
           folder: .
