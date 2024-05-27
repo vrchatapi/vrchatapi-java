@@ -14,6 +14,7 @@ docs/AuthenticationApi.md
 docs/Avatar.md
 docs/AvatarUnityPackageUrlObject.md
 docs/AvatarsApi.md
+docs/Badge.md
 docs/BanGroupMemberRequest.md
 docs/CreateAvatarRequest.md
 docs/CreateFileRequest.md
@@ -77,6 +78,7 @@ docs/InfoPushDataArticleContent.md
 docs/InfoPushDataClickable.md
 docs/Instance.md
 docs/InstancePlatforms.md
+docs/InstanceRegion.md
 docs/InstanceShortNameResponse.md
 docs/InstanceType.md
 docs/InstancesApi.md
@@ -92,6 +94,7 @@ docs/LicenseType.md
 docs/LimitedGroup.md
 docs/LimitedUnityPackage.md
 docs/LimitedUser.md
+docs/LimitedUserGroups.md
 docs/LimitedWorld.md
 docs/MIMEType.md
 docs/ModelFile.md
@@ -206,6 +209,7 @@ src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/Avatar.java
 src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
+src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileRequest.java
@@ -264,6 +268,7 @@ src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
+src/main/java/io/github/vrchatapi/model/InstanceRegion.java
 src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/InviteMessage.java
@@ -277,6 +282,7 @@ src/main/java/io/github/vrchatapi/model/LicenseType.java
 src/main/java/io/github/vrchatapi/model/LimitedGroup.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
 src/main/java/io/github/vrchatapi/model/LimitedUser.java
+src/main/java/io/github/vrchatapi/model/LimitedUserGroups.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java
 src/main/java/io/github/vrchatapi/model/MIMEType.java
 src/main/java/io/github/vrchatapi/model/ModelFile.java

@@ -13,13 +13,14 @@
 |**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   |  [optional] |
 |**activeFriends** | **List&lt;String&gt;** |   |  [optional] |
 |**allowAvatarCopying** | **Boolean** |  |  |
+|**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
 |**bio** | **String** |  |  |
 |**bioLinks** | **List&lt;String&gt;** |   |  |
 |**currentAvatar** | **String** |  |  |
 |**currentAvatarAssetUrl** | **String** |  |  |
 |**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
 |**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
-|**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
+|**currentAvatarTags** | **List&lt;String&gt;** |  |  |
 |**dateJoined** | **LocalDate** |  |  |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** |  |  |
@@ -40,11 +41,13 @@
 |**isFriend** | **Boolean** |  |  |
 |**lastActivity** | **OffsetDateTime** |  |  [optional] |
 |**lastLogin** | **OffsetDateTime** |  |  |
+|**lastMobile** | **OffsetDateTime** |  |  |
 |**lastPlatform** | **String** | This can be &#x60;standalonewindows&#x60; or &#x60;android&#x60;, but can also pretty much be any random Unity verison such as &#x60;2019.2.4-801-Release&#x60; or &#x60;2019.2.2-772-Release&#x60; or even &#x60;unknownplatform&#x60;. |  |
 |**obfuscatedEmail** | **String** |  |  |
 |**obfuscatedPendingEmail** | **String** |  |  |
 |**oculusId** | **String** |  |  |
 |**googleId** | **String** |  |  [optional] |
+|**googleDetails** | **Object** |  |  [optional] |
 |**picoId** | **String** |  |  [optional] |
 |**viveId** | **String** |  |  [optional] |
 |**offlineFriends** | **List&lt;String&gt;** |  |  [optional] |
@@ -52,6 +55,7 @@
 |**pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   |  |
 |**presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  |  [optional] |
 |**profilePicOverride** | **String** |  |  |
+|**pronouns** | **String** |  |  |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |

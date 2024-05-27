@@ -8,10 +8,12 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**allowAvatarCopying** | **Boolean** |  |  |
+|**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
 |**bio** | **String** |  |  |
 |**bioLinks** | **List&lt;String&gt;** |  |  |
 |**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
 |**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
+|**currentAvatarTags** | **List&lt;String&gt;** |  |  |
 |**dateJoined** | **LocalDate** |  |  |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their &#x60;username&#x60;. Changing display name is restricted to a cooldown period. |  |
@@ -26,6 +28,7 @@
 |**location** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 |**note** | **String** |  |  [optional] |
 |**profilePicOverride** | **String** |  |  |
+|**pronouns** | **String** |  |  |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |

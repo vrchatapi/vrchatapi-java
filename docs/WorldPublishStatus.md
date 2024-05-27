@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**canPubilsh** | **Boolean** |  |  |
+|**canPublish** | **Boolean** |  |  |
 
 
 

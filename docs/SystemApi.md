@@ -1,6 +1,6 @@
 # SystemApi
 
-All URIs are relative to *https://api.vrchat.cloud/api/1*
+All URIs are relative to *https://vrchat.com/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -33,7 +33,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
@@ -98,7 +98,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {
@@ -156,7 +156,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {
@@ -214,7 +214,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {
@@ -272,7 +272,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     String require = "require_example"; // String | Tags to include (comma-separated). All of the tags needs to be present.
@@ -336,7 +336,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
@@ -401,7 +401,7 @@ import io.github.vrchatapi.api.SystemApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
 
     SystemApi apiInstance = new SystemApi(defaultClient);
     try {

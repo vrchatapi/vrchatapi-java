@@ -9,7 +9,7 @@
 
 * `PLUS` (value: `"plus"`)
 
-* `MEMBER` (value: `"member"`)
+* `MEMBERS` (value: `"members"`)
 
 
 

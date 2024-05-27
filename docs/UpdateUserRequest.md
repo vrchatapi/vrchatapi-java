@@ -15,6 +15,7 @@
 |**statusDescription** | **String** |  |  [optional] |
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |  |  [optional] |
+|**pronouns** | **String** |  |  [optional] |
 |**userIcon** | **String** | MUST be a valid VRChat /file/ url. |  [optional] |
 
 

@@ -1,6 +1,6 @@
 # UsersApi
 
-All URIs are relative to *https://api.vrchat.cloud/api/1*
+All URIs are relative to *https://vrchat.com/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -104,7 +104,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -174,7 +174,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -225,7 +225,7 @@ public class Example {
 
 <a name="getUserGroups"></a>
 # **getUserGroups**
-> List&lt;LimitedGroup&gt; getUserGroups(userId)
+> List&lt;LimitedUserGroups&gt; getUserGroups(userId)
 
 Get User Groups
 
@@ -244,7 +244,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -255,7 +255,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      List<LimitedGroup> result = apiInstance.getUserGroups(userId);
+      List<LimitedUserGroups> result = apiInstance.getUserGroups(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserGroups");
@@ -276,7 +276,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
+[**List&lt;LimitedUserGroups&gt;**](LimitedUserGroups.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedGroup objects. |  -  |
+| **200** | Returns a list of LimitedUserGroups objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getUserRepresentedGroup"></a>
@@ -314,7 +314,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -384,7 +384,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
@@ -461,7 +461,7 @@ import io.github.vrchatapi.api.UsersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    defaultClient.setBasePath("https://vrchat.com/api/1");
     
     // Configure API key authorization: authCookie
     ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");

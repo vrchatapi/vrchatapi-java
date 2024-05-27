@@ -14,6 +14,7 @@
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**favorites** | **Integer** |  |  |
+|**visits** | **Integer** |  |  [optional] |
 |**heat** | **Integer** |  |  |
 |**id** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**imageUrl** | **String** |  |  |
@@ -22,6 +23,7 @@
 |**occupants** | **Integer** |  |  |
 |**organization** | **String** |  |  |
 |**popularity** | **Integer** |  |  |
+|**previewYoutubeId** | **String** |  |  [optional] |
 |**publicationDate** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**tags** | **List&lt;String&gt;** |   |  |

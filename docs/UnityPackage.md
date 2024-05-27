@@ -20,6 +20,7 @@
 |**unityVersion** | **String** |  |  |
 |**impostorUrl** | **String** |  |  [optional] |
 |**scanStatus** | **String** |  |  [optional] |
+|**variant** | **String** |  |  [optional] |
 
 
 
