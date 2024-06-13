@@ -15,5 +15,7 @@
 
 * `BANNED` (value: `"banned"`)
 
+* `USERBLOCKED` (value: `"userblocked"`)
+
 
 

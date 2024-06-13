@@ -28,6 +28,7 @@
 |**location** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 |**note** | **String** |  |  [optional] |
 |**profilePicOverride** | **String** |  |  |
+|**profilePicOverrideThumbnail** | **String** |  |  |
 |**pronouns** | **String** |  |  |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
