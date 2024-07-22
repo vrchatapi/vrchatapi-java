@@ -783,7 +783,7 @@ null (empty response body)
 
 <a name="searchWorlds"></a>
 # **searchWorlds**
-> List&lt;LimitedWorld&gt; searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List&lt;LimitedWorld&gt; searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy)
 
 Search All Worlds
 
@@ -825,8 +825,9 @@ public class Example {
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
+    Boolean fuzzy = true; // Boolean | 
     try {
-      List<LimitedWorld> result = apiInstance.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
+      List<LimitedWorld> result = apiInstance.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#searchWorlds");
@@ -857,6 +858,7 @@ public class Example {
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
+| **fuzzy** | **Boolean**|  | [optional] |
 
 ### Return type
 

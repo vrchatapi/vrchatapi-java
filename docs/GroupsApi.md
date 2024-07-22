@@ -1583,6 +1583,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupGalleryImages"></a>
@@ -1882,6 +1883,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="getGroupMembers"></a>

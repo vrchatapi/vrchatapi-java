@@ -2,7 +2,7 @@
 
 # TransactionAgreement
 
-
+Represents a single Transaction, which is likely between VRChat and Steam.
 
 ## Properties
 
@@ -10,6 +10,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**agreementId** | **String** |  |  |
 |**itemId** | **BigDecimal** |  |  |
+|**agreement** | **String** |  |  |
 |**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |
 |**period** | **String** |  |  |
 |**frequency** | **BigDecimal** |  |  |

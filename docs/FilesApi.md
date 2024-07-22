@@ -158,7 +158,7 @@ public class Example {
 
 <a name="deleteFile"></a>
 # **deleteFile**
-> Success deleteFile(fileId)
+> ModelFile deleteFile(fileId)
 
 Delete File
 
@@ -188,7 +188,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
     try {
-      Success result = apiInstance.deleteFile(fileId);
+      ModelFile result = apiInstance.deleteFile(fileId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#deleteFile");
@@ -209,7 +209,7 @@ public class Example {
 
 ### Return type
 
-[**Success**](Success.md)
+[**ModelFile**](ModelFile.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response after deleting a File. |  -  |
+| **200** | Returns a single File object. |  -  |
 | **404** | Error response when trying to delete a non-existent file. |  -  |
 
 <a name="deleteFileVersion"></a>
@@ -297,7 +297,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 | **400** | Error response when trying to delete the initial version of a file. Delete the main File object instead. |  -  |
-| **500** | Error response when trying to delete any version of a file that is not hte last one. |  -  |
+| **500** | Error response when trying to delete any version of a file that is not the last one. |  -  |
 
 <a name="downloadFileVersion"></a>
 # **downloadFileVersion**
@@ -362,12 +362,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Raw file |  -  |
+| **404** | Error response when trying to show information about a non-existent file. |  -  |
 
 <a name="finishFileDataUpload"></a>
 # **finishFileDataUpload**

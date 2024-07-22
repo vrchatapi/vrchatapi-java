@@ -16,7 +16,7 @@ All URIs are relative to *https://vrchat.com/api/1*
 
 <a name="checkUserExists"></a>
 # **checkUserExists**
-> UserExists checkUserExists(email, displayName, userId, excludeUserId)
+> UserExists checkUserExists(email, displayName, username, excludeUserId)
 
 Check User Exists
 
@@ -39,10 +39,10 @@ public class Example {
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     String email = "email_example"; // String | Filter by email.
     String displayName = "displayName_example"; // String | Filter by displayName.
-    String userId = "userId_example"; // String | Filter by UserID.
+    String username = "username_example"; // String | Filter by Username.
     String excludeUserId = "excludeUserId_example"; // String | Exclude by UserID.
     try {
-      UserExists result = apiInstance.checkUserExists(email, displayName, userId, excludeUserId);
+      UserExists result = apiInstance.checkUserExists(email, displayName, username, excludeUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#checkUserExists");
@@ -61,7 +61,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **email** | **String**| Filter by email. | [optional] |
 | **displayName** | **String**| Filter by displayName. | [optional] |
-| **userId** | **String**| Filter by UserID. | [optional] |
+| **username** | **String**| Filter by Username. | [optional] |
 | **excludeUserId** | **String**| Exclude by UserID. | [optional] |
 
 ### Return type

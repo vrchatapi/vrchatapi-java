@@ -10,7 +10,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**category** | [**CategoryEnum**](#CategoryEnum) |  |  |
 |**fileName** | **String** |  |  |
-|**md5** | **String** |  |  |
+|**md5** | **String** |  |  [optional] |
 |**sizeInBytes** | **Integer** |  |  |
 |**status** | **FileStatus** |  |  |
 |**uploadId** | **String** |  |  |
