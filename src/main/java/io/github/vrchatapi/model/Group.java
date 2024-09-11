@@ -619,11 +619,11 @@ public class Group {
   }
 
    /**
-   *  
+   * Get tags
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = " ")
+  @ApiModelProperty(value = "")
 
   public List<String> getTags() {
     return tags;
@@ -673,11 +673,11 @@ public class Group {
   }
 
    /**
-   *  
+   * Get galleries
    * @return galleries
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = " ")
+  @ApiModelProperty(value = "")
 
   public List<GroupGallery> getGalleries() {
     return galleries;

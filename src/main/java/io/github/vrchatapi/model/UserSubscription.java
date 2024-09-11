@@ -98,7 +98,7 @@ public class UserSubscription {
 
   public static final String SERIALIZED_NAME_STARTS = "starts";
   @SerializedName(SERIALIZED_NAME_STARTS)
-  private OffsetDateTime starts;
+  private String starts;
 
   public static final String SERIALIZED_NAME_EXPIRES = "expires";
   @SerializedName(SERIALIZED_NAME_EXPIRES)
@@ -353,7 +353,7 @@ public class UserSubscription {
   }
 
 
-  public UserSubscription starts(OffsetDateTime starts) {
+  public UserSubscription starts(String starts) {
     
     this.starts = starts;
     return this;
@@ -364,14 +364,14 @@ public class UserSubscription {
    * @return starts
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2022-03-04T00:00Z", value = "")
+  @ApiModelProperty(value = "")
 
-  public OffsetDateTime getStarts() {
+  public String getStarts() {
     return starts;
   }
 
 
-  public void setStarts(OffsetDateTime starts) {
+  public void setStarts(String starts) {
     this.starts = starts;
   }
 
@@ -387,7 +387,7 @@ public class UserSubscription {
    * @return expires
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2022-03-04T00:00Z", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getExpires() {
     return expires;
@@ -410,7 +410,7 @@ public class UserSubscription {
    * @return createdAt
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2022-03-04T00:00Z", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -433,7 +433,7 @@ public class UserSubscription {
    * @return updatedAt
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2022-03-04T00:00Z", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -647,6 +647,9 @@ public class UserSubscription {
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("starts") != null && !jsonObj.get("starts").isJsonNull()) && !jsonObj.get("starts").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `starts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("starts").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("licenseGroups") == null) {

@@ -54,6 +54,10 @@ public class UserExists {
   @SerializedName(SERIALIZED_NAME_USER_EXISTS)
   private Boolean userExists = false;
 
+  public static final String SERIALIZED_NAME_NAME_OK = "nameOk";
+  @SerializedName(SERIALIZED_NAME_NAME_OK)
+  private Boolean nameOk = false;
+
   public UserExists() {
   }
 
@@ -80,6 +84,29 @@ public class UserExists {
   }
 
 
+  public UserExists nameOk(Boolean nameOk) {
+    
+    this.nameOk = nameOk;
+    return this;
+  }
+
+   /**
+   * Is the username valid?
+   * @return nameOk
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Is the username valid?")
+
+  public Boolean getNameOk() {
+    return nameOk;
+  }
+
+
+  public void setNameOk(Boolean nameOk) {
+    this.nameOk = nameOk;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -90,12 +117,13 @@ public class UserExists {
       return false;
     }
     UserExists userExists = (UserExists) o;
-    return Objects.equals(this.userExists, userExists.userExists);
+    return Objects.equals(this.userExists, userExists.userExists) &&
+        Objects.equals(this.nameOk, userExists.nameOk);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userExists);
+    return Objects.hash(userExists, nameOk);
   }
 
   @Override
@@ -103,6 +131,7 @@ public class UserExists {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserExists {\n");
     sb.append("    userExists: ").append(toIndentedString(userExists)).append("\n");
+    sb.append("    nameOk: ").append(toIndentedString(nameOk)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -126,10 +155,12 @@ public class UserExists {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("userExists");
+    openapiFields.add("nameOk");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("userExists");
+    openapiRequiredFields.add("nameOk");
   }
 
  /**

@@ -35,7 +35,9 @@ public enum InstanceRegion {
   
   EU("eu"),
   
-  JP("jp");
+  JP("jp"),
+  
+  UNKNOWN("unknown");
 
   private String value;
 

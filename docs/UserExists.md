@@ -9,6 +9,7 @@ Status object representing if a queried user by username or userId exists or not
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**userExists** | **Boolean** | Status if a user exist with that username or userId. |  |
+|**nameOk** | **Boolean** | Is the username valid? |  |
 
 
 

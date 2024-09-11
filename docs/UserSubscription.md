@@ -18,7 +18,7 @@
 |**tier** | **BigDecimal** |  |  |
 |**active** | **Boolean** |  |  |
 |**status** | **TransactionStatus** |  |  |
-|**starts** | **OffsetDateTime** |  |  [optional] |
+|**starts** | **String** |  |  [optional] |
 |**expires** | **OffsetDateTime** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
