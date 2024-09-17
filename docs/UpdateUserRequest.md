@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**email** | **String** |  |  [optional] |
 |**birthday** | **LocalDate** |  |  [optional] |
-|**acceptedTOSVersion** | **BigDecimal** |  |  [optional] |
+|**acceptedTOSVersion** | **Integer** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**status** | **UserStatus** |  |  [optional] |
 |**statusDescription** | **String** |  |  [optional] |

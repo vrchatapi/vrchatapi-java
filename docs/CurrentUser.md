@@ -58,6 +58,8 @@
 |**profilePicOverride** | **String** |  |  |
 |**profilePicOverrideThumbnail** | **String** |  |  |
 |**pronouns** | **String** |  |  |
+|**queuedInstance** | **String** |  |  [optional] |
+|**receiveMobileInvitations** | **Boolean** |  |  [optional] |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |

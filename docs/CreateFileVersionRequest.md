@@ -8,9 +8,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**signatureMd5** | **String** |  |  |
-|**signatureSizeInBytes** | **BigDecimal** |  |  |
+|**signatureSizeInBytes** | **Integer** |  |  |
 |**fileMd5** | **String** |  |  [optional] |
-|**fileSizeInBytes** | **BigDecimal** |  |  [optional] |
+|**fileSizeInBytes** | **Integer** |  |  [optional] |
 
 
 

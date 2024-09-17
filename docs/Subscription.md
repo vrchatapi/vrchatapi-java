@@ -17,7 +17,7 @@
 |**amount** | **BigDecimal** |  |  |
 |**description** | **String** |  |  |
 |**period** | **SubscriptionPeriod** |  |  |
-|**tier** | **BigDecimal** |  |  |
+|**tier** | **Integer** |  |  |
 
 
 

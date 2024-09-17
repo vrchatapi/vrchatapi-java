@@ -9,11 +9,11 @@ Represents a single Transaction, which is likely between VRChat and Steam.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**agreementId** | **String** |  |  |
-|**itemId** | **BigDecimal** |  |  |
+|**itemId** | **Integer** |  |  |
 |**agreement** | **String** |  |  |
 |**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |
 |**period** | **String** |  |  |
-|**frequency** | **BigDecimal** |  |  |
+|**frequency** | **Integer** |  |  |
 |**billingType** | **String** |  |  |
 |**startDate** | **String** |  |  |
 |**endDate** | **String** |  |  |
@@ -24,8 +24,8 @@ Represents a single Transaction, which is likely between VRChat and Steam.
 |**lastPayment** | **String** |  |  |
 |**lastAmount** | **BigDecimal** |  |  |
 |**lastAmountVat** | **BigDecimal** |  |  |
-|**outstanding** | **BigDecimal** |  |  |
-|**failedAttempts** | **BigDecimal** |  |  |
+|**outstanding** | **Integer** |  |  |
+|**failedAttempts** | **Integer** |  |  |
 
 
 

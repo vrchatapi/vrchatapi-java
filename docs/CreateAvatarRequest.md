@@ -14,7 +14,7 @@
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**imageUrl** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  [optional] |
-|**version** | **BigDecimal** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
 |**unityVersion** | **String** |  |  [optional] |
 

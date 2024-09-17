@@ -15,7 +15,7 @@
 |**amount** | **BigDecimal** |  |  |
 |**description** | **String** |  |  |
 |**period** | **SubscriptionPeriod** |  |  |
-|**tier** | **BigDecimal** |  |  |
+|**tier** | **Integer** |  |  |
 |**active** | **Boolean** |  |  |
 |**status** | **TransactionStatus** |  |  |
 |**starts** | **String** |  |  [optional] |
