@@ -11,6 +11,8 @@
 
 * `USW` (value: `"usw"`)
 
+* `USX` (value: `"usx"`)
+
 * `EU` (value: `"eu"`)
 
 * `JP` (value: `"jp"`)
