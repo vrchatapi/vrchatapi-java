@@ -12,9 +12,12 @@
 |**canRequestInvite** | **Boolean** |  |  |
 |**capacity** | **Integer** |  |  |
 |**clientNumber** | **String** | Always returns \&quot;unknown\&quot;. |  |
+|**displayName** | **String** |  |  |
 |**full** | **Boolean** |  |  |
+|**gameServerVersion** | **Integer** |  |  |
 |**id** | **String** | InstanceID can be \&quot;offline\&quot; on User profiles if you are not friends with that user and \&quot;private\&quot; if you are friends and user is in private instance. |  |
 |**instanceId** | **String** |  |  |
+|**instancePersistenceEnabled** | **String** |  |  |
 |**location** | **String** | InstanceID can be \&quot;offline\&quot; on User profiles if you are not friends with that user and \&quot;private\&quot; if you are friends and user is in private instance. |  |
 |**nUsers** | **Integer** |  |  |
 |**name** | **String** |  |  |
@@ -22,6 +25,7 @@
 |**permanent** | **Boolean** |  |  |
 |**photonRegion** | **Region** |  |  |
 |**platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  |  |
+|**playerPersistenceEnabled** | **String** |  |  |
 |**region** | **InstanceRegion** |  |  |
 |**secureName** | **String** |  |  |
 |**shortName** | **String** |  |  [optional] |

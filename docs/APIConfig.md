@@ -12,14 +12,18 @@
 |**voiceEnableReceiverLimiting** | **Boolean** | Unknown, probably voice optimization testing |  |
 |**address** | **String** | VRChat&#39;s office address |  |
 |**announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements |  |
+|**analyticsSegmentNewUIPctOfUsers** | **Integer** | Unknown |  |
+|**analyticsSegmentNewUISalt** | **String** | Unknown |  |
 |**appName** | **String** | Game name |  |
 |**availableLanguageCodes** | **List&lt;String&gt;** | List of supported Languages |  |
 |**availableLanguages** | **List&lt;String&gt;** | List of supported Languages |  |
 |**buildVersionTag** | **String** | Build tag of the API server |  |
+|**chatboxLogBufferSeconds** | **Integer** | Unknown |  |
 |**clientApiKey** | **String** | apiKey to be used for all other requests |  |
 |**clientBPSCeiling** | **Integer** | Unknown |  |
 |**clientDisconnectTimeout** | **Integer** | Unknown |  |
 |**clientNetDispatchThread** | **Boolean** | Unknown |  [optional] |
+|**clientNetDispatchThreadMobile** | **Boolean** | Unknown |  |
 |**clientNetInThread** | **Boolean** | Unknown |  [optional] |
 |**clientNetInThread2** | **Boolean** | Unknown |  [optional] |
 |**clientNetInThreadMobile** | **Boolean** | Unknown |  [optional] |
@@ -31,6 +35,7 @@
 |**clientQR** | **Integer** | Unknown |  [optional] |
 |**clientReservedPlayerBPS** | **Integer** | Unknown |  |
 |**clientSentCountAllowance** | **Integer** | Unknown |  |
+|**constants** | [**APIConfigConstants**](APIConfigConstants.md) |  |  |
 |**contactEmail** | **String** | VRChat&#39;s contact email |  |
 |**copyrightEmail** | **String** | VRChat&#39;s copyright-issues-related email |  |
 |**currentPrivacyVersion** | **Integer** | Current version number of the Privacy Agreement |  [optional] |
@@ -65,13 +70,24 @@
 |**economyPauseStart** | **String** | Unknown |  [optional] |
 |**economyState** | **Integer** | Unknown |  [optional] |
 |**events** | [**APIConfigEvents**](APIConfigEvents.md) |  |  |
+|**forceUseLatestWorld** | **Boolean** | Unknown |  |
+|**googleApiClientId** | **String** | Unknown |  |
 |**homeWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**homepageRedirectTarget** | **String** | Redirect target if you try to open the base API domain in your browser |  |
 |**hubWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**imageHostUrlList** | **List&lt;String&gt;** | A list of explicitly allowed origins that worlds can request images from via the Udon&#39;s [VRCImageDownloader#DownloadImage](https://creators.vrchat.com/worlds/udon/image-loading/#downloadimage). |  |
 |**jobsEmail** | **String** | VRChat&#39;s job application email |  |
+|**minSupportedClientBuildNumber** | [**APIConfigMinSupportedClientBuildNumber**](APIConfigMinSupportedClientBuildNumber.md) |  |  |
+|**minimumUnityVersionForUploads** | **String** | Minimum Unity version required for uploading assets |  |
 |**moderationEmail** | **String** | VRChat&#39;s moderation related email |  |
 |**notAllowedToSelectAvatarInPrivateWorldMessage** | **String** | Used in-game to notify a user they aren&#39;t allowed to select avatars in private worlds |  |
+|**offlineAnalysis** | [**APIConfigOfflineAnalysis**](APIConfigOfflineAnalysis.md) |  |  |
+|**photonNameserverOverrides** | **List&lt;String&gt;** | Unknown |  |
+|**photonPublicKeys** | **List&lt;String&gt;** | Unknown |  |
+|**reportCategories** | [**APIConfigReportCategories**](APIConfigReportCategories.md) |  |  |
+|**reportFormUrl** | **String** | URL to the report form |  |
+|**reportOptions** | **Object** | Options for reporting content |  |
+|**reportReasons** | [**APIConfigReportReasons**](APIConfigReportReasons.md) |  |  |
 |**sdkDeveloperFaqUrl** | **String** | Link to the developer FAQ |  |
 |**sdkDiscordUrl** | **String** | Link to the official VRChat Discord |  |
 |**sdkNotAllowedToPublishMessage** | **String** | Used in the SDK to notify a user they aren&#39;t allowed to upload avatars/worlds yet |  |
@@ -79,6 +95,7 @@
 |**serverName** | **String** | Server name of the API server currently responding |  |
 |**stringHostUrlList** | **List&lt;String&gt;** | A list of explicitly allowed origins that worlds can request strings from via the Udon&#39;s [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload). |  |
 |**supportEmail** | **String** | VRChat&#39;s support email |  |
+|**timekeeping** | **Boolean** | Unknown |  |
 |**timeOutWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**tutorialWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**updateRateMsMaximum** | **Integer** | Unknown |  |
@@ -92,6 +109,9 @@
 |**whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets |  |
 |**playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version |  |
 |**playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format |  |
+|**websocketMaxFriendsRefreshDelay** | **Integer** | Unknown |  |
+|**websocketQuickReconnectTime** | **Integer** | Unknown |  |
+|**websocketReconnectMaxDelay** | **Integer** | Unknown |  |
 
 
 
