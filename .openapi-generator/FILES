@@ -50,6 +50,7 @@ docs/Favorite.md
 docs/FavoriteGroup.md
 docs/FavoriteGroupVisibility.md
 docs/FavoriteType.md
+docs/FavoritedWorld.md
 docs/FavoritesApi.md
 docs/FileData.md
 docs/FileStatus.md
@@ -99,6 +100,9 @@ docs/InviteMessage.md
 docs/InviteMessageType.md
 docs/InviteRequest.md
 docs/InviteResponse.md
+docs/Jam.md
+docs/JamStateChangeDates.md
+docs/JamsApi.md
 docs/License.md
 docs/LicenseAction.md
 docs/LicenseGroup.md
@@ -139,6 +143,7 @@ docs/RespondGroupJoinRequest.md
 docs/Response.md
 docs/SentNotification.md
 docs/SortOption.md
+docs/Submission.md
 docs/Subscription.md
 docs/SubscriptionPeriod.md
 docs/Success.md
@@ -204,6 +209,7 @@ src/main/java/io/github/vrchatapi/api/FriendsApi.java
 src/main/java/io/github/vrchatapi/api/GroupsApi.java
 src/main/java/io/github/vrchatapi/api/InstancesApi.java
 src/main/java/io/github/vrchatapi/api/InviteApi.java
+src/main/java/io/github/vrchatapi/api/JamsApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
 src/main/java/io/github/vrchatapi/api/PermissionsApi.java
 src/main/java/io/github/vrchatapi/api/PlayermoderationApi.java
@@ -260,6 +266,7 @@ src/main/java/io/github/vrchatapi/model/Favorite.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroup.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroupVisibility.java
 src/main/java/io/github/vrchatapi/model/FavoriteType.java
+src/main/java/io/github/vrchatapi/model/FavoritedWorld.java
 src/main/java/io/github/vrchatapi/model/FileData.java
 src/main/java/io/github/vrchatapi/model/FileStatus.java
 src/main/java/io/github/vrchatapi/model/FileUploadURL.java
@@ -303,6 +310,8 @@ src/main/java/io/github/vrchatapi/model/InviteMessage.java
 src/main/java/io/github/vrchatapi/model/InviteMessageType.java
 src/main/java/io/github/vrchatapi/model/InviteRequest.java
 src/main/java/io/github/vrchatapi/model/InviteResponse.java
+src/main/java/io/github/vrchatapi/model/Jam.java
+src/main/java/io/github/vrchatapi/model/JamStateChangeDates.java
 src/main/java/io/github/vrchatapi/model/License.java
 src/main/java/io/github/vrchatapi/model/LicenseAction.java
 src/main/java/io/github/vrchatapi/model/LicenseGroup.java
@@ -340,6 +349,7 @@ src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
+src/main/java/io/github/vrchatapi/model/Submission.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
 src/main/java/io/github/vrchatapi/model/SubscriptionPeriod.java
 src/main/java/io/github/vrchatapi/model/Success.java

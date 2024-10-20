@@ -31,7 +31,6 @@
 |**publicOccupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional] |
 |**publicationDate** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
-|**storeId** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. |  [optional] |

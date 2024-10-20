@@ -7,6 +7,7 @@ All URIs are relative to *https://vrchat.com/api/1*
 | [**acceptFriendRequest**](NotificationsApi.md#acceptFriendRequest) | **PUT** /auth/user/notifications/{notificationId}/accept | Accept Friend Request |
 | [**clearNotifications**](NotificationsApi.md#clearNotifications) | **PUT** /auth/user/notifications/clear | Clear All Notifications |
 | [**deleteNotification**](NotificationsApi.md#deleteNotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification |
+| [**getNotification**](NotificationsApi.md#getNotification) | **GET** /auth/user/notifications/{notificationId} | Show notification |
 | [**getNotifications**](NotificationsApi.md#getNotifications) | **GET** /auth/user/notifications | List Notifications |
 | [**markNotificationAsRead**](NotificationsApi.md#markNotificationAsRead) | **PUT** /auth/user/notifications/{notificationId}/see | Mark Notification As Read |
 
@@ -217,6 +218,77 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Notifcation object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getNotification"></a>
+# **getNotification**
+> Notification getNotification(notificationId)
+
+Show notification
+
+Get a notification by notification &#x60;not_&#x60; ID.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.NotificationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://vrchat.com/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    NotificationsApi apiInstance = new NotificationsApi(defaultClient);
+    String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
+    try {
+      Notification result = apiInstance.getNotification(notificationId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling NotificationsApi#getNotification");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **notificationId** | **String**| Must be a valid notification ID. | |
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Notifcation object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
 <a name="getNotifications"></a>
 # **getNotifications**

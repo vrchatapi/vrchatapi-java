@@ -247,7 +247,7 @@ public class Example {
 
 <a name="getFavoritedWorlds"></a>
 # **getFavoritedWorlds**
-> List&lt;LimitedWorld&gt; getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
+> List&lt;FavoritedWorld&gt; getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
 List Favorited Worlds
 
@@ -289,7 +289,7 @@ public class Example {
     String platform = "platform_example"; // String | The platform the asset supports.
     String userId = "userId_example"; // String | Target user to see information on, admin-only.
     try {
-      List<LimitedWorld> result = apiInstance.getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
+      List<FavoritedWorld> result = apiInstance.getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getFavoritedWorlds");
@@ -322,7 +322,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;LimitedWorld&gt;**](LimitedWorld.md)
+[**List&lt;FavoritedWorld&gt;**](FavoritedWorld.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedWorld objects. |  -  |
+| **200** | Returns a list of FavoritedWorld objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see favourited worlds of another user without sufficient admin permissions. |  -  |
 
