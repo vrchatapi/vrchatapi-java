@@ -35,6 +35,7 @@
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  |
+|**urlList** | **List&lt;String&gt;** |  |  [optional] |
 |**version** | **Integer** |  |  |
 |**visits** | **Integer** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |

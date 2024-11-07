@@ -34,6 +34,7 @@
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |   |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
+|**urlList** | **List&lt;String&gt;** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
 |**version** | **Integer** |  |  |
 

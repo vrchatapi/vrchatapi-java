@@ -4,6 +4,7 @@ build.gradle
 build.sbt
 docs/APIConfig.md
 docs/APIConfigAnnouncement.md
+docs/APIConfigAvatarPerfLimiter.md
 docs/APIConfigConstants.md
 docs/APIConfigConstantsGROUPS.md
 docs/APIConfigConstantsINSTANCE.md
@@ -126,6 +127,7 @@ docs/NotificationsApi.md
 docs/OrderOption.md
 docs/PaginatedGroupAuditLogEntryList.md
 docs/PastDisplayName.md
+docs/PerformanceLimiterInfo.md
 docs/PerformanceRatings.md
 docs/Permission.md
 docs/PermissionsApi.md
@@ -222,6 +224,7 @@ src/main/java/io/github/vrchatapi/auth/HttpBasicAuth.java
 src/main/java/io/github/vrchatapi/auth/HttpBearerAuth.java
 src/main/java/io/github/vrchatapi/model/APIConfig.java
 src/main/java/io/github/vrchatapi/model/APIConfigAnnouncement.java
+src/main/java/io/github/vrchatapi/model/APIConfigAvatarPerfLimiter.java
 src/main/java/io/github/vrchatapi/model/APIConfigConstants.java
 src/main/java/io/github/vrchatapi/model/APIConfigConstantsGROUPS.java
 src/main/java/io/github/vrchatapi/model/APIConfigConstantsINSTANCE.java
@@ -334,6 +337,7 @@ src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
 src/main/java/io/github/vrchatapi/model/PaginatedGroupAuditLogEntryList.java
 src/main/java/io/github/vrchatapi/model/PastDisplayName.java
+src/main/java/io/github/vrchatapi/model/PerformanceLimiterInfo.java
 src/main/java/io/github/vrchatapi/model/PerformanceRatings.java
 src/main/java/io/github/vrchatapi/model/Permission.java
 src/main/java/io/github/vrchatapi/model/PlatformBuildInfo.java

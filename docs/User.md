@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**ageVerificationStatus** | **String** |  |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
 |**bio** | **String** |  |  |

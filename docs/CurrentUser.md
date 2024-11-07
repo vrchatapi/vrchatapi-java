@@ -12,6 +12,8 @@
 |**accountDeletionDate** | **LocalDate** |  |  [optional] |
 |**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   |  [optional] |
 |**activeFriends** | **List&lt;String&gt;** |   |  [optional] |
+|**ageVerificationStatus** | **String** |  |  |
+|**ageVerified** | **Boolean** |  |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
 |**bio** | **String** |  |  |
@@ -38,6 +40,7 @@
 |**hasPendingEmail** | **Boolean** |  |  |
 |**homeLocation** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**id** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
+|**isAdult** | **Boolean** |  |  |
 |**isBoopingEnabled** | **Boolean** |  |  [optional] |
 |**isFriend** | **Boolean** |  |  |
 |**lastActivity** | **OffsetDateTime** |  |  [optional] |

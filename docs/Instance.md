@@ -9,6 +9,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**active** | **Boolean** |  |  |
+|**ageGate** | **String** |  |  [optional] |
 |**canRequestInvite** | **Boolean** |  |  |
 |**capacity** | **Integer** |  |  |
 |**clientNumber** | **String** | Always returns \&quot;unknown\&quot;. |  |
@@ -25,7 +26,7 @@
 |**permanent** | **Boolean** |  |  |
 |**photonRegion** | **Region** |  |  |
 |**platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  |  |
-|**playerPersistenceEnabled** | **String** |  |  |
+|**playerPersistenceEnabled** | **Boolean** |  |  |
 |**region** | **InstanceRegion** |  |  |
 |**secureName** | **String** |  |  |
 |**shortName** | **String** |  |  [optional] |
