@@ -58,9 +58,9 @@ AuthenticationApi authApi = new AuthenticationApi(defaultClient);
 // Step 2. We begin with creating a Configuration
 // This contains the username and password for authentication, as well as a user agent.
 HttpBasicAuth authHeader = (HttpBasicAuth) defaultClient.getAuthentication("authHeader");
-		authHeader.setUsername("username");
-		authHeader.setPassword("password");
-		defaultClient.setUserAgent("ExampleProgram/0.0.1 my@email.com");
+authHeader.setUsername("username");
+authHeader.setPassword("password");
+defaultClient.setUserAgent("ExampleProgram/0.0.1 my@email.com");
 
 
 // Step 3. Call getCurrentUser on Authentication API.
