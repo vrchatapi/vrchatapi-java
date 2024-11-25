@@ -23,7 +23,12 @@
 		<dependency>
 			<groupId>com.github.vrchatapi</groupId>
 			<artifactId>vrchatapi-java</artifactId>
-			<version>1.0.1-globalcookie3</version>
+			<version>LATEST</version>
+		</dependency>
+		<dependency> <!-- needed for cookie retrieval -->
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>4.10.0</version>
 		</dependency>
 	</dependencies>
 </project>
