@@ -12,7 +12,7 @@
 |**accountDeletionDate** | **LocalDate** |  |  [optional] |
 |**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   |  [optional] |
 |**activeFriends** | **List&lt;String&gt;** |   |  [optional] |
-|**ageVerificationStatus** | **String** |  |  |
+|**ageVerificationStatus** | **AgeVerificationStatus** |  |  |
 |**ageVerified** | **Boolean** |  |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |

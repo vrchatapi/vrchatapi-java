@@ -9,6 +9,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getFavorite**](FavoritesApi.md#getFavorite) | **GET** /favorites/{favoriteId} | Show Favorite |
 | [**getFavoriteGroup**](FavoritesApi.md#getFavoriteGroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group |
 | [**getFavoriteGroups**](FavoritesApi.md#getFavoriteGroups) | **GET** /favorite/groups | List Favorite Groups |
+| [**getFavoriteLimits**](FavoritesApi.md#getFavoriteLimits) | **GET** /auth/user/favoritelimits | Get Favorite Limits |
 | [**getFavorites**](FavoritesApi.md#getFavorites) | **GET** /favorites | List Favorites |
 | [**removeFavorite**](FavoritesApi.md#removeFavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite |
 | [**updateFavoriteGroup**](FavoritesApi.md#updateFavoriteGroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group |
@@ -374,6 +375,72 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of FavoriteGroup objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getFavoriteLimits"></a>
+# **getFavoriteLimits**
+> FavoriteLimits getFavoriteLimits()
+
+Get Favorite Limits
+
+Return information about a specific Favorite.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FavoritesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FavoritesApi apiInstance = new FavoritesApi(defaultClient);
+    try {
+      FavoriteLimits result = apiInstance.getFavoriteLimits();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FavoritesApi#getFavoriteLimits");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**FavoriteLimits**](FavoriteLimits.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single FavoriteLimits object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getFavorites"></a>

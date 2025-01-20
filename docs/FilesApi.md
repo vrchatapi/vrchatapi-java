@@ -11,6 +11,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**downloadFileVersion**](FilesApi.md#downloadFileVersion) | **GET** /file/{fileId}/{versionId} | Download File Version |
 | [**finishFileDataUpload**](FilesApi.md#finishFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload |
 | [**getFile**](FilesApi.md#getFile) | **GET** /file/{fileId} | Show File |
+| [**getFileAnalysis**](FilesApi.md#getFileAnalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis |
+| [**getFileAnalysisSecurity**](FilesApi.md#getFileAnalysisSecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security |
+| [**getFileAnalysisStandard**](FilesApi.md#getFileAnalysisStandard) | **GET** /analysis/{fileId}/{versionId}/standard | Get File Version Analysis Standard |
 | [**getFileDataUploadStatus**](FilesApi.md#getFileDataUploadStatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status |
 | [**getFiles**](FilesApi.md#getFiles) | **GET** /files | List Files |
 | [**startFileDataUpload**](FilesApi.md#startFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload |
@@ -513,6 +516,222 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
+| **404** | Error response when trying to show information about a non-existent file. |  -  |
+
+<a name="getFileAnalysis"></a>
+# **getFileAnalysis**
+> FileAnalysis getFileAnalysis(fileId, versionId)
+
+Get File Version Analysis
+
+Get the performance analysis for the uploaded assets of an avatar
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    Integer versionId = 1; // Integer | Version ID of the asset.
+    try {
+      FileAnalysis result = apiInstance.getFileAnalysis(fileId, versionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#getFileAnalysis");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fileId** | **String**| Must be a valid file ID. | |
+| **versionId** | **Integer**| Version ID of the asset. | |
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single FileAnalysis object. |  -  |
+| **404** | Error response when trying to show information about a non-existent file. |  -  |
+
+<a name="getFileAnalysisSecurity"></a>
+# **getFileAnalysisSecurity**
+> FileAnalysis getFileAnalysisSecurity(fileId, versionId)
+
+Get File Version Analysis Security
+
+Get the security performance analysis for the uploaded assets of an avatar
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    Integer versionId = 1; // Integer | Version ID of the asset.
+    try {
+      FileAnalysis result = apiInstance.getFileAnalysisSecurity(fileId, versionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#getFileAnalysisSecurity");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fileId** | **String**| Must be a valid file ID. | |
+| **versionId** | **Integer**| Version ID of the asset. | |
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single FileAnalysis object. |  -  |
+| **404** | Error response when trying to show information about a non-existent file. |  -  |
+
+<a name="getFileAnalysisStandard"></a>
+# **getFileAnalysisStandard**
+> FileAnalysis getFileAnalysisStandard(fileId, versionId)
+
+Get File Version Analysis Standard
+
+Get the standard performance analysis for the uploaded assets of an avatar
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    Integer versionId = 1; // Integer | Version ID of the asset.
+    try {
+      FileAnalysis result = apiInstance.getFileAnalysisStandard(fileId, versionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#getFileAnalysisStandard");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fileId** | **String**| Must be a valid file ID. | |
+| **versionId** | **Integer**| Version ID of the asset. | |
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single FileAnalysis object. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
 <a name="getFileDataUploadStatus"></a>

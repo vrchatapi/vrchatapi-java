@@ -491,7 +491,7 @@ public class Example {
 
 Create Group Announcement
 
-Creates an Announcement for a Group.
+Creates an Announcement for a Group. Warning: This will also remove all announcements. To make proper announcements, use the posts endpoint instead
 
 ### Example
 ```java
@@ -1433,7 +1433,7 @@ public class Example {
 
 <a name="getGroupAuditLogs"></a>
 # **getGroupAuditLogs**
-> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate)
+> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
 
 Get Group Audit Logs
 
@@ -1466,8 +1466,11 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | The start date of the search range.
     OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | The end date of the search range.
+    String actorIds = "usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111"; // String | The comma-separated actor ids to search for.
+    String eventTypes = "group.member.remove,group.instance.kick"; // String | The comma-separated event types to search for.
+    String targetIds = "usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111"; // String | The comma-separated target ids to search for.
     try {
-      PaginatedGroupAuditLogEntryList result = apiInstance.getGroupAuditLogs(groupId, n, offset, startDate, endDate);
+      PaginatedGroupAuditLogEntryList result = apiInstance.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupAuditLogs");
@@ -1489,6 +1492,9 @@ public class Example {
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **startDate** | **OffsetDateTime**| The start date of the search range. | [optional] |
 | **endDate** | **OffsetDateTime**| The end date of the search range. | [optional] |
+| **actorIds** | **String**| The comma-separated actor ids to search for. | [optional] |
+| **eventTypes** | **String**| The comma-separated event types to search for. | [optional] |
+| **targetIds** | **String**| The comma-separated target ids to search for. | [optional] |
 
 ### Return type
 

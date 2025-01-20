@@ -19,6 +19,7 @@
 |**imageUrl** | **String** |  |  |
 |**name** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
+|**styles** | [**AvatarStyles**](AvatarStyles.md) |  |  |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackageUrl** | **String** |  |  |

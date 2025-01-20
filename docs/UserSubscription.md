@@ -24,6 +24,7 @@
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**licenseGroups** | **List&lt;String&gt;** |  |  |
 |**isGift** | **Boolean** |  |  |
+|**isBulkGift** | **Boolean** |  |  |
 
 
 

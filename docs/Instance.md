@@ -9,7 +9,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**active** | **Boolean** |  |  |
-|**ageGate** | **String** |  |  [optional] |
+|**ageGate** | **Boolean** |  |  [optional] |
 |**canRequestInvite** | **Boolean** |  |  |
 |**capacity** | **Integer** |  |  |
 |**clientNumber** | **String** | Always returns \&quot;unknown\&quot;. |  |

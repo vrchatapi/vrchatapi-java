@@ -7,6 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**ageVerificationSlotsAvailable** | **Boolean** |  |  [optional] |
+|**ageVerificationBetaCode** | **String** |  |  [optional] |
+|**ageVerificationBetaSlots** | **BigDecimal** |  |  [optional] |
 |**badges** | **List&lt;String&gt;** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
