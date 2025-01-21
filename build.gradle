@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'io.github.vrchatapi'
-version = '1.18.9'
+version = '1.19.0'
 
 buildscript {
     repositories {
