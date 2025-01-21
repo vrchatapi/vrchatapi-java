@@ -86,6 +86,7 @@ docs/GroupMemberLimitedUser.md
 docs/GroupMemberStatus.md
 docs/GroupMyMember.md
 docs/GroupPermission.md
+docs/GroupPermissions.md
 docs/GroupPost.md
 docs/GroupPostVisibility.md
 docs/GroupPrivacy.md
@@ -321,6 +322,7 @@ src/main/java/io/github/vrchatapi/model/GroupMemberLimitedUser.java
 src/main/java/io/github/vrchatapi/model/GroupMemberStatus.java
 src/main/java/io/github/vrchatapi/model/GroupMyMember.java
 src/main/java/io/github/vrchatapi/model/GroupPermission.java
+src/main/java/io/github/vrchatapi/model/GroupPermissions.java
 src/main/java/io/github/vrchatapi/model/GroupPost.java
 src/main/java/io/github/vrchatapi/model/GroupPostVisibility.java
 src/main/java/io/github/vrchatapi/model/GroupPrivacy.java
