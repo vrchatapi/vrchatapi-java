@@ -588,6 +588,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
+| **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
 <a name="getFileAnalysisSecurity"></a>
@@ -660,6 +661,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
+| **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
 <a name="getFileAnalysisStandard"></a>
@@ -732,6 +734,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
+| **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
 <a name="getFileDataUploadStatus"></a>

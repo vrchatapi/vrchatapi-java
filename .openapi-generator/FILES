@@ -3,6 +3,7 @@ api/openapi.yaml
 build.gradle
 build.sbt
 docs/APIConfig.md
+docs/APIConfigAccessLogsUrls.md
 docs/APIConfigAnnouncement.md
 docs/APIConfigAvatarPerfLimiter.md
 docs/APIConfigConstants.md
@@ -18,6 +19,11 @@ docs/APIConfigEvents.md
 docs/APIConfigMinSupportedClientBuildNumber.md
 docs/APIConfigOfflineAnalysis.md
 docs/APIConfigReportCategories.md
+docs/APIConfigReportOptions.md
+docs/APIConfigReportOptionsAvatar.md
+docs/APIConfigReportOptionsGroup.md
+docs/APIConfigReportOptionsUser.md
+docs/APIConfigReportOptionsWorld.md
 docs/APIConfigReportReasons.md
 docs/APIHealth.md
 docs/AccountDeletionLog.md
@@ -44,6 +50,7 @@ docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
+docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
 docs/DeploymentGroup.md
 docs/DeveloperType.md
@@ -244,6 +251,7 @@ src/main/java/io/github/vrchatapi/auth/Authentication.java
 src/main/java/io/github/vrchatapi/auth/HttpBasicAuth.java
 src/main/java/io/github/vrchatapi/auth/HttpBearerAuth.java
 src/main/java/io/github/vrchatapi/model/APIConfig.java
+src/main/java/io/github/vrchatapi/model/APIConfigAccessLogsUrls.java
 src/main/java/io/github/vrchatapi/model/APIConfigAnnouncement.java
 src/main/java/io/github/vrchatapi/model/APIConfigAvatarPerfLimiter.java
 src/main/java/io/github/vrchatapi/model/APIConfigConstants.java
@@ -259,6 +267,11 @@ src/main/java/io/github/vrchatapi/model/APIConfigEvents.java
 src/main/java/io/github/vrchatapi/model/APIConfigMinSupportedClientBuildNumber.java
 src/main/java/io/github/vrchatapi/model/APIConfigOfflineAnalysis.java
 src/main/java/io/github/vrchatapi/model/APIConfigReportCategories.java
+src/main/java/io/github/vrchatapi/model/APIConfigReportOptions.java
+src/main/java/io/github/vrchatapi/model/APIConfigReportOptionsAvatar.java
+src/main/java/io/github/vrchatapi/model/APIConfigReportOptionsGroup.java
+src/main/java/io/github/vrchatapi/model/APIConfigReportOptionsUser.java
+src/main/java/io/github/vrchatapi/model/APIConfigReportOptionsWorld.java
 src/main/java/io/github/vrchatapi/model/APIConfigReportReasons.java
 src/main/java/io/github/vrchatapi/model/APIHealth.java
 src/main/java/io/github/vrchatapi/model/AbstractOpenApiSchema.java
@@ -284,6 +297,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
+src/main/java/io/github/vrchatapi/model/CurrentUserPlatformHistoryInner.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeploymentGroup.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
