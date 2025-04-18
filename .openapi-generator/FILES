@@ -38,6 +38,7 @@ docs/AvatarsApi.md
 docs/Badge.md
 docs/Balance.md
 docs/BanGroupMemberRequest.md
+docs/ChangeUserTagsRequest.md
 docs/CreateAvatarRequest.md
 docs/CreateFileRequest.md
 docs/CreateFileVersionRequest.md
@@ -52,7 +53,6 @@ docs/CreateWorldRequest.md
 docs/CurrentUser.md
 docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
-docs/DeploymentGroup.md
 docs/DeveloperType.md
 docs/DynamicContentRow.md
 docs/EconomyApi.md
@@ -77,6 +77,7 @@ docs/FilesApi.md
 docs/FinishFileDataUploadRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
+docs/GetGroupPosts200Response.md
 docs/GetUserGroupInstances200Response.md
 docs/Group.md
 docs/GroupAccessType.md
@@ -152,6 +153,9 @@ docs/PlatformBuildInfo.md
 docs/PlayerModeration.md
 docs/PlayerModerationType.md
 docs/PlayermoderationApi.md
+docs/Print.md
+docs/PrintFiles.md
+docs/PrintsApi.md
 docs/Product.md
 docs/ProductListing.md
 docs/ProductListingType.md
@@ -166,6 +170,8 @@ docs/RequestInviteRequest.md
 docs/RespondGroupJoinRequest.md
 docs/Response.md
 docs/SentNotification.md
+docs/ServiceQueueStats.md
+docs/ServiceStatus.md
 docs/SortOption.md
 docs/Submission.md
 docs/Subscription.md
@@ -190,6 +196,7 @@ docs/UpdateGroupMemberRequest.md
 docs/UpdateGroupRequest.md
 docs/UpdateGroupRoleRequest.md
 docs/UpdateInviteMessageRequest.md
+docs/UpdateUserBadgeRequest.md
 docs/UpdateUserNoteRequest.md
 docs/UpdateUserRequest.md
 docs/UpdateWorldRequest.md
@@ -243,6 +250,7 @@ src/main/java/io/github/vrchatapi/api/JamsApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
 src/main/java/io/github/vrchatapi/api/PermissionsApi.java
 src/main/java/io/github/vrchatapi/api/PlayermoderationApi.java
+src/main/java/io/github/vrchatapi/api/PrintsApi.java
 src/main/java/io/github/vrchatapi/api/SystemApi.java
 src/main/java/io/github/vrchatapi/api/UsersApi.java
 src/main/java/io/github/vrchatapi/api/WorldsApi.java
@@ -285,6 +293,7 @@ src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
 src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/Balance.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
+src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileVersionRequest.java
@@ -299,7 +308,6 @@ src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPlatformHistoryInner.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
-src/main/java/io/github/vrchatapi/model/DeploymentGroup.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/Error.java
@@ -320,6 +328,7 @@ src/main/java/io/github/vrchatapi/model/FileVersion.java
 src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
+src/main/java/io/github/vrchatapi/model/GetGroupPosts200Response.java
 src/main/java/io/github/vrchatapi/model/GetUserGroupInstances200Response.java
 src/main/java/io/github/vrchatapi/model/Group.java
 src/main/java/io/github/vrchatapi/model/GroupAccessType.java
@@ -388,6 +397,8 @@ src/main/java/io/github/vrchatapi/model/Permission.java
 src/main/java/io/github/vrchatapi/model/PlatformBuildInfo.java
 src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
+src/main/java/io/github/vrchatapi/model/Print.java
+src/main/java/io/github/vrchatapi/model/PrintFiles.java
 src/main/java/io/github/vrchatapi/model/Product.java
 src/main/java/io/github/vrchatapi/model/ProductListing.java
 src/main/java/io/github/vrchatapi/model/ProductListingType.java
@@ -402,6 +413,8 @@ src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
+src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
+src/main/java/io/github/vrchatapi/model/ServiceStatus.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
 src/main/java/io/github/vrchatapi/model/Submission.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
@@ -425,6 +438,7 @@ src/main/java/io/github/vrchatapi/model/UpdateGroupMemberRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserNoteRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateWorldRequest.java

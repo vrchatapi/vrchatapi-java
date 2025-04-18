@@ -20,11 +20,9 @@
 |**announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements |  |
 |**analyticsSegmentNewUIPctOfUsers** | **Integer** | Unknown |  |
 |**analyticsSegmentNewUISalt** | **String** | Unknown |  |
-|**appName** | **String** | Game name |  |
 |**availableLanguageCodes** | **List&lt;String&gt;** | List of supported Languages |  |
 |**availableLanguages** | **List&lt;String&gt;** | List of supported Languages |  |
 |**avatarPerfLimiter** | [**APIConfigAvatarPerfLimiter**](APIConfigAvatarPerfLimiter.md) |  |  |
-|**buildVersionTag** | **String** | Build tag of the API server |  |
 |**chatboxLogBufferSeconds** | **Integer** | Unknown |  |
 |**clientApiKey** | **String** | apiKey to be used for all other requests |  |
 |**clientBPSCeiling** | **Integer** | Unknown |  |
@@ -49,7 +47,6 @@
 |**currentTOSVersion** | **Integer** | Current version number of the Terms of Service |  |
 |**defaultAvatar** | **String** |  |  |
 |**defaultStickerSet** | **String** |  |  |
-|**deploymentGroup** | **DeploymentGroup** |  |  |
 |**devLanguageCodes** | **List&lt;String&gt;** | Unknown |  [optional] |
 |**devSdkUrl** | **String** | Link to download the development SDK, use downloadUrls instead |  |
 |**devSdkVersion** | **String** | Version of the development SDK |  |
@@ -103,7 +100,6 @@
 |**sdkDiscordUrl** | **String** | Link to the official VRChat Discord |  |
 |**sdkNotAllowedToPublishMessage** | **String** | Used in the SDK to notify a user they aren&#39;t allowed to upload avatars/worlds yet |  |
 |**sdkUnityVersion** | **String** | Unity version supported by the SDK |  |
-|**serverName** | **String** | Server name of the API server currently responding |  |
 |**stringHostUrlList** | **List&lt;String&gt;** | A list of explicitly allowed origins that worlds can request strings from via the Udon&#39;s [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload). |  |
 |**supportEmail** | **String** | VRChat&#39;s support email |  |
 |**supportFormUrl** | **String** | VRChat&#39;s support form |  |
@@ -121,6 +117,7 @@
 |**whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets |  |
 |**playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version |  |
 |**playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format |  |
+|**publicKey** | **String** | Public key, hex encoded |  |
 |**websocketMaxFriendsRefreshDelay** | **Integer** | Unknown |  |
 |**websocketQuickReconnectTime** | **Integer** | Unknown |  |
 |**websocketReconnectMaxDelay** | **Integer** | Unknown |  |

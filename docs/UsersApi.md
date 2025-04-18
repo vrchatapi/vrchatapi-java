@@ -4,6 +4,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addTags**](UsersApi.md#addTags) | **POST** /users/{userId}/addTags | Add User Tags |
+| [**checkUserPersistenceExists**](UsersApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
+| [**deleteUserPersistence**](UsersApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID |
 | [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username |
 | [**getUserFeedback**](UsersApi.md#getUserFeedback) | **GET** /users/{userId}/feedback | Get User Feedback |
@@ -13,10 +16,229 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getUserNote**](UsersApi.md#getUserNote) | **GET** /userNotes/{userNoteId} | Get User Note |
 | [**getUserNotes**](UsersApi.md#getUserNotes) | **GET** /userNotes | Get User Notes |
 | [**getUserRepresentedGroup**](UsersApi.md#getUserRepresentedGroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group |
+| [**removeTags**](UsersApi.md#removeTags) | **POST** /users/{userId}/removeTags | Remove User Tags |
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
+| [**updateBadge**](UsersApi.md#updateBadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info |
 | [**updateUserNote**](UsersApi.md#updateUserNote) | **POST** /userNotes | Update User Note |
 
+
+<a name="addTags"></a>
+# **addTags**
+> CurrentUser addTags(userId, changeUserTagsRequest)
+
+Add User Tags
+
+Adds tags to the user&#39;s profile
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    ChangeUserTagsRequest changeUserTagsRequest = new ChangeUserTagsRequest(); // ChangeUserTagsRequest | 
+    try {
+      CurrentUser result = apiInstance.addTags(userId, changeUserTagsRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#addTags");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **changeUserTagsRequest** | [**ChangeUserTagsRequest**](ChangeUserTagsRequest.md)|  | |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single CurrentUser object. |  -  |
+| **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="checkUserPersistenceExists"></a>
+# **checkUserPersistenceExists**
+> checkUserPersistenceExists(userId, worldId)
+
+Check User Persistence Exists
+
+Checks whether the user has persistence data for a given world
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      apiInstance.checkUserPersistenceExists(userId, worldId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#checkUserPersistenceExists");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user has persistence data for the given world. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The user does not have persistence data for the given world. |  -  |
+
+<a name="deleteUserPersistence"></a>
+# **deleteUserPersistence**
+> deleteUserPersistence(userId, worldId)
+
+Delete User Persistence
+
+Deletes the user&#39;s persistence data for a given world
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      apiInstance.deleteUserPersistence(userId, worldId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#deleteUserPersistence");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user&#39;s persistence data for the given world is deleted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The user does not have persistence data for the given world. |  -  |
 
 <a name="getUser"></a>
 # **getUser**
@@ -657,6 +879,79 @@ public class Example {
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="removeTags"></a>
+# **removeTags**
+> CurrentUser removeTags(userId, changeUserTagsRequest)
+
+Remove User Tags
+
+Removes tags from the user&#39;s profile
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    ChangeUserTagsRequest changeUserTagsRequest = new ChangeUserTagsRequest(); // ChangeUserTagsRequest | 
+    try {
+      CurrentUser result = apiInstance.removeTags(userId, changeUserTagsRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#removeTags");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **changeUserTagsRequest** | [**ChangeUserTagsRequest**](ChangeUserTagsRequest.md)|  | |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single CurrentUser object. |  -  |
+| **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="searchUsers"></a>
 # **searchUsers**
 > List&lt;LimitedUser&gt; searchUsers(search, developerType, n, offset)
@@ -733,6 +1028,81 @@ public class Example {
 | **200** | Returns a list of LimitedUser objects. |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="updateBadge"></a>
+# **updateBadge**
+> updateBadge(userId, badgeId, updateUserBadgeRequest)
+
+Update User Badge
+
+Updates a user&#39;s badge
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String badgeId = "badgeId_example"; // String | Must be a valid badge ID.
+    UpdateUserBadgeRequest updateUserBadgeRequest = new UpdateUserBadgeRequest(); // UpdateUserBadgeRequest | 
+    try {
+      apiInstance.updateBadge(userId, badgeId, updateUserBadgeRequest);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#updateBadge");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **badgeId** | **String**| Must be a valid badge ID. | |
+| **updateUserBadgeRequest** | [**UpdateUserBadgeRequest**](UpdateUserBadgeRequest.md)|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user&#39;s badge is updated. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying get group instances of another user. |  -  |
+| **404** | The user does not have the badge. |  -  |
 
 <a name="updateUser"></a>
 # **updateUser**

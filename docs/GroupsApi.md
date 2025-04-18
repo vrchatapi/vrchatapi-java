@@ -31,7 +31,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getGroupMember**](GroupsApi.md#getGroupMember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member |
 | [**getGroupMembers**](GroupsApi.md#getGroupMembers) | **GET** /groups/{groupId}/members | List Group Members |
 | [**getGroupPermissions**](GroupsApi.md#getGroupPermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions |
-| [**getGroupPost**](GroupsApi.md#getGroupPost) | **GET** /groups/{groupId}/posts | Get posts from a Group |
+| [**getGroupPosts**](GroupsApi.md#getGroupPosts) | **GET** /groups/{groupId}/posts | Get posts from a Group |
 | [**getGroupRequests**](GroupsApi.md#getGroupRequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests |
 | [**getGroupRoles**](GroupsApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get Group Roles |
 | [**joinGroup**](GroupsApi.md#joinGroup) | **POST** /groups/{groupId}/join | Join Group |
@@ -2044,9 +2044,9 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupPost"></a>
-# **getGroupPost**
-> GroupPost getGroupPost(groupId, n, offset, publicOnly)
+<a name="getGroupPosts"></a>
+# **getGroupPosts**
+> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -2079,10 +2079,10 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean publicOnly = true; // Boolean | See public posts only.
     try {
-      GroupPost result = apiInstance.getGroupPost(groupId, n, offset, publicOnly);
+      GetGroupPosts200Response result = apiInstance.getGroupPosts(groupId, n, offset, publicOnly);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GroupsApi#getGroupPost");
+      System.err.println("Exception when calling GroupsApi#getGroupPosts");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2103,7 +2103,7 @@ public class Example {
 
 ### Return type
 
-[**GroupPost**](GroupPost.md)
+[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
 
 ### Authorization
 
@@ -2117,7 +2117,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a GroupPost object. |  -  |
+| **200** | Returns a GroupPost Array. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getGroupRequests"></a>

@@ -6,8 +6,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**createAvatar**](AvatarsApi.md#createAvatar) | **POST** /avatars | Create Avatar |
 | [**deleteAvatar**](AvatarsApi.md#deleteAvatar) | **DELETE** /avatars/{avatarId} | Delete Avatar |
+| [**deleteImpostor**](AvatarsApi.md#deleteImpostor) | **DELETE** /avatars/{avatarId}/impostor | Delete generated Impostor |
+| [**enqueueImpostor**](AvatarsApi.md#enqueueImpostor) | **POST** /avatars/{avatarId}/impostor/enqueue | Enqueue Impostor generation |
 | [**getAvatar**](AvatarsApi.md#getAvatar) | **GET** /avatars/{avatarId} | Get Avatar |
 | [**getFavoritedAvatars**](AvatarsApi.md#getFavoritedAvatars) | **GET** /avatars/favorites | List Favorited Avatars |
+| [**getImpostorQueueStats**](AvatarsApi.md#getImpostorQueueStats) | **GET** /avatars/impostor/queue/stats | Get Impostor Queue Stats |
+| [**getLicensedAvatars**](AvatarsApi.md#getLicensedAvatars) | **GET** /avatars/licensed | List Licensed Avatars |
 | [**getOwnAvatar**](AvatarsApi.md#getOwnAvatar) | **GET** /users/{userId}/avatar | Get Own Avatar |
 | [**searchAvatars**](AvatarsApi.md#searchAvatars) | **GET** /avatars | Search Avatars |
 | [**selectAvatar**](AvatarsApi.md#selectAvatar) | **PUT** /avatars/{avatarId}/select | Select Avatar |
@@ -153,6 +157,147 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single Avatar object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent avatar. |  -  |
+
+<a name="deleteImpostor"></a>
+# **deleteImpostor**
+> deleteImpostor(avatarId)
+
+Delete generated Impostor
+
+Delete generated Impostor for that avatar.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    String avatarId = "avatarId_example"; // String | Must be a valid avatar ID.
+    try {
+      apiInstance.deleteImpostor(avatarId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#deleteImpostor");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **avatarId** | **String**| Must be a valid avatar ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Impostors generated for that avatar are deleted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent avatar. |  -  |
+
+<a name="enqueueImpostor"></a>
+# **enqueueImpostor**
+> ServiceStatus enqueueImpostor(avatarId)
+
+Enqueue Impostor generation
+
+Enqueue Impostor generation for that avatar.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    String avatarId = "avatarId_example"; // String | Must be a valid avatar ID.
+    try {
+      ServiceStatus result = apiInstance.enqueueImpostor(avatarId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#enqueueImpostor");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **avatarId** | **String**| Must be a valid avatar ID. | |
+
+### Return type
+
+[**ServiceStatus**](ServiceStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a Service Status. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
@@ -321,6 +466,144 @@ public class Example {
 | **200** | Returns a list of Avatar objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see favourited avatars of another user without sufficient admin permissions. |  -  |
+
+<a name="getImpostorQueueStats"></a>
+# **getImpostorQueueStats**
+> ServiceQueueStats getImpostorQueueStats()
+
+Get Impostor Queue Stats
+
+Gets service stats for queued impostor.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    try {
+      ServiceQueueStats result = apiInstance.getImpostorQueueStats();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#getImpostorQueueStats");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ServiceQueueStats**](ServiceQueueStats.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a Service Queue Stats. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getLicensedAvatars"></a>
+# **getLicensedAvatars**
+> List&lt;Avatar&gt; getLicensedAvatars(n, offset)
+
+List Licensed Avatars
+
+List licensed avatars.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<Avatar> result = apiInstance.getLicensedAvatars(n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#getLicensedAvatars");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;Avatar&gt;**](Avatar.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Avatar objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getOwnAvatar"></a>
 # **getOwnAvatar**

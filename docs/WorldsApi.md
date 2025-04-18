@@ -4,7 +4,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**checkUserPersistenceExists**](WorldsApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
 | [**createWorld**](WorldsApi.md#createWorld) | **POST** /worlds | Create World |
+| [**deleteUserPersistence**](WorldsApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**deleteWorld**](WorldsApi.md#deleteWorld) | **DELETE** /worlds/{worldId} | Delete World |
 | [**getActiveWorlds**](WorldsApi.md#getActiveWorlds) | **GET** /worlds/active | List Active Worlds |
 | [**getFavoritedWorlds**](WorldsApi.md#getFavoritedWorlds) | **GET** /worlds/favorites | List Favorited Worlds |
@@ -18,6 +20,78 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**unpublishWorld**](WorldsApi.md#unpublishWorld) | **DELETE** /worlds/{worldId}/publish | Unpublish World |
 | [**updateWorld**](WorldsApi.md#updateWorld) | **PUT** /worlds/{worldId} | Update World |
 
+
+<a name="checkUserPersistenceExists"></a>
+# **checkUserPersistenceExists**
+> checkUserPersistenceExists(userId, worldId)
+
+Check User Persistence Exists
+
+Checks whether the user has persistence data for a given world
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      apiInstance.checkUserPersistenceExists(userId, worldId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#checkUserPersistenceExists");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user has persistence data for the given world. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The user does not have persistence data for the given world. |  -  |
 
 <a name="createWorld"></a>
 # **createWorld**
@@ -82,6 +156,78 @@ No authorization required
 | **200** | Returns a single World object. |  -  |
 | **400** | Error response when trying create a world without having the neccesary Trust rank yet. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="deleteUserPersistence"></a>
+# **deleteUserPersistence**
+> deleteUserPersistence(userId, worldId)
+
+Delete User Persistence
+
+Deletes the user&#39;s persistence data for a given world
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      apiInstance.deleteUserPersistence(userId, worldId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#deleteUserPersistence");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user&#39;s persistence data for the given world is deleted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The user does not have persistence data for the given world. |  -  |
 
 <a name="deleteWorld"></a>
 # **deleteWorld**

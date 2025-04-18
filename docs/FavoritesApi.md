@@ -6,7 +6,6 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**addFavorite**](FavoritesApi.md#addFavorite) | **POST** /favorites | Add Favorite |
 | [**clearFavoriteGroup**](FavoritesApi.md#clearFavoriteGroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group |
-| [**getFavorite**](FavoritesApi.md#getFavorite) | **GET** /favorites/{favoriteId} | Show Favorite |
 | [**getFavoriteGroup**](FavoritesApi.md#getFavoriteGroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group |
 | [**getFavoriteGroups**](FavoritesApi.md#getFavoriteGroups) | **GET** /favorite/groups | List Favorite Groups |
 | [**getFavoriteLimits**](FavoritesApi.md#getFavoriteLimits) | **GET** /auth/user/favoritelimits | Get Favorite Limits |
@@ -158,77 +157,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success response after clearing a favorite group. |  -  |
-
-<a name="getFavorite"></a>
-# **getFavorite**
-> Favorite getFavorite(favoriteId)
-
-Show Favorite
-
-Return information about a specific Favorite.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.FavoritesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteId = "favoriteId_example"; // String | Must be a valid favorite ID.
-    try {
-      Favorite result = apiInstance.getFavorite(favoriteId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling FavoritesApi#getFavorite");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **favoriteId** | **String**| Must be a valid favorite ID. | |
-
-### Return type
-
-[**Favorite**](Favorite.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single Favorite object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to show information about a non-existent favorite. |  -  |
 
 <a name="getFavoriteGroup"></a>
 # **getFavoriteGroup**

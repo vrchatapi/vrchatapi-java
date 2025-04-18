@@ -11,6 +11,8 @@ Reasons available for reporting users
 |**billing** | [**ReportReason**](ReportReason.md) |  |  |
 |**botting** | [**ReportReason**](ReportReason.md) |  |  |
 |**cancellation** | [**ReportReason**](ReportReason.md) |  |  |
+|**copyright** | [**ReportReason**](ReportReason.md) |  |  [optional] |
+|**fraud** | [**ReportReason**](ReportReason.md) |  |  [optional] |
 |**gore** | [**ReportReason**](ReportReason.md) |  |  |
 |**hacking** | [**ReportReason**](ReportReason.md) |  |  |
 |**harassing** | [**ReportReason**](ReportReason.md) |  |  |
@@ -25,6 +27,7 @@ Reasons available for reporting users
 |**security** | [**ReportReason**](ReportReason.md) |  |  |
 |**service** | [**ReportReason**](ReportReason.md) |  |  |
 |**sexual** | [**ReportReason**](ReportReason.md) |  |  |
+|**technical** | [**ReportReason**](ReportReason.md) |  |  [optional] |
 |**threatening** | [**ReportReason**](ReportReason.md) |  |  |
 |**visuals** | [**ReportReason**](ReportReason.md) |  |  |
 
