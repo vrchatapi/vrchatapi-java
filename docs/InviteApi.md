@@ -8,9 +8,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getInviteMessages**](InviteApi.md#getInviteMessages) | **GET** /message/{userId}/{messageType} | List Invite Messages |
 | [**inviteMyselfTo**](InviteApi.md#inviteMyselfTo) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance |
 | [**inviteUser**](InviteApi.md#inviteUser) | **POST** /invite/{userId} | Invite User |
+| [**inviteUserWithPhoto**](InviteApi.md#inviteUserWithPhoto) | **POST** /invite/{userId}/photo | Invite User with photo |
 | [**requestInvite**](InviteApi.md#requestInvite) | **POST** /requestInvite/{userId} | Request Invite |
+| [**requestInviteWithPhoto**](InviteApi.md#requestInviteWithPhoto) | **POST** /requestInvite/{userId}/photo | Request Invite with photo |
 | [**resetInviteMessage**](InviteApi.md#resetInviteMessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message |
 | [**respondInvite**](InviteApi.md#respondInvite) | **POST** /invite/{notificationId}/response | Respond Invite |
+| [**respondInviteWithPhoto**](InviteApi.md#respondInviteWithPhoto) | **POST** /invite/{notificationId}/response/photo | Respond Invite with photo |
 | [**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/{messageType}/{slot} | Update Invite Message |
 
 
@@ -308,6 +311,80 @@ public class Example {
 | **200** | Returns a single SentNotifcation object. |  -  |
 | **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
 
+<a name="inviteUserWithPhoto"></a>
+# **inviteUserWithPhoto**
+> SentNotification inviteUserWithPhoto(userId, image, data)
+
+Invite User with photo
+
+Sends an photo invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InviteApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
+    InviteRequest data = new InviteRequest(); // InviteRequest | 
+    try {
+      SentNotification result = apiInstance.inviteUserWithPhoto(userId, image, data);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InviteApi#inviteUserWithPhoto");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **image** | **File**| The binary blob of the png file. | |
+| **data** | [**InviteRequest**](InviteRequest.md)|  | |
+
+### Return type
+
+[**SentNotification**](SentNotification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single SentNotifcation object. |  -  |
+| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+
 <a name="requestInvite"></a>
 # **requestInvite**
 > Notification requestInvite(userId, requestInviteRequest)
@@ -372,6 +449,80 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Notifcation object. |  -  |
+| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+
+<a name="requestInviteWithPhoto"></a>
+# **requestInviteWithPhoto**
+> Notification requestInviteWithPhoto(userId, image, data)
+
+Request Invite with photo
+
+Requests with photo an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InviteApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
+    RequestInviteRequest data = new RequestInviteRequest(); // RequestInviteRequest | 
+    try {
+      Notification result = apiInstance.requestInviteWithPhoto(userId, image, data);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InviteApi#requestInviteWithPhoto");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **image** | **File**| The binary blob of the png file. | |
+| **data** | [**RequestInviteRequest**](RequestInviteRequest.md)|  | |
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -463,7 +614,7 @@ public class Example {
 
 Respond Invite
 
-Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
+Respond to an invite or invite request without accepting it. &#x60;:notificationId&#x60; is the ID of the requesting notification.  In case the notification being replied to is an invite, the &#x60;responseSlot&#x60; refers to a response message from the the &#x60;message&#x60; collection. In case the notification is an invite request, it will refer to one from the &#x60;requestResponse&#x60; collection instead.
 
 ### Example
 ```java
@@ -521,6 +672,80 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Notifcation object. |  -  |
+| **400** | Error response when trying to respond to an invite and something went wrong. |  -  |
+
+<a name="respondInviteWithPhoto"></a>
+# **respondInviteWithPhoto**
+> Notification respondInviteWithPhoto(notificationId, image, data)
+
+Respond Invite with photo
+
+Respond with photo to an invite or invite request without accepting it. &#x60;:notificationId&#x60; is the ID of the requesting notification.  In case the notification being replied to is an invite, the &#x60;responseSlot&#x60; refers to a response message from the the &#x60;message&#x60; collection. In case the notification is an invite request, it will refer to one from the &#x60;requestResponse&#x60; collection instead.&#39;
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InviteApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InviteApi apiInstance = new InviteApi(defaultClient);
+    String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
+    InviteResponse data = new InviteResponse(); // InviteResponse | 
+    try {
+      Notification result = apiInstance.respondInviteWithPhoto(notificationId, image, data);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InviteApi#respondInviteWithPhoto");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **notificationId** | **String**| Must be a valid notification ID. | |
+| **image** | **File**| The binary blob of the png file. | |
+| **data** | [**InviteResponse**](InviteResponse.md)|  | |
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

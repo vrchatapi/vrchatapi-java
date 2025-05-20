@@ -14,6 +14,7 @@
 |**description** | **String** |  |  |
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
+|**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**favorites** | **Integer** |  |  |
 |**favoriteGroup** | **String** |  |  |
 |**favoriteId** | **String** |  |  |

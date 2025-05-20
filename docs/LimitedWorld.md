@@ -13,6 +13,7 @@
 |**capacity** | **Integer** |  |  |
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
+|**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**favorites** | **Integer** |  |  |
 |**visits** | **Integer** |  |  [optional] |
 |**heat** | **Integer** |  |  |
@@ -26,6 +27,7 @@
 |**previewYoutubeId** | **String** |  |  [optional] |
 |**publicationDate** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
+|**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |   |  |

@@ -233,7 +233,7 @@ public class Example {
 
 <a name="getFavoriteGroups"></a>
 # **getFavoriteGroups**
-> List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, ownerId)
+> List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, userId, ownerId)
 
 List Favorite Groups
 
@@ -263,9 +263,10 @@ public class Example {
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    String userId = "userId_example"; // String | Target user to see information on, admin-only.
     String ownerId = "ownerId_example"; // String | The owner of whoms favorite groups to return. Must be a UserID.
     try {
-      List<FavoriteGroup> result = apiInstance.getFavoriteGroups(n, offset, ownerId);
+      List<FavoriteGroup> result = apiInstance.getFavoriteGroups(n, offset, userId, ownerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#getFavoriteGroups");
@@ -284,6 +285,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **userId** | **String**| Target user to see information on, admin-only. | [optional] |
 | **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional] |
 
 ### Return type

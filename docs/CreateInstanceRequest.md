@@ -18,6 +18,10 @@
 |**canRequestInvite** | **Boolean** | Only applies to invite type instances to make them invite+ |  [optional] |
 |**hardClose** | **Boolean** | Currently unused, but will eventually be a flag to set if the closing of the instance should kick people. |  [optional] |
 |**inviteOnly** | **Boolean** |  |  [optional] |
+|**ageGate** | **Boolean** |  |  [optional] |
+|**instancePersistenceEnabled** | **Boolean** |  |  [optional] |
+|**displayName** | **String** |  |  [optional] |
+|**contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 
 
 

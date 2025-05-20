@@ -4,15 +4,90 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**cancelPending2FA**](AuthenticationApi.md#cancelPending2FA) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes |
 | [**checkUserExists**](AuthenticationApi.md#checkUserExists) | **GET** /auth/exists | Check User Exists |
+| [**confirmEmail**](AuthenticationApi.md#confirmEmail) | **GET** /auth/confirmEmail | Confirm Email |
 | [**deleteUser**](AuthenticationApi.md#deleteUser) | **PUT** /users/{userId}/delete | Delete User |
+| [**disable2FA**](AuthenticationApi.md#disable2FA) | **DELETE** /auth/twofactorauth | Disable 2FA |
+| [**enable2FA**](AuthenticationApi.md#enable2FA) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes |
 | [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
+| [**getRecoveryCodes**](AuthenticationApi.md#getRecoveryCodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes |
 | [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout |
+| [**registerUserAccount**](AuthenticationApi.md#registerUserAccount) | **POST** /auth/register | Register User Account |
+| [**resendEmailConfirmation**](AuthenticationApi.md#resendEmailConfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation |
 | [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code |
 | [**verify2FAEmailCode**](AuthenticationApi.md#verify2FAEmailCode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code |
 | [**verifyAuthToken**](AuthenticationApi.md#verifyAuthToken) | **GET** /auth | Verify Auth Token |
+| [**verifyLoginPlace**](AuthenticationApi.md#verifyLoginPlace) | **GET** /auth/verifyLoginPlace | Verify Login Place |
+| [**verifyPending2FA**](AuthenticationApi.md#verifyPending2FA) | **POST** /auth/twofactorauth/totp/pending/verify | Verify Pending 2FA code |
 | [**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code |
 
+
+<a name="cancelPending2FA"></a>
+# **cancelPending2FA**
+> Disable2FAResult cancelPending2FA()
+
+Cancel pending enabling of time-based 2FA codes
+
+Cancels the sequence for enabling time-based 2FA.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      Disable2FAResult result = apiInstance.cancelPending2FA();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#cancelPending2FA");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Disable2FAResult**](Disable2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="checkUserExists"></a>
 # **checkUserExists**
@@ -83,6 +158,69 @@ No authorization required
 | **200** | Returns a response if a user exists or not. |  -  |
 | **400** | Error response when missing at least 1 of the required parameters. |  -  |
 
+<a name="confirmEmail"></a>
+# **confirmEmail**
+> confirmEmail(id, verifyEmail)
+
+Confirm Email
+
+Confirms the email address for a user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    String id = "usr_00000000-0000-0000-0000-000000000000"; // String | Target user for which to verify email.
+    String verifyEmail = "eml_00000000-0000-0000-0000-000000000000"; // String | Token to verify email.
+    try {
+      apiInstance.confirmEmail(id, verifyEmail);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#confirmEmail");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| Target user for which to verify email. | |
+| **verifyEmail** | **String**| Token to verify email. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **302** | OK |  -  |
+
 <a name="deleteUser"></a>
 # **deleteUser**
 > CurrentUser deleteUser(userId)
@@ -137,6 +275,138 @@ public class Example {
 ### Return type
 
 [**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="disable2FA"></a>
+# **disable2FA**
+> Disable2FAResult disable2FA()
+
+Disable 2FA
+
+Disables 2FA for the currently logged in account
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      Disable2FAResult result = apiInstance.disable2FA();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#disable2FA");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Disable2FAResult**](Disable2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="enable2FA"></a>
+# **enable2FA**
+> Pending2FAResult enable2FA()
+
+Enable time-based 2FA codes
+
+Begins the sequence for enabling time-based 2FA.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      Pending2FAResult result = apiInstance.enable2FA();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#enable2FA");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Pending2FAResult**](Pending2FAResult.md)
 
 ### Authorization
 
@@ -230,6 +500,72 @@ This endpoint does not need any parameter.
 | **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="getRecoveryCodes"></a>
+# **getRecoveryCodes**
+> TwoFactorRecoveryCodes getRecoveryCodes()
+
+Get 2FA Recovery codes
+
+Gets the OTP (One Time Password) recovery codes for accounts with 2FA-protection enabled.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      TwoFactorRecoveryCodes result = apiInstance.getRecoveryCodes();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getRecoveryCodes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**TwoFactorRecoveryCodes**](TwoFactorRecoveryCodes.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the two factor recovery codes |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="logout"></a>
 # **logout**
 > Success logout()
@@ -294,6 +630,135 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  * Set-Cookie - Clears the &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - Clears the &#x60;age&#x60; cookie. <br>  * \0\0Set-Cookie - Clears the &#x60;tos&#x60; cookie. <br>  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="registerUserAccount"></a>
+# **registerUserAccount**
+> CurrentUser registerUserAccount(registerUserAccountRequest)
+
+Register User Account
+
+~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    RegisterUserAccountRequest registerUserAccountRequest = new RegisterUserAccountRequest(); // RegisterUserAccountRequest | 
+    try {
+      CurrentUser result = apiInstance.registerUserAccount(registerUserAccountRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#registerUserAccount");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **registerUserAccountRequest** | [**RegisterUserAccountRequest**](RegisterUserAccountRequest.md)|  | |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="resendEmailConfirmation"></a>
+# **resendEmailConfirmation**
+> Success resendEmailConfirmation()
+
+Resend Email Confirmation
+
+Requests a resend of pending email address confirmation email
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      Success result = apiInstance.resendEmailConfirmation();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#resendEmailConfirmation");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verify2FA"></a>
@@ -500,6 +965,139 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns wether a provided auth token is valid or not. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="verifyLoginPlace"></a>
+# **verifyLoginPlace**
+> verifyLoginPlace(token, userId)
+
+Verify Login Place
+
+Verifies a login attempt for a user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    String token = "token_example"; // String | Token to verify login attempt.
+    String userId = "userId_example"; // String | Filter by UserID.
+    try {
+      apiInstance.verifyLoginPlace(token, userId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#verifyLoginPlace");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **token** | **String**| Token to verify login attempt. | |
+| **userId** | **String**| Filter by UserID. | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **302** | OK |  -  |
+
+<a name="verifyPending2FA"></a>
+# **verifyPending2FA**
+> Verify2FAResult verifyPending2FA(twoFactorAuthCode)
+
+Verify Pending 2FA code
+
+Finishes sequence for enabling time-based 2FA.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    TwoFactorAuthCode twoFactorAuthCode = new TwoFactorAuthCode(); // TwoFactorAuthCode | 
+    try {
+      Verify2FAResult result = apiInstance.verifyPending2FA(twoFactorAuthCode);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#verifyPending2FA");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | |
+
+### Return type
+
+[**Verify2FAResult**](Verify2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verifyRecoveryCode"></a>

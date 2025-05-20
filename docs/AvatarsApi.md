@@ -87,6 +87,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single Avatar object. |  -  |
+| **400** | Error response due to missing permissions. |  -  |
 | **401** | Error response when set featured to true without being an admin. |  -  |
 
 <a name="deleteAvatar"></a>

@@ -32,6 +32,7 @@ docs/AddGroupGalleryImageRequest.md
 docs/AgeVerificationStatus.md
 docs/AuthenticationApi.md
 docs/Avatar.md
+docs/AvatarPublishedListingsInner.md
 docs/AvatarStyles.md
 docs/AvatarUnityPackageUrlObject.md
 docs/AvatarsApi.md
@@ -54,6 +55,7 @@ docs/CurrentUser.md
 docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
 docs/DeveloperType.md
+docs/Disable2FAResult.md
 docs/DynamicContentRow.md
 docs/EconomyApi.md
 docs/Error.md
@@ -100,6 +102,8 @@ docs/GroupPostVisibility.md
 docs/GroupPrivacy.md
 docs/GroupRole.md
 docs/GroupRoleTemplate.md
+docs/GroupRoleTemplateValues.md
+docs/GroupRoleTemplateValuesRoles.md
 docs/GroupSearchSort.md
 docs/GroupUserVisibility.md
 docs/GroupsApi.md
@@ -109,6 +113,7 @@ docs/InfoPushDataArticle.md
 docs/InfoPushDataArticleContent.md
 docs/InfoPushDataClickable.md
 docs/Instance.md
+docs/InstanceContentSettings.md
 docs/InstancePlatforms.md
 docs/InstanceRegion.md
 docs/InstanceShortNameResponse.md
@@ -145,6 +150,7 @@ docs/NotificationsApi.md
 docs/OrderOption.md
 docs/PaginatedGroupAuditLogEntryList.md
 docs/PastDisplayName.md
+docs/Pending2FAResult.md
 docs/PerformanceLimiterInfo.md
 docs/PerformanceRatings.md
 docs/Permission.md
@@ -162,6 +168,7 @@ docs/ProductListingType.md
 docs/ProductListingVariant.md
 docs/ProductType.md
 docs/Region.md
+docs/RegisterUserAccountRequest.md
 docs/ReleaseStatus.md
 docs/ReportCategory.md
 docs/ReportReason.md
@@ -188,6 +195,8 @@ docs/TransactionSteamInfo.md
 docs/TransactionSteamWalletInfo.md
 docs/TwoFactorAuthCode.md
 docs/TwoFactorEmailCode.md
+docs/TwoFactorRecoveryCodes.md
+docs/TwoFactorRecoveryCodesOtpInner.md
 docs/UnityPackage.md
 docs/UpdateAvatarRequest.md
 docs/UpdateFavoriteGroupRequest.md
@@ -288,6 +297,7 @@ src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/AgeVerificationStatus.java
 src/main/java/io/github/vrchatapi/model/Avatar.java
+src/main/java/io/github/vrchatapi/model/AvatarPublishedListingsInner.java
 src/main/java/io/github/vrchatapi/model/AvatarStyles.java
 src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
 src/main/java/io/github/vrchatapi/model/Badge.java
@@ -309,6 +319,7 @@ src/main/java/io/github/vrchatapi/model/CurrentUser.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPlatformHistoryInner.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
+src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java
@@ -351,6 +362,8 @@ src/main/java/io/github/vrchatapi/model/GroupPostVisibility.java
 src/main/java/io/github/vrchatapi/model/GroupPrivacy.java
 src/main/java/io/github/vrchatapi/model/GroupRole.java
 src/main/java/io/github/vrchatapi/model/GroupRoleTemplate.java
+src/main/java/io/github/vrchatapi/model/GroupRoleTemplateValues.java
+src/main/java/io/github/vrchatapi/model/GroupRoleTemplateValuesRoles.java
 src/main/java/io/github/vrchatapi/model/GroupSearchSort.java
 src/main/java/io/github/vrchatapi/model/GroupUserVisibility.java
 src/main/java/io/github/vrchatapi/model/InfoPush.java
@@ -359,6 +372,7 @@ src/main/java/io/github/vrchatapi/model/InfoPushDataArticle.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
 src/main/java/io/github/vrchatapi/model/Instance.java
+src/main/java/io/github/vrchatapi/model/InstanceContentSettings.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InstanceRegion.java
 src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
@@ -391,6 +405,7 @@ src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
 src/main/java/io/github/vrchatapi/model/PaginatedGroupAuditLogEntryList.java
 src/main/java/io/github/vrchatapi/model/PastDisplayName.java
+src/main/java/io/github/vrchatapi/model/Pending2FAResult.java
 src/main/java/io/github/vrchatapi/model/PerformanceLimiterInfo.java
 src/main/java/io/github/vrchatapi/model/PerformanceRatings.java
 src/main/java/io/github/vrchatapi/model/Permission.java
@@ -405,6 +420,7 @@ src/main/java/io/github/vrchatapi/model/ProductListingType.java
 src/main/java/io/github/vrchatapi/model/ProductListingVariant.java
 src/main/java/io/github/vrchatapi/model/ProductType.java
 src/main/java/io/github/vrchatapi/model/Region.java
+src/main/java/io/github/vrchatapi/model/RegisterUserAccountRequest.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/ReportCategory.java
 src/main/java/io/github/vrchatapi/model/ReportReason.java
@@ -430,6 +446,8 @@ src/main/java/io/github/vrchatapi/model/TransactionSteamInfo.java
 src/main/java/io/github/vrchatapi/model/TransactionSteamWalletInfo.java
 src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorEmailCode.java
+src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodes.java
+src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodesOtpInner.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java

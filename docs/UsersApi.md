@@ -1174,6 +1174,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single CurrentUser object. |  -  |
+| **400** | Error response when a user attempts to change a property without supplying their current password. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="updateUserNote"></a>

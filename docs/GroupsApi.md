@@ -33,6 +33,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getGroupPermissions**](GroupsApi.md#getGroupPermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions |
 | [**getGroupPosts**](GroupsApi.md#getGroupPosts) | **GET** /groups/{groupId}/posts | Get posts from a Group |
 | [**getGroupRequests**](GroupsApi.md#getGroupRequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests |
+| [**getGroupRoleTemplates**](GroupsApi.md#getGroupRoleTemplates) | **GET** /groups/roleTemplates | Get Group Role Templates |
 | [**getGroupRoles**](GroupsApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get Group Roles |
 | [**joinGroup**](GroupsApi.md#joinGroup) | **POST** /groups/{groupId}/join | Join Group |
 | [**kickGroupMember**](GroupsApi.md#kickGroupMember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member |
@@ -2197,6 +2198,72 @@ public class Example {
 | **400** | Bad request error response when responding to a group join request |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="getGroupRoleTemplates"></a>
+# **getGroupRoleTemplates**
+> Map&lt;String, GroupRoleTemplateValues&gt; getGroupRoleTemplates()
+
+Get Group Role Templates
+
+Obtain predefined templates for group roles
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    try {
+      Map<String, GroupRoleTemplateValues> result = apiInstance.getGroupRoleTemplates();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#getGroupRoleTemplates");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Map&lt;String, GroupRoleTemplateValues&gt;**](GroupRoleTemplateValues.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a dictionary of GroupRoleTemplate objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getGroupRoles"></a>
 # **getGroupRoles**

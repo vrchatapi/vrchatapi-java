@@ -17,6 +17,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getFileDataUploadStatus**](FilesApi.md#getFileDataUploadStatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status |
 | [**getFiles**](FilesApi.md#getFiles) | **GET** /files | List Files |
 | [**startFileDataUpload**](FilesApi.md#startFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload |
+| [**uploadGalleryImage**](FilesApi.md#uploadGalleryImage) | **POST** /gallery | Upload gallery image |
+| [**uploadIcon**](FilesApi.md#uploadIcon) | **POST** /icon | Upload icon |
+| [**uploadImage**](FilesApi.md#uploadImage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker |
 
 
 <a name="createFile"></a>
@@ -304,7 +307,7 @@ public class Example {
 
 <a name="downloadFileVersion"></a>
 # **downloadFileVersion**
-> downloadFileVersion(fileId, versionId)
+> File downloadFileVersion(fileId, versionId)
 
 Download File Version
 
@@ -335,7 +338,8 @@ public class Example {
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
-      apiInstance.downloadFileVersion(fileId, versionId);
+      File result = apiInstance.downloadFileVersion(fileId, versionId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#downloadFileVersion");
       System.err.println("Status code: " + e.getCode());
@@ -356,7 +360,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**File**](File.md)
 
 ### Authorization
 
@@ -365,7 +369,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: image/*, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -960,4 +964,221 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | See [https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html](AWS REST docs - PUT Object) |  -  |
 | **400** | Error response when trying to start an upload against a FileVersion that is already marked as  &#x60;complete&#x60;. |  -  |
+
+<a name="uploadGalleryImage"></a>
+# **uploadGalleryImage**
+> ModelFile uploadGalleryImage(_file)
+
+Upload gallery image
+
+Upload a gallery image
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    File _file = new File("/path/to/file"); // File | The binary blob of the png file.
+    try {
+      ModelFile result = apiInstance.uploadGalleryImage(_file);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#uploadGalleryImage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**| The binary blob of the png file. | |
+
+### Return type
+
+[**ModelFile**](ModelFile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single File object. |  -  |
+
+<a name="uploadIcon"></a>
+# **uploadIcon**
+> ModelFile uploadIcon(_file)
+
+Upload icon
+
+Upload an icon
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    File _file = new File("/path/to/file"); // File | The binary blob of the png file.
+    try {
+      ModelFile result = apiInstance.uploadIcon(_file);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#uploadIcon");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**| The binary blob of the png file. | |
+
+### Return type
+
+[**ModelFile**](ModelFile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single File object. |  -  |
+
+<a name="uploadImage"></a>
+# **uploadImage**
+> ModelFile uploadImage(_file, tag, frames, framesOverTime, animationStyle, maskTag)
+
+Upload gallery image, icon, emoji or sticker
+
+Upload an image, which can be an icon, gallery image, sticker or emoji
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    File _file = new File("/path/to/file"); // File | The binary blob of the png file.
+    String tag = "tag_example"; // String | Needs to be either icon, gallery, sticker, emoji, or emojianimated
+    Integer frames = 56; // Integer | Required for emojianimated. Total number of frames to be animated (2-64)
+    Integer framesOverTime = 56; // Integer | Required for emojianimated. Animation frames per second (1-64)
+    String animationStyle = "animationStyle_example"; // String | Animation style for sticker, required for emoji.
+    String maskTag = "maskTag_example"; // String | Mask of the sticker, optional for emoji.
+    try {
+      ModelFile result = apiInstance.uploadImage(_file, tag, frames, framesOverTime, animationStyle, maskTag);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#uploadImage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**| The binary blob of the png file. | |
+| **tag** | **String**| Needs to be either icon, gallery, sticker, emoji, or emojianimated | |
+| **frames** | **Integer**| Required for emojianimated. Total number of frames to be animated (2-64) | [optional] |
+| **framesOverTime** | **Integer**| Required for emojianimated. Animation frames per second (1-64) | [optional] |
+| **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] |
+| **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] |
+
+### Return type
+
+[**ModelFile**](ModelFile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single File object. |  -  |
 

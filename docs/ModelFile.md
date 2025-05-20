@@ -8,6 +8,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**animationStyle** | **String** |  |  [optional] |
+|**maskTag** | **String** |  |  [optional] |
 |**extension** | **String** |  |  |
 |**id** | **String** |  |  |
 |**mimeType** | **MIMEType** |  |  |

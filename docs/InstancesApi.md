@@ -17,7 +17,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Close Instance
 
-Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-moderate&#x60; permission.
+Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-manage&#x60; permission.
 
 ### Example
 ```java
