@@ -137,6 +137,7 @@ docs/LimitedUser.md
 docs/LimitedUserGroups.md
 docs/LimitedWorld.md
 docs/MIMEType.md
+docs/MiscellaneousApi.md
 docs/ModelFile.md
 docs/ModerateUserRequest.md
 docs/Notification.md
@@ -154,7 +155,6 @@ docs/Pending2FAResult.md
 docs/PerformanceLimiterInfo.md
 docs/PerformanceRatings.md
 docs/Permission.md
-docs/PermissionsApi.md
 docs/PlatformBuildInfo.md
 docs/PlayerModeration.md
 docs/PlayerModerationType.md
@@ -184,7 +184,6 @@ docs/Submission.md
 docs/Subscription.md
 docs/SubscriptionPeriod.md
 docs/Success.md
-docs/SystemApi.md
 docs/TiliaStatus.md
 docs/TiliaTOS.md
 docs/TokenBundle.md
@@ -202,6 +201,7 @@ docs/UpdateAvatarRequest.md
 docs/UpdateFavoriteGroupRequest.md
 docs/UpdateGroupGalleryRequest.md
 docs/UpdateGroupMemberRequest.md
+docs/UpdateGroupRepresentationRequest.md
 docs/UpdateGroupRequest.md
 docs/UpdateGroupRoleRequest.md
 docs/UpdateInviteMessageRequest.md
@@ -256,11 +256,10 @@ src/main/java/io/github/vrchatapi/api/GroupsApi.java
 src/main/java/io/github/vrchatapi/api/InstancesApi.java
 src/main/java/io/github/vrchatapi/api/InviteApi.java
 src/main/java/io/github/vrchatapi/api/JamsApi.java
+src/main/java/io/github/vrchatapi/api/MiscellaneousApi.java
 src/main/java/io/github/vrchatapi/api/NotificationsApi.java
-src/main/java/io/github/vrchatapi/api/PermissionsApi.java
 src/main/java/io/github/vrchatapi/api/PlayermoderationApi.java
 src/main/java/io/github/vrchatapi/api/PrintsApi.java
-src/main/java/io/github/vrchatapi/api/SystemApi.java
 src/main/java/io/github/vrchatapi/api/UsersApi.java
 src/main/java/io/github/vrchatapi/api/WorldsApi.java
 src/main/java/io/github/vrchatapi/auth/ApiKeyAuth.java
@@ -453,6 +452,7 @@ src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupGalleryRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupMemberRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateGroupRepresentationRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java

@@ -1,17 +1,85 @@
-# SystemApi
+# MiscellaneousApi
 
 All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getCSS**](SystemApi.md#getCSS) | **GET** /css/app.css | Download CSS |
-| [**getConfig**](SystemApi.md#getConfig) | **GET** /config | Fetch API Config |
-| [**getCurrentOnlineUsers**](SystemApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users |
-| [**getHealth**](SystemApi.md#getHealth) | **GET** /health | Check API Health |
-| [**getInfoPush**](SystemApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
-| [**getJavaScript**](SystemApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
-| [**getSystemTime**](SystemApi.md#getSystemTime) | **GET** /time | Current System Time |
+| [**getAssignedPermissions**](MiscellaneousApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions |
+| [**getCSS**](MiscellaneousApi.md#getCSS) | **GET** /css/app.css | Download CSS |
+| [**getConfig**](MiscellaneousApi.md#getConfig) | **GET** /config | Fetch API Config |
+| [**getCurrentOnlineUsers**](MiscellaneousApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users |
+| [**getHealth**](MiscellaneousApi.md#getHealth) | **GET** /health | Check API Health |
+| [**getInfoPush**](MiscellaneousApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
+| [**getJavaScript**](MiscellaneousApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
+| [**getPermission**](MiscellaneousApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission |
+| [**getSystemTime**](MiscellaneousApi.md#getSystemTime) | **GET** /time | Current System Time |
 
+
+<a name="getAssignedPermissions"></a>
+# **getAssignedPermissions**
+> List&lt;Permission&gt; getAssignedPermissions()
+
+Get Assigned Permissions
+
+Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    try {
+      List<Permission> result = apiInstance.getAssignedPermissions();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getAssignedPermissions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;Permission&gt;**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Permission objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getCSS"></a>
 # **getCSS**
@@ -28,21 +96,21 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
     String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
     try {
       String result = apiInstance.getCSS(variant, branch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getCSS");
+      System.err.println("Exception when calling MiscellaneousApi#getCSS");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -93,19 +161,19 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     try {
       APIConfig result = apiInstance.getConfig();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getConfig");
+      System.err.println("Exception when calling MiscellaneousApi#getConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -151,19 +219,19 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     try {
       Integer result = apiInstance.getCurrentOnlineUsers();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getCurrentOnlineUsers");
+      System.err.println("Exception when calling MiscellaneousApi#getCurrentOnlineUsers");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -209,19 +277,19 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     try {
       APIHealth result = apiInstance.getHealth();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getHealth");
+      System.err.println("Exception when calling MiscellaneousApi#getHealth");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -267,21 +335,21 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     String require = "require_example"; // String | Tags to include (comma-separated). All of the tags needs to be present.
     String include = "include_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     try {
       List<InfoPush> result = apiInstance.getInfoPush(require, include);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getInfoPush");
+      System.err.println("Exception when calling MiscellaneousApi#getInfoPush");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -331,21 +399,21 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     String variant = "public"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
     String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
     try {
       String result = apiInstance.getJavaScript(variant, branch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getJavaScript");
+      System.err.println("Exception when calling MiscellaneousApi#getJavaScript");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -381,6 +449,76 @@ No authorization required
 | **200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
 | **400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
+<a name="getPermission"></a>
+# **getPermission**
+> Permission getPermission(permissionId)
+
+Get Permission
+
+Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as &#x60;/auth/permissions&#x60;.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String permissionId = "permissionId_example"; // String | Must be a valid permission ID.
+    try {
+      Permission result = apiInstance.getPermission(permissionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getPermission");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **permissionId** | **String**| Must be a valid permission ID. | |
+
+### Return type
+
+[**Permission**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Permission object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="getSystemTime"></a>
 # **getSystemTime**
 > OffsetDateTime getSystemTime()
@@ -396,19 +534,19 @@ import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
 import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.SystemApi;
+import io.github.vrchatapi.api.MiscellaneousApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
-    SystemApi apiInstance = new SystemApi(defaultClient);
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     try {
       OffsetDateTime result = apiInstance.getSystemTime();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SystemApi#getSystemTime");
+      System.err.println("Exception when calling MiscellaneousApi#getSystemTime");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

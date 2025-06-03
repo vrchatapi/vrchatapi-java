@@ -46,6 +46,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateGroupGallery**](GroupsApi.md#updateGroupGallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery |
 | [**updateGroupMember**](GroupsApi.md#updateGroupMember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member |
 | [**updateGroupPost**](GroupsApi.md#updateGroupPost) | **PUT** /groups/{groupId}/posts/{notificationId} | Edits a Group post |
+| [**updateGroupRepresentation**](GroupsApi.md#updateGroupRepresentation) | **PUT** /groups/{groupId}/representation | Update Group Representation |
 | [**updateGroupRole**](GroupsApi.md#updateGroupRole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role |
 
 
@@ -3137,6 +3138,79 @@ public class Example {
 | **200** | Returns a GroupPost object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Response after deleting a group post. |  -  |
+
+<a name="updateGroupRepresentation"></a>
+# **updateGroupRepresentation**
+> Success updateGroupRepresentation(groupId, updateGroupRepresentationRequest)
+
+Update Group Representation
+
+Updates whether the user is representing the group.  When &#x60;isRepresenting&#x60; is set to &#x60;true&#x60;, this flag will be set to &#x60;false&#x60; for all other groups
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    UpdateGroupRepresentationRequest updateGroupRepresentationRequest = new UpdateGroupRepresentationRequest(); // UpdateGroupRepresentationRequest | 
+    try {
+      Success result = apiInstance.updateGroupRepresentation(groupId, updateGroupRepresentationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#updateGroupRepresentation");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **updateGroupRepresentationRequest** | [**UpdateGroupRepresentationRequest**](UpdateGroupRepresentationRequest.md)|  | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after updating group representation. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 
 <a name="updateGroupRole"></a>
 # **updateGroupRole**
