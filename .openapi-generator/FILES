@@ -32,6 +32,7 @@ docs/AddGroupGalleryImageRequest.md
 docs/AgeVerificationStatus.md
 docs/AuthenticationApi.md
 docs/Avatar.md
+docs/AvatarPerformance.md
 docs/AvatarPublishedListingsInner.md
 docs/AvatarStyles.md
 docs/AvatarUnityPackageUrlObject.md
@@ -133,8 +134,10 @@ docs/LicenseGroup.md
 docs/LicenseType.md
 docs/LimitedGroup.md
 docs/LimitedUnityPackage.md
-docs/LimitedUser.md
+docs/LimitedUserFriend.md
 docs/LimitedUserGroups.md
+docs/LimitedUserInstance.md
+docs/LimitedUserSearch.md
 docs/LimitedWorld.md
 docs/MIMEType.md
 docs/MiscellaneousApi.md
@@ -296,6 +299,7 @@ src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/AgeVerificationStatus.java
 src/main/java/io/github/vrchatapi/model/Avatar.java
+src/main/java/io/github/vrchatapi/model/AvatarPerformance.java
 src/main/java/io/github/vrchatapi/model/AvatarPublishedListingsInner.java
 src/main/java/io/github/vrchatapi/model/AvatarStyles.java
 src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
@@ -388,8 +392,10 @@ src/main/java/io/github/vrchatapi/model/LicenseGroup.java
 src/main/java/io/github/vrchatapi/model/LicenseType.java
 src/main/java/io/github/vrchatapi/model/LimitedGroup.java
 src/main/java/io/github/vrchatapi/model/LimitedUnityPackage.java
-src/main/java/io/github/vrchatapi/model/LimitedUser.java
+src/main/java/io/github/vrchatapi/model/LimitedUserFriend.java
 src/main/java/io/github/vrchatapi/model/LimitedUserGroups.java
+src/main/java/io/github/vrchatapi/model/LimitedUserInstance.java
+src/main/java/io/github/vrchatapi/model/LimitedUserSearch.java
 src/main/java/io/github/vrchatapi/model/LimitedWorld.java
 src/main/java/io/github/vrchatapi/model/MIMEType.java
 src/main/java/io/github/vrchatapi/model/ModelFile.java

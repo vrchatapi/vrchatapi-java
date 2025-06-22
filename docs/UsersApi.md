@@ -954,7 +954,7 @@ public class Example {
 
 <a name="searchUsers"></a>
 # **searchUsers**
-> List&lt;LimitedUser&gt; searchUsers(search, developerType, n, offset)
+> List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, n, offset)
 
 Search All Users
 
@@ -987,7 +987,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
-      List<LimitedUser> result = apiInstance.searchUsers(search, developerType, n, offset);
+      List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, n, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#searchUsers");
@@ -1011,7 +1011,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;LimitedUser&gt;**](LimitedUser.md)
+[**List&lt;LimitedUserSearch&gt;**](LimitedUserSearch.md)
 
 ### Authorization
 
@@ -1025,7 +1025,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedUser objects. |  -  |
+| **200** | Returns a list of LimitedUserSearch objects. |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 

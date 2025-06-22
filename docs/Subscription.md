@@ -14,6 +14,7 @@
 |**googleProductId** | **String** |  |  [optional] |
 |**googlePlanId** | **String** |  |  [optional] |
 |**picoSku** | **String** |  |  [optional] |
+|**appleProductId** | **String** |  |  [optional] |
 |**amount** | **BigDecimal** |  |  |
 |**description** | **String** |  |  |
 |**period** | **SubscriptionPeriod** |  |  |

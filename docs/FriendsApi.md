@@ -226,7 +226,7 @@ public class Example {
 
 <a name="getFriends"></a>
 # **getFriends**
-> List&lt;LimitedUser&gt; getFriends(offset, n, offline)
+> List&lt;LimitedUserFriend&gt; getFriends(offset, n, offline)
 
 List Friends
 
@@ -258,7 +258,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Boolean offline = true; // Boolean | Returns *only* offline users if true, returns only online and active users if false
     try {
-      List<LimitedUser> result = apiInstance.getFriends(offset, n, offline);
+      List<LimitedUserFriend> result = apiInstance.getFriends(offset, n, offline);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FriendsApi#getFriends");
@@ -281,7 +281,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;LimitedUser&gt;**](LimitedUser.md)
+[**List&lt;LimitedUserFriend&gt;**](LimitedUserFriend.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedUser objects. |  -  |
+| **200** | Returns a list of LimitedUserFriend objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="unfriend"></a>

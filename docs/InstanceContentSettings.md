@@ -13,6 +13,7 @@ Types of dynamic user content permitted in an instance
 |**pedestals** | **Boolean** |  |  [optional] |
 |**prints** | **Boolean** |  |  [optional] |
 |**stickers** | **Boolean** |  |  [optional] |
+|**props** | **Boolean** |  |  [optional] |
 
 
 
