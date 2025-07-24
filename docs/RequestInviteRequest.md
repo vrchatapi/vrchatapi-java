@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**messageSlot** | **Integer** |  |  [optional] |
+|**requestSlot** | **Integer** |  |  [optional] |
 
 
 

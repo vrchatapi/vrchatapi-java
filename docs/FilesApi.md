@@ -10,6 +10,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteFileVersion**](FilesApi.md#deleteFileVersion) | **DELETE** /file/{fileId}/{versionId} | Delete File Version |
 | [**downloadFileVersion**](FilesApi.md#downloadFileVersion) | **GET** /file/{fileId}/{versionId} | Download File Version |
 | [**finishFileDataUpload**](FilesApi.md#finishFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload |
+| [**getAdminAssetBundle**](FilesApi.md#getAdminAssetBundle) | **GET** /adminassetbundles/{adminAssetBundleId} | Get AdminAssetBundle |
 | [**getFile**](FilesApi.md#getFile) | **GET** /file/{fileId} | Show File |
 | [**getFileAnalysis**](FilesApi.md#getFileAnalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis |
 | [**getFileAnalysisSecurity**](FilesApi.md#getFileAnalysisSecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security |
@@ -451,6 +452,75 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
+
+<a name="getAdminAssetBundle"></a>
+# **getAdminAssetBundle**
+> AdminAssetBundle getAdminAssetBundle(adminAssetBundleId)
+
+Get AdminAssetBundle
+
+Returns an AdminAssetBundle
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    String adminAssetBundleId = "aab_e159e72c-ce54-4fbe-8c37-96af02f6d18d"; // String | Must be a valid admin asset bundle ID.
+    try {
+      AdminAssetBundle result = apiInstance.getAdminAssetBundle(adminAssetBundleId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#getAdminAssetBundle");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **adminAssetBundleId** | **String**| Must be a valid admin asset bundle ID. | |
+
+### Return type
+
+[**AdminAssetBundle**](AdminAssetBundle.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single AdminAssetBundle object. |  -  |
 
 <a name="getFile"></a>
 # **getFile**

@@ -411,7 +411,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    Boolean contentId = true; // Boolean | Filter for users' previously submitted feedback, e.g., a groupId, useeId, avatarId, etc.
+    Boolean contentId = true; // Boolean | Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
@@ -433,7 +433,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **contentId** | **Boolean**| Filter for users&#39; previously submitted feedback, e.g., a groupId, useeId, avatarId, etc. | [optional] |
+| **contentId** | **Boolean**| Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteImpostor**](AvatarsApi.md#deleteImpostor) | **DELETE** /avatars/{avatarId}/impostor | Delete generated Impostor |
 | [**enqueueImpostor**](AvatarsApi.md#enqueueImpostor) | **POST** /avatars/{avatarId}/impostor/enqueue | Enqueue Impostor generation |
 | [**getAvatar**](AvatarsApi.md#getAvatar) | **GET** /avatars/{avatarId} | Get Avatar |
+| [**getAvatarStyles**](AvatarsApi.md#getAvatarStyles) | **GET** /avatarStyles | Get Avatar Styles |
 | [**getFavoritedAvatars**](AvatarsApi.md#getFavoritedAvatars) | **GET** /avatars/favorites | List Favorited Avatars |
 | [**getImpostorQueueStats**](AvatarsApi.md#getImpostorQueueStats) | **GET** /avatars/impostor/queue/stats | Get Impostor Queue Stats |
 | [**getLicensedAvatars**](AvatarsApi.md#getLicensedAvatars) | **GET** /avatars/licensed | List Licensed Avatars |
@@ -372,6 +373,64 @@ public class Example {
 | **200** | Returns a single Avatar object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
+
+<a name="getAvatarStyles"></a>
+# **getAvatarStyles**
+> List&lt;AvatarStyle&gt; getAvatarStyles()
+
+Get Avatar Styles
+
+List avatar styles.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AvatarsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AvatarsApi apiInstance = new AvatarsApi(defaultClient);
+    try {
+      List<AvatarStyle> result = apiInstance.getAvatarStyles();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AvatarsApi#getAvatarStyles");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AvatarStyle&gt;**](AvatarStyle.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of AvatarStyle objects. |  -  |
 
 <a name="getFavoritedAvatars"></a>
 # **getFavoritedAvatars**

@@ -330,7 +330,7 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean hydrate = true; // Boolean | Populates some fields and changes types of others for certain objects.
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    Boolean active = true; // Boolean | Filter for users' listings.
+    Boolean active = true; // Boolean | Filter for users' listings and inventory bundles.
     try {
       List<ProductListing> result = apiInstance.getProductListings(userId, n, offset, hydrate, groupId, active);
       System.out.println(result);
@@ -354,7 +354,7 @@ public class Example {
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **hydrate** | **Boolean**| Populates some fields and changes types of others for certain objects. | [optional] |
 | **groupId** | **String**| Must be a valid group ID. | [optional] |
-| **active** | **Boolean**| Filter for users&#39; listings. | [optional] |
+| **active** | **Boolean**| Filter for users&#39; listings and inventory bundles. | [optional] |
 
 ### Return type
 

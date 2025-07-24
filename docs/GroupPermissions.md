@@ -53,5 +53,7 @@
 
 * `group_roles_manage` (value: `"group-roles-manage"`)
 
+* `group_calendar_manage` (value: `"group-calendar-manage"`)
+
 
 
