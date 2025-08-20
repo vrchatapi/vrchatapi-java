@@ -43,8 +43,12 @@ docs/AvatarsApi.md
 docs/Badge.md
 docs/Balance.md
 docs/BanGroupMemberRequest.md
+docs/CalendarApi.md
+docs/CalendarEvent.md
+docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
 docs/CreateAvatarRequest.md
+docs/CreateCalendarEventRequest.md
 docs/CreateFileRequest.md
 docs/CreateFileVersionRequest.md
 docs/CreateGroupAnnouncementRequest.md
@@ -81,6 +85,7 @@ docs/FileVersion.md
 docs/FileVersionUploadStatus.md
 docs/FilesApi.md
 docs/FinishFileDataUploadRequest.md
+docs/FollowCalendarEventRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
 docs/GetGroupPosts200Response.md
@@ -164,6 +169,7 @@ docs/NotificationDetailVoteToKick.md
 docs/NotificationType.md
 docs/NotificationsApi.md
 docs/OrderOption.md
+docs/PaginatedCalendarEventList.md
 docs/PaginatedGroupAuditLogEntryList.md
 docs/PastDisplayName.md
 docs/Pending2FAResult.md
@@ -216,6 +222,7 @@ docs/TwoFactorRecoveryCodes.md
 docs/TwoFactorRecoveryCodesOtpInner.md
 docs/UnityPackage.md
 docs/UpdateAvatarRequest.md
+docs/UpdateCalendarEventRequest.md
 docs/UpdateFavoriteGroupRequest.md
 docs/UpdateGroupGalleryRequest.md
 docs/UpdateGroupMemberRequest.md
@@ -266,6 +273,7 @@ src/main/java/io/github/vrchatapi/ServerVariable.java
 src/main/java/io/github/vrchatapi/StringUtil.java
 src/main/java/io/github/vrchatapi/api/AuthenticationApi.java
 src/main/java/io/github/vrchatapi/api/AvatarsApi.java
+src/main/java/io/github/vrchatapi/api/CalendarApi.java
 src/main/java/io/github/vrchatapi/api/EconomyApi.java
 src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java
@@ -326,8 +334,11 @@ src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
 src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/Balance.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
+src/main/java/io/github/vrchatapi/model/CalendarEvent.java
+src/main/java/io/github/vrchatapi/model/CalendarEventUserInterest.java
 src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarRequest.java
+src/main/java/io/github/vrchatapi/model/CreateCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileVersionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupAnnouncementRequest.java
@@ -361,6 +372,7 @@ src/main/java/io/github/vrchatapi/model/FileUploadURL.java
 src/main/java/io/github/vrchatapi/model/FileVersion.java
 src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
+src/main/java/io/github/vrchatapi/model/FollowCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
 src/main/java/io/github/vrchatapi/model/GetGroupPosts200Response.java
 src/main/java/io/github/vrchatapi/model/GetUserGroupInstances200Response.java
@@ -436,6 +448,7 @@ src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInviteResponse.
 src/main/java/io/github/vrchatapi/model/NotificationDetailVoteToKick.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
+src/main/java/io/github/vrchatapi/model/PaginatedCalendarEventList.java
 src/main/java/io/github/vrchatapi/model/PaginatedGroupAuditLogEntryList.java
 src/main/java/io/github/vrchatapi/model/PastDisplayName.java
 src/main/java/io/github/vrchatapi/model/Pending2FAResult.java
@@ -485,6 +498,7 @@ src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodes.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodesOtpInner.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupGalleryRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupMemberRequest.java
