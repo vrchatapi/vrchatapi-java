@@ -15,6 +15,7 @@
 |**cameraCount** | **Integer** |  |  [optional] |
 |**clothCount** | **Integer** |  |  |
 |**constraintCount** | **Integer** |  |  |
+|**constraintDepth** | **Integer** |  |  |
 |**contactCount** | **Integer** |  |  |
 |**customExpressions** | **Boolean** |  |  |
 |**customizeAnimationLayers** | **Boolean** |  |  |

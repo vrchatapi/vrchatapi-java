@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
+|**appleProductId** | **String** |  |  |
 |**steamItemId** | **String** |  |  |
 |**oculusSku** | **String** |  |  |
 |**googleProductId** | **String** |  |  [optional] |

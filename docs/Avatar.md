@@ -19,6 +19,7 @@
 |**highestPrice** | **Integer** |  |  [optional] |
 |**id** | **String** |  |  |
 |**imageUrl** | **String** |  |  |
+|**listingDate** | **String** |  |  |
 |**lock** | **Boolean** |  |  [optional] |
 |**lowestPrice** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  |

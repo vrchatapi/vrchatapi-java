@@ -8,23 +8,23 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**active** | **Boolean** |  |  |
-|**archived** | **Boolean** |  |  |
 |**buyerRefundable** | **Boolean** |  |  |
-|**created** | **OffsetDateTime** |  |  |
 |**description** | **String** |  |  |
 |**displayName** | **String** |  |  |
 |**duration** | **Integer** |  |  [optional] |
 |**durationType** | **String** |  |  [optional] |
-|**groupIcon** | **String** |  |  |
-|**groupId** | **String** |  |  |
-|**groupName** | **String** |  |  |
+|**groupIcon** | **String** |  |  [optional] |
+|**groupId** | **String** |  |  [optional] |
+|**groupName** | **String** |  |  [optional] |
+|**hasAvatar** | **Boolean** |  |  |
+|**hasUdon** | **Boolean** |  |  |
 |**hydratedProducts** | [**List&lt;Product&gt;**](Product.md) |  |  [optional] |
 |**id** | **String** |  |  |
-|**imageId** | **String** |  |  |
-|**instant** | **Boolean** |  |  |
+|**imageId** | **String** |  |  [optional] |
+|**imageUrl** | **String** |  |  [optional] |
 |**listingType** | **ProductListingType** |  |  |
-|**listingVariants** | [**List&lt;ProductListingVariant&gt;**](ProductListingVariant.md) |  |  |
-|**permanent** | **Boolean** |  |  |
+|**listingVariants** | [**List&lt;ProductListingVariant&gt;**](ProductListingVariant.md) |  |  [optional] |
+|**permanent** | **Boolean** |  |  [optional] |
 |**priceTokens** | **Integer** |  |  |
 |**productIds** | **List&lt;String&gt;** |  |  |
 |**productType** | **ProductType** |  |  |
@@ -36,8 +36,7 @@
 |**sellerId** | **String** |  |  |
 |**stackable** | **Boolean** |  |  |
 |**storeIds** | **List&lt;String&gt;** |  |  |
-|**tags** | **List&lt;String&gt;** |  |  |
-|**updated** | **OffsetDateTime** |  |  |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

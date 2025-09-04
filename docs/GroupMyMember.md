@@ -17,6 +17,7 @@
 |**managerNotes** | **String** |  |  [optional] |
 |**membershipStatus** | **String** |  |  [optional] |
 |**isSubscribedToAnnouncements** | **Boolean** |  |  [optional] |
+|**isSubscribedToEventAnnouncements** | **Boolean** |  |  [optional] |
 |**visibility** | **String** |  |  [optional] |
 |**isRepresenting** | **Boolean** |  |  [optional] |
 |**joinedAt** | **OffsetDateTime** |  |  [optional] |

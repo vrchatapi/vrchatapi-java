@@ -17,6 +17,7 @@
 |**membershipStatus** | **GroupMemberStatus** |  |  [optional] |
 |**visibility** | **String** |  |  [optional] |
 |**isSubscribedToAnnouncements** | **Boolean** |  |  [optional] |
+|**isSubscribedToEventAnnouncements** | **Boolean** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
 |**bannedAt** | **OffsetDateTime** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
 |**managerNotes** | **String** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. |  [optional] |
