@@ -20,7 +20,7 @@
 |**profilePicOverride** | **String** |  |  [optional] |
 |**status** | **String** | either a UserStatus or empty string |  [optional] |
 |**travelingToInstance** | **String** |  |  [optional] |
-|**travelingToWorld** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
+|**travelingToWorld** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \&quot;offline\&quot; if the user is not on your friends list. |  [optional] |
 |**userIcon** | **String** |  |  [optional] |
 |**world** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 

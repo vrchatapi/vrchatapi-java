@@ -55,5 +55,7 @@
 
 * `group_calendar_manage` (value: `"group-calendar-manage"`)
 
+* `group_instance_calendar_link` (value: `"group-instance-calendar-link"`)
+
 
 

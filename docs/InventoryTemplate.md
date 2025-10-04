@@ -16,7 +16,7 @@
 |**imageUrl** | **String** |  |  |
 |**itemType** | **InventoryItemType** |  |  |
 |**itemTypeLabel** | **String** |  |  |
-|**metadata** | **InventoryMetadata** |  |  [optional] |
+|**metadata** | [**InventoryMetadata**](InventoryMetadata.md) |  |  [optional] |
 |**name** | **String** |  |  |
 |**notificationDetails** | [**InventoryNotificationDetails**](InventoryNotificationDetails.md) |  |  [optional] |
 |**status** | **String** |  |  |

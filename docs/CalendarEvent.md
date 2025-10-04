@@ -11,7 +11,7 @@
 |**accessType** | **String** |  |  |
 |**category** | **String** |  |  [optional] |
 |**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  |
+|**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**deletedAt** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**endsAt** | **OffsetDateTime** |  |  [optional] |

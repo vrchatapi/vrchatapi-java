@@ -25,12 +25,12 @@ User object received when querying your friends list
 |**lastActivity** | **OffsetDateTime** |  |  |
 |**lastMobile** | **OffsetDateTime** |  |  |
 |**platform** | **String** |  |  |
-|**profilePicOverride** | **String** |  |  |
-|**profilePicOverrideThumbnail** | **String** |  |  |
+|**profilePicOverride** | **String** |  |  [optional] |
+|**profilePicOverrideThumbnail** | **String** |  |  [optional] |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** | &lt;- Always empty. |  |
-|**userIcon** | **String** |  |  |
+|**userIcon** | **String** |  |  [optional] |
 
 
 

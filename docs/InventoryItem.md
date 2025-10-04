@@ -19,7 +19,7 @@
 |**isSeen** | **Boolean** |  |  |
 |**itemType** | **InventoryItemType** |  |  |
 |**itemTypeLabel** | **String** |  |  |
-|**metadata** | **InventoryMetadata** |  |  |
+|**metadata** | [**InventoryMetadata**](InventoryMetadata.md) |  |  |
 |**name** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**templateId** | **String** |  |  |

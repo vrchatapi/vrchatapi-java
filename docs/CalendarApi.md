@@ -13,6 +13,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getGroupCalendarEvent**](CalendarApi.md#getGroupCalendarEvent) | **GET** /calendar/{groupId}/{calendarId} | Get a calendar event |
 | [**getGroupCalendarEventICS**](CalendarApi.md#getGroupCalendarEventICS) | **GET** /calendar/{groupId}/{calendarId}.ics | Download calendar event as ICS |
 | [**getGroupCalendarEvents**](CalendarApi.md#getGroupCalendarEvents) | **GET** /calendar/{groupId} | List a group&#39;s calendar events |
+| [**searchCalendarEvents**](CalendarApi.md#searchCalendarEvents) | **GET** /calendar/search | Search for calendar events |
 | [**updateGroupCalendarEvent**](CalendarApi.md#updateGroupCalendarEvent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event |
 
 
@@ -648,6 +649,82 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
 | **date** | **OffsetDateTime**| The month to search in. | [optional] |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**PaginatedCalendarEventList**](PaginatedCalendarEventList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of CalendarEvent objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="searchCalendarEvents"></a>
+# **searchCalendarEvents**
+> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset)
+
+Search for calendar events
+
+Get a list of calendar events by search terms
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.CalendarApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    CalendarApi apiInstance = new CalendarApi(defaultClient);
+    String searchTerm = "game night"; // String | Search term for calendar events.
+    Integer utcOffset = 56; // Integer | The offset from UTC in hours of the client or authenticated user.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      PaginatedCalendarEventList result = apiInstance.searchCalendarEvents(searchTerm, utcOffset, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarApi#searchCalendarEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **searchTerm** | **String**| Search term for calendar events. | |
+| **utcOffset** | **Integer**| The offset from UTC in hours of the client or authenticated user. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 

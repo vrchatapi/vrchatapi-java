@@ -27,14 +27,14 @@ User object received when querying your own instance
 |**lastActivity** | **OffsetDateTime** |  |  |
 |**lastMobile** | **OffsetDateTime** |  |  |
 |**platform** | **String** |  |  [optional] |
-|**profilePicOverride** | **String** |  |  |
-|**profilePicOverrideThumbnail** | **String** |  |  |
+|**profilePicOverride** | **String** |  |  [optional] |
+|**profilePicOverrideThumbnail** | **String** |  |  [optional] |
 |**pronouns** | **String** |  |  |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
-|**userIcon** | **String** |  |  |
+|**userIcon** | **String** |  |  [optional] |
 
 
 

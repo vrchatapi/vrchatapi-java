@@ -65,6 +65,7 @@ docs/CurrentUserPresence.md
 docs/DeveloperType.md
 docs/Disable2FAResult.md
 docs/DynamicContentRow.md
+docs/EconomyAccount.md
 docs/EconomyApi.md
 docs/Error.md
 docs/Favorite.md
@@ -131,6 +132,7 @@ docs/InstancesApi.md
 docs/Inventory.md
 docs/InventoryApi.md
 docs/InventoryDrop.md
+docs/InventoryFlag.md
 docs/InventoryItem.md
 docs/InventoryItemType.md
 docs/InventoryMetadata.md
@@ -168,6 +170,7 @@ docs/NotificationDetailRequestInviteResponse.md
 docs/NotificationDetailVoteToKick.md
 docs/NotificationType.md
 docs/NotificationsApi.md
+docs/OkStatus.md
 docs/OrderOption.md
 docs/PaginatedCalendarEventList.md
 docs/PaginatedGroupAuditLogEntryList.md
@@ -203,7 +206,12 @@ docs/Response.md
 docs/SentNotification.md
 docs/ServiceQueueStats.md
 docs/ServiceStatus.md
+docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
+docs/Store.md
+docs/StoreShelf.md
+docs/StoreType.md
+docs/StoreView.md
 docs/Submission.md
 docs/Subscription.md
 docs/SubscriptionPeriod.md
@@ -229,6 +237,7 @@ docs/UpdateGroupMemberRequest.md
 docs/UpdateGroupRepresentationRequest.md
 docs/UpdateGroupRequest.md
 docs/UpdateGroupRoleRequest.md
+docs/UpdateInventoryItemRequest.md
 docs/UpdateInviteMessageRequest.md
 docs/UpdateUserBadgeRequest.md
 docs/UpdateUserNoteRequest.md
@@ -241,6 +250,7 @@ docs/UserNoteTargetUser.md
 docs/UserState.md
 docs/UserStatus.md
 docs/UserSubscription.md
+docs/UserSubscriptionEligible.md
 docs/UsersApi.md
 docs/Verify2FAEmailCodeResult.md
 docs/Verify2FAResult.md
@@ -355,6 +365,7 @@ src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
 src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
+src/main/java/io/github/vrchatapi/model/EconomyAccount.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroup.java
@@ -414,6 +425,7 @@ src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/Inventory.java
 src/main/java/io/github/vrchatapi/model/InventoryDrop.java
+src/main/java/io/github/vrchatapi/model/InventoryFlag.java
 src/main/java/io/github/vrchatapi/model/InventoryItem.java
 src/main/java/io/github/vrchatapi/model/InventoryItemType.java
 src/main/java/io/github/vrchatapi/model/InventoryMetadata.java
@@ -447,6 +459,7 @@ src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInvite.java
 src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInviteResponse.java
 src/main/java/io/github/vrchatapi/model/NotificationDetailVoteToKick.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
+src/main/java/io/github/vrchatapi/model/OkStatus.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
 src/main/java/io/github/vrchatapi/model/PaginatedCalendarEventList.java
 src/main/java/io/github/vrchatapi/model/PaginatedGroupAuditLogEntryList.java
@@ -479,7 +492,12 @@ src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
 src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
 src/main/java/io/github/vrchatapi/model/ServiceStatus.java
+src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
+src/main/java/io/github/vrchatapi/model/Store.java
+src/main/java/io/github/vrchatapi/model/StoreShelf.java
+src/main/java/io/github/vrchatapi/model/StoreType.java
+src/main/java/io/github/vrchatapi/model/StoreView.java
 src/main/java/io/github/vrchatapi/model/Submission.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
 src/main/java/io/github/vrchatapi/model/SubscriptionPeriod.java
@@ -505,6 +523,7 @@ src/main/java/io/github/vrchatapi/model/UpdateGroupMemberRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRepresentationRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRoleRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserNoteRequest.java
@@ -517,6 +536,7 @@ src/main/java/io/github/vrchatapi/model/UserNoteTargetUser.java
 src/main/java/io/github/vrchatapi/model/UserState.java
 src/main/java/io/github/vrchatapi/model/UserStatus.java
 src/main/java/io/github/vrchatapi/model/UserSubscription.java
+src/main/java/io/github/vrchatapi/model/UserSubscriptionEligible.java
 src/main/java/io/github/vrchatapi/model/Verify2FAEmailCodeResult.java
 src/main/java/io/github/vrchatapi/model/Verify2FAResult.java
 src/main/java/io/github/vrchatapi/model/VerifyAuthTokenResult.java
