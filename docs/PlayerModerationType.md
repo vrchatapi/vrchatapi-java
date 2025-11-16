@@ -5,13 +5,19 @@
 ## Enum
 
 
+* `BLOCK` (value: `"block"`)
+
 * `MUTE` (value: `"mute"`)
+
+* `MUTECHAT` (value: `"muteChat"`)
 
 * `UNMUTE` (value: `"unmute"`)
 
-* `BLOCK` (value: `"block"`)
+* `UNMUTECHAT` (value: `"unmuteChat"`)
 
-* `UNBLOCK` (value: `"unblock"`)
+* `HIDEAVATAR` (value: `"hideAvatar"`)
+
+* `SHOWAVATAR` (value: `"showAvatar"`)
 
 * `INTERACTON` (value: `"interactOn"`)
 

@@ -9,12 +9,12 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**accessType** | **String** |  |  |
-|**category** | **String** |  |  [optional] |
+|**category** | **String** |  |  |
 |**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**deletedAt** | **OffsetDateTime** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
-|**endsAt** | **OffsetDateTime** |  |  [optional] |
+|**description** | **String** |  |  |
+|**endsAt** | **OffsetDateTime** |  |  |
 |**featured** | **Boolean** |  |  [optional] |
 |**guestEarlyJoinMinutes** | **Integer** |  |  [optional] |
 |**hostEarlyJoinMinutes** | **Integer** |  |  [optional] |
@@ -27,7 +27,7 @@
 |**ownerId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;String&gt;** |   |  [optional] |
 |**roleIds** | **List&lt;String&gt;** |   |  [optional] |
-|**startsAt** | **OffsetDateTime** |  |  [optional] |
+|**startsAt** | **OffsetDateTime** |  |  |
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**title** | **String** |  |  |
 |**type** | **String** |  |  [optional] |

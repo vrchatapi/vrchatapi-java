@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 <a name="getPlayerModerations"></a>
 # **getPlayerModerations**
-> List&lt;PlayerModeration&gt; getPlayerModerations(type, targetUserId)
+> List&lt;PlayerModeration&gt; getPlayerModerations(type, sourceUserId, targetUserId)
 
 Search Player Moderations
 
@@ -106,10 +106,11 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
-    String type = "type_example"; // String | Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block.
+    PlayerModerationType type = PlayerModerationType.fromValue("block"); // PlayerModerationType | Must be one of PlayerModerationType.
+    String sourceUserId = "sourceUserId_example"; // String | Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
     String targetUserId = "targetUserId_example"; // String | Must be valid UserID.
     try {
-      List<PlayerModeration> result = apiInstance.getPlayerModerations(type, targetUserId);
+      List<PlayerModeration> result = apiInstance.getPlayerModerations(type, sourceUserId, targetUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayermoderationApi#getPlayerModerations");
@@ -126,7 +127,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **type** | **String**| Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block. | [optional] |
+| **type** | [**PlayerModerationType**](.md)| Must be one of PlayerModerationType. | [optional] [default to unmute] [enum: block, mute, muteChat, unmute, unmuteChat, hideAvatar, showAvatar, interactOn, interactOff] |
+| **sourceUserId** | **String**| Must be valid UserID. Trying to view someone else&#39;s moderations results with \&quot;Can&#39;t view someone else&#39;s player moderations\&quot; error. | [optional] |
 | **targetUserId** | **String**| Must be valid UserID. | [optional] |
 
 ### Return type

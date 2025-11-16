@@ -20,6 +20,7 @@
 |**thumbnailImageUrl** | **String** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  [optional] |
 |**version** | **Integer** |  |  [optional] |
+|**featured** | **Boolean** | Enabling featured tag requires Admin Credentials. |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
 |**unityVersion** | **String** |  |  [optional] |
 

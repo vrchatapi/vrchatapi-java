@@ -10,7 +10,7 @@ User object received when querying your friends list
 |------------ | ------------- | ------------- | -------------|
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |   |  [optional] |
-|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
+|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
 |**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
 |**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
 |**developerType** | **DeveloperType** |  |  |

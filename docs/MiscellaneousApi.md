@@ -4,6 +4,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**createPermission**](MiscellaneousApi.md#createPermission) | **POST** /permissions | Create Permission |
+| [**deletePermission**](MiscellaneousApi.md#deletePermission) | **DELETE** /permissions/{permissionId} | Delete Permission |
 | [**getAssignedPermissions**](MiscellaneousApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions |
 | [**getCSS**](MiscellaneousApi.md#getCSS) | **GET** /css/app.css | Download CSS |
 | [**getConfig**](MiscellaneousApi.md#getConfig) | **GET** /config | Fetch API Config |
@@ -12,8 +14,158 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getInfoPush**](MiscellaneousApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
 | [**getJavaScript**](MiscellaneousApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
 | [**getPermission**](MiscellaneousApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission |
+| [**getPermissions**](MiscellaneousApi.md#getPermissions) | **GET** /permissions | Get Permissions |
 | [**getSystemTime**](MiscellaneousApi.md#getSystemTime) | **GET** /time | Current System Time |
+| [**updatePermission**](MiscellaneousApi.md#updatePermission) | **PUT** /permissions/{permissionId} | Update Permission |
 
+
+<a name="createPermission"></a>
+# **createPermission**
+> Permission createPermission(n, offset, ownerId, createPermissionRequest)
+
+Create Permission
+
+**REQUIRES ADMIN CREDENTIALS**. Creates and returns a new Permission. The permission will by default be owned by the sender of the request unless otherwise specified.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    String ownerId = "ownerId_example"; // String | Owner of the Permission, MUST be valid UserID.
+    CreatePermissionRequest createPermissionRequest = new CreatePermissionRequest(); // CreatePermissionRequest | 
+    try {
+      Permission result = apiInstance.createPermission(n, offset, ownerId, createPermissionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#createPermission");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **ownerId** | **String**| Owner of the Permission, MUST be valid UserID. | [optional] |
+| **createPermissionRequest** | [**CreatePermissionRequest**](CreatePermissionRequest.md)|  | [optional] |
+
+### Return type
+
+[**Permission**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Permission object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
+
+<a name="deletePermission"></a>
+# **deletePermission**
+> Permission deletePermission(permissionId)
+
+Delete Permission
+
+**REQUIRES ADMIN CREDENTIALS**. Deletes a permission.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String permissionId = "permissionId_example"; // String | Must be a valid permission ID.
+    try {
+      Permission result = apiInstance.deletePermission(permissionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#deletePermission");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **permissionId** | **String**| Must be a valid permission ID. | |
+
+### Return type
+
+[**Permission**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Permission object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
 
 <a name="getAssignedPermissions"></a>
 # **getAssignedPermissions**
@@ -519,6 +671,73 @@ public class Example {
 | **200** | Returns a single Permission object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="getPermissions"></a>
+# **getPermissions**
+> List&lt;Permission&gt; getPermissions()
+
+Get Permissions
+
+**REQUIRES ADMIN CREDENTIALS**. Returns a list of all existing permissions, just like &#x60;/users&#x60; with empty search would.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    try {
+      List<Permission> result = apiInstance.getPermissions();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getPermissions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;Permission&gt;**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Permission objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
+
 <a name="getSystemTime"></a>
 # **getSystemTime**
 > OffsetDateTime getSystemTime()
@@ -576,4 +795,77 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+
+<a name="updatePermission"></a>
+# **updatePermission**
+> Permission updatePermission(permissionId, updatePermissionRequest)
+
+Update Permission
+
+**REQUIRES ADMIN CREDENTIALS**. Updates the info on a permission.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String permissionId = "permissionId_example"; // String | Must be a valid permission ID.
+    UpdatePermissionRequest updatePermissionRequest = new UpdatePermissionRequest(); // UpdatePermissionRequest | 
+    try {
+      Permission result = apiInstance.updatePermission(permissionId, updatePermissionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#updatePermission");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **permissionId** | **String**| Must be a valid permission ID. | |
+| **updatePermissionRequest** | [**UpdatePermissionRequest**](UpdatePermissionRequest.md)|  | [optional] |
+
+### Return type
+
+[**Permission**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Permission object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
 
