@@ -63,8 +63,8 @@ jobs:
         with:
           branch: main
           folder: .
-          commit-message: "Upgrade Java SDK to spec ${{vrchat_sdk_version}}"
-          tag: ${{vrchat_sdk_version}}
+          commit-message: "Upgrade Java SDK to spec ${vrchat_sdk_version}"
+          tag: ${vrchat_sdk_version}
 
 #  gradle:
 #    runs-on: ubuntu-latest
