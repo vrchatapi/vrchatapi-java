@@ -1,6 +1,10 @@
 #!/bin/bash
 
-npm install @openapitools/openapi-generator-cli
+if [ ${#} -le 1 ]
+then
+  echo "Usage: generate.sh <openapi.yaml> <version>" >&2
+  exit 1
+fi
 
 rm docs -rf
 rm src/main/java/io/github/vrchatapi/*.java
@@ -14,7 +18,7 @@ rm src/main/java/io/github/vrchatapi/model -rf
 --git-user-id=vrchatapi \
 --git-repo-id=vrchatapi-java \
 -o . \
--i https://raw.githubusercontent.com/vrchatapi/specification/gh-pages/openapi.yaml \
+-i "${1}" \
 --http-user-agent="vrchatapi-java"
 
 # Remove unneccesary copy of spec
