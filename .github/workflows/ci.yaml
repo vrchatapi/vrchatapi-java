@@ -49,11 +49,17 @@ jobs:
       - name: Download Specification
         run: wget "${SPEC_URL}" '--output-document' "${ARTIFACT_NAME}"
 
-      - name: Check version number
+      - name: Set version
+        id: version
         run: |
-          vrchat_sdk_version=$(( ${PASSED_VERSION%%.*})).${PASSED_VERSION#*.}${VERSION_POSTPEND}
-          echo "Version is: ${vrchat_sdk_version}" 
-          echo "vrchat_sdk_version=$vrchat_sdk_version" >> $GITHUB_ENV 
+          # Replace using bash
+          VERSION="${PASSED_VERSION}${VERSION_POSTPEND}"
+          CLEAN_VERSION="${VERSION/-nightly./.dev}"
+          echo "version=${CLEAN_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Apply Version Postpend
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.version_postfix != '' }}
+        run: yq '--inplace' ".info.version |= \"${{ steps.version.outputs.version }}\"" "${ARTIFACT_NAME}"
 
       - name: Generate SDK Client
         run: bash ./generate.sh "${ARTIFACT_NAME}"
@@ -63,8 +69,8 @@ jobs:
         with:
           branch: main
           folder: .
-          commit-message: "Upgrade Java SDK to spec ${vrchat_sdk_version}"
-          tag: ${vrchat_sdk_version}
+          commit-message: "Upgrade Java SDK to spec ${{ steps.version.outputs.version }}"
+          tag: ${{ steps.version.outputs.version }}
 
 #  gradle:
 #    runs-on: ubuntu-latest
