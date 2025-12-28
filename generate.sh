@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ${#} -le 1 ]
+if [ ${#} -le 0 ]
 then
-  echo "Usage: generate.sh <openapi.yaml> <version>" >&2
+  echo "Usage: generate.sh <openapi.yaml>" >&2
   exit 1
 fi
 
