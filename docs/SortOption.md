@@ -5,41 +5,41 @@
 ## Enum
 
 
-* `POPULARITY` (value: `"popularity"`)
-
-* `HEAT` (value: `"heat"`)
-
-* `TRUST` (value: `"trust"`)
-
-* `SHUFFLE` (value: `"shuffle"`)
-
-* `RANDOM` (value: `"random"`)
-
-* `FAVORITES` (value: `"favorites"`)
-
-* `REPORTSCORE` (value: `"reportScore"`)
-
-* `REPORTCOUNT` (value: `"reportCount"`)
-
-* `PUBLICATIONDATE` (value: `"publicationDate"`)
-
-* `LABSPUBLICATIONDATE` (value: `"labsPublicationDate"`)
-
-* `CREATED` (value: `"created"`)
-
 * `_CREATED_AT` (value: `"_created_at"`)
-
-* `UPDATED` (value: `"updated"`)
 
 * `_UPDATED_AT` (value: `"_updated_at"`)
 
-* `ORDER` (value: `"order"`)
+* `CREATED` (value: `"created"`)
 
-* `RELEVANCE` (value: `"relevance"`)
+* `FAVORITES` (value: `"favorites"`)
+
+* `HEAT` (value: `"heat"`)
+
+* `LABSPUBLICATIONDATE` (value: `"labsPublicationDate"`)
 
 * `MAGIC` (value: `"magic"`)
 
 * `NAME` (value: `"name"`)
+
+* `ORDER` (value: `"order"`)
+
+* `POPULARITY` (value: `"popularity"`)
+
+* `PUBLICATIONDATE` (value: `"publicationDate"`)
+
+* `RANDOM` (value: `"random"`)
+
+* `RELEVANCE` (value: `"relevance"`)
+
+* `REPORTCOUNT` (value: `"reportCount"`)
+
+* `REPORTSCORE` (value: `"reportScore"`)
+
+* `SHUFFLE` (value: `"shuffle"`)
+
+* `TRUST` (value: `"trust"`)
+
+* `UPDATED` (value: `"updated"`)
 
 
 

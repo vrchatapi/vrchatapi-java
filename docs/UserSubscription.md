@@ -8,23 +8,23 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  |
-|**transactionId** | **String** |  |  |
-|**store** | **String** | Which \&quot;Store\&quot; it came from. Right now only Stores are \&quot;Steam\&quot; and \&quot;Admin\&quot;. |  |
-|**steamItemId** | **String** |  |  [optional] |
-|**amount** | **BigDecimal** |  |  |
-|**description** | **String** |  |  |
-|**period** | **SubscriptionPeriod** |  |  |
-|**tier** | **Integer** |  |  |
 |**active** | **Boolean** |  |  |
-|**status** | **TransactionStatus** |  |  |
-|**starts** | **String** |  |  [optional] |
-|**expires** | **OffsetDateTime** |  |  |
+|**amount** | **BigDecimal** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
-|**updatedAt** | **OffsetDateTime** |  |  |
-|**licenseGroups** | **List&lt;String&gt;** |  |  |
-|**isGift** | **Boolean** |  |  |
+|**description** | **String** |  |  |
+|**expires** | **OffsetDateTime** |  |  |
+|**id** | **String** |  |  |
 |**isBulkGift** | **Boolean** |  |  |
+|**isGift** | **Boolean** |  |  |
+|**licenseGroups** | **List&lt;String&gt;** |  |  |
+|**period** | **SubscriptionPeriod** |  |  |
+|**starts** | **String** |  |  [optional] |
+|**status** | **TransactionStatus** |  |  |
+|**steamItemId** | **String** |  |  [optional] |
+|**store** | **String** | Which \&quot;Store\&quot; it came from. Right now only Stores are \&quot;Steam\&quot; and \&quot;Admin\&quot;. |  |
+|**tier** | **Integer** |  |  |
+|**transactionId** | **String** |  |  |
+|**updatedAt** | **OffsetDateTime** |  |  |
 
 
 

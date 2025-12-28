@@ -16,6 +16,7 @@
 |**playerOrderBucketSize** | **Integer** | Unknown |  |
 |**playerOrderFactor** | **Integer** | Unknown |  |
 |**slowUpdateFactorThreshold** | **Integer** | Unknown |  |
+|**useDirectPlayerSerialization** | **Boolean** | Unknown |  |
 |**viewSegmentLength** | **Integer** | Unknown |  |
 
 

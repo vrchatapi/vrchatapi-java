@@ -5,15 +5,15 @@
 ## Enum
 
 
+* `BANNED` (value: `"banned"`)
+
 * `INACTIVE` (value: `"inactive"`)
+
+* `INVITED` (value: `"invited"`)
 
 * `MEMBER` (value: `"member"`)
 
 * `REQUESTED` (value: `"requested"`)
-
-* `INVITED` (value: `"invited"`)
-
-* `BANNED` (value: `"banned"`)
 
 * `USERBLOCKED` (value: `"userblocked"`)
 

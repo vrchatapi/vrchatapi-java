@@ -8,24 +8,24 @@ Represents a single Transaction, which is likely between VRChat and Steam.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**agreementId** | **String** |  |  |
-|**itemId** | **Integer** |  |  |
 |**agreement** | **String** |  |  |
-|**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |
-|**period** | **String** |  |  |
-|**frequency** | **Integer** |  |  |
+|**agreementId** | **String** |  |  |
 |**billingType** | **String** |  |  |
-|**startDate** | **String** |  |  |
-|**endDate** | **String** |  |  |
-|**recurringAmt** | **BigDecimal** |  |  |
 |**currency** | **String** |  |  |
-|**timeCreated** | **String** |  |  |
-|**nextPayment** | **String** |  |  |
-|**lastPayment** | **String** |  |  |
+|**endDate** | **String** |  |  |
+|**failedAttempts** | **Integer** |  |  |
+|**frequency** | **Integer** |  |  |
+|**itemId** | **Integer** |  |  |
 |**lastAmount** | **BigDecimal** |  |  |
 |**lastAmountVat** | **BigDecimal** |  |  |
+|**lastPayment** | **String** |  |  |
+|**nextPayment** | **String** |  |  |
 |**outstanding** | **Integer** |  |  |
-|**failedAttempts** | **Integer** |  |  |
+|**period** | **String** |  |  |
+|**recurringAmt** | **BigDecimal** |  |  |
+|**startDate** | **String** |  |  |
+|**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |
+|**timeCreated** | **String** |  |  |
 
 
 

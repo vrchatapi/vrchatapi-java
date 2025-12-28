@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `hidden` (value: `"hidden"`)
+* `hidden` (value: `"18+"`)
+
+* `plus18` (value: `"hidden"`)
 
 * `verified` (value: `"verified"`)
-
-* `plus18` (value: `"18+"`)
 
 
 

@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `VISIBLE` (value: `"visible"`)
+* `FRIENDS` (value: `"friends"`)
 
 * `HIDDEN` (value: `"hidden"`)
 
-* `FRIENDS` (value: `"friends"`)
+* `VISIBLE` (value: `"visible"`)
 
 
 

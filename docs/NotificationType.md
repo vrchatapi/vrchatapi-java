@@ -5,6 +5,8 @@
 ## Enum
 
 
+* `BOOP` (value: `"boop"`)
+
 * `FRIENDREQUEST` (value: `"friendRequest"`)
 
 * `INVITE` (value: `"invite"`)

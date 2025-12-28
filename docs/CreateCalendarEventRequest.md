@@ -7,34 +7,25 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**title** | **String** | Event title |  |
-|**startsAt** | **OffsetDateTime** | Time the event starts at |  |
+|**accessType** | **CalendarEventAccess** |  |  |
+|**category** | **CalendarEventCategory** |  |  |
+|**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
 |**description** | **String** |  |  |
 |**endsAt** | **OffsetDateTime** | Time the event ends at |  |
-|**category** | **String** |  |  |
-|**tags** | **List&lt;String&gt;** |  |  [optional] |
-|**isDraft** | **Boolean** |  |  [optional] |
-|**imageId** | **String** |  |  [optional] |
-|**roleIds** | **List&lt;String&gt;** |  |  [optional] |
-|**parentId** | **String** |  |  [optional] |
-|**platforms** | **List&lt;String&gt;** |  |  [optional] |
-|**languages** | **List&lt;String&gt;** |  |  [optional] |
-|**sendCreationNotification** | **Boolean** | Send notification to group members. |  |
 |**featured** | **Boolean** |  |  [optional] |
-|**hostEarlyJoinMinutes** | **Integer** |  |  [optional] |
 |**guestEarlyJoinMinutes** | **Integer** |  |  [optional] |
-|**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
+|**hostEarlyJoinMinutes** | **Integer** |  |  [optional] |
+|**imageId** | **String** |  |  [optional] |
+|**isDraft** | **Boolean** |  |  [optional] |
+|**languages** | **List&lt;String&gt;** |  |  [optional] |
+|**parentId** | **String** |  |  [optional] |
+|**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
+|**roleIds** | **List&lt;String&gt;** |  |  [optional] |
+|**sendCreationNotification** | **Boolean** | Send notification to group members. |  |
+|**startsAt** | **OffsetDateTime** | Time the event starts at |  |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**title** | **String** | Event title |  |
 |**usesInstanceOverflow** | **Boolean** |  |  [optional] |
-|**accessType** | [**AccessTypeEnum**](#AccessTypeEnum) |  |  |
-
-
-
-## Enum: AccessTypeEnum
-
-| Name | Value |
-|---- | -----|
-| PUBLIC | &quot;public&quot; |
-| GROUP | &quot;group&quot; |
 
 
 

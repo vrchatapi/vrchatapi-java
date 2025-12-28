@@ -13,6 +13,8 @@
 
 * `group_bans_manage` (value: `"group-bans-manage"`)
 
+* `group_calendar_manage` (value: `"group-calendar-manage"`)
+
 * `group_data_manage` (value: `"group-data-manage"`)
 
 * `group_default_role_manage` (value: `"group-default-role-manage"`)
@@ -20,6 +22,8 @@
 * `group_galleries_manage` (value: `"group-galleries-manage"`)
 
 * `group_instance_age_gated_create` (value: `"group-instance-age-gated-create"`)
+
+* `group_instance_calendar_link` (value: `"group-instance-calendar-link"`)
 
 * `group_instance_join` (value: `"group-instance-join"`)
 
@@ -52,10 +56,6 @@
 * `group_roles_assign` (value: `"group-roles-assign"`)
 
 * `group_roles_manage` (value: `"group-roles-manage"`)
-
-* `group_calendar_manage` (value: `"group-calendar-manage"`)
-
-* `group_instance_calendar_link` (value: `"group-instance-calendar-link"`)
 
 
 

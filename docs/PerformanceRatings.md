@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `NONE` (value: `"None"`)
-
 * `EXCELLENT` (value: `"Excellent"`)
 
 * `GOOD` (value: `"Good"`)
 
 * `MEDIUM` (value: `"Medium"`)
+
+* `NONE` (value: `"None"`)
 
 * `POOR` (value: `"Poor"`)
 

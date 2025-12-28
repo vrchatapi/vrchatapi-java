@@ -8,11 +8,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**walletInfo** | [**TransactionSteamWalletInfo**](TransactionSteamWalletInfo.md) |  |  |
-|**steamId** | **String** | Steam User ID |  |
 |**orderId** | **String** | Steam Order ID |  |
+|**steamId** | **String** | Steam User ID |  |
 |**steamUrl** | **String** | Empty |  |
 |**transId** | **String** | Steam Transaction ID, NOT the same as VRChat TransactionID |  |
+|**walletInfo** | [**TransactionSteamWalletInfo**](TransactionSteamWalletInfo.md) |  |  |
 
 
 

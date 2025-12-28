@@ -11,13 +11,17 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**downloadFileVersion**](FilesApi.md#downloadFileVersion) | **GET** /file/{fileId}/{versionId} | Download File Version |
 | [**finishFileDataUpload**](FilesApi.md#finishFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload |
 | [**getAdminAssetBundle**](FilesApi.md#getAdminAssetBundle) | **GET** /adminassetbundles/{adminAssetBundleId} | Get AdminAssetBundle |
+| [**getContentAgreementStatus**](FilesApi.md#getContentAgreementStatus) | **GET** /agreement | Get Content Agreement Status |
 | [**getFile**](FilesApi.md#getFile) | **GET** /file/{fileId} | Show File |
 | [**getFileAnalysis**](FilesApi.md#getFileAnalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis |
 | [**getFileAnalysisSecurity**](FilesApi.md#getFileAnalysisSecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security |
 | [**getFileAnalysisStandard**](FilesApi.md#getFileAnalysisStandard) | **GET** /analysis/{fileId}/{versionId}/standard | Get File Version Analysis Standard |
 | [**getFileDataUploadStatus**](FilesApi.md#getFileDataUploadStatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status |
 | [**getFiles**](FilesApi.md#getFiles) | **GET** /files | List Files |
+| [**setGroupGalleryFileOrder**](FilesApi.md#setGroupGalleryFileOrder) | **PUT** /files/order | Set Group Gallery File Order |
 | [**startFileDataUpload**](FilesApi.md#startFileDataUpload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload |
+| [**submitContentAgreement**](FilesApi.md#submitContentAgreement) | **POST** /agreement | Submit Content Agreement |
+| [**updateAssetReviewNotes**](FilesApi.md#updateAssetReviewNotes) | **PUT** /assetReview/{assetReviewId}/notes | Update Asset Review Notes |
 | [**uploadGalleryImage**](FilesApi.md#uploadGalleryImage) | **POST** /gallery | Upload gallery image |
 | [**uploadIcon**](FilesApi.md#uploadIcon) | **POST** /icon | Upload icon |
 | [**uploadImage**](FilesApi.md#uploadImage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker |
@@ -410,7 +414,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
-    String fileType = "file"; // String | Type of file.
+    String fileType = "delta"; // String | Type of file.
     FinishFileDataUploadRequest finishFileDataUploadRequest = new FinishFileDataUploadRequest(); // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
     try {
       ModelFile result = apiInstance.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
@@ -432,7 +436,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: file, signature, delta] |
+| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
 | **finishFileDataUploadRequest** | [**FinishFileDataUploadRequest**](FinishFileDataUploadRequest.md)| Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. | [optional] |
 
 ### Return type
@@ -521,6 +525,80 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single AdminAssetBundle object. |  -  |
+
+<a name="getContentAgreementStatus"></a>
+# **getContentAgreementStatus**
+> AgreementStatus getContentAgreementStatus(agreementCode, contentId, version)
+
+Get Content Agreement Status
+
+Returns the agreement status of the currently authenticated user for the given agreementCode, contentId, and version.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    AgreementCode agreementCode = AgreementCode.fromValue("content.copyright.owned"); // AgreementCode | The type of agreement (currently content.copyright.owned)
+    String contentId = "avtr_c38a1615-5bf5-42b4-84eb-a8b6c37cbd11"; // String | The id of the content being uploaded, such as a WorldID, AvatarID, or PropID
+    Integer version = 1; // Integer | The version of the agreement (currently 1)
+    try {
+      AgreementStatus result = apiInstance.getContentAgreementStatus(agreementCode, contentId, version);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#getContentAgreementStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **agreementCode** | [**AgreementCode**](.md)| The type of agreement (currently content.copyright.owned) | [default to content.copyright.owned] [enum: content.copyright.owned] |
+| **contentId** | **String**| The id of the content being uploaded, such as a WorldID, AvatarID, or PropID | |
+| **version** | **Integer**| The version of the agreement (currently 1) | |
+
+### Return type
+
+[**AgreementStatus**](AgreementStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single AgreementStatus object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getFile"></a>
 # **getFile**
@@ -843,7 +921,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
-    String fileType = "file"; // String | Type of file.
+    String fileType = "delta"; // String | Type of file.
     try {
       FileVersionUploadStatus result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
       System.out.println(result);
@@ -864,7 +942,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: file, signature, delta] |
+| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
 
 ### Return type
 
@@ -959,6 +1037,76 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of File objects. |  -  |
 
+<a name="setGroupGalleryFileOrder"></a>
+# **setGroupGalleryFileOrder**
+> GroupGalleryFileOrder setGroupGalleryFileOrder(groupGalleryFileOrderRequest)
+
+Set Group Gallery File Order
+
+Set the order of the files in a group gallery
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    GroupGalleryFileOrderRequest groupGalleryFileOrderRequest = new GroupGalleryFileOrderRequest(); // GroupGalleryFileOrderRequest | 
+    try {
+      GroupGalleryFileOrder result = apiInstance.setGroupGalleryFileOrder(groupGalleryFileOrderRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#setGroupGalleryFileOrder");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupGalleryFileOrderRequest** | [**GroupGalleryFileOrderRequest**](GroupGalleryFileOrderRequest.md)|  | [optional] |
+
+### Return type
+
+[**GroupGalleryFileOrder**](GroupGalleryFileOrder.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of File IDs. |  -  |
+| **404** | Error response when trying to show information about a non-existent file. |  -  |
+
 <a name="startFileDataUpload"></a>
 # **startFileDataUpload**
 > FileUploadURL startFileDataUpload(fileId, versionId, fileType, partNumber)
@@ -991,7 +1139,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
-    String fileType = "file"; // String | Type of file.
+    String fileType = "delta"; // String | Type of file.
     Integer partNumber = 1; // Integer | The part number to start uploading. If not provided, the first part will be started.
     try {
       FileUploadURL result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
@@ -1013,7 +1161,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: file, signature, delta] |
+| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
 | **partNumber** | **Integer**| The part number to start uploading. If not provided, the first part will be started. | [optional] |
 
 ### Return type
@@ -1034,6 +1182,147 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | See [https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html](AWS REST docs - PUT Object) |  -  |
 | **400** | Error response when trying to start an upload against a FileVersion that is already marked as  &#x60;complete&#x60;. |  -  |
+
+<a name="submitContentAgreement"></a>
+# **submitContentAgreement**
+> Agreement submitContentAgreement(agreementRequest)
+
+Submit Content Agreement
+
+Returns the agreement of the currently authenticated user for the given agreementCode, contentId, and version.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    AgreementRequest agreementRequest = new AgreementRequest(); // AgreementRequest | 
+    try {
+      Agreement result = apiInstance.submitContentAgreement(agreementRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#submitContentAgreement");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **agreementRequest** | [**AgreementRequest**](AgreementRequest.md)|  | [optional] |
+
+### Return type
+
+[**Agreement**](Agreement.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Agreement object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="updateAssetReviewNotes"></a>
+# **updateAssetReviewNotes**
+> updateAssetReviewNotes(assetReviewId, updateAssetReviewNotesRequest)
+
+Update Asset Review Notes
+
+Update notes regarding an asset review.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FilesApi apiInstance = new FilesApi(defaultClient);
+    String assetReviewId = "assetReviewId_example"; // String | Must be an valid asset review ID.
+    UpdateAssetReviewNotesRequest updateAssetReviewNotesRequest = new UpdateAssetReviewNotesRequest(); // UpdateAssetReviewNotesRequest | 
+    try {
+      apiInstance.updateAssetReviewNotes(assetReviewId, updateAssetReviewNotesRequest);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FilesApi#updateAssetReviewNotes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **assetReviewId** | **String**| Must be an valid asset review ID. | |
+| **updateAssetReviewNotesRequest** | [**UpdateAssetReviewNotesRequest**](UpdateAssetReviewNotesRequest.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The asset review notes are submitted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="uploadGalleryImage"></a>
 # **uploadGalleryImage**
@@ -1175,7 +1464,7 @@ public class Example {
 
 <a name="uploadImage"></a>
 # **uploadImage**
-> ModelFile uploadImage(_file, tag, frames, framesOverTime, animationStyle, maskTag)
+> ModelFile uploadImage(_file, tag, animationStyle, frames, framesOverTime, loopStyle, maskTag)
 
 Upload gallery image, icon, emoji or sticker
 
@@ -1204,13 +1493,14 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     File _file = new File("/path/to/file"); // File | The binary blob of the png file.
-    String tag = "tag_example"; // String | Needs to be either icon, gallery, sticker, emoji, or emojianimated
-    Integer frames = 56; // Integer | Required for emojianimated. Total number of frames to be animated (2-64)
-    Integer framesOverTime = 56; // Integer | Required for emojianimated. Animation frames per second (1-64)
-    String animationStyle = "animationStyle_example"; // String | Animation style for sticker, required for emoji.
-    String maskTag = "maskTag_example"; // String | Mask of the sticker, optional for emoji.
+    ImagePurpose tag = ImagePurpose.fromValue("admin"); // ImagePurpose | 
+    ImageAnimationStyle animationStyle = ImageAnimationStyle.fromValue("aura"); // ImageAnimationStyle | 
+    Integer frames = 56; // Integer | Required for animated images. Total number of frames of the spritesheet to be animated.
+    Integer framesOverTime = 56; // Integer | Required for animated images. Animation frames per second.
+    ImageLoopStyle loopStyle = ImageLoopStyle.fromValue("linear"); // ImageLoopStyle | 
+    ImageMask maskTag = ImageMask.fromValue("circle"); // ImageMask | 
     try {
-      ModelFile result = apiInstance.uploadImage(_file, tag, frames, framesOverTime, animationStyle, maskTag);
+      ModelFile result = apiInstance.uploadImage(_file, tag, animationStyle, frames, framesOverTime, loopStyle, maskTag);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FilesApi#uploadImage");
@@ -1228,11 +1518,12 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **_file** | **File**| The binary blob of the png file. | |
-| **tag** | **String**| Needs to be either icon, gallery, sticker, emoji, or emojianimated | |
-| **frames** | **Integer**| Required for emojianimated. Total number of frames to be animated (2-64) | [optional] |
-| **framesOverTime** | **Integer**| Required for emojianimated. Animation frames per second (1-64) | [optional] |
-| **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] |
-| **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] |
+| **tag** | [**ImagePurpose**](ImagePurpose.md)|  | [default to gallery] [enum: admin, avatargallery, avatarimage, bundle, emoji, emojianimated, gallery, icon, listinggallery, product, sticker] |
+| **animationStyle** | [**ImageAnimationStyle**](ImageAnimationStyle.md)|  | [optional] [enum: aura, bats, bees, bounce, cloud, confetti, crying, dislike, fire, idea, lasers, like, magnet, mistletoe, money, noise, orbit, pizza, rain, rotate, shake, snow, snowball, spin, splash, stop, zzz] |
+| **frames** | **Integer**| Required for animated images. Total number of frames of the spritesheet to be animated. | [optional] |
+| **framesOverTime** | **Integer**| Required for animated images. Animation frames per second. | [optional] |
+| **loopStyle** | [**ImageLoopStyle**](ImageLoopStyle.md)|  | [optional] [default to linear] [enum: linear, pingpong] |
+| **maskTag** | [**ImageMask**](ImageMask.md)|  | [optional] [default to square] [enum: circle, flower, heart, pow, square, star] |
 
 ### Return type
 

@@ -18,12 +18,12 @@
 |**maxCountPerUser** | **Integer** |  |  |
 |**name** | **String** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
-|**spawnType** | **Integer** |  |  |
+|**spawnType** | **Integer** | How a prop is summoned and interacted with. 0: the prop fixed to some surface in the world 1: the prop is a pickup and may be held by users 2: ??? |  |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackageUrl** | **String** |  |  |
 |**unityPackages** | [**Set&lt;PropUnityPackage&gt;**](PropUnityPackage.md) |  |  |
-|**worldPlacementMask** | **Integer** |  |  |
+|**worldPlacementMask** | **Integer** | Bitmask for restrictions on what world surfaces a prop may be summoned. 0: no restrictions 1: floors 2: walls 4: ceilings |  |
 
 
 

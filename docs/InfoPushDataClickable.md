@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**command** | [**CommandEnum**](#CommandEnum) |  |  |
 |**parameters** | **List&lt;String&gt;** | In case of OpenURL, this would contain the link. |  [optional] |
+|**command** | [**CommandEnum**](#CommandEnum) |  |  |
 
 
 
@@ -16,10 +16,10 @@
 
 | Name | Value |
 |---- | -----|
+| CANNEDWORLDSEARCH | &quot;CannedWorldSearch&quot; |
+| OPENSAFETYMENU | &quot;OpenSafetyMenu&quot; |
 | OPENURL | &quot;OpenURL&quot; |
 | OPENVRCPLUSMENU | &quot;OpenVRCPlusMenu&quot; |
-| OPENSAFETYMENU | &quot;OpenSafetyMenu&quot; |
-| CANNEDWORLDSEARCH | &quot;CannedWorldSearch&quot; |
 
 
 

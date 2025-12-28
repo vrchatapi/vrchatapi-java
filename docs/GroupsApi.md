@@ -8,12 +8,15 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**addGroupMemberRole**](GroupsApi.md#addGroupMemberRole) | **PUT** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Add Role to GroupMember |
 | [**addGroupPost**](GroupsApi.md#addGroupPost) | **POST** /groups/{groupId}/posts | Create a post in a Group |
 | [**banGroupMember**](GroupsApi.md#banGroupMember) | **POST** /groups/{groupId}/bans | Ban Group Member |
+| [**blockGroup**](GroupsApi.md#blockGroup) | **POST** /groups/{groupId}/block | Block Group |
 | [**cancelGroupRequest**](GroupsApi.md#cancelGroupRequest) | **DELETE** /groups/{groupId}/requests | Cancel Group Join Request |
+| [**cancelGroupTransfer**](GroupsApi.md#cancelGroupTransfer) | **DELETE** /groups/{groupId}/transfer | Cancel Group Transfer |
 | [**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Create Group |
 | [**createGroupAnnouncement**](GroupsApi.md#createGroupAnnouncement) | **POST** /groups/{groupId}/announcement | Create Group Announcement |
 | [**createGroupGallery**](GroupsApi.md#createGroupGallery) | **POST** /groups/{groupId}/galleries | Create Group Gallery |
 | [**createGroupInvite**](GroupsApi.md#createGroupInvite) | **POST** /groups/{groupId}/invites | Invite User to Group |
 | [**createGroupRole**](GroupsApi.md#createGroupRole) | **POST** /groups/{groupId}/roles | Create GroupRole |
+| [**declineGroupInvite**](GroupsApi.md#declineGroupInvite) | **PUT** /groups/{groupId}/invites | Decline Invite from Group |
 | [**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | Delete Group |
 | [**deleteGroupAnnouncement**](GroupsApi.md#deleteGroupAnnouncement) | **DELETE** /groups/{groupId}/announcement | Delete Group Announcement |
 | [**deleteGroupGallery**](GroupsApi.md#deleteGroupGallery) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId} | Delete Group Gallery |
@@ -23,6 +26,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteGroupRole**](GroupsApi.md#deleteGroupRole) | **DELETE** /groups/{groupId}/roles/{groupRoleId} | Delete Group Role |
 | [**getGroup**](GroupsApi.md#getGroup) | **GET** /groups/{groupId} | Get Group by ID |
 | [**getGroupAnnouncements**](GroupsApi.md#getGroupAnnouncements) | **GET** /groups/{groupId}/announcement | Get Group Announcement |
+| [**getGroupAuditLogEntryTypes**](GroupsApi.md#getGroupAuditLogEntryTypes) | **GET** /groups/{groupId}/auditLogTypes | Get Group Audit Log Entry Types |
 | [**getGroupAuditLogs**](GroupsApi.md#getGroupAuditLogs) | **GET** /groups/{groupId}/auditLogs | Get Group Audit Logs |
 | [**getGroupBans**](GroupsApi.md#getGroupBans) | **GET** /groups/{groupId}/bans | Get Group Bans |
 | [**getGroupGalleryImages**](GroupsApi.md#getGroupGalleryImages) | **GET** /groups/{groupId}/galleries/{groupGalleryId} | Get Group Gallery Images |
@@ -35,11 +39,14 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getGroupRequests**](GroupsApi.md#getGroupRequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests |
 | [**getGroupRoleTemplates**](GroupsApi.md#getGroupRoleTemplates) | **GET** /groups/roleTemplates | Get Group Role Templates |
 | [**getGroupRoles**](GroupsApi.md#getGroupRoles) | **GET** /groups/{groupId}/roles | Get Group Roles |
+| [**getGroupTransferability**](GroupsApi.md#getGroupTransferability) | **GET** /groups/{groupId}/transfer | Get Group Transferability |
+| [**initiateOrAcceptGroupTransfer**](GroupsApi.md#initiateOrAcceptGroupTransfer) | **POST** /groups/{groupId}/transfer | Initiate or Accept Group Transfer |
 | [**joinGroup**](GroupsApi.md#joinGroup) | **POST** /groups/{groupId}/join | Join Group |
 | [**kickGroupMember**](GroupsApi.md#kickGroupMember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member |
 | [**leaveGroup**](GroupsApi.md#leaveGroup) | **POST** /groups/{groupId}/leave | Leave Group |
 | [**removeGroupMemberRole**](GroupsApi.md#removeGroupMemberRole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember |
 | [**respondGroupJoinRequest**](GroupsApi.md#respondGroupJoinRequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request |
+| [**searchGroupMembers**](GroupsApi.md#searchGroupMembers) | **GET** /groups/{groupId}/members/search | Search Group Members |
 | [**searchGroups**](GroupsApi.md#searchGroups) | **GET** /groups | Search Group |
 | [**unbanGroupMember**](GroupsApi.md#unbanGroupMember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member |
 | [**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Update Group |
@@ -346,6 +353,79 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
+<a name="blockGroup"></a>
+# **blockGroup**
+> Success blockGroup(groupId)
+
+Block Group
+
+Blocks a Group for the current user. To unblock a group, call kickGroupMember (DELETE /groups/{groupId}/members/{userId}).
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    try {
+      Success result = apiInstance.blockGroup(groupId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#blockGroup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after blocking a Group. |  -  |
+| **400** | Bad request error response when banning a user |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to block a group you already have blocked. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
 <a name="cancelGroupRequest"></a>
 # **cancelGroupRequest**
 > cancelGroupRequest(groupId)
@@ -415,6 +495,78 @@ null (empty response body)
 | **200** | OK |  -  |
 | **400** | You can&#39;t cancel a join request if you didn&#39;t request to join․ |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="cancelGroupTransfer"></a>
+# **cancelGroupTransfer**
+> Success cancelGroupTransfer(groupId)
+
+Cancel Group Transfer
+
+Cancel a Group Transfer.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    try {
+      Success result = apiInstance.cancelGroupTransfer(groupId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#cancelGroupTransfer");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after cancelling a group transfer. |  -  |
+| **400** | Error response when trying to cancel a transfer for a group without a pending transfer. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
 <a name="createGroup"></a>
@@ -780,9 +932,83 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
+<a name="declineGroupInvite"></a>
+# **declineGroupInvite**
+> Success declineGroupInvite(groupId, declineGroupInviteRequest)
+
+Decline Invite from Group
+
+Declines an invite to the user from a group.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    DeclineGroupInviteRequest declineGroupInviteRequest = new DeclineGroupInviteRequest(); // DeclineGroupInviteRequest | 
+    try {
+      Success result = apiInstance.declineGroupInvite(groupId, declineGroupInviteRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#declineGroupInvite");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **declineGroupInviteRequest** | [**DeclineGroupInviteRequest**](DeclineGroupInviteRequest.md)|  | [optional] |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after declining a group invite. |  -  |
+| **400** | Bad request error response when declining a group invite. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
 <a name="deleteGroup"></a>
 # **deleteGroup**
-> Success deleteGroup(groupId)
+> Success deleteGroup(groupId, hardDelete)
 
 Delete Group
 
@@ -811,8 +1037,9 @@ public class Example {
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    Boolean hardDelete = true; // Boolean | 
     try {
-      Success result = apiInstance.deleteGroup(groupId);
+      Success result = apiInstance.deleteGroup(groupId, hardDelete);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#deleteGroup");
@@ -830,6 +1057,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
+| **hardDelete** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -1368,7 +1596,7 @@ public class Example {
 
 Get Group Announcement
 
-Returns the announcement for a Group. If no announcement has been made, then it returns **empty object**.  If an announcement exists, then it will always return all fields except &#x60;imageId&#x60; and &#x60;imageUrl&#x60; which may be null.
+Returns the announcement for a Group. If no announcement has been made, then it returns **empty object**. If an announcement exists, then it will always return all fields except &#x60;imageId&#x60; and &#x60;imageUrl&#x60; which may be null.
 
 ### Example
 ```java
@@ -1430,6 +1658,77 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupAnnouncement object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="getGroupAuditLogEntryTypes"></a>
+# **getGroupAuditLogEntryTypes**
+> List&lt;String&gt; getGroupAuditLogEntryTypes(groupId)
+
+Get Group Audit Log Entry Types
+
+Returns a list of audit log entry types for which the group has entries.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    try {
+      List<String> result = apiInstance.getGroupAuditLogEntryTypes(groupId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#getGroupAuditLogEntryTypes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of GroupAuditLogEntryTypes. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
@@ -2337,9 +2636,157 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
+<a name="getGroupTransferability"></a>
+# **getGroupTransferability**
+> GroupTransferable getGroupTransferability(groupId, transferTargetId)
+
+Get Group Transferability
+
+Returns the transferability of the group to a given user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String transferTargetId = "transferTargetId_example"; // String | The UserID of the prospective transferee.
+    try {
+      GroupTransferable result = apiInstance.getGroupTransferability(groupId, transferTargetId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#getGroupTransferability");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **transferTargetId** | **String**| The UserID of the prospective transferee. | [optional] |
+
+### Return type
+
+[**GroupTransferable**](GroupTransferable.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single GroupTransferable object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="initiateOrAcceptGroupTransfer"></a>
+# **initiateOrAcceptGroupTransfer**
+> Success initiateOrAcceptGroupTransfer(groupId, transferGroupRequest)
+
+Initiate or Accept Group Transfer
+
+To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targetted by a pending transfer, no body is required.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    TransferGroupRequest transferGroupRequest = new TransferGroupRequest(); // TransferGroupRequest | 
+    try {
+      Success result = apiInstance.initiateOrAcceptGroupTransfer(groupId, transferGroupRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#initiateOrAcceptGroupTransfer");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **transferGroupRequest** | [**TransferGroupRequest**](TransferGroupRequest.md)|  | [optional] |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after initiating or completing a group transfer. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to transfer a group to an ineligible target user. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
 <a name="joinGroup"></a>
 # **joinGroup**
-> GroupMember joinGroup(groupId)
+> GroupMember joinGroup(groupId, confirmOverrideBlock, joinGroupRequest)
 
 Join Group
 
@@ -2368,8 +2815,10 @@ public class Example {
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    Boolean confirmOverrideBlock = true; // Boolean | Manually override the failure that would occur if the user has blocked the group.
+    JoinGroupRequest joinGroupRequest = new JoinGroupRequest(); // JoinGroupRequest | 
     try {
-      GroupMember result = apiInstance.joinGroup(groupId);
+      GroupMember result = apiInstance.joinGroup(groupId, confirmOverrideBlock, joinGroupRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#joinGroup");
@@ -2387,6 +2836,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
+| **confirmOverrideBlock** | **Boolean**| Manually override the failure that would occur if the user has blocked the group. | [optional] |
+| **joinGroupRequest** | [**JoinGroupRequest**](JoinGroupRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -2398,7 +2849,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2411,11 +2862,11 @@ public class Example {
 
 <a name="kickGroupMember"></a>
 # **kickGroupMember**
-> kickGroupMember(groupId, userId)
+> Success kickGroupMember(groupId, userId)
 
 Kick Group Member
 
-Kicks a Group Member from the Group. The current user must have the \&quot;Remove Group Members\&quot; permission.
+Kicks a Group Member from the Group. The current user must have the \&quot;Remove Group Members\&quot; permission. Also used for unblocking groups.
 
 ### Example
 ```java
@@ -2442,7 +2893,8 @@ public class Example {
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      apiInstance.kickGroupMember(groupId, userId);
+      Success result = apiInstance.kickGroupMember(groupId, userId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#kickGroupMember");
       System.err.println("Status code: " + e.getCode());
@@ -2463,7 +2915,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -2477,7 +2929,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | Successful response after deleting a group member. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
@@ -2698,6 +3150,84 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+
+<a name="searchGroupMembers"></a>
+# **searchGroupMembers**
+> SearchGroupMembers200Response searchGroupMembers(groupId, query, n, offset)
+
+Search Group Members
+
+Search for members in the group by displayName.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.GroupsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    GroupsApi apiInstance = new GroupsApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String query = "query_example"; // String | Filter for member displayName.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      SearchGroupMembers200Response result = apiInstance.searchGroupMembers(groupId, query, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling GroupsApi#searchGroupMembers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+| **query** | **String**| Filter for member displayName. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**SearchGroupMembers200Response**](SearchGroupMembers200Response.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of GroupMember objects from a search. |  -  |
+| **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 

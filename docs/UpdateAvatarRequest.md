@@ -8,16 +8,15 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**assetUrl** | **String** |  |  [optional] |
-|**id** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**id** | **String** |  |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
+|**name** | **String** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  [optional] |
-|**version** | **Integer** |  |  [optional] |
-|**featured** | **Boolean** | Enabling featured tag requires Admin Credentials. |  [optional] |
+|**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
 |**unityVersion** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

@@ -34,9 +34,13 @@
 |**refundable** | **Boolean** |  |  |
 |**sellerDisplayName** | **String** |  |  |
 |**sellerId** | **String** |  |  |
+|**soldByVrc** | **Boolean** |  |  [optional] |
 |**stackable** | **Boolean** |  |  |
 |**storeIds** | **List&lt;String&gt;** |  |  |
+|**subtitle** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**vrcPlusDiscountPrice** | **Integer** |  |  [optional] |
+|**whenToExpire** | **OffsetDateTime** |  |  [optional] |
 
 
 

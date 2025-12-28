@@ -7,15 +7,20 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**cancelPending2FA**](AuthenticationApi.md#cancelPending2FA) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes |
 | [**checkUserExists**](AuthenticationApi.md#checkUserExists) | **GET** /auth/exists | Check User Exists |
 | [**confirmEmail**](AuthenticationApi.md#confirmEmail) | **GET** /auth/confirmEmail | Confirm Email |
+| [**createGlobalAvatarModeration**](AuthenticationApi.md#createGlobalAvatarModeration) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation |
+| [**deleteGlobalAvatarModeration**](AuthenticationApi.md#deleteGlobalAvatarModeration) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation |
+| [**deleteModerationReport**](AuthenticationApi.md#deleteModerationReport) | **DELETE** /moderationReports/{moderationReportId} | Delete Moderation Report |
 | [**deleteUser**](AuthenticationApi.md#deleteUser) | **PUT** /users/{userId}/delete | Delete User |
 | [**disable2FA**](AuthenticationApi.md#disable2FA) | **DELETE** /auth/twofactorauth | Disable 2FA |
 | [**enable2FA**](AuthenticationApi.md#enable2FA) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes |
 | [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
 | [**getGlobalAvatarModerations**](AuthenticationApi.md#getGlobalAvatarModerations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations |
+| [**getModerationReports**](AuthenticationApi.md#getModerationReports) | **GET** /moderationReports | Get Moderation Reports |
 | [**getRecoveryCodes**](AuthenticationApi.md#getRecoveryCodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes |
 | [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout |
 | [**registerUserAccount**](AuthenticationApi.md#registerUserAccount) | **POST** /auth/register | Register User Account |
 | [**resendEmailConfirmation**](AuthenticationApi.md#resendEmailConfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation |
+| [**submitModerationReport**](AuthenticationApi.md#submitModerationReport) | **POST** /moderationReports | Submit Moderation Report |
 | [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code |
 | [**verify2FAEmailCode**](AuthenticationApi.md#verify2FAEmailCode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code |
 | [**verifyAuthToken**](AuthenticationApi.md#verifyAuthToken) | **GET** /auth | Verify Auth Token |
@@ -221,6 +226,219 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **302** | OK |  -  |
+
+<a name="createGlobalAvatarModeration"></a>
+# **createGlobalAvatarModeration**
+> AvatarModerationCreated createGlobalAvatarModeration(createAvatarModerationRequest)
+
+Create Global Avatar Moderation
+
+Globally moderates an avatar.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    CreateAvatarModerationRequest createAvatarModerationRequest = new CreateAvatarModerationRequest(); // CreateAvatarModerationRequest | 
+    try {
+      AvatarModerationCreated result = apiInstance.createGlobalAvatarModeration(createAvatarModerationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#createGlobalAvatarModeration");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createAvatarModerationRequest** | [**CreateAvatarModerationRequest**](CreateAvatarModerationRequest.md)|  | |
+
+### Return type
+
+[**AvatarModerationCreated**](AvatarModerationCreated.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single AvatarModerationCreated object |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="deleteGlobalAvatarModeration"></a>
+# **deleteGlobalAvatarModeration**
+> OkStatus2 deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType)
+
+Delete Global Avatar Moderation
+
+Globally unmoderates an avatar.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    String targetAvatarId = "targetAvatarId_example"; // String | Must be a valid avatar ID.
+    AvatarModerationType avatarModerationType = AvatarModerationType.fromValue("block"); // AvatarModerationType | The avatar moderation type associated with the avatar.
+    try {
+      OkStatus2 result = apiInstance.deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#deleteGlobalAvatarModeration");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **targetAvatarId** | **String**| Must be a valid avatar ID. | |
+| **avatarModerationType** | [**AvatarModerationType**](.md)| The avatar moderation type associated with the avatar. | [enum: block] |
+
+### Return type
+
+[**OkStatus2**](OkStatus2.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single OkStatus2 object |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="deleteModerationReport"></a>
+# **deleteModerationReport**
+> SuccessFlag deleteModerationReport(moderationReportId)
+
+Delete Moderation Report
+
+Delete a moderation report
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    String moderationReportId = "moderationReportId_example"; // String | The moderation report id.
+    try {
+      SuccessFlag result = apiInstance.deleteModerationReport(moderationReportId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#deleteModerationReport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **moderationReportId** | **String**| The moderation report id. | |
+
+### Return type
+
+[**SuccessFlag**](SuccessFlag.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an SuccessFlag object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
 
 <a name="deleteUser"></a>
 # **deleteUser**
@@ -430,7 +648,7 @@ This endpoint does not need any parameter.
 
 Login and/or Get Current User Info
 
-This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid &#x60;auth&#x60; cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the &#x60;Authorization&#x60; header and set the &#x60;auth&#x60; cookie. The &#x60;auth&#x60; cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after &#x60;Authorization: Basic {string}&#x60; is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.    &gt; base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the &#x60;auth&#x60; cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
+This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid &#x60;auth&#x60; cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the &#x60;Authorization&#x60; header and set the &#x60;auth&#x60; cookie. The &#x60;auth&#x60; cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after &#x60;Authorization: Basic {string}&#x60; is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.  &gt; base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the &#x60;auth&#x60; cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
 
 ### Example
 ```java
@@ -507,7 +725,7 @@ This endpoint does not need any parameter.
 
 Get Global Avatar Moderations
 
-Returns list of globally blocked avatars.
+Returns list of globally moderated avatars.
 
 ### Example
 ```java
@@ -566,6 +784,85 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Returns list of globally blocked avatars with timestamps |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getModerationReports"></a>
+# **getModerationReports**
+> PaginatedModerationReportList getModerationReports(offset, n, reportingUserId, status, type)
+
+Get Moderation Reports
+
+Get submitted moderation reports
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Integer n = 60; // Integer | The number of objects to return.
+    String reportingUserId = "reportingUserId_example"; // String | Filter for moderation reports.
+    String status = "status_example"; // String | Filter for moderation reports. One of: `closed`...
+    String type = "type_example"; // String | Filter for moderation reports. One of: `avatar`, `group`, `user`, `world`...
+    try {
+      PaginatedModerationReportList result = apiInstance.getModerationReports(offset, n, reportingUserId, status, type);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getModerationReports");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **reportingUserId** | **String**| Filter for moderation reports. | [optional] |
+| **status** | **String**| Filter for moderation reports. One of: &#x60;closed&#x60;... | [optional] |
+| **type** | **String**| Filter for moderation reports. One of: &#x60;avatar&#x60;, &#x60;group&#x60;, &#x60;user&#x60;, &#x60;world&#x60;... | [optional] |
+
+### Return type
+
+[**PaginatedModerationReportList**](PaginatedModerationReportList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of ModerationReport objects, wrapped in new pagination format. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
 
 <a name="getRecoveryCodes"></a>
 # **getRecoveryCodes**
@@ -826,6 +1123,76 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="submitModerationReport"></a>
+# **submitModerationReport**
+> ModerationReport submitModerationReport(submitModerationReportRequest)
+
+Submit Moderation Report
+
+Submit a moderation report
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    SubmitModerationReportRequest submitModerationReportRequest = new SubmitModerationReportRequest(); // SubmitModerationReportRequest | 
+    try {
+      ModerationReport result = apiInstance.submitModerationReport(submitModerationReportRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#submitModerationReport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **submitModerationReportRequest** | [**SubmitModerationReportRequest**](SubmitModerationReportRequest.md)|  | |
+
+### Return type
+
+[**ModerationReport**](ModerationReport.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single ModerationReport object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="verify2FA"></a>

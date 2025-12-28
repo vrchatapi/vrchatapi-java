@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  |
-|**mimeType** | **MIMEType** |  |  |
 |**extension** | **String** |  |  |
+|**mimeType** | **MIMEType** |  |  |
+|**name** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 
 

@@ -115,7 +115,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
@@ -136,7 +136,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
 | **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
 | **userId** | **String**| Must be a valid user ID. | |
 
@@ -188,7 +188,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
@@ -209,7 +209,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
 | **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
 | **userId** | **String**| Must be a valid user ID. | |
 
@@ -550,7 +550,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "world"; // String | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
     String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateFavoriteGroupRequest updateFavoriteGroupRequest = new UpdateFavoriteGroupRequest(); // UpdateFavoriteGroupRequest | 
@@ -571,7 +571,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: world, friend, avatar] |
+| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
 | **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
 | **userId** | **String**| Must be a valid user ID. | |
 | **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional] |

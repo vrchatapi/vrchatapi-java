@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `OFFLINE` (value: `"offline"`)
-
 * `ACTIVE` (value: `"active"`)
+
+* `OFFLINE` (value: `"offline"`)
 
 * `ONLINE` (value: `"online"`)
 

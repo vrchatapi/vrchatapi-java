@@ -6,18 +6,25 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**addTags**](UsersApi.md#addTags) | **POST** /users/{userId}/addTags | Add User Tags |
 | [**checkUserPersistenceExists**](UsersApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
+| [**deleteAllUserPersistenceData**](UsersApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
 | [**deleteUserPersistence**](UsersApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
+| [**getBlockedGroups**](UsersApi.md#getBlockedGroups) | **GET** /users/{userId}/groups/userblocked | Get User Group Blocks |
+| [**getInvitedGroups**](UsersApi.md#getInvitedGroups) | **GET** /users/{userId}/groups/invited | Get User Group Invited |
+| [**getMutualFriends**](UsersApi.md#getMutualFriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends |
+| [**getMutualGroups**](UsersApi.md#getMutualGroups) | **GET** /users/{userId}/mutuals/groups | Get User Mutual Groups |
+| [**getMutuals**](UsersApi.md#getMutuals) | **GET** /users/{userId}/mutuals | Get User Mutuals |
 | [**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID |
+| [**getUserAllGroupPermissions**](UsersApi.md#getUserAllGroupPermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups. |
 | [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username |
 | [**getUserFeedback**](UsersApi.md#getUserFeedback) | **GET** /users/{userId}/feedback | Get User Feedback |
 | [**getUserGroupInstances**](UsersApi.md#getUserGroupInstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances |
+| [**getUserGroupInstancesForGroup**](UsersApi.md#getUserGroupInstancesForGroup) | **GET** /users/{userId}/instances/groups/{groupId} | Get User Group Instances for a specific Group |
 | [**getUserGroupRequests**](UsersApi.md#getUserGroupRequests) | **GET** /users/{userId}/groups/requested | Get User Group Requests |
 | [**getUserGroups**](UsersApi.md#getUserGroups) | **GET** /users/{userId}/groups | Get User Groups |
 | [**getUserNote**](UsersApi.md#getUserNote) | **GET** /userNotes/{userNoteId} | Get User Note |
 | [**getUserNotes**](UsersApi.md#getUserNotes) | **GET** /userNotes | Get User Notes |
 | [**getUserRepresentedGroup**](UsersApi.md#getUserRepresentedGroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group |
 | [**removeTags**](UsersApi.md#removeTags) | **POST** /users/{userId}/removeTags | Remove User Tags |
-| [**searchActiveUsers**](UsersApi.md#searchActiveUsers) | **GET** /users/active | Search Active Users |
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
 | [**updateBadge**](UsersApi.md#updateBadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info |
@@ -169,6 +176,75 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
+<a name="deleteAllUserPersistenceData"></a>
+# **deleteAllUserPersistenceData**
+> deleteAllUserPersistenceData(userId)
+
+Delete All User Persistence Data
+
+Deletes all of the user&#39;s persistence data for every world.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      apiInstance.deleteAllUserPersistenceData(userId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#deleteAllUserPersistenceData");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user&#39;s persistence data for all worlds is deleted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="deleteUserPersistence"></a>
 # **deleteUserPersistence**
 > deleteUserPersistence(userId, worldId)
@@ -241,6 +317,364 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
+<a name="getBlockedGroups"></a>
+# **getBlockedGroups**
+> List&lt;Group&gt; getBlockedGroups(userId)
+
+Get User Group Blocks
+
+Returns a list of Groups the user has blocked.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      List<Group> result = apiInstance.getBlockedGroups(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getBlockedGroups");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**List&lt;Group&gt;**](Group.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Group objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getInvitedGroups"></a>
+# **getInvitedGroups**
+> List&lt;Group&gt; getInvitedGroups(userId)
+
+Get User Group Invited
+
+Returns a list of Groups the user has been invited to.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      List<Group> result = apiInstance.getInvitedGroups(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getInvitedGroups");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**List&lt;Group&gt;**](Group.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Group objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getMutualFriends"></a>
+# **getMutualFriends**
+> List&lt;MutualFriend&gt; getMutualFriends(userId, n, offset)
+
+Get User Mutual Friends
+
+Gets a list of mutual friends between the logged in user and the specified user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<MutualFriend> result = apiInstance.getMutualFriends(userId, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getMutualFriends");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;MutualFriend&gt;**](MutualFriend.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of MutualFriend objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getMutualGroups"></a>
+# **getMutualGroups**
+> List&lt;LimitedUserGroups&gt; getMutualGroups(userId, n, offset)
+
+Get User Mutual Groups
+
+Gets a list of mutual groups between the logged in user and the specified user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<LimitedUserGroups> result = apiInstance.getMutualGroups(userId, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getMutualGroups");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;LimitedUserGroups&gt;**](LimitedUserGroups.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of LimitedUserGroups objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getMutuals"></a>
+# **getMutuals**
+> Mutuals getMutuals(userId)
+
+Get User Mutuals
+
+Gets the counts of mutuals between the logged in user and the specified user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      Mutuals result = apiInstance.getMutuals(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getMutuals");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**Mutuals**](Mutuals.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Mutuals object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="getUser"></a>
 # **getUser**
 > User getUser(userId)
@@ -309,6 +743,78 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single User object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getUserAllGroupPermissions"></a>
+# **getUserAllGroupPermissions**
+> Map&lt;String, List&lt;GroupPermissions&gt;&gt; getUserAllGroupPermissions(userId, groupIds)
+
+Get user&#39;s permissions for all joined groups.
+
+Returns a mapping of GroupIDs to arrays of GroupPermissions.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String groupIds = "grp_00000000-0000-0000-0000-000000000000,grp_11111111-1111-1111-1111-111111111111"; // String | Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for.
+    try {
+      Map<String, List<GroupPermissions>> result = apiInstance.getUserAllGroupPermissions(userId, groupIds);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserAllGroupPermissions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **groupIds** | **String**| Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for. | [optional] |
+
+### Return type
+
+[**Map&lt;String, List&lt;GroupPermissions&gt;&gt;**](List.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The group permissions the user has for every joined group. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getUserByName"></a>
@@ -507,6 +1013,79 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Instance objects with a fetched at time. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying get group instances of another user. |  -  |
+
+<a name="getUserGroupInstancesForGroup"></a>
+# **getUserGroupInstancesForGroup**
+> GetUserGroupInstances200Response getUserGroupInstancesForGroup(userId, groupId)
+
+Get User Group Instances for a specific Group
+
+Returns a list of a group&#39;s instances for a user
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    try {
+      GetUserGroupInstances200Response result = apiInstance.getUserGroupInstancesForGroup(userId, groupId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserGroupInstancesForGroup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **groupId** | **String**| Must be a valid group ID. | |
 
 ### Return type
 
@@ -953,86 +1532,9 @@ public class Example {
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="searchActiveUsers"></a>
-# **searchActiveUsers**
-> List&lt;LimitedUserFriend&gt; searchActiveUsers(search, developerType, offset, n)
-
-Search Active Users
-
-**REQUIRES ADMIN CREDENTIALS**. Search and list any Active users by text query.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.UsersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    UsersApi apiInstance = new UsersApi(defaultClient);
-    String search = "search_example"; // String | Username to search for
-    String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
-    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    Integer n = 60; // Integer | The number of objects to return.
-    try {
-      List<LimitedUserFriend> result = apiInstance.searchActiveUsers(search, developerType, offset, n);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling UsersApi#searchActiveUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **search** | **String**| Username to search for | |
-| **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional] |
-| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
-| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
-
-### Return type
-
-[**List&lt;LimitedUserFriend&gt;**](LimitedUserFriend.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **403** | Error response due to missing Administrator credentials. |  -  |
-
 <a name="searchUsers"></a>
 # **searchUsers**
-> List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, n, offset)
+> List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, n, offset, isInternalVariant)
 
 Search All Users
 
@@ -1064,8 +1566,9 @@ public class Example {
     String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
-      List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, n, offset);
+      List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, n, offset, isInternalVariant);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#searchUsers");
@@ -1086,6 +1589,7 @@ public class Example {
 | **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **isInternalVariant** | **Boolean**| Not quite sure what this actually does (exists on the website but doesn&#39;t seem to be used) | [optional] |
 
 ### Return type
 

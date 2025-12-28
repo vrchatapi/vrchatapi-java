@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `WORLD` (value: `"world"`)
+* `AVATAR` (value: `"avatar"`)
 
 * `FRIEND` (value: `"friend"`)
 
-* `AVATAR` (value: `"avatar"`)
+* `WORLD` (value: `"world"`)
 
 
 

@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**id** | **String** |  |  [optional] |
 |**isSelfAssignable** | **Boolean** |  |  [optional] |
+|**name** | **String** |  |  [optional] |
 |**permissions** | **List&lt;GroupPermissions&gt;** |  |  [optional] |
 
 

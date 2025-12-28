@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**archived** | **Boolean** |  |  |
-|**created** | **OffsetDateTime** |  |  |
+|**archived** | **Boolean** |  |  [optional] |
+|**created** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  |
 |**displayName** | **String** |  |  |
 |**groupAccess** | **Boolean** |  |  [optional] |
@@ -22,7 +22,7 @@
 |**sellerDisplayName** | **String** |  |  |
 |**sellerId** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
-|**updated** | **OffsetDateTime** |  |  |
+|**updated** | **OffsetDateTime** |  |  [optional] |
 |**useForSubscriberList** | **Boolean** |  |  [optional] |
 
 

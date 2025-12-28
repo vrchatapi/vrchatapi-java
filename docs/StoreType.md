@@ -5,11 +5,11 @@
 ## Enum
 
 
+* `GROUP` (value: `"group"`)
+
 * `HOUSE` (value: `"house"`)
 
 * `WORLD` (value: `"world"`)
-
-* `GROUP` (value: `"group"`)
 
 
 

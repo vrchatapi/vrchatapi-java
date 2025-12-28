@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `HOUR` (value: `"hour"`)
-
 * `DAY` (value: `"day"`)
 
-* `WEEK` (value: `"week"`)
+* `HOUR` (value: `"hour"`)
 
 * `MONTH` (value: `"month"`)
+
+* `WEEK` (value: `"week"`)
 
 * `YEAR` (value: `"year"`)
 

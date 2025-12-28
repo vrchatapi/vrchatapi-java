@@ -7,23 +7,23 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**title** | **String** | Event title |  [optional] |
-|**startsAt** | **OffsetDateTime** | Time the vent starts at |  [optional] |
+|**category** | **String** |  |  [optional] |
+|**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**endsAt** | **OffsetDateTime** | Time the vent starts at |  [optional] |
-|**category** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |  |  [optional] |
-|**isDraft** | **Boolean** |  |  [optional] |
+|**featured** | **Boolean** |  |  [optional] |
+|**guestEarlyJoinMinutes** | **Integer** |  |  [optional] |
+|**hostEarlyJoinMinutes** | **Integer** |  |  [optional] |
 |**imageId** | **String** |  |  [optional] |
-|**roleIds** | **List&lt;String&gt;** |  |  [optional] |
+|**isDraft** | **Boolean** |  |  [optional] |
+|**languages** | **List&lt;String&gt;** |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;String&gt;** |  |  [optional] |
-|**languages** | **List&lt;String&gt;** |  |  [optional] |
+|**roleIds** | **List&lt;String&gt;** |  |  [optional] |
 |**sendCreationNotification** | **Boolean** | Send notification to group members. |  [optional] |
-|**featured** | **Boolean** |  |  [optional] |
-|**hostEarlyJoinMinutes** | **Integer** |  |  [optional] |
-|**guestEarlyJoinMinutes** | **Integer** |  |  [optional] |
-|**closeInstanceAfterEndMinutes** | **Integer** |  |  [optional] |
+|**startsAt** | **OffsetDateTime** | Time the vent starts at |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**title** | **String** | Event title |  [optional] |
 |**usesInstanceOverflow** | **Boolean** |  |  [optional] |
 
 

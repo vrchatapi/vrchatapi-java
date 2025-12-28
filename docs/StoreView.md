@@ -7,13 +7,13 @@
 
 * `ALL` (value: `"all"`)
 
-* `PUBLICPREVIEW` (value: `"publicPreview"`)
-
-* `PUBLIC` (value: `"public"`)
+* `DRAFT` (value: `"draft"`)
 
 * `PREVIEW` (value: `"preview"`)
 
-* `DRAFT` (value: `"draft"`)
+* `PUBLIC` (value: `"public"`)
+
+* `PUBLICPREVIEW` (value: `"publicPreview"`)
 
 
 

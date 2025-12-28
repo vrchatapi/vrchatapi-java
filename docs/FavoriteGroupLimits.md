@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**avatar** | **Integer** |  |  |
 |**friend** | **Integer** |  |  |
+|**vrcPlusWorld** | **Integer** |  |  |
 |**world** | **Integer** |  |  |
 
 

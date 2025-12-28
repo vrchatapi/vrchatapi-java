@@ -4,12 +4,87 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**boop**](FriendsApi.md#boop) | **POST** /users/{userId}/boop | Send Boop |
 | [**deleteFriendRequest**](FriendsApi.md#deleteFriendRequest) | **DELETE** /user/{userId}/friendRequest | Delete Friend Request |
 | [**friend**](FriendsApi.md#friend) | **POST** /user/{userId}/friendRequest | Send Friend Request |
 | [**getFriendStatus**](FriendsApi.md#getFriendStatus) | **GET** /user/{userId}/friendStatus | Check Friend Status |
 | [**getFriends**](FriendsApi.md#getFriends) | **GET** /auth/user/friends | List Friends |
 | [**unfriend**](FriendsApi.md#unfriend) | **DELETE** /auth/user/friends/{userId} | Unfriend |
 
+
+<a name="boop"></a>
+# **boop**
+> Success boop(userId, boopRequest)
+
+Send Boop
+
+Send a boop to another user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FriendsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FriendsApi apiInstance = new FriendsApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    BoopRequest boopRequest = new BoopRequest(); // BoopRequest | 
+    try {
+      Success result = apiInstance.boop(userId, boopRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FriendsApi#boop");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **boopRequest** | [**BoopRequest**](BoopRequest.md)|  | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response after booping a user. |  -  |
+| **400** | Error response when trying to unfriend someone who is not a friend. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to send a friend request to a user which doesn&#39;t exist. |  -  |
 
 <a name="deleteFriendRequest"></a>
 # **deleteFriendRequest**

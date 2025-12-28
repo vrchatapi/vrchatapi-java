@@ -6,6 +6,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**checkUserPersistenceExists**](WorldsApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
 | [**createWorld**](WorldsApi.md#createWorld) | **POST** /worlds | Create World |
+| [**deleteAllUserPersistenceData**](WorldsApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
 | [**deleteUserPersistence**](WorldsApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**deleteWorld**](WorldsApi.md#deleteWorld) | **DELETE** /worlds/{worldId} | Delete World |
 | [**getActiveWorlds**](WorldsApi.md#getActiveWorlds) | **GET** /worlds/active | List Active Worlds |
@@ -157,6 +158,75 @@ No authorization required
 | **400** | Error response when trying create a world without having the neccesary Trust rank yet. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="deleteAllUserPersistenceData"></a>
+# **deleteAllUserPersistenceData**
+> deleteAllUserPersistenceData(userId)
+
+Delete All User Persistence Data
+
+Deletes all of the user&#39;s persistence data for every world.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      apiInstance.deleteAllUserPersistenceData(userId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#deleteAllUserPersistenceData");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The user&#39;s persistence data for all worlds is deleted. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="deleteUserPersistence"></a>
 # **deleteUserPersistence**
 > deleteUserPersistence(userId, worldId)
@@ -301,7 +371,7 @@ null (empty response body)
 
 <a name="getActiveWorlds"></a>
 # **getActiveWorlds**
-> List&lt;LimitedWorld&gt; getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List&lt;LimitedWorld&gt; getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform)
 
 List Active Worlds
 
@@ -330,19 +400,20 @@ public class Example {
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
+    String noplatform = "noplatform_example"; // String | The platform the asset does not support.
     try {
-      List<LimitedWorld> result = apiInstance.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
+      List<LimitedWorld> result = apiInstance.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#getActiveWorlds");
@@ -360,17 +431,18 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **search** | **String**| Filters by world name. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
+| **noplatform** | **String**| The platform the asset does not support. | [optional] |
 
 ### Return type
 
@@ -422,14 +494,14 @@ public class Example {
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
@@ -453,14 +525,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **search** | **String**| Filters by world name. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
@@ -517,14 +589,14 @@ public class Example {
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
@@ -548,14 +620,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **search** | **String**| Filters by world name. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
@@ -929,7 +1001,7 @@ null (empty response body)
 
 <a name="searchWorlds"></a>
 # **searchWorlds**
-> List&lt;LimitedWorld&gt; searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy)
+> List&lt;LimitedWorld&gt; searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific)
 
 Search All Worlds
 
@@ -958,7 +1030,7 @@ public class Example {
 
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     String user = "me"; // String | Set to `me` for searching own worlds.
     String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
@@ -967,13 +1039,15 @@ public class Example {
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
+    String noplatform = "noplatform_example"; // String | The platform the asset does not support.
     Boolean fuzzy = true; // Boolean | 
+    Boolean avatarSpecific = true; // Boolean | Only search for avatar worlds.
     try {
-      List<LimitedWorld> result = apiInstance.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy);
+      List<LimitedWorld> result = apiInstance.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#searchWorlds");
@@ -991,7 +1065,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **user** | **String**| Set to &#x60;me&#x60; for searching own worlds. | [optional] [enum: me] |
 | **userId** | **String**| Filter by UserID. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
@@ -1000,11 +1074,13 @@ public class Example {
 | **search** | **String**| Filters by world name. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
+| **noplatform** | **String**| The platform the asset does not support. | [optional] |
 | **fuzzy** | **Boolean**|  | [optional] |
+| **avatarSpecific** | **Boolean**| Only search for avatar worlds. | [optional] |
 
 ### Return type
 

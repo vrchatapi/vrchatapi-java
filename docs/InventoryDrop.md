@@ -12,6 +12,7 @@
 |**dropExpiryDate** | **OffsetDateTime** |  |  |
 |**endDropDate** | **OffsetDateTime** |  |  |
 |**id** | **String** |  |  |
+|**isDisabled** | **Boolean** |  |  |
 |**name** | **String** |  |  |
 |**notificationDetails** | [**InventoryNotificationDetails**](InventoryNotificationDetails.md) |  |  |
 |**startDropDate** | **OffsetDateTime** |  |  |

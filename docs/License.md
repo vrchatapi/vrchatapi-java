@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**forId** | **String** | Either a AvatarID, LicenseGroupID, PermissionID or ProductID. This depends on the &#x60;forType&#x60; field. |  |
-|**forType** | **LicenseType** |  |  |
-|**forName** | **String** |  |  |
 |**forAction** | **LicenseAction** |  |  |
+|**forId** | **String** | Either a AvatarID, LicenseGroupID, PermissionID or ProductID. This depends on the &#x60;forType&#x60; field. |  |
+|**forName** | **String** |  |  |
+|**forType** | **LicenseType** |  |  |
 
 
 

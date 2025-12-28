@@ -7,14 +7,14 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  |
-|**shortCode** | **String** |  |  |
-|**description** | **String** |  |  [optional] |
-|**joinState** | **GroupJoinState** |  |  [optional] |
-|**iconId** | **String** |  |  [optional] |
 |**bannerId** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
+|**iconId** | **String** |  |  [optional] |
+|**joinState** | **GroupJoinState** |  |  [optional] |
+|**name** | **String** |  |  |
 |**privacy** | **GroupPrivacy** |  |  [optional] |
 |**roleTemplate** | **GroupRoleTemplate** |  |  |
+|**shortCode** | **String** |  |  |
 
 
 

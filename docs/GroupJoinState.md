@@ -9,9 +9,9 @@
 
 * `INVITE` (value: `"invite"`)
 
-* `REQUEST` (value: `"request"`)
-
 * `OPEN` (value: `"open"`)
+
+* `REQUEST` (value: `"request"`)
 
 
 

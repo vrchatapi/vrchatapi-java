@@ -463,14 +463,14 @@ public class Example {
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String search = "search_example"; // String | Filters by world name.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
@@ -494,14 +494,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **search** | **String**| Filters by world name. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
@@ -738,7 +738,7 @@ public class Example {
 
 <a name="searchAvatars"></a>
 # **searchAvatars**
-> List&lt;Avatar&gt; searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List&lt;Avatar&gt; searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant)
 
 Search Avatars
 
@@ -767,7 +767,7 @@ public class Example {
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("popularity"); // SortOption | The sort order of the results.
+    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
     String user = "me"; // String | Set to `me` for searching own avatars.
     String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
@@ -775,12 +775,13 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String tag = "tag_example"; // String | Tags to include (comma-separated). Any of the tags needs to be present.
     String notag = "notag_example"; // String | Tags to exclude (comma-separated).
-    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("public"); // ReleaseStatus | Filter by ReleaseStatus.
+    ReleaseStatus releaseStatus = ReleaseStatus.fromValue("all"); // ReleaseStatus | Filter by ReleaseStatus.
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
+    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
-      List<Avatar> result = apiInstance.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
+      List<Avatar> result = apiInstance.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AvatarsApi#searchAvatars");
@@ -798,7 +799,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: popularity, heat, trust, shuffle, random, favorites, reportScore, reportCount, publicationDate, labsPublicationDate, created, _created_at, updated, _updated_at, order, relevance, magic, name] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
 | **user** | **String**| Set to &#x60;me&#x60; for searching own avatars. | [optional] [enum: me] |
 | **userId** | **String**| Filter by UserID. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
@@ -806,10 +807,11 @@ public class Example {
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] |
 | **notag** | **String**| Tags to exclude (comma-separated). | [optional] |
-| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: public, private, hidden, all] |
+| **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] [default to public] [enum: all, hidden, private, public] |
 | **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] |
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
+| **isInternalVariant** | **Boolean**| Not quite sure what this actually does (exists on the website but doesn&#39;t seem to be used) | [optional] |
 
 ### Return type
 

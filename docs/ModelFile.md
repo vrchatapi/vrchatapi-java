@@ -8,11 +8,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**animationStyle** | **String** |  |  [optional] |
-|**maskTag** | **String** |  |  [optional] |
+|**animationStyle** | **ImageAnimationStyle** |  |  [optional] |
 |**extension** | **String** |  |  |
+|**frames** | **Integer** | The number of frames for animated spritesheet images. |  [optional] |
+|**framesOverTime** | **Integer** | The frames per second for animated spritesheet images. |  [optional] |
 |**id** | **String** |  |  |
+|**loopStyle** | **ImageLoopStyle** |  |  [optional] |
+|**maskTag** | **ImageMask** |  |  [optional] |
 |**mimeType** | **MIMEType** |  |  |
+|**modifiedThumbnailFileName** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
 |**ownerId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
 |**tags** | **List&lt;String&gt;** |   |  |

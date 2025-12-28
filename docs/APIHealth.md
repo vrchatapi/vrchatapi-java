@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**buildVersionTag** | **String** |  |  |
 |**ok** | **Boolean** |  |  |
 |**serverName** | **String** |  |  |
-|**buildVersionTag** | **String** |  |  |
 
 
 

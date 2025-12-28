@@ -69,7 +69,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, response, request, requestResponse] |
+| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, request, requestResponse, response] |
 | **slot** | **Integer**| The message slot to fetch of a given message type. | |
 
 ### Return type
@@ -144,7 +144,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, response, request, requestResponse] |
+| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, request, requestResponse, response] |
 
 ### Return type
 
@@ -313,7 +313,7 @@ public class Example {
 
 <a name="inviteUserWithPhoto"></a>
 # **inviteUserWithPhoto**
-> SentNotification inviteUserWithPhoto(userId, image, data)
+> SentNotification inviteUserWithPhoto(userId, data, image)
 
 Invite User with photo
 
@@ -342,10 +342,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     InviteRequest data = new InviteRequest(); // InviteRequest | 
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     try {
-      SentNotification result = apiInstance.inviteUserWithPhoto(userId, image, data);
+      SentNotification result = apiInstance.inviteUserWithPhoto(userId, data, image);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#inviteUserWithPhoto");
@@ -363,8 +363,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **image** | **File**| The binary blob of the png file. | |
 | **data** | [**InviteRequest**](InviteRequest.md)|  | |
+| **image** | **File**| The binary blob of the png file. | |
 
 ### Return type
 
@@ -459,7 +459,7 @@ public class Example {
 
 <a name="requestInviteWithPhoto"></a>
 # **requestInviteWithPhoto**
-> Notification requestInviteWithPhoto(userId, image, data)
+> Notification requestInviteWithPhoto(userId, data, image)
 
 Request Invite with photo
 
@@ -488,10 +488,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     RequestInviteRequest data = new RequestInviteRequest(); // RequestInviteRequest | 
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     try {
-      Notification result = apiInstance.requestInviteWithPhoto(userId, image, data);
+      Notification result = apiInstance.requestInviteWithPhoto(userId, data, image);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#requestInviteWithPhoto");
@@ -509,8 +509,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **image** | **File**| The binary blob of the png file. | |
 | **data** | [**RequestInviteRequest**](RequestInviteRequest.md)|  | |
+| **image** | **File**| The binary blob of the png file. | |
 
 ### Return type
 
@@ -583,7 +583,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, response, request, requestResponse] |
+| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, request, requestResponse, response] |
 | **slot** | **Integer**| The message slot to fetch of a given message type. | |
 
 ### Return type
@@ -682,7 +682,7 @@ public class Example {
 
 <a name="respondInviteWithPhoto"></a>
 # **respondInviteWithPhoto**
-> Notification respondInviteWithPhoto(notificationId, image, data)
+> Notification respondInviteWithPhoto(notificationId, data, image)
 
 Respond Invite with photo
 
@@ -711,10 +711,10 @@ public class Example {
 
     InviteApi apiInstance = new InviteApi(defaultClient);
     String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
-    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     InviteResponse data = new InviteResponse(); // InviteResponse | 
+    File image = new File("/path/to/file"); // File | The binary blob of the png file.
     try {
-      Notification result = apiInstance.respondInviteWithPhoto(notificationId, image, data);
+      Notification result = apiInstance.respondInviteWithPhoto(notificationId, data, image);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InviteApi#respondInviteWithPhoto");
@@ -732,8 +732,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **notificationId** | **String**| Must be a valid notification ID. | |
-| **image** | **File**| The binary blob of the png file. | |
 | **data** | [**InviteResponse**](InviteResponse.md)|  | |
+| **image** | **File**| The binary blob of the png file. | |
 
 ### Return type
 
@@ -807,7 +807,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, response, request, requestResponse] |
+| **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | [default to message] [enum: message, request, requestResponse, response] |
 | **slot** | **Integer**| The message slot to fetch of a given message type. | |
 | **updateInviteMessageRequest** | [**UpdateInviteMessageRequest**](UpdateInviteMessageRequest.md)| Message of what to set the invite message to. | [optional] |
 

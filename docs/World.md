@@ -11,7 +11,6 @@
 |**authorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
 |**authorName** | **String** |  |  |
 |**capacity** | **Integer** |  |  |
-|**recommendedCapacity** | **Integer** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  |
@@ -31,16 +30,17 @@
 |**privateOccupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional] |
 |**publicOccupants** | **Integer** | Will always be &#x60;0&#x60; when unauthenticated. |  [optional] |
 |**publicationDate** | **String** |  |  |
+|**recommendedCapacity** | **Integer** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |
+|**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
 |**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**urlList** | **List&lt;String&gt;** |  |  [optional] |
 |**version** | **Integer** |  |  |
 |**visits** | **Integer** |  |  |
-|**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

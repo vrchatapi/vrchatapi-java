@@ -7,15 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  |
-|**appleProductId** | **String** |  |  |
-|**steamItemId** | **String** |  |  |
-|**oculusSku** | **String** |  |  |
-|**googleProductId** | **String** |  |  [optional] |
 |**amount** | **Integer** | price of the bundle |  |
+|**appleProductId** | **String** |  |  |
 |**description** | **String** |  |  |
-|**tokens** | **Integer** | number of tokens received |  |
+|**googleProductId** | **String** |  |  [optional] |
+|**id** | **String** |  |  |
 |**imageUrl** | **String** | direct url to image |  |
+|**oculusSku** | **String** |  |  |
+|**steamItemId** | **String** |  |  |
+|**tokens** | **Integer** | number of tokens received |  |
 
 
 

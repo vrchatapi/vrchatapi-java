@@ -8,16 +8,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  |
-|**steamItemId** | **String** |  |  |
-|**oculusSku** | **String** |  |  [optional] |
-|**googleProductId** | **String** |  |  [optional] |
-|**googlePlanId** | **String** |  |  [optional] |
-|**picoSku** | **String** |  |  [optional] |
-|**appleProductId** | **String** |  |  [optional] |
 |**amount** | **BigDecimal** |  |  |
+|**appleProductId** | **String** |  |  [optional] |
 |**description** | **String** |  |  |
+|**googlePlanId** | **String** |  |  [optional] |
+|**googleProductId** | **String** |  |  [optional] |
+|**id** | **String** |  |  |
+|**oculusSku** | **String** |  |  [optional] |
 |**period** | **SubscriptionPeriod** |  |  |
+|**picoSku** | **String** |  |  [optional] |
+|**steamItemId** | **String** |  |  |
 |**tier** | **Integer** |  |  |
 
 

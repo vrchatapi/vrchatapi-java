@@ -7,11 +7,11 @@
 
 * `ACTIVE` (value: `"active"`)
 
-* `FAILED` (value: `"failed"`)
+* `CHARGEBACK` (value: `"chargeback"`)
 
 * `EXPIRED` (value: `"expired"`)
 
-* `CHARGEBACK` (value: `"chargeback"`)
+* `FAILED` (value: `"failed"`)
 
 
 

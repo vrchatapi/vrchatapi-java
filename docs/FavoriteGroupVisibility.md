@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `PRIVATE` (value: `"private"`)
-
 * `FRIENDS` (value: `"friends"`)
+
+* `PRIVATE` (value: `"private"`)
 
 * `PUBLIC` (value: `"public"`)
 

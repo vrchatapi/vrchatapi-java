@@ -5,17 +5,21 @@
 ## Enum
 
 
-* `INSTANTIATABLE` (value: `"instantiatable"`)
-
 * `ARCHIVABLE` (value: `"archivable"`)
-
-* `CONSUMABLE` (value: `"consumable"`)
-
-* `TRASHABLE` (value: `"trashable"`)
 
 * `CLONEABLE` (value: `"cloneable"`)
 
+* `CONSUMABLE` (value: `"consumable"`)
+
+* `EQUIPPABLE` (value: `"equippable"`)
+
+* `INSTANTIATABLE` (value: `"instantiatable"`)
+
+* `TRASHABLE` (value: `"trashable"`)
+
 * `UGC` (value: `"ugc"`)
+
+* `UNIQUE` (value: `"unique"`)
 
 
 

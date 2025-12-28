@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**verified** | **Boolean** |  |  |
 |**enabled** | **Boolean** |  |  [optional] |
+|**verified** | **Boolean** |  |  |
 
 
 

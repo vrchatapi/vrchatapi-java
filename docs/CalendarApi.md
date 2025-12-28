@@ -6,6 +6,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**createGroupCalendarEvent**](CalendarApi.md#createGroupCalendarEvent) | **POST** /calendar/{groupId}/event | Create a calendar event |
 | [**deleteGroupCalendarEvent**](CalendarApi.md#deleteGroupCalendarEvent) | **DELETE** /calendar/{groupId}/{calendarId} | Delete a calendar event |
+| [**discoverCalendarEvents**](CalendarApi.md#discoverCalendarEvents) | **GET** /calendar/discover | Discover calendar events |
 | [**followGroupCalendarEvent**](CalendarApi.md#followGroupCalendarEvent) | **POST** /calendar/{groupId}/{calendarId}/follow | Follow a calendar event |
 | [**getCalendarEvents**](CalendarApi.md#getCalendarEvents) | **GET** /calendar | List calendar events |
 | [**getFeaturedCalendarEvents**](CalendarApi.md#getFeaturedCalendarEvents) | **GET** /calendar/featured | List featured calendar events |
@@ -13,6 +14,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getGroupCalendarEvent**](CalendarApi.md#getGroupCalendarEvent) | **GET** /calendar/{groupId}/{calendarId} | Get a calendar event |
 | [**getGroupCalendarEventICS**](CalendarApi.md#getGroupCalendarEventICS) | **GET** /calendar/{groupId}/{calendarId}.ics | Download calendar event as ICS |
 | [**getGroupCalendarEvents**](CalendarApi.md#getGroupCalendarEvents) | **GET** /calendar/{groupId} | List a group&#39;s calendar events |
+| [**getGroupNextCalendarEvent**](CalendarApi.md#getGroupNextCalendarEvent) | **GET** /calendar/{groupId}/next | Get next calendar event |
 | [**searchCalendarEvents**](CalendarApi.md#searchCalendarEvents) | **GET** /calendar/search | Search for calendar events |
 | [**updateGroupCalendarEvent**](CalendarApi.md#updateGroupCalendarEvent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event |
 
@@ -87,7 +89,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single CalendarEvent object. |  -  |
+| **400** | Error response due to an invalid or illegal calendar request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to an invalid or illegal calendar request. |  -  |
 
 <a name="deleteGroupCalendarEvent"></a>
 # **deleteGroupCalendarEvent**
@@ -159,6 +163,97 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response after deleting a calendar event. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
+
+<a name="discoverCalendarEvents"></a>
+# **discoverCalendarEvents**
+> CalendarEventDiscovery discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor)
+
+Discover calendar events
+
+Get a list of calendar events Initially, call without a &#x60;nextCursor&#x60; parameter For every successive call, use the &#x60;nextCursor&#x60; property returned in the previous call &amp; the &#x60;number&#x60; of entries desired for this call The &#x60;nextCursor&#x60; internally keeps track of the &#x60;offset&#x60; of the results, the initial request parameters, and accounts for discrepancies that might arise from time elapsed between calls
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.CalendarApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    CalendarApi apiInstance = new CalendarApi(defaultClient);
+    CalendarEventDiscoveryScope scope = CalendarEventDiscoveryScope.fromValue("all"); // CalendarEventDiscoveryScope | Scope for calendar event discovery.
+    String categories = "avatars,exploration,gaming,roleplaying,music,performance"; // String | Filter for calendar event discovery.
+    String tags = "vrc_event_group_fair"; // String | Filter for calendar event discovery.
+    CalendarEventDiscoveryInclusion featuredResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+    CalendarEventDiscoveryInclusion nonFeaturedResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+    CalendarEventDiscoveryInclusion personalizedResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+    Integer minimumInterestCount = 5; // Integer | Filter for calendar event discovery.
+    Integer minimumRemainingMinutes = 10; // Integer | Filter for calendar event discovery.
+    Integer upcomingOffsetMinutes = 10080; // Integer | Filter for calendar event discovery.
+    Integer n = 60; // Integer | The number of objects to return.
+    String nextCursor = "nextCursor_example"; // String | Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery).
+    try {
+      CalendarEventDiscovery result = apiInstance.discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarApi#discoverCalendarEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **scope** | [**CalendarEventDiscoveryScope**](.md)| Scope for calendar event discovery. | [optional] [default to upcoming] [enum: all, live, upcoming] |
+| **categories** | **String**| Filter for calendar event discovery. | [optional] |
+| **tags** | **String**| Filter for calendar event discovery. | [optional] |
+| **featuredResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] [default to include] [enum: exclude, include, skip] |
+| **nonFeaturedResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] [default to include] [enum: exclude, include, skip] |
+| **personalizedResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] [default to include] [enum: exclude, include, skip] |
+| **minimumInterestCount** | **Integer**| Filter for calendar event discovery. | [optional] |
+| **minimumRemainingMinutes** | **Integer**| Filter for calendar event discovery. | [optional] |
+| **upcomingOffsetMinutes** | **Integer**| Filter for calendar event discovery. | [optional] |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **nextCursor** | **String**| Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery). | [optional] |
+
+### Return type
+
+[**CalendarEventDiscovery**](CalendarEventDiscovery.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a CalendarEventDiscovery objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="followGroupCalendarEvent"></a>
@@ -593,7 +688,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | iCalendar file download |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry. |  -  |
+| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
 
 <a name="getGroupCalendarEvents"></a>
 # **getGroupCalendarEvents**
@@ -671,9 +766,80 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="getGroupNextCalendarEvent"></a>
+# **getGroupNextCalendarEvent**
+> CalendarEvent getGroupNextCalendarEvent(groupId)
+
+Get next calendar event
+
+Get the closest future calendar event scheduled for a group
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.CalendarApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    CalendarApi apiInstance = new CalendarApi(defaultClient);
+    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    try {
+      CalendarEvent result = apiInstance.getGroupNextCalendarEvent(groupId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CalendarApi#getGroupNextCalendarEvent");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **groupId** | **String**| Must be a valid group ID. | |
+
+### Return type
+
+[**CalendarEvent**](CalendarEvent.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single CalendarEvent object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
+
 <a name="searchCalendarEvents"></a>
 # **searchCalendarEvents**
-> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset)
+> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant)
 
 Search for calendar events
 
@@ -705,8 +871,9 @@ public class Example {
     Integer utcOffset = 56; // Integer | The offset from UTC in hours of the client or authenticated user.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
-      PaginatedCalendarEventList result = apiInstance.searchCalendarEvents(searchTerm, utcOffset, n, offset);
+      PaginatedCalendarEventList result = apiInstance.searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarApi#searchCalendarEvents");
@@ -727,6 +894,7 @@ public class Example {
 | **utcOffset** | **Integer**| The offset from UTC in hours of the client or authenticated user. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **isInternalVariant** | **Boolean**| Not quite sure what this actually does (exists on the website but doesn&#39;t seem to be used) | [optional] |
 
 ### Return type
 

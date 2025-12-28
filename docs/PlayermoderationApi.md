@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 <a name="getPlayerModerations"></a>
 # **getPlayerModerations**
-> List&lt;PlayerModeration&gt; getPlayerModerations(type, sourceUserId, targetUserId)
+> List&lt;PlayerModeration&gt; getPlayerModerations(type, targetUserId)
 
 Search Player Moderations
 
@@ -107,10 +107,9 @@ public class Example {
 
     PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
     PlayerModerationType type = PlayerModerationType.fromValue("block"); // PlayerModerationType | Must be one of PlayerModerationType.
-    String sourceUserId = "sourceUserId_example"; // String | Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
     String targetUserId = "targetUserId_example"; // String | Must be valid UserID.
     try {
-      List<PlayerModeration> result = apiInstance.getPlayerModerations(type, sourceUserId, targetUserId);
+      List<PlayerModeration> result = apiInstance.getPlayerModerations(type, targetUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayermoderationApi#getPlayerModerations");
@@ -127,8 +126,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **type** | [**PlayerModerationType**](.md)| Must be one of PlayerModerationType. | [optional] [default to unmute] [enum: block, mute, muteChat, unmute, unmuteChat, hideAvatar, showAvatar, interactOn, interactOff] |
-| **sourceUserId** | **String**| Must be valid UserID. Trying to view someone else&#39;s moderations results with \&quot;Can&#39;t view someone else&#39;s player moderations\&quot; error. | [optional] |
+| **type** | [**PlayerModerationType**](.md)| Must be one of PlayerModerationType. | [optional] [default to unmute] [enum: block, hideAvatar, interactOff, interactOn, mute, muteChat, showAvatar, unmute, unmuteChat] |
 | **targetUserId** | **String**| Must be valid UserID. | [optional] |
 
 ### Return type

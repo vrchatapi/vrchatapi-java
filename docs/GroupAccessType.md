@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `PUBLIC` (value: `"public"`)
+* `MEMBERS` (value: `"members"`)
 
 * `PLUS` (value: `"plus"`)
 
-* `MEMBERS` (value: `"members"`)
+* `PUBLIC` (value: `"public"`)
 
 
 
