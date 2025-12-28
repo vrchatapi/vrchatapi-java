@@ -81,6 +81,7 @@ docs/DiscordDetails.md
 docs/DynamicContentRow.md
 docs/EconomyAccount.md
 docs/EconomyApi.md
+docs/EditPrintRequest.md
 docs/EquipInventoryItemRequest.md
 docs/Error.md
 docs/Favorite.md
@@ -139,6 +140,7 @@ docs/GroupsApi.md
 docs/ImageAnimationStyle.md
 docs/ImageLoopStyle.md
 docs/ImageMask.md
+docs/ImagePurpose.md
 docs/InfoPush.md
 docs/InfoPushData.md
 docs/InfoPushDataArticle.md
@@ -171,6 +173,7 @@ docs/InviteMessage.md
 docs/InviteMessageType.md
 docs/InviteRequest.md
 docs/InviteResponse.md
+docs/InviteUserWithPhotoRequest.md
 docs/Jam.md
 docs/JamStateChangeDates.md
 docs/JamsApi.md
@@ -244,7 +247,9 @@ docs/ReportCategory.md
 docs/ReportReason.md
 docs/RepresentedGroup.md
 docs/RequestInviteRequest.md
+docs/RequestInviteWithPhotoRequest.md
 docs/RespondGroupJoinRequest.md
+docs/RespondInviteWithPhotoRequest.md
 docs/RespondNotificationV2Request.md
 docs/Response.md
 docs/SearchGroupMembers200Response.md
@@ -296,6 +301,9 @@ docs/UpdateUserBadgeRequest.md
 docs/UpdateUserNoteRequest.md
 docs/UpdateUserRequest.md
 docs/UpdateWorldRequest.md
+docs/UploadGalleryImageRequest.md
+docs/UploadImageRequest.md
+docs/UploadPrintRequest.md
 docs/User.md
 docs/UserCreditsEligible.md
 docs/UserExists.md
@@ -434,6 +442,7 @@ src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DiscordDetails.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/EconomyAccount.java
+src/main/java/io/github/vrchatapi/model/EditPrintRequest.java
 src/main/java/io/github/vrchatapi/model/EquipInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java
@@ -488,6 +497,7 @@ src/main/java/io/github/vrchatapi/model/GroupUserVisibility.java
 src/main/java/io/github/vrchatapi/model/ImageAnimationStyle.java
 src/main/java/io/github/vrchatapi/model/ImageLoopStyle.java
 src/main/java/io/github/vrchatapi/model/ImageMask.java
+src/main/java/io/github/vrchatapi/model/ImagePurpose.java
 src/main/java/io/github/vrchatapi/model/InfoPush.java
 src/main/java/io/github/vrchatapi/model/InfoPushData.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticle.java
@@ -517,6 +527,7 @@ src/main/java/io/github/vrchatapi/model/InviteMessage.java
 src/main/java/io/github/vrchatapi/model/InviteMessageType.java
 src/main/java/io/github/vrchatapi/model/InviteRequest.java
 src/main/java/io/github/vrchatapi/model/InviteResponse.java
+src/main/java/io/github/vrchatapi/model/InviteUserWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/Jam.java
 src/main/java/io/github/vrchatapi/model/JamStateChangeDates.java
 src/main/java/io/github/vrchatapi/model/JoinGroupRequest.java
@@ -584,7 +595,9 @@ src/main/java/io/github/vrchatapi/model/ReportCategory.java
 src/main/java/io/github/vrchatapi/model/ReportReason.java
 src/main/java/io/github/vrchatapi/model/RepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
+src/main/java/io/github/vrchatapi/model/RequestInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
+src/main/java/io/github/vrchatapi/model/RespondInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RespondNotificationV2Request.java
 src/main/java/io/github/vrchatapi/model/Response.java
 src/main/java/io/github/vrchatapi/model/SearchGroupMembers200Response.java
@@ -636,6 +649,9 @@ src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserNoteRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateWorldRequest.java
+src/main/java/io/github/vrchatapi/model/UploadGalleryImageRequest.java
+src/main/java/io/github/vrchatapi/model/UploadImageRequest.java
+src/main/java/io/github/vrchatapi/model/UploadPrintRequest.java
 src/main/java/io/github/vrchatapi/model/User.java
 src/main/java/io/github/vrchatapi/model/UserCreditsEligible.java
 src/main/java/io/github/vrchatapi/model/UserExists.java
