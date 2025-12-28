@@ -49,17 +49,9 @@ jobs:
       - name: Download Specification
         run: wget "${SPEC_URL}" '--output-document' "${ARTIFACT_NAME}"
 
-      - name: Set version
-        id: version
-        run: |
-          # Replace using bash
-          VERSION="${PASSED_VERSION}${VERSION_POSTPEND}"
-          CLEAN_VERSION="${VERSION/-nightly./.dev}"
-          echo "version=${CLEAN_VERSION}" >> $GITHUB_OUTPUT
-
       - name: Apply Version Postpend
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.version_postfix != '' }}
-        run: yq '--inplace' ".info.version |= \"${{ steps.version.outputs.version }}\"" "${ARTIFACT_NAME}"
+        run: yq '--inplace' ".info.version |= \"${{ env.PASSED_VERSION}}${{ env.VERSION_POSTPEND }}\"" "${ARTIFACT_NAME}"
 
       - name: Generate SDK Client
         run: bash ./generate.sh "${ARTIFACT_NAME}"
@@ -69,8 +61,8 @@ jobs:
         with:
           branch: main
           folder: .
-          commit-message: "Upgrade Java SDK to spec ${{ steps.version.outputs.version }}"
-          tag: ${{ steps.version.outputs.version }}
+          commit-message: "Upgrade Java SDK to spec ${{ env.PASSED_VERSION}}${{ env.VERSION_POSTPEND }}"
+          tag: ${{ env.PASSED_VERSION}}${{ env.VERSION_POSTPEND }}
 
 #  gradle:
 #    runs-on: ubuntu-latest
