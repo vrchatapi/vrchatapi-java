@@ -126,6 +126,10 @@ public class CalendarEvent {
   @SerializedName(SERIALIZED_NAME_LANGUAGES)
   private List<String> languages = null;
 
+  public static final String SERIALIZED_NAME_OCCURRENCE_KIND = "occurrenceKind";
+  @SerializedName(SERIALIZED_NAME_OCCURRENCE_KIND)
+  private String occurrenceKind;
+
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
   private String ownerId;
@@ -134,9 +138,17 @@ public class CalendarEvent {
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<CalendarEventPlatform> platforms = null;
 
+  public static final String SERIALIZED_NAME_RECURRENCE = "recurrence";
+  @SerializedName(SERIALIZED_NAME_RECURRENCE)
+  private String recurrence;
+
   public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
   @SerializedName(SERIALIZED_NAME_ROLE_IDS)
   private List<String> roleIds = null;
+
+  public static final String SERIALIZED_NAME_SERIES_ID = "seriesId";
+  @SerializedName(SERIALIZED_NAME_SERIES_ID)
+  private String seriesId;
 
   public static final String SERIALIZED_NAME_STARTS_AT = "startsAt";
   @SerializedName(SERIALIZED_NAME_STARTS_AT)
@@ -568,6 +580,29 @@ public class CalendarEvent {
   }
 
 
+  public CalendarEvent occurrenceKind(String occurrenceKind) {
+    
+    this.occurrenceKind = occurrenceKind;
+    return this;
+  }
+
+   /**
+   * So far if it exists, always the string \&quot;single\&quot;
+   * @return occurrenceKind
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "So far if it exists, always the string \"single\"")
+
+  public String getOccurrenceKind() {
+    return occurrenceKind;
+  }
+
+
+  public void setOccurrenceKind(String occurrenceKind) {
+    this.occurrenceKind = occurrenceKind;
+  }
+
+
   public CalendarEvent ownerId(String ownerId) {
     
     this.ownerId = ownerId;
@@ -622,6 +657,29 @@ public class CalendarEvent {
   }
 
 
+  public CalendarEvent recurrence(String recurrence) {
+    
+    this.recurrence = recurrence;
+    return this;
+  }
+
+   /**
+   * So far unused, always \&quot;null\&quot;
+   * @return recurrence
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "So far unused, always \"null\"")
+
+  public String getRecurrence() {
+    return recurrence;
+  }
+
+
+  public void setRecurrence(String recurrence) {
+    this.recurrence = recurrence;
+  }
+
+
   public CalendarEvent roleIds(List<String> roleIds) {
     
     this.roleIds = roleIds;
@@ -650,6 +708,29 @@ public class CalendarEvent {
 
   public void setRoleIds(List<String> roleIds) {
     this.roleIds = roleIds;
+  }
+
+
+  public CalendarEvent seriesId(String seriesId) {
+    
+    this.seriesId = seriesId;
+    return this;
+  }
+
+   /**
+   * So far unused, always \&quot;null\&quot;
+   * @return seriesId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "So far unused, always \"null\"")
+
+  public String getSeriesId() {
+    return seriesId;
+  }
+
+
+  public void setSeriesId(String seriesId) {
+    this.seriesId = seriesId;
   }
 
 
@@ -849,9 +930,12 @@ public class CalendarEvent {
         Objects.equals(this.interestedUserCount, calendarEvent.interestedUserCount) &&
         Objects.equals(this.isDraft, calendarEvent.isDraft) &&
         Objects.equals(this.languages, calendarEvent.languages) &&
+        Objects.equals(this.occurrenceKind, calendarEvent.occurrenceKind) &&
         Objects.equals(this.ownerId, calendarEvent.ownerId) &&
         Objects.equals(this.platforms, calendarEvent.platforms) &&
+        Objects.equals(this.recurrence, calendarEvent.recurrence) &&
         Objects.equals(this.roleIds, calendarEvent.roleIds) &&
+        Objects.equals(this.seriesId, calendarEvent.seriesId) &&
         Objects.equals(this.startsAt, calendarEvent.startsAt) &&
         Objects.equals(this.tags, calendarEvent.tags) &&
         Objects.equals(this.title, calendarEvent.title) &&
@@ -867,7 +951,7 @@ public class CalendarEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, createdAt, deletedAt, description, durationInMs, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, id, imageId, imageUrl, interestedUserCount, isDraft, languages, ownerId, platforms, roleIds, startsAt, tags, title, type, updatedAt, userInterest, usesInstanceOverflow);
+    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, createdAt, deletedAt, description, durationInMs, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, id, imageId, imageUrl, interestedUserCount, isDraft, languages, occurrenceKind, ownerId, platforms, recurrence, roleIds, seriesId, startsAt, tags, title, type, updatedAt, userInterest, usesInstanceOverflow);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -898,9 +982,12 @@ public class CalendarEvent {
     sb.append("    interestedUserCount: ").append(toIndentedString(interestedUserCount)).append("\n");
     sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+    sb.append("    occurrenceKind: ").append(toIndentedString(occurrenceKind)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
+    sb.append("    seriesId: ").append(toIndentedString(seriesId)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
@@ -947,9 +1034,12 @@ public class CalendarEvent {
     openapiFields.add("interestedUserCount");
     openapiFields.add("isDraft");
     openapiFields.add("languages");
+    openapiFields.add("occurrenceKind");
     openapiFields.add("ownerId");
     openapiFields.add("platforms");
+    openapiFields.add("recurrence");
     openapiFields.add("roleIds");
+    openapiFields.add("seriesId");
     openapiFields.add("startsAt");
     openapiFields.add("tags");
     openapiFields.add("title");
@@ -1012,6 +1102,9 @@ public class CalendarEvent {
       if (jsonObj.get("languages") != null && !jsonObj.get("languages").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `languages` to be an array in the JSON string but got `%s`", jsonObj.get("languages").toString()));
       }
+      if ((jsonObj.get("occurrenceKind") != null && !jsonObj.get("occurrenceKind").isJsonNull()) && !jsonObj.get("occurrenceKind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `occurrenceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("occurrenceKind").toString()));
+      }
       if ((jsonObj.get("ownerId") != null && !jsonObj.get("ownerId").isJsonNull()) && !jsonObj.get("ownerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
       }
@@ -1019,9 +1112,15 @@ public class CalendarEvent {
       if (jsonObj.get("platforms") != null && !jsonObj.get("platforms").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `platforms` to be an array in the JSON string but got `%s`", jsonObj.get("platforms").toString()));
       }
+      if ((jsonObj.get("recurrence") != null && !jsonObj.get("recurrence").isJsonNull()) && !jsonObj.get("recurrence").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `recurrence` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recurrence").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `roleIds` to be an array in the JSON string but got `%s`", jsonObj.get("roleIds").toString()));
+      }
+      if ((jsonObj.get("seriesId") != null && !jsonObj.get("seriesId").isJsonNull()) && !jsonObj.get("seriesId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `seriesId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("seriesId").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {

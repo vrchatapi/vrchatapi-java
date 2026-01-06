@@ -7879,18 +7879,29 @@ components:
           description: Languages that might be spoken at this event
           items:
             $ref: '#/components/schemas/LanguageCode'
+        occurrenceKind:
+          type: string
+          description: So far if it exists, always the string "single"
         ownerId:
           $ref: '#/components/schemas/GroupID'
         platforms:
           type: array
           items:
             $ref: '#/components/schemas/CalendarEventPlatform'
+        recurrence:
+          type: string
+          description: So far unused, always "null"
+          nullable: true
         roleIds:
           type: array
           description: Group roles that may join this event
           nullable: true
           items:
             $ref: '#/components/schemas/GroupRoleID'
+        seriesId:
+          type: string
+          description: So far unused, always "null"
+          nullable: true
         startsAt:
           type: string
           format: date-time
