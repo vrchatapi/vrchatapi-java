@@ -334,6 +334,7 @@ IPS (Info Push System) is a system for VRChat to push out dynamic information to
 import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
 import io.github.vrchatapi.api.MiscellaneousApi;
 
@@ -341,6 +342,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
 
     MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
     String require = "require_example"; // String | Tags to include (comma-separated). All of the tags needs to be present.
@@ -372,7 +379,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
