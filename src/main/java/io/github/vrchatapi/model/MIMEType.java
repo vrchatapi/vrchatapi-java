@@ -34,6 +34,8 @@ public enum MIMEType {
   
   APPLICATION_X_AVATAR("application/x-avatar"),
   
+  APPLICATION_X_PROP("application/x-prop"),
+  
   APPLICATION_X_RSYNC_DELTA("application/x-rsync-delta"),
   
   APPLICATION_X_RSYNC_SIGNATURE("application/x-rsync-signature"),

@@ -11,6 +11,8 @@
 
 * `APPLICATION_X_AVATAR` (value: `"application/x-avatar"`)
 
+* `APPLICATION_X_PROP` (value: `"application/x-prop"`)
+
 * `APPLICATION_X_RSYNC_DELTA` (value: `"application/x-rsync-delta"`)
 
 * `APPLICATION_X_RSYNC_SIGNATURE` (value: `"application/x-rsync-signature"`)
