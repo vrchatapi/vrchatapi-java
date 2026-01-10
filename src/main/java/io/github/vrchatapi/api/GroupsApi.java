@@ -42,7 +42,6 @@ import io.github.vrchatapi.model.GroupAnnouncement;
 import io.github.vrchatapi.model.GroupGallery;
 import io.github.vrchatapi.model.GroupGalleryImage;
 import io.github.vrchatapi.model.GroupInstance;
-import io.github.vrchatapi.model.GroupLimitedMember;
 import io.github.vrchatapi.model.GroupMember;
 import io.github.vrchatapi.model.GroupPermission;
 import io.github.vrchatapi.model.GroupPost;
@@ -4183,10 +4182,10 @@ public class GroupsApi {
 
     /**
      * Get Group Member
-     * Returns a LimitedGroup Member.
+     * Returns a GroupMember.
      * @param groupId Must be a valid group ID. (required)
      * @param userId Must be a valid user ID. (required)
-     * @return GroupLimitedMember
+     * @return GroupMember
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4197,17 +4196,17 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public GroupLimitedMember getGroupMember(String groupId, String userId) throws ApiException {
-        ApiResponse<GroupLimitedMember> localVarResp = getGroupMemberWithHttpInfo(groupId, userId);
+    public GroupMember getGroupMember(String groupId, String userId) throws ApiException {
+        ApiResponse<GroupMember> localVarResp = getGroupMemberWithHttpInfo(groupId, userId);
         return localVarResp.getData();
     }
 
     /**
      * Get Group Member
-     * Returns a LimitedGroup Member.
+     * Returns a GroupMember.
      * @param groupId Must be a valid group ID. (required)
      * @param userId Must be a valid user ID. (required)
-     * @return ApiResponse&lt;GroupLimitedMember&gt;
+     * @return ApiResponse&lt;GroupMember&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4218,15 +4217,15 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GroupLimitedMember> getGroupMemberWithHttpInfo(String groupId, String userId) throws ApiException {
+    public ApiResponse<GroupMember> getGroupMemberWithHttpInfo(String groupId, String userId) throws ApiException {
         okhttp3.Call localVarCall = getGroupMemberValidateBeforeCall(groupId, userId, null);
-        Type localVarReturnType = new TypeToken<GroupLimitedMember>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMember>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Group Member (asynchronously)
-     * Returns a LimitedGroup Member.
+     * Returns a GroupMember.
      * @param groupId Must be a valid group ID. (required)
      * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -4241,10 +4240,10 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupMemberAsync(String groupId, String userId, final ApiCallback<GroupLimitedMember> _callback) throws ApiException {
+    public okhttp3.Call getGroupMemberAsync(String groupId, String userId, final ApiCallback<GroupMember> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getGroupMemberValidateBeforeCall(groupId, userId, _callback);
-        Type localVarReturnType = new TypeToken<GroupLimitedMember>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMember>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -6922,7 +6921,7 @@ public class GroupsApi {
      * @param groupId Must be a valid group ID. (required)
      * @param userId Must be a valid user ID. (required)
      * @param updateGroupMemberRequest  (optional)
-     * @return GroupLimitedMember
+     * @return GroupMember
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6932,8 +6931,8 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public GroupLimitedMember updateGroupMember(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
-        ApiResponse<GroupLimitedMember> localVarResp = updateGroupMemberWithHttpInfo(groupId, userId, updateGroupMemberRequest);
+    public GroupMember updateGroupMember(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
+        ApiResponse<GroupMember> localVarResp = updateGroupMemberWithHttpInfo(groupId, userId, updateGroupMemberRequest);
         return localVarResp.getData();
     }
 
@@ -6943,7 +6942,7 @@ public class GroupsApi {
      * @param groupId Must be a valid group ID. (required)
      * @param userId Must be a valid user ID. (required)
      * @param updateGroupMemberRequest  (optional)
-     * @return ApiResponse&lt;GroupLimitedMember&gt;
+     * @return ApiResponse&lt;GroupMember&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6953,9 +6952,9 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GroupLimitedMember> updateGroupMemberWithHttpInfo(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
+    public ApiResponse<GroupMember> updateGroupMemberWithHttpInfo(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
         okhttp3.Call localVarCall = updateGroupMemberValidateBeforeCall(groupId, userId, updateGroupMemberRequest, null);
-        Type localVarReturnType = new TypeToken<GroupLimitedMember>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMember>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -6976,10 +6975,10 @@ public class GroupsApi {
         <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateGroupMemberAsync(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest, final ApiCallback<GroupLimitedMember> _callback) throws ApiException {
+    public okhttp3.Call updateGroupMemberAsync(String groupId, String userId, UpdateGroupMemberRequest updateGroupMemberRequest, final ApiCallback<GroupMember> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateGroupMemberValidateBeforeCall(groupId, userId, updateGroupMemberRequest, _callback);
-        Type localVarReturnType = new TypeToken<GroupLimitedMember>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMember>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

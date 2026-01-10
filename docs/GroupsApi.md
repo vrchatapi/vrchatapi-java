@@ -2121,11 +2121,11 @@ public class Example {
 
 <a name="getGroupMember"></a>
 # **getGroupMember**
-> GroupLimitedMember getGroupMember(groupId, userId)
+> GroupMember getGroupMember(groupId, userId)
 
 Get Group Member
 
-Returns a LimitedGroup Member.
+Returns a GroupMember.
 
 ### Example
 ```java
@@ -2152,7 +2152,7 @@ public class Example {
     String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      GroupLimitedMember result = apiInstance.getGroupMember(groupId, userId);
+      GroupMember result = apiInstance.getGroupMember(groupId, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupMember");
@@ -2174,7 +2174,7 @@ public class Example {
 
 ### Return type
 
-[**GroupLimitedMember**](GroupLimitedMember.md)
+[**GroupMember**](GroupMember.md)
 
 ### Authorization
 
@@ -3521,7 +3521,7 @@ public class Example {
 
 <a name="updateGroupMember"></a>
 # **updateGroupMember**
-> GroupLimitedMember updateGroupMember(groupId, userId, updateGroupMemberRequest)
+> GroupMember updateGroupMember(groupId, userId, updateGroupMemberRequest)
 
 Update Group Member
 
@@ -3553,7 +3553,7 @@ public class Example {
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateGroupMemberRequest updateGroupMemberRequest = new UpdateGroupMemberRequest(); // UpdateGroupMemberRequest | 
     try {
-      GroupLimitedMember result = apiInstance.updateGroupMember(groupId, userId, updateGroupMemberRequest);
+      GroupMember result = apiInstance.updateGroupMember(groupId, userId, updateGroupMemberRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#updateGroupMember");
@@ -3576,7 +3576,7 @@ public class Example {
 
 ### Return type
 
-[**GroupLimitedMember**](GroupLimitedMember.md)
+[**GroupMember**](GroupMember.md)
 
 ### Authorization
 

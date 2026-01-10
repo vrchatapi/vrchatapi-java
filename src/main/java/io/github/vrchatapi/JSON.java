@@ -185,7 +185,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupGalleryFileOrderRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupGalleryImage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupInstance.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupLimitedMember.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupMember.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupMemberLimitedUser.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.GroupMyMember.CustomTypeAdapterFactory());

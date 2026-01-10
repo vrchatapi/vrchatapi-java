@@ -2699,14 +2699,14 @@ paths:
     get:
       operationId: getGroupMember
       summary: Get Group Member
-      description: Returns a LimitedGroup Member.
+      description: Returns a GroupMember.
       tags:
         - groups
       security:
         - authCookie: []
       responses:
         '200':
-          $ref: '#/components/responses/GroupLimitedMemberResponse'
+          $ref: '#/components/responses/GroupMemberResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
         '403':
@@ -2728,7 +2728,7 @@ paths:
         - authCookie: []
       responses:
         '200':
-          $ref: '#/components/responses/GroupLimitedMemberResponse'
+          $ref: '#/components/responses/GroupMemberResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
         '404':
@@ -10867,6 +10867,7 @@ components:
       title: GroupMemberLimitedUser
       type: object
       description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+      nullable: true
       properties:
         currentAvatarTags:
           type: array
@@ -10889,27 +10890,32 @@ components:
     GroupMember:
       title: GroupMember
       type: object
+      description: May be null when attempting to retrieve group membership for a user who is not part of the group
+      nullable: true
       properties:
         acceptedByDisplayName:
           type: string
+          description: Only missing when explicitly fetching own user.
           nullable: true
         acceptedById:
           type: string
+          description: Only missing when explicitly fetching own user.
           nullable: true
         bannedAt:
           type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+          description: Only missing when explicitly fetching own user.
           nullable: true
           format: date-time
         createdAt:
           type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+          description: Only missing when explicitly fetching own user.
           nullable: true
           format: date-time
         groupId:
           $ref: '#/components/schemas/GroupID'
         hasJoinedFromPurchase:
           type: boolean
+          description: Missing when explicitly fetching own user, or when group isn't linked to a purchase.
         id:
           $ref: '#/components/schemas/GroupMemberID'
         isRepresenting:
@@ -10922,6 +10928,7 @@ components:
           default: false
         isSubscribedToEventAnnouncements:
           type: boolean
+          description: Only missing when explicitly fetching own user.
         joinedAt:
           type: string
           nullable: true
@@ -10936,7 +10943,7 @@ components:
             $ref: '#/components/schemas/GroupRoleID'
         managerNotes:
           type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+          description: Only missing when explicitly fetching own user.
           nullable: true
         membershipStatus:
           $ref: '#/components/schemas/GroupMemberStatus'
@@ -10946,12 +10953,23 @@ components:
             $ref: '#/components/schemas/GroupRoleID'
         user:
           $ref: '#/components/schemas/GroupMemberLimitedUser'
-          nullable: true
         userId:
           $ref: '#/components/schemas/UserID'
         visibility:
           type: string
           example: visible
+      required:
+        - groupId
+        - id
+        - isRepresenting
+        - isSubscribedToAnnouncements
+        - joinedAt
+        - lastPostReadAt
+        - mRoleIds
+        - membershipStatus
+        - roleIds
+        - userId
+        - visibility
     BanGroupMemberRequest:
       title: BanGroupMemberRequest
       type: object
@@ -11326,65 +11344,6 @@ components:
         - joinedAt:asc
         - joinedAt:desc
       example: joinedAt:asc
-    GroupLimitedMember:
-      title: GroupLimitedMember
-      type: object
-      description: May be null when attempting to retrieve group membership for a user who is not part of the group
-      nullable: true
-      properties:
-        bannedAt:
-          type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-          nullable: true
-          format: date-time
-        createdAt:
-          type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-          nullable: true
-          format: date-time
-        groupId:
-          $ref: '#/components/schemas/GroupID'
-        hasJoinedFromPurchase:
-          type: boolean
-        id:
-          $ref: '#/components/schemas/GroupMemberID'
-        isRepresenting:
-          type: boolean
-          description: Whether the user is representing the group. This makes the group show up above the name tag in-game.
-          default: false
-          example: true
-        isSubscribedToAnnouncements:
-          type: boolean
-          default: false
-        isSubscribedToEventAnnouncements:
-          type: boolean
-        joinedAt:
-          type: string
-          nullable: true
-          format: date-time
-        lastPostReadAt:
-          type: string
-          nullable: true
-          format: date-time
-        mRoleIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupRoleID'
-        managerNotes:
-          type: string
-          description: Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-          nullable: true
-        membershipStatus:
-          $ref: '#/components/schemas/GroupMemberStatus'
-        roleIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupRoleID'
-        userId:
-          $ref: '#/components/schemas/UserID'
-        visibility:
-          type: string
-          example: visible
     GroupUserVisibility:
       title: GroupUserVisibility
       type: string
@@ -15896,12 +15855,6 @@ components:
               total:
                 type: integer
                 description: Number of members returned
-    GroupLimitedMemberResponse:
-      description: Returns a list of GroupMember objects.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/GroupLimitedMember'
     DeleteGroupMemberSuccess:
       description: Successful response after deleting a group member.
       content:

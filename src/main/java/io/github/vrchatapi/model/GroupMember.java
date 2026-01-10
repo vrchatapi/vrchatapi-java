@@ -51,8 +51,9 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * GroupMember
+ * May be null when attempting to retrieve group membership for a user who is not part of the group
  */
+@ApiModel(description = "May be null when attempting to retrieve group membership for a user who is not part of the group")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GroupMember {
   public static final String SERIALIZED_NAME_ACCEPTED_BY_DISPLAY_NAME = "acceptedByDisplayName";
@@ -105,7 +106,7 @@ public class GroupMember {
 
   public static final String SERIALIZED_NAME_M_ROLE_IDS = "mRoleIds";
   @SerializedName(SERIALIZED_NAME_M_ROLE_IDS)
-  private List<String> mRoleIds = null;
+  private List<String> mRoleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MANAGER_NOTES = "managerNotes";
   @SerializedName(SERIALIZED_NAME_MANAGER_NOTES)
@@ -117,7 +118,7 @@ public class GroupMember {
 
   public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
   @SerializedName(SERIALIZED_NAME_ROLE_IDS)
-  private List<String> roleIds = null;
+  private List<String> roleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -141,11 +142,11 @@ public class GroupMember {
   }
 
    /**
-   * Get acceptedByDisplayName
+   * Only missing when explicitly fetching own user.
    * @return acceptedByDisplayName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public String getAcceptedByDisplayName() {
     return acceptedByDisplayName;
@@ -164,11 +165,11 @@ public class GroupMember {
   }
 
    /**
-   * Get acceptedById
+   * Only missing when explicitly fetching own user.
    * @return acceptedById
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public String getAcceptedById() {
     return acceptedById;
@@ -187,11 +188,11 @@ public class GroupMember {
   }
 
    /**
-   * Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+   * Only missing when explicitly fetching own user.
    * @return bannedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public OffsetDateTime getBannedAt() {
     return bannedAt;
@@ -210,11 +211,11 @@ public class GroupMember {
   }
 
    /**
-   * Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+   * Only missing when explicitly fetching own user.
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -236,8 +237,8 @@ public class GroupMember {
    * Get groupId
    * @return groupId
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "grp_71a7ff59-112c-4e78-a990-c7cc650776e5", value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "grp_71a7ff59-112c-4e78-a990-c7cc650776e5", required = true, value = "")
 
   public String getGroupId() {
     return groupId;
@@ -256,11 +257,11 @@ public class GroupMember {
   }
 
    /**
-   * Get hasJoinedFromPurchase
+   * Missing when explicitly fetching own user, or when group isn&#39;t linked to a purchase.
    * @return hasJoinedFromPurchase
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Missing when explicitly fetching own user, or when group isn't linked to a purchase.")
 
   public Boolean getHasJoinedFromPurchase() {
     return hasJoinedFromPurchase;
@@ -282,8 +283,8 @@ public class GroupMember {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "gmem_95cdb3b4-4643-4eb6-bdab-46a4e1e5ce37", value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "gmem_95cdb3b4-4643-4eb6-bdab-46a4e1e5ce37", required = true, value = "")
 
   public String getId() {
     return id;
@@ -305,8 +306,8 @@ public class GroupMember {
    * Whether the user is representing the group. This makes the group show up above the name tag in-game.
    * @return isRepresenting
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Whether the user is representing the group. This makes the group show up above the name tag in-game.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "true", required = true, value = "Whether the user is representing the group. This makes the group show up above the name tag in-game.")
 
   public Boolean getIsRepresenting() {
     return isRepresenting;
@@ -328,8 +329,8 @@ public class GroupMember {
    * Get isSubscribedToAnnouncements
    * @return isSubscribedToAnnouncements
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public Boolean getIsSubscribedToAnnouncements() {
     return isSubscribedToAnnouncements;
@@ -348,11 +349,11 @@ public class GroupMember {
   }
 
    /**
-   * Get isSubscribedToEventAnnouncements
+   * Only missing when explicitly fetching own user.
    * @return isSubscribedToEventAnnouncements
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public Boolean getIsSubscribedToEventAnnouncements() {
     return isSubscribedToEventAnnouncements;
@@ -375,7 +376,7 @@ public class GroupMember {
    * @return joinedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getJoinedAt() {
     return joinedAt;
@@ -398,7 +399,7 @@ public class GroupMember {
    * @return lastPostReadAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getLastPostReadAt() {
     return lastPostReadAt;
@@ -417,9 +418,6 @@ public class GroupMember {
   }
 
   public GroupMember addMRoleIdsItem(String mRoleIdsItem) {
-    if (this.mRoleIds == null) {
-      this.mRoleIds = new ArrayList<>();
-    }
     this.mRoleIds.add(mRoleIdsItem);
     return this;
   }
@@ -428,8 +426,8 @@ public class GroupMember {
    * Get mRoleIds
    * @return mRoleIds
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<String> getmRoleIds() {
     return mRoleIds;
@@ -448,11 +446,11 @@ public class GroupMember {
   }
 
    /**
-   * Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
+   * Only missing when explicitly fetching own user.
    * @return managerNotes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.")
+  @ApiModelProperty(value = "Only missing when explicitly fetching own user.")
 
   public String getManagerNotes() {
     return managerNotes;
@@ -474,8 +472,8 @@ public class GroupMember {
    * Get membershipStatus
    * @return membershipStatus
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public GroupMemberStatus getMembershipStatus() {
     return membershipStatus;
@@ -494,9 +492,6 @@ public class GroupMember {
   }
 
   public GroupMember addRoleIdsItem(String roleIdsItem) {
-    if (this.roleIds == null) {
-      this.roleIds = new ArrayList<>();
-    }
     this.roleIds.add(roleIdsItem);
     return this;
   }
@@ -505,8 +500,8 @@ public class GroupMember {
    * Get roleIds
    * @return roleIds
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<String> getRoleIds() {
     return roleIds;
@@ -551,8 +546,8 @@ public class GroupMember {
    * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
    * @return userId
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", value = "A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", required = true, value = "A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.")
 
   public String getUserId() {
     return userId;
@@ -574,8 +569,8 @@ public class GroupMember {
    * Get visibility
    * @return visibility
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "visible", value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "visible", required = true, value = "")
 
   public String getVisibility() {
     return visibility;
@@ -701,6 +696,17 @@ public class GroupMember {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("groupId");
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("isRepresenting");
+    openapiRequiredFields.add("isSubscribedToAnnouncements");
+    openapiRequiredFields.add("joinedAt");
+    openapiRequiredFields.add("lastPostReadAt");
+    openapiRequiredFields.add("mRoleIds");
+    openapiRequiredFields.add("membershipStatus");
+    openapiRequiredFields.add("roleIds");
+    openapiRequiredFields.add("userId");
+    openapiRequiredFields.add("visibility");
   }
 
  /**
@@ -723,37 +729,48 @@ public class GroupMember {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupMember` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GroupMember.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
       if ((jsonObj.get("acceptedByDisplayName") != null && !jsonObj.get("acceptedByDisplayName").isJsonNull()) && !jsonObj.get("acceptedByDisplayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `acceptedByDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acceptedByDisplayName").toString()));
       }
       if ((jsonObj.get("acceptedById") != null && !jsonObj.get("acceptedById").isJsonNull()) && !jsonObj.get("acceptedById").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `acceptedById` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acceptedById").toString()));
       }
-      if ((jsonObj.get("groupId") != null && !jsonObj.get("groupId").isJsonNull()) && !jsonObj.get("groupId").isJsonPrimitive()) {
+      if (!jsonObj.get("groupId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `groupId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("groupId").toString()));
       }
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+      if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("mRoleIds") != null && !jsonObj.get("mRoleIds").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("mRoleIds") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("mRoleIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `mRoleIds` to be an array in the JSON string but got `%s`", jsonObj.get("mRoleIds").toString()));
       }
       if ((jsonObj.get("managerNotes") != null && !jsonObj.get("managerNotes").isJsonNull()) && !jsonObj.get("managerNotes").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `managerNotes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managerNotes").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("roleIds") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("roleIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `roleIds` to be an array in the JSON string but got `%s`", jsonObj.get("roleIds").toString()));
       }
       // validate the optional field `user`
       if (jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) {
         GroupMemberLimitedUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
       }
-      if ((jsonObj.get("userId") != null && !jsonObj.get("userId").isJsonNull()) && !jsonObj.get("userId").isJsonPrimitive()) {
+      if (!jsonObj.get("userId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
       }
-      if ((jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) && !jsonObj.get("visibility").isJsonPrimitive()) {
+      if (!jsonObj.get("visibility").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `visibility` to be a primitive type in the JSON string but got `%s`", jsonObj.get("visibility").toString()));
       }
   }
