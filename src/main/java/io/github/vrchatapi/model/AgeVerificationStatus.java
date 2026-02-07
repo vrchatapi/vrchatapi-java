@@ -29,9 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AgeVerificationStatus.Adapter.class)
 public enum AgeVerificationStatus {
   
-  hidden("18+"),
+  plus18("18+"),
   
-  plus18("hidden"),
+  hidden("hidden"),
   
   verified("verified");
 

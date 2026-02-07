@@ -6442,8 +6442,8 @@ components:
         - hidden
         - verified
       x-enum-varnames:
-        - hidden
         - plus18
+        - hidden
         - verified
     AgeVerified:
       title: AgeVerified
