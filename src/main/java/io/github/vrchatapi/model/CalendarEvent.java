@@ -84,7 +84,7 @@ public class CalendarEvent {
 
   public static final String SERIALIZED_NAME_DURATION_IN_MS = "durationInMs";
   @SerializedName(SERIALIZED_NAME_DURATION_IN_MS)
-  private Integer durationInMs;
+  private Long durationInMs;
 
   public static final String SERIALIZED_NAME_ENDS_AT = "endsAt";
   @SerializedName(SERIALIZED_NAME_ENDS_AT)
@@ -319,7 +319,7 @@ public class CalendarEvent {
   }
 
 
-  public CalendarEvent durationInMs(Integer durationInMs) {
+  public CalendarEvent durationInMs(Long durationInMs) {
     
     this.durationInMs = durationInMs;
     return this;
@@ -332,12 +332,12 @@ public class CalendarEvent {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getDurationInMs() {
+  public Long getDurationInMs() {
     return durationInMs;
   }
 
 
-  public void setDurationInMs(Integer durationInMs) {
+  public void setDurationInMs(Long durationInMs) {
     this.durationInMs = durationInMs;
   }
 

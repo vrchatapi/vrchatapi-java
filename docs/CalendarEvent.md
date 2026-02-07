@@ -14,7 +14,7 @@ An event scheduled on a group's calendar
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**deletedAt** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  |
-|**durationInMs** | **Integer** |  |  [optional] |
+|**durationInMs** | **Long** |  |  [optional] |
 |**endsAt** | **OffsetDateTime** |  |  |
 |**featured** | **Boolean** |  |  [optional] |
 |**guestEarlyJoinMinutes** | **Integer** |  |  [optional] |
