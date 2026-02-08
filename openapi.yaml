@@ -11195,7 +11195,7 @@ components:
           minLength: 1
         name:
           type: string
-          minLength: 1
+          minLength: 0
         namespace:
           type: string
         occupants:
