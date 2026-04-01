@@ -46,6 +46,8 @@ public enum GroupPermissions {
   
   group_instance_age_gated_create("group-instance-age-gated-create"),
   
+  group_instance_announcement_create("group-instance-announcement-create"),
+  
   group_instance_calendar_link("group-instance-calendar-link"),
   
   group_instance_join("group-instance-join"),

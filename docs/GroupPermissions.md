@@ -23,6 +23,8 @@
 
 * `group_instance_age_gated_create` (value: `"group-instance-age-gated-create"`)
 
+* `group_instance_announcement_create` (value: `"group-instance-announcement-create"`)
+
 * `group_instance_calendar_link` (value: `"group-instance-calendar-link"`)
 
 * `group_instance_join` (value: `"group-instance-join"`)
