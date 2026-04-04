@@ -8,7 +8,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**active** | **Boolean** |  |  |
+|**archived** | **Boolean** |  |  [optional] |
 |**buyerRefundable** | **Boolean** |  |  |
+|**created** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  |
 |**displayName** | **String** |  |  |
 |**duration** | **Integer** |  |  [optional] |
@@ -29,6 +31,8 @@
 |**productIds** | **List&lt;String&gt;** |  |  |
 |**productType** | **ProductType** |  |  |
 |**products** | **List&lt;Object&gt;** |  |  |
+|**purchaseCount** | **Integer** |  |  [optional] |
+|**purchaseCountQuantity** | **Integer** |  |  [optional] |
 |**quantifiable** | **Boolean** |  |  [optional] |
 |**recurrable** | **Boolean** |  |  |
 |**refundable** | **Boolean** |  |  |
@@ -39,6 +43,7 @@
 |**storeIds** | **List&lt;String&gt;** |  |  |
 |**subtitle** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**updated** | **OffsetDateTime** |  |  [optional] |
 |**vrcPlusDiscountPrice** | **Integer** |  |  [optional] |
 |**whenToExpire** | **OffsetDateTime** |  |  [optional] |
 

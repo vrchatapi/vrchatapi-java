@@ -4,6 +4,10 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**createProduct**](EconomyApi.md#createProduct) | **POST** /products | Create Product |
+| [**createProductListingDirect**](EconomyApi.md#createProductListingDirect) | **POST** /listing | Create Product Listing |
+| [**deleteProduct**](EconomyApi.md#deleteProduct) | **DELETE** /products/{productId} | Delete Product |
+| [**deleteProductListingDirect**](EconomyApi.md#deleteProductListingDirect) | **DELETE** /listing/{productId} | Delete Product Listing |
 | [**getActiveLicenses**](EconomyApi.md#getActiveLicenses) | **GET** /economy/licenses/active | Get Active Licenses |
 | [**getBalance**](EconomyApi.md#getBalance) | **GET** /user/{userId}/balance | Get Balance |
 | [**getBalanceEarnings**](EconomyApi.md#getBalanceEarnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings |
@@ -11,6 +15,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getCurrentSubscriptions**](EconomyApi.md#getCurrentSubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions |
 | [**getEarningsMetrics**](EconomyApi.md#getEarningsMetrics) | **GET** /economy/metrics/earnings | Get Earnings Metrics |
 | [**getEconomyAccount**](EconomyApi.md#getEconomyAccount) | **GET** /user/{userId}/economy/account | Get Economy Account |
+| [**getEconomyBalances**](EconomyApi.md#getEconomyBalances) | **GET** /user/{userId}/economy/balances | Get Economy Balances |
+| [**getEconomyPayoutStatus**](EconomyApi.md#getEconomyPayoutStatus) | **GET** /user/{userId}/economy/payouts/status | Get Economy Payout Status |
+| [**getEconomyPayouts**](EconomyApi.md#getEconomyPayouts) | **GET** /user/{userId}/economy/payouts/list | Get Economy Payouts |
 | [**getLicenseGroup**](EconomyApi.md#getLicenseGroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group |
 | [**getProductListing**](EconomyApi.md#getProductListing) | **GET** /listing/{productId} | Get Product Listing |
 | [**getProductListingAlternate**](EconomyApi.md#getProductListingAlternate) | **GET** /products/{productId} | Get Product Listing (alternate) |
@@ -31,9 +38,296 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getTokenBundles**](EconomyApi.md#getTokenBundles) | **GET** /tokenBundles | List Token Bundles |
 | [**getUserCreditsEligible**](EconomyApi.md#getUserCreditsEligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligiblity |
 | [**getUserSubscriptionEligible**](EconomyApi.md#getUserSubscriptionEligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligiblity |
+| [**getUserTiliaKyc**](EconomyApi.md#getUserTiliaKyc) | **GET** /user/{userId}/tilia/kyc | Get User Tilia KYC |
+| [**listStores**](EconomyApi.md#listStores) | **GET** /economy/stores | List Stores |
+| [**listUserProducts**](EconomyApi.md#listUserProducts) | **GET** /user/{userId}/products | List User Products |
 | [**purchaseProductListing**](EconomyApi.md#purchaseProductListing) | **POST** /economy/purchase/listing | Purchase Product Listing |
+| [**updateProduct**](EconomyApi.md#updateProduct) | **PUT** /products/{productId} | Update Product |
+| [**updateProductListingDirect**](EconomyApi.md#updateProductListingDirect) | **PUT** /listing/{productId} | Update Product Listing |
 | [**updateTiliaTos**](EconomyApi.md#updateTiliaTos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status |
 
+
+<a name="createProduct"></a>
+# **createProduct**
+> Product createProduct(createProductRequest)
+
+Create Product
+
+Creates a product and returns the new Product object.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    CreateProductRequest createProductRequest = new CreateProductRequest(); // CreateProductRequest | 
+    try {
+      Product result = apiInstance.createProduct(createProductRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#createProduct");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createProductRequest** | [**CreateProductRequest**](CreateProductRequest.md)|  | |
+
+### Return type
+
+[**Product**](Product.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Product object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="createProductListingDirect"></a>
+# **createProductListingDirect**
+> ProductListing createProductListingDirect(createListingRequest)
+
+Create Product Listing
+
+Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    CreateListingRequest createListingRequest = new CreateListingRequest(); // CreateListingRequest | 
+    try {
+      ProductListing result = apiInstance.createProductListingDirect(createListingRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#createProductListingDirect");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createListingRequest** | [**CreateListingRequest**](CreateListingRequest.md)|  | |
+
+### Return type
+
+[**ProductListing**](ProductListing.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single ProductListing object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="deleteProduct"></a>
+# **deleteProduct**
+> SuccessFlag deleteProduct(productId)
+
+Delete Product
+
+Deletes a product.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String productId = "productId_example"; // String | Must be a valid product ID.
+    try {
+      SuccessFlag result = apiInstance.deleteProduct(productId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#deleteProduct");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **productId** | **String**| Must be a valid product ID. | |
+
+### Return type
+
+[**SuccessFlag**](SuccessFlag.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an SuccessFlag object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="deleteProductListingDirect"></a>
+# **deleteProductListingDirect**
+> SuccessFlag deleteProductListingDirect(productId, hydrate)
+
+Delete Product Listing
+
+Deletes a listing.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String productId = "productId_example"; // String | Must be a valid product ID.
+    Boolean hydrate = true; // Boolean | Populates some fields and changes types of others for certain objects.
+    try {
+      SuccessFlag result = apiInstance.deleteProductListingDirect(productId, hydrate);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#deleteProductListingDirect");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **productId** | **String**| Must be a valid product ID. | |
+| **hydrate** | **Boolean**| Populates some fields and changes types of others for certain objects. | [optional] |
+
+### Return type
+
+[**SuccessFlag**](SuccessFlag.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an SuccessFlag object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getActiveLicenses"></a>
 # **getActiveLicenses**
@@ -379,7 +673,7 @@ This endpoint does not need any parameter.
 
 <a name="getEarningsMetrics"></a>
 # **getEarningsMetrics**
-> EarningsMetrics getEarningsMetrics()
+> EarningsMetrics getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration)
 
 Get Earnings Metrics
 
@@ -407,8 +701,12 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String sellerId = "sellerId_example"; // String | Seller to retrieve economy metrics for.
+    String metricDateStart = "2026-03-28T23:00:00.000Z"; // String | Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+    String metricDateEnd = "2026-04-04T21:59:59.999Z"; // String | Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+    String groupByDuration = "days"; // String | Time bucket size for economy metrics. Observed values include `days` and `years`.
     try {
-      EarningsMetrics result = apiInstance.getEarningsMetrics();
+      EarningsMetrics result = apiInstance.getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EconomyApi#getEarningsMetrics");
@@ -422,7 +720,13 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sellerId** | **String**| Seller to retrieve economy metrics for. | |
+| **metricDateStart** | **String**| Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] |
+| **metricDateEnd** | **String**| Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] |
+| **groupByDuration** | **String**| Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. | [optional] |
 
 ### Return type
 
@@ -511,6 +815,216 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single EconomyAccount object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getEconomyBalances"></a>
+# **getEconomyBalances**
+> EconomyBalances getEconomyBalances(userId)
+
+Get Economy Balances
+
+Gets the combined balances for a user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      EconomyBalances result = apiInstance.getEconomyBalances(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#getEconomyBalances");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**EconomyBalances**](EconomyBalances.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an EconomyBalances object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getEconomyPayoutStatus"></a>
+# **getEconomyPayoutStatus**
+> EconomyPayoutStatus getEconomyPayoutStatus(userId)
+
+Get Economy Payout Status
+
+Gets the current payout status and eligibility information for a user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      EconomyPayoutStatus result = apiInstance.getEconomyPayoutStatus(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#getEconomyPayoutStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**EconomyPayoutStatus**](EconomyPayoutStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an EconomyPayoutStatus object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getEconomyPayouts"></a>
+# **getEconomyPayouts**
+> EconomyPayoutList getEconomyPayouts(userId)
+
+Get Economy Payouts
+
+Gets the payout history for a user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      EconomyPayoutList result = apiInstance.getEconomyPayouts(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#getEconomyPayouts");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**EconomyPayoutList**](EconomyPayoutList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns an EconomyPayoutList object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="getLicenseGroup"></a>
@@ -727,7 +1241,7 @@ public class Example {
 
 <a name="getProductListings"></a>
 # **getProductListings**
-> List&lt;ProductListing&gt; getProductListings(userId, n, offset, hydrate, groupId, active)
+> List&lt;ProductListing&gt; getProductListings(userId, n, offset, hydrate, listingType, groupId, active)
 
 Get User Product Listings
 
@@ -759,10 +1273,11 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean hydrate = true; // Boolean | Populates some fields and changes types of others for certain objects.
+    String listingType = "otp"; // String | Filter user listings by category. Observed values include `otp` and `subscription`.
     String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean active = true; // Boolean | Filter for users' listings and inventory bundles.
     try {
-      List<ProductListing> result = apiInstance.getProductListings(userId, n, offset, hydrate, groupId, active);
+      List<ProductListing> result = apiInstance.getProductListings(userId, n, offset, hydrate, listingType, groupId, active);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EconomyApi#getProductListings");
@@ -783,6 +1298,7 @@ public class Example {
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **hydrate** | **Boolean**| Populates some fields and changes types of others for certain objects. | [optional] |
+| **listingType** | **String**| Filter user listings by category. Observed values include &#x60;otp&#x60; and &#x60;subscription&#x60;. | [optional] |
 | **groupId** | **String**| Must be a valid group ID. | [optional] |
 | **active** | **Boolean**| Filter for users&#39; listings and inventory bundles. | [optional] |
 
@@ -1031,7 +1547,7 @@ public class Example {
 
 <a name="getProductPurchases"></a>
 # **getProductPurchases**
-> List&lt;ProductPurchase&gt; getProductPurchases(buyerId, n, offset, mostRecent, sort, order)
+> List&lt;ProductPurchase&gt; getProductPurchases(buyerId, sellerId, n, offset, mostRecent, sort, order)
 
 Get Product Purchases
 
@@ -1060,13 +1576,14 @@ public class Example {
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
     String buyerId = "buyerId_example"; // String | Must be a valid user ID.
+    String sellerId = "sellerId_example"; // String | Filter results by seller.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean mostRecent = true; // Boolean | 
     SortOptionProductPurchase sort = SortOptionProductPurchase.fromValue("purchaseDate"); // SortOptionProductPurchase | The sort order of the results.
     OrderOptionShort order = OrderOptionShort.fromValue("asc"); // OrderOptionShort | Result ordering
     try {
-      List<ProductPurchase> result = apiInstance.getProductPurchases(buyerId, n, offset, mostRecent, sort, order);
+      List<ProductPurchase> result = apiInstance.getProductPurchases(buyerId, sellerId, n, offset, mostRecent, sort, order);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EconomyApi#getProductPurchases");
@@ -1084,6 +1601,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **buyerId** | **String**| Must be a valid user ID. | |
+| **sellerId** | **String**| Filter results by seller. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **mostRecent** | **Boolean**|  | [optional] |
@@ -1937,6 +2455,226 @@ public class Example {
 | **200** | Returns a single UserSubscriptionEligible object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a name="getUserTiliaKyc"></a>
+# **getUserTiliaKyc**
+> TiliaKyc getUserTiliaKyc(userId)
+
+Get User Tilia KYC
+
+Gets KYC status details for a user&#39;s Tilia account.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      TiliaKyc result = apiInstance.getUserTiliaKyc(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#getUserTiliaKyc");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**TiliaKyc**](TiliaKyc.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a TiliaKyc object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="listStores"></a>
+# **listStores**
+> List&lt;Store&gt; listStores(sellerId, managementPov, n, offset)
+
+List Stores
+
+Lists stores, optionally filtered to a seller and adjusted for management views.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String sellerId = "sellerId_example"; // String | Filter results by seller.
+    Boolean managementPov = true; // Boolean | Return stores from the seller management point of view.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<Store> result = apiInstance.listStores(sellerId, managementPov, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#listStores");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sellerId** | **String**| Filter results by seller. | [optional] |
+| **managementPov** | **Boolean**| Return stores from the seller management point of view. | [optional] |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;Store&gt;**](Store.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Store objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="listUserProducts"></a>
+# **listUserProducts**
+> List&lt;Product&gt; listUserProducts(userId, n, offset)
+
+List User Products
+
+Gets the products of a given user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<Product> result = apiInstance.listUserProducts(userId, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#listUserProducts");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;Product&gt;**](Product.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of Product objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a name="purchaseProductListing"></a>
 # **purchaseProductListing**
 > ProductPurchase purchaseProductListing(purchaseProductListingRequest)
@@ -2005,6 +2743,152 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single ProductPurchase object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="updateProduct"></a>
+# **updateProduct**
+> Product updateProduct(productId, updateProductRequest)
+
+Update Product
+
+Updates a product and returns the updated Product object.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String productId = "productId_example"; // String | Must be a valid product ID.
+    UpdateProductRequest updateProductRequest = new UpdateProductRequest(); // UpdateProductRequest | 
+    try {
+      Product result = apiInstance.updateProduct(productId, updateProductRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#updateProduct");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **productId** | **String**| Must be a valid product ID. | |
+| **updateProductRequest** | [**UpdateProductRequest**](UpdateProductRequest.md)|  | |
+
+### Return type
+
+[**Product**](Product.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single Product object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="updateProductListingDirect"></a>
+# **updateProductListingDirect**
+> ProductListing updateProductListingDirect(productId, updateListingRequest, hydrate)
+
+Update Product Listing
+
+Updates the active state of a listing. Setting &#x60;active&#x60; to &#x60;true&#x60; publishes the listing, while &#x60;false&#x60; unpublishes it.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String productId = "productId_example"; // String | Must be a valid product ID.
+    UpdateListingRequest updateListingRequest = new UpdateListingRequest(); // UpdateListingRequest | 
+    Boolean hydrate = true; // Boolean | Populates some fields and changes types of others for certain objects.
+    try {
+      ProductListing result = apiInstance.updateProductListingDirect(productId, updateListingRequest, hydrate);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#updateProductListingDirect");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **productId** | **String**| Must be a valid product ID. | |
+| **updateListingRequest** | [**UpdateListingRequest**](UpdateListingRequest.md)|  | |
+| **hydrate** | **Boolean**| Populates some fields and changes types of others for certain objects. | [optional] |
+
+### Return type
+
+[**ProductListing**](ProductListing.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="updateTiliaTos"></a>

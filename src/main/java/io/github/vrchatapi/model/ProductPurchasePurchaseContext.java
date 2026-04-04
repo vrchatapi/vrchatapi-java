@@ -53,6 +53,14 @@ public class ProductPurchasePurchaseContext {
   @SerializedName(SERIALIZED_NAME_LOCATION_TYPE)
   private String locationType;
 
+  public static final String SERIALIZED_NAME_WORLD_ID = "worldId";
+  @SerializedName(SERIALIZED_NAME_WORLD_ID)
+  private String worldId;
+
+  public static final String SERIALIZED_NAME_WORLD_NAME = "worldName";
+  @SerializedName(SERIALIZED_NAME_WORLD_NAME)
+  private String worldName;
+
   public ProductPurchasePurchaseContext() {
   }
 
@@ -79,6 +87,52 @@ public class ProductPurchasePurchaseContext {
   }
 
 
+  public ProductPurchasePurchaseContext worldId(String worldId) {
+    
+    this.worldId = worldId;
+    return this;
+  }
+
+   /**
+   * WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user.
+   * @return worldId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd", value = "WorldID be \"offline\" on User profiles if you are not friends with that user.")
+
+  public String getWorldId() {
+    return worldId;
+  }
+
+
+  public void setWorldId(String worldId) {
+    this.worldId = worldId;
+  }
+
+
+  public ProductPurchasePurchaseContext worldName(String worldName) {
+    
+    this.worldName = worldName;
+    return this;
+  }
+
+   /**
+   * Get worldName
+   * @return worldName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getWorldName() {
+    return worldName;
+  }
+
+
+  public void setWorldName(String worldName) {
+    this.worldName = worldName;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -89,12 +143,14 @@ public class ProductPurchasePurchaseContext {
       return false;
     }
     ProductPurchasePurchaseContext productPurchasePurchaseContext = (ProductPurchasePurchaseContext) o;
-    return Objects.equals(this.locationType, productPurchasePurchaseContext.locationType);
+    return Objects.equals(this.locationType, productPurchasePurchaseContext.locationType) &&
+        Objects.equals(this.worldId, productPurchasePurchaseContext.worldId) &&
+        Objects.equals(this.worldName, productPurchasePurchaseContext.worldName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locationType);
+    return Objects.hash(locationType, worldId, worldName);
   }
 
   @Override
@@ -102,6 +158,8 @@ public class ProductPurchasePurchaseContext {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProductPurchasePurchaseContext {\n");
     sb.append("    locationType: ").append(toIndentedString(locationType)).append("\n");
+    sb.append("    worldId: ").append(toIndentedString(worldId)).append("\n");
+    sb.append("    worldName: ").append(toIndentedString(worldName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -125,6 +183,8 @@ public class ProductPurchasePurchaseContext {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("locationType");
+    openapiFields.add("worldId");
+    openapiFields.add("worldName");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -152,6 +212,12 @@ public class ProductPurchasePurchaseContext {
       }
       if ((jsonObj.get("locationType") != null && !jsonObj.get("locationType").isJsonNull()) && !jsonObj.get("locationType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `locationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locationType").toString()));
+      }
+      if ((jsonObj.get("worldId") != null && !jsonObj.get("worldId").isJsonNull()) && !jsonObj.get("worldId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `worldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldId").toString()));
+      }
+      if ((jsonObj.get("worldName") != null && !jsonObj.get("worldName").isJsonNull()) && !jsonObj.get("worldName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `worldName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldName").toString()));
       }
   }
 

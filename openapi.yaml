@@ -1520,6 +1520,11 @@ paths:
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /economy/metrics/earnings:
+    parameters:
+      - $ref: '#/components/parameters/metricDateStart'
+      - $ref: '#/components/parameters/metricDateEnd'
+      - $ref: '#/components/parameters/sellerId'
+      - $ref: '#/components/parameters/groupByDuration'
     get:
       operationId: getEarningsMetrics
       summary: Get Earnings Metrics
@@ -1555,6 +1560,7 @@ paths:
   /economy/purchases:
     parameters:
       - $ref: '#/components/parameters/buyerId'
+      - $ref: '#/components/parameters/sellerIdQuery'
       - $ref: '#/components/parameters/number'
       - $ref: '#/components/parameters/offset'
       - $ref: '#/components/parameters/mostRecentFlag'
@@ -1653,6 +1659,25 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/StoreShelfListResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /economy/stores:
+    parameters:
+      - $ref: '#/components/parameters/sellerIdQuery'
+      - $ref: '#/components/parameters/managementPov'
+      - $ref: '#/components/parameters/number'
+      - $ref: '#/components/parameters/offset'
+    get:
+      operationId: listStores
+      summary: List Stores
+      description: Lists stores, optionally filtered to a seller and adjusted for management views.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/StoreListResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}:
@@ -3894,6 +3919,26 @@ paths:
           $ref: '#/components/responses/LicenseGroupResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
+  /listing:
+    post:
+      operationId: createProductListingDirect
+      summary: Create Product Listing
+      description: Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.
+      tags:
+        - economy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateListingRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductListingResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /listing/{productId}:
     parameters:
       - $ref: '#/components/parameters/productId'
@@ -3909,6 +3954,38 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/ProductListingResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+    put:
+      operationId: updateProductListingDirect
+      summary: Update Product Listing
+      description: Updates the active state of a listing. Setting `active` to `true` publishes the listing, while `false` unpublishes it.
+      tags:
+        - economy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateListingRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductListingResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+    delete:
+      operationId: deleteProductListingDirect
+      summary: Delete Product Listing
+      description: Deletes a listing.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/DeleteProductListingResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /logout:
@@ -4378,6 +4455,26 @@ paths:
           description: Empty response if successful
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
+  /products:
+    post:
+      operationId: createProduct
+      summary: Create Product
+      description: Creates a product and returns the new Product object.
+      tags:
+        - economy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /products/{productId}:
     parameters:
       - $ref: '#/components/parameters/productId'
@@ -4393,6 +4490,38 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/ProductListingResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+    put:
+      operationId: updateProduct
+      summary: Update Product
+      description: Updates a product and returns the updated Product object.
+      tags:
+        - economy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProductRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+    delete:
+      operationId: deleteProduct
+      summary: Delete Product
+      description: Deletes a product.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/DeleteProductResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /props:
@@ -4755,6 +4884,54 @@ paths:
           $ref: '#/components/responses/EconomyAccountResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/economy/balances:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    get:
+      operationId: getEconomyBalances
+      summary: Get Economy Balances
+      description: Gets the combined balances for a user.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/EconomyBalancesResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/economy/payouts/list:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    get:
+      operationId: getEconomyPayouts
+      summary: Get Economy Payouts
+      description: Gets the payout history for a user.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/EconomyPayoutListResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/economy/payouts/status:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    get:
+      operationId: getEconomyPayoutStatus
+      summary: Get Economy Payout Status
+      description: Gets the current payout status and eligibility information for a user.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/EconomyPayoutStatusResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /user/{userId}/economy/transactions:
     parameters:
       - $ref: '#/components/parameters/userId'
@@ -4852,6 +5029,7 @@ paths:
       - $ref: '#/components/parameters/number'
       - $ref: '#/components/parameters/offset'
       - $ref: '#/components/parameters/hydrate'
+      - $ref: '#/components/parameters/listingTypeFilter'
       - $ref: '#/components/parameters/groupIdFilter'
       - $ref: '#/components/parameters/active'
     get:
@@ -4865,6 +5043,40 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/ProductListingListResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/products:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+      - $ref: '#/components/parameters/number'
+      - $ref: '#/components/parameters/offset'
+    get:
+      operationId: listUserProducts
+      summary: List User Products
+      description: Gets the products of a given user.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductListResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/tilia/kyc:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    get:
+      operationId: getUserTiliaKyc
+      summary: Get User Tilia KYC
+      description: Gets KYC status details for a user's Tilia account.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/TiliaKycResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /user/{userId}/tilia/tos:
@@ -9585,9 +9797,39 @@ components:
       type: string
       enum:
         - duration
+        - instant
         - permanent
         - subscription
       default: subscription
+    ProductType:
+      title: ProductType
+      type: string
+      enum:
+        - inventory
+        - listing
+        - role
+        - udon
+      default: udon
+    ProductPurchaseProduct:
+      title: ProductPurchaseProduct
+      type: object
+      properties:
+        displayName:
+          type: string
+        id:
+          $ref: '#/components/schemas/ProductID'
+        imageId:
+          $ref: '#/components/schemas/FileID'
+          nullable: true
+        licenseId:
+          type: string
+          nullable: true
+        productType:
+          $ref: '#/components/schemas/ProductType'
+      required:
+        - displayName
+        - id
+        - productType
     ProductPurchaseID:
       title: ProductPurchaseID
       type: string
@@ -9610,8 +9852,12 @@ components:
           type: boolean
         isSeller:
           type: boolean
+        ledgerTransactionId:
+          type: integer
         listingCurrentlyAvailable:
           type: boolean
+        listingDescription:
+          type: string
         listingDisplayName:
           type: string
         listingId:
@@ -9626,7 +9872,7 @@ components:
         products:
           type: array
           items:
-            type: object
+            $ref: '#/components/schemas/ProductPurchaseProduct'
         purchaseActive:
           type: boolean
         purchaseContext:
@@ -9635,6 +9881,10 @@ components:
             locationType:
               type: string
               example: undefined
+            worldId:
+              $ref: '#/components/schemas/WorldID'
+            worldName:
+              type: string
         purchaseCurrentStatus:
           type: string
         purchaseDate:
@@ -9646,7 +9896,10 @@ components:
           type: string
         purchaseEndDate:
           type: string
+          nullable: true
           format: date-time
+        purchaseFee:
+          type: integer
         purchaseId:
           $ref: '#/components/schemas/ProductPurchaseID'
         purchaseLatest:
@@ -9657,6 +9910,7 @@ components:
           type: integer
         purchaseStartDate:
           type: string
+          nullable: true
           format: date-time
         purchaseToken:
           type: object
@@ -9664,6 +9918,8 @@ components:
         purchaseType:
           type: string
         purchaseUnitPrice:
+          type: integer
+        purchaseValue:
           type: integer
         receiverDisplayName:
           type: string
@@ -9739,15 +9995,6 @@ components:
           type: boolean
       required:
         - eligible
-    ProductType:
-      title: ProductType
-      type: string
-      enum:
-        - inventory
-        - listing
-        - role
-        - udon
-      default: udon
     Product:
       title: Product
       type: object
@@ -9776,12 +10023,21 @@ components:
         imageId:
           $ref: '#/components/schemas/FileID'
           nullable: true
+        imageUrl:
+          type: string
+          nullable: true
         parentListings:
           type: array
           items:
             $ref: '#/components/schemas/ProductID'
         productType:
           $ref: '#/components/schemas/ProductType'
+        productTypeLabel:
+          type: string
+        purchaseCount:
+          type: integer
+        purchaseCountQuantity:
+          type: integer
         sellerDisplayName:
           type: string
         sellerId:
@@ -9837,8 +10093,13 @@ components:
       properties:
         active:
           type: boolean
+        archived:
+          type: boolean
         buyerRefundable:
           type: boolean
+        created:
+          type: string
+          format: date-time
         description:
           type: string
         displayName:
@@ -9894,6 +10155,10 @@ components:
           items:
             type: object
             description: Either a ProductID or a Product, depending on hydration
+        purchaseCount:
+          type: integer
+        purchaseCountQuantity:
+          type: integer
         quantifiable:
           type: boolean
         recurrable:
@@ -9918,6 +10183,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
+        updated:
+          type: string
+          format: date-time
         vrcPlusDiscountPrice:
           type: integer
         whenToExpire:
@@ -9981,6 +10249,21 @@ components:
         - shelfLayout
         - shelfTitle
         - updatedAt
+    StoreContext:
+      title: StoreContext
+      type: object
+      properties:
+        id:
+          type: string
+        imageUrl:
+          type: string
+          nullable: true
+        name:
+          type: string
+      required:
+        - id
+        - imageUrl
+        - name
     StoreType:
       title: StoreType
       type: string
@@ -9993,6 +10276,9 @@ components:
       title: Store
       type: object
       properties:
+        created:
+          type: string
+          format: date-time
         description:
           type: string
         displayName:
@@ -10026,14 +10312,21 @@ components:
           description: Only for store type house
           items:
             $ref: '#/components/schemas/StoreShelf'
+        storeContext:
+          $ref: '#/components/schemas/StoreContext'
         storeId:
           $ref: '#/components/schemas/StoreID'
+        storeStatus:
+          type: string
         storeType:
           $ref: '#/components/schemas/StoreType'
         tags:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
+        updated:
+          type: string
+          format: date-time
         worldId:
           $ref: '#/components/schemas/WorldID'
           description: Only for store type world
@@ -13068,6 +13361,47 @@ components:
             forId: prms_153ac0b7-c2dd-43f9-96e3-c61fd2e85509
             forName: permission-profile-pic-override
             forType: permission
+    CreateListingRequest:
+      title: CreateListingRequest
+      type: object
+      description: Observed create-listing payload fields. Additional fields may exist.
+      properties:
+        active:
+          type: boolean
+        description:
+          type: string
+        displayName:
+          type: string
+        imageId:
+          $ref: '#/components/schemas/FileID'
+        listingType:
+          $ref: '#/components/schemas/ProductListingType'
+        priceTokens:
+          type: integer
+        productIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductID'
+        storeIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/StoreID'
+      required:
+        - description
+        - displayName
+        - imageId
+        - listingType
+        - priceTokens
+        - productIds
+        - storeIds
+    UpdateListingRequest:
+      title: UpdateListingRequest
+      type: object
+      properties:
+        active:
+          type: boolean
+      required:
+        - active
     InviteMessageType:
       title: InviteMessageType
       type: string
@@ -13669,6 +14003,47 @@ components:
         - timestamp
         - worldId
         - worldName
+    CreateProductRequest:
+      title: CreateProductRequest
+      type: object
+      properties:
+        description:
+          type: string
+        displayName:
+          type: string
+        imageId:
+          $ref: '#/components/schemas/FileID'
+        productType:
+          $ref: '#/components/schemas/ProductType'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        useForSubscriberList:
+          type: boolean
+      required:
+        - description
+        - displayName
+        - imageId
+        - productType
+        - tags
+        - useForSubscriberList
+    UpdateProductRequest:
+      title: UpdateProductRequest
+      type: object
+      properties:
+        description:
+          type: string
+        displayName:
+          type: string
+        imageId:
+          $ref: '#/components/schemas/FileID'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        useForSubscriberList:
+          type: boolean
     PropSpawnType:
       title: PropSpawnType
       type: integer
@@ -14028,12 +14403,32 @@ components:
         accountId:
           type: string
           nullable: true
+        accountSellerRegisteredOn:
+          type: string
+          nullable: true
+          format: date-time
+        accountSellerStatus:
+          type: string
+          nullable: true
         blocked:
+          type: boolean
+        canEarn:
+          type: boolean
+        canPayout:
           type: boolean
         canSpend:
           type: boolean
+        skrillEmail:
+          type: string
+          nullable: true
         source:
           type: string
+        tiliaId:
+          type: string
+          nullable: true
+        tiliaType:
+          type: string
+          nullable: true
         userId:
           $ref: '#/components/schemas/UserID'
       required:
@@ -14043,6 +14438,135 @@ components:
         - canSpend
         - source
         - userId
+    EconomyBalances:
+      title: EconomyBalances
+      type: object
+      properties:
+        balance:
+          type: integer
+        earnings:
+          type: integer
+        standard:
+          type: integer
+      required:
+        - balance
+        - earnings
+        - standard
+    EconomyPayout:
+      title: EconomyPayout
+      type: object
+      properties:
+        paymentAmountTokens:
+          type: integer
+        paymentAmountUsd:
+          type: integer
+        paymentCreated:
+          type: string
+          format: date-time
+        paymentOutId:
+          type: integer
+        paymentPlatform:
+          type: string
+        paymentPlatformCode:
+          type: integer
+        paymentStatus:
+          type: string
+        paymentStatusCode:
+          type: integer
+        paymentUpdated:
+          type: string
+          format: date-time
+        platformPaymentGuid:
+          type: string
+          nullable: true
+        platformPaymentMethod:
+          type: string
+          nullable: true
+        reversalDate:
+          type: string
+          nullable: true
+          format: date-time
+        reversalReason:
+          type: string
+          nullable: true
+        reversalReasonCode:
+          type: integer
+          nullable: true
+        reversalTransactionId:
+          type: integer
+          nullable: true
+        transactionId:
+          type: integer
+      required:
+        - paymentAmountTokens
+        - paymentAmountUsd
+        - paymentCreated
+        - paymentOutId
+        - paymentPlatform
+        - paymentPlatformCode
+        - paymentStatus
+        - paymentStatusCode
+        - paymentUpdated
+        - transactionId
+    EconomyPayoutList:
+      title: EconomyPayoutList
+      type: object
+      properties:
+        payouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/EconomyPayout'
+      required:
+        - payouts
+    EconomyPayoutEligibility:
+      title: EconomyPayoutEligibility
+      type: object
+      properties:
+        issue:
+          type: string
+        okBalance:
+          type: boolean
+        okFrequency:
+          type: boolean
+        okNotOngoing:
+          type: boolean
+        okStanding:
+          type: boolean
+      required:
+        - issue
+        - okBalance
+        - okFrequency
+        - okNotOngoing
+        - okStanding
+    EconomyPayoutStatus:
+      title: EconomyPayoutStatus
+      type: object
+      properties:
+        accountId:
+          type: integer
+        activePayout:
+          $ref: '#/components/schemas/EconomyPayout'
+          nullable: true
+        activePayoutCancellable:
+          type: boolean
+        activePayoutTiliaAmount:
+          type: integer
+        earningsBalance:
+          type: integer
+        eligibility:
+          $ref: '#/components/schemas/EconomyPayoutEligibility'
+        payoutEligible:
+          type: boolean
+        tiliaId:
+          type: string
+      required:
+        - accountId
+        - activePayoutCancellable
+        - activePayoutTiliaAmount
+        - earningsBalance
+        - eligibility
+        - payoutEligible
+        - tiliaId
     ProductPurchaseRecord:
       title: ProductPurchaseRecord
       type: object
@@ -14128,6 +14652,52 @@ components:
         - incomingRequest
         - isFriend
         - outgoingRequest
+    TiliaKyc:
+      title: TiliaKyc
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: Tilia account identifier.
+          example: acct_2YYRz9C5xbJWrhI5RLWPnwDLMyq
+        kyc_id:
+          type: string
+          description: KYC verification identifier.
+          example: kyc_2tDKpjafhPTG729ceA2oIcsQlWA
+        kyc_requirements:
+          type: string
+          description: Requirement state reported by Tilia.
+          example: NONE
+        match_checks:
+          type: array
+          description: Match checks returned by Tilia.
+          items:
+            type: string
+        pii_level:
+          type: string
+          description: PII verification level.
+          example: FULL
+        rules:
+          type: array
+          description: Additional rules returned by Tilia.
+          items:
+            type: string
+        state:
+          type: string
+          description: Overall KYC state.
+          example: ACCEPT
+        tilia_retry_rule_code:
+          type: string
+          description: Retry rule code returned by Tilia, if any.
+      required:
+        - account_id
+        - kyc_id
+        - kyc_requirements
+        - match_checks
+        - pii_level
+        - rules
+        - state
+        - tilia_retry_rule_code
     TiliaTOS:
       title: TiliaTOS
       type: object
@@ -15845,6 +16415,14 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/StoreShelf'
+    StoreListResponse:
+      description: Returns a list of Store objects.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Store'
     FavoriteGroupResponse:
       description: Returns a single FavoriteGroup object.
       content:
@@ -16867,6 +17445,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ProductListing'
+    DeleteProductListingResponse:
+      description: Returns an SuccessFlag object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SuccessFlag'
     LogoutSuccess:
       description: OK
       content:
@@ -17094,6 +17678,18 @@ components:
                   status_code: 403
           schema:
             $ref: '#/components/schemas/Error'
+    ProductResponse:
+      description: Returns a single Product object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Product'
+    DeleteProductResponse:
+      description: Returns an SuccessFlag object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SuccessFlag'
     PropListResponse:
       description: Returns a list of Prop objects.
       content:
@@ -17191,6 +17787,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/EconomyAccount'
+    EconomyBalancesResponse:
+      description: Returns an EconomyBalances object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EconomyBalances'
+    EconomyPayoutListResponse:
+      description: Returns an EconomyPayoutList object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EconomyPayoutList'
+    EconomyPayoutStatusResponse:
+      description: Returns an EconomyPayoutStatus object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EconomyPayoutStatus'
     ProductPurchaseHistoryResponse:
       description: Returns a single ProductPurchaseHistory object.
       content:
@@ -17275,6 +17889,20 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/ProductListing'
+    ProductListResponse:
+      description: Returns a list of Product objects.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Product'
+    TiliaKycResponse:
+      description: Returns a TiliaKyc object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TiliaKyc'
     TiliaTOSResponse:
       description: Returns a single TiliaTOS object.
       content:
@@ -17922,10 +18550,48 @@ components:
       schema:
         type: string
         default: main
+    metricDateStart:
+      name: metricDateStart
+      description: Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+      required: false
+      in: query
+      schema:
+        type: string
+        example: '2026-03-28T23:00:00.000Z'
+    metricDateEnd:
+      name: metricDateEnd
+      description: Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+      required: false
+      in: query
+      schema:
+        type: string
+        example: '2026-04-04T21:59:59.999Z'
+    sellerId:
+      name: sellerId
+      description: Seller to retrieve economy metrics for.
+      required: true
+      in: query
+      schema:
+        $ref: '#/components/schemas/UserID'
+    groupByDuration:
+      name: groupByDuration
+      description: Time bucket size for economy metrics. Observed values include `days` and `years`.
+      required: false
+      in: query
+      schema:
+        type: string
+        example: days
     buyerId:
       name: buyerId
       description: Must be a valid user ID.
       required: true
+      in: query
+      schema:
+        $ref: '#/components/schemas/UserID'
+    sellerIdQuery:
+      name: sellerId
+      description: Filter results by seller.
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/UserID'
@@ -17982,6 +18648,14 @@ components:
       in: query
       schema:
         $ref: '#/components/schemas/StoreView'
+    managementPov:
+      name: managementPov
+      description: Return stores from the seller management point of view.
+      required: false
+      in: query
+      schema:
+        type: boolean
+        example: true
     favoriteGroupType:
       name: favoriteGroupType
       description: The type of group to fetch, must be a valid FavoriteType.
@@ -18397,6 +19071,14 @@ components:
       in: query
       schema:
         $ref: '#/components/schemas/UserID'
+    listingTypeFilter:
+      name: listingType
+      description: Filter user listings by category. Observed values include `otp` and `subscription`.
+      required: false
+      in: query
+      schema:
+        type: string
+        example: otp
     groupIdFilter:
       name: groupId
       description: Must be a valid group ID.

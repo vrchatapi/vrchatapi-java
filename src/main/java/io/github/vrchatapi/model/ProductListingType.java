@@ -30,6 +30,8 @@ public enum ProductListingType {
   
   DURATION("duration"),
   
+  INSTANT("instant"),
+  
   PERMANENT("permanent"),
   
   SUBSCRIPTION("subscription");

@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.ProductListingType;
+import io.github.vrchatapi.model.ProductPurchaseProduct;
 import io.github.vrchatapi.model.ProductPurchasePurchaseContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -82,9 +83,17 @@ public class ProductPurchase {
   @SerializedName(SERIALIZED_NAME_IS_SELLER)
   private Boolean isSeller;
 
+  public static final String SERIALIZED_NAME_LEDGER_TRANSACTION_ID = "ledgerTransactionId";
+  @SerializedName(SERIALIZED_NAME_LEDGER_TRANSACTION_ID)
+  private Integer ledgerTransactionId;
+
   public static final String SERIALIZED_NAME_LISTING_CURRENTLY_AVAILABLE = "listingCurrentlyAvailable";
   @SerializedName(SERIALIZED_NAME_LISTING_CURRENTLY_AVAILABLE)
   private Boolean listingCurrentlyAvailable;
+
+  public static final String SERIALIZED_NAME_LISTING_DESCRIPTION = "listingDescription";
+  @SerializedName(SERIALIZED_NAME_LISTING_DESCRIPTION)
+  private String listingDescription;
 
   public static final String SERIALIZED_NAME_LISTING_DISPLAY_NAME = "listingDisplayName";
   @SerializedName(SERIALIZED_NAME_LISTING_DISPLAY_NAME)
@@ -108,7 +117,7 @@ public class ProductPurchase {
 
   public static final String SERIALIZED_NAME_PRODUCTS = "products";
   @SerializedName(SERIALIZED_NAME_PRODUCTS)
-  private List<Object> products = new ArrayList<>();
+  private List<ProductPurchaseProduct> products = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PURCHASE_ACTIVE = "purchaseActive";
   @SerializedName(SERIALIZED_NAME_PURCHASE_ACTIVE)
@@ -137,6 +146,10 @@ public class ProductPurchase {
   public static final String SERIALIZED_NAME_PURCHASE_END_DATE = "purchaseEndDate";
   @SerializedName(SERIALIZED_NAME_PURCHASE_END_DATE)
   private OffsetDateTime purchaseEndDate;
+
+  public static final String SERIALIZED_NAME_PURCHASE_FEE = "purchaseFee";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_FEE)
+  private Integer purchaseFee;
 
   public static final String SERIALIZED_NAME_PURCHASE_ID = "purchaseId";
   @SerializedName(SERIALIZED_NAME_PURCHASE_ID)
@@ -169,6 +182,10 @@ public class ProductPurchase {
   public static final String SERIALIZED_NAME_PURCHASE_UNIT_PRICE = "purchaseUnitPrice";
   @SerializedName(SERIALIZED_NAME_PURCHASE_UNIT_PRICE)
   private Integer purchaseUnitPrice;
+
+  public static final String SERIALIZED_NAME_PURCHASE_VALUE = "purchaseValue";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_VALUE)
+  private Integer purchaseValue;
 
   public static final String SERIALIZED_NAME_RECEIVER_DISPLAY_NAME = "receiverDisplayName";
   @SerializedName(SERIALIZED_NAME_RECEIVER_DISPLAY_NAME)
@@ -366,6 +383,29 @@ public class ProductPurchase {
   }
 
 
+  public ProductPurchase ledgerTransactionId(Integer ledgerTransactionId) {
+    
+    this.ledgerTransactionId = ledgerTransactionId;
+    return this;
+  }
+
+   /**
+   * Get ledgerTransactionId
+   * @return ledgerTransactionId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getLedgerTransactionId() {
+    return ledgerTransactionId;
+  }
+
+
+  public void setLedgerTransactionId(Integer ledgerTransactionId) {
+    this.ledgerTransactionId = ledgerTransactionId;
+  }
+
+
   public ProductPurchase listingCurrentlyAvailable(Boolean listingCurrentlyAvailable) {
     
     this.listingCurrentlyAvailable = listingCurrentlyAvailable;
@@ -386,6 +426,29 @@ public class ProductPurchase {
 
   public void setListingCurrentlyAvailable(Boolean listingCurrentlyAvailable) {
     this.listingCurrentlyAvailable = listingCurrentlyAvailable;
+  }
+
+
+  public ProductPurchase listingDescription(String listingDescription) {
+    
+    this.listingDescription = listingDescription;
+    return this;
+  }
+
+   /**
+   * Get listingDescription
+   * @return listingDescription
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getListingDescription() {
+    return listingDescription;
+  }
+
+
+  public void setListingDescription(String listingDescription) {
+    this.listingDescription = listingDescription;
   }
 
 
@@ -504,13 +567,13 @@ public class ProductPurchase {
   }
 
 
-  public ProductPurchase products(List<Object> products) {
+  public ProductPurchase products(List<ProductPurchaseProduct> products) {
     
     this.products = products;
     return this;
   }
 
-  public ProductPurchase addProductsItem(Object productsItem) {
+  public ProductPurchase addProductsItem(ProductPurchaseProduct productsItem) {
     this.products.add(productsItem);
     return this;
   }
@@ -522,12 +585,12 @@ public class ProductPurchase {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<Object> getProducts() {
+  public List<ProductPurchaseProduct> getProducts() {
     return products;
   }
 
 
-  public void setProducts(List<Object> products) {
+  public void setProducts(List<ProductPurchaseProduct> products) {
     this.products = products;
   }
 
@@ -680,7 +743,7 @@ public class ProductPurchase {
    * Get purchaseEndDate
    * @return purchaseEndDate
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getPurchaseEndDate() {
@@ -690,6 +753,29 @@ public class ProductPurchase {
 
   public void setPurchaseEndDate(OffsetDateTime purchaseEndDate) {
     this.purchaseEndDate = purchaseEndDate;
+  }
+
+
+  public ProductPurchase purchaseFee(Integer purchaseFee) {
+    
+    this.purchaseFee = purchaseFee;
+    return this;
+  }
+
+   /**
+   * Get purchaseFee
+   * @return purchaseFee
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseFee() {
+    return purchaseFee;
+  }
+
+
+  public void setPurchaseFee(Integer purchaseFee) {
+    this.purchaseFee = purchaseFee;
   }
 
 
@@ -795,7 +881,7 @@ public class ProductPurchase {
    * Get purchaseStartDate
    * @return purchaseStartDate
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
 
   public OffsetDateTime getPurchaseStartDate() {
@@ -874,6 +960,29 @@ public class ProductPurchase {
 
   public void setPurchaseUnitPrice(Integer purchaseUnitPrice) {
     this.purchaseUnitPrice = purchaseUnitPrice;
+  }
+
+
+  public ProductPurchase purchaseValue(Integer purchaseValue) {
+    
+    this.purchaseValue = purchaseValue;
+    return this;
+  }
+
+   /**
+   * Get purchaseValue
+   * @return purchaseValue
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseValue() {
+    return purchaseValue;
+  }
+
+
+  public void setPurchaseValue(Integer purchaseValue) {
+    this.purchaseValue = purchaseValue;
   }
 
 
@@ -1078,7 +1187,9 @@ public class ProductPurchase {
         Objects.equals(this.isGift, productPurchase.isGift) &&
         Objects.equals(this.isReceiver, productPurchase.isReceiver) &&
         Objects.equals(this.isSeller, productPurchase.isSeller) &&
+        Objects.equals(this.ledgerTransactionId, productPurchase.ledgerTransactionId) &&
         Objects.equals(this.listingCurrentlyAvailable, productPurchase.listingCurrentlyAvailable) &&
+        Objects.equals(this.listingDescription, productPurchase.listingDescription) &&
         Objects.equals(this.listingDisplayName, productPurchase.listingDisplayName) &&
         Objects.equals(this.listingId, productPurchase.listingId) &&
         Objects.equals(this.listingImageId, productPurchase.listingImageId) &&
@@ -1092,6 +1203,7 @@ public class ProductPurchase {
         Objects.equals(this.purchaseDuration, productPurchase.purchaseDuration) &&
         Objects.equals(this.purchaseDurationType, productPurchase.purchaseDurationType) &&
         Objects.equals(this.purchaseEndDate, productPurchase.purchaseEndDate) &&
+        Objects.equals(this.purchaseFee, productPurchase.purchaseFee) &&
         Objects.equals(this.purchaseId, productPurchase.purchaseId) &&
         Objects.equals(this.purchaseLatest, productPurchase.purchaseLatest) &&
         Objects.equals(this.purchasePrice, productPurchase.purchasePrice) &&
@@ -1100,6 +1212,7 @@ public class ProductPurchase {
         Objects.equals(this.purchaseToken, productPurchase.purchaseToken) &&
         Objects.equals(this.purchaseType, productPurchase.purchaseType) &&
         Objects.equals(this.purchaseUnitPrice, productPurchase.purchaseUnitPrice) &&
+        Objects.equals(this.purchaseValue, productPurchase.purchaseValue) &&
         Objects.equals(this.receiverDisplayName, productPurchase.receiverDisplayName) &&
         Objects.equals(this.receiverId, productPurchase.receiverId) &&
         Objects.equals(this.recurrable, productPurchase.recurrable) &&
@@ -1112,7 +1225,7 @@ public class ProductPurchase {
 
   @Override
   public int hashCode() {
-    return Objects.hash(buyerDisplayName, buyerId, firstParty, isBuyer, isGift, isReceiver, isSeller, listingCurrentlyAvailable, listingDisplayName, listingId, listingImageId, listingSubtitle, listingType, products, purchaseActive, purchaseContext, purchaseCurrentStatus, purchaseDate, purchaseDuration, purchaseDurationType, purchaseEndDate, purchaseId, purchaseLatest, purchasePrice, purchaseQuantity, purchaseStartDate, purchaseToken, purchaseType, purchaseUnitPrice, receiverDisplayName, receiverId, recurrable, refundable, sellerDisplayName, sellerId, stackable, willRecur);
+    return Objects.hash(buyerDisplayName, buyerId, firstParty, isBuyer, isGift, isReceiver, isSeller, ledgerTransactionId, listingCurrentlyAvailable, listingDescription, listingDisplayName, listingId, listingImageId, listingSubtitle, listingType, products, purchaseActive, purchaseContext, purchaseCurrentStatus, purchaseDate, purchaseDuration, purchaseDurationType, purchaseEndDate, purchaseFee, purchaseId, purchaseLatest, purchasePrice, purchaseQuantity, purchaseStartDate, purchaseToken, purchaseType, purchaseUnitPrice, purchaseValue, receiverDisplayName, receiverId, recurrable, refundable, sellerDisplayName, sellerId, stackable, willRecur);
   }
 
   @Override
@@ -1126,7 +1239,9 @@ public class ProductPurchase {
     sb.append("    isGift: ").append(toIndentedString(isGift)).append("\n");
     sb.append("    isReceiver: ").append(toIndentedString(isReceiver)).append("\n");
     sb.append("    isSeller: ").append(toIndentedString(isSeller)).append("\n");
+    sb.append("    ledgerTransactionId: ").append(toIndentedString(ledgerTransactionId)).append("\n");
     sb.append("    listingCurrentlyAvailable: ").append(toIndentedString(listingCurrentlyAvailable)).append("\n");
+    sb.append("    listingDescription: ").append(toIndentedString(listingDescription)).append("\n");
     sb.append("    listingDisplayName: ").append(toIndentedString(listingDisplayName)).append("\n");
     sb.append("    listingId: ").append(toIndentedString(listingId)).append("\n");
     sb.append("    listingImageId: ").append(toIndentedString(listingImageId)).append("\n");
@@ -1140,6 +1255,7 @@ public class ProductPurchase {
     sb.append("    purchaseDuration: ").append(toIndentedString(purchaseDuration)).append("\n");
     sb.append("    purchaseDurationType: ").append(toIndentedString(purchaseDurationType)).append("\n");
     sb.append("    purchaseEndDate: ").append(toIndentedString(purchaseEndDate)).append("\n");
+    sb.append("    purchaseFee: ").append(toIndentedString(purchaseFee)).append("\n");
     sb.append("    purchaseId: ").append(toIndentedString(purchaseId)).append("\n");
     sb.append("    purchaseLatest: ").append(toIndentedString(purchaseLatest)).append("\n");
     sb.append("    purchasePrice: ").append(toIndentedString(purchasePrice)).append("\n");
@@ -1148,6 +1264,7 @@ public class ProductPurchase {
     sb.append("    purchaseToken: ").append(toIndentedString(purchaseToken)).append("\n");
     sb.append("    purchaseType: ").append(toIndentedString(purchaseType)).append("\n");
     sb.append("    purchaseUnitPrice: ").append(toIndentedString(purchaseUnitPrice)).append("\n");
+    sb.append("    purchaseValue: ").append(toIndentedString(purchaseValue)).append("\n");
     sb.append("    receiverDisplayName: ").append(toIndentedString(receiverDisplayName)).append("\n");
     sb.append("    receiverId: ").append(toIndentedString(receiverId)).append("\n");
     sb.append("    recurrable: ").append(toIndentedString(recurrable)).append("\n");
@@ -1185,7 +1302,9 @@ public class ProductPurchase {
     openapiFields.add("isGift");
     openapiFields.add("isReceiver");
     openapiFields.add("isSeller");
+    openapiFields.add("ledgerTransactionId");
     openapiFields.add("listingCurrentlyAvailable");
+    openapiFields.add("listingDescription");
     openapiFields.add("listingDisplayName");
     openapiFields.add("listingId");
     openapiFields.add("listingImageId");
@@ -1199,6 +1318,7 @@ public class ProductPurchase {
     openapiFields.add("purchaseDuration");
     openapiFields.add("purchaseDurationType");
     openapiFields.add("purchaseEndDate");
+    openapiFields.add("purchaseFee");
     openapiFields.add("purchaseId");
     openapiFields.add("purchaseLatest");
     openapiFields.add("purchasePrice");
@@ -1207,6 +1327,7 @@ public class ProductPurchase {
     openapiFields.add("purchaseToken");
     openapiFields.add("purchaseType");
     openapiFields.add("purchaseUnitPrice");
+    openapiFields.add("purchaseValue");
     openapiFields.add("receiverDisplayName");
     openapiFields.add("receiverId");
     openapiFields.add("recurrable");
@@ -1287,6 +1408,9 @@ public class ProductPurchase {
       if (!jsonObj.get("buyerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `buyerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buyerId").toString()));
       }
+      if ((jsonObj.get("listingDescription") != null && !jsonObj.get("listingDescription").isJsonNull()) && !jsonObj.get("listingDescription").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `listingDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("listingDescription").toString()));
+      }
       if (!jsonObj.get("listingDisplayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `listingDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("listingDisplayName").toString()));
       }
@@ -1299,12 +1423,16 @@ public class ProductPurchase {
       if (!jsonObj.get("listingSubtitle").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `listingSubtitle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("listingSubtitle").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("products") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("products").isJsonArray()) {
+      // ensure the json data is an array
+      if (!jsonObj.get("products").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `products` to be an array in the JSON string but got `%s`", jsonObj.get("products").toString()));
       }
+
+      JsonArray jsonArrayproducts = jsonObj.getAsJsonArray("products");
+      // validate the required field `products` (array)
+      for (int i = 0; i < jsonArrayproducts.size(); i++) {
+        ProductPurchaseProduct.validateJsonObject(jsonArrayproducts.get(i).getAsJsonObject());
+      };
       // validate the required field `purchaseContext`
       ProductPurchasePurchaseContext.validateJsonObject(jsonObj.getAsJsonObject("purchaseContext"));
       if (!jsonObj.get("purchaseCurrentStatus").isJsonPrimitive()) {

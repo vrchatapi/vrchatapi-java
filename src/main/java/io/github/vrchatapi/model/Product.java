@@ -94,6 +94,10 @@ public class Product {
   @SerializedName(SERIALIZED_NAME_IMAGE_ID)
   private String imageId;
 
+  public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  private String imageUrl;
+
   public static final String SERIALIZED_NAME_PARENT_LISTINGS = "parentListings";
   @SerializedName(SERIALIZED_NAME_PARENT_LISTINGS)
   private List<String> parentListings = new ArrayList<>();
@@ -101,6 +105,18 @@ public class Product {
   public static final String SERIALIZED_NAME_PRODUCT_TYPE = "productType";
   @SerializedName(SERIALIZED_NAME_PRODUCT_TYPE)
   private ProductType productType = ProductType.UDON;
+
+  public static final String SERIALIZED_NAME_PRODUCT_TYPE_LABEL = "productTypeLabel";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_TYPE_LABEL)
+  private String productTypeLabel;
+
+  public static final String SERIALIZED_NAME_PURCHASE_COUNT = "purchaseCount";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_COUNT)
+  private Integer purchaseCount;
+
+  public static final String SERIALIZED_NAME_PURCHASE_COUNT_QUANTITY = "purchaseCountQuantity";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_COUNT_QUANTITY)
+  private Integer purchaseCountQuantity;
 
   public static final String SERIALIZED_NAME_SELLER_DISPLAY_NAME = "sellerDisplayName";
   @SerializedName(SERIALIZED_NAME_SELLER_DISPLAY_NAME)
@@ -355,6 +371,29 @@ public class Product {
   }
 
 
+  public Product imageUrl(String imageUrl) {
+    
+    this.imageUrl = imageUrl;
+    return this;
+  }
+
+   /**
+   * Get imageUrl
+   * @return imageUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+
   public Product parentListings(List<String> parentListings) {
     
     this.parentListings = parentListings;
@@ -403,6 +442,75 @@ public class Product {
 
   public void setProductType(ProductType productType) {
     this.productType = productType;
+  }
+
+
+  public Product productTypeLabel(String productTypeLabel) {
+    
+    this.productTypeLabel = productTypeLabel;
+    return this;
+  }
+
+   /**
+   * Get productTypeLabel
+   * @return productTypeLabel
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getProductTypeLabel() {
+    return productTypeLabel;
+  }
+
+
+  public void setProductTypeLabel(String productTypeLabel) {
+    this.productTypeLabel = productTypeLabel;
+  }
+
+
+  public Product purchaseCount(Integer purchaseCount) {
+    
+    this.purchaseCount = purchaseCount;
+    return this;
+  }
+
+   /**
+   * Get purchaseCount
+   * @return purchaseCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseCount() {
+    return purchaseCount;
+  }
+
+
+  public void setPurchaseCount(Integer purchaseCount) {
+    this.purchaseCount = purchaseCount;
+  }
+
+
+  public Product purchaseCountQuantity(Integer purchaseCountQuantity) {
+    
+    this.purchaseCountQuantity = purchaseCountQuantity;
+    return this;
+  }
+
+   /**
+   * Get purchaseCountQuantity
+   * @return purchaseCountQuantity
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseCountQuantity() {
+    return purchaseCountQuantity;
+  }
+
+
+  public void setPurchaseCountQuantity(Integer purchaseCountQuantity) {
+    this.purchaseCountQuantity = purchaseCountQuantity;
   }
 
 
@@ -546,8 +654,12 @@ public class Product {
         Objects.equals(this.groupRoleId, product.groupRoleId) &&
         Objects.equals(this.id, product.id) &&
         Objects.equals(this.imageId, product.imageId) &&
+        Objects.equals(this.imageUrl, product.imageUrl) &&
         Objects.equals(this.parentListings, product.parentListings) &&
         Objects.equals(this.productType, product.productType) &&
+        Objects.equals(this.productTypeLabel, product.productTypeLabel) &&
+        Objects.equals(this.purchaseCount, product.purchaseCount) &&
+        Objects.equals(this.purchaseCountQuantity, product.purchaseCountQuantity) &&
         Objects.equals(this.sellerDisplayName, product.sellerDisplayName) &&
         Objects.equals(this.sellerId, product.sellerId) &&
         Objects.equals(this.tags, product.tags) &&
@@ -561,7 +673,7 @@ public class Product {
 
   @Override
   public int hashCode() {
-    return Objects.hash(archived, created, description, displayName, groupAccess, groupAccessRemove, groupId, groupRoleId, id, imageId, parentListings, productType, sellerDisplayName, sellerId, tags, updated, useForSubscriberList);
+    return Objects.hash(archived, created, description, displayName, groupAccess, groupAccessRemove, groupId, groupRoleId, id, imageId, imageUrl, parentListings, productType, productTypeLabel, purchaseCount, purchaseCountQuantity, sellerDisplayName, sellerId, tags, updated, useForSubscriberList);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -585,8 +697,12 @@ public class Product {
     sb.append("    groupRoleId: ").append(toIndentedString(groupRoleId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    parentListings: ").append(toIndentedString(parentListings)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+    sb.append("    productTypeLabel: ").append(toIndentedString(productTypeLabel)).append("\n");
+    sb.append("    purchaseCount: ").append(toIndentedString(purchaseCount)).append("\n");
+    sb.append("    purchaseCountQuantity: ").append(toIndentedString(purchaseCountQuantity)).append("\n");
     sb.append("    sellerDisplayName: ").append(toIndentedString(sellerDisplayName)).append("\n");
     sb.append("    sellerId: ").append(toIndentedString(sellerId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
@@ -624,8 +740,12 @@ public class Product {
     openapiFields.add("groupRoleId");
     openapiFields.add("id");
     openapiFields.add("imageId");
+    openapiFields.add("imageUrl");
     openapiFields.add("parentListings");
     openapiFields.add("productType");
+    openapiFields.add("productTypeLabel");
+    openapiFields.add("purchaseCount");
+    openapiFields.add("purchaseCountQuantity");
     openapiFields.add("sellerDisplayName");
     openapiFields.add("sellerId");
     openapiFields.add("tags");
@@ -690,11 +810,17 @@ public class Product {
       if (!jsonObj.get("imageId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `imageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageId").toString()));
       }
+      if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
+      }
       // ensure the required json array is present
       if (jsonObj.get("parentListings") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("parentListings").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `parentListings` to be an array in the JSON string but got `%s`", jsonObj.get("parentListings").toString()));
+      }
+      if ((jsonObj.get("productTypeLabel") != null && !jsonObj.get("productTypeLabel").isJsonNull()) && !jsonObj.get("productTypeLabel").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `productTypeLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productTypeLabel").toString()));
       }
       if (!jsonObj.get("sellerDisplayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sellerDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerDisplayName").toString()));

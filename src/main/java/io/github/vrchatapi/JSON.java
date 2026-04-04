@@ -149,6 +149,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateGroupRoleRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateInstanceRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateJamSubmissionRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateListingRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateProductRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreatePropRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateWorldRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CurrentUser.CustomTypeAdapterFactory());
@@ -161,6 +163,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EarningsMetrics.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EarningsMetricsTotals.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyAccount.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyBalances.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyPayout.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyPayoutEligibility.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyPayoutList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EconomyPayoutStatus.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EditPrintRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.EquipInventoryItemRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Error.CustomTypeAdapterFactory());
@@ -269,6 +276,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductListingVariant.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductPurchase.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductPurchaseHistory.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductPurchaseProduct.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductPurchasePurchaseContext.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ProductPurchaseRecord.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Prop.CustomTypeAdapterFactory());
@@ -298,12 +306,14 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ServiceStatus.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.ShareInventoryItemDirectRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Store.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.StoreContext.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.StoreShelf.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.SubmitModerationReportRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.SubmitModerationReportRequestDetails.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Subscription.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Success.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.SuccessFlag.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.TiliaKyc.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.TiliaStatus.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.TiliaTOS.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.TokenBundle.CustomTypeAdapterFactory());
@@ -329,6 +339,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateGroupRoleRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateInventoryItemRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateInviteMessageRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateListingRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateProductRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdatePropRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateTiliaTOSRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.UpdateUserBadgeRequest.CustomTypeAdapterFactory());

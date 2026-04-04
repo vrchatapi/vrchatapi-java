@@ -27,13 +27,19 @@ import java.io.IOException;
 
 
 import io.github.vrchatapi.model.Balance;
+import io.github.vrchatapi.model.CreateListingRequest;
+import io.github.vrchatapi.model.CreateProductRequest;
 import io.github.vrchatapi.model.EarningsMetrics;
 import io.github.vrchatapi.model.EconomyAccount;
+import io.github.vrchatapi.model.EconomyBalances;
+import io.github.vrchatapi.model.EconomyPayoutList;
+import io.github.vrchatapi.model.EconomyPayoutStatus;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.License;
 import io.github.vrchatapi.model.LicenseGroup;
 import java.time.OffsetDateTime;
 import io.github.vrchatapi.model.OrderOptionShort;
+import io.github.vrchatapi.model.Product;
 import io.github.vrchatapi.model.ProductListing;
 import io.github.vrchatapi.model.ProductPurchase;
 import io.github.vrchatapi.model.ProductPurchaseHistory;
@@ -44,10 +50,14 @@ import io.github.vrchatapi.model.Store;
 import io.github.vrchatapi.model.StoreShelf;
 import io.github.vrchatapi.model.StoreView;
 import io.github.vrchatapi.model.Subscription;
+import io.github.vrchatapi.model.SuccessFlag;
+import io.github.vrchatapi.model.TiliaKyc;
 import io.github.vrchatapi.model.TiliaStatus;
 import io.github.vrchatapi.model.TiliaTOS;
 import io.github.vrchatapi.model.TokenBundle;
 import io.github.vrchatapi.model.Transaction;
+import io.github.vrchatapi.model.UpdateListingRequest;
+import io.github.vrchatapi.model.UpdateProductRequest;
 import io.github.vrchatapi.model.UpdateTiliaTOSRequest;
 import io.github.vrchatapi.model.UserCreditsEligible;
 import io.github.vrchatapi.model.UserSubscription;
@@ -97,6 +107,522 @@ public class EconomyApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for createProduct
+     * @param createProductRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createProductCall(CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createProductRequest;
+
+        // create path and map variables
+        String localVarPath = "/products";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createProductValidateBeforeCall(CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createProductRequest' is set
+        if (createProductRequest == null) {
+            throw new ApiException("Missing the required parameter 'createProductRequest' when calling createProduct(Async)");
+        }
+
+        return createProductCall(createProductRequest, _callback);
+
+    }
+
+    /**
+     * Create Product
+     * Creates a product and returns the new Product object.
+     * @param createProductRequest  (required)
+     * @return Product
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public Product createProduct(CreateProductRequest createProductRequest) throws ApiException {
+        ApiResponse<Product> localVarResp = createProductWithHttpInfo(createProductRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Product
+     * Creates a product and returns the new Product object.
+     * @param createProductRequest  (required)
+     * @return ApiResponse&lt;Product&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Product> createProductWithHttpInfo(CreateProductRequest createProductRequest) throws ApiException {
+        okhttp3.Call localVarCall = createProductValidateBeforeCall(createProductRequest, null);
+        Type localVarReturnType = new TypeToken<Product>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Product (asynchronously)
+     * Creates a product and returns the new Product object.
+     * @param createProductRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createProductAsync(CreateProductRequest createProductRequest, final ApiCallback<Product> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createProductValidateBeforeCall(createProductRequest, _callback);
+        Type localVarReturnType = new TypeToken<Product>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createProductListingDirect
+     * @param createListingRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createProductListingDirectCall(CreateListingRequest createListingRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createListingRequest;
+
+        // create path and map variables
+        String localVarPath = "/listing";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createProductListingDirectValidateBeforeCall(CreateListingRequest createListingRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createListingRequest' is set
+        if (createListingRequest == null) {
+            throw new ApiException("Missing the required parameter 'createListingRequest' when calling createProductListingDirect(Async)");
+        }
+
+        return createProductListingDirectCall(createListingRequest, _callback);
+
+    }
+
+    /**
+     * Create Product Listing
+     * Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.
+     * @param createListingRequest  (required)
+     * @return ProductListing
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ProductListing createProductListingDirect(CreateListingRequest createListingRequest) throws ApiException {
+        ApiResponse<ProductListing> localVarResp = createProductListingDirectWithHttpInfo(createListingRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Product Listing
+     * Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.
+     * @param createListingRequest  (required)
+     * @return ApiResponse&lt;ProductListing&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ProductListing> createProductListingDirectWithHttpInfo(CreateListingRequest createListingRequest) throws ApiException {
+        okhttp3.Call localVarCall = createProductListingDirectValidateBeforeCall(createListingRequest, null);
+        Type localVarReturnType = new TypeToken<ProductListing>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Product Listing (asynchronously)
+     * Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.
+     * @param createListingRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createProductListingDirectAsync(CreateListingRequest createListingRequest, final ApiCallback<ProductListing> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createProductListingDirectValidateBeforeCall(createListingRequest, _callback);
+        Type localVarReturnType = new TypeToken<ProductListing>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteProduct
+     * @param productId Must be a valid product ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteProductCall(String productId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/products/{productId}"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteProductValidateBeforeCall(String productId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling deleteProduct(Async)");
+        }
+
+        return deleteProductCall(productId, _callback);
+
+    }
+
+    /**
+     * Delete Product
+     * Deletes a product.
+     * @param productId Must be a valid product ID. (required)
+     * @return SuccessFlag
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public SuccessFlag deleteProduct(String productId) throws ApiException {
+        ApiResponse<SuccessFlag> localVarResp = deleteProductWithHttpInfo(productId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete Product
+     * Deletes a product.
+     * @param productId Must be a valid product ID. (required)
+     * @return ApiResponse&lt;SuccessFlag&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SuccessFlag> deleteProductWithHttpInfo(String productId) throws ApiException {
+        okhttp3.Call localVarCall = deleteProductValidateBeforeCall(productId, null);
+        Type localVarReturnType = new TypeToken<SuccessFlag>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete Product (asynchronously)
+     * Deletes a product.
+     * @param productId Must be a valid product ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteProductAsync(String productId, final ApiCallback<SuccessFlag> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteProductValidateBeforeCall(productId, _callback);
+        Type localVarReturnType = new TypeToken<SuccessFlag>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteProductListingDirect
+     * @param productId Must be a valid product ID. (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteProductListingDirectCall(String productId, Boolean hydrate, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/listing/{productId}"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (hydrate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("hydrate", hydrate));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteProductListingDirectValidateBeforeCall(String productId, Boolean hydrate, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling deleteProductListingDirect(Async)");
+        }
+
+        return deleteProductListingDirectCall(productId, hydrate, _callback);
+
+    }
+
+    /**
+     * Delete Product Listing
+     * Deletes a listing.
+     * @param productId Must be a valid product ID. (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @return SuccessFlag
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public SuccessFlag deleteProductListingDirect(String productId, Boolean hydrate) throws ApiException {
+        ApiResponse<SuccessFlag> localVarResp = deleteProductListingDirectWithHttpInfo(productId, hydrate);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete Product Listing
+     * Deletes a listing.
+     * @param productId Must be a valid product ID. (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @return ApiResponse&lt;SuccessFlag&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SuccessFlag> deleteProductListingDirectWithHttpInfo(String productId, Boolean hydrate) throws ApiException {
+        okhttp3.Call localVarCall = deleteProductListingDirectValidateBeforeCall(productId, hydrate, null);
+        Type localVarReturnType = new TypeToken<SuccessFlag>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete Product Listing (asynchronously)
+     * Deletes a listing.
+     * @param productId Must be a valid product ID. (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an SuccessFlag object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteProductListingDirectAsync(String productId, Boolean hydrate, final ApiCallback<SuccessFlag> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteProductListingDirectValidateBeforeCall(productId, hydrate, _callback);
+        Type localVarReturnType = new TypeToken<SuccessFlag>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for getActiveLicenses
      * @param _callback Callback for upload/download progress
@@ -712,6 +1238,10 @@ public class EconomyApi {
     }
     /**
      * Build call for getEarningsMetrics
+     * @param sellerId Seller to retrieve economy metrics for. (required)
+     * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -722,7 +1252,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEarningsMetricsCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEarningsMetricsCall(String sellerId, String metricDateStart, String metricDateEnd, String groupByDuration, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -747,6 +1277,22 @@ public class EconomyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (metricDateStart != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("metricDateStart", metricDateStart));
+        }
+
+        if (metricDateEnd != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("metricDateEnd", metricDateEnd));
+        }
+
+        if (sellerId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sellerId", sellerId));
+        }
+
+        if (groupByDuration != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("groupByDuration", groupByDuration));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -767,14 +1313,23 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEarningsMetricsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getEarningsMetricsCall(_callback);
+    private okhttp3.Call getEarningsMetricsValidateBeforeCall(String sellerId, String metricDateStart, String metricDateEnd, String groupByDuration, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'sellerId' is set
+        if (sellerId == null) {
+            throw new ApiException("Missing the required parameter 'sellerId' when calling getEarningsMetrics(Async)");
+        }
+
+        return getEarningsMetricsCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, _callback);
 
     }
 
     /**
      * Get Earnings Metrics
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
+     * @param sellerId Seller to retrieve economy metrics for. (required)
+     * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @return EarningsMetrics
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -784,14 +1339,18 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public EarningsMetrics getEarningsMetrics() throws ApiException {
-        ApiResponse<EarningsMetrics> localVarResp = getEarningsMetricsWithHttpInfo();
+    public EarningsMetrics getEarningsMetrics(String sellerId, String metricDateStart, String metricDateEnd, String groupByDuration) throws ApiException {
+        ApiResponse<EarningsMetrics> localVarResp = getEarningsMetricsWithHttpInfo(sellerId, metricDateStart, metricDateEnd, groupByDuration);
         return localVarResp.getData();
     }
 
     /**
      * Get Earnings Metrics
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
+     * @param sellerId Seller to retrieve economy metrics for. (required)
+     * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @return ApiResponse&lt;EarningsMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -801,8 +1360,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EarningsMetrics> getEarningsMetricsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(null);
+    public ApiResponse<EarningsMetrics> getEarningsMetricsWithHttpInfo(String sellerId, String metricDateStart, String metricDateEnd, String groupByDuration) throws ApiException {
+        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, null);
         Type localVarReturnType = new TypeToken<EarningsMetrics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -810,6 +1369,10 @@ public class EconomyApi {
     /**
      * Get Earnings Metrics (asynchronously)
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
+     * @param sellerId Seller to retrieve economy metrics for. (required)
+     * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -820,9 +1383,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEarningsMetricsAsync(final ApiCallback<EarningsMetrics> _callback) throws ApiException {
+    public okhttp3.Call getEarningsMetricsAsync(String sellerId, String metricDateStart, String metricDateEnd, String groupByDuration, final ApiCallback<EarningsMetrics> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, _callback);
         Type localVarReturnType = new TypeToken<EarningsMetrics>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -951,6 +1514,387 @@ public class EconomyApi {
 
         okhttp3.Call localVarCall = getEconomyAccountValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<EconomyAccount>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEconomyBalances
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyBalances object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyBalancesCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/economy/balances"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEconomyBalancesValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyBalances(Async)");
+        }
+
+        return getEconomyBalancesCall(userId, _callback);
+
+    }
+
+    /**
+     * Get Economy Balances
+     * Gets the combined balances for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return EconomyBalances
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyBalances object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EconomyBalances getEconomyBalances(String userId) throws ApiException {
+        ApiResponse<EconomyBalances> localVarResp = getEconomyBalancesWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Economy Balances
+     * Gets the combined balances for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;EconomyBalances&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyBalances object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EconomyBalances> getEconomyBalancesWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getEconomyBalancesValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<EconomyBalances>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Economy Balances (asynchronously)
+     * Gets the combined balances for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyBalances object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyBalancesAsync(String userId, final ApiCallback<EconomyBalances> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEconomyBalancesValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<EconomyBalances>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEconomyPayoutStatus
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyPayoutStatusCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/economy/payouts/status"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEconomyPayoutStatusValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyPayoutStatus(Async)");
+        }
+
+        return getEconomyPayoutStatusCall(userId, _callback);
+
+    }
+
+    /**
+     * Get Economy Payout Status
+     * Gets the current payout status and eligibility information for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return EconomyPayoutStatus
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EconomyPayoutStatus getEconomyPayoutStatus(String userId) throws ApiException {
+        ApiResponse<EconomyPayoutStatus> localVarResp = getEconomyPayoutStatusWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Economy Payout Status
+     * Gets the current payout status and eligibility information for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;EconomyPayoutStatus&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EconomyPayoutStatus> getEconomyPayoutStatusWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getEconomyPayoutStatusValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<EconomyPayoutStatus>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Economy Payout Status (asynchronously)
+     * Gets the current payout status and eligibility information for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyPayoutStatusAsync(String userId, final ApiCallback<EconomyPayoutStatus> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEconomyPayoutStatusValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<EconomyPayoutStatus>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEconomyPayouts
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyPayoutsCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/economy/payouts/list"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEconomyPayoutsValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyPayouts(Async)");
+        }
+
+        return getEconomyPayoutsCall(userId, _callback);
+
+    }
+
+    /**
+     * Get Economy Payouts
+     * Gets the payout history for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return EconomyPayoutList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EconomyPayoutList getEconomyPayouts(String userId) throws ApiException {
+        ApiResponse<EconomyPayoutList> localVarResp = getEconomyPayoutsWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Economy Payouts
+     * Gets the payout history for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;EconomyPayoutList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EconomyPayoutList> getEconomyPayoutsWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getEconomyPayoutsValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<EconomyPayoutList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Economy Payouts (asynchronously)
+     * Gets the payout history for a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an EconomyPayoutList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyPayoutsAsync(String userId, final ApiCallback<EconomyPayoutList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEconomyPayoutsValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<EconomyPayoutList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1358,6 +2302,7 @@ public class EconomyApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param listingType Filter user listings by category. Observed values include &#x60;otp&#x60; and &#x60;subscription&#x60;. (optional)
      * @param groupId Must be a valid group ID. (optional)
      * @param active Filter for users&#39; listings and inventory bundles. (optional)
      * @param _callback Callback for upload/download progress
@@ -1370,7 +2315,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductListingsCall(String userId, Integer n, Integer offset, Boolean hydrate, String groupId, Boolean active, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductListingsCall(String userId, Integer n, Integer offset, Boolean hydrate, String listingType, String groupId, Boolean active, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1408,6 +2353,10 @@ public class EconomyApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("hydrate", hydrate));
         }
 
+        if (listingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("listingType", listingType));
+        }
+
         if (groupId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("groupId", groupId));
         }
@@ -1436,13 +2385,13 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductListingsValidateBeforeCall(String userId, Integer n, Integer offset, Boolean hydrate, String groupId, Boolean active, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProductListingsValidateBeforeCall(String userId, Integer n, Integer offset, Boolean hydrate, String listingType, String groupId, Boolean active, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getProductListings(Async)");
         }
 
-        return getProductListingsCall(userId, n, offset, hydrate, groupId, active, _callback);
+        return getProductListingsCall(userId, n, offset, hydrate, listingType, groupId, active, _callback);
 
     }
 
@@ -1453,6 +2402,7 @@ public class EconomyApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param listingType Filter user listings by category. Observed values include &#x60;otp&#x60; and &#x60;subscription&#x60;. (optional)
      * @param groupId Must be a valid group ID. (optional)
      * @param active Filter for users&#39; listings and inventory bundles. (optional)
      * @return List&lt;ProductListing&gt;
@@ -1464,8 +2414,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<ProductListing> getProductListings(String userId, Integer n, Integer offset, Boolean hydrate, String groupId, Boolean active) throws ApiException {
-        ApiResponse<List<ProductListing>> localVarResp = getProductListingsWithHttpInfo(userId, n, offset, hydrate, groupId, active);
+    public List<ProductListing> getProductListings(String userId, Integer n, Integer offset, Boolean hydrate, String listingType, String groupId, Boolean active) throws ApiException {
+        ApiResponse<List<ProductListing>> localVarResp = getProductListingsWithHttpInfo(userId, n, offset, hydrate, listingType, groupId, active);
         return localVarResp.getData();
     }
 
@@ -1476,6 +2426,7 @@ public class EconomyApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param listingType Filter user listings by category. Observed values include &#x60;otp&#x60; and &#x60;subscription&#x60;. (optional)
      * @param groupId Must be a valid group ID. (optional)
      * @param active Filter for users&#39; listings and inventory bundles. (optional)
      * @return ApiResponse&lt;List&lt;ProductListing&gt;&gt;
@@ -1487,8 +2438,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ProductListing>> getProductListingsWithHttpInfo(String userId, Integer n, Integer offset, Boolean hydrate, String groupId, Boolean active) throws ApiException {
-        okhttp3.Call localVarCall = getProductListingsValidateBeforeCall(userId, n, offset, hydrate, groupId, active, null);
+    public ApiResponse<List<ProductListing>> getProductListingsWithHttpInfo(String userId, Integer n, Integer offset, Boolean hydrate, String listingType, String groupId, Boolean active) throws ApiException {
+        okhttp3.Call localVarCall = getProductListingsValidateBeforeCall(userId, n, offset, hydrate, listingType, groupId, active, null);
         Type localVarReturnType = new TypeToken<List<ProductListing>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1500,6 +2451,7 @@ public class EconomyApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param listingType Filter user listings by category. Observed values include &#x60;otp&#x60; and &#x60;subscription&#x60;. (optional)
      * @param groupId Must be a valid group ID. (optional)
      * @param active Filter for users&#39; listings and inventory bundles. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1512,9 +2464,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductListingsAsync(String userId, Integer n, Integer offset, Boolean hydrate, String groupId, Boolean active, final ApiCallback<List<ProductListing>> _callback) throws ApiException {
+    public okhttp3.Call getProductListingsAsync(String userId, Integer n, Integer offset, Boolean hydrate, String listingType, String groupId, Boolean active, final ApiCallback<List<ProductListing>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProductListingsValidateBeforeCall(userId, n, offset, hydrate, groupId, active, _callback);
+        okhttp3.Call localVarCall = getProductListingsValidateBeforeCall(userId, n, offset, hydrate, listingType, groupId, active, _callback);
         Type localVarReturnType = new TypeToken<List<ProductListing>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1959,6 +2911,7 @@ public class EconomyApi {
     /**
      * Build call for getProductPurchases
      * @param buyerId Must be a valid user ID. (required)
+     * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param mostRecent  (optional)
@@ -1974,7 +2927,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPurchasesCall(String buyerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductPurchasesCall(String buyerId, String sellerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2001,6 +2954,10 @@ public class EconomyApi {
 
         if (buyerId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("buyerId", buyerId));
+        }
+
+        if (sellerId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sellerId", sellerId));
         }
 
         if (n != null) {
@@ -2043,13 +3000,13 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductPurchasesValidateBeforeCall(String buyerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProductPurchasesValidateBeforeCall(String buyerId, String sellerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'buyerId' is set
         if (buyerId == null) {
             throw new ApiException("Missing the required parameter 'buyerId' when calling getProductPurchases(Async)");
         }
 
-        return getProductPurchasesCall(buyerId, n, offset, mostRecent, sort, order, _callback);
+        return getProductPurchasesCall(buyerId, sellerId, n, offset, mostRecent, sort, order, _callback);
 
     }
 
@@ -2057,6 +3014,7 @@ public class EconomyApi {
      * Get Product Purchases
      * Gets product purchases
      * @param buyerId Must be a valid user ID. (required)
+     * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param mostRecent  (optional)
@@ -2071,8 +3029,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<ProductPurchase> getProductPurchases(String buyerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order) throws ApiException {
-        ApiResponse<List<ProductPurchase>> localVarResp = getProductPurchasesWithHttpInfo(buyerId, n, offset, mostRecent, sort, order);
+    public List<ProductPurchase> getProductPurchases(String buyerId, String sellerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order) throws ApiException {
+        ApiResponse<List<ProductPurchase>> localVarResp = getProductPurchasesWithHttpInfo(buyerId, sellerId, n, offset, mostRecent, sort, order);
         return localVarResp.getData();
     }
 
@@ -2080,6 +3038,7 @@ public class EconomyApi {
      * Get Product Purchases
      * Gets product purchases
      * @param buyerId Must be a valid user ID. (required)
+     * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param mostRecent  (optional)
@@ -2094,8 +3053,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ProductPurchase>> getProductPurchasesWithHttpInfo(String buyerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order) throws ApiException {
-        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, n, offset, mostRecent, sort, order, null);
+    public ApiResponse<List<ProductPurchase>> getProductPurchasesWithHttpInfo(String buyerId, String sellerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order) throws ApiException {
+        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, sellerId, n, offset, mostRecent, sort, order, null);
         Type localVarReturnType = new TypeToken<List<ProductPurchase>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2104,6 +3063,7 @@ public class EconomyApi {
      * Get Product Purchases (asynchronously)
      * Gets product purchases
      * @param buyerId Must be a valid user ID. (required)
+     * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param mostRecent  (optional)
@@ -2119,9 +3079,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPurchasesAsync(String buyerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback<List<ProductPurchase>> _callback) throws ApiException {
+    public okhttp3.Call getProductPurchasesAsync(String buyerId, String sellerId, Integer n, Integer offset, Boolean mostRecent, SortOptionProductPurchase sort, OrderOptionShort order, final ApiCallback<List<ProductPurchase>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, n, offset, mostRecent, sort, order, _callback);
+        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, sellerId, n, offset, mostRecent, sort, order, _callback);
         Type localVarReturnType = new TypeToken<List<ProductPurchase>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -3659,6 +4619,425 @@ public class EconomyApi {
         return localVarCall;
     }
     /**
+     * Build call for getUserTiliaKyc
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserTiliaKycCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/tilia/kyc"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserTiliaKycValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserTiliaKyc(Async)");
+        }
+
+        return getUserTiliaKycCall(userId, _callback);
+
+    }
+
+    /**
+     * Get User Tilia KYC
+     * Gets KYC status details for a user&#39;s Tilia account.
+     * @param userId Must be a valid user ID. (required)
+     * @return TiliaKyc
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TiliaKyc getUserTiliaKyc(String userId) throws ApiException {
+        ApiResponse<TiliaKyc> localVarResp = getUserTiliaKycWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get User Tilia KYC
+     * Gets KYC status details for a user&#39;s Tilia account.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;TiliaKyc&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TiliaKyc> getUserTiliaKycWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserTiliaKycValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<TiliaKyc>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get User Tilia KYC (asynchronously)
+     * Gets KYC status details for a user&#39;s Tilia account.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserTiliaKycAsync(String userId, final ApiCallback<TiliaKyc> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserTiliaKycValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<TiliaKyc>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listStores
+     * @param sellerId Filter results by seller. (optional)
+     * @param managementPov Return stores from the seller management point of view. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listStoresCall(String sellerId, Boolean managementPov, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/economy/stores";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (sellerId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sellerId", sellerId));
+        }
+
+        if (managementPov != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("managementPov", managementPov));
+        }
+
+        if (n != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("n", n));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listStoresValidateBeforeCall(String sellerId, Boolean managementPov, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+        return listStoresCall(sellerId, managementPov, n, offset, _callback);
+
+    }
+
+    /**
+     * List Stores
+     * Lists stores, optionally filtered to a seller and adjusted for management views.
+     * @param sellerId Filter results by seller. (optional)
+     * @param managementPov Return stores from the seller management point of view. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @return List&lt;Store&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Store> listStores(String sellerId, Boolean managementPov, Integer n, Integer offset) throws ApiException {
+        ApiResponse<List<Store>> localVarResp = listStoresWithHttpInfo(sellerId, managementPov, n, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Stores
+     * Lists stores, optionally filtered to a seller and adjusted for management views.
+     * @param sellerId Filter results by seller. (optional)
+     * @param managementPov Return stores from the seller management point of view. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @return ApiResponse&lt;List&lt;Store&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Store>> listStoresWithHttpInfo(String sellerId, Boolean managementPov, Integer n, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listStoresValidateBeforeCall(sellerId, managementPov, n, offset, null);
+        Type localVarReturnType = new TypeToken<List<Store>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Stores (asynchronously)
+     * Lists stores, optionally filtered to a seller and adjusted for management views.
+     * @param sellerId Filter results by seller. (optional)
+     * @param managementPov Return stores from the seller management point of view. (optional)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listStoresAsync(String sellerId, Boolean managementPov, Integer n, Integer offset, final ApiCallback<List<Store>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listStoresValidateBeforeCall(sellerId, managementPov, n, offset, _callback);
+        Type localVarReturnType = new TypeToken<List<Store>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listUserProducts
+     * @param userId Must be a valid user ID. (required)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUserProductsCall(String userId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/products"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (n != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("n", n));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listUserProductsValidateBeforeCall(String userId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling listUserProducts(Async)");
+        }
+
+        return listUserProductsCall(userId, n, offset, _callback);
+
+    }
+
+    /**
+     * List User Products
+     * Gets the products of a given user.
+     * @param userId Must be a valid user ID. (required)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @return List&lt;Product&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Product> listUserProducts(String userId, Integer n, Integer offset) throws ApiException {
+        ApiResponse<List<Product>> localVarResp = listUserProductsWithHttpInfo(userId, n, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List User Products
+     * Gets the products of a given user.
+     * @param userId Must be a valid user ID. (required)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @return ApiResponse&lt;List&lt;Product&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Product>> listUserProductsWithHttpInfo(String userId, Integer n, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listUserProductsValidateBeforeCall(userId, n, offset, null);
+        Type localVarReturnType = new TypeToken<List<Product>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List User Products (asynchronously)
+     * Gets the products of a given user.
+     * @param userId Must be a valid user ID. (required)
+     * @param n The number of objects to return. (optional, default to 60)
+     * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUserProductsAsync(String userId, Integer n, Integer offset, final ApiCallback<List<Product>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listUserProductsValidateBeforeCall(userId, n, offset, _callback);
+        Type localVarReturnType = new TypeToken<List<Product>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for purchaseProductListing
      * @param purchaseProductListingRequest  (optional)
      * @param _callback Callback for upload/download progress
@@ -3777,6 +5156,288 @@ public class EconomyApi {
 
         okhttp3.Call localVarCall = purchaseProductListingValidateBeforeCall(purchaseProductListingRequest, _callback);
         Type localVarReturnType = new TypeToken<ProductPurchase>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateProduct
+     * @param productId Must be a valid product ID. (required)
+     * @param updateProductRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProductCall(String productId, UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateProductRequest;
+
+        // create path and map variables
+        String localVarPath = "/products/{productId}"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateProductValidateBeforeCall(String productId, UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling updateProduct(Async)");
+        }
+
+        // verify the required parameter 'updateProductRequest' is set
+        if (updateProductRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateProductRequest' when calling updateProduct(Async)");
+        }
+
+        return updateProductCall(productId, updateProductRequest, _callback);
+
+    }
+
+    /**
+     * Update Product
+     * Updates a product and returns the updated Product object.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateProductRequest  (required)
+     * @return Product
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public Product updateProduct(String productId, UpdateProductRequest updateProductRequest) throws ApiException {
+        ApiResponse<Product> localVarResp = updateProductWithHttpInfo(productId, updateProductRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Product
+     * Updates a product and returns the updated Product object.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateProductRequest  (required)
+     * @return ApiResponse&lt;Product&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Product> updateProductWithHttpInfo(String productId, UpdateProductRequest updateProductRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateProductValidateBeforeCall(productId, updateProductRequest, null);
+        Type localVarReturnType = new TypeToken<Product>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Product (asynchronously)
+     * Updates a product and returns the updated Product object.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateProductRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Product object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProductAsync(String productId, UpdateProductRequest updateProductRequest, final ApiCallback<Product> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateProductValidateBeforeCall(productId, updateProductRequest, _callback);
+        Type localVarReturnType = new TypeToken<Product>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateProductListingDirect
+     * @param productId Must be a valid product ID. (required)
+     * @param updateListingRequest  (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProductListingDirectCall(String productId, UpdateListingRequest updateListingRequest, Boolean hydrate, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateListingRequest;
+
+        // create path and map variables
+        String localVarPath = "/listing/{productId}"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (hydrate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("hydrate", hydrate));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateProductListingDirectValidateBeforeCall(String productId, UpdateListingRequest updateListingRequest, Boolean hydrate, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling updateProductListingDirect(Async)");
+        }
+
+        // verify the required parameter 'updateListingRequest' is set
+        if (updateListingRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateListingRequest' when calling updateProductListingDirect(Async)");
+        }
+
+        return updateProductListingDirectCall(productId, updateListingRequest, hydrate, _callback);
+
+    }
+
+    /**
+     * Update Product Listing
+     * Updates the active state of a listing. Setting &#x60;active&#x60; to &#x60;true&#x60; publishes the listing, while &#x60;false&#x60; unpublishes it.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateListingRequest  (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @return ProductListing
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ProductListing updateProductListingDirect(String productId, UpdateListingRequest updateListingRequest, Boolean hydrate) throws ApiException {
+        ApiResponse<ProductListing> localVarResp = updateProductListingDirectWithHttpInfo(productId, updateListingRequest, hydrate);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Product Listing
+     * Updates the active state of a listing. Setting &#x60;active&#x60; to &#x60;true&#x60; publishes the listing, while &#x60;false&#x60; unpublishes it.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateListingRequest  (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @return ApiResponse&lt;ProductListing&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ProductListing> updateProductListingDirectWithHttpInfo(String productId, UpdateListingRequest updateListingRequest, Boolean hydrate) throws ApiException {
+        okhttp3.Call localVarCall = updateProductListingDirectValidateBeforeCall(productId, updateListingRequest, hydrate, null);
+        Type localVarReturnType = new TypeToken<ProductListing>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Product Listing (asynchronously)
+     * Updates the active state of a listing. Setting &#x60;active&#x60; to &#x60;true&#x60; publishes the listing, while &#x60;false&#x60; unpublishes it.
+     * @param productId Must be a valid product ID. (required)
+     * @param updateListingRequest  (required)
+     * @param hydrate Populates some fields and changes types of others for certain objects. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single ProductListing object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProductListingDirectAsync(String productId, UpdateListingRequest updateListingRequest, Boolean hydrate, final ApiCallback<ProductListing> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateProductListingDirectValidateBeforeCall(productId, updateListingRequest, hydrate, _callback);
+        Type localVarReturnType = new TypeToken<ProductListing>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

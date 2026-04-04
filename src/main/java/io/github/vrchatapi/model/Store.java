@@ -20,11 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.ProductListing;
+import io.github.vrchatapi.model.StoreContext;
 import io.github.vrchatapi.model.StoreShelf;
 import io.github.vrchatapi.model.StoreType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +56,10 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Store {
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
+  private OffsetDateTime created;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
@@ -94,9 +100,17 @@ public class Store {
   @SerializedName(SERIALIZED_NAME_SHELVES)
   private List<StoreShelf> shelves = null;
 
+  public static final String SERIALIZED_NAME_STORE_CONTEXT = "storeContext";
+  @SerializedName(SERIALIZED_NAME_STORE_CONTEXT)
+  private StoreContext storeContext;
+
   public static final String SERIALIZED_NAME_STORE_ID = "storeId";
   @SerializedName(SERIALIZED_NAME_STORE_ID)
   private String storeId;
+
+  public static final String SERIALIZED_NAME_STORE_STATUS = "storeStatus";
+  @SerializedName(SERIALIZED_NAME_STORE_STATUS)
+  private String storeStatus;
 
   public static final String SERIALIZED_NAME_STORE_TYPE = "storeType";
   @SerializedName(SERIALIZED_NAME_STORE_TYPE)
@@ -106,12 +120,39 @@ public class Store {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_UPDATED = "updated";
+  @SerializedName(SERIALIZED_NAME_UPDATED)
+  private OffsetDateTime updated;
+
   public static final String SERIALIZED_NAME_WORLD_ID = "worldId";
   @SerializedName(SERIALIZED_NAME_WORLD_ID)
   private String worldId;
 
   public Store() {
   }
+
+  public Store created(OffsetDateTime created) {
+    
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getCreated() {
+    return created;
+  }
+
+
+  public void setCreated(OffsetDateTime created) {
+    this.created = created;
+  }
+
 
   public Store description(String description) {
     
@@ -375,6 +416,29 @@ public class Store {
   }
 
 
+  public Store storeContext(StoreContext storeContext) {
+    
+    this.storeContext = storeContext;
+    return this;
+  }
+
+   /**
+   * Get storeContext
+   * @return storeContext
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public StoreContext getStoreContext() {
+    return storeContext;
+  }
+
+
+  public void setStoreContext(StoreContext storeContext) {
+    this.storeContext = storeContext;
+  }
+
+
   public Store storeId(String storeId) {
     
     this.storeId = storeId;
@@ -395,6 +459,29 @@ public class Store {
 
   public void setStoreId(String storeId) {
     this.storeId = storeId;
+  }
+
+
+  public Store storeStatus(String storeStatus) {
+    
+    this.storeStatus = storeStatus;
+    return this;
+  }
+
+   /**
+   * Get storeStatus
+   * @return storeStatus
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getStoreStatus() {
+    return storeStatus;
+  }
+
+
+  public void setStoreStatus(String storeStatus) {
+    this.storeStatus = storeStatus;
   }
 
 
@@ -449,6 +536,29 @@ public class Store {
   }
 
 
+  public Store updated(OffsetDateTime updated) {
+    
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getUpdated() {
+    return updated;
+  }
+
+
+  public void setUpdated(OffsetDateTime updated) {
+    this.updated = updated;
+  }
+
+
   public Store worldId(String worldId) {
     
     this.worldId = worldId;
@@ -482,7 +592,8 @@ public class Store {
       return false;
     }
     Store store = (Store) o;
-    return Objects.equals(this.description, store.description) &&
+    return Objects.equals(this.created, store.created) &&
+        Objects.equals(this.description, store.description) &&
         Objects.equals(this.displayName, store.displayName) &&
         Objects.equals(this.groupId, store.groupId) &&
         Objects.equals(this.id, store.id) &&
@@ -492,21 +603,25 @@ public class Store {
         Objects.equals(this.sellerId, store.sellerId) &&
         Objects.equals(this.shelfIds, store.shelfIds) &&
         Objects.equals(this.shelves, store.shelves) &&
+        Objects.equals(this.storeContext, store.storeContext) &&
         Objects.equals(this.storeId, store.storeId) &&
+        Objects.equals(this.storeStatus, store.storeStatus) &&
         Objects.equals(this.storeType, store.storeType) &&
         Objects.equals(this.tags, store.tags) &&
+        Objects.equals(this.updated, store.updated) &&
         Objects.equals(this.worldId, store.worldId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, displayName, groupId, id, listingIds, listings, sellerDisplayName, sellerId, shelfIds, shelves, storeId, storeType, tags, worldId);
+    return Objects.hash(created, description, displayName, groupId, id, listingIds, listings, sellerDisplayName, sellerId, shelfIds, shelves, storeContext, storeId, storeStatus, storeType, tags, updated, worldId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Store {\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
@@ -517,9 +632,12 @@ public class Store {
     sb.append("    sellerId: ").append(toIndentedString(sellerId)).append("\n");
     sb.append("    shelfIds: ").append(toIndentedString(shelfIds)).append("\n");
     sb.append("    shelves: ").append(toIndentedString(shelves)).append("\n");
+    sb.append("    storeContext: ").append(toIndentedString(storeContext)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
+    sb.append("    storeStatus: ").append(toIndentedString(storeStatus)).append("\n");
     sb.append("    storeType: ").append(toIndentedString(storeType)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    worldId: ").append(toIndentedString(worldId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -543,6 +661,7 @@ public class Store {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("created");
     openapiFields.add("description");
     openapiFields.add("displayName");
     openapiFields.add("groupId");
@@ -553,9 +672,12 @@ public class Store {
     openapiFields.add("sellerId");
     openapiFields.add("shelfIds");
     openapiFields.add("shelves");
+    openapiFields.add("storeContext");
     openapiFields.add("storeId");
+    openapiFields.add("storeStatus");
     openapiFields.add("storeType");
     openapiFields.add("tags");
+    openapiFields.add("updated");
     openapiFields.add("worldId");
 
     // a set of required properties/fields (JSON key names)
@@ -651,8 +773,15 @@ public class Store {
           };
         }
       }
+      // validate the optional field `storeContext`
+      if (jsonObj.get("storeContext") != null && !jsonObj.get("storeContext").isJsonNull()) {
+        StoreContext.validateJsonObject(jsonObj.getAsJsonObject("storeContext"));
+      }
       if (!jsonObj.get("storeId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `storeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeId").toString()));
+      }
+      if ((jsonObj.get("storeStatus") != null && !jsonObj.get("storeStatus").isJsonNull()) && !jsonObj.get("storeStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `storeStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeStatus").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {

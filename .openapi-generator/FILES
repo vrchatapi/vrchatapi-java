@@ -71,6 +71,8 @@ docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
 docs/CreateJamSubmissionRequest.md
+docs/CreateListingRequest.md
+docs/CreateProductRequest.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
@@ -85,6 +87,11 @@ docs/EarningsMetrics.md
 docs/EarningsMetricsTotals.md
 docs/EconomyAccount.md
 docs/EconomyApi.md
+docs/EconomyBalances.md
+docs/EconomyPayout.md
+docs/EconomyPayoutEligibility.md
+docs/EconomyPayoutList.md
+docs/EconomyPayoutStatus.md
 docs/EditPrintRequest.md
 docs/EquipInventoryItemRequest.md
 docs/Error.md
@@ -239,6 +246,7 @@ docs/ProductListingVariant.md
 docs/ProductPurchase.md
 docs/ProductPurchaseHistory.md
 docs/ProductPurchaseLocationType.md
+docs/ProductPurchaseProduct.md
 docs/ProductPurchasePurchaseContext.md
 docs/ProductPurchaseRecord.md
 docs/ProductType.md
@@ -274,6 +282,7 @@ docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
 docs/SortOptionProductPurchase.md
 docs/Store.md
+docs/StoreContext.md
 docs/StoreShelf.md
 docs/StoreType.md
 docs/StoreView.md
@@ -283,6 +292,7 @@ docs/Subscription.md
 docs/SubscriptionPeriod.md
 docs/Success.md
 docs/SuccessFlag.md
+docs/TiliaKyc.md
 docs/TiliaStatus.md
 docs/TiliaTOS.md
 docs/TokenBundle.md
@@ -309,6 +319,8 @@ docs/UpdateGroupRequest.md
 docs/UpdateGroupRoleRequest.md
 docs/UpdateInventoryItemRequest.md
 docs/UpdateInviteMessageRequest.md
+docs/UpdateListingRequest.md
+docs/UpdateProductRequest.md
 docs/UpdatePropRequest.md
 docs/UpdateTiliaTOSRequest.md
 docs/UpdateUserBadgeRequest.md
@@ -447,6 +459,8 @@ src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
 src/main/java/io/github/vrchatapi/model/CreateJamSubmissionRequest.java
+src/main/java/io/github/vrchatapi/model/CreateListingRequest.java
+src/main/java/io/github/vrchatapi/model/CreateProductRequest.java
 src/main/java/io/github/vrchatapi/model/CreatePropRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
@@ -460,6 +474,11 @@ src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/EarningsMetrics.java
 src/main/java/io/github/vrchatapi/model/EarningsMetricsTotals.java
 src/main/java/io/github/vrchatapi/model/EconomyAccount.java
+src/main/java/io/github/vrchatapi/model/EconomyBalances.java
+src/main/java/io/github/vrchatapi/model/EconomyPayout.java
+src/main/java/io/github/vrchatapi/model/EconomyPayoutEligibility.java
+src/main/java/io/github/vrchatapi/model/EconomyPayoutList.java
+src/main/java/io/github/vrchatapi/model/EconomyPayoutStatus.java
 src/main/java/io/github/vrchatapi/model/EditPrintRequest.java
 src/main/java/io/github/vrchatapi/model/EquipInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/Error.java
@@ -602,6 +621,7 @@ src/main/java/io/github/vrchatapi/model/ProductListingVariant.java
 src/main/java/io/github/vrchatapi/model/ProductPurchase.java
 src/main/java/io/github/vrchatapi/model/ProductPurchaseHistory.java
 src/main/java/io/github/vrchatapi/model/ProductPurchaseLocationType.java
+src/main/java/io/github/vrchatapi/model/ProductPurchaseProduct.java
 src/main/java/io/github/vrchatapi/model/ProductPurchasePurchaseContext.java
 src/main/java/io/github/vrchatapi/model/ProductPurchaseRecord.java
 src/main/java/io/github/vrchatapi/model/ProductType.java
@@ -636,6 +656,7 @@ src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
 src/main/java/io/github/vrchatapi/model/SortOptionProductPurchase.java
 src/main/java/io/github/vrchatapi/model/Store.java
+src/main/java/io/github/vrchatapi/model/StoreContext.java
 src/main/java/io/github/vrchatapi/model/StoreShelf.java
 src/main/java/io/github/vrchatapi/model/StoreType.java
 src/main/java/io/github/vrchatapi/model/StoreView.java
@@ -645,6 +666,7 @@ src/main/java/io/github/vrchatapi/model/Subscription.java
 src/main/java/io/github/vrchatapi/model/SubscriptionPeriod.java
 src/main/java/io/github/vrchatapi/model/Success.java
 src/main/java/io/github/vrchatapi/model/SuccessFlag.java
+src/main/java/io/github/vrchatapi/model/TiliaKyc.java
 src/main/java/io/github/vrchatapi/model/TiliaStatus.java
 src/main/java/io/github/vrchatapi/model/TiliaTOS.java
 src/main/java/io/github/vrchatapi/model/TokenBundle.java
@@ -671,6 +693,8 @@ src/main/java/io/github/vrchatapi/model/UpdateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateListingRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateProductRequest.java
 src/main/java/io/github/vrchatapi/model/UpdatePropRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateTiliaTOSRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java

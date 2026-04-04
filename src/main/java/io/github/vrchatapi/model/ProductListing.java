@@ -61,9 +61,17 @@ public class ProductListing {
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
 
+  public static final String SERIALIZED_NAME_ARCHIVED = "archived";
+  @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  private Boolean archived;
+
   public static final String SERIALIZED_NAME_BUYER_REFUNDABLE = "buyerRefundable";
   @SerializedName(SERIALIZED_NAME_BUYER_REFUNDABLE)
   private Boolean buyerRefundable;
+
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
+  private OffsetDateTime created;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -145,6 +153,14 @@ public class ProductListing {
   @SerializedName(SERIALIZED_NAME_PRODUCTS)
   private List<Object> products = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_PURCHASE_COUNT = "purchaseCount";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_COUNT)
+  private Integer purchaseCount;
+
+  public static final String SERIALIZED_NAME_PURCHASE_COUNT_QUANTITY = "purchaseCountQuantity";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_COUNT_QUANTITY)
+  private Integer purchaseCountQuantity;
+
   public static final String SERIALIZED_NAME_QUANTIFIABLE = "quantifiable";
   @SerializedName(SERIALIZED_NAME_QUANTIFIABLE)
   private Boolean quantifiable;
@@ -185,6 +201,10 @@ public class ProductListing {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = null;
 
+  public static final String SERIALIZED_NAME_UPDATED = "updated";
+  @SerializedName(SERIALIZED_NAME_UPDATED)
+  private OffsetDateTime updated;
+
   public static final String SERIALIZED_NAME_VRC_PLUS_DISCOUNT_PRICE = "vrcPlusDiscountPrice";
   @SerializedName(SERIALIZED_NAME_VRC_PLUS_DISCOUNT_PRICE)
   private Integer vrcPlusDiscountPrice;
@@ -219,6 +239,29 @@ public class ProductListing {
   }
 
 
+  public ProductListing archived(Boolean archived) {
+    
+    this.archived = archived;
+    return this;
+  }
+
+   /**
+   * Get archived
+   * @return archived
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getArchived() {
+    return archived;
+  }
+
+
+  public void setArchived(Boolean archived) {
+    this.archived = archived;
+  }
+
+
   public ProductListing buyerRefundable(Boolean buyerRefundable) {
     
     this.buyerRefundable = buyerRefundable;
@@ -239,6 +282,29 @@ public class ProductListing {
 
   public void setBuyerRefundable(Boolean buyerRefundable) {
     this.buyerRefundable = buyerRefundable;
+  }
+
+
+  public ProductListing created(OffsetDateTime created) {
+    
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getCreated() {
+    return created;
+  }
+
+
+  public void setCreated(OffsetDateTime created) {
+    this.created = created;
   }
 
 
@@ -728,6 +794,52 @@ public class ProductListing {
   }
 
 
+  public ProductListing purchaseCount(Integer purchaseCount) {
+    
+    this.purchaseCount = purchaseCount;
+    return this;
+  }
+
+   /**
+   * Get purchaseCount
+   * @return purchaseCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseCount() {
+    return purchaseCount;
+  }
+
+
+  public void setPurchaseCount(Integer purchaseCount) {
+    this.purchaseCount = purchaseCount;
+  }
+
+
+  public ProductListing purchaseCountQuantity(Integer purchaseCountQuantity) {
+    
+    this.purchaseCountQuantity = purchaseCountQuantity;
+    return this;
+  }
+
+   /**
+   * Get purchaseCountQuantity
+   * @return purchaseCountQuantity
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getPurchaseCountQuantity() {
+    return purchaseCountQuantity;
+  }
+
+
+  public void setPurchaseCountQuantity(Integer purchaseCountQuantity) {
+    this.purchaseCountQuantity = purchaseCountQuantity;
+  }
+
+
   public ProductListing quantifiable(Boolean quantifiable) {
     
     this.quantifiable = quantifiable;
@@ -971,6 +1083,29 @@ public class ProductListing {
   }
 
 
+  public ProductListing updated(OffsetDateTime updated) {
+    
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getUpdated() {
+    return updated;
+  }
+
+
+  public void setUpdated(OffsetDateTime updated) {
+    this.updated = updated;
+  }
+
+
   public ProductListing vrcPlusDiscountPrice(Integer vrcPlusDiscountPrice) {
     
     this.vrcPlusDiscountPrice = vrcPlusDiscountPrice;
@@ -1028,7 +1163,9 @@ public class ProductListing {
     }
     ProductListing productListing = (ProductListing) o;
     return Objects.equals(this.active, productListing.active) &&
+        Objects.equals(this.archived, productListing.archived) &&
         Objects.equals(this.buyerRefundable, productListing.buyerRefundable) &&
+        Objects.equals(this.created, productListing.created) &&
         Objects.equals(this.description, productListing.description) &&
         Objects.equals(this.displayName, productListing.displayName) &&
         Objects.equals(this.duration, productListing.duration) &&
@@ -1049,6 +1186,8 @@ public class ProductListing {
         Objects.equals(this.productIds, productListing.productIds) &&
         Objects.equals(this.productType, productListing.productType) &&
         Objects.equals(this.products, productListing.products) &&
+        Objects.equals(this.purchaseCount, productListing.purchaseCount) &&
+        Objects.equals(this.purchaseCountQuantity, productListing.purchaseCountQuantity) &&
         Objects.equals(this.quantifiable, productListing.quantifiable) &&
         Objects.equals(this.recurrable, productListing.recurrable) &&
         Objects.equals(this.refundable, productListing.refundable) &&
@@ -1059,6 +1198,7 @@ public class ProductListing {
         Objects.equals(this.storeIds, productListing.storeIds) &&
         Objects.equals(this.subtitle, productListing.subtitle) &&
         Objects.equals(this.tags, productListing.tags) &&
+        Objects.equals(this.updated, productListing.updated) &&
         Objects.equals(this.vrcPlusDiscountPrice, productListing.vrcPlusDiscountPrice) &&
         Objects.equals(this.whenToExpire, productListing.whenToExpire);
   }
@@ -1069,7 +1209,7 @@ public class ProductListing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, buyerRefundable, description, displayName, duration, durationType, groupIcon, groupId, groupName, hasAvatar, hasUdon, hydratedProducts, id, imageId, imageUrl, listingType, listingVariants, permanent, priceTokens, productIds, productType, products, quantifiable, recurrable, refundable, sellerDisplayName, sellerId, soldByVrc, stackable, storeIds, subtitle, tags, vrcPlusDiscountPrice, whenToExpire);
+    return Objects.hash(active, archived, buyerRefundable, created, description, displayName, duration, durationType, groupIcon, groupId, groupName, hasAvatar, hasUdon, hydratedProducts, id, imageId, imageUrl, listingType, listingVariants, permanent, priceTokens, productIds, productType, products, purchaseCount, purchaseCountQuantity, quantifiable, recurrable, refundable, sellerDisplayName, sellerId, soldByVrc, stackable, storeIds, subtitle, tags, updated, vrcPlusDiscountPrice, whenToExpire);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1084,7 +1224,9 @@ public class ProductListing {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProductListing {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    buyerRefundable: ").append(toIndentedString(buyerRefundable)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
@@ -1105,6 +1247,8 @@ public class ProductListing {
     sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
+    sb.append("    purchaseCount: ").append(toIndentedString(purchaseCount)).append("\n");
+    sb.append("    purchaseCountQuantity: ").append(toIndentedString(purchaseCountQuantity)).append("\n");
     sb.append("    quantifiable: ").append(toIndentedString(quantifiable)).append("\n");
     sb.append("    recurrable: ").append(toIndentedString(recurrable)).append("\n");
     sb.append("    refundable: ").append(toIndentedString(refundable)).append("\n");
@@ -1115,6 +1259,7 @@ public class ProductListing {
     sb.append("    storeIds: ").append(toIndentedString(storeIds)).append("\n");
     sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    vrcPlusDiscountPrice: ").append(toIndentedString(vrcPlusDiscountPrice)).append("\n");
     sb.append("    whenToExpire: ").append(toIndentedString(whenToExpire)).append("\n");
     sb.append("}");
@@ -1140,7 +1285,9 @@ public class ProductListing {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("active");
+    openapiFields.add("archived");
     openapiFields.add("buyerRefundable");
+    openapiFields.add("created");
     openapiFields.add("description");
     openapiFields.add("displayName");
     openapiFields.add("duration");
@@ -1161,6 +1308,8 @@ public class ProductListing {
     openapiFields.add("productIds");
     openapiFields.add("productType");
     openapiFields.add("products");
+    openapiFields.add("purchaseCount");
+    openapiFields.add("purchaseCountQuantity");
     openapiFields.add("quantifiable");
     openapiFields.add("recurrable");
     openapiFields.add("refundable");
@@ -1171,6 +1320,7 @@ public class ProductListing {
     openapiFields.add("storeIds");
     openapiFields.add("subtitle");
     openapiFields.add("tags");
+    openapiFields.add("updated");
     openapiFields.add("vrcPlusDiscountPrice");
     openapiFields.add("whenToExpire");
 

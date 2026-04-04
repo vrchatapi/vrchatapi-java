@@ -17,8 +17,12 @@
 |**groupRoleId** | **String** |  |  [optional] |
 |**id** | **String** |  |  |
 |**imageId** | **String** |  |  |
+|**imageUrl** | **String** |  |  [optional] |
 |**parentListings** | **List&lt;String&gt;** |  |  |
 |**productType** | **ProductType** |  |  |
+|**productTypeLabel** | **String** |  |  [optional] |
+|**purchaseCount** | **Integer** |  |  [optional] |
+|**purchaseCountQuantity** | **Integer** |  |  [optional] |
 |**sellerDisplayName** | **String** |  |  |
 |**sellerId** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |

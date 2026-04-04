@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,17 +59,45 @@ public class EconomyAccount {
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
 
+  public static final String SERIALIZED_NAME_ACCOUNT_SELLER_REGISTERED_ON = "accountSellerRegisteredOn";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_SELLER_REGISTERED_ON)
+  private OffsetDateTime accountSellerRegisteredOn;
+
+  public static final String SERIALIZED_NAME_ACCOUNT_SELLER_STATUS = "accountSellerStatus";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_SELLER_STATUS)
+  private String accountSellerStatus;
+
   public static final String SERIALIZED_NAME_BLOCKED = "blocked";
   @SerializedName(SERIALIZED_NAME_BLOCKED)
   private Boolean blocked;
+
+  public static final String SERIALIZED_NAME_CAN_EARN = "canEarn";
+  @SerializedName(SERIALIZED_NAME_CAN_EARN)
+  private Boolean canEarn;
+
+  public static final String SERIALIZED_NAME_CAN_PAYOUT = "canPayout";
+  @SerializedName(SERIALIZED_NAME_CAN_PAYOUT)
+  private Boolean canPayout;
 
   public static final String SERIALIZED_NAME_CAN_SPEND = "canSpend";
   @SerializedName(SERIALIZED_NAME_CAN_SPEND)
   private Boolean canSpend;
 
+  public static final String SERIALIZED_NAME_SKRILL_EMAIL = "skrillEmail";
+  @SerializedName(SERIALIZED_NAME_SKRILL_EMAIL)
+  private String skrillEmail;
+
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
+
+  public static final String SERIALIZED_NAME_TILIA_ID = "tiliaId";
+  @SerializedName(SERIALIZED_NAME_TILIA_ID)
+  private String tiliaId;
+
+  public static final String SERIALIZED_NAME_TILIA_TYPE = "tiliaType";
+  @SerializedName(SERIALIZED_NAME_TILIA_TYPE)
+  private String tiliaType;
 
   public static final String SERIALIZED_NAME_USER_ID = "userId";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -123,6 +152,52 @@ public class EconomyAccount {
   }
 
 
+  public EconomyAccount accountSellerRegisteredOn(OffsetDateTime accountSellerRegisteredOn) {
+    
+    this.accountSellerRegisteredOn = accountSellerRegisteredOn;
+    return this;
+  }
+
+   /**
+   * Get accountSellerRegisteredOn
+   * @return accountSellerRegisteredOn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getAccountSellerRegisteredOn() {
+    return accountSellerRegisteredOn;
+  }
+
+
+  public void setAccountSellerRegisteredOn(OffsetDateTime accountSellerRegisteredOn) {
+    this.accountSellerRegisteredOn = accountSellerRegisteredOn;
+  }
+
+
+  public EconomyAccount accountSellerStatus(String accountSellerStatus) {
+    
+    this.accountSellerStatus = accountSellerStatus;
+    return this;
+  }
+
+   /**
+   * Get accountSellerStatus
+   * @return accountSellerStatus
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getAccountSellerStatus() {
+    return accountSellerStatus;
+  }
+
+
+  public void setAccountSellerStatus(String accountSellerStatus) {
+    this.accountSellerStatus = accountSellerStatus;
+  }
+
+
   public EconomyAccount blocked(Boolean blocked) {
     
     this.blocked = blocked;
@@ -143,6 +218,52 @@ public class EconomyAccount {
 
   public void setBlocked(Boolean blocked) {
     this.blocked = blocked;
+  }
+
+
+  public EconomyAccount canEarn(Boolean canEarn) {
+    
+    this.canEarn = canEarn;
+    return this;
+  }
+
+   /**
+   * Get canEarn
+   * @return canEarn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCanEarn() {
+    return canEarn;
+  }
+
+
+  public void setCanEarn(Boolean canEarn) {
+    this.canEarn = canEarn;
+  }
+
+
+  public EconomyAccount canPayout(Boolean canPayout) {
+    
+    this.canPayout = canPayout;
+    return this;
+  }
+
+   /**
+   * Get canPayout
+   * @return canPayout
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCanPayout() {
+    return canPayout;
+  }
+
+
+  public void setCanPayout(Boolean canPayout) {
+    this.canPayout = canPayout;
   }
 
 
@@ -169,6 +290,29 @@ public class EconomyAccount {
   }
 
 
+  public EconomyAccount skrillEmail(String skrillEmail) {
+    
+    this.skrillEmail = skrillEmail;
+    return this;
+  }
+
+   /**
+   * Get skrillEmail
+   * @return skrillEmail
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSkrillEmail() {
+    return skrillEmail;
+  }
+
+
+  public void setSkrillEmail(String skrillEmail) {
+    this.skrillEmail = skrillEmail;
+  }
+
+
   public EconomyAccount source(String source) {
     
     this.source = source;
@@ -189,6 +333,52 @@ public class EconomyAccount {
 
   public void setSource(String source) {
     this.source = source;
+  }
+
+
+  public EconomyAccount tiliaId(String tiliaId) {
+    
+    this.tiliaId = tiliaId;
+    return this;
+  }
+
+   /**
+   * Get tiliaId
+   * @return tiliaId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTiliaId() {
+    return tiliaId;
+  }
+
+
+  public void setTiliaId(String tiliaId) {
+    this.tiliaId = tiliaId;
+  }
+
+
+  public EconomyAccount tiliaType(String tiliaType) {
+    
+    this.tiliaType = tiliaType;
+    return this;
+  }
+
+   /**
+   * Get tiliaType
+   * @return tiliaType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTiliaType() {
+    return tiliaType;
+  }
+
+
+  public void setTiliaType(String tiliaType) {
+    this.tiliaType = tiliaType;
   }
 
 
@@ -227,15 +417,33 @@ public class EconomyAccount {
     EconomyAccount economyAccount = (EconomyAccount) o;
     return Objects.equals(this.accountActivatedOn, economyAccount.accountActivatedOn) &&
         Objects.equals(this.accountId, economyAccount.accountId) &&
+        Objects.equals(this.accountSellerRegisteredOn, economyAccount.accountSellerRegisteredOn) &&
+        Objects.equals(this.accountSellerStatus, economyAccount.accountSellerStatus) &&
         Objects.equals(this.blocked, economyAccount.blocked) &&
+        Objects.equals(this.canEarn, economyAccount.canEarn) &&
+        Objects.equals(this.canPayout, economyAccount.canPayout) &&
         Objects.equals(this.canSpend, economyAccount.canSpend) &&
+        Objects.equals(this.skrillEmail, economyAccount.skrillEmail) &&
         Objects.equals(this.source, economyAccount.source) &&
+        Objects.equals(this.tiliaId, economyAccount.tiliaId) &&
+        Objects.equals(this.tiliaType, economyAccount.tiliaType) &&
         Objects.equals(this.userId, economyAccount.userId);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountActivatedOn, accountId, blocked, canSpend, source, userId);
+    return Objects.hash(accountActivatedOn, accountId, accountSellerRegisteredOn, accountSellerStatus, blocked, canEarn, canPayout, canSpend, skrillEmail, source, tiliaId, tiliaType, userId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -244,9 +452,16 @@ public class EconomyAccount {
     sb.append("class EconomyAccount {\n");
     sb.append("    accountActivatedOn: ").append(toIndentedString(accountActivatedOn)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    accountSellerRegisteredOn: ").append(toIndentedString(accountSellerRegisteredOn)).append("\n");
+    sb.append("    accountSellerStatus: ").append(toIndentedString(accountSellerStatus)).append("\n");
     sb.append("    blocked: ").append(toIndentedString(blocked)).append("\n");
+    sb.append("    canEarn: ").append(toIndentedString(canEarn)).append("\n");
+    sb.append("    canPayout: ").append(toIndentedString(canPayout)).append("\n");
     sb.append("    canSpend: ").append(toIndentedString(canSpend)).append("\n");
+    sb.append("    skrillEmail: ").append(toIndentedString(skrillEmail)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    tiliaId: ").append(toIndentedString(tiliaId)).append("\n");
+    sb.append("    tiliaType: ").append(toIndentedString(tiliaType)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -272,9 +487,16 @@ public class EconomyAccount {
     openapiFields = new HashSet<String>();
     openapiFields.add("accountActivatedOn");
     openapiFields.add("accountId");
+    openapiFields.add("accountSellerRegisteredOn");
+    openapiFields.add("accountSellerStatus");
     openapiFields.add("blocked");
+    openapiFields.add("canEarn");
+    openapiFields.add("canPayout");
     openapiFields.add("canSpend");
+    openapiFields.add("skrillEmail");
     openapiFields.add("source");
+    openapiFields.add("tiliaId");
+    openapiFields.add("tiliaType");
     openapiFields.add("userId");
 
     // a set of required properties/fields (JSON key names)
@@ -317,8 +539,20 @@ public class EconomyAccount {
       if (!jsonObj.get("accountId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
       }
+      if ((jsonObj.get("accountSellerStatus") != null && !jsonObj.get("accountSellerStatus").isJsonNull()) && !jsonObj.get("accountSellerStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `accountSellerStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountSellerStatus").toString()));
+      }
+      if ((jsonObj.get("skrillEmail") != null && !jsonObj.get("skrillEmail").isJsonNull()) && !jsonObj.get("skrillEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `skrillEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("skrillEmail").toString()));
+      }
       if (!jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
+      }
+      if ((jsonObj.get("tiliaId") != null && !jsonObj.get("tiliaId").isJsonNull()) && !jsonObj.get("tiliaId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tiliaId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tiliaId").toString()));
+      }
+      if ((jsonObj.get("tiliaType") != null && !jsonObj.get("tiliaType").isJsonNull()) && !jsonObj.get("tiliaType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tiliaType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tiliaType").toString()));
       }
       if (!jsonObj.get("userId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
