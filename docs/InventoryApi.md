@@ -13,6 +13,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getInventoryTemplate**](InventoryApi.md#getInventoryTemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template |
 | [**getOwnInventoryItem**](InventoryApi.md#getOwnInventoryItem) | **GET** /inventory/{inventoryItemId} | Get Own Inventory Item |
 | [**getUserInventoryItem**](InventoryApi.md#getUserInventoryItem) | **GET** /user/{userId}/inventory/{inventoryItemId} | Get User Inventory Item |
+| [**redeemReward**](InventoryApi.md#redeemReward) | **POST** /reward/redeem | Redeem Reward |
 | [**shareInventoryItemDirect**](InventoryApi.md#shareInventoryItemDirect) | **POST** /inventory/cloning/direct | Share Inventory Item Direct |
 | [**shareInventoryItemPedestal**](InventoryApi.md#shareInventoryItemPedestal) | **GET** /inventory/cloning/pedestal | Share Inventory Item by Pedestal |
 | [**spawnInventoryItem**](InventoryApi.md#spawnInventoryItem) | **GET** /inventory/spawn | Spawn Inventory Item |
@@ -50,7 +51,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     try {
       InventoryConsumptionResults result = apiInstance.consumeOwnInventoryItem(inventoryItemId);
       System.out.println(result);
@@ -121,7 +122,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     try {
       SuccessFlag result = apiInstance.deleteOwnInventoryItem(inventoryItemId);
       System.out.println(result);
@@ -191,7 +192,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     EquipInventoryItemRequest equipInventoryItemRequest = new EquipInventoryItemRequest(); // EquipInventoryItemRequest | 
     try {
       InventoryItem result = apiInstance.equipOwnInventoryItem(inventoryItemId, equipInventoryItemRequest);
@@ -491,7 +492,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryTemplateId = "invt_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory template ID.
+    String inventoryTemplateId = "inventoryTemplateId_example"; // String | Must be a valid inventory template ID.
     try {
       InventoryTemplate result = apiInstance.getInventoryTemplate(inventoryTemplateId);
       System.out.println(result);
@@ -561,7 +562,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     try {
       InventoryItem result = apiInstance.getOwnInventoryItem(inventoryItemId);
       System.out.println(result);
@@ -632,7 +633,7 @@ public class Example {
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     try {
       InventoryItem result = apiInstance.getUserInventoryItem(userId, inventoryItemId);
       System.out.println(result);
@@ -671,6 +672,76 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns an InventoryItem object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="redeemReward"></a>
+# **redeemReward**
+> List&lt;RewardRedemptionResult&gt; redeemReward(rewardRedemptionRequest)
+
+Redeem Reward
+
+Redeem a reward for the currently logged in user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InventoryApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InventoryApi apiInstance = new InventoryApi(defaultClient);
+    RewardRedemptionRequest rewardRedemptionRequest = new RewardRedemptionRequest(); // RewardRedemptionRequest | 
+    try {
+      List<RewardRedemptionResult> result = apiInstance.redeemReward(rewardRedemptionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InventoryApi#redeemReward");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **rewardRedemptionRequest** | [**RewardRedemptionRequest**](RewardRedemptionRequest.md)|  | |
+
+### Return type
+
+[**List&lt;RewardRedemptionResult&gt;**](RewardRedemptionResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single RewardRedemptionResult object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="shareInventoryItemDirect"></a>
@@ -989,7 +1060,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String inventoryItemId = "inv_00000000-0000-0000-0000-000000000000"; // String | Must be a valid inventory item ID.
+    String inventoryItemId = "inventoryItemId_example"; // String | Must be a valid inventory item ID.
     UpdateInventoryItemRequest updateInventoryItemRequest = new UpdateInventoryItemRequest(); // UpdateInventoryItemRequest | 
     try {
       InventoryItem result = apiInstance.updateOwnInventoryItem(inventoryItemId, updateInventoryItemRequest);

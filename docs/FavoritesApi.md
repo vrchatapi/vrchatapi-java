@@ -115,8 +115,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
-    String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
+    FavoriteType favoriteGroupType = FavoriteType.fromValue("avatar"); // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupName = "group_0"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       Success result = apiInstance.clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
@@ -136,8 +136,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
-| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to group_0] |
 | **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
@@ -188,8 +188,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
-    String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
+    FavoriteType favoriteGroupType = FavoriteType.fromValue("avatar"); // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupName = "group_0"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       FavoriteGroup result = apiInstance.getFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
@@ -209,8 +209,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
-| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to group_0] |
 | **userId** | **String**| Must be a valid user ID. | |
 
 ### Return type
@@ -550,8 +550,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
-    String favoriteGroupType = "avatar"; // String | The type of group to fetch, must be a valid FavoriteType.
-    String favoriteGroupName = "favoriteGroupName_example"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
+    FavoriteType favoriteGroupType = FavoriteType.fromValue("avatar"); // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupName = "group_0"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateFavoriteGroupRequest updateFavoriteGroupRequest = new UpdateFavoriteGroupRequest(); // UpdateFavoriteGroupRequest | 
     try {
@@ -571,8 +571,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | [enum: avatar, friend, world] |
-| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | |
+| **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to group_0] |
 | **userId** | **String**| Must be a valid user ID. | |
 | **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional] |
 

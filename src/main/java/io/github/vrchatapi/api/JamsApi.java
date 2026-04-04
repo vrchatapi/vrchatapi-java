@@ -26,9 +26,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.github.vrchatapi.model.CreateJamSubmissionRequest;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Jam;
-import io.github.vrchatapi.model.Submission;
+import io.github.vrchatapi.model.JamSubmission;
+import io.github.vrchatapi.model.Success;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -75,8 +77,153 @@ public class JamsApi {
     }
 
     /**
+     * Build call for deleteJamSubmission
+     * @param jamId Must be a valid jam ID. (required)
+     * @param jamSubmissionId Must be a valid jam submission ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteJamSubmissionCall(String jamId, String jamSubmissionId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/jams/{jamId}/submissions/{jamSubmissionId}"
+            .replace("{" + "jamId" + "}", localVarApiClient.escapeString(jamId.toString()))
+            .replace("{" + "jamSubmissionId" + "}", localVarApiClient.escapeString(jamSubmissionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteJamSubmissionValidateBeforeCall(String jamId, String jamSubmissionId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'jamId' is set
+        if (jamId == null) {
+            throw new ApiException("Missing the required parameter 'jamId' when calling deleteJamSubmission(Async)");
+        }
+
+        // verify the required parameter 'jamSubmissionId' is set
+        if (jamSubmissionId == null) {
+            throw new ApiException("Missing the required parameter 'jamSubmissionId' when calling deleteJamSubmission(Async)");
+        }
+
+        return deleteJamSubmissionCall(jamId, jamSubmissionId, _callback);
+
+    }
+
+    /**
+     * Delete Jam Submission
+     * Withdraws a content submission from a jam.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param jamSubmissionId Must be a valid jam submission ID. (required)
+     * @return Success
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public Success deleteJamSubmission(String jamId, String jamSubmissionId) throws ApiException {
+        ApiResponse<Success> localVarResp = deleteJamSubmissionWithHttpInfo(jamId, jamSubmissionId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete Jam Submission
+     * Withdraws a content submission from a jam.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param jamSubmissionId Must be a valid jam submission ID. (required)
+     * @return ApiResponse&lt;Success&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Success> deleteJamSubmissionWithHttpInfo(String jamId, String jamSubmissionId) throws ApiException {
+        okhttp3.Call localVarCall = deleteJamSubmissionValidateBeforeCall(jamId, jamSubmissionId, null);
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete Jam Submission (asynchronously)
+     * Withdraws a content submission from a jam.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param jamSubmissionId Must be a valid jam submission ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteJamSubmissionAsync(String jamId, String jamSubmissionId, final ApiCallback<Success> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteJamSubmissionValidateBeforeCall(jamId, jamSubmissionId, _callback);
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getJam
-     * @param jamId Must be a valid query ID. (required)
+     * @param jamId Must be a valid jam ID. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -146,7 +293,7 @@ public class JamsApi {
     /**
      * Show jam information
      * Returns a jam.
-     * @param jamId Must be a valid query ID. (required)
+     * @param jamId Must be a valid jam ID. (required)
      * @return Jam
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -164,7 +311,7 @@ public class JamsApi {
     /**
      * Show jam information
      * Returns a jam.
-     * @param jamId Must be a valid query ID. (required)
+     * @param jamId Must be a valid jam ID. (required)
      * @return ApiResponse&lt;Jam&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -183,7 +330,7 @@ public class JamsApi {
     /**
      * Show jam information (asynchronously)
      * Returns a jam.
-     * @param jamId Must be a valid query ID. (required)
+     * @param jamId Must be a valid jam ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -203,18 +350,20 @@ public class JamsApi {
     }
     /**
      * Build call for getJamSubmissions
-     * @param jamId Must be a valid query ID. (required)
+     * @param jamId Must be a valid jam ID. (required)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param submitterId Must be a valid user ID. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a list of Submission objects. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJamSubmissionsCall(String jamId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getJamSubmissionsCall(String jamId, String contentId, String submitterId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -240,6 +389,14 @@ public class JamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (contentId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("contentId", contentId));
+        }
+
+        if (submitterId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("submitterId", submitterId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -260,71 +417,77 @@ public class JamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getJamSubmissionsValidateBeforeCall(String jamId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getJamSubmissionsValidateBeforeCall(String jamId, String contentId, String submitterId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jamId' is set
         if (jamId == null) {
             throw new ApiException("Missing the required parameter 'jamId' when calling getJamSubmissions(Async)");
         }
 
-        return getJamSubmissionsCall(jamId, _callback);
+        return getJamSubmissionsCall(jamId, contentId, submitterId, _callback);
 
     }
 
     /**
      * Show jam submissions
-     * Returns all submissions of a jam.
-     * @param jamId Must be a valid query ID. (required)
-     * @return List&lt;Submission&gt;
+     * Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).
+     * @param jamId Must be a valid jam ID. (required)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param submitterId Must be a valid user ID. (optional)
+     * @return List&lt;JamSubmission&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a list of Submission objects. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Submission> getJamSubmissions(String jamId) throws ApiException {
-        ApiResponse<List<Submission>> localVarResp = getJamSubmissionsWithHttpInfo(jamId);
+    public List<JamSubmission> getJamSubmissions(String jamId, String contentId, String submitterId) throws ApiException {
+        ApiResponse<List<JamSubmission>> localVarResp = getJamSubmissionsWithHttpInfo(jamId, contentId, submitterId);
         return localVarResp.getData();
     }
 
     /**
      * Show jam submissions
-     * Returns all submissions of a jam.
-     * @param jamId Must be a valid query ID. (required)
-     * @return ApiResponse&lt;List&lt;Submission&gt;&gt;
+     * Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).
+     * @param jamId Must be a valid jam ID. (required)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param submitterId Must be a valid user ID. (optional)
+     * @return ApiResponse&lt;List&lt;JamSubmission&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a list of Submission objects. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Submission>> getJamSubmissionsWithHttpInfo(String jamId) throws ApiException {
-        okhttp3.Call localVarCall = getJamSubmissionsValidateBeforeCall(jamId, null);
-        Type localVarReturnType = new TypeToken<List<Submission>>(){}.getType();
+    public ApiResponse<List<JamSubmission>> getJamSubmissionsWithHttpInfo(String jamId, String contentId, String submitterId) throws ApiException {
+        okhttp3.Call localVarCall = getJamSubmissionsValidateBeforeCall(jamId, contentId, submitterId, null);
+        Type localVarReturnType = new TypeToken<List<JamSubmission>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Show jam submissions (asynchronously)
-     * Returns all submissions of a jam.
-     * @param jamId Must be a valid query ID. (required)
+     * Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).
+     * @param jamId Must be a valid jam ID. (required)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param submitterId Must be a valid user ID. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a list of Submission objects. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJamSubmissionsAsync(String jamId, final ApiCallback<List<Submission>> _callback) throws ApiException {
+    public okhttp3.Call getJamSubmissionsAsync(String jamId, String contentId, String submitterId, final ApiCallback<List<JamSubmission>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getJamSubmissionsValidateBeforeCall(jamId, _callback);
-        Type localVarReturnType = new TypeToken<List<Submission>>(){}.getType();
+        okhttp3.Call localVarCall = getJamSubmissionsValidateBeforeCall(jamId, contentId, submitterId, _callback);
+        Type localVarReturnType = new TypeToken<List<JamSubmission>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -446,6 +609,142 @@ public class JamsApi {
 
         okhttp3.Call localVarCall = getJamsValidateBeforeCall(type, _callback);
         Type localVarReturnType = new TypeToken<List<Jam>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for submitJamContent
+     * @param jamId Must be a valid jam ID. (required)
+     * @param createJamSubmissionRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call submitJamContentCall(String jamId, CreateJamSubmissionRequest createJamSubmissionRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createJamSubmissionRequest;
+
+        // create path and map variables
+        String localVarPath = "/jams/{jamId}/submissions"
+            .replace("{" + "jamId" + "}", localVarApiClient.escapeString(jamId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call submitJamContentValidateBeforeCall(String jamId, CreateJamSubmissionRequest createJamSubmissionRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'jamId' is set
+        if (jamId == null) {
+            throw new ApiException("Missing the required parameter 'jamId' when calling submitJamContent(Async)");
+        }
+
+        return submitJamContentCall(jamId, createJamSubmissionRequest, _callback);
+
+    }
+
+    /**
+     * Submit Jam Content
+     * Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam&#39;s designated times.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param createJamSubmissionRequest  (optional)
+     * @return JamSubmission
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public JamSubmission submitJamContent(String jamId, CreateJamSubmissionRequest createJamSubmissionRequest) throws ApiException {
+        ApiResponse<JamSubmission> localVarResp = submitJamContentWithHttpInfo(jamId, createJamSubmissionRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Submit Jam Content
+     * Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam&#39;s designated times.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param createJamSubmissionRequest  (optional)
+     * @return ApiResponse&lt;JamSubmission&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<JamSubmission> submitJamContentWithHttpInfo(String jamId, CreateJamSubmissionRequest createJamSubmissionRequest) throws ApiException {
+        okhttp3.Call localVarCall = submitJamContentValidateBeforeCall(jamId, createJamSubmissionRequest, null);
+        Type localVarReturnType = new TypeToken<JamSubmission>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Submit Jam Content (asynchronously)
+     * Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam&#39;s designated times.
+     * @param jamId Must be a valid jam ID. (required)
+     * @param createJamSubmissionRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call submitJamContentAsync(String jamId, CreateJamSubmissionRequest createJamSubmissionRequest, final ApiCallback<JamSubmission> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = submitJamContentValidateBeforeCall(jamId, createJamSubmissionRequest, _callback);
+        Type localVarReturnType = new TypeToken<JamSubmission>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

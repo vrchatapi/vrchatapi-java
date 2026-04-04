@@ -49,7 +49,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateCalendarEventRequest createCalendarEventRequest = new CreateCalendarEventRequest(); // CreateCalendarEventRequest | 
     try {
       CalendarEvent result = apiInstance.createGroupCalendarEvent(groupId, createCalendarEventRequest);
@@ -123,8 +123,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String calendarId = "cal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid calendar ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String calendarId = "calendarId_example"; // String | Must be a valid calendar ID.
     try {
       Success result = apiInstance.deleteGroupCalendarEvent(groupId, calendarId);
       System.out.println(result);
@@ -286,8 +286,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String calendarId = "cal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid calendar ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String calendarId = "calendarId_example"; // String | Must be a valid calendar ID.
     FollowCalendarEventRequest followCalendarEventRequest = new FollowCalendarEventRequest(); // FollowCalendarEventRequest | 
     try {
       CalendarEvent result = apiInstance.followGroupCalendarEvent(groupId, calendarId, followCalendarEventRequest);
@@ -582,8 +582,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String calendarId = "cal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid calendar ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String calendarId = "calendarId_example"; // String | Must be a valid calendar ID.
     try {
       CalendarEvent result = apiInstance.getGroupCalendarEvent(groupId, calendarId);
       System.out.println(result);
@@ -647,8 +647,8 @@ public class Example {
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String calendarId = "cal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid calendar ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String calendarId = "calendarId_example"; // String | Must be a valid calendar ID.
     try {
       File result = apiInstance.getGroupCalendarEventICS(groupId, calendarId);
       System.out.println(result);
@@ -720,7 +720,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | The month to search in.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
@@ -796,7 +796,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       CalendarEvent result = apiInstance.getGroupNextCalendarEvent(groupId);
       System.out.println(result);
@@ -945,8 +945,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String calendarId = "cal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid calendar ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String calendarId = "calendarId_example"; // String | Must be a valid calendar ID.
     UpdateCalendarEventRequest updateCalendarEventRequest = new UpdateCalendarEventRequest(); // UpdateCalendarEventRequest | 
     try {
       CalendarEvent result = apiInstance.updateGroupCalendarEvent(groupId, calendarId, updateCalendarEventRequest);

@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.github.vrchatapi.model.ChangeWorldTagsRequest;
 import io.github.vrchatapi.model.CreateWorldRequest;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.FavoritedWorld;
@@ -83,6 +84,147 @@ public class WorldsApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for addWorldTags
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addWorldTagsCall(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = changeWorldTagsRequest;
+
+        // create path and map variables
+        String localVarPath = "/worlds/{worldId}/addTags"
+            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call addWorldTagsValidateBeforeCall(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'worldId' is set
+        if (worldId == null) {
+            throw new ApiException("Missing the required parameter 'worldId' when calling addWorldTags(Async)");
+        }
+
+        // verify the required parameter 'changeWorldTagsRequest' is set
+        if (changeWorldTagsRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeWorldTagsRequest' when calling addWorldTags(Async)");
+        }
+
+        return addWorldTagsCall(worldId, changeWorldTagsRequest, _callback);
+
+    }
+
+    /**
+     * Add World Tags
+     * Adds tags to the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @return World
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public World addWorldTags(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
+        ApiResponse<World> localVarResp = addWorldTagsWithHttpInfo(worldId, changeWorldTagsRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Add World Tags
+     * Adds tags to the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @return ApiResponse&lt;World&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<World> addWorldTagsWithHttpInfo(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
+        okhttp3.Call localVarCall = addWorldTagsValidateBeforeCall(worldId, changeWorldTagsRequest, null);
+        Type localVarReturnType = new TypeToken<World>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Add World Tags (asynchronously)
+     * Adds tags to the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addWorldTagsAsync(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback<World> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = addWorldTagsValidateBeforeCall(worldId, changeWorldTagsRequest, _callback);
+        Type localVarReturnType = new TypeToken<World>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for checkUserPersistenceExists
      * @param userId Must be a valid user ID. (required)
@@ -730,6 +872,143 @@ public class WorldsApi {
     public okhttp3.Call deleteWorldAsync(String worldId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorldValidateBeforeCall(worldId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteWorldPlatform
+     * @param worldId Must be a valid world ID. (required)
+     * @param publishedPlatform A platform the world supports. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWorldPlatformCall(String worldId, String publishedPlatform, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/worlds/{worldId}/platform/{publishedPlatform}"
+            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()))
+            .replace("{" + "publishedPlatform" + "}", localVarApiClient.escapeString(publishedPlatform.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteWorldPlatformValidateBeforeCall(String worldId, String publishedPlatform, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'worldId' is set
+        if (worldId == null) {
+            throw new ApiException("Missing the required parameter 'worldId' when calling deleteWorldPlatform(Async)");
+        }
+
+        // verify the required parameter 'publishedPlatform' is set
+        if (publishedPlatform == null) {
+            throw new ApiException("Missing the required parameter 'publishedPlatform' when calling deleteWorldPlatform(Async)");
+        }
+
+        return deleteWorldPlatformCall(worldId, publishedPlatform, _callback);
+
+    }
+
+    /**
+     * Delete World Platform
+     * Deletes a world platform.
+     * @param worldId Must be a valid world ID. (required)
+     * @param publishedPlatform A platform the world supports. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deleteWorldPlatform(String worldId, String publishedPlatform) throws ApiException {
+        deleteWorldPlatformWithHttpInfo(worldId, publishedPlatform);
+    }
+
+    /**
+     * Delete World Platform
+     * Deletes a world platform.
+     * @param worldId Must be a valid world ID. (required)
+     * @param publishedPlatform A platform the world supports. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteWorldPlatformWithHttpInfo(String worldId, String publishedPlatform) throws ApiException {
+        okhttp3.Call localVarCall = deleteWorldPlatformValidateBeforeCall(worldId, publishedPlatform, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete World Platform (asynchronously)
+     * Deletes a world platform.
+     * @param worldId Must be a valid world ID. (required)
+     * @param publishedPlatform A platform the world supports. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWorldPlatformAsync(String worldId, String publishedPlatform, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteWorldPlatformValidateBeforeCall(worldId, publishedPlatform, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -2060,6 +2339,147 @@ public class WorldsApi {
 
         okhttp3.Call localVarCall = publishWorldValidateBeforeCall(worldId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for removeWorldTags
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call removeWorldTagsCall(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = changeWorldTagsRequest;
+
+        // create path and map variables
+        String localVarPath = "/worlds/{worldId}/removeTags"
+            .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call removeWorldTagsValidateBeforeCall(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'worldId' is set
+        if (worldId == null) {
+            throw new ApiException("Missing the required parameter 'worldId' when calling removeWorldTags(Async)");
+        }
+
+        // verify the required parameter 'changeWorldTagsRequest' is set
+        if (changeWorldTagsRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeWorldTagsRequest' when calling removeWorldTags(Async)");
+        }
+
+        return removeWorldTagsCall(worldId, changeWorldTagsRequest, _callback);
+
+    }
+
+    /**
+     * Remove World Tags
+     * Removes tags from the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @return World
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public World removeWorldTags(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
+        ApiResponse<World> localVarResp = removeWorldTagsWithHttpInfo(worldId, changeWorldTagsRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Remove World Tags
+     * Removes tags from the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @return ApiResponse&lt;World&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<World> removeWorldTagsWithHttpInfo(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
+        okhttp3.Call localVarCall = removeWorldTagsValidateBeforeCall(worldId, changeWorldTagsRequest, null);
+        Type localVarReturnType = new TypeToken<World>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Remove World Tags (asynchronously)
+     * Removes tags from the world&#39;s profile
+     * @param worldId Must be a valid world ID. (required)
+     * @param changeWorldTagsRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call removeWorldTagsAsync(String worldId, ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback<World> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = removeWorldTagsValidateBeforeCall(worldId, changeWorldTagsRequest, _callback);
+        Type localVarReturnType = new TypeToken<World>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

@@ -56,6 +56,7 @@ docs/CalendarEventDiscoveryScope.md
 docs/CalendarEventPlatform.md
 docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
+docs/ChangeWorldTagsRequest.md
 docs/ContentFilter.md
 docs/CreateAvatarModerationRequest.md
 docs/CreateAvatarRequest.md
@@ -69,6 +70,7 @@ docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
+docs/CreateJamSubmissionRequest.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
@@ -79,6 +81,8 @@ docs/DeveloperType.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
 docs/DynamicContentRow.md
+docs/EarningsMetrics.md
+docs/EarningsMetricsTotals.md
 docs/EconomyAccount.md
 docs/EconomyApi.md
 docs/EditPrintRequest.md
@@ -175,6 +179,7 @@ docs/InviteResponse.md
 docs/InviteUserWithPhotoRequest.md
 docs/Jam.md
 docs/JamStateChangeDates.md
+docs/JamSubmission.md
 docs/JamsApi.md
 docs/JoinGroupRequest.md
 docs/License.md
@@ -232,12 +237,16 @@ docs/ProductListing.md
 docs/ProductListingType.md
 docs/ProductListingVariant.md
 docs/ProductPurchase.md
+docs/ProductPurchaseHistory.md
+docs/ProductPurchaseLocationType.md
 docs/ProductPurchasePurchaseContext.md
+docs/ProductPurchaseRecord.md
 docs/ProductType.md
 docs/Prop.md
 docs/PropPublishStatus.md
 docs/PropUnityPackage.md
 docs/PropsApi.md
+docs/PurchaseContextData.md
 docs/PurchaseProductListingRequest.md
 docs/Region.md
 docs/RegisterUserAccountRequest.md
@@ -251,7 +260,13 @@ docs/RespondGroupJoinRequest.md
 docs/RespondInviteWithPhotoRequest.md
 docs/RespondNotificationV2Request.md
 docs/Response.md
+docs/RewardBadge.md
+docs/RewardRedemption.md
+docs/RewardRedemptionData.md
+docs/RewardRedemptionRequest.md
+docs/RewardRedemptionResult.md
 docs/SearchGroupMembers200Response.md
+docs/SellerEligibility.md
 docs/SentNotification.md
 docs/ServiceQueueStats.md
 docs/ServiceStatus.md
@@ -262,7 +277,6 @@ docs/Store.md
 docs/StoreShelf.md
 docs/StoreType.md
 docs/StoreView.md
-docs/Submission.md
 docs/SubmitModerationReportRequest.md
 docs/SubmitModerationReportRequestDetails.md
 docs/Subscription.md
@@ -278,6 +292,7 @@ docs/TransactionStatus.md
 docs/TransactionSteamInfo.md
 docs/TransactionSteamWalletInfo.md
 docs/TransferGroupRequest.md
+docs/TutorialStatus.md
 docs/TwoFactorAuthCode.md
 docs/TwoFactorEmailCode.md
 docs/TwoFactorRecoveryCodes.md
@@ -417,6 +432,7 @@ src/main/java/io/github/vrchatapi/model/CalendarEventDiscoveryScope.java
 src/main/java/io/github/vrchatapi/model/CalendarEventPlatform.java
 src/main/java/io/github/vrchatapi/model/CalendarEventUserInterest.java
 src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
+src/main/java/io/github/vrchatapi/model/ChangeWorldTagsRequest.java
 src/main/java/io/github/vrchatapi/model/ContentFilter.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarModerationRequest.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarRequest.java
@@ -430,6 +446,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
+src/main/java/io/github/vrchatapi/model/CreateJamSubmissionRequest.java
 src/main/java/io/github/vrchatapi/model/CreatePropRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
@@ -440,6 +457,8 @@ src/main/java/io/github/vrchatapi/model/DeveloperType.java
 src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DiscordDetails.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
+src/main/java/io/github/vrchatapi/model/EarningsMetrics.java
+src/main/java/io/github/vrchatapi/model/EarningsMetricsTotals.java
 src/main/java/io/github/vrchatapi/model/EconomyAccount.java
 src/main/java/io/github/vrchatapi/model/EditPrintRequest.java
 src/main/java/io/github/vrchatapi/model/EquipInventoryItemRequest.java
@@ -528,6 +547,7 @@ src/main/java/io/github/vrchatapi/model/InviteResponse.java
 src/main/java/io/github/vrchatapi/model/InviteUserWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/Jam.java
 src/main/java/io/github/vrchatapi/model/JamStateChangeDates.java
+src/main/java/io/github/vrchatapi/model/JamSubmission.java
 src/main/java/io/github/vrchatapi/model/JoinGroupRequest.java
 src/main/java/io/github/vrchatapi/model/License.java
 src/main/java/io/github/vrchatapi/model/LicenseAction.java
@@ -580,11 +600,15 @@ src/main/java/io/github/vrchatapi/model/ProductListing.java
 src/main/java/io/github/vrchatapi/model/ProductListingType.java
 src/main/java/io/github/vrchatapi/model/ProductListingVariant.java
 src/main/java/io/github/vrchatapi/model/ProductPurchase.java
+src/main/java/io/github/vrchatapi/model/ProductPurchaseHistory.java
+src/main/java/io/github/vrchatapi/model/ProductPurchaseLocationType.java
 src/main/java/io/github/vrchatapi/model/ProductPurchasePurchaseContext.java
+src/main/java/io/github/vrchatapi/model/ProductPurchaseRecord.java
 src/main/java/io/github/vrchatapi/model/ProductType.java
 src/main/java/io/github/vrchatapi/model/Prop.java
 src/main/java/io/github/vrchatapi/model/PropPublishStatus.java
 src/main/java/io/github/vrchatapi/model/PropUnityPackage.java
+src/main/java/io/github/vrchatapi/model/PurchaseContextData.java
 src/main/java/io/github/vrchatapi/model/PurchaseProductListingRequest.java
 src/main/java/io/github/vrchatapi/model/Region.java
 src/main/java/io/github/vrchatapi/model/RegisterUserAccountRequest.java
@@ -598,7 +622,13 @@ src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/RespondInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RespondNotificationV2Request.java
 src/main/java/io/github/vrchatapi/model/Response.java
+src/main/java/io/github/vrchatapi/model/RewardBadge.java
+src/main/java/io/github/vrchatapi/model/RewardRedemption.java
+src/main/java/io/github/vrchatapi/model/RewardRedemptionData.java
+src/main/java/io/github/vrchatapi/model/RewardRedemptionRequest.java
+src/main/java/io/github/vrchatapi/model/RewardRedemptionResult.java
 src/main/java/io/github/vrchatapi/model/SearchGroupMembers200Response.java
+src/main/java/io/github/vrchatapi/model/SellerEligibility.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
 src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
 src/main/java/io/github/vrchatapi/model/ServiceStatus.java
@@ -609,7 +639,6 @@ src/main/java/io/github/vrchatapi/model/Store.java
 src/main/java/io/github/vrchatapi/model/StoreShelf.java
 src/main/java/io/github/vrchatapi/model/StoreType.java
 src/main/java/io/github/vrchatapi/model/StoreView.java
-src/main/java/io/github/vrchatapi/model/Submission.java
 src/main/java/io/github/vrchatapi/model/SubmitModerationReportRequest.java
 src/main/java/io/github/vrchatapi/model/SubmitModerationReportRequestDetails.java
 src/main/java/io/github/vrchatapi/model/Subscription.java
@@ -625,6 +654,7 @@ src/main/java/io/github/vrchatapi/model/TransactionStatus.java
 src/main/java/io/github/vrchatapi/model/TransactionSteamInfo.java
 src/main/java/io/github/vrchatapi/model/TransactionSteamWalletInfo.java
 src/main/java/io/github/vrchatapi/model/TransferGroupRequest.java
+src/main/java/io/github/vrchatapi/model/TutorialStatus.java
 src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorEmailCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodes.java

@@ -32,6 +32,8 @@ public enum FavoriteType {
   
   FRIEND("friend"),
   
+  VRCPLUSWORLD("vrcPlusWorld"),
+  
   WORLD("world");
 
   private String value;

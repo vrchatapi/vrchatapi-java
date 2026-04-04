@@ -41,7 +41,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PrintsApi apiInstance = new PrintsApi(defaultClient);
-    String printId = "prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa"; // String | Print ID.
+    String printId = "printId_example"; // String | Print ID.
     try {
       apiInstance.deletePrint(printId);
     } catch (ApiException e) {
@@ -110,7 +110,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PrintsApi apiInstance = new PrintsApi(defaultClient);
-    String printId = "prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa"; // String | Print ID.
+    String printId = "printId_example"; // String | Print ID.
     File image = new File("/path/to/file"); // File | The binary blob of the png file.
     String note = "note_example"; // String | The caption for the image.
     try {
@@ -184,7 +184,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PrintsApi apiInstance = new PrintsApi(defaultClient);
-    String printId = "prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa"; // String | Print ID.
+    String printId = "printId_example"; // String | Print ID.
     try {
       Print result = apiInstance.getPrint(printId);
       System.out.println(result);

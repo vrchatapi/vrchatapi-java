@@ -126,7 +126,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     CreateFileVersionRequest createFileVersionRequest = new CreateFileVersionRequest(); // CreateFileVersionRequest | 
     try {
       ModelFile result = apiInstance.createFileVersion(fileId, createFileVersionRequest);
@@ -197,7 +197,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     try {
       ModelFile result = apiInstance.deleteFile(fileId);
       System.out.println(result);
@@ -267,7 +267,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
       ModelFile result = apiInstance.deleteFileVersion(fileId, versionId);
@@ -340,7 +340,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
       File result = apiInstance.downloadFileVersion(fileId, versionId);
@@ -412,7 +412,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
     FinishFileDataUploadRequest finishFileDataUploadRequest = new FinishFileDataUploadRequest(); // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
@@ -630,7 +630,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     try {
       ModelFile result = apiInstance.getFile(fileId);
       System.out.println(result);
@@ -700,7 +700,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysis(fileId, versionId);
@@ -773,7 +773,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysisSecurity(fileId, versionId);
@@ -846,7 +846,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysisStandard(fileId, versionId);
@@ -919,7 +919,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
     try {
@@ -1137,7 +1137,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String fileId = "file_00000000-0000-0000-0000-000000000000"; // String | Must be a valid file ID.
+    String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 1; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
     Integer partNumber = 1; // Integer | The part number to start uploading. If not provided, the first part will be started.

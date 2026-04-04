@@ -4,11 +4,13 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**addWorldTags**](WorldsApi.md#addWorldTags) | **POST** /worlds/{worldId}/addTags | Add World Tags |
 | [**checkUserPersistenceExists**](WorldsApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
 | [**createWorld**](WorldsApi.md#createWorld) | **POST** /worlds | Create World |
 | [**deleteAllUserPersistenceData**](WorldsApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
 | [**deleteUserPersistence**](WorldsApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**deleteWorld**](WorldsApi.md#deleteWorld) | **DELETE** /worlds/{worldId} | Delete World |
+| [**deleteWorldPlatform**](WorldsApi.md#deleteWorldPlatform) | **DELETE** /worlds/{worldId}/platform/{publishedPlatform} | Delete World Platform |
 | [**getActiveWorlds**](WorldsApi.md#getActiveWorlds) | **GET** /worlds/active | List Active Worlds |
 | [**getFavoritedWorlds**](WorldsApi.md#getFavoritedWorlds) | **GET** /worlds/favorites | List Favorited Worlds |
 | [**getRecentWorlds**](WorldsApi.md#getRecentWorlds) | **GET** /worlds/recent | List Recent Worlds |
@@ -17,10 +19,84 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getWorldMetadata**](WorldsApi.md#getWorldMetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata |
 | [**getWorldPublishStatus**](WorldsApi.md#getWorldPublishStatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status |
 | [**publishWorld**](WorldsApi.md#publishWorld) | **PUT** /worlds/{worldId}/publish | Publish World |
+| [**removeWorldTags**](WorldsApi.md#removeWorldTags) | **POST** /worlds/{worldId}/removeTags | Remove World Tags |
 | [**searchWorlds**](WorldsApi.md#searchWorlds) | **GET** /worlds | Search All Worlds |
 | [**unpublishWorld**](WorldsApi.md#unpublishWorld) | **DELETE** /worlds/{worldId}/publish | Unpublish World |
 | [**updateWorld**](WorldsApi.md#updateWorld) | **PUT** /worlds/{worldId} | Update World |
 
+
+<a name="addWorldTags"></a>
+# **addWorldTags**
+> World addWorldTags(worldId, changeWorldTagsRequest)
+
+Add World Tags
+
+Adds tags to the world&#39;s profile
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    ChangeWorldTagsRequest changeWorldTagsRequest = new ChangeWorldTagsRequest(); // ChangeWorldTagsRequest | 
+    try {
+      World result = apiInstance.addWorldTags(worldId, changeWorldTagsRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#addWorldTags");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **changeWorldTagsRequest** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | |
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single World object. |  -  |
+| **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="checkUserPersistenceExists"></a>
 # **checkUserPersistenceExists**
@@ -348,6 +424,78 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
+
+<a name="deleteWorldPlatform"></a>
+# **deleteWorldPlatform**
+> deleteWorldPlatform(worldId, publishedPlatform)
+
+Delete World Platform
+
+Deletes a world platform.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    String publishedPlatform = "publishedPlatform_example"; // String | A platform the world supports.
+    try {
+      apiInstance.deleteWorldPlatform(worldId, publishedPlatform);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#deleteWorldPlatform");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **publishedPlatform** | **String**| A platform the world supports. | |
 
 ### Return type
 
@@ -991,6 +1139,79 @@ null (empty response body)
 | **200** | TODO |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
+
+<a name="removeWorldTags"></a>
+# **removeWorldTags**
+> World removeWorldTags(worldId, changeWorldTagsRequest)
+
+Remove World Tags
+
+Removes tags from the world&#39;s profile
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    ChangeWorldTagsRequest changeWorldTagsRequest = new ChangeWorldTagsRequest(); // ChangeWorldTagsRequest | 
+    try {
+      World result = apiInstance.removeWorldTags(worldId, changeWorldTagsRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#removeWorldTags");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **changeWorldTagsRequest** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | |
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single World object. |  -  |
+| **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="searchWorlds"></a>
 # **searchWorlds**

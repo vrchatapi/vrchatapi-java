@@ -31,6 +31,7 @@ import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Favorite;
 import io.github.vrchatapi.model.FavoriteGroup;
 import io.github.vrchatapi.model.FavoriteLimits;
+import io.github.vrchatapi.model.FavoriteType;
 import io.github.vrchatapi.model.Success;
 import io.github.vrchatapi.model.UpdateFavoriteGroupRequest;
 
@@ -218,7 +219,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Success response after clearing a favorite group. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call clearFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call clearFavoriteGroupCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -266,7 +267,7 @@ public class FavoritesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call clearFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call clearFavoriteGroupValidateBeforeCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling clearFavoriteGroup(Async)");
@@ -300,7 +301,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Success response after clearing a favorite group. </td><td>  -  </td></tr>
      </table>
      */
-    public Success clearFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
+    public Success clearFavoriteGroup(FavoriteType favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
         ApiResponse<Success> localVarResp = clearFavoriteGroupWithHttpInfo(favoriteGroupType, favoriteGroupName, userId);
         return localVarResp.getData();
     }
@@ -319,7 +320,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Success response after clearing a favorite group. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Success> clearFavoriteGroupWithHttpInfo(String favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
+    public ApiResponse<Success> clearFavoriteGroupWithHttpInfo(FavoriteType favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
         okhttp3.Call localVarCall = clearFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, null);
         Type localVarReturnType = new TypeToken<Success>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -340,7 +341,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Success response after clearing a favorite group. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call clearFavoriteGroupAsync(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback<Success> _callback) throws ApiException {
+    public okhttp3.Call clearFavoriteGroupAsync(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback<Success> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = clearFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, _callback);
         Type localVarReturnType = new TypeToken<Success>(){}.getType();
@@ -361,7 +362,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Returns a single FavoriteGroup object. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFavoriteGroupCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -409,7 +410,7 @@ public class FavoritesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFavoriteGroupValidateBeforeCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling getFavoriteGroup(Async)");
@@ -443,7 +444,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Returns a single FavoriteGroup object. </td><td>  -  </td></tr>
      </table>
      */
-    public FavoriteGroup getFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
+    public FavoriteGroup getFavoriteGroup(FavoriteType favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
         ApiResponse<FavoriteGroup> localVarResp = getFavoriteGroupWithHttpInfo(favoriteGroupType, favoriteGroupName, userId);
         return localVarResp.getData();
     }
@@ -462,7 +463,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Returns a single FavoriteGroup object. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FavoriteGroup> getFavoriteGroupWithHttpInfo(String favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
+    public ApiResponse<FavoriteGroup> getFavoriteGroupWithHttpInfo(FavoriteType favoriteGroupType, String favoriteGroupName, String userId) throws ApiException {
         okhttp3.Call localVarCall = getFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, null);
         Type localVarReturnType = new TypeToken<FavoriteGroup>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -483,7 +484,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> Returns a single FavoriteGroup object. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoriteGroupAsync(String favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback<FavoriteGroup> _callback) throws ApiException {
+    public okhttp3.Call getFavoriteGroupAsync(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, final ApiCallback<FavoriteGroup> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, _callback);
         Type localVarReturnType = new TypeToken<FavoriteGroup>(){}.getType();
@@ -1051,7 +1052,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFavoriteGroupCall(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateFavoriteGroupCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1099,7 +1100,7 @@ public class FavoritesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateFavoriteGroupValidateBeforeCall(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateFavoriteGroupValidateBeforeCall(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'favoriteGroupType' is set
         if (favoriteGroupType == null) {
             throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling updateFavoriteGroup(Async)");
@@ -1133,7 +1134,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void updateFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest) throws ApiException {
+    public void updateFavoriteGroup(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest) throws ApiException {
         updateFavoriteGroupWithHttpInfo(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
     }
 
@@ -1152,7 +1153,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateFavoriteGroupWithHttpInfo(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest) throws ApiException {
+    public ApiResponse<Void> updateFavoriteGroupWithHttpInfo(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest) throws ApiException {
         okhttp3.Call localVarCall = updateFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1173,7 +1174,7 @@ public class FavoritesApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFavoriteGroupAsync(String favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateFavoriteGroupAsync(FavoriteType favoriteGroupType, String favoriteGroupName, String userId, UpdateFavoriteGroupRequest updateFavoriteGroupRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateFavoriteGroupValidateBeforeCall(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

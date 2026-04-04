@@ -1519,6 +1519,20 @@ paths:
           $ref: '#/components/responses/LicenseListResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
+  /economy/metrics/earnings:
+    get:
+      operationId: getEarningsMetrics
+      summary: Get Earnings Metrics
+      description: Gets earnings totals and breakdown metrics for the currently authenticated user.
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/EarningsMetricsResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /economy/purchase/listing:
     post:
       operationId: purchaseProductListing
@@ -1557,6 +1571,52 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/ProductPurchaseListResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /economy/purchases/{productPurchaseId}:
+    parameters:
+      - $ref: '#/components/parameters/productPurchaseId'
+    get:
+      operationId: getProductPurchase
+      summary: Get Product Purchase
+      description: Gets a single product purchase
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductPurchaseResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /economy/purchases/{productPurchaseId}/stacks:
+    parameters:
+      - $ref: '#/components/parameters/productPurchaseId'
+    get:
+      operationId: getProductPurchaseStacks
+      summary: Get Product Purchase Stacks
+      description: Gets stacks for a product purchase
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductPurchaseStacksResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /economy/seller/eligibility:
+    get:
+      operationId: getSellerEligibility
+      summary: Get Seller Eligibility
+      description: Get the eligibility of the currently authenticated user to become a seller
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/SellerEligibilityResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /economy/store:
@@ -3745,14 +3805,58 @@ paths:
     get:
       operationId: getJamSubmissions
       summary: Show jam submissions
-      description: Returns all submissions of a jam.
+      description: Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).
+      tags:
+        - jams
+      parameters:
+        - $ref: '#/components/parameters/contentId'
+        - $ref: '#/components/parameters/submitterId'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/JamSubmissionListResponse'
+        '404':
+          $ref: '#/components/responses/JamNotFoundError'
+    post:
+      operationId: submitJamContent
+      summary: Submit Jam Content
+      description: Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam's designated times.
+      tags:
+        - jams
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateJamSubmissionRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/JamSubmissionResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+        '404':
+          $ref: '#/components/responses/JamNotFoundError'
+  /jams/{jamId}/submissions/{jamSubmissionId}:
+    parameters:
+      - $ref: '#/components/parameters/jamId'
+      - $ref: '#/components/parameters/jamSubmissionId'
+    delete:
+      operationId: deleteJamSubmission
+      summary: Delete Jam Submission
+      description: Withdraws a content submission from a jam.
       tags:
         - jams
       security:
         - authCookie: []
       responses:
         '200':
-          $ref: '#/components/responses/SubmissionListResponse'
+          $ref: '#/components/responses/DeleteJamSubmissionResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+        '403':
+          $ref: '#/components/responses/NoPermission'
         '404':
           $ref: '#/components/responses/JamNotFoundError'
   /js/app.js:
@@ -4497,6 +4601,26 @@ paths:
           $ref: '#/components/responses/NotificationResponse'
         '403':
           $ref: '#/components/responses/InviteMustBeFriendsError'
+  /reward/redeem:
+    post:
+      operationId: redeemReward
+      summary: Redeem Reward
+      description: Redeem a reward for the currently logged in user.
+      tags:
+        - inventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RewardRedemptionRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/RewardRedemptionResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /subscriptions:
     get:
       operationId: getSubscriptions
@@ -4629,6 +4753,29 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/EconomyAccountResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /user/{userId}/economy/transactions:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+      - $ref: '#/components/parameters/number'
+      - $ref: '#/components/parameters/dateMin'
+      - $ref: '#/components/parameters/dateMax'
+      - $ref: '#/components/parameters/fromUserId'
+      - $ref: '#/components/parameters/toUserId'
+      - $ref: '#/components/parameters/sortProductPurchase'
+      - $ref: '#/components/parameters/orderShort'
+    get:
+      operationId: getProductPurchaseHistory
+      summary: Get Product Purchase History
+      description: Gets a history of product purchases
+      tags:
+        - economy
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductPurchaseHistoryResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /user/{userId}/friendRequest:
@@ -5099,7 +5246,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/representedGroup'
+                $ref: '#/components/schemas/RepresentedGroup'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /users/{userId}/groups/requested:
@@ -5279,6 +5426,22 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/UserSubscriptionEligibleResponse'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
+  /users/{userId}/tutorial:
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    get:
+      operationId: getUserTutorialStatus
+      summary: Get User Tutorial Status
+      description: Gets the status of completed or outstanding tutorials for the specified user.
+      tags:
+        - users
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/TutorialStatusResponse'
         '401':
           $ref: '#/components/responses/MissingCredentialsError'
   /users/{userId}/{worldId}/persist:
@@ -5559,6 +5722,30 @@ paths:
           $ref: '#/components/responses/MissingCredentialsError'
         '404':
           $ref: '#/components/responses/WorldNotFoundError'
+  /worlds/{worldId}/addTags:
+    parameters:
+      - $ref: '#/components/parameters/worldId'
+    post:
+      operationId: addWorldTags
+      summary: Add World Tags
+      description: Adds tags to the world's profile
+      tags:
+        - worlds
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeWorldTagsRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/WorldResponse'
+        '400':
+          $ref: '#/components/responses/WorldTagInvalidError'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /worlds/{worldId}/metadata:
     parameters:
       - $ref: '#/components/parameters/worldId'
@@ -5573,6 +5760,25 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/WorldMetadataResponse'
+        '404':
+          $ref: '#/components/responses/WorldNotFoundError'
+  /worlds/{worldId}/platform/{publishedPlatform}:
+    parameters:
+      - $ref: '#/components/parameters/worldId'
+      - $ref: '#/components/parameters/publishedPlatform'
+    delete:
+      operationId: deleteWorldPlatform
+      summary: Delete World Platform
+      description: Deletes a world platform.
+      tags:
+        - worlds
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
         '404':
           $ref: '#/components/responses/WorldNotFoundError'
   /worlds/{worldId}/publish:
@@ -5623,6 +5829,30 @@ paths:
           $ref: '#/components/responses/MissingCredentialsError'
         '404':
           $ref: '#/components/responses/WorldNotFoundError'
+  /worlds/{worldId}/removeTags:
+    parameters:
+      - $ref: '#/components/parameters/worldId'
+    post:
+      operationId: removeWorldTags
+      summary: Remove World Tags
+      description: Removes tags from the world's profile
+      tags:
+        - worlds
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeWorldTagsRequest'
+      security:
+        - authCookie: []
+      responses:
+        '200':
+          $ref: '#/components/responses/WorldResponse'
+        '400':
+          $ref: '#/components/responses/WorldTagInvalidError'
+        '401':
+          $ref: '#/components/responses/MissingCredentialsError'
   /worlds/{worldId}/{instanceId}:
     parameters:
       - $ref: '#/components/parameters/worldId'
@@ -6110,6 +6340,10 @@ components:
         - tags
         - userId
         - version
+    FileID:
+      title: FileID
+      type: string
+      example: file_ce35d830-e20a-4df0-a6d4-5aaef4508044
     FileAnalysisAvatarStats:
       title: FileAnalysisAvatarStats
       type: object
@@ -7200,6 +7434,10 @@ components:
         - message
         - senderUserId
         - type
+    NotificationID:
+      title: NotificationID
+      type: string
+      example: not_00000000-0000-0000-0000-000000000000
     PlayerModerationType:
       title: PlayerModerationType
       type: string
@@ -7811,10 +8049,6 @@ components:
       title: CalendarID
       type: string
       example: cal_6b182f0c-61ef-4bdf-97fe-94f63bcba27b
-    FileID:
-      title: FileID
-      type: string
-      example: file_ce35d830-e20a-4df0-a6d4-5aaef4508044
     LanguageCode:
       title: LanguageCode
       type: string
@@ -9244,21 +9478,101 @@ components:
         - forId
         - forName
         - forType
+    EarningsMetrics:
+      title: EarningsMetrics
+      type: object
+      properties:
+        breakdown:
+          type: array
+          items:
+            type: object
+        sellerId:
+          $ref: '#/components/schemas/UserID'
+        totals:
+          type: object
+          properties:
+            otpEarnings:
+              type: integer
+              minimum: 0
+            otpPurchaseCount:
+              type: integer
+              minimum: 0
+            subscriberEarnings:
+              type: integer
+              minimum: 0
+            subscriberMonths:
+              type: integer
+              minimum: 0
+            totalEarnings:
+              type: integer
+              minimum: 0
+          required:
+            - otpEarnings
+            - otpPurchaseCount
+            - subscriberEarnings
+            - subscriberMonths
+            - totalEarnings
+      required:
+        - breakdown
+        - sellerId
+        - totals
+    ProductPurchaseLocationType:
+      title: ProductPurchaseLocationType
+      type: string
+      enum:
+        - client_avatar_marketplace
+        - client_creator_store
+        - client_group_store
+        - client_world_component
+        - client_world_store
+        - undefined
+        - web_any
+        - web_avatar_marketplace
+        - web_creator_store
+        - web_group_store
+        - web_world_store
+      default: web_group_store
+    StoreID:
+      title: StoreID
+      type: string
+      example: esto_713b247d-2b5d-41a0-bba3-50db28dc1498
     ProductID:
       title: ProductID
       type: string
       example: prod_bfbc2315-247a-44d7-bfea-5237f8d56cb4
+    ProductListingVariantID:
+      title: ProductListingVariantID
+      type: string
+      example: listvar_e8658b56-1662-436c-935a-afcf6a7d4fed
     PurchaseProductListingRequest:
       title: PurchaseProductListingRequest
       type: object
       properties:
+        contextData:
+          title: PurchaseContextData
+          type: object
+          properties:
+            locationType:
+              $ref: '#/components/schemas/ProductPurchaseLocationType'
+            storeId:
+              $ref: '#/components/schemas/StoreID'
+            worldId:
+              $ref: '#/components/schemas/WorldID'
+          required:
+            - locationType
         listingId:
           $ref: '#/components/schemas/ProductID'
+        listingVariantId:
+          $ref: '#/components/schemas/ProductListingVariantID'
         quantity:
           type: integer
           default: 1
           maximum: 99
           minimum: 1
+        receiverId:
+          $ref: '#/components/schemas/UserID'
+        stackable:
+          type: boolean
         totalPrice:
           type: integer
           minimum: 0
@@ -9417,10 +9731,14 @@ components:
         - desc
       default: desc
       example: desc
-    StoreID:
-      title: StoreID
-      type: string
-      example: esto_713b247d-2b5d-41a0-bba3-50db28dc1498
+    SellerEligibility:
+      title: SellerEligibility
+      type: object
+      properties:
+        eligible:
+          type: boolean
+      required:
+        - eligible
     ProductType:
       title: ProductType
       type: string
@@ -9489,10 +9807,6 @@ components:
         - sellerDisplayName
         - sellerId
         - tags
-    ProductListingVariantID:
-      title: ProductListingVariantID
-      type: string
-      example: listvar_e8658b56-1662-436c-935a-afcf6a7d4fed
     ProductListingVariant:
       title: ProductListingVariant
       type: object
@@ -9742,18 +10056,25 @@ components:
         - public
         - publicPreview
       default: public
-    FavoriteGroupID:
-      title: FavoriteGroupID
-      type: string
-      example: fvgrp_8a02a44b-dc3a-4a9a-bc77-77fa37996fc7
     FavoriteType:
       title: FavoriteType
       type: string
       enum:
         - avatar
         - friend
+        - vrcPlusWorld
         - world
       default: friend
+    FavoriteName:
+      title: FavoriteName
+      type: string
+      default: group_0
+      example: |
+        avatar: [ avatars1, avatars2, avatars3, avatars4, avatars5, avatars6 ] friend: [ group_0, group_1, group_2 ] vrcPlusWorld: [ vrcPlusWorlds1, vrcPlusWorlds2, vrcPlusWorlds3, vrcPlusWorlds4 ] world: [ worlds1, worlds2, worlds3, worlds4 ]
+    FavoriteGroupID:
+      title: FavoriteGroupID
+      type: string
+      example: fvgrp_8a02a44b-dc3a-4a9a-bc77-77fa37996fc7
     FavoriteGroupVisibility:
       title: FavoriteGroupVisibility
       type: string
@@ -11400,10 +11721,6 @@ components:
           type: string
           description: The name of the permission.
           example: group-data-manage
-    NotificationID:
-      title: NotificationID
-      type: string
-      example: not_00000000-0000-0000-0000-000000000000
     GroupPostVisibility:
       title: GroupPostVisibility
       type: string
@@ -12584,6 +12901,10 @@ components:
           minimum: 0
       required:
         - instanceId
+    JamID:
+      title: JamID
+      type: string
+      example: jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9
     Jam:
       title: Jam
       type: object
@@ -12593,9 +12914,7 @@ components:
           type: string
           minLength: 1
         id:
-          type: string
-          example: jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9
-          minLength: 1
+          $ref: '#/components/schemas/JamID'
         isVisible:
           type: boolean
         moreInfo:
@@ -12652,8 +12971,12 @@ components:
         - title
         - type
         - updated_at
-    Submission:
-      title: Submission
+    JamSubmissionID:
+      title: JamSubmissionID
+      type: string
+      example: jsub_f01f44fa-89fa-443c-ab4c-7fed9245970f
+    JamSubmission:
+      title: JamSubmission
       type: object
       description: ''
       properties:
@@ -12667,13 +12990,9 @@ components:
         description:
           type: string
         id:
-          type: string
-          example: jsub_f01f44fa-89fa-443c-ab4c-7fed9245970f
-          minLength: 1
+          $ref: '#/components/schemas/JamSubmissionID'
         jamId:
-          type: string
-          example: jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9
-          minLength: 1
+          $ref: '#/components/schemas/JamID'
         ratingScore:
           type: integer
           minimum: 0
@@ -12687,6 +13006,22 @@ components:
         - jamId
         - ratingsScore
         - submitterId
+    CreateJamSubmissionRequest:
+      title: CreateJamSubmissionRequest
+      type: object
+      description: Submit content for a Jam. Both content upload by submitter and jam submission itself must be made within the jam's designated times.
+      properties:
+        contentId:
+          type: string
+          description: The id of the uploaded content (e.g., avatar, world) being submitted.
+          example: avtr_c38a1615-5bf5-42b4-84eb-a8b6c37cbd11
+        description:
+          type: string
+          description: A description of the content being submitted.
+          example: My awesomely unique avatar for the jam!
+      required:
+        - contentId
+        - description
     LicenseGroup:
       title: LicenseGroup
       type: object
@@ -13536,6 +13871,86 @@ components:
           minimum: 0
       required:
         - instanceId
+    RewardRedemptionRequest:
+      title: RewardRedemptionRequest
+      type: object
+      properties:
+        code:
+          type: string
+      required:
+        - code
+    RewardBadge:
+      title: RewardBadge
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserID'
+        description:
+          type: string
+        fileName:
+          type: string
+        hidden:
+          type: boolean
+        id:
+          $ref: '#/components/schemas/BadgeID'
+        imageUrl:
+          type: string
+        isLocalizationEnabled:
+          type: boolean
+        machineName:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        updatedAt:
+          type: string
+          format: date-time
+      required:
+        - createdAt
+        - createdBy
+        - description
+        - fileName
+        - hidden
+        - id
+        - imageUrl
+        - isLocalizationEnabled
+        - name
+        - type
+        - updatedAt
+    RewardRedemption:
+      title: RewardRedemption
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            badge:
+              $ref: '#/components/schemas/RewardBadge'
+            item:
+              $ref: '#/components/schemas/InventoryTemplate'
+        type:
+          type: string
+          description: One of `badge`, `item`, ...
+      required:
+        - data
+        - type
+    RewardRedemptionResult:
+      title: RewardRedemptionResult
+      type: object
+      properties:
+        redeemedRewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/RewardRedemption'
+        redemptionCode:
+          type: string
+      required:
+        - redeemedRewards
+        - redemptionCode
     TiliaStatus:
       title: TiliaStatus
       type: object
@@ -13628,6 +14043,74 @@ components:
         - canSpend
         - source
         - userId
+    ProductPurchaseRecord:
+      title: ProductPurchaseRecord
+      type: object
+      properties:
+        amount:
+          type: integer
+          example: 399
+        balance:
+          type: integer
+          example: 399
+        date:
+          type: string
+          format: date-time
+        fromUserDisplayName:
+          type: string
+          example: VRChat
+        listingDisplayName:
+          type: string
+          example: Lucky Red Envelope
+        listingType:
+          $ref: '#/components/schemas/ProductListingType'
+        platform:
+          type: string
+          description: Where (first- or third-party) the purchase was made
+          example: VRChat
+        purchaseId:
+          $ref: '#/components/schemas/ProductPurchaseID'
+        reason:
+          type: integer
+          example: 3002
+        reasonLabel:
+          type: string
+          example: Promo Credit
+        transactionId:
+          type: integer
+        transactionLineId:
+          type: integer
+      required:
+        - amount
+        - balance
+        - date
+        - fromUserDisplayName
+        - listingDisplayName
+        - listingType
+        - platform
+        - purchaseId
+        - reason
+        - reasonLabel
+        - transactionId
+        - transactionLineId
+    ProductPurchaseHistory:
+      title: ProductPurchaseHistory
+      type: object
+      properties:
+        endDate:
+          type: string
+          format: date-time
+        startDate:
+          type: string
+          format: date-time
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductPurchaseRecord'
+      required:
+        - endDate
+        - startDate
+        - transactions
     FriendStatus:
       title: FriendStatus
       type: object
@@ -14107,7 +14590,7 @@ components:
         type: array
         items:
           $ref: '#/components/schemas/GroupPermissions'
-    representedGroup:
+    RepresentedGroup:
       title: RepresentedGroup
       type: object
       properties:
@@ -14215,6 +14698,31 @@ components:
         - purchaseEligible
         - subscriptionEligible
         - subscriptionOnAltAccount
+    TutorialKey:
+      title: TutorialKey
+      type: string
+      description: The ID of a tutorial, in the format `{platform}:{tutorial}:{version}`. `undefined:undefined:v1` is used as a null-ish or sentinel value.
+      default: undefined:undefined:v1
+      example: standalonewindows:steam:v1
+    TutorialStatus:
+      title: TutorialStatus
+      type: object
+      properties:
+        completed:
+          type: boolean
+        completedAnyTutorial:
+          type: boolean
+        completedTutorials:
+          type: array
+          items:
+            $ref: '#/components/schemas/TutorialKey'
+        tutorialKey:
+          $ref: '#/components/schemas/TutorialKey'
+      required:
+        - completed
+        - completedAnyTutorial
+        - completedTutorials
+        - tutorialKey
     LimitedUnityPackage:
       title: LimitedUnityPackage
       type: object
@@ -14565,6 +15073,17 @@ components:
           default: 5.3.4p1
           example: 2022.3.6f1
           minLength: 1
+    ChangeWorldTagsRequest:
+      title: ChangeWorldTagsRequest
+      type: object
+      properties:
+        tags:
+          type: array
+          description: The tags being added or removed.
+          items:
+            $ref: '#/components/schemas/Tag'
+      required:
+        - tags
     WorldMetadata:
       title: WorldMetadata
       type: object
@@ -15278,6 +15797,12 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/License'
+    EarningsMetricsResponse:
+      description: Returns a single EarningsMetrics object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EarningsMetrics'
     ProductPurchaseResponse:
       description: Returns a single ProductPurchase object.
       content:
@@ -15292,6 +15817,20 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/ProductPurchase'
+    ProductPurchaseStacksResponse:
+      description: Returns a list of stacks for a product purchase.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+    SellerEligibilityResponse:
+      description: Returns a single SellerEligibility object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SellerEligibility'
     StoreResponse:
       description: Returns a single Store object.
       content:
@@ -16296,14 +16835,26 @@ components:
                   status_code: 404
           schema:
             $ref: '#/components/schemas/Error'
-    SubmissionListResponse:
-      description: Returns a list of Submission objects.
+    JamSubmissionListResponse:
+      description: Returns a list of JamSubmission objects.
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/Submission'
+              $ref: '#/components/schemas/JamSubmission'
+    JamSubmissionResponse:
+      description: Returns a single JamSubmission object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/JamSubmission'
+    DeleteJamSubmissionResponse:
+      description: Returns an Success object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Success'
     LicenseGroupResponse:
       description: Returns a single LicenseGroup object.
       content:
@@ -16575,6 +17126,14 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/PropPublishStatus'
+    RewardRedemptionResponse:
+      description: Returns a single RewardRedemptionResult object.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/RewardRedemptionResult'
     SubscriptionListResponse:
       description: Returns a list of Subscription objects.
       content:
@@ -16632,6 +17191,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/EconomyAccount'
+    ProductPurchaseHistoryResponse:
+      description: Returns a single ProductPurchaseHistory object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductPurchaseHistory'
     FriendBadRequestError:
       description: Bad request error response when sending a friend request
       content:
@@ -16875,6 +17440,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/UserSubscriptionEligible'
+    TutorialStatusResponse:
+      description: Returns a single TutorialStatus object.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TutorialStatus'
     CurrentOnlineUsersResponse:
       description: OK
       content:
@@ -16954,6 +17525,12 @@ components:
                   status_code: 404
           schema:
             $ref: '#/components/schemas/Error'
+    WorldTagInvalidError:
+      description: Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world's profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     WorldMetadataResponse:
       description: OK
       content:
@@ -16988,8 +17565,7 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        example: file_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/FileID'
     versionId:
       name: versionId
       description: Version ID of the asset.
@@ -17012,8 +17588,7 @@ components:
       required: true
       in: query
       schema:
-        type: string
-        example: usr_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/UserID'
     confirmEmailToken:
       name: verify_email
       description: Token to verify email.
@@ -17049,7 +17624,7 @@ components:
       required: false
       in: query
       schema:
-        type: string
+        $ref: '#/components/schemas/UserID'
     targetAvatarId:
       name: targetAvatarId
       description: Must be a valid avatar ID.
@@ -17095,21 +17670,21 @@ components:
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/UserID'
     notificationId:
       name: notificationId
       description: Must be a valid notification ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/NotificationID'
     userIdQuery:
       name: userId
       description: Filter by UserID.
       required: false
       in: query
       schema:
-        type: string
+        $ref: '#/components/schemas/UserID'
     verifyLoginPlaceToken:
       name: token
       description: Token to verify login attempt.
@@ -17201,7 +17776,7 @@ components:
       required: false
       in: query
       schema:
-        type: string
+        $ref: '#/components/schemas/UserID'
     avatarId:
       name: avatarId
       description: Must be a valid avatar ID.
@@ -17318,16 +17893,14 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        example: grp_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/GroupID'
     calendarId:
       name: calendarId
       description: Must be a valid calendar ID.
       required: true
       in: path
       schema:
-        type: string
-        example: cal_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/CalendarID'
     variant:
       name: variant
       description: Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
@@ -17376,6 +17949,13 @@ components:
       in: query
       schema:
         $ref: '#/components/schemas/OrderOptionShort'
+    productPurchaseId:
+      name: productPurchaseId
+      description: Must be a valid purchase ID.
+      required: true
+      in: path
+      schema:
+        $ref: '#/components/schemas/ProductPurchaseID'
     storeId:
       name: storeId
       required: true
@@ -17408,25 +17988,21 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        enum:
-          - avatar
-          - friend
-          - world
+        $ref: '#/components/schemas/FavoriteType'
     favoriteGroupName:
       name: favoriteGroupName
       description: The name of the group to fetch, must be a name of a FavoriteGroup.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/FavoriteName'
     favoriteId:
       name: favoriteId
       description: Must be a valid favorite ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/FavoriteID'
     fileType:
       name: fileType
       description: Type of file.
@@ -17485,16 +18061,14 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        example: ggal_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/GroupGalleryID'
     groupGalleryImageId:
       name: groupGalleryImageId
       description: Must be a valid group gallery image ID.
       required: true
       in: path
       schema:
-        type: string
-        example: ggim_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/GroupGalleryImageID'
     groupMemberSort:
       name: sort
       description: The sort order of Group Member results
@@ -17515,8 +18089,7 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        example: grol_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/GroupRoleID'
     require:
       name: require
       description: Tags to include (comma-separated). All of the tags needs to be present.
@@ -17537,14 +18110,14 @@ components:
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/WorldID'
     instanceId:
       name: instanceId
       description: Must be a valid instance ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/InstanceID'
     inventoryHolderId:
       name: holderId
       description: The UserID of the owner of the inventory; defaults to the currently authenticated user.
@@ -17650,16 +18223,14 @@ components:
       required: true
       in: path
       schema:
-        type: string
-        example: invt_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/InventoryTemplateID'
     inventoryItemId:
       name: inventoryItemId
       description: Must be a valid inventory item ID.
       required: true
       in: path
       schema:
-        type: string
-        example: inv_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/InventoryItemID'
     inventoryItemSlotAsId:
       name: inventoryItemId
       description: Selector for inventory slot management.
@@ -17669,26 +18240,46 @@ components:
         $ref: '#/components/schemas/InventoryEquipSlot'
     jamId:
       name: jamId
-      description: Must be a valid query ID.
+      description: Must be a valid jam ID.
       required: true
       in: path
       schema:
+        $ref: '#/components/schemas/JamID'
+    contentId:
+      name: contentId
+      description: Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
+      required: false
+      in: query
+      schema:
         type: string
-        example: jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9
+    submitterId:
+      name: submitterId
+      description: Must be a valid user ID.
+      required: false
+      in: query
+      schema:
+        $ref: '#/components/schemas/UserID'
+    jamSubmissionId:
+      name: jamSubmissionId
+      description: Must be a valid jam submission ID.
+      required: true
+      in: path
+      schema:
+        $ref: '#/components/schemas/JamSubmissionID'
     licenseGroupId:
       name: licenseGroupId
       description: Must be a valid license group ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/LicenseGroupID'
     productId:
       name: productId
       description: Must be a valid product ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/ProductID'
     hydrate:
       name: hydrate
       description: Populates some fields and changes types of others for certain objects.
@@ -17754,15 +18345,14 @@ components:
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/PermissionID'
     printId:
       name: printId
       description: Print ID.
       required: true
       in: path
       schema:
-        type: string
-        example: prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa
+        $ref: '#/components/schemas/PrintID'
     authorId:
       name: authorId
       description: Must be a valid user ID.
@@ -17776,43 +18366,64 @@ components:
       required: true
       in: path
       schema:
+        $ref: '#/components/schemas/PropID'
+    dateMin:
+      name: dateMin
+      description: The start date of the search range.
+      required: false
+      in: query
+      schema:
         type: string
-        example: prop_829ba6f6-b837-49d9-b9a9-056b82103b58
+        format: date-time
+    dateMax:
+      name: dateMax
+      description: The end date of the search range.
+      required: false
+      in: query
+      schema:
+        type: string
+        format: date-time
+    fromUserId:
+      name: fromUserId
+      description: Must be a valid user ID.
+      required: false
+      in: query
+      schema:
+        $ref: '#/components/schemas/UserID'
+    toUserId:
+      name: toUserId
+      description: Must be a valid user ID.
+      required: false
+      in: query
+      schema:
+        $ref: '#/components/schemas/UserID'
     groupIdFilter:
       name: groupId
       description: Must be a valid group ID.
       required: false
       in: query
       schema:
-        type: string
-        example: grp_00000000-0000-0000-0000-000000000000
+        $ref: '#/components/schemas/GroupID'
     userNoteId:
       name: userNoteId
       description: Must be a valid user note ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/UserNoteID'
     badgeId:
       name: badgeId
       description: Must be a valid badge ID.
       required: true
       in: path
       schema:
-        type: string
+        $ref: '#/components/schemas/BadgeID'
     subscriptionId:
       name: subscriptionId
       required: true
       in: query
       schema:
         type: string
-    contentId:
-      name: contentId
-      description: Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
-      required: false
-      in: query
-      schema:
-        type: boolean
     steamId:
       name: steamId
       description: The Steam ID of the user.
@@ -17841,3 +18452,10 @@ components:
       in: query
       schema:
         type: boolean
+    publishedPlatform:
+      name: publishedPlatform
+      description: A platform the world supports.
+      required: true
+      in: path
+      schema:
+        $ref: '#/components/schemas/Platform'

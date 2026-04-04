@@ -50,7 +50,7 @@ import io.github.vrchatapi.JSON;
  */
 @ApiModel(description = "")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class Submission {
+public class JamSubmission {
   public static final String SERIALIZED_NAME_CONTENT_ID = "contentId";
   @SerializedName(SERIALIZED_NAME_CONTENT_ID)
   private String contentId;
@@ -79,10 +79,10 @@ public class Submission {
   @SerializedName(SERIALIZED_NAME_SUBMITTER_ID)
   private String submitterId;
 
-  public Submission() {
+  public JamSubmission() {
   }
 
-  public Submission contentId(String contentId) {
+  public JamSubmission contentId(String contentId) {
     
     this.contentId = contentId;
     return this;
@@ -105,7 +105,7 @@ public class Submission {
   }
 
 
-  public Submission createdAt(OffsetDateTime createdAt) {
+  public JamSubmission createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -128,7 +128,7 @@ public class Submission {
   }
 
 
-  public Submission description(String description) {
+  public JamSubmission description(String description) {
     
     this.description = description;
     return this;
@@ -151,7 +151,7 @@ public class Submission {
   }
 
 
-  public Submission id(String id) {
+  public JamSubmission id(String id) {
     
     this.id = id;
     return this;
@@ -174,7 +174,7 @@ public class Submission {
   }
 
 
-  public Submission jamId(String jamId) {
+  public JamSubmission jamId(String jamId) {
     
     this.jamId = jamId;
     return this;
@@ -197,7 +197,7 @@ public class Submission {
   }
 
 
-  public Submission ratingScore(Integer ratingScore) {
+  public JamSubmission ratingScore(Integer ratingScore) {
     
     this.ratingScore = ratingScore;
     return this;
@@ -221,7 +221,7 @@ public class Submission {
   }
 
 
-  public Submission submitterId(String submitterId) {
+  public JamSubmission submitterId(String submitterId) {
     
     this.submitterId = submitterId;
     return this;
@@ -253,14 +253,14 @@ public class Submission {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Submission submission = (Submission) o;
-    return Objects.equals(this.contentId, submission.contentId) &&
-        Objects.equals(this.createdAt, submission.createdAt) &&
-        Objects.equals(this.description, submission.description) &&
-        Objects.equals(this.id, submission.id) &&
-        Objects.equals(this.jamId, submission.jamId) &&
-        Objects.equals(this.ratingScore, submission.ratingScore) &&
-        Objects.equals(this.submitterId, submission.submitterId);
+    JamSubmission jamSubmission = (JamSubmission) o;
+    return Objects.equals(this.contentId, jamSubmission.contentId) &&
+        Objects.equals(this.createdAt, jamSubmission.createdAt) &&
+        Objects.equals(this.description, jamSubmission.description) &&
+        Objects.equals(this.id, jamSubmission.id) &&
+        Objects.equals(this.jamId, jamSubmission.jamId) &&
+        Objects.equals(this.ratingScore, jamSubmission.ratingScore) &&
+        Objects.equals(this.submitterId, jamSubmission.submitterId);
   }
 
   @Override
@@ -271,7 +271,7 @@ public class Submission {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Submission {\n");
+    sb.append("class JamSubmission {\n");
     sb.append("    contentId: ").append(toIndentedString(contentId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -323,25 +323,25 @@ public class Submission {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Submission
+  * @throws IOException if the JSON Object is invalid with respect to JamSubmission
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!Submission.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Submission is not found in the empty JSON string", Submission.openapiRequiredFields.toString()));
+        if (!JamSubmission.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in JamSubmission is not found in the empty JSON string", JamSubmission.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!Submission.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Submission` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!JamSubmission.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `JamSubmission` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Submission.openapiRequiredFields) {
+      for (String requiredField : JamSubmission.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
@@ -367,22 +367,22 @@ public class Submission {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Submission.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Submission' and its subtypes
+       if (!JamSubmission.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'JamSubmission' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Submission> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Submission.class));
+       final TypeAdapter<JamSubmission> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(JamSubmission.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Submission>() {
+       return (TypeAdapter<T>) new TypeAdapter<JamSubmission>() {
            @Override
-           public void write(JsonWriter out, Submission value) throws IOException {
+           public void write(JsonWriter out, JamSubmission value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Submission read(JsonReader in) throws IOException {
+           public JamSubmission read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -393,18 +393,18 @@ public class Submission {
   }
 
  /**
-  * Create an instance of Submission given an JSON string
+  * Create an instance of JamSubmission given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Submission
-  * @throws IOException if the JSON string is invalid with respect to Submission
+  * @return An instance of JamSubmission
+  * @throws IOException if the JSON string is invalid with respect to JamSubmission
   */
-  public static Submission fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Submission.class);
+  public static JamSubmission fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, JamSubmission.class);
   }
 
  /**
-  * Convert an instance of Submission to an JSON string
+  * Convert an instance of JamSubmission to an JSON string
   *
   * @return JSON string
   */

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.PurchaseContextData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -49,13 +50,29 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PurchaseProductListingRequest {
+  public static final String SERIALIZED_NAME_CONTEXT_DATA = "contextData";
+  @SerializedName(SERIALIZED_NAME_CONTEXT_DATA)
+  private PurchaseContextData contextData;
+
   public static final String SERIALIZED_NAME_LISTING_ID = "listingId";
   @SerializedName(SERIALIZED_NAME_LISTING_ID)
   private String listingId;
 
+  public static final String SERIALIZED_NAME_LISTING_VARIANT_ID = "listingVariantId";
+  @SerializedName(SERIALIZED_NAME_LISTING_VARIANT_ID)
+  private String listingVariantId;
+
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
   private Integer quantity = 1;
+
+  public static final String SERIALIZED_NAME_RECEIVER_ID = "receiverId";
+  @SerializedName(SERIALIZED_NAME_RECEIVER_ID)
+  private String receiverId;
+
+  public static final String SERIALIZED_NAME_STACKABLE = "stackable";
+  @SerializedName(SERIALIZED_NAME_STACKABLE)
+  private Boolean stackable;
 
   public static final String SERIALIZED_NAME_TOTAL_PRICE = "totalPrice";
   @SerializedName(SERIALIZED_NAME_TOTAL_PRICE)
@@ -63,6 +80,29 @@ public class PurchaseProductListingRequest {
 
   public PurchaseProductListingRequest() {
   }
+
+  public PurchaseProductListingRequest contextData(PurchaseContextData contextData) {
+    
+    this.contextData = contextData;
+    return this;
+  }
+
+   /**
+   * Get contextData
+   * @return contextData
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public PurchaseContextData getContextData() {
+    return contextData;
+  }
+
+
+  public void setContextData(PurchaseContextData contextData) {
+    this.contextData = contextData;
+  }
+
 
   public PurchaseProductListingRequest listingId(String listingId) {
     
@@ -84,6 +124,29 @@ public class PurchaseProductListingRequest {
 
   public void setListingId(String listingId) {
     this.listingId = listingId;
+  }
+
+
+  public PurchaseProductListingRequest listingVariantId(String listingVariantId) {
+    
+    this.listingVariantId = listingVariantId;
+    return this;
+  }
+
+   /**
+   * Get listingVariantId
+   * @return listingVariantId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "listvar_e8658b56-1662-436c-935a-afcf6a7d4fed", value = "")
+
+  public String getListingVariantId() {
+    return listingVariantId;
+  }
+
+
+  public void setListingVariantId(String listingVariantId) {
+    this.listingVariantId = listingVariantId;
   }
 
 
@@ -109,6 +172,52 @@ public class PurchaseProductListingRequest {
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
+  }
+
+
+  public PurchaseProductListingRequest receiverId(String receiverId) {
+    
+    this.receiverId = receiverId;
+    return this;
+  }
+
+   /**
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return receiverId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469", value = "A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.")
+
+  public String getReceiverId() {
+    return receiverId;
+  }
+
+
+  public void setReceiverId(String receiverId) {
+    this.receiverId = receiverId;
+  }
+
+
+  public PurchaseProductListingRequest stackable(Boolean stackable) {
+    
+    this.stackable = stackable;
+    return this;
+  }
+
+   /**
+   * Get stackable
+   * @return stackable
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getStackable() {
+    return stackable;
+  }
+
+
+  public void setStackable(Boolean stackable) {
+    this.stackable = stackable;
   }
 
 
@@ -146,22 +255,30 @@ public class PurchaseProductListingRequest {
       return false;
     }
     PurchaseProductListingRequest purchaseProductListingRequest = (PurchaseProductListingRequest) o;
-    return Objects.equals(this.listingId, purchaseProductListingRequest.listingId) &&
+    return Objects.equals(this.contextData, purchaseProductListingRequest.contextData) &&
+        Objects.equals(this.listingId, purchaseProductListingRequest.listingId) &&
+        Objects.equals(this.listingVariantId, purchaseProductListingRequest.listingVariantId) &&
         Objects.equals(this.quantity, purchaseProductListingRequest.quantity) &&
+        Objects.equals(this.receiverId, purchaseProductListingRequest.receiverId) &&
+        Objects.equals(this.stackable, purchaseProductListingRequest.stackable) &&
         Objects.equals(this.totalPrice, purchaseProductListingRequest.totalPrice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(listingId, quantity, totalPrice);
+    return Objects.hash(contextData, listingId, listingVariantId, quantity, receiverId, stackable, totalPrice);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PurchaseProductListingRequest {\n");
+    sb.append("    contextData: ").append(toIndentedString(contextData)).append("\n");
     sb.append("    listingId: ").append(toIndentedString(listingId)).append("\n");
+    sb.append("    listingVariantId: ").append(toIndentedString(listingVariantId)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    receiverId: ").append(toIndentedString(receiverId)).append("\n");
+    sb.append("    stackable: ").append(toIndentedString(stackable)).append("\n");
     sb.append("    totalPrice: ").append(toIndentedString(totalPrice)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -185,8 +302,12 @@ public class PurchaseProductListingRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("contextData");
     openapiFields.add("listingId");
+    openapiFields.add("listingVariantId");
     openapiFields.add("quantity");
+    openapiFields.add("receiverId");
+    openapiFields.add("stackable");
     openapiFields.add("totalPrice");
 
     // a set of required properties/fields (JSON key names)
@@ -223,8 +344,18 @@ public class PurchaseProductListingRequest {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
+      // validate the optional field `contextData`
+      if (jsonObj.get("contextData") != null && !jsonObj.get("contextData").isJsonNull()) {
+        PurchaseContextData.validateJsonObject(jsonObj.getAsJsonObject("contextData"));
+      }
       if (!jsonObj.get("listingId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `listingId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("listingId").toString()));
+      }
+      if ((jsonObj.get("listingVariantId") != null && !jsonObj.get("listingVariantId").isJsonNull()) && !jsonObj.get("listingVariantId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `listingVariantId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("listingVariantId").toString()));
+      }
+      if ((jsonObj.get("receiverId") != null && !jsonObj.get("receiverId").isJsonNull()) && !jsonObj.get("receiverId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `receiverId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("receiverId").toString()));
       }
   }
 

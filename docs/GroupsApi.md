@@ -87,8 +87,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupGalleryId = "ggal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
     AddGroupGalleryImageRequest addGroupGalleryImageRequest = new AddGroupGalleryImageRequest(); // AddGroupGalleryImageRequest | 
     try {
       GroupGalleryImage result = apiInstance.addGroupGalleryImage(groupId, groupGalleryId, addGroupGalleryImageRequest);
@@ -162,9 +162,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String groupRoleId = "grol_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group role ID.
+    String groupRoleId = "groupRoleId_example"; // String | Must be a valid group role ID.
     try {
       List<String> result = apiInstance.addGroupMemberRole(groupId, userId, groupRoleId);
       System.out.println(result);
@@ -237,7 +237,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateGroupPostRequest createGroupPostRequest = new CreateGroupPostRequest(); // CreateGroupPostRequest | 
     try {
       GroupPost result = apiInstance.addGroupPost(groupId, createGroupPostRequest);
@@ -309,7 +309,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     BanGroupMemberRequest banGroupMemberRequest = new BanGroupMemberRequest(); // BanGroupMemberRequest | 
     try {
       GroupMember result = apiInstance.banGroupMember(groupId, banGroupMemberRequest);
@@ -383,7 +383,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       Success result = apiInstance.blockGroup(groupId);
       System.out.println(result);
@@ -456,7 +456,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       apiInstance.cancelGroupRequest(groupId);
     } catch (ApiException e) {
@@ -527,7 +527,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       Success result = apiInstance.cancelGroupTransfer(groupId);
       System.out.println(result);
@@ -669,7 +669,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateGroupAnnouncementRequest createGroupAnnouncementRequest = new CreateGroupAnnouncementRequest(); // CreateGroupAnnouncementRequest | 
     try {
       GroupAnnouncement result = apiInstance.createGroupAnnouncement(groupId, createGroupAnnouncementRequest);
@@ -742,7 +742,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateGroupGalleryRequest createGroupGalleryRequest = new CreateGroupGalleryRequest(); // CreateGroupGalleryRequest | 
     try {
       GroupGallery result = apiInstance.createGroupGallery(groupId, createGroupGalleryRequest);
@@ -815,7 +815,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateGroupInviteRequest createGroupInviteRequest = new CreateGroupInviteRequest(); // CreateGroupInviteRequest | 
     try {
       apiInstance.createGroupInvite(groupId, createGroupInviteRequest);
@@ -889,7 +889,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     CreateGroupRoleRequest createGroupRoleRequest = new CreateGroupRoleRequest(); // CreateGroupRoleRequest | 
     try {
       GroupRole result = apiInstance.createGroupRole(groupId, createGroupRoleRequest);
@@ -962,7 +962,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     DeclineGroupInviteRequest declineGroupInviteRequest = new DeclineGroupInviteRequest(); // DeclineGroupInviteRequest | 
     try {
       Success result = apiInstance.declineGroupInvite(groupId, declineGroupInviteRequest);
@@ -1036,7 +1036,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean hardDelete = true; // Boolean | 
     try {
       Success result = apiInstance.deleteGroup(groupId, hardDelete);
@@ -1109,7 +1109,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       Success result = apiInstance.deleteGroupAnnouncement(groupId);
       System.out.println(result);
@@ -1180,8 +1180,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupGalleryId = "ggal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
     try {
       Success result = apiInstance.deleteGroupGallery(groupId, groupGalleryId);
       System.out.println(result);
@@ -1253,9 +1253,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupGalleryId = "ggal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery ID.
-    String groupGalleryImageId = "ggim_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery image ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
+    String groupGalleryImageId = "groupGalleryImageId_example"; // String | Must be a valid group gallery image ID.
     try {
       Success result = apiInstance.deleteGroupGalleryImage(groupId, groupGalleryId, groupGalleryImageId);
       System.out.println(result);
@@ -1329,7 +1329,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       apiInstance.deleteGroupInvite(groupId, userId);
@@ -1401,7 +1401,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
     try {
       Success result = apiInstance.deleteGroupPost(groupId, notificationId);
@@ -1474,8 +1474,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupRoleId = "grol_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group role ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupRoleId = "groupRoleId_example"; // String | Must be a valid group role ID.
     try {
       List<GroupRole> result = apiInstance.deleteGroupRole(groupId, groupRoleId);
       System.out.println(result);
@@ -1547,7 +1547,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean includeRoles = true; // Boolean | Include roles for the Group object. Defaults to false.
     try {
       Group result = apiInstance.getGroup(groupId, includeRoles);
@@ -1620,7 +1620,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       GroupAnnouncement result = apiInstance.getGroupAnnouncements(groupId);
       System.out.println(result);
@@ -1691,7 +1691,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       List<String> result = apiInstance.getGroupAuditLogEntryTypes(groupId);
       System.out.println(result);
@@ -1762,7 +1762,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | The start date of the search range.
@@ -1847,7 +1847,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
@@ -1923,8 +1923,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupGalleryId = "ggal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean approved = true; // Boolean | If specified, only returns images that have been approved or not approved.
@@ -2002,7 +2002,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       List<GroupInstance> result = apiInstance.getGroupInstances(groupId);
       System.out.println(result);
@@ -2073,7 +2073,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
@@ -2149,7 +2149,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       GroupMember result = apiInstance.getGroupMember(groupId, userId);
@@ -2223,7 +2223,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     GroupSearchSort sort = GroupSearchSort.fromValue("joinedAt:asc"); // GroupSearchSort | The sort order of Group Member results
@@ -2303,7 +2303,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       List<GroupPermission> result = apiInstance.getGroupPermissions(groupId);
       System.out.println(result);
@@ -2375,7 +2375,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean publicOnly = true; // Boolean | See public posts only.
@@ -2451,7 +2451,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean blocked = true; // Boolean | See blocked join requests
@@ -2595,7 +2595,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       List<GroupRole> result = apiInstance.getGroupRoles(groupId);
       System.out.println(result);
@@ -2666,7 +2666,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String transferTargetId = "transferTargetId_example"; // String | The UserID of the prospective transferee.
     try {
       GroupTransferable result = apiInstance.getGroupTransferability(groupId, transferTargetId);
@@ -2740,7 +2740,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     TransferGroupRequest transferGroupRequest = new TransferGroupRequest(); // TransferGroupRequest | 
     try {
       Success result = apiInstance.initiateOrAcceptGroupTransfer(groupId, transferGroupRequest);
@@ -2814,7 +2814,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean confirmOverrideBlock = true; // Boolean | Manually override the failure that would occur if the user has blocked the group.
     JoinGroupRequest joinGroupRequest = new JoinGroupRequest(); // JoinGroupRequest | 
     try {
@@ -2890,7 +2890,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       Success result = apiInstance.kickGroupMember(groupId, userId);
@@ -2964,7 +2964,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       apiInstance.leaveGroup(groupId);
     } catch (ApiException e) {
@@ -3034,9 +3034,9 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String groupRoleId = "grol_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group role ID.
+    String groupRoleId = "groupRoleId_example"; // String | Must be a valid group role ID.
     try {
       List<String> result = apiInstance.removeGroupMemberRole(groupId, userId, groupRoleId);
       System.out.println(result);
@@ -3109,7 +3109,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     RespondGroupJoinRequest respondGroupJoinRequest = new RespondGroupJoinRequest(); // RespondGroupJoinRequest | 
     try {
@@ -3183,7 +3183,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String query = "query_example"; // String | Filter for member displayName.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
@@ -3328,7 +3328,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
       GroupMember result = apiInstance.unbanGroupMember(groupId, userId);
@@ -3401,7 +3401,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     UpdateGroupRequest updateGroupRequest = new UpdateGroupRequest(); // UpdateGroupRequest | 
     try {
       Group result = apiInstance.updateGroup(groupId, updateGroupRequest);
@@ -3474,8 +3474,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupGalleryId = "ggal_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group gallery ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
     UpdateGroupGalleryRequest updateGroupGalleryRequest = new UpdateGroupGalleryRequest(); // UpdateGroupGalleryRequest | 
     try {
       GroupGallery result = apiInstance.updateGroupGallery(groupId, groupGalleryId, updateGroupGalleryRequest);
@@ -3549,7 +3549,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateGroupMemberRequest updateGroupMemberRequest = new UpdateGroupMemberRequest(); // UpdateGroupMemberRequest | 
     try {
@@ -3624,7 +3624,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
     CreateGroupPostRequest createGroupPostRequest = new CreateGroupPostRequest(); // CreateGroupPostRequest | 
     try {
@@ -3699,7 +3699,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     UpdateGroupRepresentationRequest updateGroupRepresentationRequest = new UpdateGroupRepresentationRequest(); // UpdateGroupRepresentationRequest | 
     try {
       Success result = apiInstance.updateGroupRepresentation(groupId, updateGroupRepresentationRequest);
@@ -3772,8 +3772,8 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
-    String groupRoleId = "grol_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group role ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
+    String groupRoleId = "groupRoleId_example"; // String | Must be a valid group role ID.
     UpdateGroupRoleRequest updateGroupRoleRequest = new UpdateGroupRoleRequest(); // UpdateGroupRoleRequest | 
     try {
       List<GroupRole> result = apiInstance.updateGroupRole(groupId, groupRoleId, updateGroupRoleRequest);

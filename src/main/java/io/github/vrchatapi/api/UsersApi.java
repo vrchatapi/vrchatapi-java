@@ -38,6 +38,7 @@ import io.github.vrchatapi.model.LimitedUserSearch;
 import io.github.vrchatapi.model.MutualFriend;
 import io.github.vrchatapi.model.Mutuals;
 import io.github.vrchatapi.model.RepresentedGroup;
+import io.github.vrchatapi.model.TutorialStatus;
 import io.github.vrchatapi.model.UpdateUserBadgeRequest;
 import io.github.vrchatapi.model.UpdateUserNoteRequest;
 import io.github.vrchatapi.model.UpdateUserRequest;
@@ -1694,7 +1695,7 @@ public class UsersApi {
     /**
      * Build call for getUserFeedback
      * @param userId Must be a valid user ID. (required)
-     * @param contentId Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param _callback Callback for upload/download progress
@@ -1709,7 +1710,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFeedbackCall(String userId, Boolean contentId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserFeedbackCall(String userId, String contentId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1768,7 +1769,7 @@ public class UsersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserFeedbackValidateBeforeCall(String userId, Boolean contentId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserFeedbackValidateBeforeCall(String userId, String contentId, Integer n, Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getUserFeedback(Async)");
@@ -1782,7 +1783,7 @@ public class UsersApi {
      * Get User Feedback
      * Get user&#39;s submitted feedback
      * @param userId Must be a valid user ID. (required)
-     * @param contentId Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @return List&lt;Feedback&gt;
@@ -1796,7 +1797,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public List<Feedback> getUserFeedback(String userId, Boolean contentId, Integer n, Integer offset) throws ApiException {
+    public List<Feedback> getUserFeedback(String userId, String contentId, Integer n, Integer offset) throws ApiException {
         ApiResponse<List<Feedback>> localVarResp = getUserFeedbackWithHttpInfo(userId, contentId, n, offset);
         return localVarResp.getData();
     }
@@ -1805,7 +1806,7 @@ public class UsersApi {
      * Get User Feedback
      * Get user&#39;s submitted feedback
      * @param userId Must be a valid user ID. (required)
-     * @param contentId Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @return ApiResponse&lt;List&lt;Feedback&gt;&gt;
@@ -1819,7 +1820,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<List<Feedback>> getUserFeedbackWithHttpInfo(String userId, Boolean contentId, Integer n, Integer offset) throws ApiException {
+    public ApiResponse<List<Feedback>> getUserFeedbackWithHttpInfo(String userId, String contentId, Integer n, Integer offset) throws ApiException {
         okhttp3.Call localVarCall = getUserFeedbackValidateBeforeCall(userId, contentId, n, offset, null);
         Type localVarReturnType = new TypeToken<List<Feedback>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1829,7 +1830,7 @@ public class UsersApi {
      * Get User Feedback (asynchronously)
      * Get user&#39;s submitted feedback
      * @param userId Must be a valid user ID. (required)
-     * @param contentId Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. (optional)
+     * @param contentId Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1844,7 +1845,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFeedbackAsync(String userId, Boolean contentId, Integer n, Integer offset, final ApiCallback<List<Feedback>> _callback) throws ApiException {
+    public okhttp3.Call getUserFeedbackAsync(String userId, String contentId, Integer n, Integer offset, final ApiCallback<List<Feedback>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserFeedbackValidateBeforeCall(userId, contentId, n, offset, _callback);
         Type localVarReturnType = new TypeToken<List<Feedback>>(){}.getType();
@@ -2761,6 +2762,133 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = getUserRepresentedGroupValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<RepresentedGroup>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUserTutorialStatus
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single TutorialStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserTutorialStatusCall(String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/tutorial"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserTutorialStatusValidateBeforeCall(String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserTutorialStatus(Async)");
+        }
+
+        return getUserTutorialStatusCall(userId, _callback);
+
+    }
+
+    /**
+     * Get User Tutorial Status
+     * Gets the status of completed or outstanding tutorials for the specified user.
+     * @param userId Must be a valid user ID. (required)
+     * @return TutorialStatus
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single TutorialStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TutorialStatus getUserTutorialStatus(String userId) throws ApiException {
+        ApiResponse<TutorialStatus> localVarResp = getUserTutorialStatusWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get User Tutorial Status
+     * Gets the status of completed or outstanding tutorials for the specified user.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;TutorialStatus&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single TutorialStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TutorialStatus> getUserTutorialStatusWithHttpInfo(String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<TutorialStatus>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get User Tutorial Status (asynchronously)
+     * Gets the status of completed or outstanding tutorials for the specified user.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single TutorialStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserTutorialStatusAsync(String userId, final ApiCallback<TutorialStatus> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<TutorialStatus>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

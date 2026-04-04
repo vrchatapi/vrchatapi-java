@@ -115,7 +115,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     try {
       apiInstance.deleteProp(propId);
     } catch (ApiException e) {
@@ -186,7 +186,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     try {
       Prop result = apiInstance.getProp(propId);
       System.out.println(result);
@@ -257,7 +257,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     try {
       PropPublishStatus result = apiInstance.getPropPublishStatus(propId);
       System.out.println(result);
@@ -404,7 +404,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     try {
       PropPublishStatus result = apiInstance.publishProp(propId);
       System.out.println(result);
@@ -476,7 +476,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     try {
       PropPublishStatus result = apiInstance.unpublishProp(propId);
       System.out.println(result);
@@ -548,7 +548,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String propId = "prop_829ba6f6-b837-49d9-b9a9-056b82103b58"; // String | Prop ID.
+    String propId = "propId_example"; // String | Prop ID.
     UpdatePropRequest updatePropRequest = new UpdatePropRequest(); // UpdatePropRequest | 
     try {
       Prop result = apiInstance.updateProp(propId, updatePropRequest);

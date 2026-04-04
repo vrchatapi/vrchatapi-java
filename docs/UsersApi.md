@@ -24,6 +24,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getUserNote**](UsersApi.md#getUserNote) | **GET** /userNotes/{userNoteId} | Get User Note |
 | [**getUserNotes**](UsersApi.md#getUserNotes) | **GET** /userNotes | Get User Notes |
 | [**getUserRepresentedGroup**](UsersApi.md#getUserRepresentedGroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group |
+| [**getUserTutorialStatus**](UsersApi.md#getUserTutorialStatus) | **GET** /users/{userId}/tutorial | Get User Tutorial Status |
 | [**removeTags**](UsersApi.md#removeTags) | **POST** /users/{userId}/removeTags | Remove User Tags |
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
 | [**updateBadge**](UsersApi.md#updateBadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge |
@@ -918,7 +919,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    Boolean contentId = true; // Boolean | Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
+    String contentId = "contentId_example"; // String | Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
@@ -940,7 +941,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **contentId** | **Boolean**| Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. | [optional] |
+| **contentId** | **String**| Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 
@@ -1065,7 +1066,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String groupId = "grp_00000000-0000-0000-0000-000000000000"; // String | Must be a valid group ID.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
       GetUserGroupInstances200Response result = apiInstance.getUserGroupInstancesForGroup(userId, groupId);
       System.out.println(result);
@@ -1457,6 +1458,76 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a name="getUserTutorialStatus"></a>
+# **getUserTutorialStatus**
+> TutorialStatus getUserTutorialStatus(userId)
+
+Get User Tutorial Status
+
+Gets the status of completed or outstanding tutorials for the specified user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      TutorialStatus result = apiInstance.getUserTutorialStatus(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserTutorialStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**TutorialStatus**](TutorialStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single TutorialStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a name="removeTags"></a>
