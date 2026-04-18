@@ -11041,6 +11041,7 @@ components:
         - group-galleries-manage
         - group-instance-age-gated-create
         - group-instance-announcement-create
+        - group-instance-bypass-avatar-performance
         - group-instance-calendar-link
         - group-instance-join
         - group-instance-manage
@@ -11069,6 +11070,7 @@ components:
         - group_galleries_manage
         - group_instance_age_gated_create
         - group_instance_announcement_create
+        - group_instance_bypass_avatar_performance
         - group_instance_calendar_link
         - group_instance_join
         - group_instance_manage

@@ -48,6 +48,8 @@ public enum GroupPermissions {
   
   group_instance_announcement_create("group-instance-announcement-create"),
   
+  group_instance_bypass_avatar_performance("group-instance-bypass-avatar-performance"),
+  
   group_instance_calendar_link("group-instance-calendar-link"),
   
   group_instance_join("group-instance-join"),

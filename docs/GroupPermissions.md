@@ -25,6 +25,8 @@
 
 * `group_instance_announcement_create` (value: `"group-instance-announcement-create"`)
 
+* `group_instance_bypass_avatar_performance` (value: `"group-instance-bypass-avatar-performance"`)
+
 * `group_instance_calendar_link` (value: `"group-instance-calendar-link"`)
 
 * `group_instance_join` (value: `"group-instance-join"`)
