@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.CalendarEventAccess;
 import io.github.vrchatapi.model.CalendarEventCategory;
+import io.github.vrchatapi.model.CalendarEventOccurrenceKind;
 import io.github.vrchatapi.model.CalendarEventPlatform;
+import io.github.vrchatapi.model.CalendarEventRecurrence;
 import io.github.vrchatapi.model.CalendarEventUserInterest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -128,7 +130,7 @@ public class CalendarEvent {
 
   public static final String SERIALIZED_NAME_OCCURRENCE_KIND = "occurrenceKind";
   @SerializedName(SERIALIZED_NAME_OCCURRENCE_KIND)
-  private String occurrenceKind;
+  private CalendarEventOccurrenceKind occurrenceKind = CalendarEventOccurrenceKind.SINGLE;
 
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
@@ -140,7 +142,7 @@ public class CalendarEvent {
 
   public static final String SERIALIZED_NAME_RECURRENCE = "recurrence";
   @SerializedName(SERIALIZED_NAME_RECURRENCE)
-  private String recurrence;
+  private CalendarEventRecurrence recurrence;
 
   public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
   @SerializedName(SERIALIZED_NAME_ROLE_IDS)
@@ -580,25 +582,25 @@ public class CalendarEvent {
   }
 
 
-  public CalendarEvent occurrenceKind(String occurrenceKind) {
+  public CalendarEvent occurrenceKind(CalendarEventOccurrenceKind occurrenceKind) {
     
     this.occurrenceKind = occurrenceKind;
     return this;
   }
 
    /**
-   * So far if it exists, always the string \&quot;single\&quot;
+   * Get occurrenceKind
    * @return occurrenceKind
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "So far if it exists, always the string \"single\"")
+  @ApiModelProperty(value = "")
 
-  public String getOccurrenceKind() {
+  public CalendarEventOccurrenceKind getOccurrenceKind() {
     return occurrenceKind;
   }
 
 
-  public void setOccurrenceKind(String occurrenceKind) {
+  public void setOccurrenceKind(CalendarEventOccurrenceKind occurrenceKind) {
     this.occurrenceKind = occurrenceKind;
   }
 
@@ -657,25 +659,25 @@ public class CalendarEvent {
   }
 
 
-  public CalendarEvent recurrence(String recurrence) {
+  public CalendarEvent recurrence(CalendarEventRecurrence recurrence) {
     
     this.recurrence = recurrence;
     return this;
   }
 
    /**
-   * So far unused, always \&quot;null\&quot;
+   * Get recurrence
    * @return recurrence
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "So far unused, always \"null\"")
+  @ApiModelProperty(value = "")
 
-  public String getRecurrence() {
+  public CalendarEventRecurrence getRecurrence() {
     return recurrence;
   }
 
 
-  public void setRecurrence(String recurrence) {
+  public void setRecurrence(CalendarEventRecurrence recurrence) {
     this.recurrence = recurrence;
   }
 
@@ -1102,9 +1104,6 @@ public class CalendarEvent {
       if (jsonObj.get("languages") != null && !jsonObj.get("languages").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `languages` to be an array in the JSON string but got `%s`", jsonObj.get("languages").toString()));
       }
-      if ((jsonObj.get("occurrenceKind") != null && !jsonObj.get("occurrenceKind").isJsonNull()) && !jsonObj.get("occurrenceKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `occurrenceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("occurrenceKind").toString()));
-      }
       if ((jsonObj.get("ownerId") != null && !jsonObj.get("ownerId").isJsonNull()) && !jsonObj.get("ownerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
       }
@@ -1112,8 +1111,9 @@ public class CalendarEvent {
       if (jsonObj.get("platforms") != null && !jsonObj.get("platforms").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `platforms` to be an array in the JSON string but got `%s`", jsonObj.get("platforms").toString()));
       }
-      if ((jsonObj.get("recurrence") != null && !jsonObj.get("recurrence").isJsonNull()) && !jsonObj.get("recurrence").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `recurrence` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recurrence").toString()));
+      // validate the optional field `recurrence`
+      if (jsonObj.get("recurrence") != null && !jsonObj.get("recurrence").isJsonNull()) {
+        CalendarEventRecurrence.validateJsonObject(jsonObj.getAsJsonObject("recurrence"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonArray()) {

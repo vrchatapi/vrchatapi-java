@@ -25,10 +25,10 @@ An event scheduled on a group's calendar
 |**interestedUserCount** | **Integer** |  |  [optional] |
 |**isDraft** | **Boolean** |  |  [optional] |
 |**languages** | **List&lt;String&gt;** | Languages that might be spoken at this event |  [optional] |
-|**occurrenceKind** | **String** | So far if it exists, always the string \&quot;single\&quot; |  [optional] |
+|**occurrenceKind** | **CalendarEventOccurrenceKind** |  |  [optional] |
 |**ownerId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
-|**recurrence** | **String** | So far unused, always \&quot;null\&quot; |  [optional] |
+|**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** | Group roles that may join this event |  [optional] |
 |**seriesId** | **String** | So far unused, always \&quot;null\&quot; |  [optional] |
 |**startsAt** | **OffsetDateTime** |  |  |

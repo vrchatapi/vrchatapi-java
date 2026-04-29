@@ -18,8 +18,10 @@
 |**imageId** | **String** |  |  [optional] |
 |**isDraft** | **Boolean** |  |  [optional] |
 |**languages** | **List&lt;String&gt;** |  |  [optional] |
+|**occurrenceKind** | **CalendarEventOccurrenceKind** |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
+|**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** |  |  [optional] |
 |**sendCreationNotification** | **Boolean** | Send notification to group members. |  |
 |**startsAt** | **OffsetDateTime** | Time the event starts at |  |

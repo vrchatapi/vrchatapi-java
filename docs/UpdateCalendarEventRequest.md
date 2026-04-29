@@ -19,6 +19,7 @@
 |**languages** | **List&lt;String&gt;** |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;String&gt;** |  |  [optional] |
+|**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** |  |  [optional] |
 |**sendCreationNotification** | **Boolean** | Send notification to group members. |  [optional] |
 |**startsAt** | **OffsetDateTime** | Time the vent starts at |  [optional] |

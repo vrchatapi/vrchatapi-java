@@ -8266,6 +8266,16 @@ components:
       type: string
       description: Represents a spoken language, signed language, or the absence of linguistic content. Valid language codes and display names are the keys and values respectively in the `$.constants.LANGUAGE.SPOKEN_LANGUAGE_OPTIONS` object from `GET /config`.
       example: eng
+    CalendarEventOccurrenceKind:
+      title: CalendarEventOccurrenceKind
+      type: string
+      description: How an event occurs or recurs. "single" is a standalone event, "series" is a parent specification of a recurring series, and "occurrence" is an individual event in a series.
+      enum:
+        - occurrence
+        - series
+        - single
+      default: single
+      example: single
     CalendarEventPlatform:
       title: CalendarEventPlatform
       type: string
@@ -8273,6 +8283,84 @@ components:
         - android
         - ios
         - standalonewindows
+    CalendarDayOfWeek:
+      title: CalendarDayOfWeek
+      type: string
+      description: The day of the week, used for recurring events.
+      enum:
+        - FR
+        - MO
+        - SA
+        - SU
+        - TH
+        - TU
+        - WE
+      default: SU
+      example: FR
+    CalendarEventRecurrenceEndType:
+      title: CalendarEventRecurrenceEndTyoe
+      type: string
+      description: How a recurring event stops being scheduled
+      enum:
+        - afterDate
+        - afterOccurrences
+      default: afterDate
+      example: afterOccurrences
+    CalendarEventRecurrenceEnd:
+      title: CalendarEventRecurrenceEnd
+      type: object
+      description: Details about how a recurring event stops being scheduled
+      properties:
+        count:
+          type: integer
+          description: Required for "afterOccurrences" - The number of times the event will be scheduled before it stops being scheduled
+          minimum: 1
+        date:
+          type: string
+          description: Required for "afterDate" - The date and time after which the event will stop being scheduled, **without timezone or offset**
+          example: '2026-12-31T23:59:00'
+        type:
+          $ref: '#/components/schemas/CalendarEventRecurrenceEndType'
+      required:
+        - type
+    CalendarEventFrequency:
+      title: CalendarEventFrequency
+      type: string
+      description: The time unit used to specify how often a recurring event occurs.
+      enum:
+        - daily
+        - monthly
+        - weekly
+        - yearly
+      default: weekly
+      example: weekly
+    CalendarEventRecurrence:
+      title: CalendarEventRecurrence
+      type: object
+      description: Details about how a recurring event will be scheduled. If the event is to be scheduled indefinitely, this will lack an "end" property.
+      nullable: true
+      properties:
+        daysOfWeek:
+          type: array
+          description: Which days of the week the event will be scheduled, only valid/present for "weekly" recurring events
+          items:
+            $ref: '#/components/schemas/CalendarDayOfWeek'
+        end:
+          $ref: '#/components/schemas/CalendarEventRecurrenceEnd'
+        frequency:
+          $ref: '#/components/schemas/CalendarEventFrequency'
+        interval:
+          type: integer
+          description: How often the event will be scheduled, in units of "frequency"
+          minimum: 1
+        timezone:
+          type: string
+          description: The timezone the event will be scheduled in, in Area/Location format
+          example: America/Chicago
+      required:
+        - frequency
+        - interval
+        - timezone
     GroupRoleID:
       title: GroupRoleID
       type: string
@@ -8327,8 +8415,7 @@ components:
           items:
             $ref: '#/components/schemas/LanguageCode'
         occurrenceKind:
-          type: string
-          description: So far if it exists, always the string "single"
+          $ref: '#/components/schemas/CalendarEventOccurrenceKind'
         ownerId:
           $ref: '#/components/schemas/GroupID'
         platforms:
@@ -8336,9 +8423,7 @@ components:
           items:
             $ref: '#/components/schemas/CalendarEventPlatform'
         recurrence:
-          type: string
-          description: So far unused, always "null"
-          nullable: true
+          $ref: '#/components/schemas/CalendarEventRecurrence'
         roleIds:
           type: array
           description: Group roles that may join this event
@@ -8498,12 +8583,16 @@ components:
             $ref: '#/components/schemas/LanguageCode'
           maxItems: 3
           minItems: 0
+        occurrenceKind:
+          $ref: '#/components/schemas/CalendarEventOccurrenceKind'
         parentId:
           $ref: '#/components/schemas/CalendarID'
         platforms:
           type: array
           items:
             $ref: '#/components/schemas/CalendarEventPlatform'
+        recurrence:
+          $ref: '#/components/schemas/CalendarEventRecurrence'
         roleIds:
           type: array
           items:
@@ -8580,6 +8669,8 @@ components:
           type: array
           items:
             type: string
+        recurrence:
+          $ref: '#/components/schemas/CalendarEventRecurrence'
         roleIds:
           type: array
           items:

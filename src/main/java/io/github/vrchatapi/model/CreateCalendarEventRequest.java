@@ -21,13 +21,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.CalendarEventAccess;
 import io.github.vrchatapi.model.CalendarEventCategory;
+import io.github.vrchatapi.model.CalendarEventOccurrenceKind;
 import io.github.vrchatapi.model.CalendarEventPlatform;
+import io.github.vrchatapi.model.CalendarEventRecurrence;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -99,6 +102,10 @@ public class CreateCalendarEventRequest {
   @SerializedName(SERIALIZED_NAME_LANGUAGES)
   private List<String> languages = null;
 
+  public static final String SERIALIZED_NAME_OCCURRENCE_KIND = "occurrenceKind";
+  @SerializedName(SERIALIZED_NAME_OCCURRENCE_KIND)
+  private CalendarEventOccurrenceKind occurrenceKind = CalendarEventOccurrenceKind.SINGLE;
+
   public static final String SERIALIZED_NAME_PARENT_ID = "parentId";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
   private String parentId;
@@ -106,6 +113,10 @@ public class CreateCalendarEventRequest {
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<CalendarEventPlatform> platforms = null;
+
+  public static final String SERIALIZED_NAME_RECURRENCE = "recurrence";
+  @SerializedName(SERIALIZED_NAME_RECURRENCE)
+  private CalendarEventRecurrence recurrence;
 
   public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
   @SerializedName(SERIALIZED_NAME_ROLE_IDS)
@@ -395,6 +406,29 @@ public class CreateCalendarEventRequest {
   }
 
 
+  public CreateCalendarEventRequest occurrenceKind(CalendarEventOccurrenceKind occurrenceKind) {
+    
+    this.occurrenceKind = occurrenceKind;
+    return this;
+  }
+
+   /**
+   * Get occurrenceKind
+   * @return occurrenceKind
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public CalendarEventOccurrenceKind getOccurrenceKind() {
+    return occurrenceKind;
+  }
+
+
+  public void setOccurrenceKind(CalendarEventOccurrenceKind occurrenceKind) {
+    this.occurrenceKind = occurrenceKind;
+  }
+
+
   public CreateCalendarEventRequest parentId(String parentId) {
     
     this.parentId = parentId;
@@ -446,6 +480,29 @@ public class CreateCalendarEventRequest {
 
   public void setPlatforms(List<CalendarEventPlatform> platforms) {
     this.platforms = platforms;
+  }
+
+
+  public CreateCalendarEventRequest recurrence(CalendarEventRecurrence recurrence) {
+    
+    this.recurrence = recurrence;
+    return this;
+  }
+
+   /**
+   * Get recurrence
+   * @return recurrence
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public CalendarEventRecurrence getRecurrence() {
+    return recurrence;
+  }
+
+
+  public void setRecurrence(CalendarEventRecurrence recurrence) {
+    this.recurrence = recurrence;
   }
 
 
@@ -624,8 +681,10 @@ public class CreateCalendarEventRequest {
         Objects.equals(this.imageId, createCalendarEventRequest.imageId) &&
         Objects.equals(this.isDraft, createCalendarEventRequest.isDraft) &&
         Objects.equals(this.languages, createCalendarEventRequest.languages) &&
+        Objects.equals(this.occurrenceKind, createCalendarEventRequest.occurrenceKind) &&
         Objects.equals(this.parentId, createCalendarEventRequest.parentId) &&
         Objects.equals(this.platforms, createCalendarEventRequest.platforms) &&
+        Objects.equals(this.recurrence, createCalendarEventRequest.recurrence) &&
         Objects.equals(this.roleIds, createCalendarEventRequest.roleIds) &&
         Objects.equals(this.sendCreationNotification, createCalendarEventRequest.sendCreationNotification) &&
         Objects.equals(this.startsAt, createCalendarEventRequest.startsAt) &&
@@ -634,9 +693,20 @@ public class CreateCalendarEventRequest {
         Objects.equals(this.usesInstanceOverflow, createCalendarEventRequest.usesInstanceOverflow);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, description, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, imageId, isDraft, languages, parentId, platforms, roleIds, sendCreationNotification, startsAt, tags, title, usesInstanceOverflow);
+    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, description, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, imageId, isDraft, languages, occurrenceKind, parentId, platforms, recurrence, roleIds, sendCreationNotification, startsAt, tags, title, usesInstanceOverflow);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -654,8 +724,10 @@ public class CreateCalendarEventRequest {
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
     sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+    sb.append("    occurrenceKind: ").append(toIndentedString(occurrenceKind)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    sendCreationNotification: ").append(toIndentedString(sendCreationNotification)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
@@ -695,8 +767,10 @@ public class CreateCalendarEventRequest {
     openapiFields.add("imageId");
     openapiFields.add("isDraft");
     openapiFields.add("languages");
+    openapiFields.add("occurrenceKind");
     openapiFields.add("parentId");
     openapiFields.add("platforms");
+    openapiFields.add("recurrence");
     openapiFields.add("roleIds");
     openapiFields.add("sendCreationNotification");
     openapiFields.add("startsAt");
@@ -758,6 +832,10 @@ public class CreateCalendarEventRequest {
       // ensure the optional json data is an array if present
       if (jsonObj.get("platforms") != null && !jsonObj.get("platforms").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `platforms` to be an array in the JSON string but got `%s`", jsonObj.get("platforms").toString()));
+      }
+      // validate the optional field `recurrence`
+      if (jsonObj.get("recurrence") != null && !jsonObj.get("recurrence").isJsonNull()) {
+        CalendarEventRecurrence.validateJsonObject(jsonObj.getAsJsonObject("recurrence"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonArray()) {
