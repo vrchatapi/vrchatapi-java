@@ -793,7 +793,7 @@ public class ApiClient {
      */
     public String escapeString(String str) {
         try {
-            return URLEncoder.encode(str, "utf8").replaceAll("\\+", "%20");
+            return URLEncoder.encode(str, "utf8").replaceAll("%28", "(").replaceAll("%29", ")").replaceAll("\\+", "%20");
         } catch (UnsupportedEncodingException e) {
             return str;
         }

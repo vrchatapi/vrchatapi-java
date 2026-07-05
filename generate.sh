@@ -28,6 +28,9 @@ rm api/ -rf
 # Update Java 7 to Java 8
 sed -i 's/java.version>1.7/java.version>1.8/g' pom.xml
 
+# Avoid percent-encoding for "(" and ")" characters in URI
+sed -i 's/URLEncoder.encode(str, "utf8").replaceAll("\\\\+", "%20")/URLEncoder.encode(str, "utf8").replaceAll("%28", "(").replaceAll("%29", ")").replaceAll("\\\\+", "%20")/g' src/main/java/io/github/vrchatapi/ApiClient.java
+
 # Add global cookie storage
 sed -i '/addNetworkInterceptor/a \
         builder.cookieJar(new io.github.vrchatapi.util.SimpleOkHttpCookieJar());' src/main/java/io/github/vrchatapi/ApiClient.java
