@@ -13,6 +13,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getMutualFriends**](UsersApi.md#getMutualFriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends |
 | [**getMutualGroups**](UsersApi.md#getMutualGroups) | **GET** /users/{userId}/mutuals/groups | Get User Mutual Groups |
 | [**getMutuals**](UsersApi.md#getMutuals) | **GET** /users/{userId}/mutuals | Get User Mutuals |
+| [**getPrivateProfile**](UsersApi.md#getPrivateProfile) | **GET** /profile/{userId}/private | Get Private Profile |
+| [**getPublicProfile**](UsersApi.md#getPublicProfile) | **GET** /profile/{userId} | Get Public Profile |
 | [**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID |
 | [**getUserAllGroupPermissions**](UsersApi.md#getUserAllGroupPermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups. |
 | [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username |
@@ -32,7 +34,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateUserNote**](UsersApi.md#updateUserNote) | **POST** /userNotes | Update User Note |
 
 
-<a name="addTags"></a>
+<a id="addTags"></a>
 # **addTags**
 > CurrentUser addTags(userId, changeUserTagsRequest)
 
@@ -105,7 +107,7 @@ public class Example {
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="checkUserPersistenceExists"></a>
+<a id="checkUserPersistenceExists"></a>
 # **checkUserPersistenceExists**
 > checkUserPersistenceExists(userId, worldId)
 
@@ -177,7 +179,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
-<a name="deleteAllUserPersistenceData"></a>
+<a id="deleteAllUserPersistenceData"></a>
 # **deleteAllUserPersistenceData**
 > deleteAllUserPersistenceData(userId)
 
@@ -246,7 +248,7 @@ null (empty response body)
 | **200** | The user&#39;s persistence data for all worlds is deleted. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteUserPersistence"></a>
+<a id="deleteUserPersistence"></a>
 # **deleteUserPersistence**
 > deleteUserPersistence(userId, worldId)
 
@@ -318,7 +320,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
-<a name="getBlockedGroups"></a>
+<a id="getBlockedGroups"></a>
 # **getBlockedGroups**
 > List&lt;Group&gt; getBlockedGroups(userId)
 
@@ -388,7 +390,7 @@ public class Example {
 | **200** | Returns a list of Group objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInvitedGroups"></a>
+<a id="getInvitedGroups"></a>
 # **getInvitedGroups**
 > List&lt;Group&gt; getInvitedGroups(userId)
 
@@ -458,7 +460,7 @@ public class Example {
 | **200** | Returns a list of Group objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getMutualFriends"></a>
+<a id="getMutualFriends"></a>
 # **getMutualFriends**
 > List&lt;MutualFriend&gt; getMutualFriends(userId, n, offset)
 
@@ -532,7 +534,7 @@ public class Example {
 | **200** | Returns a list of MutualFriend objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getMutualGroups"></a>
+<a id="getMutualGroups"></a>
 # **getMutualGroups**
 > List&lt;LimitedUserGroups&gt; getMutualGroups(userId, n, offset)
 
@@ -606,7 +608,7 @@ public class Example {
 | **200** | Returns a list of LimitedUserGroups objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getMutuals"></a>
+<a id="getMutuals"></a>
 # **getMutuals**
 > Mutuals getMutuals(userId)
 
@@ -676,7 +678,147 @@ public class Example {
 | **200** | Returns a single Mutuals object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUser"></a>
+<a id="getPrivateProfile"></a>
+# **getPrivateProfile**
+> PrivateProfile getPrivateProfile(userId)
+
+Get Private Profile
+
+Get profile information visible to the currently authenticated user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      PrivateProfile result = apiInstance.getPrivateProfile(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getPrivateProfile");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**PrivateProfile**](PrivateProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns profile data visible to the authenticated user. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getPublicProfile"></a>
+# **getPublicProfile**
+> PublicProfile getPublicProfile(userId)
+
+Get Public Profile
+
+Get a user&#39;s public profile information.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      PublicProfile result = apiInstance.getPublicProfile(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getPublicProfile");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**PublicProfile**](PublicProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a user&#39;s public profile. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getUser"></a>
 # **getUser**
 > User getUser(userId)
 
@@ -746,7 +888,7 @@ public class Example {
 | **200** | Returns a single User object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserAllGroupPermissions"></a>
+<a id="getUserAllGroupPermissions"></a>
 # **getUserAllGroupPermissions**
 > Map&lt;String, List&lt;GroupPermissions&gt;&gt; getUserAllGroupPermissions(userId, groupIds)
 
@@ -818,7 +960,7 @@ public class Example {
 | **200** | The group permissions the user has for every joined group. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserByName"></a>
+<a id="getUserByName"></a>
 # **getUserByName**
 > User getUserByName(username)
 
@@ -888,7 +1030,7 @@ public class Example {
 | **200** | Returns a single User object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserFeedback"></a>
+<a id="getUserFeedback"></a>
 # **getUserFeedback**
 > List&lt;Feedback&gt; getUserFeedback(userId, contentId, n, offset)
 
@@ -964,7 +1106,7 @@ public class Example {
 | **200** | Returns a list of Feedback objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserGroupInstances"></a>
+<a id="getUserGroupInstances"></a>
 # **getUserGroupInstances**
 > GetUserGroupInstances200Response getUserGroupInstances(userId)
 
@@ -1035,7 +1177,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying get group instances of another user. |  -  |
 
-<a name="getUserGroupInstancesForGroup"></a>
+<a id="getUserGroupInstancesForGroup"></a>
 # **getUserGroupInstancesForGroup**
 > GetUserGroupInstances200Response getUserGroupInstancesForGroup(userId, groupId)
 
@@ -1108,7 +1250,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying get group instances of another user. |  -  |
 
-<a name="getUserGroupRequests"></a>
+<a id="getUserGroupRequests"></a>
 # **getUserGroupRequests**
 > List&lt;Group&gt; getUserGroupRequests(userId)
 
@@ -1178,7 +1320,7 @@ public class Example {
 | **200** | Returns a list of Group objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserGroups"></a>
+<a id="getUserGroups"></a>
 # **getUserGroups**
 > List&lt;LimitedUserGroups&gt; getUserGroups(userId)
 
@@ -1248,7 +1390,7 @@ public class Example {
 | **200** | Returns a list of LimitedUserGroups objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserNote"></a>
+<a id="getUserNote"></a>
 # **getUserNote**
 > UserNote getUserNote(userNoteId)
 
@@ -1318,7 +1460,7 @@ public class Example {
 | **200** | Returns a single UserNote object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserNotes"></a>
+<a id="getUserNotes"></a>
 # **getUserNotes**
 > List&lt;UserNote&gt; getUserNotes(n, offset)
 
@@ -1390,7 +1532,7 @@ public class Example {
 | **200** | Returns a list of UserNote objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserRepresentedGroup"></a>
+<a id="getUserRepresentedGroup"></a>
 # **getUserRepresentedGroup**
 > RepresentedGroup getUserRepresentedGroup(userId)
 
@@ -1460,7 +1602,7 @@ public class Example {
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserTutorialStatus"></a>
+<a id="getUserTutorialStatus"></a>
 # **getUserTutorialStatus**
 > TutorialStatus getUserTutorialStatus(userId)
 
@@ -1530,7 +1672,7 @@ public class Example {
 | **200** | Returns a single TutorialStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="removeTags"></a>
+<a id="removeTags"></a>
 # **removeTags**
 > CurrentUser removeTags(userId, changeUserTagsRequest)
 
@@ -1603,7 +1745,7 @@ public class Example {
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="searchUsers"></a>
+<a id="searchUsers"></a>
 # **searchUsers**
 > List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, n, offset, isInternalVariant)
 
@@ -1682,7 +1824,7 @@ public class Example {
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateBadge"></a>
+<a id="updateBadge"></a>
 # **updateBadge**
 > updateBadge(userId, badgeId, updateUserBadgeRequest)
 
@@ -1757,7 +1899,7 @@ null (empty response body)
 | **403** | Error response when trying get group instances of another user. |  -  |
 | **404** | The user does not have the badge. |  -  |
 
-<a name="updateUser"></a>
+<a id="updateUser"></a>
 # **updateUser**
 > CurrentUser updateUser(userId, updateUserRequest)
 
@@ -1830,7 +1972,7 @@ public class Example {
 | **400** | Error response when a user attempts to change a property without supplying their current password. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateUserNote"></a>
+<a id="updateUserNote"></a>
 # **updateUserNote**
 > UserNote updateUserNote(updateUserNoteRequest)
 

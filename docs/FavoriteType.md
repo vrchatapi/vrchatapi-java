@@ -9,7 +9,7 @@
 
 * `FRIEND` (value: `"friend"`)
 
-* `VRCPLUSWORLD` (value: `"vrcPlusWorld"`)
+* `VRC_PLUS_WORLD` (value: `"vrcPlusWorld"`)
 
 * `WORLD` (value: `"world"`)
 

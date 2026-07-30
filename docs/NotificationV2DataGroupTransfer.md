@@ -1,13 +1,14 @@
 
 
-# InventoryDefaultAttributes1Validator
+# NotificationV2DataGroupTransfer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | **String** |  |  [optional] |
+|**groupName** | **String** |  |  |
+|**ownerUserDisplayName** | **String** |  |  |
 
 
 

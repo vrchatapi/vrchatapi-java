@@ -11,7 +11,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**submitJamContent**](JamsApi.md#submitJamContent) | **POST** /jams/{jamId}/submissions | Submit Jam Content |
 
 
-<a name="deleteJamSubmission"></a>
+<a id="deleteJamSubmission"></a>
 # **deleteJamSubmission**
 > Success deleteJamSubmission(jamId, jamSubmissionId)
 
@@ -85,7 +85,7 @@ public class Example {
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to show information about a non-existent jam. |  -  |
 
-<a name="getJam"></a>
+<a id="getJam"></a>
 # **getJam**
 > Jam getJam(jamId)
 
@@ -155,7 +155,7 @@ public class Example {
 | **200** | Returns a Jam object. |  -  |
 | **404** | Error response when trying to show information about a non-existent jam. |  -  |
 
-<a name="getJamSubmissions"></a>
+<a id="getJamSubmissions"></a>
 # **getJamSubmissions**
 > List&lt;JamSubmission&gt; getJamSubmissions(jamId, contentId, submitterId)
 
@@ -229,7 +229,7 @@ public class Example {
 | **200** | Returns a list of JamSubmission objects. |  -  |
 | **404** | Error response when trying to show information about a non-existent jam. |  -  |
 
-<a name="getJams"></a>
+<a id="getJams"></a>
 # **getJams**
 > List&lt;Jam&gt; getJams(type)
 
@@ -298,7 +298,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of Jam objects. |  -  |
 
-<a name="submitJamContent"></a>
+<a id="submitJamContent"></a>
 # **submitJamContent**
 > JamSubmission submitJamContent(jamId, createJamSubmissionRequest)
 

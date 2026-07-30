@@ -27,7 +27,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**uploadImage**](FilesApi.md#uploadImage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker |
 
 
-<a name="createFile"></a>
+<a id="createFile"></a>
 # **createFile**
 > ModelFile createFile(createFileRequest)
 
@@ -96,7 +96,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 
-<a name="createFileVersion"></a>
+<a id="createFileVersion"></a>
 # **createFileVersion**
 > ModelFile createFileVersion(fileId, createFileVersionRequest)
 
@@ -167,7 +167,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 
-<a name="deleteFile"></a>
+<a id="deleteFile"></a>
 # **deleteFile**
 > ModelFile deleteFile(fileId)
 
@@ -237,7 +237,7 @@ public class Example {
 | **200** | Returns a single File object. |  -  |
 | **404** | Error response when trying to delete a non-existent file. |  -  |
 
-<a name="deleteFileVersion"></a>
+<a id="deleteFileVersion"></a>
 # **deleteFileVersion**
 > ModelFile deleteFileVersion(fileId, versionId)
 
@@ -310,13 +310,13 @@ public class Example {
 | **400** | Error response when trying to delete the initial version of a file. Delete the main File object instead. |  -  |
 | **500** | Error response when trying to delete any version of a file that is not the last one. |  -  |
 
-<a name="downloadFileVersion"></a>
+<a id="downloadFileVersion"></a>
 # **downloadFileVersion**
 > File downloadFileVersion(fileId, versionId)
 
 Download File Version
 
-Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when neccesary.
+Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when necessary.
 
 ### Example
 ```java
@@ -382,7 +382,7 @@ public class Example {
 | **200** | Raw file |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="finishFileDataUpload"></a>
+<a id="finishFileDataUpload"></a>
 # **finishFileDataUpload**
 > ModelFile finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest)
 
@@ -457,7 +457,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 
-<a name="getAdminAssetBundle"></a>
+<a id="getAdminAssetBundle"></a>
 # **getAdminAssetBundle**
 > AdminAssetBundle getAdminAssetBundle(adminAssetBundleId)
 
@@ -526,7 +526,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single AdminAssetBundle object. |  -  |
 
-<a name="getContentAgreementStatus"></a>
+<a id="getContentAgreementStatus"></a>
 # **getContentAgreementStatus**
 > AgreementStatus getContentAgreementStatus(agreementCode, contentId, version)
 
@@ -600,7 +600,7 @@ public class Example {
 | **200** | Returns a single AgreementStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFile"></a>
+<a id="getFile"></a>
 # **getFile**
 > ModelFile getFile(fileId)
 
@@ -670,7 +670,7 @@ public class Example {
 | **200** | Returns a single File object. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="getFileAnalysis"></a>
+<a id="getFileAnalysis"></a>
 # **getFileAnalysis**
 > FileAnalysis getFileAnalysis(fileId, versionId)
 
@@ -743,7 +743,7 @@ public class Example {
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="getFileAnalysisSecurity"></a>
+<a id="getFileAnalysisSecurity"></a>
 # **getFileAnalysisSecurity**
 > FileAnalysis getFileAnalysisSecurity(fileId, versionId)
 
@@ -816,7 +816,7 @@ public class Example {
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="getFileAnalysisStandard"></a>
+<a id="getFileAnalysisStandard"></a>
 # **getFileAnalysisStandard**
 > FileAnalysis getFileAnalysisStandard(fileId, versionId)
 
@@ -889,7 +889,7 @@ public class Example {
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="getFileDataUploadStatus"></a>
+<a id="getFileDataUploadStatus"></a>
 # **getFileDataUploadStatus**
 > FileVersionUploadStatus getFileDataUploadStatus(fileId, versionId, fileType)
 
@@ -962,7 +962,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Current FileVersion upload status. Contains the uploadId needed for uploading, as well as the already uploaded parts. |  -  |
 
-<a name="getFiles"></a>
+<a id="getFiles"></a>
 # **getFiles**
 > List&lt;ModelFile&gt; getFiles(tag, userId, n, offset)
 
@@ -1037,7 +1037,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of File objects. |  -  |
 
-<a name="setGroupGalleryFileOrder"></a>
+<a id="setGroupGalleryFileOrder"></a>
 # **setGroupGalleryFileOrder**
 > GroupGalleryFileOrder setGroupGalleryFileOrder(groupGalleryFileOrderRequest)
 
@@ -1107,7 +1107,7 @@ public class Example {
 | **200** | Returns a list of File IDs. |  -  |
 | **404** | Error response when trying to show information about a non-existent file. |  -  |
 
-<a name="startFileDataUpload"></a>
+<a id="startFileDataUpload"></a>
 # **startFileDataUpload**
 > FileUploadURL startFileDataUpload(fileId, versionId, fileType, partNumber)
 
@@ -1183,7 +1183,7 @@ public class Example {
 | **200** | See [https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html](AWS REST docs - PUT Object) |  -  |
 | **400** | Error response when trying to start an upload against a FileVersion that is already marked as  &#x60;complete&#x60;. |  -  |
 
-<a name="submitContentAgreement"></a>
+<a id="submitContentAgreement"></a>
 # **submitContentAgreement**
 > Agreement submitContentAgreement(agreementRequest)
 
@@ -1253,7 +1253,7 @@ public class Example {
 | **200** | Returns a single Agreement object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateAssetReviewNotes"></a>
+<a id="updateAssetReviewNotes"></a>
 # **updateAssetReviewNotes**
 > updateAssetReviewNotes(assetReviewId, updateAssetReviewNotesRequest)
 
@@ -1324,7 +1324,7 @@ null (empty response body)
 | **200** | The asset review notes are submitted. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="uploadGalleryImage"></a>
+<a id="uploadGalleryImage"></a>
 # **uploadGalleryImage**
 > ModelFile uploadGalleryImage(_file)
 
@@ -1393,7 +1393,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 
-<a name="uploadIcon"></a>
+<a id="uploadIcon"></a>
 # **uploadIcon**
 > ModelFile uploadIcon(_file)
 
@@ -1462,7 +1462,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
 
-<a name="uploadImage"></a>
+<a id="uploadImage"></a>
 # **uploadImage**
 > ModelFile uploadImage(_file, tag, animationStyle, frames, framesOverTime, loopStyle, maskTag)
 

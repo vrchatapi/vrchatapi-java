@@ -14,7 +14,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateFavoriteGroup**](FavoritesApi.md#updateFavoriteGroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group |
 
 
-<a name="addFavorite"></a>
+<a id="addFavorite"></a>
 # **addFavorite**
 > Favorite addFavorite(addFavoriteRequest)
 
@@ -85,7 +85,7 @@ public class Example {
 | **400** | Error response when trying favorite someone or something when already having it/them favorited. |  -  |
 | **403** | Error response when trying favorite someone whom you are not friends with. |  -  |
 
-<a name="clearFavoriteGroup"></a>
+<a id="clearFavoriteGroup"></a>
 # **clearFavoriteGroup**
 > Success clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId)
 
@@ -158,7 +158,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Success response after clearing a favorite group. |  -  |
 
-<a name="getFavoriteGroup"></a>
+<a id="getFavoriteGroup"></a>
 # **getFavoriteGroup**
 > FavoriteGroup getFavoriteGroup(favoriteGroupType, favoriteGroupName, userId)
 
@@ -231,7 +231,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single FavoriteGroup object. |  -  |
 
-<a name="getFavoriteGroups"></a>
+<a id="getFavoriteGroups"></a>
 # **getFavoriteGroups**
 > List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, userId, ownerId)
 
@@ -264,7 +264,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String userId = "userId_example"; // String | Target user to see information on, admin-only.
-    String ownerId = "ownerId_example"; // String | The owner of whoms favorite groups to return. Must be a UserID.
+    String ownerId = "ownerId_example"; // String | The owner whose favorite groups to return. Must be a UserID.
     try {
       List<FavoriteGroup> result = apiInstance.getFavoriteGroups(n, offset, userId, ownerId);
       System.out.println(result);
@@ -286,7 +286,7 @@ public class Example {
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **userId** | **String**| Target user to see information on, admin-only. | [optional] |
-| **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional] |
+| **ownerId** | **String**| The owner whose favorite groups to return. Must be a UserID. | [optional] |
 
 ### Return type
 
@@ -307,7 +307,7 @@ public class Example {
 | **200** | Returns a list of FavoriteGroup objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFavoriteLimits"></a>
+<a id="getFavoriteLimits"></a>
 # **getFavoriteLimits**
 > FavoriteLimits getFavoriteLimits()
 
@@ -373,7 +373,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a single FavoriteLimits object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFavorites"></a>
+<a id="getFavorites"></a>
 # **getFavorites**
 > List&lt;Favorite&gt; getFavorites(n, offset, type, tag)
 
@@ -449,7 +449,7 @@ public class Example {
 | **200** | Returns a list of Favorite objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="removeFavorite"></a>
+<a id="removeFavorite"></a>
 # **removeFavorite**
 > Success removeFavorite(favoriteId)
 
@@ -520,7 +520,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent favorite. |  -  |
 
-<a name="updateFavoriteGroup"></a>
+<a id="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**
 > updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
 

@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `AFTERDATE` (value: `"afterDate"`)
+* `AFTER_DATE` (value: `"afterDate"`)
 
-* `AFTEROCCURRENCES` (value: `"afterOccurrences"`)
+* `AFTER_OCCURRENCES` (value: `"afterOccurrences"`)
 
 
 

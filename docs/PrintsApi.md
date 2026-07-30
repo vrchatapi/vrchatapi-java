@@ -11,7 +11,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**uploadPrint**](PrintsApi.md#uploadPrint) | **POST** /prints | Upload Print |
 
 
-<a name="deletePrint"></a>
+<a id="deletePrint"></a>
 # **deletePrint**
 > deletePrint(printId)
 
@@ -80,7 +80,7 @@ null (empty response body)
 | **200** | Empty response if successful |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="editPrint"></a>
+<a id="editPrint"></a>
 # **editPrint**
 > Print editPrint(printId, image, note)
 
@@ -154,7 +154,7 @@ public class Example {
 | **200** | Returns a single Print object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getPrint"></a>
+<a id="getPrint"></a>
 # **getPrint**
 > Print getPrint(printId)
 
@@ -224,7 +224,7 @@ public class Example {
 | **200** | Returns a single Print object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserPrints"></a>
+<a id="getUserPrints"></a>
 # **getUserPrints**
 > List&lt;Print&gt; getUserPrints(userId)
 
@@ -295,7 +295,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to request another user&#39;s prints. |  -  |
 
-<a name="uploadPrint"></a>
+<a id="uploadPrint"></a>
 # **uploadPrint**
 > Print uploadPrint(image, timestamp, note, worldId, worldName)
 

@@ -13,6 +13,7 @@
 |**badgeImageUrl** | **String** | direct url to image |  |
 |**badgeName** | **String** |  |  |
 |**hidden** | **Boolean** | only present in CurrentUser badges |  [optional] |
+|**isQuantifiable** | **Boolean** |  |  [optional] |
 |**showcased** | **Boolean** |  |  |
 |**updatedAt** | **OffsetDateTime** | only present in CurrentUser badges |  [optional] |
 

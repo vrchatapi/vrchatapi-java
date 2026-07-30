@@ -5,15 +5,15 @@
 ## Enum
 
 
-* `ADULT` (value: `"content_adult"`)
+* `CONTENT_ADULT` (value: `"content_adult"`)
 
-* `GORE` (value: `"content_gore"`)
+* `CONTENT_GORE` (value: `"content_gore"`)
 
-* `HORROR` (value: `"content_horror"`)
+* `CONTENT_HORROR` (value: `"content_horror"`)
 
-* `SEX` (value: `"content_sex"`)
+* `CONTENT_SEX` (value: `"content_sex"`)
 
-* `VIOLENCE` (value: `"content_violence"`)
+* `CONTENT_VIOLENCE` (value: `"content_violence"`)
 
 
 

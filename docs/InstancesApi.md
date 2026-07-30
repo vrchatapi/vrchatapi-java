@@ -12,7 +12,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name |
 
 
-<a name="closeInstance"></a>
+<a id="closeInstance"></a>
 # **closeInstance**
 > Instance closeInstance(worldId, instanceId, hardClose, closedAt)
 
@@ -88,9 +88,9 @@ public class Example {
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to not being allowed to close an instance |  -  |
-| **404** | Error response due to non existant instance |  -  |
+| **404** | Error response due to non existent instance |  -  |
 
-<a name="createInstance"></a>
+<a id="createInstance"></a>
 # **createInstance**
 > Instance createInstance(createInstanceRequest)
 
@@ -160,7 +160,7 @@ public class Example {
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInstance"></a>
+<a id="getInstance"></a>
 # **getInstance**
 > Instance getInstance(worldId, instanceId)
 
@@ -232,7 +232,7 @@ public class Example {
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInstanceByShortName"></a>
+<a id="getInstanceByShortName"></a>
 # **getInstanceByShortName**
 > Instance getInstanceByShortName(shortName)
 
@@ -301,9 +301,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response due to non existant instance |  -  |
+| **404** | Error response due to non existent instance |  -  |
 
-<a name="getRecentLocations"></a>
+<a id="getRecentLocations"></a>
 # **getRecentLocations**
 > List&lt;String&gt; getRecentLocations(n, offset)
 
@@ -375,7 +375,7 @@ public class Example {
 | **200** | Returns a list of LocationIDs. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getShortName"></a>
+<a id="getShortName"></a>
 # **getShortName**
 > InstanceShortNameResponse getShortName(worldId, instanceId)
 

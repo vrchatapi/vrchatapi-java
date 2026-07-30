@@ -5,7 +5,7 @@
 ## Enum
 
 
-* `PURCHASEDATE` (value: `"purchaseDate"`)
+* `PURCHASE_DATE` (value: `"purchaseDate"`)
 
 
 

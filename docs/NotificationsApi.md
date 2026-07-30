@@ -19,7 +19,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**respondNotificationV2**](NotificationsApi.md#respondNotificationV2) | **POST** /notifications/{notificationId}/respond | Respond NotificationV2 |
 
 
-<a name="acceptFriendRequest"></a>
+<a id="acceptFriendRequest"></a>
 # **acceptFriendRequest**
 > Success acceptFriendRequest(notificationId)
 
@@ -90,7 +90,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to accept a non-existent friend request. |  -  |
 
-<a name="acknowledgeNotificationV2"></a>
+<a id="acknowledgeNotificationV2"></a>
 # **acknowledgeNotificationV2**
 > NotificationV2 acknowledgeNotificationV2(notificationId)
 
@@ -157,11 +157,11 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single NotifcationV2 object. |  -  |
+| **200** | Returns a single NotificationV2 object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
-<a name="clearNotifications"></a>
+<a id="clearNotifications"></a>
 # **clearNotifications**
 > Success clearNotifications()
 
@@ -227,7 +227,7 @@ This endpoint does not need any parameter.
 | **200** | Successful response after clearing all notifications. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteAllNotificationV2s"></a>
+<a id="deleteAllNotificationV2s"></a>
 # **deleteAllNotificationV2s**
 > Success deleteAllNotificationV2s()
 
@@ -293,7 +293,7 @@ This endpoint does not need any parameter.
 | **200** | Successful response after clearing all notifications. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteNotification"></a>
+<a id="deleteNotification"></a>
 # **deleteNotification**
 > Notification deleteNotification(notificationId)
 
@@ -360,10 +360,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteNotificationV2"></a>
+<a id="deleteNotificationV2"></a>
 # **deleteNotificationV2**
 > Success deleteNotificationV2(notificationId)
 
@@ -435,7 +435,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
-<a name="getNotification"></a>
+<a id="getNotification"></a>
 # **getNotification**
 > Notification getNotification(notificationId)
 
@@ -502,11 +502,11 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
-<a name="getNotificationV2"></a>
+<a id="getNotificationV2"></a>
 # **getNotificationV2**
 > NotificationV2 getNotificationV2(notificationId)
 
@@ -573,12 +573,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single NotifcationV2 object. |  -  |
+| **200** | Returns a single NotificationV2 object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
-<a name="getNotificationV2s"></a>
+<a id="getNotificationV2s"></a>
 # **getNotificationV2s**
 > List&lt;NotificationV2&gt; getNotificationV2s(limit)
 
@@ -645,10 +645,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of NotifcationV2 objects. |  -  |
+| **200** | Returns a list of NotificationV2 objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getNotifications"></a>
+<a id="getNotifications"></a>
 # **getNotifications**
 > List&lt;Notification&gt; getNotifications(type, sent, hidden, after, n, offset)
 
@@ -725,10 +725,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Notifcation objects. |  -  |
+| **200** | Returns a list of Notification objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="markNotificationAsRead"></a>
+<a id="markNotificationAsRead"></a>
 # **markNotificationAsRead**
 > Notification markNotificationAsRead(notificationId)
 
@@ -795,10 +795,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="replyNotificationV2"></a>
+<a id="replyNotificationV2"></a>
 # **replyNotificationV2**
 > NotificationV2 replyNotificationV2(notificationId, body)
 
@@ -867,12 +867,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single NotifcationV2 object. |  -  |
+| **200** | Returns a single NotificationV2 object. |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
 
-<a name="respondNotificationV2"></a>
+<a id="respondNotificationV2"></a>
 # **respondNotificationV2**
 > NotificationV2 respondNotificationV2(notificationId, respondNotificationV2Request)
 
@@ -941,7 +941,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single NotifcationV2 object. |  -  |
+| **200** | Returns a single NotificationV2 object. |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing notification. |  -  |

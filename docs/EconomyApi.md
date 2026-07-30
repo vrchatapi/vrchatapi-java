@@ -36,8 +36,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getTiliaStatus**](EconomyApi.md#getTiliaStatus) | **GET** /tilia/status | Get Tilia Status |
 | [**getTiliaTos**](EconomyApi.md#getTiliaTos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status |
 | [**getTokenBundles**](EconomyApi.md#getTokenBundles) | **GET** /tokenBundles | List Token Bundles |
-| [**getUserCreditsEligible**](EconomyApi.md#getUserCreditsEligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligiblity |
-| [**getUserSubscriptionEligible**](EconomyApi.md#getUserSubscriptionEligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligiblity |
+| [**getUserCreditsEligible**](EconomyApi.md#getUserCreditsEligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligibility |
+| [**getUserSubscriptionEligible**](EconomyApi.md#getUserSubscriptionEligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligibility |
 | [**getUserTiliaKyc**](EconomyApi.md#getUserTiliaKyc) | **GET** /user/{userId}/tilia/kyc | Get User Tilia KYC |
 | [**listStores**](EconomyApi.md#listStores) | **GET** /economy/stores | List Stores |
 | [**listUserProducts**](EconomyApi.md#listUserProducts) | **GET** /user/{userId}/products | List User Products |
@@ -47,7 +47,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateTiliaTos**](EconomyApi.md#updateTiliaTos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status |
 
 
-<a name="createProduct"></a>
+<a id="createProduct"></a>
 # **createProduct**
 > Product createProduct(createProductRequest)
 
@@ -117,7 +117,7 @@ public class Example {
 | **200** | Returns a single Product object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="createProductListingDirect"></a>
+<a id="createProductListingDirect"></a>
 # **createProductListingDirect**
 > ProductListing createProductListingDirect(createListingRequest)
 
@@ -187,7 +187,7 @@ public class Example {
 | **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteProduct"></a>
+<a id="deleteProduct"></a>
 # **deleteProduct**
 > SuccessFlag deleteProduct(productId)
 
@@ -257,7 +257,7 @@ public class Example {
 | **200** | Returns an SuccessFlag object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteProductListingDirect"></a>
+<a id="deleteProductListingDirect"></a>
 # **deleteProductListingDirect**
 > SuccessFlag deleteProductListingDirect(productId, hydrate)
 
@@ -329,7 +329,7 @@ public class Example {
 | **200** | Returns an SuccessFlag object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getActiveLicenses"></a>
+<a id="getActiveLicenses"></a>
 # **getActiveLicenses**
 > List&lt;License&gt; getActiveLicenses()
 
@@ -395,7 +395,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of License objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getBalance"></a>
+<a id="getBalance"></a>
 # **getBalance**
 > Balance getBalance(userId)
 
@@ -465,7 +465,7 @@ public class Example {
 | **200** | Returns a single Balance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getBalanceEarnings"></a>
+<a id="getBalanceEarnings"></a>
 # **getBalanceEarnings**
 > Balance getBalanceEarnings(userId)
 
@@ -535,7 +535,7 @@ public class Example {
 | **200** | Returns a single Balance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getBulkGiftPurchases"></a>
+<a id="getBulkGiftPurchases"></a>
 # **getBulkGiftPurchases**
 > List&lt;Object&gt; getBulkGiftPurchases(mostRecent)
 
@@ -605,7 +605,7 @@ public class Example {
 | **200** | Returns a list of ??? objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getCurrentSubscriptions"></a>
+<a id="getCurrentSubscriptions"></a>
 # **getCurrentSubscriptions**
 > List&lt;UserSubscription&gt; getCurrentSubscriptions()
 
@@ -671,7 +671,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of UserSubscription objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getEarningsMetrics"></a>
+<a id="getEarningsMetrics"></a>
 # **getEarningsMetrics**
 > EarningsMetrics getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration)
 
@@ -747,7 +747,7 @@ public class Example {
 | **200** | Returns a single EarningsMetrics object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getEconomyAccount"></a>
+<a id="getEconomyAccount"></a>
 # **getEconomyAccount**
 > EconomyAccount getEconomyAccount(userId)
 
@@ -817,7 +817,7 @@ public class Example {
 | **200** | Returns a single EconomyAccount object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getEconomyBalances"></a>
+<a id="getEconomyBalances"></a>
 # **getEconomyBalances**
 > EconomyBalances getEconomyBalances(userId)
 
@@ -887,7 +887,7 @@ public class Example {
 | **200** | Returns an EconomyBalances object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getEconomyPayoutStatus"></a>
+<a id="getEconomyPayoutStatus"></a>
 # **getEconomyPayoutStatus**
 > EconomyPayoutStatus getEconomyPayoutStatus(userId)
 
@@ -957,7 +957,7 @@ public class Example {
 | **200** | Returns an EconomyPayoutStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getEconomyPayouts"></a>
+<a id="getEconomyPayouts"></a>
 # **getEconomyPayouts**
 > EconomyPayoutList getEconomyPayouts(userId)
 
@@ -1027,7 +1027,7 @@ public class Example {
 | **200** | Returns an EconomyPayoutList object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getLicenseGroup"></a>
+<a id="getLicenseGroup"></a>
 # **getLicenseGroup**
 > LicenseGroup getLicenseGroup(licenseGroupId)
 
@@ -1097,7 +1097,7 @@ public class Example {
 | **200** | Returns a single LicenseGroup object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductListing"></a>
+<a id="getProductListing"></a>
 # **getProductListing**
 > ProductListing getProductListing(productId, hydrate)
 
@@ -1169,7 +1169,7 @@ public class Example {
 | **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductListingAlternate"></a>
+<a id="getProductListingAlternate"></a>
 # **getProductListingAlternate**
 > ProductListing getProductListingAlternate(productId)
 
@@ -1239,7 +1239,7 @@ public class Example {
 | **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductListings"></a>
+<a id="getProductListings"></a>
 # **getProductListings**
 > List&lt;ProductListing&gt; getProductListings(userId, n, offset, hydrate, listingType, groupId, active)
 
@@ -1321,7 +1321,7 @@ public class Example {
 | **200** | Returns a list of ProductListing objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductPurchase"></a>
+<a id="getProductPurchase"></a>
 # **getProductPurchase**
 > ProductPurchase getProductPurchase(productPurchaseId)
 
@@ -1391,7 +1391,7 @@ public class Example {
 | **200** | Returns a single ProductPurchase object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductPurchaseHistory"></a>
+<a id="getProductPurchaseHistory"></a>
 # **getProductPurchaseHistory**
 > ProductPurchaseHistory getProductPurchaseHistory(userId, n, dateMin, dateMax, fromUserId, toUserId, sort, order)
 
@@ -1475,7 +1475,7 @@ public class Example {
 | **200** | Returns a single ProductPurchaseHistory object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductPurchaseStacks"></a>
+<a id="getProductPurchaseStacks"></a>
 # **getProductPurchaseStacks**
 > List&lt;Object&gt; getProductPurchaseStacks(productPurchaseId)
 
@@ -1545,7 +1545,7 @@ public class Example {
 | **200** | Returns a list of stacks for a product purchase. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getProductPurchases"></a>
+<a id="getProductPurchases"></a>
 # **getProductPurchases**
 > List&lt;ProductPurchase&gt; getProductPurchases(buyerId, sellerId, n, offset, mostRecent, sort, order)
 
@@ -1627,7 +1627,7 @@ public class Example {
 | **200** | Returns a list of ProductPurchase objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getRecentSubscription"></a>
+<a id="getRecentSubscription"></a>
 # **getRecentSubscription**
 > UserSubscription getRecentSubscription()
 
@@ -1693,7 +1693,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a UserSubscription object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getSellerEligibility"></a>
+<a id="getSellerEligibility"></a>
 # **getSellerEligibility**
 > SellerEligibility getSellerEligibility()
 
@@ -1759,7 +1759,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a single SellerEligibility object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getSteamTransaction"></a>
+<a id="getSteamTransaction"></a>
 # **getSteamTransaction**
 > Transaction getSteamTransaction(transactionId)
 
@@ -1829,7 +1829,7 @@ public class Example {
 | **200** | Returns a single Transaction object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getSteamTransactions"></a>
+<a id="getSteamTransactions"></a>
 # **getSteamTransactions**
 > List&lt;Transaction&gt; getSteamTransactions()
 
@@ -1895,7 +1895,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of Transaction objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getStore"></a>
+<a id="getStore"></a>
 # **getStore**
 > Store getStore(storeId, hydrateListings, hydrateProducts)
 
@@ -1969,7 +1969,7 @@ public class Example {
 | **200** | Returns a single Store object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getStoreShelves"></a>
+<a id="getStoreShelves"></a>
 # **getStoreShelves**
 > List&lt;StoreShelf&gt; getStoreShelves(storeId, hydrateListings, fetch)
 
@@ -2043,7 +2043,7 @@ public class Example {
 | **200** | Returns a list of StoreShelf objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getSubscriptions"></a>
+<a id="getSubscriptions"></a>
 # **getSubscriptions**
 > List&lt;Subscription&gt; getSubscriptions()
 
@@ -2109,7 +2109,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of Subscription objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getTiliaStatus"></a>
+<a id="getTiliaStatus"></a>
 # **getTiliaStatus**
 > TiliaStatus getTiliaStatus()
 
@@ -2175,7 +2175,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a single TiliaStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getTiliaTos"></a>
+<a id="getTiliaTos"></a>
 # **getTiliaTos**
 > TiliaTOS getTiliaTos(userId)
 
@@ -2245,7 +2245,7 @@ public class Example {
 | **200** | Returns a single TiliaTOS object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getTokenBundles"></a>
+<a id="getTokenBundles"></a>
 # **getTokenBundles**
 > List&lt;TokenBundle&gt; getTokenBundles()
 
@@ -2311,11 +2311,11 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of TokenBundle objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserCreditsEligible"></a>
+<a id="getUserCreditsEligible"></a>
 # **getUserCreditsEligible**
 > UserCreditsEligible getUserCreditsEligible(userId, subscriptionId)
 
-Get User Credits Eligiblity
+Get User Credits Eligibility
 
 Get the user&#39;s eligibility status for subscriptions based on available credits.
 
@@ -2383,11 +2383,11 @@ public class Example {
 | **200** | Returns a single UserCreditsEligible object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserSubscriptionEligible"></a>
+<a id="getUserSubscriptionEligible"></a>
 # **getUserSubscriptionEligible**
 > UserSubscriptionEligible getUserSubscriptionEligible(userId, steamId)
 
-Get User Subscription Eligiblity
+Get User Subscription Eligibility
 
 Get the user&#39;s eligibility status for subscriptions.
 
@@ -2455,7 +2455,7 @@ public class Example {
 | **200** | Returns a single UserSubscriptionEligible object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserTiliaKyc"></a>
+<a id="getUserTiliaKyc"></a>
 # **getUserTiliaKyc**
 > TiliaKyc getUserTiliaKyc(userId)
 
@@ -2525,7 +2525,7 @@ public class Example {
 | **200** | Returns a TiliaKyc object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="listStores"></a>
+<a id="listStores"></a>
 # **listStores**
 > List&lt;Store&gt; listStores(sellerId, managementPov, n, offset)
 
@@ -2601,7 +2601,7 @@ public class Example {
 | **200** | Returns a list of Store objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="listUserProducts"></a>
+<a id="listUserProducts"></a>
 # **listUserProducts**
 > List&lt;Product&gt; listUserProducts(userId, n, offset)
 
@@ -2675,7 +2675,7 @@ public class Example {
 | **200** | Returns a list of Product objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="purchaseProductListing"></a>
+<a id="purchaseProductListing"></a>
 # **purchaseProductListing**
 > ProductPurchase purchaseProductListing(purchaseProductListingRequest)
 
@@ -2745,7 +2745,7 @@ public class Example {
 | **200** | Returns a single ProductPurchase object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateProduct"></a>
+<a id="updateProduct"></a>
 # **updateProduct**
 > Product updateProduct(productId, updateProductRequest)
 
@@ -2817,7 +2817,7 @@ public class Example {
 | **200** | Returns a single Product object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateProductListingDirect"></a>
+<a id="updateProductListingDirect"></a>
 # **updateProductListingDirect**
 > ProductListing updateProductListingDirect(productId, updateListingRequest, hydrate)
 
@@ -2891,7 +2891,7 @@ public class Example {
 | **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateTiliaTos"></a>
+<a id="updateTiliaTos"></a>
 # **updateTiliaTos**
 > Object updateTiliaTos(userId, updateTiliaTOSRequest)
 

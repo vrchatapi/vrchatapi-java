@@ -19,7 +19,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateGroupCalendarEvent**](CalendarApi.md#updateGroupCalendarEvent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event |
 
 
-<a name="createGroupCalendarEvent"></a>
+<a id="createGroupCalendarEvent"></a>
 # **createGroupCalendarEvent**
 > CalendarEvent createGroupCalendarEvent(groupId, createCalendarEventRequest)
 
@@ -93,7 +93,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to an invalid or illegal calendar request. |  -  |
 
-<a name="deleteGroupCalendarEvent"></a>
+<a id="deleteGroupCalendarEvent"></a>
 # **deleteGroupCalendarEvent**
 > Success deleteGroupCalendarEvent(groupId, calendarId)
 
@@ -166,7 +166,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
 
-<a name="discoverCalendarEvents"></a>
+<a id="discoverCalendarEvents"></a>
 # **discoverCalendarEvents**
 > CalendarEventDiscovery discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor)
 
@@ -256,7 +256,7 @@ public class Example {
 | **200** | Returns a CalendarEventDiscovery objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="followGroupCalendarEvent"></a>
+<a id="followGroupCalendarEvent"></a>
 # **followGroupCalendarEvent**
 > CalendarEvent followGroupCalendarEvent(groupId, calendarId, followCalendarEventRequest)
 
@@ -330,7 +330,7 @@ public class Example {
 | **200** | Returns a single CalendarEvent object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getCalendarEvents"></a>
+<a id="getCalendarEvents"></a>
 # **getCalendarEvents**
 > PaginatedCalendarEventList getCalendarEvents(date, n, offset)
 
@@ -404,7 +404,7 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFeaturedCalendarEvents"></a>
+<a id="getFeaturedCalendarEvents"></a>
 # **getFeaturedCalendarEvents**
 > PaginatedCalendarEventList getFeaturedCalendarEvents(date, n, offset)
 
@@ -478,7 +478,7 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFollowedCalendarEvents"></a>
+<a id="getFollowedCalendarEvents"></a>
 # **getFollowedCalendarEvents**
 > PaginatedCalendarEventList getFollowedCalendarEvents(date, n, offset)
 
@@ -552,7 +552,7 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGroupCalendarEvent"></a>
+<a id="getGroupCalendarEvent"></a>
 # **getGroupCalendarEvent**
 > CalendarEvent getGroupCalendarEvent(groupId, calendarId)
 
@@ -624,7 +624,7 @@ public class Example {
 | **200** | Returns a single CalendarEvent object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGroupCalendarEventICS"></a>
+<a id="getGroupCalendarEventICS"></a>
 # **getGroupCalendarEventICS**
 > File getGroupCalendarEventICS(groupId, calendarId)
 
@@ -690,7 +690,7 @@ No authorization required
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
 
-<a name="getGroupCalendarEvents"></a>
+<a id="getGroupCalendarEvents"></a>
 # **getGroupCalendarEvents**
 > PaginatedCalendarEventList getGroupCalendarEvents(groupId, date, n, offset)
 
@@ -766,7 +766,7 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGroupNextCalendarEvent"></a>
+<a id="getGroupNextCalendarEvent"></a>
 # **getGroupNextCalendarEvent**
 > CalendarEvent getGroupNextCalendarEvent(groupId)
 
@@ -837,7 +837,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
 
-<a name="searchCalendarEvents"></a>
+<a id="searchCalendarEvents"></a>
 # **searchCalendarEvents**
 > PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant)
 
@@ -915,7 +915,7 @@ public class Example {
 | **200** | Returns a list of CalendarEvent objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateGroupCalendarEvent"></a>
+<a id="updateGroupCalendarEvent"></a>
 # **updateGroupCalendarEvent**
 > CalendarEvent updateGroupCalendarEvent(groupId, calendarId, updateCalendarEventRequest)
 

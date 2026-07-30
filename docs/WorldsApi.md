@@ -25,7 +25,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateWorld**](WorldsApi.md#updateWorld) | **PUT** /worlds/{worldId} | Update World |
 
 
-<a name="addWorldTags"></a>
+<a id="addWorldTags"></a>
 # **addWorldTags**
 > World addWorldTags(worldId, changeWorldTagsRequest)
 
@@ -98,7 +98,7 @@ public class Example {
 | **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="checkUserPersistenceExists"></a>
+<a id="checkUserPersistenceExists"></a>
 # **checkUserPersistenceExists**
 > checkUserPersistenceExists(userId, worldId)
 
@@ -170,7 +170,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
-<a name="createWorld"></a>
+<a id="createWorld"></a>
 # **createWorld**
 > World createWorld(createWorldRequest)
 
@@ -231,10 +231,10 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single World object. |  -  |
-| **400** | Error response when trying create a world without having the neccesary Trust rank yet. |  -  |
+| **400** | Error response when trying create a world without having the necessary Trust rank yet. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteAllUserPersistenceData"></a>
+<a id="deleteAllUserPersistenceData"></a>
 # **deleteAllUserPersistenceData**
 > deleteAllUserPersistenceData(userId)
 
@@ -303,7 +303,7 @@ null (empty response body)
 | **200** | The user&#39;s persistence data for all worlds is deleted. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteUserPersistence"></a>
+<a id="deleteUserPersistence"></a>
 # **deleteUserPersistence**
 > deleteUserPersistence(userId, worldId)
 
@@ -375,7 +375,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
-<a name="deleteWorld"></a>
+<a id="deleteWorld"></a>
 # **deleteWorld**
 > deleteWorld(worldId)
 
@@ -445,7 +445,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="deleteWorldPlatform"></a>
+<a id="deleteWorldPlatform"></a>
 # **deleteWorldPlatform**
 > deleteWorldPlatform(worldId, publishedPlatform)
 
@@ -517,7 +517,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="getActiveWorlds"></a>
+<a id="getActiveWorlds"></a>
 # **getActiveWorlds**
 > List&lt;LimitedWorld&gt; getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform)
 
@@ -611,7 +611,7 @@ public class Example {
 | **200** | Returns a list of LimitedWorld objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFavoritedWorlds"></a>
+<a id="getFavoritedWorlds"></a>
 # **getFavoritedWorlds**
 > List&lt;FavoritedWorld&gt; getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
@@ -704,9 +704,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of FavoritedWorld objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **403** | Error response when trying to see favourited worlds of another user without sufficient admin permissions. |  -  |
+| **403** | Error response when trying to see favorited worlds of another user without sufficient admin permissions. |  -  |
 
-<a name="getRecentWorlds"></a>
+<a id="getRecentWorlds"></a>
 # **getRecentWorlds**
 > List&lt;LimitedWorld&gt; getRecentWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
@@ -801,7 +801,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see recently visited worlds of another user without sufficient admin permissions. |  -  |
 
-<a name="getWorld"></a>
+<a id="getWorld"></a>
 # **getWorld**
 > World getWorld(worldId)
 
@@ -864,7 +864,7 @@ No authorization required
 | **200** | Returns a single World object. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="getWorldInstance"></a>
+<a id="getWorldInstance"></a>
 # **getWorldInstance**
 > Instance getWorldInstance(worldId, instanceId)
 
@@ -936,7 +936,7 @@ public class Example {
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getWorldMetadata"></a>
+<a id="getWorldMetadata"></a>
 # **getWorldMetadata**
 > WorldMetadata getWorldMetadata(worldId)
 
@@ -999,7 +999,7 @@ No authorization required
 | **200** | OK |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="getWorldPublishStatus"></a>
+<a id="getWorldPublishStatus"></a>
 # **getWorldPublishStatus**
 > WorldPublishStatus getWorldPublishStatus(worldId)
 
@@ -1070,7 +1070,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="publishWorld"></a>
+<a id="publishWorld"></a>
 # **publishWorld**
 > publishWorld(worldId)
 
@@ -1140,7 +1140,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="removeWorldTags"></a>
+<a id="removeWorldTags"></a>
 # **removeWorldTags**
 > World removeWorldTags(worldId, changeWorldTagsRequest)
 
@@ -1213,7 +1213,7 @@ public class Example {
 | **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="searchWorlds"></a>
+<a id="searchWorlds"></a>
 # **searchWorlds**
 > List&lt;LimitedWorld&gt; searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific)
 
@@ -1315,7 +1315,7 @@ public class Example {
 | **200** | Returns a list of LimitedWorld objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="unpublishWorld"></a>
+<a id="unpublishWorld"></a>
 # **unpublishWorld**
 > unpublishWorld(worldId)
 
@@ -1385,7 +1385,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
 
-<a name="updateWorld"></a>
+<a id="updateWorld"></a>
 # **updateWorld**
 > World updateWorld(worldId, updateWorldRequest)
 

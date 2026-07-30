@@ -172,8 +172,8 @@ docs/InstancesApi.md
 docs/Inventory.md
 docs/InventoryApi.md
 docs/InventoryConsumptionResults.md
-docs/InventoryDefaultAttributes1.md
-docs/InventoryDefaultAttributes1Validator.md
+docs/InventoryDefaultAttributesValue.md
+docs/InventoryDefaultAttributesValueValidator.md
 docs/InventoryDrop.md
 docs/InventoryEquipSlot.md
 docs/InventoryFlag.md
@@ -214,6 +214,7 @@ docs/ModerationReport.md
 docs/MutualFriend.md
 docs/Mutuals.md
 docs/Notification.md
+docs/NotificationDetailBoop.md
 docs/NotificationDetailInvite.md
 docs/NotificationDetailInviteResponse.md
 docs/NotificationDetailRequestInvite.md
@@ -221,6 +222,13 @@ docs/NotificationDetailRequestInviteResponse.md
 docs/NotificationDetailVoteToKick.md
 docs/NotificationType.md
 docs/NotificationV2.md
+docs/NotificationV2Data.md
+docs/NotificationV2DataBadgeEarned.md
+docs/NotificationV2DataBoop.md
+docs/NotificationV2DataEventAnnouncement.md
+docs/NotificationV2DataGroupAnnouncement.md
+docs/NotificationV2DataGroupInformative.md
+docs/NotificationV2DataGroupTransfer.md
 docs/NotificationV2DetailsBoop.md
 docs/NotificationV2Response.md
 docs/NotificationV2Type.md
@@ -245,6 +253,8 @@ docs/PlayermoderationApi.md
 docs/Print.md
 docs/PrintFiles.md
 docs/PrintsApi.md
+docs/PrivateProfile.md
+docs/PrivateProfileActivity.md
 docs/Product.md
 docs/ProductListing.md
 docs/ProductListingType.md
@@ -256,13 +266,16 @@ docs/ProductPurchaseProduct.md
 docs/ProductPurchasePurchaseContext.md
 docs/ProductPurchaseRecord.md
 docs/ProductType.md
+docs/ProfileRepresentedGroup.md
 docs/Prop.md
 docs/PropPublishStatus.md
 docs/PropUnityPackage.md
 docs/PropsApi.md
+docs/PublicProfile.md
 docs/PurchaseContextData.md
 docs/PurchaseProductListingRequest.md
 docs/Region.md
+docs/RegisterUserAccount200Response.md
 docs/RegisterUserAccountRequest.md
 docs/ReleaseStatus.md
 docs/ReportCategory.md
@@ -270,6 +283,7 @@ docs/ReportReason.md
 docs/RepresentedGroup.md
 docs/RequestInviteRequest.md
 docs/RequestInviteWithPhotoRequest.md
+docs/RequiresTwoFactorAuth.md
 docs/RespondGroupJoinRequest.md
 docs/RespondInviteWithPhotoRequest.md
 docs/RespondNotificationV2Request.md
@@ -282,6 +296,7 @@ docs/RewardRedemptionResult.md
 docs/SearchGroupMembers200Response.md
 docs/SellerEligibility.md
 docs/SentNotification.md
+docs/SentNotificationDetails.md
 docs/ServiceQueueStats.md
 docs/ServiceStatus.md
 docs/ShareInventoryItemDirectRequest.md
@@ -310,6 +325,7 @@ docs/TransactionSteamWalletInfo.md
 docs/TransferGroupRequest.md
 docs/TutorialStatus.md
 docs/TwoFactorAuthCode.md
+docs/TwoFactorAuthType.md
 docs/TwoFactorEmailCode.md
 docs/TwoFactorRecoveryCodes.md
 docs/TwoFactorRecoveryCodesOtpInner.md
@@ -559,8 +575,8 @@ src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/Inventory.java
 src/main/java/io/github/vrchatapi/model/InventoryConsumptionResults.java
-src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributes1.java
-src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributes1Validator.java
+src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValue.java
+src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValueValidator.java
 src/main/java/io/github/vrchatapi/model/InventoryDrop.java
 src/main/java/io/github/vrchatapi/model/InventoryEquipSlot.java
 src/main/java/io/github/vrchatapi/model/InventoryFlag.java
@@ -598,6 +614,7 @@ src/main/java/io/github/vrchatapi/model/ModerationReport.java
 src/main/java/io/github/vrchatapi/model/MutualFriend.java
 src/main/java/io/github/vrchatapi/model/Mutuals.java
 src/main/java/io/github/vrchatapi/model/Notification.java
+src/main/java/io/github/vrchatapi/model/NotificationDetailBoop.java
 src/main/java/io/github/vrchatapi/model/NotificationDetailInvite.java
 src/main/java/io/github/vrchatapi/model/NotificationDetailInviteResponse.java
 src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInvite.java
@@ -605,6 +622,13 @@ src/main/java/io/github/vrchatapi/model/NotificationDetailRequestInviteResponse.
 src/main/java/io/github/vrchatapi/model/NotificationDetailVoteToKick.java
 src/main/java/io/github/vrchatapi/model/NotificationType.java
 src/main/java/io/github/vrchatapi/model/NotificationV2.java
+src/main/java/io/github/vrchatapi/model/NotificationV2Data.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataBadgeEarned.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataBoop.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataEventAnnouncement.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataGroupAnnouncement.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataGroupInformative.java
+src/main/java/io/github/vrchatapi/model/NotificationV2DataGroupTransfer.java
 src/main/java/io/github/vrchatapi/model/NotificationV2DetailsBoop.java
 src/main/java/io/github/vrchatapi/model/NotificationV2Response.java
 src/main/java/io/github/vrchatapi/model/NotificationV2Type.java
@@ -626,6 +650,8 @@ src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
 src/main/java/io/github/vrchatapi/model/Print.java
 src/main/java/io/github/vrchatapi/model/PrintFiles.java
+src/main/java/io/github/vrchatapi/model/PrivateProfile.java
+src/main/java/io/github/vrchatapi/model/PrivateProfileActivity.java
 src/main/java/io/github/vrchatapi/model/Product.java
 src/main/java/io/github/vrchatapi/model/ProductListing.java
 src/main/java/io/github/vrchatapi/model/ProductListingType.java
@@ -637,12 +663,15 @@ src/main/java/io/github/vrchatapi/model/ProductPurchaseProduct.java
 src/main/java/io/github/vrchatapi/model/ProductPurchasePurchaseContext.java
 src/main/java/io/github/vrchatapi/model/ProductPurchaseRecord.java
 src/main/java/io/github/vrchatapi/model/ProductType.java
+src/main/java/io/github/vrchatapi/model/ProfileRepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/Prop.java
 src/main/java/io/github/vrchatapi/model/PropPublishStatus.java
 src/main/java/io/github/vrchatapi/model/PropUnityPackage.java
+src/main/java/io/github/vrchatapi/model/PublicProfile.java
 src/main/java/io/github/vrchatapi/model/PurchaseContextData.java
 src/main/java/io/github/vrchatapi/model/PurchaseProductListingRequest.java
 src/main/java/io/github/vrchatapi/model/Region.java
+src/main/java/io/github/vrchatapi/model/RegisterUserAccount200Response.java
 src/main/java/io/github/vrchatapi/model/RegisterUserAccountRequest.java
 src/main/java/io/github/vrchatapi/model/ReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/ReportCategory.java
@@ -650,6 +679,7 @@ src/main/java/io/github/vrchatapi/model/ReportReason.java
 src/main/java/io/github/vrchatapi/model/RepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/RequestInviteWithPhotoRequest.java
+src/main/java/io/github/vrchatapi/model/RequiresTwoFactorAuth.java
 src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/RespondInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RespondNotificationV2Request.java
@@ -662,6 +692,7 @@ src/main/java/io/github/vrchatapi/model/RewardRedemptionResult.java
 src/main/java/io/github/vrchatapi/model/SearchGroupMembers200Response.java
 src/main/java/io/github/vrchatapi/model/SellerEligibility.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
+src/main/java/io/github/vrchatapi/model/SentNotificationDetails.java
 src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
 src/main/java/io/github/vrchatapi/model/ServiceStatus.java
 src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
@@ -690,6 +721,7 @@ src/main/java/io/github/vrchatapi/model/TransactionSteamWalletInfo.java
 src/main/java/io/github/vrchatapi/model/TransferGroupRequest.java
 src/main/java/io/github/vrchatapi/model/TutorialStatus.java
 src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
+src/main/java/io/github/vrchatapi/model/TwoFactorAuthType.java
 src/main/java/io/github/vrchatapi/model/TwoFactorEmailCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodes.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodesOtpInner.java

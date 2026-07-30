@@ -12,7 +12,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**unfriend**](FriendsApi.md#unfriend) | **DELETE** /auth/user/friends/{userId} | Unfriend |
 
 
-<a name="boop"></a>
+<a id="boop"></a>
 # **boop**
 > Success boop(userId, boopRequest)
 
@@ -86,7 +86,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to send a friend request to a user which doesn&#39;t exist. |  -  |
 
-<a name="deleteFriendRequest"></a>
+<a id="deleteFriendRequest"></a>
 # **deleteFriendRequest**
 > Success deleteFriendRequest(userId)
 
@@ -157,7 +157,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to delete a non-existent friend-request. |  -  |
 
-<a name="friend"></a>
+<a id="friend"></a>
 # **friend**
 > Notification friend(userId)
 
@@ -224,12 +224,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **400** | Bad request error response when sending a friend request |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to send a friend request to a user which doesn&#39;t exist. |  -  |
 
-<a name="getFriendStatus"></a>
+<a id="getFriendStatus"></a>
 # **getFriendStatus**
 > FriendStatus getFriendStatus(userId)
 
@@ -299,7 +299,7 @@ public class Example {
 | **200** | Returns a users Friend Status. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getFriends"></a>
+<a id="getFriends"></a>
 # **getFriends**
 > List&lt;LimitedUserFriend&gt; getFriends(offset, n, offline)
 
@@ -373,7 +373,7 @@ public class Example {
 | **200** | Returns a list of LimitedUserFriend objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="unfriend"></a>
+<a id="unfriend"></a>
 # **unfriend**
 > Success unfriend(userId)
 

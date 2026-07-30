@@ -29,7 +29,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code |
 
 
-<a name="cancelPending2FA"></a>
+<a id="cancelPending2FA"></a>
 # **cancelPending2FA**
 > Disable2FAResult cancelPending2FA()
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="checkUserExists"></a>
+<a id="checkUserExists"></a>
 # **checkUserExists**
 > UserExists checkUserExists(email, displayName, username, excludeUserId)
 
@@ -164,7 +164,7 @@ No authorization required
 | **200** | Returns a response if a user exists or not. |  -  |
 | **400** | Error response when missing at least 1 of the required parameters. |  -  |
 
-<a name="confirmEmail"></a>
+<a id="confirmEmail"></a>
 # **confirmEmail**
 > confirmEmail(id, verifyEmail)
 
@@ -227,7 +227,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **302** | OK |  -  |
 
-<a name="createGlobalAvatarModeration"></a>
+<a id="createGlobalAvatarModeration"></a>
 # **createGlobalAvatarModeration**
 > AvatarModerationCreated createGlobalAvatarModeration(createAvatarModerationRequest)
 
@@ -297,7 +297,7 @@ public class Example {
 | **200** | Returns a single AvatarModerationCreated object |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteGlobalAvatarModeration"></a>
+<a id="deleteGlobalAvatarModeration"></a>
 # **deleteGlobalAvatarModeration**
 > OkStatus2 deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType)
 
@@ -369,7 +369,7 @@ public class Example {
 | **200** | Returns a single OkStatus2 object |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteModerationReport"></a>
+<a id="deleteModerationReport"></a>
 # **deleteModerationReport**
 > SuccessFlag deleteModerationReport(moderationReportId)
 
@@ -440,7 +440,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
 
-<a name="deleteUser"></a>
+<a id="deleteUser"></a>
 # **deleteUser**
 > CurrentUser deleteUser(userId)
 
@@ -510,7 +510,7 @@ public class Example {
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="disable2FA"></a>
+<a id="disable2FA"></a>
 # **disable2FA**
 > Disable2FAResult disable2FA()
 
@@ -576,7 +576,7 @@ This endpoint does not need any parameter.
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="enable2FA"></a>
+<a id="enable2FA"></a>
 # **enable2FA**
 > Pending2FAResult enable2FA()
 
@@ -642,9 +642,9 @@ This endpoint does not need any parameter.
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getCurrentUser"></a>
+<a id="getCurrentUser"></a>
 # **getCurrentUser**
-> CurrentUser getCurrentUser()
+> RegisterUserAccount200Response getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -665,12 +665,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
     
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
     // Configure HTTP basic authorization: authHeader
     HttpBasicAuth authHeader = (HttpBasicAuth) defaultClient.getAuthentication("authHeader");
     authHeader.setUsername("YOUR USERNAME");
@@ -682,9 +676,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //twoFactorAuthCookie.setApiKeyPrefix("Token");
 
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     try {
-      CurrentUser result = apiInstance.getCurrentUser();
+      RegisterUserAccount200Response result = apiInstance.getCurrentUser();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getCurrentUser");
@@ -702,11 +702,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [authHeader](../README.md#authHeader), [twoFactorAuthCookie](../README.md#twoFactorAuthCookie)
+[authHeader](../README.md#authHeader), [twoFactorAuthCookie](../README.md#twoFactorAuthCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -719,7 +719,7 @@ This endpoint does not need any parameter.
 | **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGlobalAvatarModerations"></a>
+<a id="getGlobalAvatarModerations"></a>
 # **getGlobalAvatarModerations**
 > List&lt;AvatarModeration&gt; getGlobalAvatarModerations()
 
@@ -785,7 +785,7 @@ This endpoint does not need any parameter.
 | **200** | Returns list of globally blocked avatars with timestamps |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getModerationReports"></a>
+<a id="getModerationReports"></a>
 # **getModerationReports**
 > PaginatedModerationReportList getModerationReports(offset, n, reportingUserId, status, type)
 
@@ -864,7 +864,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
 
-<a name="getRecoveryCodes"></a>
+<a id="getRecoveryCodes"></a>
 # **getRecoveryCodes**
 > TwoFactorRecoveryCodes getRecoveryCodes()
 
@@ -930,7 +930,7 @@ This endpoint does not need any parameter.
 | **200** | Returns the two factor recovery codes |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="logout"></a>
+<a id="logout"></a>
 # **logout**
 > Success logout()
 
@@ -996,9 +996,9 @@ This endpoint does not need any parameter.
 | **200** | OK |  * Set-Cookie - Clears the &#x60;auth&#x60; cookie. <br>  * \0Set-Cookie - Clears the &#x60;age&#x60; cookie. <br>  * \0\0Set-Cookie - Clears the &#x60;tos&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="registerUserAccount"></a>
+<a id="registerUserAccount"></a>
 # **registerUserAccount**
-> CurrentUser registerUserAccount(registerUserAccountRequest)
+> RegisterUserAccount200Response registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -1021,7 +1021,7 @@ public class Example {
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     RegisterUserAccountRequest registerUserAccountRequest = new RegisterUserAccountRequest(); // RegisterUserAccountRequest | 
     try {
-      CurrentUser result = apiInstance.registerUserAccount(registerUserAccountRequest);
+      RegisterUserAccount200Response result = apiInstance.registerUserAccount(registerUserAccountRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#registerUserAccount");
@@ -1042,7 +1042,7 @@ public class Example {
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
 
 ### Authorization
 
@@ -1059,7 +1059,7 @@ No authorization required
 | **200** | OK |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="resendEmailConfirmation"></a>
+<a id="resendEmailConfirmation"></a>
 # **resendEmailConfirmation**
 > Success resendEmailConfirmation()
 
@@ -1125,7 +1125,7 @@ This endpoint does not need any parameter.
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="submitModerationReport"></a>
+<a id="submitModerationReport"></a>
 # **submitModerationReport**
 > ModerationReport submitModerationReport(submitModerationReportRequest)
 
@@ -1195,7 +1195,7 @@ public class Example {
 | **200** | Returns a single ModerationReport object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="verify2FA"></a>
+<a id="verify2FA"></a>
 # **verify2FA**
 > Verify2FAResult verify2FA(twoFactorAuthCode)
 
@@ -1265,7 +1265,7 @@ public class Example {
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="verify2FAEmailCode"></a>
+<a id="verify2FAEmailCode"></a>
 # **verify2FAEmailCode**
 > Verify2FAEmailCodeResult verify2FAEmailCode(twoFactorEmailCode)
 
@@ -1335,7 +1335,7 @@ public class Example {
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="verifyAuthToken"></a>
+<a id="verifyAuthToken"></a>
 # **verifyAuthToken**
 > VerifyAuthTokenResult verifyAuthToken()
 
@@ -1401,7 +1401,7 @@ This endpoint does not need any parameter.
 | **200** | Returns wether a provided auth token is valid or not. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="verifyLoginPlace"></a>
+<a id="verifyLoginPlace"></a>
 # **verifyLoginPlace**
 > verifyLoginPlace(token, userId)
 
@@ -1464,7 +1464,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **302** | OK |  -  |
 
-<a name="verifyPending2FA"></a>
+<a id="verifyPending2FA"></a>
 # **verifyPending2FA**
 > Verify2FAResult verifyPending2FA(twoFactorAuthCode)
 
@@ -1534,7 +1534,7 @@ public class Example {
 | **200** | OK |  * Set-Cookie - Provides a &#x60;twoFactorAuth&#x60; cookie, which can be used to bypasses the 2FA requirement for future logins on the same device. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="verifyRecoveryCode"></a>
+<a id="verifyRecoveryCode"></a>
 # **verifyRecoveryCode**
 > Verify2FAResult verifyRecoveryCode(twoFactorAuthCode)
 
