@@ -21,7 +21,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateOwnInventoryItem**](InventoryApi.md#updateOwnInventoryItem) | **PUT** /inventory/{inventoryItemId} | Update Own Inventory Item |
 
 
-<a name="consumeOwnInventoryItem"></a>
+<a id="consumeOwnInventoryItem"></a>
 # **consumeOwnInventoryItem**
 > InventoryConsumptionResults consumeOwnInventoryItem(inventoryItemId)
 
@@ -92,7 +92,7 @@ public class Example {
 | **400** | Error response when trying to consume an InventoryItem lacking the consumable flag. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteOwnInventoryItem"></a>
+<a id="deleteOwnInventoryItem"></a>
 # **deleteOwnInventoryItem**
 > SuccessFlag deleteOwnInventoryItem(inventoryItemId)
 
@@ -162,7 +162,7 @@ public class Example {
 | **200** | Returns an SuccessFlag object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="equipOwnInventoryItem"></a>
+<a id="equipOwnInventoryItem"></a>
 # **equipOwnInventoryItem**
 > InventoryItem equipOwnInventoryItem(inventoryItemId, equipInventoryItemRequest)
 
@@ -235,7 +235,7 @@ public class Example {
 | **400** | Error response when trying to equip an InventoryItem lacking the equippable flag. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInventory"></a>
+<a id="getInventory"></a>
 # **getInventory**
 > Inventory getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived)
 
@@ -326,7 +326,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
 
-<a name="getInventoryCollections"></a>
+<a id="getInventoryCollections"></a>
 # **getInventoryCollections**
 > List&lt;String&gt; getInventoryCollections()
 
@@ -392,7 +392,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of strings. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInventoryDrops"></a>
+<a id="getInventoryDrops"></a>
 # **getInventoryDrops**
 > List&lt;InventoryDrop&gt; getInventoryDrops(active)
 
@@ -462,7 +462,7 @@ public class Example {
 | **200** | Returns a list of InventoryDrop objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getInventoryTemplate"></a>
+<a id="getInventoryTemplate"></a>
 # **getInventoryTemplate**
 > InventoryTemplate getInventoryTemplate(inventoryTemplateId)
 
@@ -532,7 +532,7 @@ public class Example {
 | **200** | Returns an InventoryTemplate object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getOwnInventoryItem"></a>
+<a id="getOwnInventoryItem"></a>
 # **getOwnInventoryItem**
 > InventoryItem getOwnInventoryItem(inventoryItemId)
 
@@ -602,7 +602,7 @@ public class Example {
 | **200** | Returns an InventoryItem object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getUserInventoryItem"></a>
+<a id="getUserInventoryItem"></a>
 # **getUserInventoryItem**
 > InventoryItem getUserInventoryItem(userId, inventoryItemId)
 
@@ -674,7 +674,7 @@ public class Example {
 | **200** | Returns an InventoryItem object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="redeemReward"></a>
+<a id="redeemReward"></a>
 # **redeemReward**
 > List&lt;RewardRedemptionResult&gt; redeemReward(rewardRedemptionRequest)
 
@@ -744,7 +744,7 @@ public class Example {
 | **200** | Returns a single RewardRedemptionResult object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="shareInventoryItemDirect"></a>
+<a id="shareInventoryItemDirect"></a>
 # **shareInventoryItemDirect**
 > OkStatus shareInventoryItemDirect(itemId, duration, shareInventoryItemDirectRequest)
 
@@ -818,7 +818,7 @@ public class Example {
 | **200** | Returns an OkStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="shareInventoryItemPedestal"></a>
+<a id="shareInventoryItemPedestal"></a>
 # **shareInventoryItemPedestal**
 > InventorySpawn shareInventoryItemPedestal(itemId, duration)
 
@@ -890,7 +890,7 @@ public class Example {
 | **200** | Returns an InventorySpawn object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="spawnInventoryItem"></a>
+<a id="spawnInventoryItem"></a>
 # **spawnInventoryItem**
 > InventorySpawn spawnInventoryItem(id)
 
@@ -960,7 +960,7 @@ public class Example {
 | **200** | Returns an InventorySpawn object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="unequipOwnInventorySlot"></a>
+<a id="unequipOwnInventorySlot"></a>
 # **unequipOwnInventorySlot**
 > String unequipOwnInventorySlot(inventoryItemId)
 
@@ -1030,7 +1030,7 @@ public class Example {
 | **200** | Returns a string. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="updateOwnInventoryItem"></a>
+<a id="updateOwnInventoryItem"></a>
 # **updateOwnInventoryItem**
 > InventoryItem updateOwnInventoryItem(inventoryItemId, updateInventoryItemRequest)
 

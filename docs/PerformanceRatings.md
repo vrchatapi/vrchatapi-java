@@ -15,7 +15,7 @@
 
 * `POOR` (value: `"Poor"`)
 
-* `VERYPOOR` (value: `"VeryPoor"`)
+* `VERY_POOR` (value: `"VeryPoor"`)
 
 
 

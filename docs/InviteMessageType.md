@@ -9,7 +9,7 @@
 
 * `REQUEST` (value: `"request"`)
 
-* `REQUESTRESPONSE` (value: `"requestResponse"`)
+* `REQUEST_RESPONSE` (value: `"requestResponse"`)
 
 * `RESPONSE` (value: `"response"`)
 

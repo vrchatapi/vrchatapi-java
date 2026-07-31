@@ -7,17 +7,17 @@
 
 * `BOOP` (value: `"boop"`)
 
-* `FRIENDREQUEST` (value: `"friendRequest"`)
+* `FRIEND_REQUEST` (value: `"friendRequest"`)
 
 * `INVITE` (value: `"invite"`)
 
-* `INVITERESPONSE` (value: `"inviteResponse"`)
+* `INVITE_RESPONSE` (value: `"inviteResponse"`)
 
 * `MESSAGE` (value: `"message"`)
 
-* `REQUESTINVITE` (value: `"requestInvite"`)
+* `REQUEST_INVITE` (value: `"requestInvite"`)
 
-* `REQUESTINVITERESPONSE` (value: `"requestInviteResponse"`)
+* `REQUEST_INVITE_RESPONSE` (value: `"requestInviteResponse"`)
 
 * `VOTETOKICK` (value: `"votetokick"`)
 

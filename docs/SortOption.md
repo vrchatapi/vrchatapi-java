@@ -15,7 +15,7 @@
 
 * `HEAT` (value: `"heat"`)
 
-* `LABSPUBLICATIONDATE` (value: `"labsPublicationDate"`)
+* `LABS_PUBLICATION_DATE` (value: `"labsPublicationDate"`)
 
 * `MAGIC` (value: `"magic"`)
 
@@ -25,15 +25,15 @@
 
 * `POPULARITY` (value: `"popularity"`)
 
-* `PUBLICATIONDATE` (value: `"publicationDate"`)
+* `PUBLICATION_DATE` (value: `"publicationDate"`)
 
 * `RANDOM` (value: `"random"`)
 
 * `RELEVANCE` (value: `"relevance"`)
 
-* `REPORTCOUNT` (value: `"reportCount"`)
+* `REPORT_COUNT` (value: `"reportCount"`)
 
-* `REPORTSCORE` (value: `"reportScore"`)
+* `REPORT_SCORE` (value: `"reportScore"`)
 
 * `SHUFFLE` (value: `"shuffle"`)
 

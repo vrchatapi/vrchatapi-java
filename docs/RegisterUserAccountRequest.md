@@ -13,7 +13,7 @@
 |**email** | **String** | Email address |  |
 |**month** | **String** | Birth month of year |  |
 |**password** | **String** | Password |  |
-|**subscribe** | **Boolean** | Whether to recieve promotional emails |  |
+|**subscribe** | **Boolean** | Whether to receive promotional emails |  |
 |**username** | **String** | Display Name / Username (Username is a sanitized version) |  |
 |**year** | **String** | Birth year |  |
 

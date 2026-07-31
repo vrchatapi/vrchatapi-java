@@ -7,11 +7,11 @@
 
 * `DEFAULT` (value: `"default"`)
 
-* `MANAGEDFREE` (value: `"managedFree"`)
+* `MANAGED_FREE` (value: `"managedFree"`)
 
-* `MANAGEDINVITE` (value: `"managedInvite"`)
+* `MANAGED_INVITE` (value: `"managedInvite"`)
 
-* `MANAGEDREQUEST` (value: `"managedRequest"`)
+* `MANAGED_REQUEST` (value: `"managedRequest"`)
 
 
 

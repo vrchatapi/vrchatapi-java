@@ -10,7 +10,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**unmoderateUser**](PlayermoderationApi.md#unmoderateUser) | **PUT** /auth/user/unplayermoderate | Unmoderate User |
 
 
-<a name="clearAllPlayerModerations"></a>
+<a id="clearAllPlayerModerations"></a>
 # **clearAllPlayerModerations**
 > Success clearAllPlayerModerations()
 
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 | **200** | Success response after e.g. clearing all player moderations. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getPlayerModerations"></a>
+<a id="getPlayerModerations"></a>
 # **getPlayerModerations**
 > List&lt;PlayerModeration&gt; getPlayerModerations(type, targetUserId)
 
@@ -148,7 +148,7 @@ public class Example {
 | **200** | Returns a list of PlayerModeration objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="moderateUser"></a>
+<a id="moderateUser"></a>
 # **moderateUser**
 > PlayerModeration moderateUser(moderateUserRequest)
 
@@ -218,7 +218,7 @@ public class Example {
 | **200** | Returns a single PlayerModeration object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="unmoderateUser"></a>
+<a id="unmoderateUser"></a>
 # **unmoderateUser**
 > Success unmoderateUser(moderateUserRequest)
 

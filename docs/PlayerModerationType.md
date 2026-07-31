@@ -7,21 +7,21 @@
 
 * `BLOCK` (value: `"block"`)
 
-* `HIDEAVATAR` (value: `"hideAvatar"`)
+* `HIDE_AVATAR` (value: `"hideAvatar"`)
 
-* `INTERACTOFF` (value: `"interactOff"`)
+* `INTERACT_OFF` (value: `"interactOff"`)
 
-* `INTERACTON` (value: `"interactOn"`)
+* `INTERACT_ON` (value: `"interactOn"`)
 
 * `MUTE` (value: `"mute"`)
 
-* `MUTECHAT` (value: `"muteChat"`)
+* `MUTE_CHAT` (value: `"muteChat"`)
 
-* `SHOWAVATAR` (value: `"showAvatar"`)
+* `SHOW_AVATAR` (value: `"showAvatar"`)
 
 * `UNMUTE` (value: `"unmute"`)
 
-* `UNMUTECHAT` (value: `"unmuteChat"`)
+* `UNMUTE_CHAT` (value: `"unmuteChat"`)
 
 
 

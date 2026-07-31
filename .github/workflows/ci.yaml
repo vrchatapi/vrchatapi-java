@@ -44,7 +44,7 @@ jobs:
         run: npm install @openapitools/openapi-generator-cli
 
       - name: Set OpenAPI Generator version
-        run: ./node_modules/\@openapitools/openapi-generator-cli/main.js version-manager set 6.2.1
+        run: ./node_modules/\@openapitools/openapi-generator-cli/main.js version-manager set 7.24.0
 
       - name: Download Specification
         run: wget "${SPEC_URL}" '--output-document' "${ARTIFACT_NAME}"

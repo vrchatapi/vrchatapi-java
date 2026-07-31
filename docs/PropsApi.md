@@ -14,7 +14,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateProp**](PropsApi.md#updateProp) | **PUT** /props/{propId} | Update Prop |
 
 
-<a name="createProp"></a>
+<a id="createProp"></a>
 # **createProp**
 > Prop createProp(createPropRequest)
 
@@ -85,7 +85,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
 
-<a name="deleteProp"></a>
+<a id="deleteProp"></a>
 # **deleteProp**
 > deleteProp(propId)
 
@@ -156,7 +156,7 @@ null (empty response body)
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing prop. |  -  |
 
-<a name="getProp"></a>
+<a id="getProp"></a>
 # **getProp**
 > Prop getProp(propId)
 
@@ -227,7 +227,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing prop. |  -  |
 
-<a name="getPropPublishStatus"></a>
+<a id="getPropPublishStatus"></a>
 # **getPropPublishStatus**
 > PropPublishStatus getPropPublishStatus(propId)
 
@@ -299,7 +299,7 @@ public class Example {
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing prop. |  -  |
 
-<a name="listProps"></a>
+<a id="listProps"></a>
 # **listProps**
 > List&lt;Prop&gt; listProps(authorId, n, offset)
 
@@ -374,7 +374,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
 
-<a name="publishProp"></a>
+<a id="publishProp"></a>
 # **publishProp**
 > PropPublishStatus publishProp(propId)
 
@@ -446,7 +446,7 @@ public class Example {
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing prop. |  -  |
 
-<a name="unpublishProp"></a>
+<a id="unpublishProp"></a>
 # **unpublishProp**
 > PropPublishStatus unpublishProp(propId)
 
@@ -518,7 +518,7 @@ public class Example {
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing prop. |  -  |
 
-<a name="updateProp"></a>
+<a id="updateProp"></a>
 # **updateProp**
 > Prop updateProp(propId, updatePropRequest)
 

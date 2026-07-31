@@ -20,7 +20,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateAvatar**](AvatarsApi.md#updateAvatar) | **PUT** /avatars/{avatarId} | Update Avatar |
 
 
-<a name="createAvatar"></a>
+<a id="createAvatar"></a>
 # **createAvatar**
 > Avatar createAvatar(createAvatarRequest)
 
@@ -91,7 +91,7 @@ public class Example {
 | **400** | Error response due to missing permissions. |  -  |
 | **401** | Error response when set featured to true without being an admin. |  -  |
 
-<a name="deleteAvatar"></a>
+<a id="deleteAvatar"></a>
 # **deleteAvatar**
 > Avatar deleteAvatar(avatarId)
 
@@ -162,7 +162,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="deleteImpostor"></a>
+<a id="deleteImpostor"></a>
 # **deleteImpostor**
 > deleteImpostor(avatarId)
 
@@ -232,7 +232,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="enqueueImpostor"></a>
+<a id="enqueueImpostor"></a>
 # **enqueueImpostor**
 > ServiceStatus enqueueImpostor(avatarId)
 
@@ -303,7 +303,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="getAvatar"></a>
+<a id="getAvatar"></a>
 # **getAvatar**
 > Avatar getAvatar(avatarId)
 
@@ -374,7 +374,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="getAvatarStyles"></a>
+<a id="getAvatarStyles"></a>
 # **getAvatarStyles**
 > List&lt;AvatarStyle&gt; getAvatarStyles()
 
@@ -432,7 +432,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Returns a list of AvatarStyle objects. |  -  |
 
-<a name="getFavoritedAvatars"></a>
+<a id="getFavoritedAvatars"></a>
 # **getFavoritedAvatars**
 > List&lt;Avatar&gt; getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
@@ -525,9 +525,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of Avatar objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **403** | Error response when trying to see favourited avatars of another user without sufficient admin permissions. |  -  |
+| **403** | Error response when trying to see favorited avatars of another user without sufficient admin permissions. |  -  |
 
-<a name="getImpostorQueueStats"></a>
+<a id="getImpostorQueueStats"></a>
 # **getImpostorQueueStats**
 > ServiceQueueStats getImpostorQueueStats()
 
@@ -593,7 +593,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a Service Queue Stats. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getLicensedAvatars"></a>
+<a id="getLicensedAvatars"></a>
 # **getLicensedAvatars**
 > List&lt;Avatar&gt; getLicensedAvatars(n, offset)
 
@@ -665,7 +665,7 @@ public class Example {
 | **200** | Returns a list of Avatar objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getOwnAvatar"></a>
+<a id="getOwnAvatar"></a>
 # **getOwnAvatar**
 > Avatar getOwnAvatar(userId)
 
@@ -736,7 +736,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see another users current avatar without sufficient admin permissions. |  -  |
 
-<a name="searchAvatars"></a>
+<a id="searchAvatars"></a>
 # **searchAvatars**
 > List&lt;Avatar&gt; searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant)
 
@@ -832,7 +832,7 @@ public class Example {
 | **200** | Returns a list of Avatar objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="selectAvatar"></a>
+<a id="selectAvatar"></a>
 # **selectAvatar**
 > CurrentUser selectAvatar(avatarId)
 
@@ -903,7 +903,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="selectFallbackAvatar"></a>
+<a id="selectFallbackAvatar"></a>
 # **selectFallbackAvatar**
 > CurrentUser selectFallbackAvatar(avatarId)
 
@@ -975,7 +975,7 @@ public class Example {
 | **403** | Error response when trying to select a fallback avatar that is missing the fallback tag. |  -  |
 | **404** | Error response when trying to show information about a non-existent avatar. |  -  |
 
-<a name="updateAvatar"></a>
+<a id="updateAvatar"></a>
 # **updateAvatar**
 > Avatar updateAvatar(avatarId, updateAvatarRequest)
 

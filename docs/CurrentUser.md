@@ -15,6 +15,8 @@
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
+|**appleDetails** | **Object** |  |  [optional] |
+|**appleId** | **String** |  |  [optional] |
 |**authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
 |**bio** | **String** |  |  |
@@ -37,9 +39,11 @@
 |**googleDetails** | **Object** |  |  [optional] |
 |**googleId** | **String** |  |  [optional] |
 |**hasBirthday** | **Boolean** |  |  |
+|**hasDiscordFriendsOptOut** | **Boolean** |  |  [optional] |
 |**hasEmail** | **Boolean** |  |  |
 |**hasLoggedInFromClient** | **Boolean** |  |  |
 |**hasPendingEmail** | **Boolean** |  |  |
+|**hasSharedConnectionsOptOut** | **Boolean** |  |  [optional] |
 |**hideContentFilterSettings** | **Boolean** |  |  [optional] |
 |**homeLocation** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**id** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
@@ -73,6 +77,8 @@
 |**steamDetails** | **Object** |  |  |
 |**steamId** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
+|**twitchDetails** | **Object** |  |  [optional] |
+|**twitchId** | **String** |  |  [optional] |
 |**twoFactorAuthEnabled** | **Boolean** |  |  |
 |**twoFactorAuthEnabledDate** | **OffsetDateTime** |  |  [optional] |
 |**unsubscribe** | **Boolean** |  |  |

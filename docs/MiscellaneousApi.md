@@ -15,7 +15,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getSystemTime**](MiscellaneousApi.md#getSystemTime) | **GET** /time | Current System Time |
 
 
-<a name="getAssignedPermissions"></a>
+<a id="getAssignedPermissions"></a>
 # **getAssignedPermissions**
 > List&lt;Permission&gt; getAssignedPermissions()
 
@@ -81,7 +81,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a list of Permission objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getCSS"></a>
+<a id="getCSS"></a>
 # **getCSS**
 > String getCSS(variant, branch)
 
@@ -146,7 +146,7 @@ No authorization required
 | **200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
 | **400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
-<a name="getConfig"></a>
+<a id="getConfig"></a>
 # **getConfig**
 > APIConfig getConfig()
 
@@ -204,7 +204,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Returns the API&#39;s config. |  -  |
 
-<a name="getCurrentOnlineUsers"></a>
+<a id="getCurrentOnlineUsers"></a>
 # **getCurrentOnlineUsers**
 > Integer getCurrentOnlineUsers()
 
@@ -262,7 +262,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="getHealth"></a>
+<a id="getHealth"></a>
 # **getHealth**
 > APIHealth getHealth()
 
@@ -320,7 +320,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Returns the API&#39;s health. |  -  |
 
-<a name="getInfoPush"></a>
+<a id="getInfoPush"></a>
 # **getInfoPush**
 > List&lt;InfoPush&gt; getInfoPush(require, include)
 
@@ -391,7 +391,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of InfoPush objects. |  -  |
 
-<a name="getJavaScript"></a>
+<a id="getJavaScript"></a>
 # **getJavaScript**
 > String getJavaScript(variant, branch)
 
@@ -456,7 +456,7 @@ No authorization required
 | **200** | **Note:** VRChat uses 302 Redirect to Cloudfront. The implementing library **must** support and follow redirects natively. |  -  |
 | **400** | Error response when trying to download non-public and non-main JavaScript or CSS without Admin Credentials. |  -  |
 
-<a name="getPermission"></a>
+<a id="getPermission"></a>
 # **getPermission**
 > Permission getPermission(permissionId)
 
@@ -526,7 +526,7 @@ public class Example {
 | **200** | Returns a single Permission object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getSystemTime"></a>
+<a id="getSystemTime"></a>
 # **getSystemTime**
 > OffsetDateTime getSystemTime()
 

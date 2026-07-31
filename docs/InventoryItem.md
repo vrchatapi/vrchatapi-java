@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**collections** | **List&lt;String&gt;** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
-|**defaultAttributes** | [**Map&lt;String, InventoryDefaultAttributes1&gt;**](InventoryDefaultAttributes1.md) |  |  |
+|**defaultAttributes** | [**Map&lt;String, InventoryDefaultAttributesValue&gt;**](InventoryDefaultAttributesValue.md) |  |  |
 |**description** | **String** |  |  |
 |**equipSlot** | **InventoryEquipSlot** |  |  [optional] |
 |**equipSlots** | **List&lt;InventoryEquipSlot&gt;** |  |  [optional] |

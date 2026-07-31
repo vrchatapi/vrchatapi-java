@@ -29,13 +29,13 @@
 
 * `GROUP_INVITE` (value: `"group.invite"`)
 
-* `GROUP_JOINREQUEST` (value: `"group.joinRequest"`)
+* `GROUP_JOIN_REQUEST` (value: `"group.joinRequest"`)
 
 * `GROUP_POST` (value: `"group.post"`)
 
 * `GROUP_TRANSFER` (value: `"group.transfer"`)
 
-* `INVITE_INSTANCE_CONTENTGATED` (value: `"invite.instance.contentGated"`)
+* `INVITE_INSTANCE_CONTENT_GATED` (value: `"invite.instance.contentGated"`)
 
 * `MODERATION_CONTENTRESTRICTION` (value: `"moderation.contentrestriction"`)
 

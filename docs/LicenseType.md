@@ -7,7 +7,7 @@
 
 * `AVATAR` (value: `"avatar"`)
 
-* `LICENSEGROUP` (value: `"licenseGroup"`)
+* `LICENSE_GROUP` (value: `"licenseGroup"`)
 
 * `PERMISSION` (value: `"permission"`)
 

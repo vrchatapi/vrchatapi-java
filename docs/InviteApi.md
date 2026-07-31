@@ -17,7 +17,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateInviteMessage**](InviteApi.md#updateInviteMessage) | **PUT** /message/{userId}/{messageType}/{slot} | Update Invite Message |
 
 
-<a name="getInviteMessage"></a>
+<a id="getInviteMessage"></a>
 # **getInviteMessage**
 > InviteMessage getInviteMessage(userId, messageType, slot)
 
@@ -93,7 +93,7 @@ public class Example {
 | **401** | Error response due to missing authorization to perform that action. |  -  |
 | **404** | Error response when trying to get an Invite Message with a too high slot number. |  -  |
 
-<a name="getInviteMessages"></a>
+<a id="getInviteMessages"></a>
 # **getInviteMessages**
 > List&lt;InviteMessage&gt; getInviteMessages(userId, messageType)
 
@@ -166,7 +166,7 @@ public class Example {
 | **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
 | **401** | Error response due to missing authorization to perform that action. |  -  |
 
-<a name="inviteMyselfTo"></a>
+<a id="inviteMyselfTo"></a>
 # **inviteMyselfTo**
 > SentNotification inviteMyselfTo(worldId, instanceId)
 
@@ -235,11 +235,11 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single SentNotifcation object. |  -  |
+| **200** | Returns a single SentNotification object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response due to non existant instance |  -  |
+| **404** | Error response due to non existent instance |  -  |
 
-<a name="inviteUser"></a>
+<a id="inviteUser"></a>
 # **inviteUser**
 > SentNotification inviteUser(userId, inviteRequest)
 
@@ -308,10 +308,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single SentNotifcation object. |  -  |
-| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single SentNotification object. |  -  |
+| **403** | Error response when trying to invite someone whom you are not friends with. |  -  |
 
-<a name="inviteUserWithPhoto"></a>
+<a id="inviteUserWithPhoto"></a>
 # **inviteUserWithPhoto**
 > SentNotification inviteUserWithPhoto(userId, data, image)
 
@@ -382,10 +382,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single SentNotifcation object. |  -  |
-| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single SentNotification object. |  -  |
+| **403** | Error response when trying to invite someone whom you are not friends with. |  -  |
 
-<a name="requestInvite"></a>
+<a id="requestInvite"></a>
 # **requestInvite**
 > Notification requestInvite(userId, requestInviteRequest)
 
@@ -454,10 +454,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
-| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single Notification object. |  -  |
+| **403** | Error response when trying to invite someone whom you are not friends with. |  -  |
 
-<a name="requestInviteWithPhoto"></a>
+<a id="requestInviteWithPhoto"></a>
 # **requestInviteWithPhoto**
 > Notification requestInviteWithPhoto(userId, data, image)
 
@@ -528,10 +528,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
-| **403** | Error response when trying to invite someome whom you are not friends with. |  -  |
+| **200** | Returns a single Notification object. |  -  |
+| **403** | Error response when trying to invite someone whom you are not friends with. |  -  |
 
-<a name="resetInviteMessage"></a>
+<a id="resetInviteMessage"></a>
 # **resetInviteMessage**
 > List&lt;InviteMessage&gt; resetInviteMessage(userId, messageType, slot)
 
@@ -605,10 +605,10 @@ public class Example {
 | **200** | Returns a list of InviteMessage objects. |  -  |
 | **400** | Error response when trying to update an Invite Message with an invalid slot number. |  -  |
 | **401** | Error response due to missing authorization to perform that action. |  -  |
-| **404** | Error response when trying to reset an Invite Message whos slot doesn&#39;t exist. |  -  |
+| **404** | Error response when trying to reset an Invite Message whose slot doesn&#39;t exist. |  -  |
 | **429** | Error response when trying to update an Invite Message before the cooldown has expired. |  -  |
 
-<a name="respondInvite"></a>
+<a id="respondInvite"></a>
 # **respondInvite**
 > Notification respondInvite(notificationId, inviteResponse)
 
@@ -677,10 +677,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **400** | Error response when trying to respond to an invite and something went wrong. |  -  |
 
-<a name="respondInviteWithPhoto"></a>
+<a id="respondInviteWithPhoto"></a>
 # **respondInviteWithPhoto**
 > Notification respondInviteWithPhoto(notificationId, data, image)
 
@@ -751,10 +751,10 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notifcation object. |  -  |
+| **200** | Returns a single Notification object. |  -  |
 | **400** | Error response when trying to respond to an invite and something went wrong. |  -  |
 
-<a name="updateInviteMessage"></a>
+<a id="updateInviteMessage"></a>
 # **updateInviteMessage**
 > List&lt;InviteMessage&gt; updateInviteMessage(userId, messageType, slot, updateInviteMessageRequest)
 

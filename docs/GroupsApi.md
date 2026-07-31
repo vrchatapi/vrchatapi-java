@@ -57,7 +57,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**updateGroupRole**](GroupsApi.md#updateGroupRole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role |
 
 
-<a name="addGroupGalleryImage"></a>
+<a id="addGroupGalleryImage"></a>
 # **addGroupGalleryImage**
 > GroupGalleryImage addGroupGalleryImage(groupId, groupGalleryId, addGroupGalleryImageRequest)
 
@@ -132,7 +132,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="addGroupMemberRole"></a>
+<a id="addGroupMemberRole"></a>
 # **addGroupMemberRole**
 > List&lt;String&gt; addGroupMemberRole(groupId, userId, groupRoleId)
 
@@ -207,7 +207,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="addGroupPost"></a>
+<a id="addGroupPost"></a>
 # **addGroupPost**
 > GroupPost addGroupPost(groupId, createGroupPostRequest)
 
@@ -279,7 +279,7 @@ public class Example {
 | **200** | Returns a GroupPost object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="banGroupMember"></a>
+<a id="banGroupMember"></a>
 # **banGroupMember**
 > GroupMember banGroupMember(groupId, banGroupMemberRequest)
 
@@ -353,7 +353,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="blockGroup"></a>
+<a id="blockGroup"></a>
 # **blockGroup**
 > Success blockGroup(groupId)
 
@@ -426,7 +426,7 @@ public class Example {
 | **403** | Error response when trying to block a group you already have blocked. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="cancelGroupRequest"></a>
+<a id="cancelGroupRequest"></a>
 # **cancelGroupRequest**
 > cancelGroupRequest(groupId)
 
@@ -497,7 +497,7 @@ null (empty response body)
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="cancelGroupTransfer"></a>
+<a id="cancelGroupTransfer"></a>
 # **cancelGroupTransfer**
 > Success cancelGroupTransfer(groupId)
 
@@ -569,7 +569,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="createGroup"></a>
+<a id="createGroup"></a>
 # **createGroup**
 > Group createGroup(createGroupRequest)
 
@@ -639,7 +639,7 @@ public class Example {
 | **200** | Returns a single Group object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="createGroupAnnouncement"></a>
+<a id="createGroupAnnouncement"></a>
 # **createGroupAnnouncement**
 > GroupAnnouncement createGroupAnnouncement(groupId, createGroupAnnouncementRequest)
 
@@ -712,7 +712,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="createGroupGallery"></a>
+<a id="createGroupGallery"></a>
 # **createGroupGallery**
 > GroupGallery createGroupGallery(groupId, createGroupGalleryRequest)
 
@@ -785,7 +785,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="createGroupInvite"></a>
+<a id="createGroupInvite"></a>
 # **createGroupInvite**
 > createGroupInvite(groupId, createGroupInviteRequest)
 
@@ -859,7 +859,7 @@ null (empty response body)
 | **403** | Forbidden error response when creating a group invite. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="createGroupRole"></a>
+<a id="createGroupRole"></a>
 # **createGroupRole**
 > GroupRole createGroupRole(groupId, createGroupRoleRequest)
 
@@ -932,7 +932,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="declineGroupInvite"></a>
+<a id="declineGroupInvite"></a>
 # **declineGroupInvite**
 > Success declineGroupInvite(groupId, declineGroupInviteRequest)
 
@@ -1006,7 +1006,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="deleteGroup"></a>
+<a id="deleteGroup"></a>
 # **deleteGroup**
 > Success deleteGroup(groupId, hardDelete)
 
@@ -1079,7 +1079,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="deleteGroupAnnouncement"></a>
+<a id="deleteGroupAnnouncement"></a>
 # **deleteGroupAnnouncement**
 > Success deleteGroupAnnouncement(groupId)
 
@@ -1150,7 +1150,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="deleteGroupGallery"></a>
+<a id="deleteGroupGallery"></a>
 # **deleteGroupGallery**
 > Success deleteGroupGallery(groupId, groupGalleryId)
 
@@ -1223,7 +1223,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="deleteGroupGalleryImage"></a>
+<a id="deleteGroupGalleryImage"></a>
 # **deleteGroupGalleryImage**
 > Success deleteGroupGalleryImage(groupId, groupGalleryId, groupGalleryImageId)
 
@@ -1299,7 +1299,7 @@ public class Example {
 | **403** | Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="deleteGroupInvite"></a>
+<a id="deleteGroupInvite"></a>
 # **deleteGroupInvite**
 > deleteGroupInvite(groupId, userId)
 
@@ -1371,7 +1371,7 @@ null (empty response body)
 | **400** | Bad request error response when deleting a group invite |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="deleteGroupPost"></a>
+<a id="deleteGroupPost"></a>
 # **deleteGroupPost**
 > Success deleteGroupPost(groupId, notificationId)
 
@@ -1444,7 +1444,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Response after deleting a group post. |  -  |
 
-<a name="deleteGroupRole"></a>
+<a id="deleteGroupRole"></a>
 # **deleteGroupRole**
 > List&lt;GroupRole&gt; deleteGroupRole(groupId, groupRoleId)
 
@@ -1517,7 +1517,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a group you are not member of. |  -  |
 
-<a name="getGroup"></a>
+<a id="getGroup"></a>
 # **getGroup**
 > Group getGroup(groupId, includeRoles)
 
@@ -1590,7 +1590,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupAnnouncements"></a>
+<a id="getGroupAnnouncements"></a>
 # **getGroupAnnouncements**
 > GroupAnnouncement getGroupAnnouncements(groupId)
 
@@ -1661,7 +1661,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupAuditLogEntryTypes"></a>
+<a id="getGroupAuditLogEntryTypes"></a>
 # **getGroupAuditLogEntryTypes**
 > List&lt;String&gt; getGroupAuditLogEntryTypes(groupId)
 
@@ -1732,7 +1732,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupAuditLogs"></a>
+<a id="getGroupAuditLogs"></a>
 # **getGroupAuditLogs**
 > PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
 
@@ -1817,7 +1817,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupBans"></a>
+<a id="getGroupBans"></a>
 # **getGroupBans**
 > List&lt;GroupMember&gt; getGroupBans(groupId, n, offset)
 
@@ -1893,7 +1893,7 @@ public class Example {
 | **403** | Error response due to missing permissions. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupGalleryImages"></a>
+<a id="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
 > List&lt;GroupGalleryImage&gt; getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved)
 
@@ -1972,7 +1972,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupInstances"></a>
+<a id="getGroupInstances"></a>
 # **getGroupInstances**
 > List&lt;GroupInstance&gt; getGroupInstances(groupId)
 
@@ -2043,7 +2043,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupInvites"></a>
+<a id="getGroupInvites"></a>
 # **getGroupInvites**
 > List&lt;GroupMember&gt; getGroupInvites(groupId, n, offset)
 
@@ -2119,7 +2119,7 @@ public class Example {
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupMember"></a>
+<a id="getGroupMember"></a>
 # **getGroupMember**
 > GroupMember getGroupMember(groupId, userId)
 
@@ -2193,7 +2193,7 @@ public class Example {
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupMembers"></a>
+<a id="getGroupMembers"></a>
 # **getGroupMembers**
 > List&lt;GroupMember&gt; getGroupMembers(groupId, n, offset, sort, roleId)
 
@@ -2273,7 +2273,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupPermissions"></a>
+<a id="getGroupPermissions"></a>
 # **getGroupPermissions**
 > List&lt;GroupPermission&gt; getGroupPermissions(groupId)
 
@@ -2345,7 +2345,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupPosts"></a>
+<a id="getGroupPosts"></a>
 # **getGroupPosts**
 > GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
 
@@ -2421,7 +2421,7 @@ public class Example {
 | **200** | Returns a GroupPost Array. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGroupRequests"></a>
+<a id="getGroupRequests"></a>
 # **getGroupRequests**
 > List&lt;GroupMember&gt; getGroupRequests(groupId, n, offset, blocked)
 
@@ -2499,7 +2499,7 @@ public class Example {
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupRoleTemplates"></a>
+<a id="getGroupRoleTemplates"></a>
 # **getGroupRoleTemplates**
 > Map&lt;String, GroupRoleTemplateValues&gt; getGroupRoleTemplates()
 
@@ -2565,7 +2565,7 @@ This endpoint does not need any parameter.
 | **200** | Returns a dictionary of GroupRoleTemplate objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="getGroupRoles"></a>
+<a id="getGroupRoles"></a>
 # **getGroupRoles**
 > List&lt;GroupRole&gt; getGroupRoles(groupId)
 
@@ -2636,7 +2636,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="getGroupTransferability"></a>
+<a id="getGroupTransferability"></a>
 # **getGroupTransferability**
 > GroupTransferable getGroupTransferability(groupId, transferTargetId)
 
@@ -2710,13 +2710,13 @@ public class Example {
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="initiateOrAcceptGroupTransfer"></a>
+<a id="initiateOrAcceptGroupTransfer"></a>
 # **initiateOrAcceptGroupTransfer**
 > Success initiateOrAcceptGroupTransfer(groupId, transferGroupRequest)
 
 Initiate or Accept Group Transfer
 
-To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targetted by a pending transfer, no body is required.
+To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targeted by a pending transfer, no body is required.
 
 ### Example
 ```java
@@ -2784,7 +2784,7 @@ public class Example {
 | **403** | Error response when trying to transfer a group to an ineligible target user. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="joinGroup"></a>
+<a id="joinGroup"></a>
 # **joinGroup**
 > GroupMember joinGroup(groupId, confirmOverrideBlock, joinGroupRequest)
 
@@ -2860,7 +2860,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="kickGroupMember"></a>
+<a id="kickGroupMember"></a>
 # **kickGroupMember**
 > Success kickGroupMember(groupId, userId)
 
@@ -2934,7 +2934,7 @@ public class Example {
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="leaveGroup"></a>
+<a id="leaveGroup"></a>
 # **leaveGroup**
 > leaveGroup(groupId)
 
@@ -3004,7 +3004,7 @@ null (empty response body)
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="removeGroupMemberRole"></a>
+<a id="removeGroupMemberRole"></a>
 # **removeGroupMemberRole**
 > List&lt;String&gt; removeGroupMemberRole(groupId, userId, groupRoleId)
 
@@ -3079,7 +3079,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="respondGroupJoinRequest"></a>
+<a id="respondGroupJoinRequest"></a>
 # **respondGroupJoinRequest**
 > respondGroupJoinRequest(groupId, userId, respondGroupJoinRequest)
 
@@ -3153,7 +3153,7 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="searchGroupMembers"></a>
+<a id="searchGroupMembers"></a>
 # **searchGroupMembers**
 > SearchGroupMembers200Response searchGroupMembers(groupId, query, n, offset)
 
@@ -3231,7 +3231,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="searchGroups"></a>
+<a id="searchGroups"></a>
 # **searchGroups**
 > List&lt;LimitedGroup&gt; searchGroups(query, offset, n)
 
@@ -3298,7 +3298,7 @@ No authorization required
 | **200** | Returns a list of LimitedGroup objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a name="unbanGroupMember"></a>
+<a id="unbanGroupMember"></a>
 # **unbanGroupMember**
 > GroupMember unbanGroupMember(groupId, userId)
 
@@ -3371,7 +3371,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="updateGroup"></a>
+<a id="updateGroup"></a>
 # **updateGroup**
 > Group updateGroup(groupId, updateGroupRequest)
 
@@ -3444,7 +3444,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="updateGroupGallery"></a>
+<a id="updateGroupGallery"></a>
 # **updateGroupGallery**
 > GroupGallery updateGroupGallery(groupId, groupGalleryId, updateGroupGalleryRequest)
 
@@ -3519,7 +3519,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="updateGroupMember"></a>
+<a id="updateGroupMember"></a>
 # **updateGroupMember**
 > GroupMember updateGroupMember(groupId, userId, updateGroupMemberRequest)
 
@@ -3594,7 +3594,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to perform operations on a non-existing group. |  -  |
 
-<a name="updateGroupPost"></a>
+<a id="updateGroupPost"></a>
 # **updateGroupPost**
 > GroupPost updateGroupPost(groupId, notificationId, createGroupPostRequest)
 
@@ -3669,7 +3669,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Response after deleting a group post. |  -  |
 
-<a name="updateGroupRepresentation"></a>
+<a id="updateGroupRepresentation"></a>
 # **updateGroupRepresentation**
 > Success updateGroupRepresentation(groupId, updateGroupRepresentationRequest)
 
@@ -3742,7 +3742,7 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 
-<a name="updateGroupRole"></a>
+<a id="updateGroupRole"></a>
 # **updateGroupRole**
 > List&lt;GroupRole&gt; updateGroupRole(groupId, groupRoleId, updateGroupRoleRequest)
 

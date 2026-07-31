@@ -16,10 +16,10 @@
 
 | Name | Value |
 |---- | -----|
-| CANNEDWORLDSEARCH | &quot;CannedWorldSearch&quot; |
-| OPENSAFETYMENU | &quot;OpenSafetyMenu&quot; |
-| OPENURL | &quot;OpenURL&quot; |
-| OPENVRCPLUSMENU | &quot;OpenVRCPlusMenu&quot; |
+| CANNED_WORLD_SEARCH | &quot;CannedWorldSearch&quot; |
+| OPEN_SAFETY_MENU | &quot;OpenSafetyMenu&quot; |
+| OPEN_URL | &quot;OpenURL&quot; |
+| OPEN_VRC_PLUS_MENU | &quot;OpenVRCPlusMenu&quot; |
 
 
 

@@ -13,7 +13,7 @@
 
 * `PUBLIC` (value: `"public"`)
 
-* `PUBLICPREVIEW` (value: `"publicPreview"`)
+* `PUBLIC_PREVIEW` (value: `"publicPreview"`)
 
 
 
