@@ -12,7 +12,7 @@ rm src/main/java/io/github/vrchatapi/api -rf
 rm src/main/java/io/github/vrchatapi/auth -rf
 rm src/main/java/io/github/vrchatapi/model -rf
 
-./node_modules/\@openapitools/openapi-generator-cli/main.js generate \
+openapi-generator generate \
 -g java \
 --global-property skipFormModel=false \
 --additional-properties=groupId=io.github.vrchatapi,apiPackage=io.github.vrchatapi.api,invokerPackage=io.github.vrchatapi,modelPackage=io.github.vrchatapi.model,artifactId=vrchatapi,licenseName=MIT,licenseUrl=https://github.com/vrchatapi/vrchatapi-java/blob/main/LICENSE,developerEmail=me@ruby.js.org,developerName=VRChatAPI,developerOrganization=vrchatapi,developerOrganizationUrl=https://github.com/VRChatAPI,hideGenerationTimestamp=true \
