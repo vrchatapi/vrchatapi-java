@@ -3,6 +3,19 @@ on:
     branches:
       - '**'
   pull_request:
+  repository_dispatch:
+    types: [release]
+  workflow_dispatch:
+    inputs:
+      json:
+        description: Passed json from repository_dispatch
+        required: true
+        type: string
+      version_postfix:
+        description: Additional string to concatenate onto the existing version before release
+        required: false
+        type: string
+        default: ''
   workflow_call:
     inputs:
       ref:
@@ -12,6 +25,10 @@ on:
         default: main
 
 name: CI
+
+env:
+  PASSED_VERSION: ${{ (github.event_name == 'repository_dispatch' && github.event.client_payload || fromJSON(inputs.json || '{}'))['version'] }}
+  VERSION_POSTPEND: ${{ github.event_name == 'workflow_dispatch' && inputs.version_postfix || '' }}
 
 jobs:
   generate:
@@ -28,11 +45,14 @@ jobs:
         with:
           bundle: openapi-legacy.yaml
 
+      - if: env.VERSION_POSTPEND != ''
+        run: yq '--inplace' ".info.version |= \"${PASSED_VERSION}${VERSION_POSTPEND}\"" openapi-legacy.yaml
+
       - run: bash ./generate.sh openapi-legacy.yaml
 
       - uses: actions/upload-artifact@v7
         with:
-          name: generated-java
+          name: java-generated
           path: .
           include-hidden-files: true
 
@@ -45,7 +65,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: generated-java
+          name: java-generated
 
       - uses: actions/setup-java@v5.7.0
         with:
@@ -54,3 +74,25 @@ jobs:
           cache: maven
 
       - run: mvn -B package --no-transfer-progress
+
+  publish:
+    needs:
+      - generate
+      - test
+    if: github.event_name == 'repository_dispatch' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: java-generated
+
+      - run: rm -f openapi-legacy.yaml
+
+      - uses: JamesIves/github-pages-deploy-action@v4.9.0
+        with:
+          branch: main
+          folder: .
+          commit-message: Upgrade Java SDK to spec ${{ env.PASSED_VERSION }}${{ env.VERSION_POSTPEND }}
+          tag: ${{ env.PASSED_VERSION }}${{ env.VERSION_POSTPEND }}
