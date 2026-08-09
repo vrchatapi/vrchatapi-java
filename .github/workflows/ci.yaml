@@ -36,25 +36,6 @@ jobs:
           path: .
           include-hidden-files: true
 
-  build:
-    needs: generate
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: ['17', '21']
-    steps:
-      - uses: actions/download-artifact@v8
-        with:
-          name: generated-java
-
-      - uses: actions/setup-java@v5.7.0
-        with:
-          java-version: ${{ matrix.java }}
-          distribution: temurin
-          cache: maven
-
-      - run: mvn -B compile --no-transfer-progress
-
   test:
     needs: generate
     runs-on: ubuntu-latest
