@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: vrchatapi/specification/.github/actions/generator@ci/modernise-actions
+      - uses: vrchatapi/specification/.github/actions/setup-generator@ci/modernise-actions
 
       - name: Download Specification
         run: wget "${SPEC_URL}" '--output-document' "${ARTIFACT_NAME}"
