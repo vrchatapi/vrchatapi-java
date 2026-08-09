@@ -644,7 +644,7 @@ This endpoint does not need any parameter.
 
 <a id="getCurrentUser"></a>
 # **getCurrentUser**
-> RegisterUserAccount200Response getCurrentUser()
+> CurrentUser getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -684,7 +684,7 @@ public class Example {
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     try {
-      RegisterUserAccount200Response result = apiInstance.getCurrentUser();
+      CurrentUser result = apiInstance.getCurrentUser();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getCurrentUser");
@@ -702,7 +702,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 
@@ -998,7 +998,7 @@ This endpoint does not need any parameter.
 
 <a id="registerUserAccount"></a>
 # **registerUserAccount**
-> RegisterUserAccount200Response registerUserAccount(registerUserAccountRequest)
+> CurrentUser registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -1021,7 +1021,7 @@ public class Example {
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     RegisterUserAccountRequest registerUserAccountRequest = new RegisterUserAccountRequest(); // RegisterUserAccountRequest | 
     try {
-      RegisterUserAccount200Response result = apiInstance.registerUserAccount(registerUserAccountRequest);
+      CurrentUser result = apiInstance.registerUserAccount(registerUserAccountRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#registerUserAccount");
@@ -1042,7 +1042,7 @@ public class Example {
 
 ### Return type
 
-[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 

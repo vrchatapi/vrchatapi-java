@@ -11,7 +11,7 @@
 |**canDelete** | **Boolean** |  |  |
 |**category** | **String** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
-|**data** | [**NotificationV2Data**](NotificationV2Data.md) |  |  |
+|**data** | **Map&lt;String, String&gt;** |  |  |
 |**details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  |  [optional] |
 |**expiresAt** | **OffsetDateTime** |  |  |
 |**expiryAfterSeen** | **Integer** |  |  |
