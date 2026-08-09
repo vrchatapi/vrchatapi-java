@@ -31,7 +31,8 @@ jobs:
         with:
           java-version: '17'
           distribution: temurin
+          cache: maven
 
       - run: bash ./generate.sh openapi-legacy.yaml
 
-      - run: mvn -B -ntp compile
+      - run: mvn -B compile
