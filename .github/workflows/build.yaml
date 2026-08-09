@@ -30,12 +30,13 @@ jobs:
           ref: ${{ inputs.ref || github.ref }}
           generator-version: 7.24.0
           spec-artifact: ${{ inputs.spec-artifact }}
+          spec-file: openapi-legacy.yaml
 
       - uses: actions/setup-java@v5.7.0
         with:
           java-version: '17'
           distribution: temurin
 
-      - run: bash ./generate.sh openapi.json
+      - run: bash ./generate.sh openapi-legacy.yaml
 
       - run: mvn -B -ntp compile
