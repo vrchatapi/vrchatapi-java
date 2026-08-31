@@ -20,9 +20,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.DynamicContentRow;
 import io.github.vrchatapi.model.InfoPushDataArticle;
+import io.github.vrchatapi.model.InfoPushDataCategory;
 import io.github.vrchatapi.model.InfoPushDataClickable;
+import io.github.vrchatapi.model.InfoPushDataDomainListInner;
+import io.github.vrchatapi.model.InfoPushDataSearch;
+import io.github.vrchatapi.model.InfoPushIpsQuery;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,6 +64,31 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private InfoPushDataArticle article;
 
+  public static final String SERIALIZED_NAME_AUTHOR_NAME = "authorName";
+  @SerializedName(SERIALIZED_NAME_AUTHOR_NAME)
+  @javax.annotation.Nullable
+  private String authorName;
+
+  public static final String SERIALIZED_NAME_AVATAR_ID = "avatarId";
+  @SerializedName(SERIALIZED_NAME_AVATAR_ID)
+  @javax.annotation.Nullable
+  private String avatarId;
+
+  public static final String SERIALIZED_NAME_BANNER_IMAGE_URL = "bannerImageUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String bannerImageUrl;
+
+  public static final String SERIALIZED_NAME_CATEGORIES = "categories";
+  @SerializedName(SERIALIZED_NAME_CATEGORIES)
+  @javax.annotation.Nullable
+  private List<InfoPushDataCategory> categories = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
+  private String category;
+
   public static final String SERIALIZED_NAME_CONTENT_LIST = "contentList";
   @SerializedName(SERIALIZED_NAME_CONTENT_LIST)
   @javax.annotation.Nullable
@@ -67,10 +99,50 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_DISCLAIMER_TEXT = "disclaimerText";
+  @SerializedName(SERIALIZED_NAME_DISCLAIMER_TEXT)
+  @javax.annotation.Nullable
+  private String disclaimerText;
+
+  public static final String SERIALIZED_NAME_DOMAIN_LIST = "domainList";
+  @SerializedName(SERIALIZED_NAME_DOMAIN_LIST)
+  @javax.annotation.Nullable
+  private List<InfoPushDataDomainListInner> domainList = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FEATURED_AVATAR_CATEGORY_ID = "featuredAvatarCategoryId";
+  @SerializedName(SERIALIZED_NAME_FEATURED_AVATAR_CATEGORY_ID)
+  @javax.annotation.Nullable
+  private String featuredAvatarCategoryId;
+
+  public static final String SERIALIZED_NAME_FINAL_NAME = "finalName";
+  @SerializedName(SERIALIZED_NAME_FINAL_NAME)
+  @javax.annotation.Nullable
+  private String finalName;
+
+  public static final String SERIALIZED_NAME_ICON_IMAGE_URL = "iconImageUrl";
+  @SerializedName(SERIALIZED_NAME_ICON_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String iconImageUrl;
+
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
   @javax.annotation.Nullable
   private String imageUrl;
+
+  public static final String SERIALIZED_NAME_IPS_QUERY = "ipsQuery";
+  @SerializedName(SERIALIZED_NAME_IPS_QUERY)
+  @javax.annotation.Nullable
+  private InfoPushIpsQuery ipsQuery;
+
+  public static final String SERIALIZED_NAME_IS_NEW = "isNew";
+  @SerializedName(SERIALIZED_NAME_IS_NEW)
+  @javax.annotation.Nullable
+  private Boolean isNew;
+
+  public static final String SERIALIZED_NAME_LISTING_IDS = "listingIds";
+  @SerializedName(SERIALIZED_NAME_LISTING_IDS)
+  @javax.annotation.Nullable
+  private List<String> listingIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -82,15 +154,55 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private InfoPushDataClickable onPressed;
 
+  public static final String SERIALIZED_NAME_OVERRIDE_NAME = "overrideName";
+  @SerializedName(SERIALIZED_NAME_OVERRIDE_NAME)
+  @javax.annotation.Nullable
+  private Object overrideName = null;
+
+  public static final String SERIALIZED_NAME_ROWS = "rows";
+  @SerializedName(SERIALIZED_NAME_ROWS)
+  @javax.annotation.Nullable
+  private Integer rows;
+
+  public static final String SERIALIZED_NAME_SEARCH = "search";
+  @SerializedName(SERIALIZED_NAME_SEARCH)
+  @javax.annotation.Nullable
+  private InfoPushDataSearch search;
+
+  public static final String SERIALIZED_NAME_SHORT_NAME = "shortName";
+  @SerializedName(SERIALIZED_NAME_SHORT_NAME)
+  @javax.annotation.Nullable
+  private String shortName;
+
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
   @javax.annotation.Nullable
   private String template;
 
+  public static final String SERIALIZED_NAME_THUMBNAIL_IMAGE_URL = "thumbnailImageUrl";
+  @SerializedName(SERIALIZED_NAME_THUMBNAIL_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String thumbnailImageUrl;
+
+  public static final String SERIALIZED_NAME_TOOLTIP_DESCRIPTION = "tooltipDescription";
+  @SerializedName(SERIALIZED_NAME_TOOLTIP_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String tooltipDescription;
+
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
   private String version;
+
+  public static final String SERIALIZED_NAME_WEIGHT = "weight";
+  @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
+  private Integer weight;
+
+  public static final String SERIALIZED_NAME_WORLD_TAG = "worldTag";
+  @SerializedName(SERIALIZED_NAME_WORLD_TAG)
+  @javax.annotation.Nullable
+  private String worldTag;
 
   public InfoPushData() {
   }
@@ -111,6 +223,109 @@ public class InfoPushData {
 
   public void setArticle(@javax.annotation.Nullable InfoPushDataArticle article) {
     this.article = article;
+  }
+
+
+  public InfoPushData authorName(@javax.annotation.Nullable String authorName) {
+    this.authorName = authorName;
+    return this;
+  }
+
+  /**
+   * Get authorName
+   * @return authorName
+   */
+  @javax.annotation.Nullable
+  public String getAuthorName() {
+    return authorName;
+  }
+
+  public void setAuthorName(@javax.annotation.Nullable String authorName) {
+    this.authorName = authorName;
+  }
+
+
+  public InfoPushData avatarId(@javax.annotation.Nullable String avatarId) {
+    this.avatarId = avatarId;
+    return this;
+  }
+
+  /**
+   * Get avatarId
+   * @return avatarId
+   */
+  @javax.annotation.Nullable
+  public String getAvatarId() {
+    return avatarId;
+  }
+
+  public void setAvatarId(@javax.annotation.Nullable String avatarId) {
+    this.avatarId = avatarId;
+  }
+
+
+  public InfoPushData bannerImageUrl(@javax.annotation.Nullable String bannerImageUrl) {
+    this.bannerImageUrl = bannerImageUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerImageUrl
+   * @return bannerImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerImageUrl() {
+    return bannerImageUrl;
+  }
+
+  public void setBannerImageUrl(@javax.annotation.Nullable String bannerImageUrl) {
+    this.bannerImageUrl = bannerImageUrl;
+  }
+
+
+  public InfoPushData categories(@javax.annotation.Nullable List<InfoPushDataCategory> categories) {
+    this.categories = categories;
+    return this;
+  }
+
+  public InfoPushData addCategoriesItem(InfoPushDataCategory categoriesItem) {
+    if (this.categories == null) {
+      this.categories = new ArrayList<>();
+    }
+    this.categories.add(categoriesItem);
+    return this;
+  }
+
+  /**
+   * Get categories
+   * @return categories
+   */
+  @javax.annotation.Nullable
+  public List<InfoPushDataCategory> getCategories() {
+    return categories;
+  }
+
+  public void setCategories(@javax.annotation.Nullable List<InfoPushDataCategory> categories) {
+    this.categories = categories;
+  }
+
+
+  public InfoPushData category(@javax.annotation.Nullable String category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   * @return category
+   */
+  @javax.annotation.Nullable
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(@javax.annotation.Nullable String category) {
+    this.category = category;
   }
 
 
@@ -152,6 +367,109 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData disclaimerText(@javax.annotation.Nullable String disclaimerText) {
+    this.disclaimerText = disclaimerText;
+    return this;
+  }
+
+  /**
+   * Get disclaimerText
+   * @return disclaimerText
+   */
+  @javax.annotation.Nullable
+  public String getDisclaimerText() {
+    return disclaimerText;
+  }
+
+  public void setDisclaimerText(@javax.annotation.Nullable String disclaimerText) {
+    this.disclaimerText = disclaimerText;
+  }
+
+
+  public InfoPushData domainList(@javax.annotation.Nullable List<InfoPushDataDomainListInner> domainList) {
+    this.domainList = domainList;
+    return this;
+  }
+
+  public InfoPushData addDomainListItem(InfoPushDataDomainListInner domainListItem) {
+    if (this.domainList == null) {
+      this.domainList = new ArrayList<>();
+    }
+    this.domainList.add(domainListItem);
+    return this;
+  }
+
+  /**
+   * Get domainList
+   * @return domainList
+   */
+  @javax.annotation.Nullable
+  public List<InfoPushDataDomainListInner> getDomainList() {
+    return domainList;
+  }
+
+  public void setDomainList(@javax.annotation.Nullable List<InfoPushDataDomainListInner> domainList) {
+    this.domainList = domainList;
+  }
+
+
+  public InfoPushData featuredAvatarCategoryId(@javax.annotation.Nullable String featuredAvatarCategoryId) {
+    this.featuredAvatarCategoryId = featuredAvatarCategoryId;
+    return this;
+  }
+
+  /**
+   * Get featuredAvatarCategoryId
+   * @return featuredAvatarCategoryId
+   */
+  @javax.annotation.Nullable
+  public String getFeaturedAvatarCategoryId() {
+    return featuredAvatarCategoryId;
+  }
+
+  public void setFeaturedAvatarCategoryId(@javax.annotation.Nullable String featuredAvatarCategoryId) {
+    this.featuredAvatarCategoryId = featuredAvatarCategoryId;
+  }
+
+
+  public InfoPushData finalName(@javax.annotation.Nullable String finalName) {
+    this.finalName = finalName;
+    return this;
+  }
+
+  /**
+   * Get finalName
+   * @return finalName
+   */
+  @javax.annotation.Nullable
+  public String getFinalName() {
+    return finalName;
+  }
+
+  public void setFinalName(@javax.annotation.Nullable String finalName) {
+    this.finalName = finalName;
+  }
+
+
+  public InfoPushData iconImageUrl(@javax.annotation.Nullable String iconImageUrl) {
+    this.iconImageUrl = iconImageUrl;
+    return this;
+  }
+
+  /**
+   * Get iconImageUrl
+   * @return iconImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getIconImageUrl() {
+    return iconImageUrl;
+  }
+
+  public void setIconImageUrl(@javax.annotation.Nullable String iconImageUrl) {
+    this.iconImageUrl = iconImageUrl;
+  }
+
+
   public InfoPushData imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
@@ -168,6 +486,71 @@ public class InfoPushData {
 
   public void setImageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
+  }
+
+
+  public InfoPushData ipsQuery(@javax.annotation.Nullable InfoPushIpsQuery ipsQuery) {
+    this.ipsQuery = ipsQuery;
+    return this;
+  }
+
+  /**
+   * Get ipsQuery
+   * @return ipsQuery
+   */
+  @javax.annotation.Nullable
+  public InfoPushIpsQuery getIpsQuery() {
+    return ipsQuery;
+  }
+
+  public void setIpsQuery(@javax.annotation.Nullable InfoPushIpsQuery ipsQuery) {
+    this.ipsQuery = ipsQuery;
+  }
+
+
+  public InfoPushData isNew(@javax.annotation.Nullable Boolean isNew) {
+    this.isNew = isNew;
+    return this;
+  }
+
+  /**
+   * Get isNew
+   * @return isNew
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsNew() {
+    return isNew;
+  }
+
+  public void setIsNew(@javax.annotation.Nullable Boolean isNew) {
+    this.isNew = isNew;
+  }
+
+
+  public InfoPushData listingIds(@javax.annotation.Nullable List<String> listingIds) {
+    this.listingIds = listingIds;
+    return this;
+  }
+
+  public InfoPushData addListingIdsItem(String listingIdsItem) {
+    if (this.listingIds == null) {
+      this.listingIds = new ArrayList<>();
+    }
+    this.listingIds.add(listingIdsItem);
+    return this;
+  }
+
+  /**
+   * Get listingIds
+   * @return listingIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getListingIds() {
+    return listingIds;
+  }
+
+  public void setListingIds(@javax.annotation.Nullable List<String> listingIds) {
+    this.listingIds = listingIds;
   }
 
 
@@ -209,6 +592,82 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData overrideName(@javax.annotation.Nullable Object overrideName) {
+    this.overrideName = overrideName;
+    return this;
+  }
+
+  /**
+   * Get overrideName
+   * @return overrideName
+   */
+  @javax.annotation.Nullable
+  public Object getOverrideName() {
+    return overrideName;
+  }
+
+  public void setOverrideName(@javax.annotation.Nullable Object overrideName) {
+    this.overrideName = overrideName;
+  }
+
+
+  public InfoPushData rows(@javax.annotation.Nullable Integer rows) {
+    this.rows = rows;
+    return this;
+  }
+
+  /**
+   * Number of rows to render.
+   * @return rows
+   */
+  @javax.annotation.Nullable
+  public Integer getRows() {
+    return rows;
+  }
+
+  public void setRows(@javax.annotation.Nullable Integer rows) {
+    this.rows = rows;
+  }
+
+
+  public InfoPushData search(@javax.annotation.Nullable InfoPushDataSearch search) {
+    this.search = search;
+    return this;
+  }
+
+  /**
+   * Get search
+   * @return search
+   */
+  @javax.annotation.Nullable
+  public InfoPushDataSearch getSearch() {
+    return search;
+  }
+
+  public void setSearch(@javax.annotation.Nullable InfoPushDataSearch search) {
+    this.search = search;
+  }
+
+
+  public InfoPushData shortName(@javax.annotation.Nullable String shortName) {
+    this.shortName = shortName;
+    return this;
+  }
+
+  /**
+   * Get shortName
+   * @return shortName
+   */
+  @javax.annotation.Nullable
+  public String getShortName() {
+    return shortName;
+  }
+
+  public void setShortName(@javax.annotation.Nullable String shortName) {
+    this.shortName = shortName;
+  }
+
+
   public InfoPushData template(@javax.annotation.Nullable String template) {
     this.template = template;
     return this;
@@ -225,6 +684,44 @@ public class InfoPushData {
 
   public void setTemplate(@javax.annotation.Nullable String template) {
     this.template = template;
+  }
+
+
+  public InfoPushData thumbnailImageUrl(@javax.annotation.Nullable String thumbnailImageUrl) {
+    this.thumbnailImageUrl = thumbnailImageUrl;
+    return this;
+  }
+
+  /**
+   * Get thumbnailImageUrl
+   * @return thumbnailImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getThumbnailImageUrl() {
+    return thumbnailImageUrl;
+  }
+
+  public void setThumbnailImageUrl(@javax.annotation.Nullable String thumbnailImageUrl) {
+    this.thumbnailImageUrl = thumbnailImageUrl;
+  }
+
+
+  public InfoPushData tooltipDescription(@javax.annotation.Nullable String tooltipDescription) {
+    this.tooltipDescription = tooltipDescription;
+    return this;
+  }
+
+  /**
+   * Get tooltipDescription
+   * @return tooltipDescription
+   */
+  @javax.annotation.Nullable
+  public String getTooltipDescription() {
+    return tooltipDescription;
+  }
+
+  public void setTooltipDescription(@javax.annotation.Nullable String tooltipDescription) {
+    this.tooltipDescription = tooltipDescription;
   }
 
 
@@ -247,6 +744,44 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData weight(@javax.annotation.Nullable Integer weight) {
+    this.weight = weight;
+    return this;
+  }
+
+  /**
+   * Get weight
+   * @return weight
+   */
+  @javax.annotation.Nullable
+  public Integer getWeight() {
+    return weight;
+  }
+
+  public void setWeight(@javax.annotation.Nullable Integer weight) {
+    this.weight = weight;
+  }
+
+
+  public InfoPushData worldTag(@javax.annotation.Nullable String worldTag) {
+    this.worldTag = worldTag;
+    return this;
+  }
+
+  /**
+   * Get worldTag
+   * @return worldTag
+   */
+  @javax.annotation.Nullable
+  public String getWorldTag() {
+    return worldTag;
+  }
+
+  public void setWorldTag(@javax.annotation.Nullable String worldTag) {
+    this.worldTag = worldTag;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -258,18 +793,50 @@ public class InfoPushData {
     }
     InfoPushData infoPushData = (InfoPushData) o;
     return Objects.equals(this.article, infoPushData.article) &&
+        Objects.equals(this.authorName, infoPushData.authorName) &&
+        Objects.equals(this.avatarId, infoPushData.avatarId) &&
+        Objects.equals(this.bannerImageUrl, infoPushData.bannerImageUrl) &&
+        Objects.equals(this.categories, infoPushData.categories) &&
+        Objects.equals(this.category, infoPushData.category) &&
         Objects.equals(this.contentList, infoPushData.contentList) &&
         Objects.equals(this.description, infoPushData.description) &&
+        Objects.equals(this.disclaimerText, infoPushData.disclaimerText) &&
+        Objects.equals(this.domainList, infoPushData.domainList) &&
+        Objects.equals(this.featuredAvatarCategoryId, infoPushData.featuredAvatarCategoryId) &&
+        Objects.equals(this.finalName, infoPushData.finalName) &&
+        Objects.equals(this.iconImageUrl, infoPushData.iconImageUrl) &&
         Objects.equals(this.imageUrl, infoPushData.imageUrl) &&
+        Objects.equals(this.ipsQuery, infoPushData.ipsQuery) &&
+        Objects.equals(this.isNew, infoPushData.isNew) &&
+        Objects.equals(this.listingIds, infoPushData.listingIds) &&
         Objects.equals(this.name, infoPushData.name) &&
         Objects.equals(this.onPressed, infoPushData.onPressed) &&
+        Objects.equals(this.overrideName, infoPushData.overrideName) &&
+        Objects.equals(this.rows, infoPushData.rows) &&
+        Objects.equals(this.search, infoPushData.search) &&
+        Objects.equals(this.shortName, infoPushData.shortName) &&
         Objects.equals(this.template, infoPushData.template) &&
-        Objects.equals(this.version, infoPushData.version);
+        Objects.equals(this.thumbnailImageUrl, infoPushData.thumbnailImageUrl) &&
+        Objects.equals(this.tooltipDescription, infoPushData.tooltipDescription) &&
+        Objects.equals(this.version, infoPushData.version) &&
+        Objects.equals(this.weight, infoPushData.weight) &&
+        Objects.equals(this.worldTag, infoPushData.worldTag);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(article, contentList, description, imageUrl, name, onPressed, template, version);
+    return Objects.hash(article, authorName, avatarId, bannerImageUrl, categories, category, contentList, description, disclaimerText, domainList, featuredAvatarCategoryId, finalName, iconImageUrl, imageUrl, ipsQuery, isNew, listingIds, name, onPressed, overrideName, rows, search, shortName, template, thumbnailImageUrl, tooltipDescription, version, weight, worldTag);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -277,13 +844,34 @@ public class InfoPushData {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfoPushData {\n");
     sb.append("    article: ").append(toIndentedString(article)).append("\n");
+    sb.append("    authorName: ").append(toIndentedString(authorName)).append("\n");
+    sb.append("    avatarId: ").append(toIndentedString(avatarId)).append("\n");
+    sb.append("    bannerImageUrl: ").append(toIndentedString(bannerImageUrl)).append("\n");
+    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    contentList: ").append(toIndentedString(contentList)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disclaimerText: ").append(toIndentedString(disclaimerText)).append("\n");
+    sb.append("    domainList: ").append(toIndentedString(domainList)).append("\n");
+    sb.append("    featuredAvatarCategoryId: ").append(toIndentedString(featuredAvatarCategoryId)).append("\n");
+    sb.append("    finalName: ").append(toIndentedString(finalName)).append("\n");
+    sb.append("    iconImageUrl: ").append(toIndentedString(iconImageUrl)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    ipsQuery: ").append(toIndentedString(ipsQuery)).append("\n");
+    sb.append("    isNew: ").append(toIndentedString(isNew)).append("\n");
+    sb.append("    listingIds: ").append(toIndentedString(listingIds)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    onPressed: ").append(toIndentedString(onPressed)).append("\n");
+    sb.append("    overrideName: ").append(toIndentedString(overrideName)).append("\n");
+    sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
+    sb.append("    search: ").append(toIndentedString(search)).append("\n");
+    sb.append("    shortName: ").append(toIndentedString(shortName)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    thumbnailImageUrl: ").append(toIndentedString(thumbnailImageUrl)).append("\n");
+    sb.append("    tooltipDescription: ").append(toIndentedString(tooltipDescription)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+    sb.append("    worldTag: ").append(toIndentedString(worldTag)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -302,7 +890,7 @@ public class InfoPushData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("article", "contentList", "description", "imageUrl", "name", "onPressed", "template", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("article", "authorName", "avatarId", "bannerImageUrl", "categories", "category", "contentList", "description", "disclaimerText", "domainList", "featuredAvatarCategoryId", "finalName", "iconImageUrl", "imageUrl", "ipsQuery", "isNew", "listingIds", "name", "onPressed", "overrideName", "rows", "search", "shortName", "template", "thumbnailImageUrl", "tooltipDescription", "version", "weight", "worldTag"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -333,6 +921,32 @@ public class InfoPushData {
       if (jsonObj.get("article") != null && !jsonObj.get("article").isJsonNull()) {
         InfoPushDataArticle.validateJsonElement(jsonObj.get("article"));
       }
+      if ((jsonObj.get("authorName") != null && !jsonObj.get("authorName").isJsonNull()) && !jsonObj.get("authorName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorName").toString()));
+      }
+      if ((jsonObj.get("avatarId") != null && !jsonObj.get("avatarId").isJsonNull()) && !jsonObj.get("avatarId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `avatarId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatarId").toString()));
+      }
+      if ((jsonObj.get("bannerImageUrl") != null && !jsonObj.get("bannerImageUrl").isJsonNull()) && !jsonObj.get("bannerImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerImageUrl").toString()));
+      }
+      if (jsonObj.get("categories") != null && !jsonObj.get("categories").isJsonNull()) {
+        JsonArray jsonArraycategories = jsonObj.getAsJsonArray("categories");
+        if (jsonArraycategories != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("categories").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `categories` to be an array in the JSON string but got `%s`", jsonObj.get("categories").toString()));
+          }
+
+          // validate the optional field `categories` (array)
+          for (int i = 0; i < jsonArraycategories.size(); i++) {
+            InfoPushDataCategory.validateJsonElement(jsonArraycategories.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+      }
       // validate the optional field `contentList`
       if (jsonObj.get("contentList") != null && !jsonObj.get("contentList").isJsonNull()) {
         DynamicContentRow.validateJsonElement(jsonObj.get("contentList"));
@@ -340,8 +954,42 @@ public class InfoPushData {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      if ((jsonObj.get("disclaimerText") != null && !jsonObj.get("disclaimerText").isJsonNull()) && !jsonObj.get("disclaimerText").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disclaimerText` to be a primitive type in the JSON string but got `%s`", jsonObj.get("disclaimerText").toString()));
+      }
+      if (jsonObj.get("domainList") != null && !jsonObj.get("domainList").isJsonNull()) {
+        JsonArray jsonArraydomainList = jsonObj.getAsJsonArray("domainList");
+        if (jsonArraydomainList != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("domainList").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domainList` to be an array in the JSON string but got `%s`", jsonObj.get("domainList").toString()));
+          }
+
+          // validate the optional field `domainList` (array)
+          for (int i = 0; i < jsonArraydomainList.size(); i++) {
+            InfoPushDataDomainListInner.validateJsonElement(jsonArraydomainList.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("featuredAvatarCategoryId") != null && !jsonObj.get("featuredAvatarCategoryId").isJsonNull()) && !jsonObj.get("featuredAvatarCategoryId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `featuredAvatarCategoryId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("featuredAvatarCategoryId").toString()));
+      }
+      if ((jsonObj.get("finalName") != null && !jsonObj.get("finalName").isJsonNull()) && !jsonObj.get("finalName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `finalName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("finalName").toString()));
+      }
+      if ((jsonObj.get("iconImageUrl") != null && !jsonObj.get("iconImageUrl").isJsonNull()) && !jsonObj.get("iconImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconImageUrl").toString()));
+      }
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
+      }
+      // validate the optional field `ipsQuery`
+      if (jsonObj.get("ipsQuery") != null && !jsonObj.get("ipsQuery").isJsonNull()) {
+        InfoPushIpsQuery.validateJsonElement(jsonObj.get("ipsQuery"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("listingIds") != null && !jsonObj.get("listingIds").isJsonNull() && !jsonObj.get("listingIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `listingIds` to be an array in the JSON string but got `%s`", jsonObj.get("listingIds").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -350,11 +998,27 @@ public class InfoPushData {
       if (jsonObj.get("onPressed") != null && !jsonObj.get("onPressed").isJsonNull()) {
         InfoPushDataClickable.validateJsonElement(jsonObj.get("onPressed"));
       }
+      // validate the optional field `search`
+      if (jsonObj.get("search") != null && !jsonObj.get("search").isJsonNull()) {
+        InfoPushDataSearch.validateJsonElement(jsonObj.get("search"));
+      }
+      if ((jsonObj.get("shortName") != null && !jsonObj.get("shortName").isJsonNull()) && !jsonObj.get("shortName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortName").toString()));
+      }
       if ((jsonObj.get("template") != null && !jsonObj.get("template").isJsonNull()) && !jsonObj.get("template").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template").toString()));
       }
+      if ((jsonObj.get("thumbnailImageUrl") != null && !jsonObj.get("thumbnailImageUrl").isJsonNull()) && !jsonObj.get("thumbnailImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `thumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnailImageUrl").toString()));
+      }
+      if ((jsonObj.get("tooltipDescription") != null && !jsonObj.get("tooltipDescription").isJsonNull()) && !jsonObj.get("tooltipDescription").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tooltipDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tooltipDescription").toString()));
+      }
       if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+      }
+      if ((jsonObj.get("worldTag") != null && !jsonObj.get("worldTag").isJsonNull()) && !jsonObj.get("worldTag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldTag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldTag").toString()));
       }
   }
 

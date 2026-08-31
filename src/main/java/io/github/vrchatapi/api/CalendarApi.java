@@ -244,7 +244,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a calendar event. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupCalendarEventCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId, final ApiCallback _callback) throws ApiException {
@@ -322,7 +322,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a calendar event. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteGroupCalendarEvent(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId) throws ApiException {
@@ -343,7 +343,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a calendar event. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteGroupCalendarEventWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId) throws ApiException {
@@ -366,7 +366,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a calendar event. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupCalendarEventAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId, final ApiCallback<Success> _callback) throws ApiException {
@@ -1325,7 +1325,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> iCalendar file download </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupCalendarEventICSCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId, final ApiCallback _callback) throws ApiException {
@@ -1404,7 +1404,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> iCalendar file download </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public File getGroupCalendarEventICS(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId) throws ApiException {
@@ -1425,7 +1425,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> iCalendar file download </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<File> getGroupCalendarEventICSWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId) throws ApiException {
@@ -1448,7 +1448,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> iCalendar file download </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupCalendarEventICSAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String calendarId, final ApiCallback<File> _callback) throws ApiException {
@@ -1625,7 +1625,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CalendarEvent object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupNextCalendarEventCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -1686,7 +1686,7 @@ public class CalendarApi {
 
     /**
      * Get next calendar event
-     * Get the closest future calendar event scheduled for a group
+     * Return the closest future calendar event scheduled for a group. A group with no future scheduled events answers 404.
      * @param groupId Must be a valid group ID. (required)
      * @return CalendarEvent
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1696,7 +1696,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CalendarEvent object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public CalendarEvent getGroupNextCalendarEvent(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -1706,7 +1706,7 @@ public class CalendarApi {
 
     /**
      * Get next calendar event
-     * Get the closest future calendar event scheduled for a group
+     * Return the closest future calendar event scheduled for a group. A group with no future scheduled events answers 404.
      * @param groupId Must be a valid group ID. (required)
      * @return ApiResponse&lt;CalendarEvent&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1716,7 +1716,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CalendarEvent object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CalendarEvent> getGroupNextCalendarEventWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -1727,7 +1727,7 @@ public class CalendarApi {
 
     /**
      * Get next calendar event (asynchronously)
-     * Get the closest future calendar event scheduled for a group
+     * Return the closest future calendar event scheduled for a group. A group with no future scheduled events answers 404.
      * @param groupId Must be a valid group ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1738,7 +1738,7 @@ public class CalendarApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CalendarEvent object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupNextCalendarEventAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<CalendarEvent> _callback) throws ApiException {

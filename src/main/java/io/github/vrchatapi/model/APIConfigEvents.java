@@ -99,6 +99,11 @@ public class APIConfigEvents {
   @javax.annotation.Nonnull
   private Boolean useDirectPlayerSerialization;
 
+  public static final String SERIALIZED_NAME_USE_SPARSE_ROTATION_FOR_PLAYER_SERIALIZATION = "useSparseRotationForPlayerSerialization";
+  @SerializedName(SERIALIZED_NAME_USE_SPARSE_ROTATION_FOR_PLAYER_SERIALIZATION)
+  @javax.annotation.Nullable
+  private Boolean useSparseRotationForPlayerSerialization;
+
   public static final String SERIALIZED_NAME_VIEW_SEGMENT_LENGTH = "viewSegmentLength";
   @SerializedName(SERIALIZED_NAME_VIEW_SEGMENT_LENGTH)
   @javax.annotation.Nonnull
@@ -297,6 +302,25 @@ public class APIConfigEvents {
   }
 
 
+  public APIConfigEvents useSparseRotationForPlayerSerialization(@javax.annotation.Nullable Boolean useSparseRotationForPlayerSerialization) {
+    this.useSparseRotationForPlayerSerialization = useSparseRotationForPlayerSerialization;
+    return this;
+  }
+
+  /**
+   * Get useSparseRotationForPlayerSerialization
+   * @return useSparseRotationForPlayerSerialization
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSparseRotationForPlayerSerialization() {
+    return useSparseRotationForPlayerSerialization;
+  }
+
+  public void setUseSparseRotationForPlayerSerialization(@javax.annotation.Nullable Boolean useSparseRotationForPlayerSerialization) {
+    this.useSparseRotationForPlayerSerialization = useSparseRotationForPlayerSerialization;
+  }
+
+
   public APIConfigEvents viewSegmentLength(@javax.annotation.Nonnull Integer viewSegmentLength) {
     this.viewSegmentLength = viewSegmentLength;
     return this;
@@ -336,12 +360,13 @@ public class APIConfigEvents {
         Objects.equals(this.playerOrderFactor, apIConfigEvents.playerOrderFactor) &&
         Objects.equals(this.slowUpdateFactorThreshold, apIConfigEvents.slowUpdateFactorThreshold) &&
         Objects.equals(this.useDirectPlayerSerialization, apIConfigEvents.useDirectPlayerSerialization) &&
+        Objects.equals(this.useSparseRotationForPlayerSerialization, apIConfigEvents.useSparseRotationForPlayerSerialization) &&
         Objects.equals(this.viewSegmentLength, apIConfigEvents.viewSegmentLength);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(distanceClose, distanceFactor, distanceFar, groupDistance, maximumBunchSize, notVisibleFactor, playerOrderBucketSize, playerOrderFactor, slowUpdateFactorThreshold, useDirectPlayerSerialization, viewSegmentLength);
+    return Objects.hash(distanceClose, distanceFactor, distanceFar, groupDistance, maximumBunchSize, notVisibleFactor, playerOrderBucketSize, playerOrderFactor, slowUpdateFactorThreshold, useDirectPlayerSerialization, useSparseRotationForPlayerSerialization, viewSegmentLength);
   }
 
   @Override
@@ -358,6 +383,7 @@ public class APIConfigEvents {
     sb.append("    playerOrderFactor: ").append(toIndentedString(playerOrderFactor)).append("\n");
     sb.append("    slowUpdateFactorThreshold: ").append(toIndentedString(slowUpdateFactorThreshold)).append("\n");
     sb.append("    useDirectPlayerSerialization: ").append(toIndentedString(useDirectPlayerSerialization)).append("\n");
+    sb.append("    useSparseRotationForPlayerSerialization: ").append(toIndentedString(useSparseRotationForPlayerSerialization)).append("\n");
     sb.append("    viewSegmentLength: ").append(toIndentedString(viewSegmentLength)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -377,7 +403,7 @@ public class APIConfigEvents {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("distanceClose", "distanceFactor", "distanceFar", "groupDistance", "maximumBunchSize", "notVisibleFactor", "playerOrderBucketSize", "playerOrderFactor", "slowUpdateFactorThreshold", "useDirectPlayerSerialization", "viewSegmentLength"));
+    openapiFields = new HashSet<String>(Arrays.asList("distanceClose", "distanceFactor", "distanceFar", "groupDistance", "maximumBunchSize", "notVisibleFactor", "playerOrderBucketSize", "playerOrderFactor", "slowUpdateFactorThreshold", "useDirectPlayerSerialization", "useSparseRotationForPlayerSerialization", "viewSegmentLength"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("distanceClose", "distanceFactor", "distanceFar", "groupDistance", "maximumBunchSize", "notVisibleFactor", "playerOrderBucketSize", "playerOrderFactor", "slowUpdateFactorThreshold", "useDirectPlayerSerialization", "viewSegmentLength"));

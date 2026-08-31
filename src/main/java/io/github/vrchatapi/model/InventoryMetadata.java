@@ -91,6 +91,11 @@ public class InventoryMetadata {
   @javax.annotation.Nullable
   private String propId;
 
+  public static final String SERIALIZED_NAME_PROP_KIND = "propKind";
+  @SerializedName(SERIALIZED_NAME_PROP_KIND)
+  @javax.annotation.Nullable
+  private Integer propKind;
+
   public InventoryMetadata() {
   }
 
@@ -254,6 +259,25 @@ public class InventoryMetadata {
   }
 
 
+  public InventoryMetadata propKind(@javax.annotation.Nullable Integer propKind) {
+    this.propKind = propKind;
+    return this;
+  }
+
+  /**
+   * Get propKind
+   * @return propKind
+   */
+  @javax.annotation.Nullable
+  public Integer getPropKind() {
+    return propKind;
+  }
+
+  public void setPropKind(@javax.annotation.Nullable Integer propKind) {
+    this.propKind = propKind;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -271,12 +295,13 @@ public class InventoryMetadata {
         Objects.equals(this.imageUrl, inventoryMetadata.imageUrl) &&
         Objects.equals(this.inventoryItemsToInstantiate, inventoryMetadata.inventoryItemsToInstantiate) &&
         Objects.equals(this.maskTag, inventoryMetadata.maskTag) &&
-        Objects.equals(this.propId, inventoryMetadata.propId);
+        Objects.equals(this.propId, inventoryMetadata.propId) &&
+        Objects.equals(this.propKind, inventoryMetadata.propKind);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(animated, animationStyle, assetBundleId, fileId, imageUrl, inventoryItemsToInstantiate, maskTag, propId);
+    return Objects.hash(animated, animationStyle, assetBundleId, fileId, imageUrl, inventoryItemsToInstantiate, maskTag, propId, propKind);
   }
 
   @Override
@@ -291,6 +316,7 @@ public class InventoryMetadata {
     sb.append("    inventoryItemsToInstantiate: ").append(toIndentedString(inventoryItemsToInstantiate)).append("\n");
     sb.append("    maskTag: ").append(toIndentedString(maskTag)).append("\n");
     sb.append("    propId: ").append(toIndentedString(propId)).append("\n");
+    sb.append("    propKind: ").append(toIndentedString(propKind)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -309,7 +335,7 @@ public class InventoryMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("animated", "animationStyle", "assetBundleId", "fileId", "imageUrl", "inventoryItemsToInstantiate", "maskTag", "propId"));
+    openapiFields = new HashSet<String>(Arrays.asList("animated", "animationStyle", "assetBundleId", "fileId", "imageUrl", "inventoryItemsToInstantiate", "maskTag", "propId", "propKind"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

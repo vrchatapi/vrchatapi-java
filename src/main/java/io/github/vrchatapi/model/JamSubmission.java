@@ -75,10 +75,10 @@ public class JamSubmission {
   @javax.annotation.Nonnull
   private String jamId;
 
-  public static final String SERIALIZED_NAME_RATING_SCORE = "ratingScore";
-  @SerializedName(SERIALIZED_NAME_RATING_SCORE)
-  @javax.annotation.Nullable
-  private Integer ratingScore;
+  public static final String SERIALIZED_NAME_RATINGS_SCORE = "ratingsScore";
+  @SerializedName(SERIALIZED_NAME_RATINGS_SCORE)
+  @javax.annotation.Nonnull
+  private Integer ratingsScore;
 
   public static final String SERIALIZED_NAME_SUBMITTER_ID = "submitterId";
   @SerializedName(SERIALIZED_NAME_SUBMITTER_ID)
@@ -183,23 +183,22 @@ public class JamSubmission {
   }
 
 
-  public JamSubmission ratingScore(@javax.annotation.Nullable Integer ratingScore) {
-    this.ratingScore = ratingScore;
+  public JamSubmission ratingsScore(@javax.annotation.Nonnull Integer ratingsScore) {
+    this.ratingsScore = ratingsScore;
     return this;
   }
 
   /**
-   * Get ratingScore
-   * minimum: 0
-   * @return ratingScore
+   * Get ratingsScore
+   * @return ratingsScore
    */
-  @javax.annotation.Nullable
-  public Integer getRatingScore() {
-    return ratingScore;
+  @javax.annotation.Nonnull
+  public Integer getRatingsScore() {
+    return ratingsScore;
   }
 
-  public void setRatingScore(@javax.annotation.Nullable Integer ratingScore) {
-    this.ratingScore = ratingScore;
+  public void setRatingsScore(@javax.annotation.Nonnull Integer ratingsScore) {
+    this.ratingsScore = ratingsScore;
   }
 
 
@@ -237,13 +236,13 @@ public class JamSubmission {
         Objects.equals(this.description, jamSubmission.description) &&
         Objects.equals(this.id, jamSubmission.id) &&
         Objects.equals(this.jamId, jamSubmission.jamId) &&
-        Objects.equals(this.ratingScore, jamSubmission.ratingScore) &&
+        Objects.equals(this.ratingsScore, jamSubmission.ratingsScore) &&
         Objects.equals(this.submitterId, jamSubmission.submitterId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentId, createdAt, description, id, jamId, ratingScore, submitterId);
+    return Objects.hash(contentId, createdAt, description, id, jamId, ratingsScore, submitterId);
   }
 
   @Override
@@ -255,7 +254,7 @@ public class JamSubmission {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    jamId: ").append(toIndentedString(jamId)).append("\n");
-    sb.append("    ratingScore: ").append(toIndentedString(ratingScore)).append("\n");
+    sb.append("    ratingsScore: ").append(toIndentedString(ratingsScore)).append("\n");
     sb.append("    submitterId: ").append(toIndentedString(submitterId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,10 +274,10 @@ public class JamSubmission {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("contentId", "created_at", "description", "id", "jamId", "ratingScore", "submitterId"));
+    openapiFields = new HashSet<String>(Arrays.asList("contentId", "created_at", "description", "id", "jamId", "ratingsScore", "submitterId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("contentId", "created_at", "description", "id", "jamId", "submitterId"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("contentId", "created_at", "description", "id", "jamId", "ratingsScore", "submitterId"));
   }
 
   /**

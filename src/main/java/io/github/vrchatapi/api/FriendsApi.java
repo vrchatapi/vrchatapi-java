@@ -90,7 +90,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Successful response after booping a user. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to unfriend someone who is not a friend. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call boopCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull BoopRequest boopRequest, final ApiCallback _callback) throws ApiException {
@@ -169,7 +169,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Successful response after booping a user. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to unfriend someone who is not a friend. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success boop(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull BoopRequest boopRequest) throws ApiException {
@@ -191,7 +191,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Successful response after booping a user. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to unfriend someone who is not a friend. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> boopWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull BoopRequest boopRequest) throws ApiException {
@@ -215,7 +215,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Successful response after booping a user. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to unfriend someone who is not a friend. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call boopAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull BoopRequest boopRequest, final ApiCallback<Success> _callback) throws ApiException {
@@ -373,7 +373,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call friendCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -445,7 +445,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Notification friend(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -466,7 +466,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Notification> friendWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -489,7 +489,7 @@ public class FriendsApi {
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to send a friend request to a user which doesn&#39;t exist. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call friendAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Notification> _callback) throws ApiException {

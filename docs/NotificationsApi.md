@@ -159,7 +159,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single NotificationV2 object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="clearNotifications"></a>
 # **clearNotifications**
@@ -295,7 +295,7 @@ This endpoint does not need any parameter.
 
 <a id="deleteNotification"></a>
 # **deleteNotification**
-> Notification deleteNotification(notificationId)
+> Success deleteNotification(notificationId)
 
 Delete Notification
 
@@ -325,7 +325,7 @@ public class Example {
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
     String notificationId = "notificationId_example"; // String | Must be a valid notification ID.
     try {
-      Notification result = apiInstance.deleteNotification(notificationId);
+      Success result = apiInstance.deleteNotification(notificationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationsApi#deleteNotification");
@@ -346,7 +346,7 @@ public class Example {
 
 ### Return type
 
-[**Notification**](Notification.md)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notification object. |  -  |
+| **200** | Response from successfully hiding a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="deleteNotificationV2"></a>
@@ -433,7 +433,7 @@ public class Example {
 | **200** | Successful response after clearing a notification. |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getNotification"></a>
 # **getNotification**
@@ -504,7 +504,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Notification object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getNotificationV2"></a>
 # **getNotificationV2**
@@ -576,7 +576,7 @@ public class Example {
 | **200** | Returns a single NotificationV2 object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getNotificationV2s"></a>
 # **getNotificationV2s**
@@ -870,7 +870,7 @@ public class Example {
 | **200** | Returns a single NotificationV2 object. |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="respondNotificationV2"></a>
 # **respondNotificationV2**
@@ -944,5 +944,5 @@ public class Example {
 | **200** | Returns a single NotificationV2 object. |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing notification. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 

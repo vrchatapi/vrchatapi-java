@@ -223,7 +223,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteAvatarCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
@@ -294,7 +294,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Avatar deleteAvatar(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -314,7 +314,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Avatar> deleteAvatarWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -336,7 +336,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteAvatarAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<Avatar> _callback) throws ApiException {
@@ -358,7 +358,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The Impostors generated for that avatar are deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteImpostorCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
@@ -428,7 +428,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The Impostors generated for that avatar are deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteImpostor(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -447,7 +447,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The Impostors generated for that avatar are deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deleteImpostorWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -468,7 +468,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The Impostors generated for that avatar are deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteImpostorAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<Void> _callback) throws ApiException {
@@ -489,7 +489,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Service Status. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call enqueueImpostorCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
@@ -560,7 +560,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Service Status. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ServiceStatus enqueueImpostor(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -580,7 +580,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Service Status. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ServiceStatus> enqueueImpostorWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -602,7 +602,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Service Status. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call enqueueImpostorAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<ServiceStatus> _callback) throws ApiException {
@@ -624,7 +624,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAvatarCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
@@ -695,7 +695,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Avatar getAvatar(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -715,7 +715,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Avatar> getAvatarWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -737,7 +737,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAvatarAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<Avatar> _callback) throws ApiException {
@@ -1731,7 +1731,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call selectAvatarCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
@@ -1802,7 +1802,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public CurrentUser selectAvatar(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -1822,7 +1822,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CurrentUser> selectAvatarWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
@@ -1844,7 +1844,7 @@ public class AvatarsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call selectAvatarAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<CurrentUser> _callback) throws ApiException {
@@ -1867,11 +1867,9 @@ public class AvatarsApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to select a fallback avatar that is missing the fallback tag. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call selectFallbackAvatarCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -1917,7 +1915,6 @@ public class AvatarsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
-    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call selectFallbackAvatarValidateBeforeCall(@javax.annotation.Nonnull String avatarId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'avatarId' is set
@@ -1942,11 +1939,9 @@ public class AvatarsApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to select a fallback avatar that is missing the fallback tag. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public CurrentUser selectFallbackAvatar(@javax.annotation.Nonnull String avatarId) throws ApiException {
         ApiResponse<CurrentUser> localVarResp = selectFallbackAvatarWithHttpInfo(avatarId);
         return localVarResp.getData();
@@ -1965,11 +1960,9 @@ public class AvatarsApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to select a fallback avatar that is missing the fallback tag. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public ApiResponse<CurrentUser> selectFallbackAvatarWithHttpInfo(@javax.annotation.Nonnull String avatarId) throws ApiException {
         okhttp3.Call localVarCall = selectFallbackAvatarValidateBeforeCall(avatarId, null);
         Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
@@ -1990,11 +1983,9 @@ public class AvatarsApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to select a fallback avatar that is missing the fallback tag. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call selectFallbackAvatarAsync(@javax.annotation.Nonnull String avatarId, final ApiCallback<CurrentUser> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = selectFallbackAvatarValidateBeforeCall(avatarId, _callback);
@@ -2014,8 +2005,9 @@ public class AvatarsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAvatarCall(@javax.annotation.Nonnull String avatarId, @javax.annotation.Nullable UpdateAvatarRequest updateAvatarRequest, final ApiCallback _callback) throws ApiException {
@@ -2087,8 +2079,9 @@ public class AvatarsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Avatar updateAvatar(@javax.annotation.Nonnull String avatarId, @javax.annotation.Nullable UpdateAvatarRequest updateAvatarRequest) throws ApiException {
@@ -2108,8 +2101,9 @@ public class AvatarsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Avatar> updateAvatarWithHttpInfo(@javax.annotation.Nonnull String avatarId, @javax.annotation.Nullable UpdateAvatarRequest updateAvatarRequest) throws ApiException {
@@ -2131,8 +2125,9 @@ public class AvatarsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Avatar object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent avatar. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAvatarAsync(@javax.annotation.Nonnull String avatarId, @javax.annotation.Nullable UpdateAvatarRequest updateAvatarRequest, final ApiCallback<Avatar> _callback) throws ApiException {

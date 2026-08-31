@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.GroupPermissions;
-import io.github.vrchatapi.model.GroupRoleTemplateValuesRoles;
+import io.github.vrchatapi.model.GroupRoleTemplateRole;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,7 +71,7 @@ public class GroupRoleTemplateValues {
   public static final String SERIALIZED_NAME_ROLES = "roles";
   @SerializedName(SERIALIZED_NAME_ROLES)
   @javax.annotation.Nonnull
-  private GroupRoleTemplateValuesRoles roles;
+  private List<GroupRoleTemplateRole> roles = new ArrayList<>();
 
   public GroupRoleTemplateValues() {
   }
@@ -141,8 +141,16 @@ public class GroupRoleTemplateValues {
   }
 
 
-  public GroupRoleTemplateValues roles(@javax.annotation.Nonnull GroupRoleTemplateValuesRoles roles) {
+  public GroupRoleTemplateValues roles(@javax.annotation.Nonnull List<GroupRoleTemplateRole> roles) {
     this.roles = roles;
+    return this;
+  }
+
+  public GroupRoleTemplateValues addRolesItem(GroupRoleTemplateRole rolesItem) {
+    if (this.roles == null) {
+      this.roles = new ArrayList<>();
+    }
+    this.roles.add(rolesItem);
     return this;
   }
 
@@ -151,11 +159,11 @@ public class GroupRoleTemplateValues {
    * @return roles
    */
   @javax.annotation.Nonnull
-  public GroupRoleTemplateValuesRoles getRoles() {
+  public List<GroupRoleTemplateRole> getRoles() {
     return roles;
   }
 
-  public void setRoles(@javax.annotation.Nonnull GroupRoleTemplateValuesRoles roles) {
+  public void setRoles(@javax.annotation.Nonnull List<GroupRoleTemplateRole> roles) {
     this.roles = roles;
   }
 
@@ -253,8 +261,16 @@ public class GroupRoleTemplateValues {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // validate the required field `roles`
-      GroupRoleTemplateValuesRoles.validateJsonElement(jsonObj.get("roles"));
+      if (jsonObj.get("roles") != null) {
+        if (!jsonObj.get("roles").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `roles` to be an array in the JSON string but got `%s`", jsonObj.get("roles").toString()));
+        }
+        JsonArray jsonArrayroles = jsonObj.getAsJsonArray("roles");
+        // validate the required field `roles` (array)
+        for (int i = 0; i < jsonArrayroles.size(); i++) {
+          GroupRoleTemplateRole.validateJsonElement(jsonArrayroles.get(i));
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -14,7 +14,7 @@
 |**id** | **String** |  |  [optional] |
 |**imageId** | **String** |  |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
-|**roleId** | **List&lt;String&gt;** |   |  [optional] |
+|**roleIds** | **List&lt;String&gt;** |   |  [optional] |
 |**text** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |

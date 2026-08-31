@@ -180,6 +180,16 @@ public class Group {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_NAMEPLATE_ID = "nameplateId";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_ID)
+  @javax.annotation.Nullable
+  private Object nameplateId = null;
+
+  public static final String SERIALIZED_NAME_NAMEPLATE_URL = "nameplateUrl";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_URL)
+  @javax.annotation.Nullable
+  private Object nameplateUrl = null;
+
   public static final String SERIALIZED_NAME_ONLINE_MEMBER_COUNT = "onlineMemberCount";
   @SerializedName(SERIALIZED_NAME_ONLINE_MEMBER_COUNT)
   @javax.annotation.Nullable
@@ -716,6 +726,44 @@ public class Group {
   }
 
 
+  public Group nameplateId(@javax.annotation.Nullable Object nameplateId) {
+    this.nameplateId = nameplateId;
+    return this;
+  }
+
+  /**
+   * Get nameplateId
+   * @return nameplateId
+   */
+  @javax.annotation.Nullable
+  public Object getNameplateId() {
+    return nameplateId;
+  }
+
+  public void setNameplateId(@javax.annotation.Nullable Object nameplateId) {
+    this.nameplateId = nameplateId;
+  }
+
+
+  public Group nameplateUrl(@javax.annotation.Nullable Object nameplateUrl) {
+    this.nameplateUrl = nameplateUrl;
+    return this;
+  }
+
+  /**
+   * Get nameplateUrl
+   * @return nameplateUrl
+   */
+  @javax.annotation.Nullable
+  public Object getNameplateUrl() {
+    return nameplateUrl;
+  }
+
+  public void setNameplateUrl(@javax.annotation.Nullable Object nameplateUrl) {
+    this.nameplateUrl = nameplateUrl;
+  }
+
+
   public Group onlineMemberCount(@javax.annotation.Nullable Integer onlineMemberCount) {
     this.onlineMemberCount = onlineMemberCount;
     return this;
@@ -937,6 +985,8 @@ public class Group {
         Objects.equals(this.membershipStatus, group.membershipStatus) &&
         Objects.equals(this.myMember, group.myMember) &&
         Objects.equals(this.name, group.name) &&
+        Objects.equals(this.nameplateId, group.nameplateId) &&
+        Objects.equals(this.nameplateUrl, group.nameplateUrl) &&
         Objects.equals(this.onlineMemberCount, group.onlineMemberCount) &&
         Objects.equals(this.ownerId, group.ownerId) &&
         Objects.equals(this.privacy, group.privacy) &&
@@ -954,7 +1004,7 @@ public class Group {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationBetaCode, ageVerificationBetaSlots, ageVerificationSlotsAvailable, allowGroupJoinPrompt, badges, bannerId, bannerUrl, createdAt, description, discriminator, galleries, iconId, iconUrl, id, isVerified, joinState, languages, lastPostCreatedAt, links, memberCount, memberCountSyncedAt, membershipStatus, myMember, name, onlineMemberCount, ownerId, privacy, roles, rules, shortCode, tags, transferTargetId, updatedAt);
+    return Objects.hash(ageVerificationBetaCode, ageVerificationBetaSlots, ageVerificationSlotsAvailable, allowGroupJoinPrompt, badges, bannerId, bannerUrl, createdAt, description, discriminator, galleries, iconId, iconUrl, id, isVerified, joinState, languages, lastPostCreatedAt, links, memberCount, memberCountSyncedAt, membershipStatus, myMember, name, nameplateId, nameplateUrl, onlineMemberCount, ownerId, privacy, roles, rules, shortCode, tags, transferTargetId, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -992,6 +1042,8 @@ public class Group {
     sb.append("    membershipStatus: ").append(toIndentedString(membershipStatus)).append("\n");
     sb.append("    myMember: ").append(toIndentedString(myMember)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nameplateId: ").append(toIndentedString(nameplateId)).append("\n");
+    sb.append("    nameplateUrl: ").append(toIndentedString(nameplateUrl)).append("\n");
     sb.append("    onlineMemberCount: ").append(toIndentedString(onlineMemberCount)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    privacy: ").append(toIndentedString(privacy)).append("\n");
@@ -1019,7 +1071,7 @@ public class Group {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationBetaCode", "ageVerificationBetaSlots", "ageVerificationSlotsAvailable", "allowGroupJoinPrompt", "badges", "bannerId", "bannerUrl", "createdAt", "description", "discriminator", "galleries", "iconId", "iconUrl", "id", "isVerified", "joinState", "languages", "lastPostCreatedAt", "links", "memberCount", "memberCountSyncedAt", "membershipStatus", "myMember", "name", "onlineMemberCount", "ownerId", "privacy", "roles", "rules", "shortCode", "tags", "transferTargetId", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationBetaCode", "ageVerificationBetaSlots", "ageVerificationSlotsAvailable", "allowGroupJoinPrompt", "badges", "bannerId", "bannerUrl", "createdAt", "description", "discriminator", "galleries", "iconId", "iconUrl", "id", "isVerified", "joinState", "languages", "lastPostCreatedAt", "links", "memberCount", "memberCountSyncedAt", "membershipStatus", "myMember", "name", "nameplateId", "nameplateUrl", "onlineMemberCount", "ownerId", "privacy", "roles", "rules", "shortCode", "tags", "transferTargetId", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

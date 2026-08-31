@@ -7,10 +7,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**acceptedPrivacyVersion** | **Integer** |  |  [optional] |
+|**acceptedTOSVersion** | **Integer** |  |  [optional] |
+|**accountDeletionDate** | **String** |  |  [optional] |
+|**accountDeletionLog** | **List&lt;Object&gt;** |  |  [optional] |
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
+|**appleDetails** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |   |  [optional] |
+|**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**bio** | **String** |  |  |
@@ -22,7 +28,7 @@
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their &#x60;username&#x60;. Changing display name is restricted to a cooldown period. |  |
 |**friendKey** | **String** |  |  |
-|**friendRequestStatus** | **String** |  |  [optional] |
+|**friendRequestStatus** | **String** | State of a friend request between the caller and this user. VRChat sends the string &#x60;\&quot;null\&quot;&#x60;, not JSON &#x60;null&#x60;. |  [optional] |
 |**iconFrame** | **String** |  |  [optional] |
 |**iconUrl** | **String** |  |  [optional] |
 |**id** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
@@ -49,7 +55,6 @@
 |**travelingToLocation** | **String** |  |  [optional] |
 |**travelingToWorld** | **String** |  |  [optional] |
 |**userIcon** | **String** |  |  |
-|**username** | **String** | -| A users unique name, used during login. This is different from &#x60;displayName&#x60; which is what shows up in-game. A users &#x60;username&#x60; can never be changed.&#39; **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). |  [optional] |
 |**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 
 

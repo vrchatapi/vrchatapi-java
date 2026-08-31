@@ -164,7 +164,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successful response after deleting a calendar event. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="discoverCalendarEvents"></a>
 # **discoverCalendarEvents**
@@ -688,7 +688,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | iCalendar file download |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupCalendarEvents"></a>
 # **getGroupCalendarEvents**
@@ -772,7 +772,7 @@ public class Example {
 
 Get next calendar event
 
-Get the closest future calendar event scheduled for a group
+Return the closest future calendar event scheduled for a group. A group with no future scheduled events answers 404.
 
 ### Example
 ```java
@@ -835,7 +835,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single CalendarEvent object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to download ICS calendar of a non-existent calendar entry, get such a calendar entry, or get the next event for a group that lacks any future scheduled events. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="searchCalendarEvents"></a>
 # **searchCalendarEvents**

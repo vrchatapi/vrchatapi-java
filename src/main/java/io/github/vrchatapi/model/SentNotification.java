@@ -84,7 +84,6 @@ public class SentNotification {
   private String senderUserId;
 
   public static final String SERIALIZED_NAME_SENDER_USERNAME = "senderUsername";
-  @Deprecated
   @SerializedName(SERIALIZED_NAME_SENDER_USERNAME)
   @javax.annotation.Nullable
   private String senderUsername;
@@ -219,24 +218,20 @@ public class SentNotification {
   }
 
 
-  @Deprecated
   public SentNotification senderUsername(@javax.annotation.Nullable String senderUsername) {
     this.senderUsername = senderUsername;
     return this;
   }
 
   /**
-   * -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+   * The name of the user who sent the notification.
    * @return senderUsername
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   public String getSenderUsername() {
     return senderUsername;
   }
 
-  @Deprecated
   public void setSenderUsername(@javax.annotation.Nullable String senderUsername) {
     this.senderUsername = senderUsername;
   }

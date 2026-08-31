@@ -233,7 +233,7 @@ public class Example {
 
 <a id="getFavoriteGroups"></a>
 # **getFavoriteGroups**
-> List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, userId, ownerId)
+> List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, type, userId, ownerId)
 
 List Favorite Groups
 
@@ -263,10 +263,11 @@ public class Example {
     FavoritesApi apiInstance = new FavoritesApi(defaultClient);
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    FavoriteType type = FavoriteType.fromValue("avatar"); // FavoriteType | Filter to a single favorite group type.
     String userId = "userId_example"; // String | Target user to see information on, admin-only.
-    String ownerId = "ownerId_example"; // String | The owner whose favorite groups to return. Must be a UserID.
+    String ownerId = "ownerId_example"; // String | The user whose favorite groups to return. Must be a user ID.
     try {
-      List<FavoriteGroup> result = apiInstance.getFavoriteGroups(n, offset, userId, ownerId);
+      List<FavoriteGroup> result = apiInstance.getFavoriteGroups(n, offset, type, userId, ownerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#getFavoriteGroups");
@@ -285,8 +286,9 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **type** | [**FavoriteType**](.md)| Filter to a single favorite group type. | [optional] [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
 | **userId** | **String**| Target user to see information on, admin-only. | [optional] |
-| **ownerId** | **String**| The owner whose favorite groups to return. Must be a UserID. | [optional] |
+| **ownerId** | **String**| The user whose favorite groups to return. Must be a user ID. | [optional] |
 
 ### Return type
 
@@ -517,8 +519,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success response after removing a favorite. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to show information about a non-existent favorite. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**

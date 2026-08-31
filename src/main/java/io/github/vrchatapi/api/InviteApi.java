@@ -95,6 +95,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a single InviteMessage object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to get an Invite Message with a negative slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
@@ -181,6 +182,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a single InviteMessage object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to get an Invite Message with a negative slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
@@ -204,6 +206,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a single InviteMessage object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to get an Invite Message with a negative slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
@@ -229,6 +232,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a single InviteMessage object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to get an Invite Message with a negative slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to get an Invite Message with a too high slot number. </td><td>  -  </td></tr>
      </table>
      */
@@ -397,7 +401,7 @@ public class InviteApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call inviteMyselfToCall(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, final ApiCallback _callback) throws ApiException {
@@ -475,7 +479,7 @@ public class InviteApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public SentNotification inviteMyselfTo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId) throws ApiException {
@@ -496,7 +500,7 @@ public class InviteApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<SentNotification> inviteMyselfToWithHttpInfo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId) throws ApiException {
@@ -519,7 +523,7 @@ public class InviteApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call inviteMyselfToAsync(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, final ApiCallback<SentNotification> _callback) throws ApiException {
@@ -1137,6 +1141,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a list of InviteMessage objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to update an Invite Message with an invalid slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to reset an Invite Message whose slot doesn&#39;t exist. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
@@ -1224,6 +1229,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a list of InviteMessage objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to update an Invite Message with an invalid slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to reset an Invite Message whose slot doesn&#39;t exist. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
@@ -1248,6 +1254,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a list of InviteMessage objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to update an Invite Message with an invalid slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to reset an Invite Message whose slot doesn&#39;t exist. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>
@@ -1274,6 +1281,7 @@ public class InviteApi {
         <tr><td> 200 </td><td> Returns a list of InviteMessage objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to update an Invite Message with an invalid slot number. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing authorization to perform that action. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to reset an Invite Message whose slot doesn&#39;t exist. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Error response when trying to update an Invite Message before the cooldown has expired. </td><td>  -  </td></tr>
      </table>

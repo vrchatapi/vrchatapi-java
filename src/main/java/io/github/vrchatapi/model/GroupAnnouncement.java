@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -47,7 +49,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * GroupAnnouncement
+ * An announcement is stored as a group post, so &#x60;POST /groups/{groupId}/announcement&#x60; answers with the post fields below as well as the announcement ones.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class GroupAnnouncement {
@@ -60,6 +62,11 @@ public class GroupAnnouncement {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_EDITOR_ID = "editorId";
+  @SerializedName(SERIALIZED_NAME_EDITOR_ID)
+  @javax.annotation.Nullable
+  private String editorId;
 
   public static final String SERIALIZED_NAME_GROUP_ID = "groupId";
   @SerializedName(SERIALIZED_NAME_GROUP_ID)
@@ -81,6 +88,11 @@ public class GroupAnnouncement {
   @javax.annotation.Nullable
   private String imageUrl;
 
+  public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
+  @SerializedName(SERIALIZED_NAME_ROLE_IDS)
+  @javax.annotation.Nullable
+  private List<String> roleIds = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
   @javax.annotation.Nullable
@@ -95,6 +107,11 @@ public class GroupAnnouncement {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
+  @SerializedName(SERIALIZED_NAME_VISIBILITY)
+  @javax.annotation.Nullable
+  private String visibility;
 
   public GroupAnnouncement() {
   }
@@ -134,6 +151,25 @@ public class GroupAnnouncement {
 
   public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public GroupAnnouncement editorId(@javax.annotation.Nullable String editorId) {
+    this.editorId = editorId;
+    return this;
+  }
+
+  /**
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return editorId
+   */
+  @javax.annotation.Nullable
+  public String getEditorId() {
+    return editorId;
+  }
+
+  public void setEditorId(@javax.annotation.Nullable String editorId) {
+    this.editorId = editorId;
   }
 
 
@@ -213,6 +249,33 @@ public class GroupAnnouncement {
   }
 
 
+  public GroupAnnouncement roleIds(@javax.annotation.Nullable List<String> roleIds) {
+    this.roleIds = roleIds;
+    return this;
+  }
+
+  public GroupAnnouncement addRoleIdsItem(String roleIdsItem) {
+    if (this.roleIds == null) {
+      this.roleIds = new ArrayList<>();
+    }
+    this.roleIds.add(roleIdsItem);
+    return this;
+  }
+
+  /**
+   *  
+   * @return roleIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getRoleIds() {
+    return roleIds;
+  }
+
+  public void setRoleIds(@javax.annotation.Nullable List<String> roleIds) {
+    this.roleIds = roleIds;
+  }
+
+
   public GroupAnnouncement text(@javax.annotation.Nullable String text) {
     this.text = text;
     return this;
@@ -270,6 +333,25 @@ public class GroupAnnouncement {
   }
 
 
+  public GroupAnnouncement visibility(@javax.annotation.Nullable String visibility) {
+    this.visibility = visibility;
+    return this;
+  }
+
+  /**
+   * Get visibility
+   * @return visibility
+   */
+  @javax.annotation.Nullable
+  public String getVisibility() {
+    return visibility;
+  }
+
+  public void setVisibility(@javax.annotation.Nullable String visibility) {
+    this.visibility = visibility;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -282,13 +364,16 @@ public class GroupAnnouncement {
     GroupAnnouncement groupAnnouncement = (GroupAnnouncement) o;
     return Objects.equals(this.authorId, groupAnnouncement.authorId) &&
         Objects.equals(this.createdAt, groupAnnouncement.createdAt) &&
+        Objects.equals(this.editorId, groupAnnouncement.editorId) &&
         Objects.equals(this.groupId, groupAnnouncement.groupId) &&
         Objects.equals(this.id, groupAnnouncement.id) &&
         Objects.equals(this.imageId, groupAnnouncement.imageId) &&
         Objects.equals(this.imageUrl, groupAnnouncement.imageUrl) &&
+        Objects.equals(this.roleIds, groupAnnouncement.roleIds) &&
         Objects.equals(this.text, groupAnnouncement.text) &&
         Objects.equals(this.title, groupAnnouncement.title) &&
-        Objects.equals(this.updatedAt, groupAnnouncement.updatedAt);
+        Objects.equals(this.updatedAt, groupAnnouncement.updatedAt) &&
+        Objects.equals(this.visibility, groupAnnouncement.visibility);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -297,7 +382,7 @@ public class GroupAnnouncement {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, createdAt, groupId, id, imageId, imageUrl, text, title, updatedAt);
+    return Objects.hash(authorId, createdAt, editorId, groupId, id, imageId, imageUrl, roleIds, text, title, updatedAt, visibility);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -313,13 +398,16 @@ public class GroupAnnouncement {
     sb.append("class GroupAnnouncement {\n");
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    editorId: ").append(toIndentedString(editorId)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,7 +426,7 @@ public class GroupAnnouncement {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "createdAt", "groupId", "id", "imageId", "imageUrl", "text", "title", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "createdAt", "editorId", "groupId", "id", "imageId", "imageUrl", "roleIds", "text", "title", "updatedAt", "visibility"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -368,6 +456,9 @@ public class GroupAnnouncement {
       if ((jsonObj.get("authorId") != null && !jsonObj.get("authorId").isJsonNull()) && !jsonObj.get("authorId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
       }
+      if ((jsonObj.get("editorId") != null && !jsonObj.get("editorId").isJsonNull()) && !jsonObj.get("editorId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `editorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("editorId").toString()));
+      }
       if ((jsonObj.get("groupId") != null && !jsonObj.get("groupId").isJsonNull()) && !jsonObj.get("groupId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `groupId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("groupId").toString()));
       }
@@ -380,11 +471,18 @@ public class GroupAnnouncement {
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonNull() && !jsonObj.get("roleIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `roleIds` to be an array in the JSON string but got `%s`", jsonObj.get("roleIds").toString()));
+      }
       if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if ((jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) && !jsonObj.get("visibility").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `visibility` to be a primitive type in the JSON string but got `%s`", jsonObj.get("visibility").toString()));
       }
   }
 

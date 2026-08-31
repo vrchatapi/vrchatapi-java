@@ -19,7 +19,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,48 +54,306 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class DynamicContentRow {
+  public static final String SERIALIZED_NAME_ANY_STYLE = "anyStyle";
+  @SerializedName(SERIALIZED_NAME_ANY_STYLE)
+  @javax.annotation.Nullable
+  private List<String> anyStyle;
+
+  public static final String SERIALIZED_NAME_ANY_TAG = "anyTag";
+  @SerializedName(SERIALIZED_NAME_ANY_TAG)
+  @javax.annotation.Nullable
+  private List<String> anyTag;
+
+  public static final String SERIALIZED_NAME_AVATAR_SPECIFIC = "avatarSpecific";
+  @SerializedName(SERIALIZED_NAME_AVATAR_SPECIFIC)
+  @javax.annotation.Nullable
+  private Boolean avatarSpecific;
+
+  public static final String SERIALIZED_NAME_BANNERS_TAG = "bannersTag";
+  @SerializedName(SERIALIZED_NAME_BANNERS_TAG)
+  @javax.annotation.Nullable
+  private String bannersTag;
+
+  public static final String SERIALIZED_NAME_CATEGORIES = "categories";
+  @SerializedName(SERIALIZED_NAME_CATEGORIES)
+  @javax.annotation.Nullable
+  private List<String> categories = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FEATURED_RESULTS = "featuredResults";
+  @SerializedName(SERIALIZED_NAME_FEATURED_RESULTS)
+  @javax.annotation.Nullable
+  private String featuredResults;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   @javax.annotation.Nullable
   private Integer index;
+
+  public static final String SERIALIZED_NAME_MARKETPLACE = "marketplace";
+  @SerializedName(SERIALIZED_NAME_MARKETPLACE)
+  @javax.annotation.Nullable
+  private String marketplace;
+
+  public static final String SERIALIZED_NAME_MAX_PRICE = "maxPrice";
+  @SerializedName(SERIALIZED_NAME_MAX_PRICE)
+  @javax.annotation.Nullable
+  private Integer maxPrice;
+
+  public static final String SERIALIZED_NAME_MIN_OCCUPANTS = "minOccupants";
+  @SerializedName(SERIALIZED_NAME_MIN_OCCUPANTS)
+  @javax.annotation.Nullable
+  private Integer minOccupants;
+
+  public static final String SERIALIZED_NAME_MIN_PRICE = "minPrice";
+  @SerializedName(SERIALIZED_NAME_MIN_PRICE)
+  @javax.annotation.Nullable
+  private Integer minPrice;
+
+  public static final String SERIALIZED_NAME_MINIMUM_INTEREST_COUNT = "minimumInterestCount";
+  @SerializedName(SERIALIZED_NAME_MINIMUM_INTEREST_COUNT)
+  @javax.annotation.Nullable
+  private Integer minimumInterestCount;
+
+  public static final String SERIALIZED_NAME_MINIMUM_REMAINING_MINUTES = "minimumRemainingMinutes";
+  @SerializedName(SERIALIZED_NAME_MINIMUM_REMAINING_MINUTES)
+  @javax.annotation.Nullable
+  private Integer minimumRemainingMinutes;
+
+  public static final String SERIALIZED_NAME_MODE = "mode";
+  @SerializedName(SERIALIZED_NAME_MODE)
+  @javax.annotation.Nullable
+  private String mode;
+
+  public static final String SERIALIZED_NAME_N = "n";
+  @SerializedName(SERIALIZED_NAME_N)
+  @javax.annotation.Nullable
+  private Integer n;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nonnull
   private String name;
 
+  public static final String SERIALIZED_NAME_NON_FEATURED_RESULTS = "nonFeaturedResults";
+  @SerializedName(SERIALIZED_NAME_NON_FEATURED_RESULTS)
+  @javax.annotation.Nullable
+  private String nonFeaturedResults;
+
+  public static final String SERIALIZED_NAME_NOTAG = "notag";
+  @SerializedName(SERIALIZED_NAME_NOTAG)
+  @javax.annotation.Nullable
+  private List<String> notag;
+
+  public static final String SERIALIZED_NAME_PARAMS = "params";
+  @SerializedName(SERIALIZED_NAME_PARAMS)
+  @javax.annotation.Nullable
+  private Map<String, Object> params = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_PERSONALIZED_RESULTS = "personalizedResults";
+  @SerializedName(SERIALIZED_NAME_PERSONALIZED_RESULTS)
+  @javax.annotation.Nullable
+  private String personalizedResults;
+
   public static final String SERIALIZED_NAME_PLATFORM = "platform";
   @SerializedName(SERIALIZED_NAME_PLATFORM)
   @javax.annotation.Nonnull
   private String platform;
 
+  public static final String SERIALIZED_NAME_REGION = "region";
+  @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
+  private String region;
+
+  public static final String SERIALIZED_NAME_SCOPE = "scope";
+  @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
+  private String scope;
+
+  public static final String SERIALIZED_NAME_SHORT_NAME = "shortName";
+  @SerializedName(SERIALIZED_NAME_SHORT_NAME)
+  @javax.annotation.Nullable
+  private String shortName;
+
   public static final String SERIALIZED_NAME_SORT_HEADING = "sortHeading";
   @SerializedName(SERIALIZED_NAME_SORT_HEADING)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String sortHeading;
 
   public static final String SERIALIZED_NAME_SORT_ORDER = "sortOrder";
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String sortOrder;
 
   public static final String SERIALIZED_NAME_SORT_OWNERSHIP = "sortOwnership";
   @SerializedName(SERIALIZED_NAME_SORT_OWNERSHIP)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String sortOwnership;
+
+  public static final String SERIALIZED_NAME_STYLE = "style";
+  @SerializedName(SERIALIZED_NAME_STYLE)
+  @javax.annotation.Nullable
+  private String style;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   @javax.annotation.Nullable
   private String tag;
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags;
+
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
   private String type;
 
+  public static final String SERIALIZED_NAME_UPCOMING_OFFSET_MINUTES = "upcomingOffsetMinutes";
+  @SerializedName(SERIALIZED_NAME_UPCOMING_OFFSET_MINUTES)
+  @javax.annotation.Nullable
+  private Integer upcomingOffsetMinutes;
+
   public DynamicContentRow() {
   }
+
+  public DynamicContentRow anyStyle(@javax.annotation.Nullable List<String> anyStyle) {
+    this.anyStyle = anyStyle;
+    return this;
+  }
+
+  public DynamicContentRow addAnyStyleItem(String anyStyleItem) {
+    if (this.anyStyle == null) {
+      this.anyStyle = new ArrayList<>();
+    }
+    this.anyStyle.add(anyStyleItem);
+    return this;
+  }
+
+  /**
+   * Get anyStyle
+   * @return anyStyle
+   */
+  @javax.annotation.Nullable
+  public List<String> getAnyStyle() {
+    return anyStyle;
+  }
+
+  public void setAnyStyle(@javax.annotation.Nullable List<String> anyStyle) {
+    this.anyStyle = anyStyle;
+  }
+
+
+  public DynamicContentRow anyTag(@javax.annotation.Nullable List<String> anyTag) {
+    this.anyTag = anyTag;
+    return this;
+  }
+
+  public DynamicContentRow addAnyTagItem(String anyTagItem) {
+    if (this.anyTag == null) {
+      this.anyTag = new ArrayList<>();
+    }
+    this.anyTag.add(anyTagItem);
+    return this;
+  }
+
+  /**
+   * Get anyTag
+   * @return anyTag
+   */
+  @javax.annotation.Nullable
+  public List<String> getAnyTag() {
+    return anyTag;
+  }
+
+  public void setAnyTag(@javax.annotation.Nullable List<String> anyTag) {
+    this.anyTag = anyTag;
+  }
+
+
+  public DynamicContentRow avatarSpecific(@javax.annotation.Nullable Boolean avatarSpecific) {
+    this.avatarSpecific = avatarSpecific;
+    return this;
+  }
+
+  /**
+   * Get avatarSpecific
+   * @return avatarSpecific
+   */
+  @javax.annotation.Nullable
+  public Boolean getAvatarSpecific() {
+    return avatarSpecific;
+  }
+
+  public void setAvatarSpecific(@javax.annotation.Nullable Boolean avatarSpecific) {
+    this.avatarSpecific = avatarSpecific;
+  }
+
+
+  public DynamicContentRow bannersTag(@javax.annotation.Nullable String bannersTag) {
+    this.bannersTag = bannersTag;
+    return this;
+  }
+
+  /**
+   * Get bannersTag
+   * @return bannersTag
+   */
+  @javax.annotation.Nullable
+  public String getBannersTag() {
+    return bannersTag;
+  }
+
+  public void setBannersTag(@javax.annotation.Nullable String bannersTag) {
+    this.bannersTag = bannersTag;
+  }
+
+
+  public DynamicContentRow categories(@javax.annotation.Nullable List<String> categories) {
+    this.categories = categories;
+    return this;
+  }
+
+  public DynamicContentRow addCategoriesItem(String categoriesItem) {
+    if (this.categories == null) {
+      this.categories = new ArrayList<>();
+    }
+    this.categories.add(categoriesItem);
+    return this;
+  }
+
+  /**
+   * Get categories
+   * @return categories
+   */
+  @javax.annotation.Nullable
+  public List<String> getCategories() {
+    return categories;
+  }
+
+  public void setCategories(@javax.annotation.Nullable List<String> categories) {
+    this.categories = categories;
+  }
+
+
+  public DynamicContentRow featuredResults(@javax.annotation.Nullable String featuredResults) {
+    this.featuredResults = featuredResults;
+    return this;
+  }
+
+  /**
+   * Get featuredResults
+   * @return featuredResults
+   */
+  @javax.annotation.Nullable
+  public String getFeaturedResults() {
+    return featuredResults;
+  }
+
+  public void setFeaturedResults(@javax.annotation.Nullable String featuredResults) {
+    this.featuredResults = featuredResults;
+  }
+
 
   public DynamicContentRow index(@javax.annotation.Nullable Integer index) {
     this.index = index;
@@ -109,6 +372,158 @@ public class DynamicContentRow {
 
   public void setIndex(@javax.annotation.Nullable Integer index) {
     this.index = index;
+  }
+
+
+  public DynamicContentRow marketplace(@javax.annotation.Nullable String marketplace) {
+    this.marketplace = marketplace;
+    return this;
+  }
+
+  /**
+   * Get marketplace
+   * @return marketplace
+   */
+  @javax.annotation.Nullable
+  public String getMarketplace() {
+    return marketplace;
+  }
+
+  public void setMarketplace(@javax.annotation.Nullable String marketplace) {
+    this.marketplace = marketplace;
+  }
+
+
+  public DynamicContentRow maxPrice(@javax.annotation.Nullable Integer maxPrice) {
+    this.maxPrice = maxPrice;
+    return this;
+  }
+
+  /**
+   * Get maxPrice
+   * @return maxPrice
+   */
+  @javax.annotation.Nullable
+  public Integer getMaxPrice() {
+    return maxPrice;
+  }
+
+  public void setMaxPrice(@javax.annotation.Nullable Integer maxPrice) {
+    this.maxPrice = maxPrice;
+  }
+
+
+  public DynamicContentRow minOccupants(@javax.annotation.Nullable Integer minOccupants) {
+    this.minOccupants = minOccupants;
+    return this;
+  }
+
+  /**
+   * Get minOccupants
+   * @return minOccupants
+   */
+  @javax.annotation.Nullable
+  public Integer getMinOccupants() {
+    return minOccupants;
+  }
+
+  public void setMinOccupants(@javax.annotation.Nullable Integer minOccupants) {
+    this.minOccupants = minOccupants;
+  }
+
+
+  public DynamicContentRow minPrice(@javax.annotation.Nullable Integer minPrice) {
+    this.minPrice = minPrice;
+    return this;
+  }
+
+  /**
+   * Get minPrice
+   * @return minPrice
+   */
+  @javax.annotation.Nullable
+  public Integer getMinPrice() {
+    return minPrice;
+  }
+
+  public void setMinPrice(@javax.annotation.Nullable Integer minPrice) {
+    this.minPrice = minPrice;
+  }
+
+
+  public DynamicContentRow minimumInterestCount(@javax.annotation.Nullable Integer minimumInterestCount) {
+    this.minimumInterestCount = minimumInterestCount;
+    return this;
+  }
+
+  /**
+   * Get minimumInterestCount
+   * @return minimumInterestCount
+   */
+  @javax.annotation.Nullable
+  public Integer getMinimumInterestCount() {
+    return minimumInterestCount;
+  }
+
+  public void setMinimumInterestCount(@javax.annotation.Nullable Integer minimumInterestCount) {
+    this.minimumInterestCount = minimumInterestCount;
+  }
+
+
+  public DynamicContentRow minimumRemainingMinutes(@javax.annotation.Nullable Integer minimumRemainingMinutes) {
+    this.minimumRemainingMinutes = minimumRemainingMinutes;
+    return this;
+  }
+
+  /**
+   * Get minimumRemainingMinutes
+   * @return minimumRemainingMinutes
+   */
+  @javax.annotation.Nullable
+  public Integer getMinimumRemainingMinutes() {
+    return minimumRemainingMinutes;
+  }
+
+  public void setMinimumRemainingMinutes(@javax.annotation.Nullable Integer minimumRemainingMinutes) {
+    this.minimumRemainingMinutes = minimumRemainingMinutes;
+  }
+
+
+  public DynamicContentRow mode(@javax.annotation.Nullable String mode) {
+    this.mode = mode;
+    return this;
+  }
+
+  /**
+   * Get mode
+   * @return mode
+   */
+  @javax.annotation.Nullable
+  public String getMode() {
+    return mode;
+  }
+
+  public void setMode(@javax.annotation.Nullable String mode) {
+    this.mode = mode;
+  }
+
+
+  public DynamicContentRow n(@javax.annotation.Nullable Integer n) {
+    this.n = n;
+    return this;
+  }
+
+  /**
+   * Get n
+   * @return n
+   */
+  @javax.annotation.Nullable
+  public Integer getN() {
+    return n;
+  }
+
+  public void setN(@javax.annotation.Nullable Integer n) {
+    this.n = n;
   }
 
 
@@ -131,6 +546,98 @@ public class DynamicContentRow {
   }
 
 
+  public DynamicContentRow nonFeaturedResults(@javax.annotation.Nullable String nonFeaturedResults) {
+    this.nonFeaturedResults = nonFeaturedResults;
+    return this;
+  }
+
+  /**
+   * Get nonFeaturedResults
+   * @return nonFeaturedResults
+   */
+  @javax.annotation.Nullable
+  public String getNonFeaturedResults() {
+    return nonFeaturedResults;
+  }
+
+  public void setNonFeaturedResults(@javax.annotation.Nullable String nonFeaturedResults) {
+    this.nonFeaturedResults = nonFeaturedResults;
+  }
+
+
+  public DynamicContentRow notag(@javax.annotation.Nullable List<String> notag) {
+    this.notag = notag;
+    return this;
+  }
+
+  public DynamicContentRow addNotagItem(String notagItem) {
+    if (this.notag == null) {
+      this.notag = new ArrayList<>();
+    }
+    this.notag.add(notagItem);
+    return this;
+  }
+
+  /**
+   * Get notag
+   * @return notag
+   */
+  @javax.annotation.Nullable
+  public List<String> getNotag() {
+    return notag;
+  }
+
+  public void setNotag(@javax.annotation.Nullable List<String> notag) {
+    this.notag = notag;
+  }
+
+
+  public DynamicContentRow params(@javax.annotation.Nullable Map<String, Object> params) {
+    this.params = params;
+    return this;
+  }
+
+  public DynamicContentRow putParamsItem(String key, Object paramsItem) {
+    if (this.params == null) {
+      this.params = new HashMap<>();
+    }
+    this.params.put(key, paramsItem);
+    return this;
+  }
+
+  /**
+   * Get params
+   * @return params
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getParams() {
+    return params;
+  }
+
+  public void setParams(@javax.annotation.Nullable Map<String, Object> params) {
+    this.params = params;
+  }
+
+
+  public DynamicContentRow personalizedResults(@javax.annotation.Nullable String personalizedResults) {
+    this.personalizedResults = personalizedResults;
+    return this;
+  }
+
+  /**
+   * Get personalizedResults
+   * @return personalizedResults
+   */
+  @javax.annotation.Nullable
+  public String getPersonalizedResults() {
+    return personalizedResults;
+  }
+
+  public void setPersonalizedResults(@javax.annotation.Nullable String personalizedResults) {
+    this.personalizedResults = personalizedResults;
+  }
+
+
   public DynamicContentRow platform(@javax.annotation.Nonnull String platform) {
     this.platform = platform;
     return this;
@@ -150,7 +657,64 @@ public class DynamicContentRow {
   }
 
 
-  public DynamicContentRow sortHeading(@javax.annotation.Nonnull String sortHeading) {
+  public DynamicContentRow region(@javax.annotation.Nullable String region) {
+    this.region = region;
+    return this;
+  }
+
+  /**
+   * Get region
+   * @return region
+   */
+  @javax.annotation.Nullable
+  public String getRegion() {
+    return region;
+  }
+
+  public void setRegion(@javax.annotation.Nullable String region) {
+    this.region = region;
+  }
+
+
+  public DynamicContentRow scope(@javax.annotation.Nullable String scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * Get scope
+   * @return scope
+   */
+  @javax.annotation.Nullable
+  public String getScope() {
+    return scope;
+  }
+
+  public void setScope(@javax.annotation.Nullable String scope) {
+    this.scope = scope;
+  }
+
+
+  public DynamicContentRow shortName(@javax.annotation.Nullable String shortName) {
+    this.shortName = shortName;
+    return this;
+  }
+
+  /**
+   * Get shortName
+   * @return shortName
+   */
+  @javax.annotation.Nullable
+  public String getShortName() {
+    return shortName;
+  }
+
+  public void setShortName(@javax.annotation.Nullable String shortName) {
+    this.shortName = shortName;
+  }
+
+
+  public DynamicContentRow sortHeading(@javax.annotation.Nullable String sortHeading) {
     this.sortHeading = sortHeading;
     return this;
   }
@@ -159,17 +723,17 @@ public class DynamicContentRow {
    * Get sortHeading
    * @return sortHeading
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getSortHeading() {
     return sortHeading;
   }
 
-  public void setSortHeading(@javax.annotation.Nonnull String sortHeading) {
+  public void setSortHeading(@javax.annotation.Nullable String sortHeading) {
     this.sortHeading = sortHeading;
   }
 
 
-  public DynamicContentRow sortOrder(@javax.annotation.Nonnull String sortOrder) {
+  public DynamicContentRow sortOrder(@javax.annotation.Nullable String sortOrder) {
     this.sortOrder = sortOrder;
     return this;
   }
@@ -178,17 +742,17 @@ public class DynamicContentRow {
    * Get sortOrder
    * @return sortOrder
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getSortOrder() {
     return sortOrder;
   }
 
-  public void setSortOrder(@javax.annotation.Nonnull String sortOrder) {
+  public void setSortOrder(@javax.annotation.Nullable String sortOrder) {
     this.sortOrder = sortOrder;
   }
 
 
-  public DynamicContentRow sortOwnership(@javax.annotation.Nonnull String sortOwnership) {
+  public DynamicContentRow sortOwnership(@javax.annotation.Nullable String sortOwnership) {
     this.sortOwnership = sortOwnership;
     return this;
   }
@@ -197,13 +761,32 @@ public class DynamicContentRow {
    * Get sortOwnership
    * @return sortOwnership
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getSortOwnership() {
     return sortOwnership;
   }
 
-  public void setSortOwnership(@javax.annotation.Nonnull String sortOwnership) {
+  public void setSortOwnership(@javax.annotation.Nullable String sortOwnership) {
     this.sortOwnership = sortOwnership;
+  }
+
+
+  public DynamicContentRow style(@javax.annotation.Nullable String style) {
+    this.style = style;
+    return this;
+  }
+
+  /**
+   * Get style
+   * @return style
+   */
+  @javax.annotation.Nullable
+  public String getStyle() {
+    return style;
+  }
+
+  public void setStyle(@javax.annotation.Nullable String style) {
+    this.style = style;
   }
 
 
@@ -213,7 +796,7 @@ public class DynamicContentRow {
   }
 
   /**
-   * Tags are a way to grant various access, assign restrictions or other kinds of metadata to various to objects such as worlds, users and avatars.  System tags starting with &#x60;system_&#x60; are granted automatically by the system, while admin tags with &#x60;admin_&#x60; are granted manually. More prefixes such as &#x60;language_ &#x60; (to indicate that a player can speak the tagged language), and &#x60;author_tag_&#x60; (provided by a world author for search and sorting) exist as well.
+   * Tag to filter content for this row. Not a &#x60;Tag&#x60;: that type forbids the empty string, which this field uses for a row that is not tag-filtered.
    * @return tag
    */
   @javax.annotation.Nullable
@@ -223,6 +806,33 @@ public class DynamicContentRow {
 
   public void setTag(@javax.annotation.Nullable String tag) {
     this.tag = tag;
+  }
+
+
+  public DynamicContentRow tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public DynamicContentRow addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
   }
 
 
@@ -245,6 +855,25 @@ public class DynamicContentRow {
   }
 
 
+  public DynamicContentRow upcomingOffsetMinutes(@javax.annotation.Nullable Integer upcomingOffsetMinutes) {
+    this.upcomingOffsetMinutes = upcomingOffsetMinutes;
+    return this;
+  }
+
+  /**
+   * Get upcomingOffsetMinutes
+   * @return upcomingOffsetMinutes
+   */
+  @javax.annotation.Nullable
+  public Integer getUpcomingOffsetMinutes() {
+    return upcomingOffsetMinutes;
+  }
+
+  public void setUpcomingOffsetMinutes(@javax.annotation.Nullable Integer upcomingOffsetMinutes) {
+    this.upcomingOffsetMinutes = upcomingOffsetMinutes;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -255,33 +884,92 @@ public class DynamicContentRow {
       return false;
     }
     DynamicContentRow dynamicContentRow = (DynamicContentRow) o;
-    return Objects.equals(this.index, dynamicContentRow.index) &&
+    return Objects.equals(this.anyStyle, dynamicContentRow.anyStyle) &&
+        Objects.equals(this.anyTag, dynamicContentRow.anyTag) &&
+        Objects.equals(this.avatarSpecific, dynamicContentRow.avatarSpecific) &&
+        Objects.equals(this.bannersTag, dynamicContentRow.bannersTag) &&
+        Objects.equals(this.categories, dynamicContentRow.categories) &&
+        Objects.equals(this.featuredResults, dynamicContentRow.featuredResults) &&
+        Objects.equals(this.index, dynamicContentRow.index) &&
+        Objects.equals(this.marketplace, dynamicContentRow.marketplace) &&
+        Objects.equals(this.maxPrice, dynamicContentRow.maxPrice) &&
+        Objects.equals(this.minOccupants, dynamicContentRow.minOccupants) &&
+        Objects.equals(this.minPrice, dynamicContentRow.minPrice) &&
+        Objects.equals(this.minimumInterestCount, dynamicContentRow.minimumInterestCount) &&
+        Objects.equals(this.minimumRemainingMinutes, dynamicContentRow.minimumRemainingMinutes) &&
+        Objects.equals(this.mode, dynamicContentRow.mode) &&
+        Objects.equals(this.n, dynamicContentRow.n) &&
         Objects.equals(this.name, dynamicContentRow.name) &&
+        Objects.equals(this.nonFeaturedResults, dynamicContentRow.nonFeaturedResults) &&
+        Objects.equals(this.notag, dynamicContentRow.notag) &&
+        Objects.equals(this.params, dynamicContentRow.params) &&
+        Objects.equals(this.personalizedResults, dynamicContentRow.personalizedResults) &&
         Objects.equals(this.platform, dynamicContentRow.platform) &&
+        Objects.equals(this.region, dynamicContentRow.region) &&
+        Objects.equals(this.scope, dynamicContentRow.scope) &&
+        Objects.equals(this.shortName, dynamicContentRow.shortName) &&
         Objects.equals(this.sortHeading, dynamicContentRow.sortHeading) &&
         Objects.equals(this.sortOrder, dynamicContentRow.sortOrder) &&
         Objects.equals(this.sortOwnership, dynamicContentRow.sortOwnership) &&
+        Objects.equals(this.style, dynamicContentRow.style) &&
         Objects.equals(this.tag, dynamicContentRow.tag) &&
-        Objects.equals(this.type, dynamicContentRow.type);
+        Objects.equals(this.tags, dynamicContentRow.tags) &&
+        Objects.equals(this.type, dynamicContentRow.type) &&
+        Objects.equals(this.upcomingOffsetMinutes, dynamicContentRow.upcomingOffsetMinutes);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, name, platform, sortHeading, sortOrder, sortOwnership, tag, type);
+    return Objects.hash(anyStyle, anyTag, avatarSpecific, bannersTag, categories, featuredResults, index, marketplace, maxPrice, minOccupants, minPrice, minimumInterestCount, minimumRemainingMinutes, mode, n, name, nonFeaturedResults, notag, params, personalizedResults, platform, region, scope, shortName, sortHeading, sortOrder, sortOwnership, style, tag, tags, type, upcomingOffsetMinutes);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DynamicContentRow {\n");
+    sb.append("    anyStyle: ").append(toIndentedString(anyStyle)).append("\n");
+    sb.append("    anyTag: ").append(toIndentedString(anyTag)).append("\n");
+    sb.append("    avatarSpecific: ").append(toIndentedString(avatarSpecific)).append("\n");
+    sb.append("    bannersTag: ").append(toIndentedString(bannersTag)).append("\n");
+    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    featuredResults: ").append(toIndentedString(featuredResults)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
+    sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
+    sb.append("    maxPrice: ").append(toIndentedString(maxPrice)).append("\n");
+    sb.append("    minOccupants: ").append(toIndentedString(minOccupants)).append("\n");
+    sb.append("    minPrice: ").append(toIndentedString(minPrice)).append("\n");
+    sb.append("    minimumInterestCount: ").append(toIndentedString(minimumInterestCount)).append("\n");
+    sb.append("    minimumRemainingMinutes: ").append(toIndentedString(minimumRemainingMinutes)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    sb.append("    n: ").append(toIndentedString(n)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nonFeaturedResults: ").append(toIndentedString(nonFeaturedResults)).append("\n");
+    sb.append("    notag: ").append(toIndentedString(notag)).append("\n");
+    sb.append("    params: ").append(toIndentedString(params)).append("\n");
+    sb.append("    personalizedResults: ").append(toIndentedString(personalizedResults)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    sb.append("    shortName: ").append(toIndentedString(shortName)).append("\n");
     sb.append("    sortHeading: ").append(toIndentedString(sortHeading)).append("\n");
     sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
     sb.append("    sortOwnership: ").append(toIndentedString(sortOwnership)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    upcomingOffsetMinutes: ").append(toIndentedString(upcomingOffsetMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -300,10 +988,10 @@ public class DynamicContentRow {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("index", "name", "platform", "sortHeading", "sortOrder", "sortOwnership", "tag", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("anyStyle", "anyTag", "avatarSpecific", "bannersTag", "categories", "featuredResults", "index", "marketplace", "maxPrice", "minOccupants", "minPrice", "minimumInterestCount", "minimumRemainingMinutes", "mode", "n", "name", "nonFeaturedResults", "notag", "params", "personalizedResults", "platform", "region", "scope", "shortName", "sortHeading", "sortOrder", "sortOwnership", "style", "tag", "tags", "type", "upcomingOffsetMinutes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "platform", "sortHeading", "sortOrder", "sortOwnership"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "platform"));
   }
 
   /**
@@ -334,23 +1022,73 @@ public class DynamicContentRow {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("anyStyle") != null && !jsonObj.get("anyStyle").isJsonNull() && !jsonObj.get("anyStyle").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `anyStyle` to be an array in the JSON string but got `%s`", jsonObj.get("anyStyle").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("anyTag") != null && !jsonObj.get("anyTag").isJsonNull() && !jsonObj.get("anyTag").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `anyTag` to be an array in the JSON string but got `%s`", jsonObj.get("anyTag").toString()));
+      }
+      if ((jsonObj.get("bannersTag") != null && !jsonObj.get("bannersTag").isJsonNull()) && !jsonObj.get("bannersTag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannersTag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannersTag").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("categories") != null && !jsonObj.get("categories").isJsonNull() && !jsonObj.get("categories").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `categories` to be an array in the JSON string but got `%s`", jsonObj.get("categories").toString()));
+      }
+      if ((jsonObj.get("featuredResults") != null && !jsonObj.get("featuredResults").isJsonNull()) && !jsonObj.get("featuredResults").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `featuredResults` to be a primitive type in the JSON string but got `%s`", jsonObj.get("featuredResults").toString()));
+      }
+      if ((jsonObj.get("marketplace") != null && !jsonObj.get("marketplace").isJsonNull()) && !jsonObj.get("marketplace").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `marketplace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("marketplace").toString()));
+      }
+      if ((jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull()) && !jsonObj.get("mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("nonFeaturedResults") != null && !jsonObj.get("nonFeaturedResults").isJsonNull()) && !jsonObj.get("nonFeaturedResults").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nonFeaturedResults` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nonFeaturedResults").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("notag") != null && !jsonObj.get("notag").isJsonNull() && !jsonObj.get("notag").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `notag` to be an array in the JSON string but got `%s`", jsonObj.get("notag").toString()));
+      }
+      if ((jsonObj.get("personalizedResults") != null && !jsonObj.get("personalizedResults").isJsonNull()) && !jsonObj.get("personalizedResults").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `personalizedResults` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personalizedResults").toString()));
       }
       if (!jsonObj.get("platform").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
       }
-      if (!jsonObj.get("sortHeading").isJsonPrimitive()) {
+      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+      }
+      if ((jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) && !jsonObj.get("scope").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scope").toString()));
+      }
+      if ((jsonObj.get("shortName") != null && !jsonObj.get("shortName").isJsonNull()) && !jsonObj.get("shortName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortName").toString()));
+      }
+      if ((jsonObj.get("sortHeading") != null && !jsonObj.get("sortHeading").isJsonNull()) && !jsonObj.get("sortHeading").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sortHeading` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sortHeading").toString()));
       }
-      if (!jsonObj.get("sortOrder").isJsonPrimitive()) {
+      if ((jsonObj.get("sortOrder") != null && !jsonObj.get("sortOrder").isJsonNull()) && !jsonObj.get("sortOrder").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sortOrder` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sortOrder").toString()));
       }
-      if (!jsonObj.get("sortOwnership").isJsonPrimitive()) {
+      if ((jsonObj.get("sortOwnership") != null && !jsonObj.get("sortOwnership").isJsonNull()) && !jsonObj.get("sortOwnership").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sortOwnership` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sortOwnership").toString()));
+      }
+      if ((jsonObj.get("style") != null && !jsonObj.get("style").isJsonNull()) && !jsonObj.get("style").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `style` to be a primitive type in the JSON string but got `%s`", jsonObj.get("style").toString()));
       }
       if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull()) && !jsonObj.get("tag").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tag").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

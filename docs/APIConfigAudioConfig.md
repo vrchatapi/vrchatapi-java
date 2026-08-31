@@ -12,6 +12,7 @@ Global configuration for Steam Audio
 |**nearFieldILDNudge** | **BigDecimal** | Unknown |  |
 |**nearFieldILDNudgeDistance** | **BigDecimal** | Unknown |  |
 |**nearFieldILDNudgeEarRadius** | **BigDecimal** | Unknown |  |
+|**nearFieldILDNudgeEarTranslate** | **BigDecimal** |  |  [optional] |
 |**perEarDirectionalityEarRadius** | **BigDecimal** | Unknown |  |
 |**perEarDirectionalityFadeDistance** | **BigDecimal** | Unknown |  |
 |**perEarDirectionalityMaxScale** | **BigDecimal** | Unknown |  |
@@ -19,6 +20,7 @@ Global configuration for Steam Audio
 |**trackingScaleMax** | **BigDecimal** | Unknown |  |
 |**trackingScaleMin** | **BigDecimal** | Unknown |  |
 |**trackingScaleMultiplier** | **BigDecimal** | Unknown |  |
+|**useLegacyILDNudging** | **Boolean** |  |  [optional] |
 
 
 

@@ -579,6 +579,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns the API&#39;s health. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -636,7 +637,7 @@ public class MiscellaneousApi {
 
     /**
      * Check API Health
-     * ~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
+     * Gets the overall health status, the server name, and the current build version tag of the API.  VRChat has restricted this endpoint, which now always returns 401 Unauthorized.
      * @return APIHealth
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -644,6 +645,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns the API&#39;s health. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -655,7 +657,7 @@ public class MiscellaneousApi {
 
     /**
      * Check API Health
-     * ~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
+     * Gets the overall health status, the server name, and the current build version tag of the API.  VRChat has restricted this endpoint, which now always returns 401 Unauthorized.
      * @return ApiResponse&lt;APIHealth&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -663,6 +665,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns the API&#39;s health. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -675,7 +678,7 @@ public class MiscellaneousApi {
 
     /**
      * Check API Health (asynchronously)
-     * ~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
+     * Gets the overall health status, the server name, and the current build version tag of the API.  VRChat has restricted this endpoint, which now always returns 401 Unauthorized.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -684,6 +687,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns the API&#39;s health. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -707,6 +711,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of InfoPush objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInfoPushCall(@javax.annotation.Nullable String require, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
@@ -779,6 +784,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of InfoPush objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
      </table>
      */
     public List<InfoPush> getInfoPush(@javax.annotation.Nullable String require, @javax.annotation.Nullable String include) throws ApiException {
@@ -798,6 +804,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of InfoPush objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<InfoPush>> getInfoPushWithHttpInfo(@javax.annotation.Nullable String require, @javax.annotation.Nullable String include) throws ApiException {
@@ -819,6 +826,7 @@ public class MiscellaneousApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of InfoPush objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInfoPushAsync(@javax.annotation.Nullable String require, @javax.annotation.Nullable String include, final ApiCallback<List<InfoPush>> _callback) throws ApiException {

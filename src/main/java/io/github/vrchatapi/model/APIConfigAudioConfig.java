@@ -70,6 +70,11 @@ public class APIConfigAudioConfig {
   @javax.annotation.Nonnull
   private BigDecimal nearFieldILDNudgeEarRadius;
 
+  public static final String SERIALIZED_NAME_NEAR_FIELD_I_L_D_NUDGE_EAR_TRANSLATE = "nearFieldILDNudgeEarTranslate";
+  @SerializedName(SERIALIZED_NAME_NEAR_FIELD_I_L_D_NUDGE_EAR_TRANSLATE)
+  @javax.annotation.Nullable
+  private BigDecimal nearFieldILDNudgeEarTranslate;
+
   public static final String SERIALIZED_NAME_PER_EAR_DIRECTIONALITY_EAR_RADIUS = "perEarDirectionalityEarRadius";
   @SerializedName(SERIALIZED_NAME_PER_EAR_DIRECTIONALITY_EAR_RADIUS)
   @javax.annotation.Nonnull
@@ -104,6 +109,11 @@ public class APIConfigAudioConfig {
   @SerializedName(SERIALIZED_NAME_TRACKING_SCALE_MULTIPLIER)
   @javax.annotation.Nonnull
   private BigDecimal trackingScaleMultiplier;
+
+  public static final String SERIALIZED_NAME_USE_LEGACY_I_L_D_NUDGING = "useLegacyILDNudging";
+  @SerializedName(SERIALIZED_NAME_USE_LEGACY_I_L_D_NUDGING)
+  @javax.annotation.Nullable
+  private Boolean useLegacyILDNudging;
 
   public APIConfigAudioConfig() {
   }
@@ -181,6 +191,25 @@ public class APIConfigAudioConfig {
 
   public void setNearFieldILDNudgeEarRadius(@javax.annotation.Nonnull BigDecimal nearFieldILDNudgeEarRadius) {
     this.nearFieldILDNudgeEarRadius = nearFieldILDNudgeEarRadius;
+  }
+
+
+  public APIConfigAudioConfig nearFieldILDNudgeEarTranslate(@javax.annotation.Nullable BigDecimal nearFieldILDNudgeEarTranslate) {
+    this.nearFieldILDNudgeEarTranslate = nearFieldILDNudgeEarTranslate;
+    return this;
+  }
+
+  /**
+   * Get nearFieldILDNudgeEarTranslate
+   * @return nearFieldILDNudgeEarTranslate
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getNearFieldILDNudgeEarTranslate() {
+    return nearFieldILDNudgeEarTranslate;
+  }
+
+  public void setNearFieldILDNudgeEarTranslate(@javax.annotation.Nullable BigDecimal nearFieldILDNudgeEarTranslate) {
+    this.nearFieldILDNudgeEarTranslate = nearFieldILDNudgeEarTranslate;
   }
 
 
@@ -317,6 +346,25 @@ public class APIConfigAudioConfig {
   }
 
 
+  public APIConfigAudioConfig useLegacyILDNudging(@javax.annotation.Nullable Boolean useLegacyILDNudging) {
+    this.useLegacyILDNudging = useLegacyILDNudging;
+    return this;
+  }
+
+  /**
+   * Get useLegacyILDNudging
+   * @return useLegacyILDNudging
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseLegacyILDNudging() {
+    return useLegacyILDNudging;
+  }
+
+  public void setUseLegacyILDNudging(@javax.annotation.Nullable Boolean useLegacyILDNudging) {
+    this.useLegacyILDNudging = useLegacyILDNudging;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -331,18 +379,20 @@ public class APIConfigAudioConfig {
         Objects.equals(this.nearFieldILDNudge, apIConfigAudioConfig.nearFieldILDNudge) &&
         Objects.equals(this.nearFieldILDNudgeDistance, apIConfigAudioConfig.nearFieldILDNudgeDistance) &&
         Objects.equals(this.nearFieldILDNudgeEarRadius, apIConfigAudioConfig.nearFieldILDNudgeEarRadius) &&
+        Objects.equals(this.nearFieldILDNudgeEarTranslate, apIConfigAudioConfig.nearFieldILDNudgeEarTranslate) &&
         Objects.equals(this.perEarDirectionalityEarRadius, apIConfigAudioConfig.perEarDirectionalityEarRadius) &&
         Objects.equals(this.perEarDirectionalityFadeDistance, apIConfigAudioConfig.perEarDirectionalityFadeDistance) &&
         Objects.equals(this.perEarDirectionalityMaxScale, apIConfigAudioConfig.perEarDirectionalityMaxScale) &&
         Objects.equals(this.perEarDirectionalityPCFactor, apIConfigAudioConfig.perEarDirectionalityPCFactor) &&
         Objects.equals(this.trackingScaleMax, apIConfigAudioConfig.trackingScaleMax) &&
         Objects.equals(this.trackingScaleMin, apIConfigAudioConfig.trackingScaleMin) &&
-        Objects.equals(this.trackingScaleMultiplier, apIConfigAudioConfig.trackingScaleMultiplier);
+        Objects.equals(this.trackingScaleMultiplier, apIConfigAudioConfig.trackingScaleMultiplier) &&
+        Objects.equals(this.useLegacyILDNudging, apIConfigAudioConfig.useLegacyILDNudging);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eq, nearFieldILDNudge, nearFieldILDNudgeDistance, nearFieldILDNudgeEarRadius, perEarDirectionalityEarRadius, perEarDirectionalityFadeDistance, perEarDirectionalityMaxScale, perEarDirectionalityPCFactor, trackingScaleMax, trackingScaleMin, trackingScaleMultiplier);
+    return Objects.hash(eq, nearFieldILDNudge, nearFieldILDNudgeDistance, nearFieldILDNudgeEarRadius, nearFieldILDNudgeEarTranslate, perEarDirectionalityEarRadius, perEarDirectionalityFadeDistance, perEarDirectionalityMaxScale, perEarDirectionalityPCFactor, trackingScaleMax, trackingScaleMin, trackingScaleMultiplier, useLegacyILDNudging);
   }
 
   @Override
@@ -353,6 +403,7 @@ public class APIConfigAudioConfig {
     sb.append("    nearFieldILDNudge: ").append(toIndentedString(nearFieldILDNudge)).append("\n");
     sb.append("    nearFieldILDNudgeDistance: ").append(toIndentedString(nearFieldILDNudgeDistance)).append("\n");
     sb.append("    nearFieldILDNudgeEarRadius: ").append(toIndentedString(nearFieldILDNudgeEarRadius)).append("\n");
+    sb.append("    nearFieldILDNudgeEarTranslate: ").append(toIndentedString(nearFieldILDNudgeEarTranslate)).append("\n");
     sb.append("    perEarDirectionalityEarRadius: ").append(toIndentedString(perEarDirectionalityEarRadius)).append("\n");
     sb.append("    perEarDirectionalityFadeDistance: ").append(toIndentedString(perEarDirectionalityFadeDistance)).append("\n");
     sb.append("    perEarDirectionalityMaxScale: ").append(toIndentedString(perEarDirectionalityMaxScale)).append("\n");
@@ -360,6 +411,7 @@ public class APIConfigAudioConfig {
     sb.append("    trackingScaleMax: ").append(toIndentedString(trackingScaleMax)).append("\n");
     sb.append("    trackingScaleMin: ").append(toIndentedString(trackingScaleMin)).append("\n");
     sb.append("    trackingScaleMultiplier: ").append(toIndentedString(trackingScaleMultiplier)).append("\n");
+    sb.append("    useLegacyILDNudging: ").append(toIndentedString(useLegacyILDNudging)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -378,7 +430,7 @@ public class APIConfigAudioConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("eq", "nearFieldILDNudge", "nearFieldILDNudgeDistance", "nearFieldILDNudgeEarRadius", "perEarDirectionalityEarRadius", "perEarDirectionalityFadeDistance", "perEarDirectionalityMaxScale", "perEarDirectionalityPCFactor", "trackingScaleMax", "trackingScaleMin", "trackingScaleMultiplier"));
+    openapiFields = new HashSet<String>(Arrays.asList("eq", "nearFieldILDNudge", "nearFieldILDNudgeDistance", "nearFieldILDNudgeEarRadius", "nearFieldILDNudgeEarTranslate", "perEarDirectionalityEarRadius", "perEarDirectionalityFadeDistance", "perEarDirectionalityMaxScale", "perEarDirectionalityPCFactor", "trackingScaleMax", "trackingScaleMin", "trackingScaleMultiplier", "useLegacyILDNudging"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("eq", "nearFieldILDNudge", "nearFieldILDNudgeDistance", "nearFieldILDNudgeEarRadius", "perEarDirectionalityEarRadius", "perEarDirectionalityFadeDistance", "perEarDirectionalityMaxScale", "perEarDirectionalityPCFactor", "trackingScaleMax", "trackingScaleMin", "trackingScaleMultiplier"));

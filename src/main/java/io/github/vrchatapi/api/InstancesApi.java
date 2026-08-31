@@ -91,7 +91,7 @@ public class InstancesApi {
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to not being allowed to close an instance </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call closeInstanceCall(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, @javax.annotation.Nullable Boolean hardClose, @javax.annotation.Nullable OffsetDateTime closedAt, final ApiCallback _callback) throws ApiException {
@@ -180,7 +180,7 @@ public class InstancesApi {
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to not being allowed to close an instance </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Instance closeInstance(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, @javax.annotation.Nullable Boolean hardClose, @javax.annotation.Nullable OffsetDateTime closedAt) throws ApiException {
@@ -204,7 +204,7 @@ public class InstancesApi {
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to not being allowed to close an instance </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Instance> closeInstanceWithHttpInfo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, @javax.annotation.Nullable Boolean hardClose, @javax.annotation.Nullable OffsetDateTime closedAt) throws ApiException {
@@ -230,7 +230,7 @@ public class InstancesApi {
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to not being allowed to close an instance </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call closeInstanceAsync(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String instanceId, @javax.annotation.Nullable Boolean hardClose, @javax.annotation.Nullable OffsetDateTime closedAt, final ApiCallback<Instance> _callback) throws ApiException {
@@ -251,6 +251,7 @@ public class InstancesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -321,6 +322,7 @@ public class InstancesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -340,6 +342,7 @@ public class InstancesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -361,6 +364,7 @@ public class InstancesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -524,7 +528,7 @@ public class InstancesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInstanceByShortNameCall(@javax.annotation.Nonnull String shortName, final ApiCallback _callback) throws ApiException {
@@ -595,7 +599,7 @@ public class InstancesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Instance getInstanceByShortName(@javax.annotation.Nonnull String shortName) throws ApiException {
@@ -615,7 +619,7 @@ public class InstancesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Instance> getInstanceByShortNameWithHttpInfo(@javax.annotation.Nonnull String shortName) throws ApiException {
@@ -637,7 +641,7 @@ public class InstancesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Instance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response due to non existent instance </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInstanceByShortNameAsync(@javax.annotation.Nonnull String shortName, final ApiCallback<Instance> _callback) throws ApiException {

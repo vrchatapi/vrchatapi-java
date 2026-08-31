@@ -8,6 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  |
 |**id** | **String** |  |  |
 |**isVisible** | **Boolean** |  |  |
@@ -17,6 +18,7 @@
 |**submissionContentGateDate** | **OffsetDateTime** |  |  |
 |**submissionContentGated** | **Boolean** |  |  |
 |**title** | **String** |  |  |
+|**type** | **String** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
 
 

@@ -63,11 +63,23 @@ public class InfoPushDataClickable {
   public enum CommandEnum {
     CANNED_WORLD_SEARCH("CannedWorldSearch"),
     
+    OPEN_ACCOUNT_UPGRADE("OpenAccountUpgrade"),
+    
+    OPEN_AVATARS_MENU("OpenAvatarsMenu"),
+    
+    OPEN_HELP_ARTICLE("OpenHelpArticle"),
+    
+    OPEN_LISTING_DETAILS("OpenListingDetails"),
+    
     OPEN_SAFETY_MENU("OpenSafetyMenu"),
     
     OPEN_URL("OpenURL"),
     
-    OPEN_VRC_PLUS_MENU("OpenVRCPlusMenu");
+    OPEN_VRC_PLUS_MENU("OpenVRCPlusMenu"),
+    
+    OPEN_VR_CHAT_STORE("OpenVRChatStore"),
+    
+    OPEN_WORLD_DETAILS("OpenWorldDetails");
 
     private String value;
 

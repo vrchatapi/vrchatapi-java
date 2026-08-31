@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.github.vrchatapi.model.BareError;
 import io.github.vrchatapi.model.ChangeUserTagsRequest;
 import io.github.vrchatapi.model.CurrentUser;
 import io.github.vrchatapi.model.Error;
@@ -104,6 +105,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addTagsCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest, final ApiCallback _callback) throws ApiException {
@@ -182,6 +184,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public CurrentUser addTags(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest) throws ApiException {
@@ -203,6 +206,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CurrentUser> addTagsWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest) throws ApiException {
@@ -226,6 +230,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addTagsAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest, final ApiCallback<CurrentUser> _callback) throws ApiException {
@@ -248,6 +253,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -325,6 +331,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -345,6 +352,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -367,6 +375,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -516,6 +525,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -593,6 +603,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -613,6 +624,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -635,6 +647,7 @@ public class UsersApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -1603,8 +1616,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getUserCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -1673,8 +1687,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public User getUser(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -1692,8 +1707,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<User> getUserWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -1713,8 +1729,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getUserAsync(@javax.annotation.Nonnull String userId, final ApiCallback<User> _callback) throws ApiException {
@@ -1873,8 +1890,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1938,7 +1956,7 @@ public class UsersApi {
 
     /**
      * Get User by Username
-     * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
+     * Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
      * @param username Username of the user (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1946,8 +1964,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1959,7 +1978,7 @@ public class UsersApi {
 
     /**
      * Get User by Username
-     * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
+     * Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
      * @param username Username of the user (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1967,8 +1986,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1981,7 +2001,7 @@ public class UsersApi {
 
     /**
      * Get User by Username (asynchronously)
-     * ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
+     * Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
      * @param username Username of the user (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1990,8 +2010,9 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single User object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -2019,9 +2040,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a list of Feedback objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getUserFeedbackCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -2079,7 +2098,6 @@ public class UsersApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
-    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getUserFeedbackValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
@@ -2107,9 +2125,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a list of Feedback objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public List<Feedback> getUserFeedback(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<List<Feedback>> localVarResp = getUserFeedbackWithHttpInfo(userId, contentId, n, offset);
         return localVarResp.getData();
@@ -2131,9 +2147,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a list of Feedback objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public ApiResponse<List<Feedback>> getUserFeedbackWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = getUserFeedbackValidateBeforeCall(userId, contentId, n, offset, null);
         Type localVarReturnType = new TypeToken<List<Feedback>>(){}.getType();
@@ -2157,9 +2171,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a list of Feedback objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getUserFeedbackAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<Feedback>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserFeedbackValidateBeforeCall(userId, contentId, n, offset, _callback);
@@ -3253,6 +3265,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeTagsCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest, final ApiCallback _callback) throws ApiException {
@@ -3331,6 +3344,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public CurrentUser removeTags(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest) throws ApiException {
@@ -3352,6 +3366,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CurrentUser> removeTagsWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest) throws ApiException {
@@ -3375,6 +3390,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeTagsAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull ChangeUserTagsRequest changeUserTagsRequest, final ApiCallback<CurrentUser> _callback) throws ApiException {
@@ -3718,6 +3734,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to change a property without supplying their current password. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when updating a user other than yourself. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateUserCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserRequest updateUserRequest, final ApiCallback _callback) throws ApiException {
@@ -3791,6 +3808,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to change a property without supplying their current password. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when updating a user other than yourself. </td><td>  -  </td></tr>
      </table>
      */
     public CurrentUser updateUser(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserRequest updateUserRequest) throws ApiException {
@@ -3812,6 +3830,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to change a property without supplying their current password. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when updating a user other than yourself. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CurrentUser> updateUserWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserRequest updateUserRequest) throws ApiException {
@@ -3835,6 +3854,7 @@ public class UsersApi {
         <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a user attempts to change a property without supplying their current password. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when updating a user other than yourself. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateUserAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserRequest updateUserRequest, final ApiCallback<CurrentUser> _callback) throws ApiException {

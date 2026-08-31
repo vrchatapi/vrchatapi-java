@@ -18,8 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.GroupPermissions;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,6 +56,11 @@ public class GroupPermission {
   @SerializedName(SERIALIZED_NAME_ALLOWED_TO_ADD)
   @javax.annotation.Nullable
   private Boolean allowedToAdd = false;
+
+  public static final String SERIALIZED_NAME_DEPENDS_ON = "dependsOn";
+  @SerializedName(SERIALIZED_NAME_DEPENDS_ON)
+  @javax.annotation.Nullable
+  private List<GroupPermissions> dependsOn = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -93,6 +101,33 @@ public class GroupPermission {
 
   public void setAllowedToAdd(@javax.annotation.Nullable Boolean allowedToAdd) {
     this.allowedToAdd = allowedToAdd;
+  }
+
+
+  public GroupPermission dependsOn(@javax.annotation.Nullable List<GroupPermissions> dependsOn) {
+    this.dependsOn = dependsOn;
+    return this;
+  }
+
+  public GroupPermission addDependsOnItem(GroupPermissions dependsOnItem) {
+    if (this.dependsOn == null) {
+      this.dependsOn = new ArrayList<>();
+    }
+    this.dependsOn.add(dependsOnItem);
+    return this;
+  }
+
+  /**
+   * Other permission names this one is listed against.
+   * @return dependsOn
+   */
+  @javax.annotation.Nullable
+  public List<GroupPermissions> getDependsOn() {
+    return dependsOn;
+  }
+
+  public void setDependsOn(@javax.annotation.Nullable List<GroupPermissions> dependsOn) {
+    this.dependsOn = dependsOn;
   }
 
 
@@ -183,6 +218,7 @@ public class GroupPermission {
     }
     GroupPermission groupPermission = (GroupPermission) o;
     return Objects.equals(this.allowedToAdd, groupPermission.allowedToAdd) &&
+        Objects.equals(this.dependsOn, groupPermission.dependsOn) &&
         Objects.equals(this.displayName, groupPermission.displayName) &&
         Objects.equals(this.help, groupPermission.help) &&
         Objects.equals(this.isManagementPermission, groupPermission.isManagementPermission) &&
@@ -191,7 +227,7 @@ public class GroupPermission {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedToAdd, displayName, help, isManagementPermission, name);
+    return Objects.hash(allowedToAdd, dependsOn, displayName, help, isManagementPermission, name);
   }
 
   @Override
@@ -199,6 +235,7 @@ public class GroupPermission {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupPermission {\n");
     sb.append("    allowedToAdd: ").append(toIndentedString(allowedToAdd)).append("\n");
+    sb.append("    dependsOn: ").append(toIndentedString(dependsOn)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    help: ").append(toIndentedString(help)).append("\n");
     sb.append("    isManagementPermission: ").append(toIndentedString(isManagementPermission)).append("\n");
@@ -221,7 +258,7 @@ public class GroupPermission {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("allowedToAdd", "displayName", "help", "isManagementPermission", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("allowedToAdd", "dependsOn", "displayName", "help", "isManagementPermission", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -248,6 +285,10 @@ public class GroupPermission {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("dependsOn") != null && !jsonObj.get("dependsOn").isJsonNull() && !jsonObj.get("dependsOn").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dependsOn` to be an array in the JSON string but got `%s`", jsonObj.get("dependsOn").toString()));
+      }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
       }

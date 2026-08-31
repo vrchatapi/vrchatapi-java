@@ -15,7 +15,7 @@ Minimum supported client build number for various platforms
 |**googlePlay** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
 |**PC** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
 |**picoStore** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
-|**questAppLab** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
+|**questAppLab** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  [optional] |
 |**questStore** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
 |**testFlight** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |
 |**xrElite** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  |  |

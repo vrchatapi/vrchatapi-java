@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -79,6 +80,11 @@ public class Avatar {
   @SerializedName(SERIALIZED_NAME_ASSET_URL_OBJECT)
   @javax.annotation.Nullable
   private Object assetUrlObject;
+
+  public static final String SERIALIZED_NAME_ATTRIBUTION = "attribution";
+  @SerializedName(SERIALIZED_NAME_ATTRIBUTION)
+  @javax.annotation.Nullable
+  private Object attribution = null;
 
   public static final String SERIALIZED_NAME_AUTHOR_ID = "authorId";
   @SerializedName(SERIALIZED_NAME_AUTHOR_ID)
@@ -287,6 +293,25 @@ public class Avatar {
 
   public void setAssetUrlObject(@javax.annotation.Nullable Object assetUrlObject) {
     this.assetUrlObject = assetUrlObject;
+  }
+
+
+  public Avatar attribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
+    return this;
+  }
+
+  /**
+   * Get attribution
+   * @return attribution
+   */
+  @javax.annotation.Nullable
+  public Object getAttribution() {
+    return attribution;
+  }
+
+  public void setAttribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
   }
 
 
@@ -827,6 +852,7 @@ public class Avatar {
         Objects.equals(this.activeAssetReviewId, avatar.activeAssetReviewId) &&
         Objects.equals(this.assetUrl, avatar.assetUrl) &&
         Objects.equals(this.assetUrlObject, avatar.assetUrlObject) &&
+        Objects.equals(this.attribution, avatar.attribution) &&
         Objects.equals(this.authorId, avatar.authorId) &&
         Objects.equals(this.authorName, avatar.authorName) &&
         Objects.equals(this.createdAt, avatar.createdAt) &&
@@ -855,9 +881,20 @@ public class Avatar {
         Objects.equals(this.version, avatar.version);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(acknowledgements, activeAssetReviewId, assetUrl, assetUrlObject, authorId, authorName, createdAt, description, featured, highestPrice, id, imageUrl, listingDate, lock, lowestPrice, name, pendingUpload, performance, productId, publishedListings, releaseStatus, searchable, styles, tags, thumbnailImageUrl, unityPackageUrl, unityPackageUrlObject, unityPackages, updatedAt, version);
+    return Objects.hash(acknowledgements, activeAssetReviewId, assetUrl, assetUrlObject, attribution, authorId, authorName, createdAt, description, featured, highestPrice, id, imageUrl, listingDate, lock, lowestPrice, name, pendingUpload, performance, productId, publishedListings, releaseStatus, searchable, styles, tags, thumbnailImageUrl, unityPackageUrl, unityPackageUrlObject, unityPackages, updatedAt, version);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -868,6 +905,7 @@ public class Avatar {
     sb.append("    activeAssetReviewId: ").append(toIndentedString(activeAssetReviewId)).append("\n");
     sb.append("    assetUrl: ").append(toIndentedString(assetUrl)).append("\n");
     sb.append("    assetUrlObject: ").append(toIndentedString(assetUrlObject)).append("\n");
+    sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
     sb.append("    authorName: ").append(toIndentedString(authorName)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -912,7 +950,7 @@ public class Avatar {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acknowledgements", "activeAssetReviewId", "assetUrl", "assetUrlObject", "authorId", "authorName", "created_at", "description", "featured", "highestPrice", "id", "imageUrl", "listingDate", "lock", "lowestPrice", "name", "pendingUpload", "performance", "productId", "publishedListings", "releaseStatus", "searchable", "styles", "tags", "thumbnailImageUrl", "unityPackageUrl", "unityPackageUrlObject", "unityPackages", "updated_at", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("acknowledgements", "activeAssetReviewId", "assetUrl", "assetUrlObject", "attribution", "authorId", "authorName", "created_at", "description", "featured", "highestPrice", "id", "imageUrl", "listingDate", "lock", "lowestPrice", "name", "pendingUpload", "performance", "productId", "publishedListings", "releaseStatus", "searchable", "styles", "tags", "thumbnailImageUrl", "unityPackageUrl", "unityPackageUrlObject", "unityPackages", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "created_at", "description", "featured", "id", "imageUrl", "listingDate", "name", "performance", "releaseStatus", "styles", "tags", "thumbnailImageUrl", "unityPackageUrl", "unityPackageUrlObject", "unityPackages", "updated_at", "version"));

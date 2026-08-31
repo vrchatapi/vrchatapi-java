@@ -120,7 +120,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGalleryImage object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGroupGalleryImageCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull AddGroupGalleryImageRequest addGroupGalleryImageRequest, final ApiCallback _callback) throws ApiException {
@@ -205,7 +206,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGalleryImage object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupGalleryImage addGroupGalleryImage(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull AddGroupGalleryImageRequest addGroupGalleryImageRequest) throws ApiException {
@@ -227,7 +229,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGalleryImage object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupGalleryImage> addGroupGalleryImageWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull AddGroupGalleryImageRequest addGroupGalleryImageRequest) throws ApiException {
@@ -251,7 +254,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGalleryImage object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGroupGalleryImageAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull AddGroupGalleryImageRequest addGroupGalleryImageRequest, final ApiCallback<GroupGalleryImage> _callback) throws ApiException {
@@ -275,7 +279,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGroupMemberRoleCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId, final ApiCallback _callback) throws ApiException {
@@ -360,7 +365,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<String> addGroupMemberRole(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId) throws ApiException {
@@ -382,7 +388,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<String>> addGroupMemberRoleWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId) throws ApiException {
@@ -406,7 +413,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addGroupMemberRoleAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId, final ApiCallback<List<String>> _callback) throws ApiException {
@@ -571,7 +579,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call banGroupMemberCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull BanGroupMemberRequest banGroupMemberRequest, final ApiCallback _callback) throws ApiException {
@@ -650,7 +659,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupMember banGroupMember(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull BanGroupMemberRequest banGroupMemberRequest) throws ApiException {
@@ -672,7 +682,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupMember> banGroupMemberWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull BanGroupMemberRequest banGroupMemberRequest) throws ApiException {
@@ -696,7 +707,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call banGroupMemberAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull BanGroupMemberRequest banGroupMemberRequest, final ApiCallback<GroupMember> _callback) throws ApiException {
@@ -720,7 +732,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to block a group you already have blocked. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call blockGroupCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -793,7 +805,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to block a group you already have blocked. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success blockGroup(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -815,7 +827,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to block a group you already have blocked. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> blockGroupWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -839,7 +851,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when banning a user </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to block a group you already have blocked. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call blockGroupAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<Success> _callback) throws ApiException {
@@ -862,7 +874,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> You can&#39;t cancel a join request if you didn&#39;t request to join․ </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelGroupRequestCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -933,7 +945,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> You can&#39;t cancel a join request if you didn&#39;t request to join․ </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void cancelGroupRequest(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -953,7 +965,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> You can&#39;t cancel a join request if you didn&#39;t request to join․ </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> cancelGroupRequestWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -975,7 +987,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> You can&#39;t cancel a join request if you didn&#39;t request to join․ </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelGroupRequestAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<Void> _callback) throws ApiException {
@@ -997,7 +1009,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after cancelling a group transfer. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to cancel a transfer for a group without a pending transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelGroupTransferCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -1069,7 +1082,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after cancelling a group transfer. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to cancel a transfer for a group without a pending transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success cancelGroupTransfer(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -1090,7 +1104,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after cancelling a group transfer. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to cancel a transfer for a group without a pending transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> cancelGroupTransferWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -1113,7 +1128,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after cancelling a group transfer. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to cancel a transfer for a group without a pending transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelGroupTransferAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<Success> _callback) throws ApiException {
@@ -1266,8 +1282,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupAnnouncementCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupAnnouncementRequest createGroupAnnouncementRequest, final ApiCallback _callback) throws ApiException {
@@ -1344,8 +1361,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupAnnouncement createGroupAnnouncement(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupAnnouncementRequest createGroupAnnouncementRequest) throws ApiException {
@@ -1365,8 +1383,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupAnnouncement> createGroupAnnouncementWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupAnnouncementRequest createGroupAnnouncementRequest) throws ApiException {
@@ -1388,8 +1407,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupAnnouncementAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupAnnouncementRequest createGroupAnnouncementRequest, final ApiCallback<GroupAnnouncement> _callback) throws ApiException {
@@ -1412,7 +1432,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupGalleryCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupGalleryRequest createGroupGalleryRequest, final ApiCallback _callback) throws ApiException {
@@ -1490,7 +1511,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupGallery createGroupGallery(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupGalleryRequest createGroupGalleryRequest) throws ApiException {
@@ -1511,7 +1533,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupGallery> createGroupGalleryWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupGalleryRequest createGroupGalleryRequest) throws ApiException {
@@ -1534,7 +1557,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupGalleryAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupGalleryRequest createGroupGalleryRequest, final ApiCallback<GroupGallery> _callback) throws ApiException {
@@ -1559,7 +1583,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when creating a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden error response when creating a group invite. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupInviteCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupInviteRequest createGroupInviteRequest, final ApiCallback _callback) throws ApiException {
@@ -1638,7 +1662,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when creating a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden error response when creating a group invite. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void createGroupInvite(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupInviteRequest createGroupInviteRequest) throws ApiException {
@@ -1660,7 +1684,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when creating a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden error response when creating a group invite. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> createGroupInviteWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupInviteRequest createGroupInviteRequest) throws ApiException {
@@ -1684,7 +1708,7 @@ public class GroupsApi {
         <tr><td> 400 </td><td> Bad request error response when creating a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden error response when creating a group invite. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupInviteAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupInviteRequest createGroupInviteRequest, final ApiCallback<Void> _callback) throws ApiException {
@@ -1706,7 +1730,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupRole object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupRoleCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupRoleRequest createGroupRoleRequest, final ApiCallback _callback) throws ApiException {
@@ -1784,7 +1809,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupRole object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupRole createGroupRole(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupRoleRequest createGroupRoleRequest) throws ApiException {
@@ -1805,7 +1831,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupRole object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupRole> createGroupRoleWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupRoleRequest createGroupRoleRequest) throws ApiException {
@@ -1828,7 +1855,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupRole object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createGroupRoleAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull CreateGroupRoleRequest createGroupRoleRequest, final ApiCallback<GroupRole> _callback) throws ApiException {
@@ -1852,7 +1880,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call declineGroupInviteCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable DeclineGroupInviteRequest declineGroupInviteRequest, final ApiCallback _callback) throws ApiException {
@@ -1926,7 +1954,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success declineGroupInvite(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable DeclineGroupInviteRequest declineGroupInviteRequest) throws ApiException {
@@ -1948,7 +1976,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> declineGroupInviteWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable DeclineGroupInviteRequest declineGroupInviteRequest) throws ApiException {
@@ -1972,7 +2000,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when declining a group invite. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call declineGroupInviteAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable DeclineGroupInviteRequest declineGroupInviteRequest, final ApiCallback<Success> _callback) throws ApiException {
@@ -1995,7 +2023,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a Group. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean hardDelete, final ApiCallback _callback) throws ApiException {
@@ -2071,7 +2099,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a Group. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteGroup(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean hardDelete) throws ApiException {
@@ -2092,7 +2120,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a Group. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteGroupWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean hardDelete) throws ApiException {
@@ -2115,7 +2143,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a Group. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean hardDelete, final ApiCallback<Success> _callback) throws ApiException {
@@ -2137,7 +2165,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting/clearing the group announcement. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupAnnouncementCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -2208,7 +2237,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting/clearing the group announcement. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteGroupAnnouncement(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -2228,7 +2258,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting/clearing the group announcement. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteGroupAnnouncementWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -2250,7 +2281,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting/clearing the group announcement. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupAnnouncementAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<Success> _callback) throws ApiException {
@@ -2273,7 +2305,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a group gallery. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupGalleryCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, final ApiCallback _callback) throws ApiException {
@@ -2351,7 +2384,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a group gallery. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteGroupGallery(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId) throws ApiException {
@@ -2372,7 +2406,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a group gallery. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteGroupGalleryWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId) throws ApiException {
@@ -2395,7 +2430,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response after deleting a group gallery. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupGalleryAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, final ApiCallback<Success> _callback) throws ApiException {
@@ -2420,7 +2456,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group gallery image. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupGalleryImageCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull String groupGalleryImageId, final ApiCallback _callback) throws ApiException {
@@ -2506,7 +2542,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group gallery image. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteGroupGalleryImage(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull String groupGalleryImageId) throws ApiException {
@@ -2529,7 +2565,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group gallery image. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteGroupGalleryImageWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull String groupGalleryImageId) throws ApiException {
@@ -2554,7 +2590,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group gallery image. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteGroupGalleryImageAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nonnull String groupGalleryImageId, final ApiCallback<Success> _callback) throws ApiException {
@@ -2718,6 +2754,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -2796,6 +2833,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -2817,6 +2855,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -2840,6 +2879,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -2863,6 +2903,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
      </table>
      */
@@ -2941,6 +2982,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
      </table>
      */
@@ -2962,6 +3004,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
      </table>
      */
@@ -2985,6 +3028,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
      </table>
      */
@@ -3008,7 +3052,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean includeRoles, final ApiCallback _callback) throws ApiException {
@@ -3084,7 +3128,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Group getGroup(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean includeRoles) throws ApiException {
@@ -3105,7 +3149,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Group> getGroupWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean includeRoles) throws ApiException {
@@ -3128,7 +3172,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean includeRoles, final ApiCallback<Group> _callback) throws ApiException {
@@ -3150,7 +3194,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAnnouncementsCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -3221,7 +3266,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupAnnouncement getGroupAnnouncements(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -3241,7 +3287,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupAnnouncement> getGroupAnnouncementsWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -3263,7 +3310,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupAnnouncement object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAnnouncementsAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<GroupAnnouncement> _callback) throws ApiException {
@@ -3285,7 +3333,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAuditLogEntryTypes. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAuditLogEntryTypesCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -3356,7 +3405,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAuditLogEntryTypes. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<String> getGroupAuditLogEntryTypes(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -3376,7 +3426,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAuditLogEntryTypes. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<String>> getGroupAuditLogEntryTypesWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -3398,7 +3449,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAuditLogEntryTypes. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAuditLogEntryTypesAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<List<String>> _callback) throws ApiException {
@@ -3427,7 +3479,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAudit objects, wrapped in new pagination format. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAuditLogsCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable OffsetDateTime startDate, @javax.annotation.Nullable OffsetDateTime endDate, @javax.annotation.Nullable String actorIds, @javax.annotation.Nullable String eventTypes, @javax.annotation.Nullable String targetIds, final ApiCallback _callback) throws ApiException {
@@ -3533,7 +3586,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAudit objects, wrapped in new pagination format. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public PaginatedGroupAuditLogEntryList getGroupAuditLogs(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable OffsetDateTime startDate, @javax.annotation.Nullable OffsetDateTime endDate, @javax.annotation.Nullable String actorIds, @javax.annotation.Nullable String eventTypes, @javax.annotation.Nullable String targetIds) throws ApiException {
@@ -3560,7 +3614,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAudit objects, wrapped in new pagination format. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PaginatedGroupAuditLogEntryList> getGroupAuditLogsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable OffsetDateTime startDate, @javax.annotation.Nullable OffsetDateTime endDate, @javax.annotation.Nullable String actorIds, @javax.annotation.Nullable String eventTypes, @javax.annotation.Nullable String targetIds) throws ApiException {
@@ -3589,7 +3644,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupAudit objects, wrapped in new pagination format. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupAuditLogsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable OffsetDateTime startDate, @javax.annotation.Nullable OffsetDateTime endDate, @javax.annotation.Nullable String actorIds, @javax.annotation.Nullable String eventTypes, @javax.annotation.Nullable String targetIds, final ApiCallback<PaginatedGroupAuditLogEntryList> _callback) throws ApiException {
@@ -3614,7 +3670,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupBansCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
@@ -3696,7 +3752,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupMember> getGroupBans(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -3719,7 +3775,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupMember>> getGroupBansWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -3744,7 +3800,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupBansAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<GroupMember>> _callback) throws ApiException {
@@ -3770,7 +3826,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupGalleryImage objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupGalleryImagesCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean approved, final ApiCallback _callback) throws ApiException {
@@ -3863,7 +3919,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupGalleryImage objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupGalleryImage> getGroupGalleryImages(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean approved) throws ApiException {
@@ -3887,7 +3943,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupGalleryImage objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupGalleryImage>> getGroupGalleryImagesWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean approved) throws ApiException {
@@ -3913,7 +3969,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupGalleryImage objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupGalleryImagesAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean approved, final ApiCallback<List<GroupGalleryImage>> _callback) throws ApiException {
@@ -3935,7 +3991,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupInstance objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupInstancesCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -4006,7 +4063,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupInstance objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupInstance> getGroupInstances(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -4026,7 +4084,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupInstance objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupInstance>> getGroupInstancesWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -4048,7 +4107,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupInstance objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupInstancesAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<List<GroupInstance>> _callback) throws ApiException {
@@ -4073,7 +4133,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupInvitesCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
@@ -4155,7 +4215,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupMember> getGroupInvites(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -4178,7 +4238,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupMember>> getGroupInvitesWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -4203,7 +4263,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupInvitesAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<GroupMember>> _callback) throws ApiException {
@@ -4227,7 +4287,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupMemberCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -4306,7 +4366,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupMember getGroupMember(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -4328,7 +4388,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupMember> getGroupMemberWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -4352,7 +4412,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupMemberAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback<GroupMember> _callback) throws ApiException {
@@ -4379,7 +4439,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupMembersCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable GroupSearchSort sort, @javax.annotation.Nullable String roleId, final ApiCallback _callback) throws ApiException {
@@ -4471,7 +4531,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupMember> getGroupMembers(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable GroupSearchSort sort, @javax.annotation.Nullable String roleId) throws ApiException {
@@ -4496,7 +4556,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupMember>> getGroupMembersWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable GroupSearchSort sort, @javax.annotation.Nullable String roleId) throws ApiException {
@@ -4523,7 +4583,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupMembersAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable GroupSearchSort sort, @javax.annotation.Nullable String roleId, final ApiCallback<List<GroupMember>> _callback) throws ApiException {
@@ -4546,7 +4606,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupPermission objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupPermissionsCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -4618,7 +4679,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupPermission objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupPermission> getGroupPermissions(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -4639,7 +4701,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupPermission objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupPermission>> getGroupPermissionsWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -4662,7 +4725,8 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupPermission objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupPermissionsAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<List<GroupPermission>> _callback) throws ApiException {
@@ -4843,7 +4907,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when responding to a group join request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupRequestsCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean blocked, final ApiCallback _callback) throws ApiException {
@@ -4930,7 +4994,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when responding to a group join request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupMember> getGroupRequests(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean blocked) throws ApiException {
@@ -4954,7 +5018,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when responding to a group join request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupMember>> getGroupRequestsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean blocked) throws ApiException {
@@ -4980,7 +5044,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request error response when responding to a group join request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupRequestsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean blocked, final ApiCallback<List<GroupMember>> _callback) throws ApiException {
@@ -5123,7 +5187,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupRolesCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -5194,7 +5259,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<GroupRole> getGroupRoles(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -5214,7 +5280,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<GroupRole>> getGroupRolesWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -5236,7 +5303,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRole objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupRolesAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<List<GroupRole>> _callback) throws ApiException {
@@ -5260,7 +5328,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a single GroupTransferable object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupTransferabilityCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable String transferTargetId, final ApiCallback _callback) throws ApiException {
@@ -5337,7 +5405,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a single GroupTransferable object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupTransferable getGroupTransferability(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable String transferTargetId) throws ApiException {
@@ -5359,7 +5427,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a single GroupTransferable object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupTransferable> getGroupTransferabilityWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable String transferTargetId) throws ApiException {
@@ -5383,7 +5451,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a single GroupTransferable object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getGroupTransferabilityAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable String transferTargetId, final ApiCallback<GroupTransferable> _callback) throws ApiException {
@@ -5407,7 +5475,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after initiating or completing a group transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to transfer a group to an ineligible target user. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call initiateOrAcceptGroupTransferCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable TransferGroupRequest transferGroupRequest, final ApiCallback _callback) throws ApiException {
@@ -5481,7 +5549,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after initiating or completing a group transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to transfer a group to an ineligible target user. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success initiateOrAcceptGroupTransfer(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable TransferGroupRequest transferGroupRequest) throws ApiException {
@@ -5503,7 +5571,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after initiating or completing a group transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to transfer a group to an ineligible target user. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> initiateOrAcceptGroupTransferWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable TransferGroupRequest transferGroupRequest) throws ApiException {
@@ -5527,7 +5595,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after initiating or completing a group transfer. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to transfer a group to an ineligible target user. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call initiateOrAcceptGroupTransferAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable TransferGroupRequest transferGroupRequest, final ApiCallback<Success> _callback) throws ApiException {
@@ -5552,7 +5620,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to join a group that the user is already a member of. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call joinGroupCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean confirmOverrideBlock, @javax.annotation.Nullable JoinGroupRequest joinGroupRequest, final ApiCallback _callback) throws ApiException {
@@ -5631,7 +5699,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to join a group that the user is already a member of. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupMember joinGroup(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean confirmOverrideBlock, @javax.annotation.Nullable JoinGroupRequest joinGroupRequest) throws ApiException {
@@ -5654,7 +5722,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to join a group that the user is already a member of. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupMember> joinGroupWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean confirmOverrideBlock, @javax.annotation.Nullable JoinGroupRequest joinGroupRequest) throws ApiException {
@@ -5679,7 +5747,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to join a group that the user is already a member of. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call joinGroupAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Boolean confirmOverrideBlock, @javax.annotation.Nullable JoinGroupRequest joinGroupRequest, final ApiCallback<GroupMember> _callback) throws ApiException {
@@ -5703,7 +5771,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group member. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call kickGroupMemberCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -5782,7 +5850,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group member. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success kickGroupMember(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -5804,7 +5872,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group member. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> kickGroupMemberWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -5828,7 +5896,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Successful response after deleting a group member. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call kickGroupMemberAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback<Success> _callback) throws ApiException {
@@ -5850,7 +5918,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call leaveGroupCall(@javax.annotation.Nonnull String groupId, final ApiCallback _callback) throws ApiException {
@@ -5920,7 +5988,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void leaveGroup(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -5939,7 +6007,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> leaveGroupWithHttpInfo(@javax.annotation.Nonnull String groupId) throws ApiException {
@@ -5960,7 +6028,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call leaveGroupAsync(@javax.annotation.Nonnull String groupId, final ApiCallback<Void> _callback) throws ApiException {
@@ -5983,7 +6051,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeGroupMemberRoleCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId, final ApiCallback _callback) throws ApiException {
@@ -6068,7 +6137,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<String> removeGroupMemberRole(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId) throws ApiException {
@@ -6090,7 +6160,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<String>> removeGroupMemberRoleWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId) throws ApiException {
@@ -6114,7 +6185,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupRoleID objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeGroupMemberRoleAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupRoleId, final ApiCallback<List<String>> _callback) throws ApiException {
@@ -6138,7 +6210,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call respondGroupJoinRequestCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull RespondGroupJoinRequest respondGroupJoinRequest, final ApiCallback _callback) throws ApiException {
@@ -6222,7 +6295,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void respondGroupJoinRequest(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull RespondGroupJoinRequest respondGroupJoinRequest) throws ApiException {
@@ -6243,7 +6317,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> respondGroupJoinRequestWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull RespondGroupJoinRequest respondGroupJoinRequest) throws ApiException {
@@ -6266,7 +6341,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call respondGroupJoinRequestAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull RespondGroupJoinRequest respondGroupJoinRequest, final ApiCallback<Void> _callback) throws ApiException {
@@ -6291,7 +6367,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects from a search. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call searchGroupMembersCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
@@ -6383,7 +6459,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects from a search. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public SearchGroupMembers200Response searchGroupMembers(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -6407,7 +6483,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects from a search. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<SearchGroupMembers200Response> searchGroupMembersWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -6433,7 +6509,7 @@ public class GroupsApi {
         <tr><td> 200 </td><td> Returns a list of GroupMember objects from a search. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to search list of users with an invalid request. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call searchGroupMembersAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<SearchGroupMembers200Response> _callback) throws ApiException {
@@ -6601,7 +6677,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unbanGroupMemberCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -6679,7 +6756,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupMember unbanGroupMember(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -6700,7 +6778,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupMember> unbanGroupMemberWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId) throws ApiException {
@@ -6723,7 +6802,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unbanGroupMemberAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, final ApiCallback<GroupMember> _callback) throws ApiException {
@@ -6745,8 +6825,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable UpdateGroupRequest updateGroupRequest, final ApiCallback _callback) throws ApiException {
@@ -6818,8 +6899,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Group updateGroup(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable UpdateGroupRequest updateGroupRequest) throws ApiException {
@@ -6839,8 +6921,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Group> updateGroupWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable UpdateGroupRequest updateGroupRequest) throws ApiException {
@@ -6862,8 +6945,9 @@ public class GroupsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Group object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable UpdateGroupRequest updateGroupRequest, final ApiCallback<Group> _callback) throws ApiException {
@@ -6887,7 +6971,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupGalleryCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable UpdateGroupGalleryRequest updateGroupGalleryRequest, final ApiCallback _callback) throws ApiException {
@@ -6967,7 +7052,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupGallery updateGroupGallery(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable UpdateGroupGalleryRequest updateGroupGalleryRequest) throws ApiException {
@@ -6989,7 +7075,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupGallery> updateGroupGalleryWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable UpdateGroupGalleryRequest updateGroupGalleryRequest) throws ApiException {
@@ -7013,7 +7100,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single GroupGallery object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupGalleryAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable UpdateGroupGalleryRequest updateGroupGalleryRequest, final ApiCallback<GroupGallery> _callback) throws ApiException {
@@ -7037,7 +7125,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupMemberCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateGroupMemberRequest updateGroupMemberRequest, final ApiCallback _callback) throws ApiException {
@@ -7117,7 +7206,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupMember updateGroupMember(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
@@ -7139,7 +7229,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupMember> updateGroupMemberWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateGroupMemberRequest updateGroupMemberRequest) throws ApiException {
@@ -7163,7 +7254,8 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of GroupMember objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing group. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateGroupMemberAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateGroupMemberRequest updateGroupMemberRequest, final ApiCallback<GroupMember> _callback) throws ApiException {
@@ -7187,6 +7279,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a GroupPost object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -7272,6 +7365,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a GroupPost object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -7294,6 +7388,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a GroupPost object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */
@@ -7318,6 +7413,7 @@ public class GroupsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a GroupPost object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when trying to perform operations on a group you are not member of. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Response after deleting a group post. </td><td>  -  </td></tr>
      </table>
      */

@@ -58,6 +58,11 @@ public class GroupRole {
   @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
+  public static final String SERIALIZED_NAME_DEFAULT_ROLE = "defaultRole";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_ROLE)
+  @javax.annotation.Nullable
+  private Boolean defaultRole = false;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -72,6 +77,11 @@ public class GroupRole {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_IS_ADDED_ON_JOIN = "isAddedOnJoin";
+  @SerializedName(SERIALIZED_NAME_IS_ADDED_ON_JOIN)
+  @javax.annotation.Nullable
+  private Boolean isAddedOnJoin = false;
 
   public static final String SERIALIZED_NAME_IS_MANAGEMENT_ROLE = "isManagementRole";
   @SerializedName(SERIALIZED_NAME_IS_MANAGEMENT_ROLE)
@@ -135,6 +145,25 @@ public class GroupRole {
   }
 
 
+  public GroupRole defaultRole(@javax.annotation.Nullable Boolean defaultRole) {
+    this.defaultRole = defaultRole;
+    return this;
+  }
+
+  /**
+   * Get defaultRole
+   * @return defaultRole
+   */
+  @javax.annotation.Nullable
+  public Boolean getDefaultRole() {
+    return defaultRole;
+  }
+
+  public void setDefaultRole(@javax.annotation.Nullable Boolean defaultRole) {
+    this.defaultRole = defaultRole;
+  }
+
+
   public GroupRole description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
@@ -189,6 +218,25 @@ public class GroupRole {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public GroupRole isAddedOnJoin(@javax.annotation.Nullable Boolean isAddedOnJoin) {
+    this.isAddedOnJoin = isAddedOnJoin;
+    return this;
+  }
+
+  /**
+   * Get isAddedOnJoin
+   * @return isAddedOnJoin
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsAddedOnJoin() {
+    return isAddedOnJoin;
+  }
+
+  public void setIsAddedOnJoin(@javax.annotation.Nullable Boolean isAddedOnJoin) {
+    this.isAddedOnJoin = isAddedOnJoin;
   }
 
 
@@ -363,9 +411,11 @@ public class GroupRole {
     }
     GroupRole groupRole = (GroupRole) o;
     return Objects.equals(this.createdAt, groupRole.createdAt) &&
+        Objects.equals(this.defaultRole, groupRole.defaultRole) &&
         Objects.equals(this.description, groupRole.description) &&
         Objects.equals(this.groupId, groupRole.groupId) &&
         Objects.equals(this.id, groupRole.id) &&
+        Objects.equals(this.isAddedOnJoin, groupRole.isAddedOnJoin) &&
         Objects.equals(this.isManagementRole, groupRole.isManagementRole) &&
         Objects.equals(this.isSelfAssignable, groupRole.isSelfAssignable) &&
         Objects.equals(this.name, groupRole.name) &&
@@ -378,7 +428,7 @@ public class GroupRole {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, groupId, id, isManagementRole, isSelfAssignable, name, order, permissions, requiresPurchase, requiresTwoFactor, updatedAt);
+    return Objects.hash(createdAt, defaultRole, description, groupId, id, isAddedOnJoin, isManagementRole, isSelfAssignable, name, order, permissions, requiresPurchase, requiresTwoFactor, updatedAt);
   }
 
   @Override
@@ -386,9 +436,11 @@ public class GroupRole {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupRole {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    defaultRole: ").append(toIndentedString(defaultRole)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    isAddedOnJoin: ").append(toIndentedString(isAddedOnJoin)).append("\n");
     sb.append("    isManagementRole: ").append(toIndentedString(isManagementRole)).append("\n");
     sb.append("    isSelfAssignable: ").append(toIndentedString(isSelfAssignable)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -415,7 +467,7 @@ public class GroupRole {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "description", "groupId", "id", "isManagementRole", "isSelfAssignable", "name", "order", "permissions", "requiresPurchase", "requiresTwoFactor", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "defaultRole", "description", "groupId", "id", "isAddedOnJoin", "isManagementRole", "isSelfAssignable", "name", "order", "permissions", "requiresPurchase", "requiresTwoFactor", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

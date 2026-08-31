@@ -149,6 +149,11 @@ public class CalendarEvent {
   @javax.annotation.Nullable
   private CalendarEventOccurrenceKind occurrenceKind = CalendarEventOccurrenceKind.SINGLE;
 
+  public static final String SERIALIZED_NAME_OCCURRENCE_MODIFIED = "occurrenceModified";
+  @SerializedName(SERIALIZED_NAME_OCCURRENCE_MODIFIED)
+  @javax.annotation.Nullable
+  private Boolean occurrenceModified;
+
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
   @javax.annotation.Nullable
@@ -562,6 +567,25 @@ public class CalendarEvent {
   }
 
 
+  public CalendarEvent occurrenceModified(@javax.annotation.Nullable Boolean occurrenceModified) {
+    this.occurrenceModified = occurrenceModified;
+    return this;
+  }
+
+  /**
+   * Get occurrenceModified
+   * @return occurrenceModified
+   */
+  @javax.annotation.Nullable
+  public Boolean getOccurrenceModified() {
+    return occurrenceModified;
+  }
+
+  public void setOccurrenceModified(@javax.annotation.Nullable Boolean occurrenceModified) {
+    this.occurrenceModified = occurrenceModified;
+  }
+
+
   public CalendarEvent ownerId(@javax.annotation.Nullable String ownerId) {
     this.ownerId = ownerId;
     return this;
@@ -842,6 +866,7 @@ public class CalendarEvent {
         Objects.equals(this.isDraft, calendarEvent.isDraft) &&
         Objects.equals(this.languages, calendarEvent.languages) &&
         Objects.equals(this.occurrenceKind, calendarEvent.occurrenceKind) &&
+        Objects.equals(this.occurrenceModified, calendarEvent.occurrenceModified) &&
         Objects.equals(this.ownerId, calendarEvent.ownerId) &&
         Objects.equals(this.platforms, calendarEvent.platforms) &&
         Objects.equals(this.recurrence, calendarEvent.recurrence) &&
@@ -862,7 +887,7 @@ public class CalendarEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, createdAt, deletedAt, description, durationInMs, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, id, imageId, imageUrl, interestedUserCount, isDraft, languages, occurrenceKind, ownerId, platforms, recurrence, roleIds, seriesId, startsAt, tags, title, type, updatedAt, userInterest, usesInstanceOverflow);
+    return Objects.hash(accessType, category, closeInstanceAfterEndMinutes, createdAt, deletedAt, description, durationInMs, endsAt, featured, guestEarlyJoinMinutes, hostEarlyJoinMinutes, id, imageId, imageUrl, interestedUserCount, isDraft, languages, occurrenceKind, occurrenceModified, ownerId, platforms, recurrence, roleIds, seriesId, startsAt, tags, title, type, updatedAt, userInterest, usesInstanceOverflow);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -894,6 +919,7 @@ public class CalendarEvent {
     sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    occurrenceKind: ").append(toIndentedString(occurrenceKind)).append("\n");
+    sb.append("    occurrenceModified: ").append(toIndentedString(occurrenceModified)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
@@ -924,7 +950,7 @@ public class CalendarEvent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("accessType", "category", "closeInstanceAfterEndMinutes", "createdAt", "deletedAt", "description", "durationInMs", "endsAt", "featured", "guestEarlyJoinMinutes", "hostEarlyJoinMinutes", "id", "imageId", "imageUrl", "interestedUserCount", "isDraft", "languages", "occurrenceKind", "ownerId", "platforms", "recurrence", "roleIds", "seriesId", "startsAt", "tags", "title", "type", "updatedAt", "userInterest", "usesInstanceOverflow"));
+    openapiFields = new HashSet<String>(Arrays.asList("accessType", "category", "closeInstanceAfterEndMinutes", "createdAt", "deletedAt", "description", "durationInMs", "endsAt", "featured", "guestEarlyJoinMinutes", "hostEarlyJoinMinutes", "id", "imageId", "imageUrl", "interestedUserCount", "isDraft", "languages", "occurrenceKind", "occurrenceModified", "ownerId", "platforms", "recurrence", "roleIds", "seriesId", "startsAt", "tags", "title", "type", "updatedAt", "userInterest", "usesInstanceOverflow"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("accessType", "category", "description", "endsAt", "id", "startsAt", "title"));

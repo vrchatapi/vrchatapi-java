@@ -34,10 +34,13 @@ import io.github.vrchatapi.model.CurrentUser;
 import io.github.vrchatapi.model.Disable2FAResult;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.ModerationReport;
+import io.github.vrchatapi.model.OAuthRedirectCode;
 import io.github.vrchatapi.model.OkStatus2;
 import io.github.vrchatapi.model.PaginatedModerationReportList;
 import io.github.vrchatapi.model.Pending2FAResult;
 import io.github.vrchatapi.model.RegisterUserAccountRequest;
+import io.github.vrchatapi.model.SsoProvider;
+import io.github.vrchatapi.model.SsoToken;
 import io.github.vrchatapi.model.SubmitModerationReportRequest;
 import io.github.vrchatapi.model.Success;
 import io.github.vrchatapi.model.SuccessFlag;
@@ -1698,6 +1701,127 @@ public class AuthenticationApi {
         return localVarCall;
     }
     /**
+     * Build call for getOAuthRedirectCode
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a short-lived redirect code for the current session. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOAuthRedirectCodeCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/oauth/redirectCode";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOAuthRedirectCodeValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getOAuthRedirectCodeCall(_callback);
+
+    }
+
+    /**
+     * Get OAuth Redirect Code
+     * Generate a short-lived OAuth redirect code for the current session.
+     * @return OAuthRedirectCode
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a short-lived redirect code for the current session. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public OAuthRedirectCode getOAuthRedirectCode() throws ApiException {
+        ApiResponse<OAuthRedirectCode> localVarResp = getOAuthRedirectCodeWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get OAuth Redirect Code
+     * Generate a short-lived OAuth redirect code for the current session.
+     * @return ApiResponse&lt;OAuthRedirectCode&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a short-lived redirect code for the current session. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<OAuthRedirectCode> getOAuthRedirectCodeWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getOAuthRedirectCodeValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<OAuthRedirectCode>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get OAuth Redirect Code (asynchronously)
+     * Generate a short-lived OAuth redirect code for the current session.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a short-lived redirect code for the current session. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOAuthRedirectCodeAsync(final ApiCallback<OAuthRedirectCode> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOAuthRedirectCodeValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<OAuthRedirectCode>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getRecoveryCodes
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1815,6 +1939,141 @@ public class AuthenticationApi {
 
         okhttp3.Call localVarCall = getRecoveryCodesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<TwoFactorRecoveryCodes>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getSsoToken
+     * @param provider The third-party service to mint a token for. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a token for the service. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the requested SSO provider is unsupported. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSsoTokenCall(@javax.annotation.Nonnull SsoProvider provider, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/sso/{provider}"
+            .replace("{" + "provider" + "}", localVarApiClient.escapeString(provider.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSsoTokenValidateBeforeCall(@javax.annotation.Nonnull SsoProvider provider, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'provider' is set
+        if (provider == null) {
+            throw new ApiException("Missing the required parameter 'provider' when calling getSsoToken(Async)");
+        }
+
+        return getSsoTokenCall(provider, _callback);
+
+    }
+
+    /**
+     * Get SSO Token
+     * Generate a token for the specified third-party service.
+     * @param provider The third-party service to mint a token for. (required)
+     * @return SsoToken
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a token for the service. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the requested SSO provider is unsupported. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public SsoToken getSsoToken(@javax.annotation.Nonnull SsoProvider provider) throws ApiException {
+        ApiResponse<SsoToken> localVarResp = getSsoTokenWithHttpInfo(provider);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get SSO Token
+     * Generate a token for the specified third-party service.
+     * @param provider The third-party service to mint a token for. (required)
+     * @return ApiResponse&lt;SsoToken&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a token for the service. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the requested SSO provider is unsupported. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SsoToken> getSsoTokenWithHttpInfo(@javax.annotation.Nonnull SsoProvider provider) throws ApiException {
+        okhttp3.Call localVarCall = getSsoTokenValidateBeforeCall(provider, null);
+        Type localVarReturnType = new TypeToken<SsoToken>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get SSO Token (asynchronously)
+     * Generate a token for the specified third-party service.
+     * @param provider The third-party service to mint a token for. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Return a token for the service. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the requested SSO provider is unsupported. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSsoTokenAsync(@javax.annotation.Nonnull SsoProvider provider, final ApiCallback<SsoToken> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSsoTokenValidateBeforeCall(provider, _callback);
+        Type localVarReturnType = new TypeToken<SsoToken>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2014,7 +2273,7 @@ public class AuthenticationApi {
 
     /**
      * Register User Account
-     * ~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+     * Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
      * @param registerUserAccountRequest  (required)
      * @return CurrentUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2035,7 +2294,7 @@ public class AuthenticationApi {
 
     /**
      * Register User Account
-     * ~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+     * Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
      * @param registerUserAccountRequest  (required)
      * @return ApiResponse&lt;CurrentUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2057,7 +2316,7 @@ public class AuthenticationApi {
 
     /**
      * Register User Account (asynchronously)
-     * ~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+     * Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
      * @param registerUserAccountRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

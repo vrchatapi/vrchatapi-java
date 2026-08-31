@@ -54,7 +54,7 @@ import io.github.vrchatapi.JSON;
 public class CalendarEventDiscovery {
   public static final String SERIALIZED_NAME_NEXT_CURSOR = "nextCursor";
   @SerializedName(SERIALIZED_NAME_NEXT_CURSOR)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String nextCursor;
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
@@ -65,7 +65,7 @@ public class CalendarEventDiscovery {
   public CalendarEventDiscovery() {
   }
 
-  public CalendarEventDiscovery nextCursor(@javax.annotation.Nonnull String nextCursor) {
+  public CalendarEventDiscovery nextCursor(@javax.annotation.Nullable String nextCursor) {
     this.nextCursor = nextCursor;
     return this;
   }
@@ -74,12 +74,12 @@ public class CalendarEventDiscovery {
    * Base64-encoded JSON:   type: object   properties:     dataSource:       type: string       enum:         - featured         - personalized     dataIndex:       type: integer       format: int32     phase:       type: string       enum:         - all         - live         - upcoming       description: see CalendarEventDiscoveryScope     asOf:       type: integer       format: int64       description: milliseconds since Unix epoch     paramHash:       type: string       format: string       description: Base64-encoded 256-bit hash of the original query parameters
    * @return nextCursor
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getNextCursor() {
     return nextCursor;
   }
 
-  public void setNextCursor(@javax.annotation.Nonnull String nextCursor) {
+  public void setNextCursor(@javax.annotation.Nullable String nextCursor) {
     this.nextCursor = nextCursor;
   }
 
@@ -157,7 +157,7 @@ public class CalendarEventDiscovery {
     openapiFields = new HashSet<String>(Arrays.asList("nextCursor", "results"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("nextCursor", "results"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("results"));
   }
 
   /**
@@ -188,7 +188,7 @@ public class CalendarEventDiscovery {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("nextCursor").isJsonPrimitive()) {
+      if ((jsonObj.get("nextCursor") != null && !jsonObj.get("nextCursor").isJsonNull()) && !jsonObj.get("nextCursor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nextCursor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nextCursor").toString()));
       }
       if (jsonObj.get("results") != null) {

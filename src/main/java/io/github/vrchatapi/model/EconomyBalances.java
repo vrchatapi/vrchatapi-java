@@ -56,7 +56,7 @@ public class EconomyBalances {
 
   public static final String SERIALIZED_NAME_EARNINGS = "earnings";
   @SerializedName(SERIALIZED_NAME_EARNINGS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer earnings;
 
   public static final String SERIALIZED_NAME_STANDARD = "standard";
@@ -86,7 +86,7 @@ public class EconomyBalances {
   }
 
 
-  public EconomyBalances earnings(@javax.annotation.Nonnull Integer earnings) {
+  public EconomyBalances earnings(@javax.annotation.Nullable Integer earnings) {
     this.earnings = earnings;
     return this;
   }
@@ -95,12 +95,12 @@ public class EconomyBalances {
    * Get earnings
    * @return earnings
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getEarnings() {
     return earnings;
   }
 
-  public void setEarnings(@javax.annotation.Nonnull Integer earnings) {
+  public void setEarnings(@javax.annotation.Nullable Integer earnings) {
     this.earnings = earnings;
   }
 
@@ -172,7 +172,7 @@ public class EconomyBalances {
     openapiFields = new HashSet<String>(Arrays.asList("balance", "earnings", "standard"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("balance", "earnings", "standard"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("balance", "standard"));
   }
 
   /**

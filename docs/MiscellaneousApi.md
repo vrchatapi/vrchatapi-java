@@ -268,7 +268,7 @@ No authorization required
 
 Check API Health
 
-~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
+Gets the overall health status, the server name, and the current build version tag of the API.  VRChat has restricted this endpoint, which now always returns 401 Unauthorized.
 
 ### Example
 ```java
@@ -319,6 +319,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns the API&#39;s health. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getInfoPush"></a>
 # **getInfoPush**
@@ -390,6 +391,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of InfoPush objects. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 
 <a id="getJavaScript"></a>
 # **getJavaScript**

@@ -86,6 +86,11 @@ public class FavoritedWorld {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<Object> disabledPropAbilities = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_FAVORITE_GROUP = "favoriteGroup";
   @SerializedName(SERIALIZED_NAME_FAVORITE_GROUP)
   @javax.annotation.Nonnull
@@ -320,6 +325,33 @@ public class FavoritedWorld {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public FavoritedWorld disabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public FavoritedWorld addDisabledPropAbilitiesItem(Object disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<Object> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
   }
 
 
@@ -833,6 +865,7 @@ public class FavoritedWorld {
         Objects.equals(this.createdAt, favoritedWorld.createdAt) &&
         Objects.equals(this.defaultContentSettings, favoritedWorld.defaultContentSettings) &&
         Objects.equals(this.description, favoritedWorld.description) &&
+        Objects.equals(this.disabledPropAbilities, favoritedWorld.disabledPropAbilities) &&
         Objects.equals(this.favoriteGroup, favoritedWorld.favoriteGroup) &&
         Objects.equals(this.favoriteId, favoritedWorld.favoriteId) &&
         Objects.equals(this.favorites, favoritedWorld.favorites) &&
@@ -865,7 +898,7 @@ public class FavoritedWorld {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, favoriteGroup, favoriteId, favorites, featured, heat, id, imageUrl, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favoriteGroup, favoriteId, favorites, featured, heat, id, imageUrl, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -885,6 +918,7 @@ public class FavoritedWorld {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    defaultContentSettings: ").append(toIndentedString(defaultContentSettings)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
     sb.append("    favoriteGroup: ").append(toIndentedString(favoriteGroup)).append("\n");
     sb.append("    favoriteId: ").append(toIndentedString(favoriteId)).append("\n");
     sb.append("    favorites: ").append(toIndentedString(favorites)).append("\n");
@@ -927,7 +961,7 @@ public class FavoritedWorld {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "favoriteGroup", "favoriteId", "favorites", "featured", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favoriteGroup", "favoriteId", "favorites", "featured", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorName", "capacity", "favoriteGroup", "favoriteId", "id", "imageUrl", "name", "occupants", "releaseStatus", "thumbnailImageUrl"));
@@ -973,6 +1007,10 @@ public class FavoritedWorld {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
       }
       if (!jsonObj.get("favoriteGroup").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `favoriteGroup` to be a primitive type in the JSON string but got `%s`", jsonObj.get("favoriteGroup").toString()));

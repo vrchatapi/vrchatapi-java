@@ -24,10 +24,14 @@ import io.github.vrchatapi.model.APIConfigAudioConfig;
 import io.github.vrchatapi.model.APIConfigAvatarPerfLimiter;
 import io.github.vrchatapi.model.APIConfigConstants;
 import io.github.vrchatapi.model.APIConfigDownloadURLList;
+import io.github.vrchatapi.model.APIConfigEventShelfCampaign;
 import io.github.vrchatapi.model.APIConfigEvents;
 import io.github.vrchatapi.model.APIConfigIosVersion;
+import io.github.vrchatapi.model.APIConfigLoadingScreenWeights;
+import io.github.vrchatapi.model.APIConfigLowMemoryGoHomeTimeoutValue;
 import io.github.vrchatapi.model.APIConfigMinSupportedClientBuildNumber;
 import io.github.vrchatapi.model.APIConfigOfflineAnalysis;
+import io.github.vrchatapi.model.APIConfigProfileDefaults;
 import io.github.vrchatapi.model.DynamicContentRow;
 import io.github.vrchatapi.model.ReportCategory;
 import io.github.vrchatapi.model.ReportReason;
@@ -65,7 +69,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * Global configuration for various features.
+ * Global client configuration.  The response carries decoy properties: plausible-looking names VRChat rerolls at random as deliberate obfuscation.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class APIConfig {
@@ -184,6 +188,11 @@ public class APIConfig {
   @javax.annotation.Nonnull
   private Integer clientDisconnectTimeout = 30000;
 
+  public static final String SERIALIZED_NAME_CLIENT_MAX_DATAGRAMS = "clientMaxDatagrams";
+  @SerializedName(SERIALIZED_NAME_CLIENT_MAX_DATAGRAMS)
+  @javax.annotation.Nullable
+  private Integer clientMaxDatagrams;
+
   public static final String SERIALIZED_NAME_CLIENT_NET_DISPATCH_THREAD = "clientNetDispatchThread";
   @SerializedName(SERIALIZED_NAME_CLIENT_NET_DISPATCH_THREAD)
   @javax.annotation.Nullable
@@ -248,6 +257,11 @@ public class APIConfig {
   @SerializedName(SERIALIZED_NAME_CLIENT_SENT_COUNT_ALLOWANCE)
   @javax.annotation.Nonnull
   private Integer clientSentCountAllowance = 15;
+
+  public static final String SERIALIZED_NAME_CLIENT_USE_ACK2 = "clientUseAck2";
+  @SerializedName(SERIALIZED_NAME_CLIENT_USE_ACK2)
+  @javax.annotation.Nullable
+  private Boolean clientUseAck2;
 
   public static final String SERIALIZED_NAME_CONSTANTS = "constants";
   @SerializedName(SERIALIZED_NAME_CONSTANTS)
@@ -424,7 +438,7 @@ public class APIConfig {
 
   public static final String SERIALIZED_NAME_ECONOMY_LEDGER_MIGRATION_STOP = "economyLedgerMigrationStop";
   @SerializedName(SERIALIZED_NAME_ECONOMY_LEDGER_MIGRATION_STOP)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String economyLedgerMigrationStop;
 
   public static final String SERIALIZED_NAME_ECONOMY_LEDGER_MODE = "economyLedgerMode";
@@ -452,6 +466,16 @@ public class APIConfig {
   @javax.annotation.Nonnull
   private Integer economyState = 1;
 
+  public static final String SERIALIZED_NAME_ENABLE_V_R_C_PLUS_WORLD_LISTS = "enableVRCPlusWorldLists";
+  @SerializedName(SERIALIZED_NAME_ENABLE_V_R_C_PLUS_WORLD_LISTS)
+  @javax.annotation.Nullable
+  private Boolean enableVRCPlusWorldLists;
+
+  public static final String SERIALIZED_NAME_EVENT_SHELF_CAMPAIGNS = "eventShelfCampaigns";
+  @SerializedName(SERIALIZED_NAME_EVENT_SHELF_CAMPAIGNS)
+  @javax.annotation.Nullable
+  private List<APIConfigEventShelfCampaign> eventShelfCampaigns = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
   @javax.annotation.Nonnull
@@ -467,10 +491,25 @@ public class APIConfig {
   @javax.annotation.Nonnull
   private String giftDisplayType;
 
+  public static final String SERIALIZED_NAME_GLOBAL_CACHE_VERSION = "globalCacheVersion";
+  @SerializedName(SERIALIZED_NAME_GLOBAL_CACHE_VERSION)
+  @javax.annotation.Nullable
+  private Integer globalCacheVersion;
+
+  public static final String SERIALIZED_NAME_GLOBAL_CACHE_VERSION_DEFAULT = "globalCacheVersionDefault";
+  @SerializedName(SERIALIZED_NAME_GLOBAL_CACHE_VERSION_DEFAULT)
+  @javax.annotation.Nullable
+  private Integer globalCacheVersionDefault;
+
   public static final String SERIALIZED_NAME_GOOGLE_API_CLIENT_ID = "googleApiClientId";
   @SerializedName(SERIALIZED_NAME_GOOGLE_API_CLIENT_ID)
   @javax.annotation.Nonnull
   private String googleApiClientId = "827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com";
+
+  public static final String SERIALIZED_NAME_GOOGLE_API_UNITY_CLIENT_ID = "googleApiUnityClientId";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_API_UNITY_CLIENT_ID)
+  @javax.annotation.Nullable
+  private String googleApiUnityClientId;
 
   public static final String SERIALIZED_NAME_HOME_WORLD_ID = "homeWorldId";
   @SerializedName(SERIALIZED_NAME_HOME_WORLD_ID)
@@ -507,6 +546,16 @@ public class APIConfig {
   @javax.annotation.Nonnull
   private String jobsEmail;
 
+  public static final String SERIALIZED_NAME_LOADING_SCREEN_WEIGHTS = "loadingScreenWeights";
+  @SerializedName(SERIALIZED_NAME_LOADING_SCREEN_WEIGHTS)
+  @javax.annotation.Nullable
+  private Map<String, APIConfigLoadingScreenWeights> loadingScreenWeights = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_LOW_MEMORY_GO_HOME_TIMEOUT = "lowMemoryGoHomeTimeout";
+  @SerializedName(SERIALIZED_NAME_LOW_MEMORY_GO_HOME_TIMEOUT)
+  @javax.annotation.Nullable
+  private Map<String, APIConfigLowMemoryGoHomeTimeoutValue> lowMemoryGoHomeTimeout = new HashMap<>();
+
   public static final String SERIALIZED_NAME_MAX_USER_EMOJI = "maxUserEmoji";
   @SerializedName(SERIALIZED_NAME_MAX_USER_EMOJI)
   @javax.annotation.Nonnull
@@ -516,6 +565,11 @@ public class APIConfig {
   @SerializedName(SERIALIZED_NAME_MAX_USER_STICKERS)
   @javax.annotation.Nonnull
   private Integer maxUserStickers = 18;
+
+  public static final String SERIALIZED_NAME_MAXIMUM_UNITY_VERSION_FOR_UPLOADS = "maximumUnityVersionForUploads";
+  @SerializedName(SERIALIZED_NAME_MAXIMUM_UNITY_VERSION_FOR_UPLOADS)
+  @javax.annotation.Nullable
+  private String maximumUnityVersionForUploads;
 
   public static final String SERIALIZED_NAME_MIN_SUPPORTED_CLIENT_BUILD_NUMBER = "minSupportedClientBuildNumber";
   @SerializedName(SERIALIZED_NAME_MIN_SUPPORTED_CLIENT_BUILD_NUMBER)
@@ -557,15 +611,40 @@ public class APIConfig {
   @javax.annotation.Nonnull
   private String playerUrlResolverSha1;
 
+  public static final String SERIALIZED_NAME_PLAYER_URL_RESOLVER_SHA1_GFN_OVERRIDE = "player-url-resolver-sha1-gfn-override";
+  @SerializedName(SERIALIZED_NAME_PLAYER_URL_RESOLVER_SHA1_GFN_OVERRIDE)
+  @javax.annotation.Nullable
+  private String playerUrlResolverSha1GfnOverride;
+
   public static final String SERIALIZED_NAME_PLAYER_URL_RESOLVER_VERSION = "player-url-resolver-version";
   @SerializedName(SERIALIZED_NAME_PLAYER_URL_RESOLVER_VERSION)
   @javax.annotation.Nonnull
   private String playerUrlResolverVersion;
 
+  public static final String SERIALIZED_NAME_PLAYER_URL_RESOLVER_VERSION_GFN_OVERRIDE = "player-url-resolver-version-gfn-override";
+  @SerializedName(SERIALIZED_NAME_PLAYER_URL_RESOLVER_VERSION_GFN_OVERRIDE)
+  @javax.annotation.Nullable
+  private String playerUrlResolverVersionGfnOverride;
+
+  public static final String SERIALIZED_NAME_PROFILE_DEFAULTS = "profileDefaults";
+  @SerializedName(SERIALIZED_NAME_PROFILE_DEFAULTS)
+  @javax.annotation.Nullable
+  private APIConfigProfileDefaults profileDefaults;
+
+  public static final String SERIALIZED_NAME_PROP_COMPONENT_LIST = "propComponentList";
+  @SerializedName(SERIALIZED_NAME_PROP_COMPONENT_LIST)
+  @javax.annotation.Nullable
+  private List<String> propComponentList = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_PUBLIC_KEY = "publicKey";
   @SerializedName(SERIALIZED_NAME_PUBLIC_KEY)
   @javax.annotation.Nonnull
   private String publicKey;
+
+  public static final String SERIALIZED_NAME_QUEST_MINIMUM_LOW_MEMORY_THRESHOLD = "questMinimumLowMemoryThreshold";
+  @SerializedName(SERIALIZED_NAME_QUEST_MINIMUM_LOW_MEMORY_THRESHOLD)
+  @javax.annotation.Nullable
+  private Map<String, Integer> questMinimumLowMemoryThreshold = new HashMap<>();
 
   public static final String SERIALIZED_NAME_REPORT_CATEGORIES = "reportCategories";
   @SerializedName(SERIALIZED_NAME_REPORT_CATEGORIES)
@@ -681,6 +760,16 @@ public class APIConfig {
   @SerializedName(SERIALIZED_NAME_VIVE_WINDOWS_URL)
   @javax.annotation.Nonnull
   private String viveWindowsUrl;
+
+  public static final String SERIALIZED_NAME_VOICE_MAX_PLAYBACK_SOURCES_MOBILE = "voiceMaxPlaybackSourcesMobile";
+  @SerializedName(SERIALIZED_NAME_VOICE_MAX_PLAYBACK_SOURCES_MOBILE)
+  @javax.annotation.Nullable
+  private Integer voiceMaxPlaybackSourcesMobile;
+
+  public static final String SERIALIZED_NAME_VOICE_MAX_PLAYBACK_SOURCES_P_C = "voiceMaxPlaybackSourcesPC";
+  @SerializedName(SERIALIZED_NAME_VOICE_MAX_PLAYBACK_SOURCES_P_C)
+  @javax.annotation.Nullable
+  private Integer voiceMaxPlaybackSourcesPC;
 
   public static final String SERIALIZED_NAME_WEBSOCKET_MAX_FRIENDS_REFRESH_DELAY = "websocketMaxFriendsRefreshDelay";
   @SerializedName(SERIALIZED_NAME_WEBSOCKET_MAX_FRIENDS_REFRESH_DELAY)
@@ -1166,6 +1255,25 @@ public class APIConfig {
   }
 
 
+  public APIConfig clientMaxDatagrams(@javax.annotation.Nullable Integer clientMaxDatagrams) {
+    this.clientMaxDatagrams = clientMaxDatagrams;
+    return this;
+  }
+
+  /**
+   * Get clientMaxDatagrams
+   * @return clientMaxDatagrams
+   */
+  @javax.annotation.Nullable
+  public Integer getClientMaxDatagrams() {
+    return clientMaxDatagrams;
+  }
+
+  public void setClientMaxDatagrams(@javax.annotation.Nullable Integer clientMaxDatagrams) {
+    this.clientMaxDatagrams = clientMaxDatagrams;
+  }
+
+
   public APIConfig clientNetDispatchThread(@javax.annotation.Nullable Boolean clientNetDispatchThread) {
     this.clientNetDispatchThread = clientNetDispatchThread;
     return this;
@@ -1410,6 +1518,25 @@ public class APIConfig {
 
   public void setClientSentCountAllowance(@javax.annotation.Nonnull Integer clientSentCountAllowance) {
     this.clientSentCountAllowance = clientSentCountAllowance;
+  }
+
+
+  public APIConfig clientUseAck2(@javax.annotation.Nullable Boolean clientUseAck2) {
+    this.clientUseAck2 = clientUseAck2;
+    return this;
+  }
+
+  /**
+   * Get clientUseAck2
+   * @return clientUseAck2
+   */
+  @javax.annotation.Nullable
+  public Boolean getClientUseAck2() {
+    return clientUseAck2;
+  }
+
+  public void setClientUseAck2(@javax.annotation.Nullable Boolean clientUseAck2) {
+    this.clientUseAck2 = clientUseAck2;
   }
 
 
@@ -2088,7 +2215,7 @@ public class APIConfig {
   }
 
 
-  public APIConfig economyLedgerMigrationStop(@javax.annotation.Nonnull String economyLedgerMigrationStop) {
+  public APIConfig economyLedgerMigrationStop(@javax.annotation.Nullable String economyLedgerMigrationStop) {
     this.economyLedgerMigrationStop = economyLedgerMigrationStop;
     return this;
   }
@@ -2097,12 +2224,12 @@ public class APIConfig {
    * Unknown
    * @return economyLedgerMigrationStop
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getEconomyLedgerMigrationStop() {
     return economyLedgerMigrationStop;
   }
 
-  public void setEconomyLedgerMigrationStop(@javax.annotation.Nonnull String economyLedgerMigrationStop) {
+  public void setEconomyLedgerMigrationStop(@javax.annotation.Nullable String economyLedgerMigrationStop) {
     this.economyLedgerMigrationStop = economyLedgerMigrationStop;
   }
 
@@ -2202,6 +2329,52 @@ public class APIConfig {
   }
 
 
+  public APIConfig enableVRCPlusWorldLists(@javax.annotation.Nullable Boolean enableVRCPlusWorldLists) {
+    this.enableVRCPlusWorldLists = enableVRCPlusWorldLists;
+    return this;
+  }
+
+  /**
+   * Get enableVRCPlusWorldLists
+   * @return enableVRCPlusWorldLists
+   */
+  @javax.annotation.Nullable
+  public Boolean getEnableVRCPlusWorldLists() {
+    return enableVRCPlusWorldLists;
+  }
+
+  public void setEnableVRCPlusWorldLists(@javax.annotation.Nullable Boolean enableVRCPlusWorldLists) {
+    this.enableVRCPlusWorldLists = enableVRCPlusWorldLists;
+  }
+
+
+  public APIConfig eventShelfCampaigns(@javax.annotation.Nullable List<APIConfigEventShelfCampaign> eventShelfCampaigns) {
+    this.eventShelfCampaigns = eventShelfCampaigns;
+    return this;
+  }
+
+  public APIConfig addEventShelfCampaignsItem(APIConfigEventShelfCampaign eventShelfCampaignsItem) {
+    if (this.eventShelfCampaigns == null) {
+      this.eventShelfCampaigns = new ArrayList<>();
+    }
+    this.eventShelfCampaigns.add(eventShelfCampaignsItem);
+    return this;
+  }
+
+  /**
+   * Get eventShelfCampaigns
+   * @return eventShelfCampaigns
+   */
+  @javax.annotation.Nullable
+  public List<APIConfigEventShelfCampaign> getEventShelfCampaigns() {
+    return eventShelfCampaigns;
+  }
+
+  public void setEventShelfCampaigns(@javax.annotation.Nullable List<APIConfigEventShelfCampaign> eventShelfCampaigns) {
+    this.eventShelfCampaigns = eventShelfCampaigns;
+  }
+
+
   public APIConfig events(@javax.annotation.Nonnull APIConfigEvents events) {
     this.events = events;
     return this;
@@ -2259,6 +2432,44 @@ public class APIConfig {
   }
 
 
+  public APIConfig globalCacheVersion(@javax.annotation.Nullable Integer globalCacheVersion) {
+    this.globalCacheVersion = globalCacheVersion;
+    return this;
+  }
+
+  /**
+   * Get globalCacheVersion
+   * @return globalCacheVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getGlobalCacheVersion() {
+    return globalCacheVersion;
+  }
+
+  public void setGlobalCacheVersion(@javax.annotation.Nullable Integer globalCacheVersion) {
+    this.globalCacheVersion = globalCacheVersion;
+  }
+
+
+  public APIConfig globalCacheVersionDefault(@javax.annotation.Nullable Integer globalCacheVersionDefault) {
+    this.globalCacheVersionDefault = globalCacheVersionDefault;
+    return this;
+  }
+
+  /**
+   * Get globalCacheVersionDefault
+   * @return globalCacheVersionDefault
+   */
+  @javax.annotation.Nullable
+  public Integer getGlobalCacheVersionDefault() {
+    return globalCacheVersionDefault;
+  }
+
+  public void setGlobalCacheVersionDefault(@javax.annotation.Nullable Integer globalCacheVersionDefault) {
+    this.globalCacheVersionDefault = globalCacheVersionDefault;
+  }
+
+
   public APIConfig googleApiClientId(@javax.annotation.Nonnull String googleApiClientId) {
     this.googleApiClientId = googleApiClientId;
     return this;
@@ -2275,6 +2486,25 @@ public class APIConfig {
 
   public void setGoogleApiClientId(@javax.annotation.Nonnull String googleApiClientId) {
     this.googleApiClientId = googleApiClientId;
+  }
+
+
+  public APIConfig googleApiUnityClientId(@javax.annotation.Nullable String googleApiUnityClientId) {
+    this.googleApiUnityClientId = googleApiUnityClientId;
+    return this;
+  }
+
+  /**
+   * Get googleApiUnityClientId
+   * @return googleApiUnityClientId
+   */
+  @javax.annotation.Nullable
+  public String getGoogleApiUnityClientId() {
+    return googleApiUnityClientId;
+  }
+
+  public void setGoogleApiUnityClientId(@javax.annotation.Nullable String googleApiUnityClientId) {
+    this.googleApiUnityClientId = googleApiUnityClientId;
   }
 
 
@@ -2427,6 +2657,60 @@ public class APIConfig {
   }
 
 
+  public APIConfig loadingScreenWeights(@javax.annotation.Nullable Map<String, APIConfigLoadingScreenWeights> loadingScreenWeights) {
+    this.loadingScreenWeights = loadingScreenWeights;
+    return this;
+  }
+
+  public APIConfig putLoadingScreenWeightsItem(String key, APIConfigLoadingScreenWeights loadingScreenWeightsItem) {
+    if (this.loadingScreenWeights == null) {
+      this.loadingScreenWeights = new HashMap<>();
+    }
+    this.loadingScreenWeights.put(key, loadingScreenWeightsItem);
+    return this;
+  }
+
+  /**
+   * Relative weight of each info-push category on the loading screen, per audience.
+   * @return loadingScreenWeights
+   */
+  @javax.annotation.Nullable
+  public Map<String, APIConfigLoadingScreenWeights> getLoadingScreenWeights() {
+    return loadingScreenWeights;
+  }
+
+  public void setLoadingScreenWeights(@javax.annotation.Nullable Map<String, APIConfigLoadingScreenWeights> loadingScreenWeights) {
+    this.loadingScreenWeights = loadingScreenWeights;
+  }
+
+
+  public APIConfig lowMemoryGoHomeTimeout(@javax.annotation.Nullable Map<String, APIConfigLowMemoryGoHomeTimeoutValue> lowMemoryGoHomeTimeout) {
+    this.lowMemoryGoHomeTimeout = lowMemoryGoHomeTimeout;
+    return this;
+  }
+
+  public APIConfig putLowMemoryGoHomeTimeoutItem(String key, APIConfigLowMemoryGoHomeTimeoutValue lowMemoryGoHomeTimeoutItem) {
+    if (this.lowMemoryGoHomeTimeout == null) {
+      this.lowMemoryGoHomeTimeout = new HashMap<>();
+    }
+    this.lowMemoryGoHomeTimeout.put(key, lowMemoryGoHomeTimeoutItem);
+    return this;
+  }
+
+  /**
+   * Low-memory timeout, keyed by platform.
+   * @return lowMemoryGoHomeTimeout
+   */
+  @javax.annotation.Nullable
+  public Map<String, APIConfigLowMemoryGoHomeTimeoutValue> getLowMemoryGoHomeTimeout() {
+    return lowMemoryGoHomeTimeout;
+  }
+
+  public void setLowMemoryGoHomeTimeout(@javax.annotation.Nullable Map<String, APIConfigLowMemoryGoHomeTimeoutValue> lowMemoryGoHomeTimeout) {
+    this.lowMemoryGoHomeTimeout = lowMemoryGoHomeTimeout;
+  }
+
+
   public APIConfig maxUserEmoji(@javax.annotation.Nonnull Integer maxUserEmoji) {
     this.maxUserEmoji = maxUserEmoji;
     return this;
@@ -2462,6 +2746,25 @@ public class APIConfig {
 
   public void setMaxUserStickers(@javax.annotation.Nonnull Integer maxUserStickers) {
     this.maxUserStickers = maxUserStickers;
+  }
+
+
+  public APIConfig maximumUnityVersionForUploads(@javax.annotation.Nullable String maximumUnityVersionForUploads) {
+    this.maximumUnityVersionForUploads = maximumUnityVersionForUploads;
+    return this;
+  }
+
+  /**
+   * Get maximumUnityVersionForUploads
+   * @return maximumUnityVersionForUploads
+   */
+  @javax.annotation.Nullable
+  public String getMaximumUnityVersionForUploads() {
+    return maximumUnityVersionForUploads;
+  }
+
+  public void setMaximumUnityVersionForUploads(@javax.annotation.Nullable String maximumUnityVersionForUploads) {
+    this.maximumUnityVersionForUploads = maximumUnityVersionForUploads;
   }
 
 
@@ -2633,6 +2936,25 @@ public class APIConfig {
   }
 
 
+  public APIConfig playerUrlResolverSha1GfnOverride(@javax.annotation.Nullable String playerUrlResolverSha1GfnOverride) {
+    this.playerUrlResolverSha1GfnOverride = playerUrlResolverSha1GfnOverride;
+    return this;
+  }
+
+  /**
+   * Overrides &#x60;player-url-resolver-sha1&#x60; on GeForce Now.
+   * @return playerUrlResolverSha1GfnOverride
+   */
+  @javax.annotation.Nullable
+  public String getPlayerUrlResolverSha1GfnOverride() {
+    return playerUrlResolverSha1GfnOverride;
+  }
+
+  public void setPlayerUrlResolverSha1GfnOverride(@javax.annotation.Nullable String playerUrlResolverSha1GfnOverride) {
+    this.playerUrlResolverSha1GfnOverride = playerUrlResolverSha1GfnOverride;
+  }
+
+
   public APIConfig playerUrlResolverVersion(@javax.annotation.Nonnull String playerUrlResolverVersion) {
     this.playerUrlResolverVersion = playerUrlResolverVersion;
     return this;
@@ -2652,6 +2974,71 @@ public class APIConfig {
   }
 
 
+  public APIConfig playerUrlResolverVersionGfnOverride(@javax.annotation.Nullable String playerUrlResolverVersionGfnOverride) {
+    this.playerUrlResolverVersionGfnOverride = playerUrlResolverVersionGfnOverride;
+    return this;
+  }
+
+  /**
+   * Overrides &#x60;player-url-resolver-version&#x60; on GeForce Now.
+   * @return playerUrlResolverVersionGfnOverride
+   */
+  @javax.annotation.Nullable
+  public String getPlayerUrlResolverVersionGfnOverride() {
+    return playerUrlResolverVersionGfnOverride;
+  }
+
+  public void setPlayerUrlResolverVersionGfnOverride(@javax.annotation.Nullable String playerUrlResolverVersionGfnOverride) {
+    this.playerUrlResolverVersionGfnOverride = playerUrlResolverVersionGfnOverride;
+  }
+
+
+  public APIConfig profileDefaults(@javax.annotation.Nullable APIConfigProfileDefaults profileDefaults) {
+    this.profileDefaults = profileDefaults;
+    return this;
+  }
+
+  /**
+   * Get profileDefaults
+   * @return profileDefaults
+   */
+  @javax.annotation.Nullable
+  public APIConfigProfileDefaults getProfileDefaults() {
+    return profileDefaults;
+  }
+
+  public void setProfileDefaults(@javax.annotation.Nullable APIConfigProfileDefaults profileDefaults) {
+    this.profileDefaults = profileDefaults;
+  }
+
+
+  public APIConfig propComponentList(@javax.annotation.Nullable List<String> propComponentList) {
+    this.propComponentList = propComponentList;
+    return this;
+  }
+
+  public APIConfig addPropComponentListItem(String propComponentListItem) {
+    if (this.propComponentList == null) {
+      this.propComponentList = new ArrayList<>();
+    }
+    this.propComponentList.add(propComponentListItem);
+    return this;
+  }
+
+  /**
+   * SDK3 component type names.
+   * @return propComponentList
+   */
+  @javax.annotation.Nullable
+  public List<String> getPropComponentList() {
+    return propComponentList;
+  }
+
+  public void setPropComponentList(@javax.annotation.Nullable List<String> propComponentList) {
+    this.propComponentList = propComponentList;
+  }
+
+
   public APIConfig publicKey(@javax.annotation.Nonnull String publicKey) {
     this.publicKey = publicKey;
     return this;
@@ -2668,6 +3055,33 @@ public class APIConfig {
 
   public void setPublicKey(@javax.annotation.Nonnull String publicKey) {
     this.publicKey = publicKey;
+  }
+
+
+  public APIConfig questMinimumLowMemoryThreshold(@javax.annotation.Nullable Map<String, Integer> questMinimumLowMemoryThreshold) {
+    this.questMinimumLowMemoryThreshold = questMinimumLowMemoryThreshold;
+    return this;
+  }
+
+  public APIConfig putQuestMinimumLowMemoryThresholdItem(String key, Integer questMinimumLowMemoryThresholdItem) {
+    if (this.questMinimumLowMemoryThreshold == null) {
+      this.questMinimumLowMemoryThreshold = new HashMap<>();
+    }
+    this.questMinimumLowMemoryThreshold.put(key, questMinimumLowMemoryThresholdItem);
+    return this;
+  }
+
+  /**
+   * Low-memory threshold, keyed by platform.
+   * @return questMinimumLowMemoryThreshold
+   */
+  @javax.annotation.Nullable
+  public Map<String, Integer> getQuestMinimumLowMemoryThreshold() {
+    return questMinimumLowMemoryThreshold;
+  }
+
+  public void setQuestMinimumLowMemoryThreshold(@javax.annotation.Nullable Map<String, Integer> questMinimumLowMemoryThreshold) {
+    this.questMinimumLowMemoryThreshold = questMinimumLowMemoryThreshold;
   }
 
 
@@ -3148,6 +3562,44 @@ public class APIConfig {
   }
 
 
+  public APIConfig voiceMaxPlaybackSourcesMobile(@javax.annotation.Nullable Integer voiceMaxPlaybackSourcesMobile) {
+    this.voiceMaxPlaybackSourcesMobile = voiceMaxPlaybackSourcesMobile;
+    return this;
+  }
+
+  /**
+   * Get voiceMaxPlaybackSourcesMobile
+   * @return voiceMaxPlaybackSourcesMobile
+   */
+  @javax.annotation.Nullable
+  public Integer getVoiceMaxPlaybackSourcesMobile() {
+    return voiceMaxPlaybackSourcesMobile;
+  }
+
+  public void setVoiceMaxPlaybackSourcesMobile(@javax.annotation.Nullable Integer voiceMaxPlaybackSourcesMobile) {
+    this.voiceMaxPlaybackSourcesMobile = voiceMaxPlaybackSourcesMobile;
+  }
+
+
+  public APIConfig voiceMaxPlaybackSourcesPC(@javax.annotation.Nullable Integer voiceMaxPlaybackSourcesPC) {
+    this.voiceMaxPlaybackSourcesPC = voiceMaxPlaybackSourcesPC;
+    return this;
+  }
+
+  /**
+   * Get voiceMaxPlaybackSourcesPC
+   * @return voiceMaxPlaybackSourcesPC
+   */
+  @javax.annotation.Nullable
+  public Integer getVoiceMaxPlaybackSourcesPC() {
+    return voiceMaxPlaybackSourcesPC;
+  }
+
+  public void setVoiceMaxPlaybackSourcesPC(@javax.annotation.Nullable Integer voiceMaxPlaybackSourcesPC) {
+    this.voiceMaxPlaybackSourcesPC = voiceMaxPlaybackSourcesPC;
+  }
+
+
   public APIConfig websocketMaxFriendsRefreshDelay(@javax.annotation.Nonnull Integer websocketMaxFriendsRefreshDelay) {
     this.websocketMaxFriendsRefreshDelay = websocketMaxFriendsRefreshDelay;
     return this;
@@ -3231,6 +3683,50 @@ public class APIConfig {
     this.whiteListedAssetUrls = whiteListedAssetUrls;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
+
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the APIConfig instance itself
+   */
+  public APIConfig putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
 
 
   @Override
@@ -3265,6 +3761,7 @@ public class APIConfig {
         Objects.equals(this.clientApiKey, apIConfig.clientApiKey) &&
         Objects.equals(this.clientBPSCeiling, apIConfig.clientBPSCeiling) &&
         Objects.equals(this.clientDisconnectTimeout, apIConfig.clientDisconnectTimeout) &&
+        Objects.equals(this.clientMaxDatagrams, apIConfig.clientMaxDatagrams) &&
         Objects.equals(this.clientNetDispatchThread, apIConfig.clientNetDispatchThread) &&
         Objects.equals(this.clientNetDispatchThreadMobile, apIConfig.clientNetDispatchThreadMobile) &&
         Objects.equals(this.clientNetInThread, apIConfig.clientNetInThread) &&
@@ -3278,6 +3775,7 @@ public class APIConfig {
         Objects.equals(this.clientQR, apIConfig.clientQR) &&
         Objects.equals(this.clientReservedPlayerBPS, apIConfig.clientReservedPlayerBPS) &&
         Objects.equals(this.clientSentCountAllowance, apIConfig.clientSentCountAllowance) &&
+        Objects.equals(this.clientUseAck2, apIConfig.clientUseAck2) &&
         Objects.equals(this.constants, apIConfig.constants) &&
         Objects.equals(this.contactEmail, apIConfig.contactEmail) &&
         Objects.equals(this.copyrightEmail, apIConfig.copyrightEmail) &&
@@ -3318,10 +3816,15 @@ public class APIConfig {
         Objects.equals(this.economyPauseStart, apIConfig.economyPauseStart) &&
         Objects.equals(this.economyPurchaseRepairEnabled, apIConfig.economyPurchaseRepairEnabled) &&
         Objects.equals(this.economyState, apIConfig.economyState) &&
+        Objects.equals(this.enableVRCPlusWorldLists, apIConfig.enableVRCPlusWorldLists) &&
+        Objects.equals(this.eventShelfCampaigns, apIConfig.eventShelfCampaigns) &&
         Objects.equals(this.events, apIConfig.events) &&
         Objects.equals(this.forceUseLatestWorld, apIConfig.forceUseLatestWorld) &&
         Objects.equals(this.giftDisplayType, apIConfig.giftDisplayType) &&
+        Objects.equals(this.globalCacheVersion, apIConfig.globalCacheVersion) &&
+        Objects.equals(this.globalCacheVersionDefault, apIConfig.globalCacheVersionDefault) &&
         Objects.equals(this.googleApiClientId, apIConfig.googleApiClientId) &&
+        Objects.equals(this.googleApiUnityClientId, apIConfig.googleApiUnityClientId) &&
         Objects.equals(this.homeWorldId, apIConfig.homeWorldId) &&
         Objects.equals(this.homepageRedirectTarget, apIConfig.homepageRedirectTarget) &&
         Objects.equals(this.hubWorldId, apIConfig.hubWorldId) &&
@@ -3329,8 +3832,11 @@ public class APIConfig {
         Objects.equals(this.iosAppVersion, apIConfig.iosAppVersion) &&
         Objects.equals(this.iosVersion, apIConfig.iosVersion) &&
         Objects.equals(this.jobsEmail, apIConfig.jobsEmail) &&
+        Objects.equals(this.loadingScreenWeights, apIConfig.loadingScreenWeights) &&
+        Objects.equals(this.lowMemoryGoHomeTimeout, apIConfig.lowMemoryGoHomeTimeout) &&
         Objects.equals(this.maxUserEmoji, apIConfig.maxUserEmoji) &&
         Objects.equals(this.maxUserStickers, apIConfig.maxUserStickers) &&
+        Objects.equals(this.maximumUnityVersionForUploads, apIConfig.maximumUnityVersionForUploads) &&
         Objects.equals(this.minSupportedClientBuildNumber, apIConfig.minSupportedClientBuildNumber) &&
         Objects.equals(this.minimumUnityVersionForUploads, apIConfig.minimumUnityVersionForUploads) &&
         Objects.equals(this.moderationEmail, apIConfig.moderationEmail) &&
@@ -3339,8 +3845,13 @@ public class APIConfig {
         Objects.equals(this.photonNameserverOverrides, apIConfig.photonNameserverOverrides) &&
         Objects.equals(this.photonPublicKeys, apIConfig.photonPublicKeys) &&
         Objects.equals(this.playerUrlResolverSha1, apIConfig.playerUrlResolverSha1) &&
+        Objects.equals(this.playerUrlResolverSha1GfnOverride, apIConfig.playerUrlResolverSha1GfnOverride) &&
         Objects.equals(this.playerUrlResolverVersion, apIConfig.playerUrlResolverVersion) &&
+        Objects.equals(this.playerUrlResolverVersionGfnOverride, apIConfig.playerUrlResolverVersionGfnOverride) &&
+        Objects.equals(this.profileDefaults, apIConfig.profileDefaults) &&
+        Objects.equals(this.propComponentList, apIConfig.propComponentList) &&
         Objects.equals(this.publicKey, apIConfig.publicKey) &&
+        Objects.equals(this.questMinimumLowMemoryThreshold, apIConfig.questMinimumLowMemoryThreshold) &&
         Objects.equals(this.reportCategories, apIConfig.reportCategories) &&
         Objects.equals(this.reportFormUrl, apIConfig.reportFormUrl) &&
         Objects.equals(this.reportOptions, apIConfig.reportOptions) &&
@@ -3364,15 +3875,18 @@ public class APIConfig {
         Objects.equals(this.urlList, apIConfig.urlList) &&
         Objects.equals(this.useReliableUdpForVoice, apIConfig.useReliableUdpForVoice) &&
         Objects.equals(this.viveWindowsUrl, apIConfig.viveWindowsUrl) &&
+        Objects.equals(this.voiceMaxPlaybackSourcesMobile, apIConfig.voiceMaxPlaybackSourcesMobile) &&
+        Objects.equals(this.voiceMaxPlaybackSourcesPC, apIConfig.voiceMaxPlaybackSourcesPC) &&
         Objects.equals(this.websocketMaxFriendsRefreshDelay, apIConfig.websocketMaxFriendsRefreshDelay) &&
         Objects.equals(this.websocketQuickReconnectTime, apIConfig.websocketQuickReconnectTime) &&
         Objects.equals(this.websocketReconnectMaxDelay, apIConfig.websocketReconnectMaxDelay) &&
-        Objects.equals(this.whiteListedAssetUrls, apIConfig.whiteListedAssetUrls);
+        Objects.equals(this.whiteListedAssetUrls, apIConfig.whiteListedAssetUrls)&&
+        Objects.equals(this.additionalProperties, apIConfig.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignStatus, disableBackgroundPreloads, locationGiftingNonSubPrioEnabled, voiceEnableDegradation, voiceEnableReceiverLimiting, accessLogsUrls, address, ageVerificationInviteVisible, ageVerificationP, ageVerificationStatusVisible, analysisMaxRetries, analysisRetryInterval, analyticsSegmentNewUIPctOfUsers, analyticsSegmentNewUISalt, announcements, audioConfig, availableLanguageCodes, availableLanguages, avatarPerfLimiter, chatboxLogBufferSeconds, clientApiKey, clientBPSCeiling, clientDisconnectTimeout, clientNetDispatchThread, clientNetDispatchThreadMobile, clientNetInThread, clientNetInThread2, clientNetInThreadMobile, clientNetInThreadMobile2, clientNetOutThread, clientNetOutThread2, clientNetOutThreadMobile, clientNetOutThreadMobile2, clientQR, clientReservedPlayerBPS, clientSentCountAllowance, constants, contactEmail, copyrightEmail, copyrightFormUrl, currentPrivacyVersion, currentTOSVersion, defaultAvatar, defaultStickerSet, devLanguageCodes, devSdkUrl, devSdkVersion, disCountdown, disableAVProInProton, disableAvatarCopying, disableAvatarGating, disableCaptcha, disableCommunityLabs, disableCommunityLabsPromotion, disableEmail, disableEventStream, disableFeedbackGating, disableFrontendBuilds, disableGiftDrops, disableHello, disableOculusSubs, disableRegistration, disableSteamNetworking, disableTwoFactorAuth, disableUdon, disableUpgradeAccount, downloadLinkWindows, downloadUrls, dynamicWorldRows, economyLedgerBackfill, economyLedgerMigrationStop, economyLedgerMode, economyPauseEnd, economyPauseStart, economyPurchaseRepairEnabled, economyState, events, forceUseLatestWorld, giftDisplayType, googleApiClientId, homeWorldId, homepageRedirectTarget, hubWorldId, imageHostUrlList, iosAppVersion, iosVersion, jobsEmail, maxUserEmoji, maxUserStickers, minSupportedClientBuildNumber, minimumUnityVersionForUploads, moderationEmail, notAllowedToSelectAvatarInPrivateWorldMessage, offlineAnalysis, photonNameserverOverrides, photonPublicKeys, playerUrlResolverSha1, playerUrlResolverVersion, publicKey, reportCategories, reportFormUrl, reportOptions, reportReasons, requireAgeVerificationBetaTag, sdkDeveloperFaqUrl, sdkDiscordUrl, sdkNotAllowedToPublishMessage, sdkUnityVersion, stringHostUrlList, supportEmail, supportFormUrl, timeOutWorldId, timekeeping, tutorialWorldId, updateRateMsMaximum, updateRateMsMinimum, updateRateMsNormal, updateRateMsUdonManual, uploadAnalysisPercent, urlList, useReliableUdpForVoice, viveWindowsUrl, websocketMaxFriendsRefreshDelay, websocketQuickReconnectTime, websocketReconnectMaxDelay, whiteListedAssetUrls);
+    return Objects.hash(campaignStatus, disableBackgroundPreloads, locationGiftingNonSubPrioEnabled, voiceEnableDegradation, voiceEnableReceiverLimiting, accessLogsUrls, address, ageVerificationInviteVisible, ageVerificationP, ageVerificationStatusVisible, analysisMaxRetries, analysisRetryInterval, analyticsSegmentNewUIPctOfUsers, analyticsSegmentNewUISalt, announcements, audioConfig, availableLanguageCodes, availableLanguages, avatarPerfLimiter, chatboxLogBufferSeconds, clientApiKey, clientBPSCeiling, clientDisconnectTimeout, clientMaxDatagrams, clientNetDispatchThread, clientNetDispatchThreadMobile, clientNetInThread, clientNetInThread2, clientNetInThreadMobile, clientNetInThreadMobile2, clientNetOutThread, clientNetOutThread2, clientNetOutThreadMobile, clientNetOutThreadMobile2, clientQR, clientReservedPlayerBPS, clientSentCountAllowance, clientUseAck2, constants, contactEmail, copyrightEmail, copyrightFormUrl, currentPrivacyVersion, currentTOSVersion, defaultAvatar, defaultStickerSet, devLanguageCodes, devSdkUrl, devSdkVersion, disCountdown, disableAVProInProton, disableAvatarCopying, disableAvatarGating, disableCaptcha, disableCommunityLabs, disableCommunityLabsPromotion, disableEmail, disableEventStream, disableFeedbackGating, disableFrontendBuilds, disableGiftDrops, disableHello, disableOculusSubs, disableRegistration, disableSteamNetworking, disableTwoFactorAuth, disableUdon, disableUpgradeAccount, downloadLinkWindows, downloadUrls, dynamicWorldRows, economyLedgerBackfill, economyLedgerMigrationStop, economyLedgerMode, economyPauseEnd, economyPauseStart, economyPurchaseRepairEnabled, economyState, enableVRCPlusWorldLists, eventShelfCampaigns, events, forceUseLatestWorld, giftDisplayType, globalCacheVersion, globalCacheVersionDefault, googleApiClientId, googleApiUnityClientId, homeWorldId, homepageRedirectTarget, hubWorldId, imageHostUrlList, iosAppVersion, iosVersion, jobsEmail, loadingScreenWeights, lowMemoryGoHomeTimeout, maxUserEmoji, maxUserStickers, maximumUnityVersionForUploads, minSupportedClientBuildNumber, minimumUnityVersionForUploads, moderationEmail, notAllowedToSelectAvatarInPrivateWorldMessage, offlineAnalysis, photonNameserverOverrides, photonPublicKeys, playerUrlResolverSha1, playerUrlResolverSha1GfnOverride, playerUrlResolverVersion, playerUrlResolverVersionGfnOverride, profileDefaults, propComponentList, publicKey, questMinimumLowMemoryThreshold, reportCategories, reportFormUrl, reportOptions, reportReasons, requireAgeVerificationBetaTag, sdkDeveloperFaqUrl, sdkDiscordUrl, sdkNotAllowedToPublishMessage, sdkUnityVersion, stringHostUrlList, supportEmail, supportFormUrl, timeOutWorldId, timekeeping, tutorialWorldId, updateRateMsMaximum, updateRateMsMinimum, updateRateMsNormal, updateRateMsUdonManual, uploadAnalysisPercent, urlList, useReliableUdpForVoice, viveWindowsUrl, voiceMaxPlaybackSourcesMobile, voiceMaxPlaybackSourcesPC, websocketMaxFriendsRefreshDelay, websocketQuickReconnectTime, websocketReconnectMaxDelay, whiteListedAssetUrls, additionalProperties);
   }
 
   @Override
@@ -3402,6 +3916,7 @@ public class APIConfig {
     sb.append("    clientApiKey: ").append(toIndentedString(clientApiKey)).append("\n");
     sb.append("    clientBPSCeiling: ").append(toIndentedString(clientBPSCeiling)).append("\n");
     sb.append("    clientDisconnectTimeout: ").append(toIndentedString(clientDisconnectTimeout)).append("\n");
+    sb.append("    clientMaxDatagrams: ").append(toIndentedString(clientMaxDatagrams)).append("\n");
     sb.append("    clientNetDispatchThread: ").append(toIndentedString(clientNetDispatchThread)).append("\n");
     sb.append("    clientNetDispatchThreadMobile: ").append(toIndentedString(clientNetDispatchThreadMobile)).append("\n");
     sb.append("    clientNetInThread: ").append(toIndentedString(clientNetInThread)).append("\n");
@@ -3415,6 +3930,7 @@ public class APIConfig {
     sb.append("    clientQR: ").append(toIndentedString(clientQR)).append("\n");
     sb.append("    clientReservedPlayerBPS: ").append(toIndentedString(clientReservedPlayerBPS)).append("\n");
     sb.append("    clientSentCountAllowance: ").append(toIndentedString(clientSentCountAllowance)).append("\n");
+    sb.append("    clientUseAck2: ").append(toIndentedString(clientUseAck2)).append("\n");
     sb.append("    constants: ").append(toIndentedString(constants)).append("\n");
     sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
     sb.append("    copyrightEmail: ").append(toIndentedString(copyrightEmail)).append("\n");
@@ -3455,10 +3971,15 @@ public class APIConfig {
     sb.append("    economyPauseStart: ").append(toIndentedString(economyPauseStart)).append("\n");
     sb.append("    economyPurchaseRepairEnabled: ").append(toIndentedString(economyPurchaseRepairEnabled)).append("\n");
     sb.append("    economyState: ").append(toIndentedString(economyState)).append("\n");
+    sb.append("    enableVRCPlusWorldLists: ").append(toIndentedString(enableVRCPlusWorldLists)).append("\n");
+    sb.append("    eventShelfCampaigns: ").append(toIndentedString(eventShelfCampaigns)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    forceUseLatestWorld: ").append(toIndentedString(forceUseLatestWorld)).append("\n");
     sb.append("    giftDisplayType: ").append(toIndentedString(giftDisplayType)).append("\n");
+    sb.append("    globalCacheVersion: ").append(toIndentedString(globalCacheVersion)).append("\n");
+    sb.append("    globalCacheVersionDefault: ").append(toIndentedString(globalCacheVersionDefault)).append("\n");
     sb.append("    googleApiClientId: ").append(toIndentedString(googleApiClientId)).append("\n");
+    sb.append("    googleApiUnityClientId: ").append(toIndentedString(googleApiUnityClientId)).append("\n");
     sb.append("    homeWorldId: ").append(toIndentedString(homeWorldId)).append("\n");
     sb.append("    homepageRedirectTarget: ").append(toIndentedString(homepageRedirectTarget)).append("\n");
     sb.append("    hubWorldId: ").append(toIndentedString(hubWorldId)).append("\n");
@@ -3466,8 +3987,11 @@ public class APIConfig {
     sb.append("    iosAppVersion: ").append(toIndentedString(iosAppVersion)).append("\n");
     sb.append("    iosVersion: ").append(toIndentedString(iosVersion)).append("\n");
     sb.append("    jobsEmail: ").append(toIndentedString(jobsEmail)).append("\n");
+    sb.append("    loadingScreenWeights: ").append(toIndentedString(loadingScreenWeights)).append("\n");
+    sb.append("    lowMemoryGoHomeTimeout: ").append(toIndentedString(lowMemoryGoHomeTimeout)).append("\n");
     sb.append("    maxUserEmoji: ").append(toIndentedString(maxUserEmoji)).append("\n");
     sb.append("    maxUserStickers: ").append(toIndentedString(maxUserStickers)).append("\n");
+    sb.append("    maximumUnityVersionForUploads: ").append(toIndentedString(maximumUnityVersionForUploads)).append("\n");
     sb.append("    minSupportedClientBuildNumber: ").append(toIndentedString(minSupportedClientBuildNumber)).append("\n");
     sb.append("    minimumUnityVersionForUploads: ").append(toIndentedString(minimumUnityVersionForUploads)).append("\n");
     sb.append("    moderationEmail: ").append(toIndentedString(moderationEmail)).append("\n");
@@ -3476,8 +4000,13 @@ public class APIConfig {
     sb.append("    photonNameserverOverrides: ").append(toIndentedString(photonNameserverOverrides)).append("\n");
     sb.append("    photonPublicKeys: ").append(toIndentedString(photonPublicKeys)).append("\n");
     sb.append("    playerUrlResolverSha1: ").append(toIndentedString(playerUrlResolverSha1)).append("\n");
+    sb.append("    playerUrlResolverSha1GfnOverride: ").append(toIndentedString(playerUrlResolverSha1GfnOverride)).append("\n");
     sb.append("    playerUrlResolverVersion: ").append(toIndentedString(playerUrlResolverVersion)).append("\n");
+    sb.append("    playerUrlResolverVersionGfnOverride: ").append(toIndentedString(playerUrlResolverVersionGfnOverride)).append("\n");
+    sb.append("    profileDefaults: ").append(toIndentedString(profileDefaults)).append("\n");
+    sb.append("    propComponentList: ").append(toIndentedString(propComponentList)).append("\n");
     sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+    sb.append("    questMinimumLowMemoryThreshold: ").append(toIndentedString(questMinimumLowMemoryThreshold)).append("\n");
     sb.append("    reportCategories: ").append(toIndentedString(reportCategories)).append("\n");
     sb.append("    reportFormUrl: ").append(toIndentedString(reportFormUrl)).append("\n");
     sb.append("    reportOptions: ").append(toIndentedString(reportOptions)).append("\n");
@@ -3501,10 +4030,13 @@ public class APIConfig {
     sb.append("    urlList: ").append(toIndentedString(urlList)).append("\n");
     sb.append("    useReliableUdpForVoice: ").append(toIndentedString(useReliableUdpForVoice)).append("\n");
     sb.append("    viveWindowsUrl: ").append(toIndentedString(viveWindowsUrl)).append("\n");
+    sb.append("    voiceMaxPlaybackSourcesMobile: ").append(toIndentedString(voiceMaxPlaybackSourcesMobile)).append("\n");
+    sb.append("    voiceMaxPlaybackSourcesPC: ").append(toIndentedString(voiceMaxPlaybackSourcesPC)).append("\n");
     sb.append("    websocketMaxFriendsRefreshDelay: ").append(toIndentedString(websocketMaxFriendsRefreshDelay)).append("\n");
     sb.append("    websocketQuickReconnectTime: ").append(toIndentedString(websocketQuickReconnectTime)).append("\n");
     sb.append("    websocketReconnectMaxDelay: ").append(toIndentedString(websocketReconnectMaxDelay)).append("\n");
     sb.append("    whiteListedAssetUrls: ").append(toIndentedString(whiteListedAssetUrls)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -3523,10 +4055,10 @@ public class APIConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("CampaignStatus", "DisableBackgroundPreloads", "LocationGiftingNonSubPrioEnabled", "VoiceEnableDegradation", "VoiceEnableReceiverLimiting", "accessLogsUrls", "address", "ageVerificationInviteVisible", "ageVerificationP", "ageVerificationStatusVisible", "analysisMaxRetries", "analysisRetryInterval", "analyticsSegment_NewUI_PctOfUsers", "analyticsSegment_NewUI_Salt", "announcements", "audioConfig", "availableLanguageCodes", "availableLanguages", "avatarPerfLimiter", "chatboxLogBufferSeconds", "clientApiKey", "clientBPSCeiling", "clientDisconnectTimeout", "clientNetDispatchThread", "clientNetDispatchThreadMobile", "clientNetInThread", "clientNetInThread2", "clientNetInThreadMobile", "clientNetInThreadMobile2", "clientNetOutThread", "clientNetOutThread2", "clientNetOutThreadMobile", "clientNetOutThreadMobile2", "clientQR", "clientReservedPlayerBPS", "clientSentCountAllowance", "constants", "contactEmail", "copyrightEmail", "copyrightFormUrl", "currentPrivacyVersion", "currentTOSVersion", "defaultAvatar", "defaultStickerSet", "devLanguageCodes", "devSdkUrl", "devSdkVersion", "dis-countdown", "disableAVProInProton", "disableAvatarCopying", "disableAvatarGating", "disableCaptcha", "disableCommunityLabs", "disableCommunityLabsPromotion", "disableEmail", "disableEventStream", "disableFeedbackGating", "disableFrontendBuilds", "disableGiftDrops", "disableHello", "disableOculusSubs", "disableRegistration", "disableSteamNetworking", "disableTwoFactorAuth", "disableUdon", "disableUpgradeAccount", "downloadLinkWindows", "downloadUrls", "dynamicWorldRows", "economyLedgerBackfill", "economyLedgerMigrationStop", "economyLedgerMode", "economyPauseEnd", "economyPauseStart", "economyPurchaseRepairEnabled", "economyState", "events", "forceUseLatestWorld", "giftDisplayType", "googleApiClientId", "homeWorldId", "homepageRedirectTarget", "hubWorldId", "imageHostUrlList", "iosAppVersion", "iosVersion", "jobsEmail", "maxUserEmoji", "maxUserStickers", "minSupportedClientBuildNumber", "minimumUnityVersionForUploads", "moderationEmail", "notAllowedToSelectAvatarInPrivateWorldMessage", "offlineAnalysis", "photonNameserverOverrides", "photonPublicKeys", "player-url-resolver-sha1", "player-url-resolver-version", "publicKey", "reportCategories", "reportFormUrl", "reportOptions", "reportReasons", "requireAgeVerificationBetaTag", "sdkDeveloperFaqUrl", "sdkDiscordUrl", "sdkNotAllowedToPublishMessage", "sdkUnityVersion", "stringHostUrlList", "supportEmail", "supportFormUrl", "timeOutWorldId", "timekeeping", "tutorialWorldId", "updateRateMsMaximum", "updateRateMsMinimum", "updateRateMsNormal", "updateRateMsUdonManual", "uploadAnalysisPercent", "urlList", "useReliableUdpForVoice", "viveWindowsUrl", "websocketMaxFriendsRefreshDelay", "websocketQuickReconnectTime", "websocketReconnectMaxDelay", "whiteListedAssetUrls"));
+    openapiFields = new HashSet<String>(Arrays.asList("CampaignStatus", "DisableBackgroundPreloads", "LocationGiftingNonSubPrioEnabled", "VoiceEnableDegradation", "VoiceEnableReceiverLimiting", "accessLogsUrls", "address", "ageVerificationInviteVisible", "ageVerificationP", "ageVerificationStatusVisible", "analysisMaxRetries", "analysisRetryInterval", "analyticsSegment_NewUI_PctOfUsers", "analyticsSegment_NewUI_Salt", "announcements", "audioConfig", "availableLanguageCodes", "availableLanguages", "avatarPerfLimiter", "chatboxLogBufferSeconds", "clientApiKey", "clientBPSCeiling", "clientDisconnectTimeout", "clientMaxDatagrams", "clientNetDispatchThread", "clientNetDispatchThreadMobile", "clientNetInThread", "clientNetInThread2", "clientNetInThreadMobile", "clientNetInThreadMobile2", "clientNetOutThread", "clientNetOutThread2", "clientNetOutThreadMobile", "clientNetOutThreadMobile2", "clientQR", "clientReservedPlayerBPS", "clientSentCountAllowance", "clientUseAck2", "constants", "contactEmail", "copyrightEmail", "copyrightFormUrl", "currentPrivacyVersion", "currentTOSVersion", "defaultAvatar", "defaultStickerSet", "devLanguageCodes", "devSdkUrl", "devSdkVersion", "dis-countdown", "disableAVProInProton", "disableAvatarCopying", "disableAvatarGating", "disableCaptcha", "disableCommunityLabs", "disableCommunityLabsPromotion", "disableEmail", "disableEventStream", "disableFeedbackGating", "disableFrontendBuilds", "disableGiftDrops", "disableHello", "disableOculusSubs", "disableRegistration", "disableSteamNetworking", "disableTwoFactorAuth", "disableUdon", "disableUpgradeAccount", "downloadLinkWindows", "downloadUrls", "dynamicWorldRows", "economyLedgerBackfill", "economyLedgerMigrationStop", "economyLedgerMode", "economyPauseEnd", "economyPauseStart", "economyPurchaseRepairEnabled", "economyState", "enableVRCPlusWorldLists", "eventShelfCampaigns", "events", "forceUseLatestWorld", "giftDisplayType", "globalCacheVersion", "globalCacheVersionDefault", "googleApiClientId", "googleApiUnityClientId", "homeWorldId", "homepageRedirectTarget", "hubWorldId", "imageHostUrlList", "iosAppVersion", "iosVersion", "jobsEmail", "loadingScreenWeights", "lowMemoryGoHomeTimeout", "maxUserEmoji", "maxUserStickers", "maximumUnityVersionForUploads", "minSupportedClientBuildNumber", "minimumUnityVersionForUploads", "moderationEmail", "notAllowedToSelectAvatarInPrivateWorldMessage", "offlineAnalysis", "photonNameserverOverrides", "photonPublicKeys", "player-url-resolver-sha1", "player-url-resolver-sha1-gfn-override", "player-url-resolver-version", "player-url-resolver-version-gfn-override", "profileDefaults", "propComponentList", "publicKey", "questMinimumLowMemoryThreshold", "reportCategories", "reportFormUrl", "reportOptions", "reportReasons", "requireAgeVerificationBetaTag", "sdkDeveloperFaqUrl", "sdkDiscordUrl", "sdkNotAllowedToPublishMessage", "sdkUnityVersion", "stringHostUrlList", "supportEmail", "supportFormUrl", "timeOutWorldId", "timekeeping", "tutorialWorldId", "updateRateMsMaximum", "updateRateMsMinimum", "updateRateMsNormal", "updateRateMsUdonManual", "uploadAnalysisPercent", "urlList", "useReliableUdpForVoice", "viveWindowsUrl", "voiceMaxPlaybackSourcesMobile", "voiceMaxPlaybackSourcesPC", "websocketMaxFriendsRefreshDelay", "websocketQuickReconnectTime", "websocketReconnectMaxDelay", "whiteListedAssetUrls"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("CampaignStatus", "DisableBackgroundPreloads", "LocationGiftingNonSubPrioEnabled", "VoiceEnableDegradation", "VoiceEnableReceiverLimiting", "accessLogsUrls", "address", "ageVerificationInviteVisible", "ageVerificationP", "ageVerificationStatusVisible", "analysisMaxRetries", "analysisRetryInterval", "analyticsSegment_NewUI_PctOfUsers", "analyticsSegment_NewUI_Salt", "announcements", "availableLanguageCodes", "availableLanguages", "avatarPerfLimiter", "chatboxLogBufferSeconds", "clientApiKey", "clientBPSCeiling", "clientDisconnectTimeout", "clientNetDispatchThreadMobile", "clientReservedPlayerBPS", "clientSentCountAllowance", "constants", "contactEmail", "copyrightEmail", "copyrightFormUrl", "currentPrivacyVersion", "currentTOSVersion", "defaultAvatar", "defaultStickerSet", "devSdkUrl", "devSdkVersion", "dis-countdown", "disableAvatarCopying", "disableAvatarGating", "disableCommunityLabs", "disableCommunityLabsPromotion", "disableEmail", "disableEventStream", "disableFeedbackGating", "disableFrontendBuilds", "disableGiftDrops", "disableHello", "disableOculusSubs", "disableRegistration", "disableSteamNetworking", "disableTwoFactorAuth", "disableUdon", "disableUpgradeAccount", "downloadLinkWindows", "downloadUrls", "dynamicWorldRows", "economyLedgerBackfill", "economyLedgerMigrationStop", "economyLedgerMode", "economyPauseEnd", "economyPauseStart", "economyPurchaseRepairEnabled", "economyState", "events", "forceUseLatestWorld", "giftDisplayType", "googleApiClientId", "homeWorldId", "homepageRedirectTarget", "hubWorldId", "imageHostUrlList", "iosAppVersion", "iosVersion", "jobsEmail", "maxUserEmoji", "maxUserStickers", "minSupportedClientBuildNumber", "minimumUnityVersionForUploads", "moderationEmail", "notAllowedToSelectAvatarInPrivateWorldMessage", "offlineAnalysis", "photonNameserverOverrides", "photonPublicKeys", "player-url-resolver-sha1", "player-url-resolver-version", "publicKey", "reportCategories", "reportFormUrl", "reportOptions", "reportReasons", "requireAgeVerificationBetaTag", "sdkDeveloperFaqUrl", "sdkDiscordUrl", "sdkNotAllowedToPublishMessage", "sdkUnityVersion", "stringHostUrlList", "supportEmail", "supportFormUrl", "timeOutWorldId", "timekeeping", "tutorialWorldId", "updateRateMsMaximum", "updateRateMsMinimum", "updateRateMsNormal", "updateRateMsUdonManual", "uploadAnalysisPercent", "urlList", "useReliableUdpForVoice", "viveWindowsUrl", "websocketMaxFriendsRefreshDelay", "websocketQuickReconnectTime", "websocketReconnectMaxDelay", "whiteListedAssetUrls"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("CampaignStatus", "DisableBackgroundPreloads", "LocationGiftingNonSubPrioEnabled", "VoiceEnableDegradation", "VoiceEnableReceiverLimiting", "accessLogsUrls", "address", "ageVerificationInviteVisible", "ageVerificationP", "ageVerificationStatusVisible", "analysisMaxRetries", "analysisRetryInterval", "analyticsSegment_NewUI_PctOfUsers", "analyticsSegment_NewUI_Salt", "announcements", "availableLanguageCodes", "availableLanguages", "avatarPerfLimiter", "chatboxLogBufferSeconds", "clientApiKey", "clientBPSCeiling", "clientDisconnectTimeout", "clientNetDispatchThreadMobile", "clientReservedPlayerBPS", "clientSentCountAllowance", "constants", "contactEmail", "copyrightEmail", "copyrightFormUrl", "currentPrivacyVersion", "currentTOSVersion", "defaultAvatar", "defaultStickerSet", "devSdkUrl", "devSdkVersion", "dis-countdown", "disableAvatarCopying", "disableAvatarGating", "disableCommunityLabs", "disableCommunityLabsPromotion", "disableEmail", "disableEventStream", "disableFeedbackGating", "disableFrontendBuilds", "disableGiftDrops", "disableHello", "disableOculusSubs", "disableRegistration", "disableSteamNetworking", "disableTwoFactorAuth", "disableUdon", "disableUpgradeAccount", "downloadLinkWindows", "downloadUrls", "dynamicWorldRows", "economyLedgerBackfill", "economyLedgerMode", "economyPauseEnd", "economyPauseStart", "economyPurchaseRepairEnabled", "economyState", "events", "forceUseLatestWorld", "giftDisplayType", "googleApiClientId", "homeWorldId", "homepageRedirectTarget", "hubWorldId", "imageHostUrlList", "iosAppVersion", "iosVersion", "jobsEmail", "maxUserEmoji", "maxUserStickers", "minSupportedClientBuildNumber", "minimumUnityVersionForUploads", "moderationEmail", "notAllowedToSelectAvatarInPrivateWorldMessage", "offlineAnalysis", "photonNameserverOverrides", "photonPublicKeys", "player-url-resolver-sha1", "player-url-resolver-version", "publicKey", "reportCategories", "reportFormUrl", "reportOptions", "reportReasons", "requireAgeVerificationBetaTag", "sdkDeveloperFaqUrl", "sdkDiscordUrl", "sdkNotAllowedToPublishMessage", "sdkUnityVersion", "stringHostUrlList", "supportEmail", "supportFormUrl", "timeOutWorldId", "timekeeping", "tutorialWorldId", "updateRateMsMaximum", "updateRateMsMinimum", "updateRateMsNormal", "updateRateMsUdonManual", "uploadAnalysisPercent", "urlList", "useReliableUdpForVoice", "viveWindowsUrl", "websocketMaxFriendsRefreshDelay", "websocketQuickReconnectTime", "websocketReconnectMaxDelay", "whiteListedAssetUrls"));
   }
 
   /**
@@ -3539,14 +4071,6 @@ public class APIConfig {
       if (jsonElement == null) {
         if (!APIConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in APIConfig is not found in the empty JSON string", APIConfig.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!APIConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `APIConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
@@ -3641,11 +4165,25 @@ public class APIConfig {
           DynamicContentRow.validateJsonElement(jsonArraydynamicWorldRows.get(i));
         }
       }
-      if (!jsonObj.get("economyLedgerMigrationStop").isJsonPrimitive()) {
+      if ((jsonObj.get("economyLedgerMigrationStop") != null && !jsonObj.get("economyLedgerMigrationStop").isJsonNull()) && !jsonObj.get("economyLedgerMigrationStop").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `economyLedgerMigrationStop` to be a primitive type in the JSON string but got `%s`", jsonObj.get("economyLedgerMigrationStop").toString()));
       }
       if (!jsonObj.get("economyLedgerMode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `economyLedgerMode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("economyLedgerMode").toString()));
+      }
+      if (jsonObj.get("eventShelfCampaigns") != null && !jsonObj.get("eventShelfCampaigns").isJsonNull()) {
+        JsonArray jsonArrayeventShelfCampaigns = jsonObj.getAsJsonArray("eventShelfCampaigns");
+        if (jsonArrayeventShelfCampaigns != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("eventShelfCampaigns").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `eventShelfCampaigns` to be an array in the JSON string but got `%s`", jsonObj.get("eventShelfCampaigns").toString()));
+          }
+
+          // validate the optional field `eventShelfCampaigns` (array)
+          for (int i = 0; i < jsonArrayeventShelfCampaigns.size(); i++) {
+            APIConfigEventShelfCampaign.validateJsonElement(jsonArrayeventShelfCampaigns.get(i));
+          };
+        }
       }
       // validate the required field `events`
       APIConfigEvents.validateJsonElement(jsonObj.get("events"));
@@ -3654,6 +4192,9 @@ public class APIConfig {
       }
       if (!jsonObj.get("googleApiClientId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `googleApiClientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("googleApiClientId").toString()));
+      }
+      if ((jsonObj.get("googleApiUnityClientId") != null && !jsonObj.get("googleApiUnityClientId").isJsonNull()) && !jsonObj.get("googleApiUnityClientId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `googleApiUnityClientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("googleApiUnityClientId").toString()));
       }
       if (!jsonObj.get("homeWorldId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `homeWorldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homeWorldId").toString()));
@@ -3680,6 +4221,9 @@ public class APIConfig {
       APIConfigIosVersion.validateJsonElement(jsonObj.get("iosVersion"));
       if (!jsonObj.get("jobsEmail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jobsEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jobsEmail").toString()));
+      }
+      if ((jsonObj.get("maximumUnityVersionForUploads") != null && !jsonObj.get("maximumUnityVersionForUploads").isJsonNull()) && !jsonObj.get("maximumUnityVersionForUploads").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maximumUnityVersionForUploads` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maximumUnityVersionForUploads").toString()));
       }
       // validate the required field `minSupportedClientBuildNumber`
       APIConfigMinSupportedClientBuildNumber.validateJsonElement(jsonObj.get("minSupportedClientBuildNumber"));
@@ -3709,8 +4253,22 @@ public class APIConfig {
       if (!jsonObj.get("player-url-resolver-sha1").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `player-url-resolver-sha1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-sha1").toString()));
       }
+      if ((jsonObj.get("player-url-resolver-sha1-gfn-override") != null && !jsonObj.get("player-url-resolver-sha1-gfn-override").isJsonNull()) && !jsonObj.get("player-url-resolver-sha1-gfn-override").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `player-url-resolver-sha1-gfn-override` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-sha1-gfn-override").toString()));
+      }
       if (!jsonObj.get("player-url-resolver-version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `player-url-resolver-version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-version").toString()));
+      }
+      if ((jsonObj.get("player-url-resolver-version-gfn-override") != null && !jsonObj.get("player-url-resolver-version-gfn-override").isJsonNull()) && !jsonObj.get("player-url-resolver-version-gfn-override").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `player-url-resolver-version-gfn-override` to be a primitive type in the JSON string but got `%s`", jsonObj.get("player-url-resolver-version-gfn-override").toString()));
+      }
+      // validate the optional field `profileDefaults`
+      if (jsonObj.get("profileDefaults") != null && !jsonObj.get("profileDefaults").isJsonNull()) {
+        APIConfigProfileDefaults.validateJsonElement(jsonObj.get("profileDefaults"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("propComponentList") != null && !jsonObj.get("propComponentList").isJsonNull() && !jsonObj.get("propComponentList").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propComponentList` to be an array in the JSON string but got `%s`", jsonObj.get("propComponentList").toString()));
       }
       if (!jsonObj.get("publicKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publicKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("publicKey").toString()));
@@ -3780,6 +4338,28 @@ public class APIConfig {
            @Override
            public void write(JsonWriter out, APIConfig value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
              elementAdapter.write(out, obj);
            }
 
@@ -3787,7 +4367,28 @@ public class APIConfig {
            public APIConfig read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             APIConfig instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
            }
 
        }.nullSafe();

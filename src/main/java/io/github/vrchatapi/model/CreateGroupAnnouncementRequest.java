@@ -61,7 +61,7 @@ public class CreateGroupAnnouncementRequest {
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String text;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
@@ -110,7 +110,7 @@ public class CreateGroupAnnouncementRequest {
   }
 
 
-  public CreateGroupAnnouncementRequest text(@javax.annotation.Nullable String text) {
+  public CreateGroupAnnouncementRequest text(@javax.annotation.Nonnull String text) {
     this.text = text;
     return this;
   }
@@ -119,12 +119,12 @@ public class CreateGroupAnnouncementRequest {
    * Announcement text
    * @return text
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getText() {
     return text;
   }
 
-  public void setText(@javax.annotation.Nullable String text) {
+  public void setText(@javax.annotation.Nonnull String text) {
     this.text = text;
   }
 
@@ -198,7 +198,7 @@ public class CreateGroupAnnouncementRequest {
     openapiFields = new HashSet<String>(Arrays.asList("imageId", "sendNotification", "text", "title"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("title"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("text", "title"));
   }
 
   /**
@@ -232,7 +232,7 @@ public class CreateGroupAnnouncementRequest {
       if ((jsonObj.get("imageId") != null && !jsonObj.get("imageId").isJsonNull()) && !jsonObj.get("imageId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageId").toString()));
       }
-      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
+      if (!jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
       if (!jsonObj.get("title").isJsonPrimitive()) {

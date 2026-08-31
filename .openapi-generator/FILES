@@ -16,10 +16,14 @@ docs/APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.md
 docs/APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.md
 docs/APIConfigConstantsLANGUAGE.md
 docs/APIConfigDownloadURLList.md
+docs/APIConfigEventShelfCampaign.md
 docs/APIConfigEvents.md
 docs/APIConfigIosVersion.md
+docs/APIConfigLoadingScreenWeights.md
+docs/APIConfigLowMemoryGoHomeTimeoutValue.md
 docs/APIConfigMinSupportedClientBuildNumber.md
 docs/APIConfigOfflineAnalysis.md
+docs/APIConfigProfileDefaults.md
 docs/APIHealth.md
 docs/AccountDeletionLog.md
 docs/AddFavoriteRequest.md
@@ -45,6 +49,7 @@ docs/AvatarsApi.md
 docs/Badge.md
 docs/Balance.md
 docs/BanGroupMemberRequest.md
+docs/BareError.md
 docs/BoopRequest.md
 docs/CalendarApi.md
 docs/CalendarDayOfWeek.md
@@ -85,6 +90,7 @@ docs/CurrentUser.md
 docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
 docs/DeclineGroupInviteRequest.md
+docs/DeprecatedApi.md
 docs/DeveloperType.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
@@ -146,8 +152,8 @@ docs/GroupPostVisibility.md
 docs/GroupPrivacy.md
 docs/GroupRole.md
 docs/GroupRoleTemplate.md
+docs/GroupRoleTemplateRole.md
 docs/GroupRoleTemplateValues.md
-docs/GroupRoleTemplateValuesRoles.md
 docs/GroupSearchSort.md
 docs/GroupTransferable.md
 docs/GroupTransferableRequirements.md
@@ -161,7 +167,13 @@ docs/InfoPush.md
 docs/InfoPushData.md
 docs/InfoPushDataArticle.md
 docs/InfoPushDataArticleContent.md
+docs/InfoPushDataCategory.md
 docs/InfoPushDataClickable.md
+docs/InfoPushDataDomainListInner.md
+docs/InfoPushDataSearch.md
+docs/InfoPushEmbeddedLink.md
+docs/InfoPushExperiment.md
+docs/InfoPushIpsQuery.md
 docs/Instance.md
 docs/InstanceContentSettings.md
 docs/InstancePlatforms.md
@@ -225,6 +237,7 @@ docs/NotificationV2DetailsBoop.md
 docs/NotificationV2Response.md
 docs/NotificationV2Type.md
 docs/NotificationsApi.md
+docs/OAuthRedirectCode.md
 docs/OkStatus.md
 docs/OkStatus2.md
 docs/OrderOption.md
@@ -249,6 +262,8 @@ docs/PrivateProfile.md
 docs/PrivateProfileActivity.md
 docs/Product.md
 docs/ProductListing.md
+docs/ProductListingAttribution.md
+docs/ProductListingAttributionCreator.md
 docs/ProductListingType.md
 docs/ProductListingVariant.md
 docs/ProductPurchase.md
@@ -283,6 +298,7 @@ docs/RewardRedemption.md
 docs/RewardRedemptionData.md
 docs/RewardRedemptionRequest.md
 docs/RewardRedemptionResult.md
+docs/RouteNotImplemented.md
 docs/SearchGroupMembers200Response.md
 docs/SellerEligibility.md
 docs/SentNotification.md
@@ -291,6 +307,8 @@ docs/ServiceStatus.md
 docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
 docs/SortOptionProductPurchase.md
+docs/SsoProvider.md
+docs/SsoToken.md
 docs/Store.md
 docs/StoreContext.md
 docs/StoreShelf.md
@@ -382,6 +400,7 @@ src/main/java/io/github/vrchatapi/StringUtil.java
 src/main/java/io/github/vrchatapi/api/AuthenticationApi.java
 src/main/java/io/github/vrchatapi/api/AvatarsApi.java
 src/main/java/io/github/vrchatapi/api/CalendarApi.java
+src/main/java/io/github/vrchatapi/api/DeprecatedApi.java
 src/main/java/io/github/vrchatapi/api/EconomyApi.java
 src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java
@@ -416,10 +435,14 @@ src/main/java/io/github/vrchatapi/model/APIConfigConstantsINSTANCEPOPULATIONBRAC
 src/main/java/io/github/vrchatapi/model/APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.java
 src/main/java/io/github/vrchatapi/model/APIConfigConstantsLANGUAGE.java
 src/main/java/io/github/vrchatapi/model/APIConfigDownloadURLList.java
+src/main/java/io/github/vrchatapi/model/APIConfigEventShelfCampaign.java
 src/main/java/io/github/vrchatapi/model/APIConfigEvents.java
 src/main/java/io/github/vrchatapi/model/APIConfigIosVersion.java
+src/main/java/io/github/vrchatapi/model/APIConfigLoadingScreenWeights.java
+src/main/java/io/github/vrchatapi/model/APIConfigLowMemoryGoHomeTimeoutValue.java
 src/main/java/io/github/vrchatapi/model/APIConfigMinSupportedClientBuildNumber.java
 src/main/java/io/github/vrchatapi/model/APIConfigOfflineAnalysis.java
+src/main/java/io/github/vrchatapi/model/APIConfigProfileDefaults.java
 src/main/java/io/github/vrchatapi/model/APIHealth.java
 src/main/java/io/github/vrchatapi/model/AbstractOpenApiSchema.java
 src/main/java/io/github/vrchatapi/model/AccountDeletionLog.java
@@ -444,6 +467,7 @@ src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
 src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/Balance.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
+src/main/java/io/github/vrchatapi/model/BareError.java
 src/main/java/io/github/vrchatapi/model/BoopRequest.java
 src/main/java/io/github/vrchatapi/model/CalendarDayOfWeek.java
 src/main/java/io/github/vrchatapi/model/CalendarEvent.java
@@ -540,8 +564,8 @@ src/main/java/io/github/vrchatapi/model/GroupPostVisibility.java
 src/main/java/io/github/vrchatapi/model/GroupPrivacy.java
 src/main/java/io/github/vrchatapi/model/GroupRole.java
 src/main/java/io/github/vrchatapi/model/GroupRoleTemplate.java
+src/main/java/io/github/vrchatapi/model/GroupRoleTemplateRole.java
 src/main/java/io/github/vrchatapi/model/GroupRoleTemplateValues.java
-src/main/java/io/github/vrchatapi/model/GroupRoleTemplateValuesRoles.java
 src/main/java/io/github/vrchatapi/model/GroupSearchSort.java
 src/main/java/io/github/vrchatapi/model/GroupTransferable.java
 src/main/java/io/github/vrchatapi/model/GroupTransferableRequirements.java
@@ -554,7 +578,13 @@ src/main/java/io/github/vrchatapi/model/InfoPush.java
 src/main/java/io/github/vrchatapi/model/InfoPushData.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticle.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataCategory.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataDomainListInner.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataSearch.java
+src/main/java/io/github/vrchatapi/model/InfoPushEmbeddedLink.java
+src/main/java/io/github/vrchatapi/model/InfoPushExperiment.java
+src/main/java/io/github/vrchatapi/model/InfoPushIpsQuery.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstanceContentSettings.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
@@ -612,6 +642,7 @@ src/main/java/io/github/vrchatapi/model/NotificationV2.java
 src/main/java/io/github/vrchatapi/model/NotificationV2DetailsBoop.java
 src/main/java/io/github/vrchatapi/model/NotificationV2Response.java
 src/main/java/io/github/vrchatapi/model/NotificationV2Type.java
+src/main/java/io/github/vrchatapi/model/OAuthRedirectCode.java
 src/main/java/io/github/vrchatapi/model/OkStatus.java
 src/main/java/io/github/vrchatapi/model/OkStatus2.java
 src/main/java/io/github/vrchatapi/model/OrderOption.java
@@ -634,6 +665,8 @@ src/main/java/io/github/vrchatapi/model/PrivateProfile.java
 src/main/java/io/github/vrchatapi/model/PrivateProfileActivity.java
 src/main/java/io/github/vrchatapi/model/Product.java
 src/main/java/io/github/vrchatapi/model/ProductListing.java
+src/main/java/io/github/vrchatapi/model/ProductListingAttribution.java
+src/main/java/io/github/vrchatapi/model/ProductListingAttributionCreator.java
 src/main/java/io/github/vrchatapi/model/ProductListingType.java
 src/main/java/io/github/vrchatapi/model/ProductListingVariant.java
 src/main/java/io/github/vrchatapi/model/ProductPurchase.java
@@ -667,6 +700,7 @@ src/main/java/io/github/vrchatapi/model/RewardRedemption.java
 src/main/java/io/github/vrchatapi/model/RewardRedemptionData.java
 src/main/java/io/github/vrchatapi/model/RewardRedemptionRequest.java
 src/main/java/io/github/vrchatapi/model/RewardRedemptionResult.java
+src/main/java/io/github/vrchatapi/model/RouteNotImplemented.java
 src/main/java/io/github/vrchatapi/model/SearchGroupMembers200Response.java
 src/main/java/io/github/vrchatapi/model/SellerEligibility.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
@@ -675,6 +709,8 @@ src/main/java/io/github/vrchatapi/model/ServiceStatus.java
 src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
 src/main/java/io/github/vrchatapi/model/SortOptionProductPurchase.java
+src/main/java/io/github/vrchatapi/model/SsoProvider.java
+src/main/java/io/github/vrchatapi/model/SsoToken.java
 src/main/java/io/github/vrchatapi/model/Store.java
 src/main/java/io/github/vrchatapi/model/StoreContext.java
 src/main/java/io/github/vrchatapi/model/StoreShelf.java

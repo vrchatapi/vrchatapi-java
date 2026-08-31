@@ -27,7 +27,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -58,6 +60,26 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class User {
+  public static final String SERIALIZED_NAME_ACCEPTED_PRIVACY_VERSION = "acceptedPrivacyVersion";
+  @SerializedName(SERIALIZED_NAME_ACCEPTED_PRIVACY_VERSION)
+  @javax.annotation.Nullable
+  private Integer acceptedPrivacyVersion;
+
+  public static final String SERIALIZED_NAME_ACCEPTED_T_O_S_VERSION = "acceptedTOSVersion";
+  @SerializedName(SERIALIZED_NAME_ACCEPTED_T_O_S_VERSION)
+  @javax.annotation.Nullable
+  private Integer acceptedTOSVersion;
+
+  public static final String SERIALIZED_NAME_ACCOUNT_DELETION_DATE = "accountDeletionDate";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_DELETION_DATE)
+  @javax.annotation.Nullable
+  private String accountDeletionDate;
+
+  public static final String SERIALIZED_NAME_ACCOUNT_DELETION_LOG = "accountDeletionLog";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_DELETION_LOG)
+  @javax.annotation.Nullable
+  private List<Object> accountDeletionLog;
+
   public static final String SERIALIZED_NAME_AGE_VERIFICATION_STATUS = "ageVerificationStatus";
   @SerializedName(SERIALIZED_NAME_AGE_VERIFICATION_STATUS)
   @javax.annotation.Nonnull
@@ -73,10 +95,20 @@ public class User {
   @javax.annotation.Nonnull
   private Boolean allowAvatarCopying = true;
 
+  public static final String SERIALIZED_NAME_APPLE_DETAILS = "appleDetails";
+  @SerializedName(SERIALIZED_NAME_APPLE_DETAILS)
+  @javax.annotation.Nullable
+  private Map<String, Object> appleDetails = new HashMap<>();
+
   public static final String SERIALIZED_NAME_BADGES = "badges";
   @SerializedName(SERIALIZED_NAME_BADGES)
   @javax.annotation.Nullable
   private List<Badge> badges = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
+  @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
+  @javax.annotation.Nullable
+  private String bannerColor;
 
   public static final String SERIALIZED_NAME_BANNER_TYPE = "bannerType";
   @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
@@ -268,12 +300,6 @@ public class User {
   @javax.annotation.Nonnull
   private String userIcon;
 
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
-  private String username;
-
   public static final String SERIALIZED_NAME_WORLD_ID = "worldId";
   @SerializedName(SERIALIZED_NAME_WORLD_ID)
   @javax.annotation.Nullable
@@ -281,6 +307,90 @@ public class User {
 
   public User() {
   }
+
+  public User acceptedPrivacyVersion(@javax.annotation.Nullable Integer acceptedPrivacyVersion) {
+    this.acceptedPrivacyVersion = acceptedPrivacyVersion;
+    return this;
+  }
+
+  /**
+   * Get acceptedPrivacyVersion
+   * @return acceptedPrivacyVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getAcceptedPrivacyVersion() {
+    return acceptedPrivacyVersion;
+  }
+
+  public void setAcceptedPrivacyVersion(@javax.annotation.Nullable Integer acceptedPrivacyVersion) {
+    this.acceptedPrivacyVersion = acceptedPrivacyVersion;
+  }
+
+
+  public User acceptedTOSVersion(@javax.annotation.Nullable Integer acceptedTOSVersion) {
+    this.acceptedTOSVersion = acceptedTOSVersion;
+    return this;
+  }
+
+  /**
+   * Get acceptedTOSVersion
+   * @return acceptedTOSVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getAcceptedTOSVersion() {
+    return acceptedTOSVersion;
+  }
+
+  public void setAcceptedTOSVersion(@javax.annotation.Nullable Integer acceptedTOSVersion) {
+    this.acceptedTOSVersion = acceptedTOSVersion;
+  }
+
+
+  public User accountDeletionDate(@javax.annotation.Nullable String accountDeletionDate) {
+    this.accountDeletionDate = accountDeletionDate;
+    return this;
+  }
+
+  /**
+   * Get accountDeletionDate
+   * @return accountDeletionDate
+   */
+  @javax.annotation.Nullable
+  public String getAccountDeletionDate() {
+    return accountDeletionDate;
+  }
+
+  public void setAccountDeletionDate(@javax.annotation.Nullable String accountDeletionDate) {
+    this.accountDeletionDate = accountDeletionDate;
+  }
+
+
+  public User accountDeletionLog(@javax.annotation.Nullable List<Object> accountDeletionLog) {
+    this.accountDeletionLog = accountDeletionLog;
+    return this;
+  }
+
+  public User addAccountDeletionLogItem(Object accountDeletionLogItem) {
+    if (this.accountDeletionLog == null) {
+      this.accountDeletionLog = new ArrayList<>();
+    }
+    this.accountDeletionLog.add(accountDeletionLogItem);
+    return this;
+  }
+
+  /**
+   * Get accountDeletionLog
+   * @return accountDeletionLog
+   */
+  @javax.annotation.Nullable
+  public List<Object> getAccountDeletionLog() {
+    return accountDeletionLog;
+  }
+
+  public void setAccountDeletionLog(@javax.annotation.Nullable List<Object> accountDeletionLog) {
+    this.accountDeletionLog = accountDeletionLog;
+  }
+
 
   public User ageVerificationStatus(@javax.annotation.Nonnull AgeVerificationStatus ageVerificationStatus) {
     this.ageVerificationStatus = ageVerificationStatus;
@@ -339,6 +449,33 @@ public class User {
   }
 
 
+  public User appleDetails(@javax.annotation.Nullable Map<String, Object> appleDetails) {
+    this.appleDetails = appleDetails;
+    return this;
+  }
+
+  public User putAppleDetailsItem(String key, Object appleDetailsItem) {
+    if (this.appleDetails == null) {
+      this.appleDetails = new HashMap<>();
+    }
+    this.appleDetails.put(key, appleDetailsItem);
+    return this;
+  }
+
+  /**
+   * Get appleDetails
+   * @return appleDetails
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getAppleDetails() {
+    return appleDetails;
+  }
+
+  public void setAppleDetails(@javax.annotation.Nullable Map<String, Object> appleDetails) {
+    this.appleDetails = appleDetails;
+  }
+
+
   public User badges(@javax.annotation.Nullable List<Badge> badges) {
     this.badges = badges;
     return this;
@@ -363,6 +500,25 @@ public class User {
 
   public void setBadges(@javax.annotation.Nullable List<Badge> badges) {
     this.badges = badges;
+  }
+
+
+  public User bannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
+    return this;
+  }
+
+  /**
+   * Get bannerColor
+   * @return bannerColor
+   */
+  @javax.annotation.Nullable
+  public String getBannerColor() {
+    return bannerColor;
+  }
+
+  public void setBannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
   }
 
 
@@ -597,7 +753,7 @@ public class User {
   }
 
   /**
-   * Get friendRequestStatus
+   * State of a friend request between the caller and this user. VRChat sends the string &#x60;\&quot;null\&quot;&#x60;, not JSON &#x60;null&#x60;.
    * @return friendRequestStatus
    */
   @javax.annotation.Nullable
@@ -1112,29 +1268,6 @@ public class User {
   }
 
 
-  @Deprecated
-  public User username(@javax.annotation.Nullable String username) {
-    this.username = username;
-    return this;
-  }
-
-  /**
-   * -| A users unique name, used during login. This is different from &#x60;displayName&#x60; which is what shows up in-game. A users &#x60;username&#x60; can never be changed.&#39; **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
-   * @return username
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getUsername() {
-    return username;
-  }
-
-  @Deprecated
-  public void setUsername(@javax.annotation.Nullable String username) {
-    this.username = username;
-  }
-
-
   public User worldId(@javax.annotation.Nullable String worldId) {
     this.worldId = worldId;
     return this;
@@ -1164,10 +1297,16 @@ public class User {
       return false;
     }
     User user = (User) o;
-    return Objects.equals(this.ageVerificationStatus, user.ageVerificationStatus) &&
+    return Objects.equals(this.acceptedPrivacyVersion, user.acceptedPrivacyVersion) &&
+        Objects.equals(this.acceptedTOSVersion, user.acceptedTOSVersion) &&
+        Objects.equals(this.accountDeletionDate, user.accountDeletionDate) &&
+        Objects.equals(this.accountDeletionLog, user.accountDeletionLog) &&
+        Objects.equals(this.ageVerificationStatus, user.ageVerificationStatus) &&
         Objects.equals(this.ageVerified, user.ageVerified) &&
         Objects.equals(this.allowAvatarCopying, user.allowAvatarCopying) &&
+        Objects.equals(this.appleDetails, user.appleDetails) &&
         Objects.equals(this.badges, user.badges) &&
+        Objects.equals(this.bannerColor, user.bannerColor) &&
         Objects.equals(this.bannerType, user.bannerType) &&
         Objects.equals(this.bannerUrl, user.bannerUrl) &&
         Objects.equals(this.bio, user.bio) &&
@@ -1206,7 +1345,6 @@ public class User {
         Objects.equals(this.travelingToLocation, user.travelingToLocation) &&
         Objects.equals(this.travelingToWorld, user.travelingToWorld) &&
         Objects.equals(this.userIcon, user.userIcon) &&
-        Objects.equals(this.username, user.username) &&
         Objects.equals(this.worldId, user.worldId);
   }
 
@@ -1216,7 +1354,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationStatus, ageVerified, allowAvatarCopying, badges, bannerType, bannerUrl, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, profilePicOverride, profilePicOverrideThumbnail, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, userIcon, username, worldId);
+    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, profilePicOverride, profilePicOverrideThumbnail, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, userIcon, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1230,10 +1368,16 @@ public class User {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class User {\n");
+    sb.append("    acceptedPrivacyVersion: ").append(toIndentedString(acceptedPrivacyVersion)).append("\n");
+    sb.append("    acceptedTOSVersion: ").append(toIndentedString(acceptedTOSVersion)).append("\n");
+    sb.append("    accountDeletionDate: ").append(toIndentedString(accountDeletionDate)).append("\n");
+    sb.append("    accountDeletionLog: ").append(toIndentedString(accountDeletionLog)).append("\n");
     sb.append("    ageVerificationStatus: ").append(toIndentedString(ageVerificationStatus)).append("\n");
     sb.append("    ageVerified: ").append(toIndentedString(ageVerified)).append("\n");
     sb.append("    allowAvatarCopying: ").append(toIndentedString(allowAvatarCopying)).append("\n");
+    sb.append("    appleDetails: ").append(toIndentedString(appleDetails)).append("\n");
     sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
+    sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
@@ -1272,7 +1416,6 @@ public class User {
     sb.append("    travelingToLocation: ").append(toIndentedString(travelingToLocation)).append("\n");
     sb.append("    travelingToWorld: ").append(toIndentedString(travelingToWorld)).append("\n");
     sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    worldId: ").append(toIndentedString(worldId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1292,7 +1435,7 @@ public class User {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "allowAvatarCopying", "badges", "bannerType", "bannerUrl", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "userIcon", "username", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "userIcon", "worldId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "allowAvatarCopying", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_platform", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "state", "status", "statusDescription", "tags", "userIcon"));
@@ -1326,6 +1469,13 @@ public class User {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("accountDeletionDate") != null && !jsonObj.get("accountDeletionDate").isJsonNull()) && !jsonObj.get("accountDeletionDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `accountDeletionDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountDeletionDate").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("accountDeletionLog") != null && !jsonObj.get("accountDeletionLog").isJsonNull() && !jsonObj.get("accountDeletionLog").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `accountDeletionLog` to be an array in the JSON string but got `%s`", jsonObj.get("accountDeletionLog").toString()));
+      }
       // validate the required field `ageVerificationStatus`
       AgeVerificationStatus.validateJsonElement(jsonObj.get("ageVerificationStatus"));
       if (jsonObj.get("badges") != null && !jsonObj.get("badges").isJsonNull()) {
@@ -1341,6 +1491,9 @@ public class User {
             Badge.validateJsonElement(jsonArraybadges.get(i));
           };
         }
+      }
+      if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
       }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
@@ -1452,9 +1605,6 @@ public class User {
       }
       if (!jsonObj.get("userIcon").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
-      }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
       if ((jsonObj.get("worldId") != null && !jsonObj.get("worldId").isJsonNull()) && !jsonObj.get("worldId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldId").toString()));

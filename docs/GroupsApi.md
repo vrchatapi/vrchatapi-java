@@ -130,7 +130,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupGalleryImage object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="addGroupMemberRole"></a>
 # **addGroupMemberRole**
@@ -205,7 +206,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupRoleID objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="addGroupPost"></a>
 # **addGroupPost**
@@ -351,7 +353,8 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **400** | Bad request error response when banning a user |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="blockGroup"></a>
 # **blockGroup**
@@ -424,7 +427,7 @@ public class Example {
 | **400** | Bad request error response when banning a user |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to block a group you already have blocked. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="cancelGroupRequest"></a>
 # **cancelGroupRequest**
@@ -495,7 +498,7 @@ null (empty response body)
 | **200** | OK |  -  |
 | **400** | You can&#39;t cancel a join request if you didn&#39;t request to join․ |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="cancelGroupTransfer"></a>
 # **cancelGroupTransfer**
@@ -567,7 +570,8 @@ public class Example {
 | **200** | Successful response after cancelling a group transfer. |  -  |
 | **400** | Error response when trying to cancel a transfer for a group without a pending transfer. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="createGroup"></a>
 # **createGroup**
@@ -709,8 +713,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupAnnouncement object. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="createGroupGallery"></a>
 # **createGroupGallery**
@@ -783,7 +788,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupGallery object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="createGroupInvite"></a>
 # **createGroupInvite**
@@ -857,7 +863,7 @@ null (empty response body)
 | **400** | Bad request error response when creating a group invite. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Forbidden error response when creating a group invite. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="createGroupRole"></a>
 # **createGroupRole**
@@ -930,7 +936,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupRole object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="declineGroupInvite"></a>
 # **declineGroupInvite**
@@ -1004,7 +1011,7 @@ public class Example {
 | **200** | Successful response after declining a group invite. |  -  |
 | **400** | Bad request error response when declining a group invite. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteGroup"></a>
 # **deleteGroup**
@@ -1077,7 +1084,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successful response after deleting a Group. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteGroupAnnouncement"></a>
 # **deleteGroupAnnouncement**
@@ -1148,7 +1155,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successful response after deleting/clearing the group announcement. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteGroupGallery"></a>
 # **deleteGroupGallery**
@@ -1221,7 +1229,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successful response after deleting a group gallery. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteGroupGalleryImage"></a>
 # **deleteGroupGalleryImage**
@@ -1297,7 +1306,7 @@ public class Example {
 | **200** | Successful response after deleting a group gallery image. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to delete a submission to a group&#39;s gallery when the user does not have permission to do so. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteGroupInvite"></a>
 # **deleteGroupInvite**
@@ -1442,6 +1451,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Response after deleting a group post. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Response after deleting a group post. |  -  |
 
 <a id="deleteGroupRole"></a>
@@ -1515,6 +1525,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupRole objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Error response when trying to perform operations on a group you are not member of. |  -  |
 
 <a id="getGroup"></a>
@@ -1588,7 +1599,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Group object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupAnnouncements"></a>
 # **getGroupAnnouncements**
@@ -1659,7 +1670,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupAnnouncement object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupAuditLogEntryTypes"></a>
 # **getGroupAuditLogEntryTypes**
@@ -1730,7 +1742,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupAuditLogEntryTypes. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupAuditLogs"></a>
 # **getGroupAuditLogs**
@@ -1815,7 +1828,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupAudit objects, wrapped in new pagination format. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupBans"></a>
 # **getGroupBans**
@@ -1891,7 +1905,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
@@ -1970,7 +1984,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupGalleryImage objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupInstances"></a>
 # **getGroupInstances**
@@ -2041,7 +2055,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupInstance objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupInvites"></a>
 # **getGroupInvites**
@@ -2117,7 +2132,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupMember"></a>
 # **getGroupMember**
@@ -2191,7 +2206,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupMembers"></a>
 # **getGroupMembers**
@@ -2271,7 +2286,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupPermissions"></a>
 # **getGroupPermissions**
@@ -2343,7 +2358,8 @@ public class Example {
 | **200** | Returns a list of GroupPermission objects. |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupPosts"></a>
 # **getGroupPosts**
@@ -2497,7 +2513,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **400** | Bad request error response when responding to a group join request |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupRoleTemplates"></a>
 # **getGroupRoleTemplates**
@@ -2634,7 +2650,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupRole objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupTransferability"></a>
 # **getGroupTransferability**
@@ -2708,7 +2725,7 @@ public class Example {
 | **200** | Returns a single GroupTransferable object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="initiateOrAcceptGroupTransfer"></a>
 # **initiateOrAcceptGroupTransfer**
@@ -2782,7 +2799,7 @@ public class Example {
 | **200** | Successful response after initiating or completing a group transfer. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to transfer a group to an ineligible target user. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="joinGroup"></a>
 # **joinGroup**
@@ -2858,7 +2875,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **400** | Error response when trying to join a group that the user is already a member of. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="kickGroupMember"></a>
 # **kickGroupMember**
@@ -2932,7 +2949,7 @@ public class Example {
 | **200** | Successful response after deleting a group member. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="leaveGroup"></a>
 # **leaveGroup**
@@ -3002,7 +3019,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="removeGroupMemberRole"></a>
 # **removeGroupMemberRole**
@@ -3077,7 +3094,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupRoleID objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="respondGroupJoinRequest"></a>
 # **respondGroupJoinRequest**
@@ -3151,7 +3169,8 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="searchGroupMembers"></a>
 # **searchGroupMembers**
@@ -3229,7 +3248,7 @@ public class Example {
 | **200** | Returns a list of GroupMember objects from a search. |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="searchGroups"></a>
 # **searchGroups**
@@ -3369,7 +3388,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateGroup"></a>
 # **updateGroup**
@@ -3441,8 +3461,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single Group object. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateGroupGallery"></a>
 # **updateGroupGallery**
@@ -3517,7 +3538,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single GroupGallery object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateGroupMember"></a>
 # **updateGroupMember**
@@ -3592,7 +3614,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of GroupMember objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to perform operations on a non-existing group. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateGroupPost"></a>
 # **updateGroupPost**
@@ -3667,6 +3690,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a GroupPost object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when trying to perform operations on a group you are not member of. |  -  |
 | **404** | Response after deleting a group post. |  -  |
 
 <a id="updateGroupRepresentation"></a>

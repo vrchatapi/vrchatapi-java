@@ -83,6 +83,11 @@ public class NotificationV2 {
   @javax.annotation.Nullable
   private NotificationV2DetailsBoop details;
 
+  public static final String SERIALIZED_NAME_DISPLAY_DATA = "displayData";
+  @SerializedName(SERIALIZED_NAME_DISPLAY_DATA)
+  @javax.annotation.Nullable
+  private Object displayData = null;
+
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expiresAt";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
   @javax.annotation.Nonnull
@@ -115,12 +120,12 @@ public class NotificationV2 {
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String link;
 
   public static final String SERIALIZED_NAME_LINK_TEXT = "linkText";
   @SerializedName(SERIALIZED_NAME_LINK_TEXT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String linkText;
 
   public static final String SERIALIZED_NAME_LINK_TEXT_KEY = "linkTextKey";
@@ -304,6 +309,25 @@ public class NotificationV2 {
   }
 
 
+  public NotificationV2 displayData(@javax.annotation.Nullable Object displayData) {
+    this.displayData = displayData;
+    return this;
+  }
+
+  /**
+   * Get displayData
+   * @return displayData
+   */
+  @javax.annotation.Nullable
+  public Object getDisplayData() {
+    return displayData;
+  }
+
+  public void setDisplayData(@javax.annotation.Nullable Object displayData) {
+    this.displayData = displayData;
+  }
+
+
   public NotificationV2 expiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
@@ -418,7 +442,7 @@ public class NotificationV2 {
   }
 
 
-  public NotificationV2 link(@javax.annotation.Nonnull String link) {
+  public NotificationV2 link(@javax.annotation.Nullable String link) {
     this.link = link;
     return this;
   }
@@ -427,17 +451,17 @@ public class NotificationV2 {
    * Get link
    * @return link
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getLink() {
     return link;
   }
 
-  public void setLink(@javax.annotation.Nonnull String link) {
+  public void setLink(@javax.annotation.Nullable String link) {
     this.link = link;
   }
 
 
-  public NotificationV2 linkText(@javax.annotation.Nonnull String linkText) {
+  public NotificationV2 linkText(@javax.annotation.Nullable String linkText) {
     this.linkText = linkText;
     return this;
   }
@@ -446,12 +470,12 @@ public class NotificationV2 {
    * Get linkText
    * @return linkText
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getLinkText() {
     return linkText;
   }
 
-  public void setLinkText(@javax.annotation.Nonnull String linkText) {
+  public void setLinkText(@javax.annotation.Nullable String linkText) {
     this.linkText = linkText;
   }
 
@@ -764,6 +788,7 @@ public class NotificationV2 {
         Objects.equals(this.createdAt, notificationV2.createdAt) &&
         Objects.equals(this.data, notificationV2.data) &&
         Objects.equals(this.details, notificationV2.details) &&
+        Objects.equals(this.displayData, notificationV2.displayData) &&
         Objects.equals(this.expiresAt, notificationV2.expiresAt) &&
         Objects.equals(this.expiryAfterSeen, notificationV2.expiryAfterSeen) &&
         Objects.equals(this.id, notificationV2.id) &&
@@ -795,7 +820,7 @@ public class NotificationV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(canDelete, category, createdAt, data, details, expiresAt, expiryAfterSeen, id, ignoreDND, imageUrl, isSystem, link, linkText, linkTextKey, message, messageKey, receiverUserId, relatedNotificationsId, requireSeen, responses, seen, senderUserId, senderUsername, title, titleKey, type, updatedAt, version);
+    return Objects.hash(canDelete, category, createdAt, data, details, displayData, expiresAt, expiryAfterSeen, id, ignoreDND, imageUrl, isSystem, link, linkText, linkTextKey, message, messageKey, receiverUserId, relatedNotificationsId, requireSeen, responses, seen, senderUserId, senderUsername, title, titleKey, type, updatedAt, version);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -814,6 +839,7 @@ public class NotificationV2 {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    displayData: ").append(toIndentedString(displayData)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    expiryAfterSeen: ").append(toIndentedString(expiryAfterSeen)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -855,7 +881,7 @@ public class NotificationV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("canDelete", "category", "createdAt", "data", "details", "expiresAt", "expiryAfterSeen", "id", "ignoreDND", "imageUrl", "isSystem", "link", "linkText", "linkTextKey", "message", "messageKey", "receiverUserId", "relatedNotificationsId", "requireSeen", "responses", "seen", "senderUserId", "senderUsername", "title", "titleKey", "type", "updatedAt", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("canDelete", "category", "createdAt", "data", "details", "displayData", "expiresAt", "expiryAfterSeen", "id", "ignoreDND", "imageUrl", "isSystem", "link", "linkText", "linkTextKey", "message", "messageKey", "receiverUserId", "relatedNotificationsId", "requireSeen", "responses", "seen", "senderUserId", "senderUsername", "title", "titleKey", "type", "updatedAt", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("canDelete", "category", "createdAt", "data", "expiresAt", "expiryAfterSeen", "id", "ignoreDND", "imageUrl", "isSystem", "link", "linkText", "linkTextKey", "message", "receiverUserId", "relatedNotificationsId", "requireSeen", "responses", "seen", "senderUserId", "senderUsername", "title", "titleKey", "type", "updatedAt", "version"));
@@ -902,10 +928,10 @@ public class NotificationV2 {
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
-      if (!jsonObj.get("link").isJsonPrimitive()) {
+      if ((jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) && !jsonObj.get("link").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `link` to be a primitive type in the JSON string but got `%s`", jsonObj.get("link").toString()));
       }
-      if (!jsonObj.get("linkText").isJsonPrimitive()) {
+      if ((jsonObj.get("linkText") != null && !jsonObj.get("linkText").isJsonNull()) && !jsonObj.get("linkText").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `linkText` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linkText").toString()));
       }
       if ((jsonObj.get("linkTextKey") != null && !jsonObj.get("linkTextKey").isJsonNull()) && !jsonObj.get("linkTextKey").isJsonPrimitive()) {

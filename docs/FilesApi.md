@@ -235,7 +235,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
-| **404** | Error response when trying to delete a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteFileVersion"></a>
 # **deleteFileVersion**
@@ -380,7 +380,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Raw file |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="finishFileDataUpload"></a>
 # **finishFileDataUpload**
@@ -668,7 +668,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single File object. |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFileAnalysis"></a>
 # **getFileAnalysis**
@@ -741,7 +741,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFileAnalysisSecurity"></a>
 # **getFileAnalysisSecurity**
@@ -814,7 +814,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFileAnalysisStandard"></a>
 # **getFileAnalysisStandard**
@@ -887,7 +887,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single FileAnalysis object. |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFileDataUploadStatus"></a>
 # **getFileDataUploadStatus**
@@ -1105,7 +1105,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of File IDs. |  -  |
-| **404** | Error response when trying to show information about a non-existent file. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="startFileDataUpload"></a>
 # **startFileDataUpload**

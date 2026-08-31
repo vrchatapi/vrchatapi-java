@@ -52,10 +52,20 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class CurrentUserPresence {
+  public static final String SERIALIZED_NAME_AVATAR_IMAGE_URL = "avatarImageUrl";
+  @SerializedName(SERIALIZED_NAME_AVATAR_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String avatarImageUrl;
+
   public static final String SERIALIZED_NAME_AVATAR_THUMBNAIL = "avatarThumbnail";
   @SerializedName(SERIALIZED_NAME_AVATAR_THUMBNAIL)
   @javax.annotation.Nullable
   private String avatarThumbnail;
+
+  public static final String SERIALIZED_NAME_BANNER = "banner";
+  @SerializedName(SERIALIZED_NAME_BANNER)
+  @javax.annotation.Nullable
+  private String banner;
 
   public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
   @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
@@ -77,6 +87,11 @@ public class CurrentUserPresence {
   @javax.annotation.Nullable
   private List<String> groups;
 
+  public static final String SERIALIZED_NAME_ICON_FRAME = "iconFrame";
+  @SerializedName(SERIALIZED_NAME_ICON_FRAME)
+  @javax.annotation.Nullable
+  private String iconFrame;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -97,10 +112,20 @@ public class CurrentUserPresence {
   @javax.annotation.Nullable
   private String isRejoining;
 
+  public static final String SERIALIZED_NAME_NAMEPLATE_EFFECT = "nameplateEffect";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_EFFECT)
+  @javax.annotation.Nullable
+  private String nameplateEffect;
+
   public static final String SERIALIZED_NAME_PLATFORM = "platform";
   @SerializedName(SERIALIZED_NAME_PLATFORM)
   @javax.annotation.Nullable
   private String platform;
+
+  public static final String SERIALIZED_NAME_PROFILE_EFFECT = "profileEffect";
+  @SerializedName(SERIALIZED_NAME_PROFILE_EFFECT)
+  @javax.annotation.Nullable
+  private String profileEffect;
 
   public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
   @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
@@ -135,6 +160,25 @@ public class CurrentUserPresence {
   public CurrentUserPresence() {
   }
 
+  public CurrentUserPresence avatarImageUrl(@javax.annotation.Nullable String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+    return this;
+  }
+
+  /**
+   * Get avatarImageUrl
+   * @return avatarImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getAvatarImageUrl() {
+    return avatarImageUrl;
+  }
+
+  public void setAvatarImageUrl(@javax.annotation.Nullable String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+  }
+
+
   public CurrentUserPresence avatarThumbnail(@javax.annotation.Nullable String avatarThumbnail) {
     this.avatarThumbnail = avatarThumbnail;
     return this;
@@ -151,6 +195,25 @@ public class CurrentUserPresence {
 
   public void setAvatarThumbnail(@javax.annotation.Nullable String avatarThumbnail) {
     this.avatarThumbnail = avatarThumbnail;
+  }
+
+
+  public CurrentUserPresence banner(@javax.annotation.Nullable String banner) {
+    this.banner = banner;
+    return this;
+  }
+
+  /**
+   * Get banner
+   * @return banner
+   */
+  @javax.annotation.Nullable
+  public String getBanner() {
+    return banner;
+  }
+
+  public void setBanner(@javax.annotation.Nullable String banner) {
+    this.banner = banner;
   }
 
 
@@ -246,6 +309,25 @@ public class CurrentUserPresence {
   }
 
 
+  public CurrentUserPresence iconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+    return this;
+  }
+
+  /**
+   * Get iconFrame
+   * @return iconFrame
+   */
+  @javax.annotation.Nullable
+  public String getIconFrame() {
+    return iconFrame;
+  }
+
+  public void setIconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+  }
+
+
   public CurrentUserPresence id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -322,6 +404,25 @@ public class CurrentUserPresence {
   }
 
 
+  public CurrentUserPresence nameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+    return this;
+  }
+
+  /**
+   * Get nameplateEffect
+   * @return nameplateEffect
+   */
+  @javax.annotation.Nullable
+  public String getNameplateEffect() {
+    return nameplateEffect;
+  }
+
+  public void setNameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+  }
+
+
   public CurrentUserPresence platform(@javax.annotation.Nullable String platform) {
     this.platform = platform;
     return this;
@@ -338,6 +439,25 @@ public class CurrentUserPresence {
 
   public void setPlatform(@javax.annotation.Nullable String platform) {
     this.platform = platform;
+  }
+
+
+  public CurrentUserPresence profileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
+    return this;
+  }
+
+  /**
+   * Get profileEffect
+   * @return profileEffect
+   */
+  @javax.annotation.Nullable
+  public String getProfileEffect() {
+    return profileEffect;
+  }
+
+  public void setProfileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
   }
 
 
@@ -465,16 +585,21 @@ public class CurrentUserPresence {
       return false;
     }
     CurrentUserPresence currentUserPresence = (CurrentUserPresence) o;
-    return Objects.equals(this.avatarThumbnail, currentUserPresence.avatarThumbnail) &&
+    return Objects.equals(this.avatarImageUrl, currentUserPresence.avatarImageUrl) &&
+        Objects.equals(this.avatarThumbnail, currentUserPresence.avatarThumbnail) &&
+        Objects.equals(this.banner, currentUserPresence.banner) &&
         Objects.equals(this.currentAvatarTags, currentUserPresence.currentAvatarTags) &&
         Objects.equals(this.debugflag, currentUserPresence.debugflag) &&
         Objects.equals(this.displayName, currentUserPresence.displayName) &&
         Objects.equals(this.groups, currentUserPresence.groups) &&
+        Objects.equals(this.iconFrame, currentUserPresence.iconFrame) &&
         Objects.equals(this.id, currentUserPresence.id) &&
         Objects.equals(this.instance, currentUserPresence.instance) &&
         Objects.equals(this.instanceType, currentUserPresence.instanceType) &&
         Objects.equals(this.isRejoining, currentUserPresence.isRejoining) &&
+        Objects.equals(this.nameplateEffect, currentUserPresence.nameplateEffect) &&
         Objects.equals(this.platform, currentUserPresence.platform) &&
+        Objects.equals(this.profileEffect, currentUserPresence.profileEffect) &&
         Objects.equals(this.profilePicOverride, currentUserPresence.profilePicOverride) &&
         Objects.equals(this.status, currentUserPresence.status) &&
         Objects.equals(this.travelingToInstance, currentUserPresence.travelingToInstance) &&
@@ -489,7 +614,7 @@ public class CurrentUserPresence {
 
   @Override
   public int hashCode() {
-    return Objects.hash(avatarThumbnail, currentAvatarTags, debugflag, displayName, groups, id, instance, instanceType, isRejoining, platform, profilePicOverride, status, travelingToInstance, travelingToWorld, userIcon, world);
+    return Objects.hash(avatarImageUrl, avatarThumbnail, banner, currentAvatarTags, debugflag, displayName, groups, iconFrame, id, instance, instanceType, isRejoining, nameplateEffect, platform, profileEffect, profilePicOverride, status, travelingToInstance, travelingToWorld, userIcon, world);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -503,16 +628,21 @@ public class CurrentUserPresence {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CurrentUserPresence {\n");
+    sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    avatarThumbnail: ").append(toIndentedString(avatarThumbnail)).append("\n");
+    sb.append("    banner: ").append(toIndentedString(banner)).append("\n");
     sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
     sb.append("    debugflag: ").append(toIndentedString(debugflag)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
     sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
     sb.append("    isRejoining: ").append(toIndentedString(isRejoining)).append("\n");
+    sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
     sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    travelingToInstance: ").append(toIndentedString(travelingToInstance)).append("\n");
@@ -537,7 +667,7 @@ public class CurrentUserPresence {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("avatarThumbnail", "currentAvatarTags", "debugflag", "displayName", "groups", "id", "instance", "instanceType", "isRejoining", "platform", "profilePicOverride", "status", "travelingToInstance", "travelingToWorld", "userIcon", "world"));
+    openapiFields = new HashSet<String>(Arrays.asList("avatarImageUrl", "avatarThumbnail", "banner", "currentAvatarTags", "debugflag", "displayName", "groups", "iconFrame", "id", "instance", "instanceType", "isRejoining", "nameplateEffect", "platform", "profileEffect", "profilePicOverride", "status", "travelingToInstance", "travelingToWorld", "userIcon", "world"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -564,8 +694,14 @@ public class CurrentUserPresence {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("avatarImageUrl") != null && !jsonObj.get("avatarImageUrl").isJsonNull()) && !jsonObj.get("avatarImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `avatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatarImageUrl").toString()));
+      }
       if ((jsonObj.get("avatarThumbnail") != null && !jsonObj.get("avatarThumbnail").isJsonNull()) && !jsonObj.get("avatarThumbnail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `avatarThumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatarThumbnail").toString()));
+      }
+      if ((jsonObj.get("banner") != null && !jsonObj.get("banner").isJsonNull()) && !jsonObj.get("banner").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `banner` to be a primitive type in the JSON string but got `%s`", jsonObj.get("banner").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
@@ -581,6 +717,9 @@ public class CurrentUserPresence {
       if (jsonObj.get("groups") != null && !jsonObj.get("groups").isJsonNull() && !jsonObj.get("groups").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `groups` to be an array in the JSON string but got `%s`", jsonObj.get("groups").toString()));
       }
+      if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
+      }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -593,8 +732,14 @@ public class CurrentUserPresence {
       if ((jsonObj.get("isRejoining") != null && !jsonObj.get("isRejoining").isJsonNull()) && !jsonObj.get("isRejoining").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `isRejoining` to be a primitive type in the JSON string but got `%s`", jsonObj.get("isRejoining").toString()));
       }
+      if ((jsonObj.get("nameplateEffect") != null && !jsonObj.get("nameplateEffect").isJsonNull()) && !jsonObj.get("nameplateEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nameplateEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nameplateEffect").toString()));
+      }
       if ((jsonObj.get("platform") != null && !jsonObj.get("platform").isJsonNull()) && !jsonObj.get("platform").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+      }
+      if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
       if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));

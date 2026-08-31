@@ -19,12 +19,14 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.InfoPushData;
+import io.github.vrchatapi.model.InfoPushExperiment;
 import io.github.vrchatapi.model.ReleaseStatus;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,6 +56,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InfoPush {
+  public static final String SERIALIZED_NAME_CLIENT_MIN_VERSION = "clientMinVersion";
+  @SerializedName(SERIALIZED_NAME_CLIENT_MIN_VERSION)
+  @javax.annotation.Nullable
+  private Object clientMinVersion = null;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nonnull
@@ -68,6 +75,11 @@ public class InfoPush {
   @SerializedName(SERIALIZED_NAME_END_DATE)
   @javax.annotation.Nullable
   private OffsetDateTime endDate;
+
+  public static final String SERIALIZED_NAME_EXPERIMENT = "experiment";
+  @SerializedName(SERIALIZED_NAME_EXPERIMENT)
+  @javax.annotation.Nullable
+  private InfoPushExperiment experiment;
 
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -89,10 +101,20 @@ public class InfoPush {
   @javax.annotation.Nonnull
   private Integer priority;
 
+  public static final String SERIALIZED_NAME_REGIONS = "regions";
+  @SerializedName(SERIALIZED_NAME_REGIONS)
+  @javax.annotation.Nullable
+  private List<String> regions = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_RELEASE_STATUS = "releaseStatus";
   @SerializedName(SERIALIZED_NAME_RELEASE_STATUS)
   @javax.annotation.Nonnull
   private ReleaseStatus releaseStatus = ReleaseStatus.PUBLIC;
+
+  public static final String SERIALIZED_NAME_REQUIRE_CLIENT_TAGS = "requireClientTags";
+  @SerializedName(SERIALIZED_NAME_REQUIRE_CLIENT_TAGS)
+  @javax.annotation.Nullable
+  private List<String> requireClientTags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -111,6 +133,25 @@ public class InfoPush {
 
   public InfoPush() {
   }
+
+  public InfoPush clientMinVersion(@javax.annotation.Nullable Object clientMinVersion) {
+    this.clientMinVersion = clientMinVersion;
+    return this;
+  }
+
+  /**
+   * Get clientMinVersion
+   * @return clientMinVersion
+   */
+  @javax.annotation.Nullable
+  public Object getClientMinVersion() {
+    return clientMinVersion;
+  }
+
+  public void setClientMinVersion(@javax.annotation.Nullable Object clientMinVersion) {
+    this.clientMinVersion = clientMinVersion;
+  }
+
 
   public InfoPush createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
@@ -166,6 +207,25 @@ public class InfoPush {
 
   public void setEndDate(@javax.annotation.Nullable OffsetDateTime endDate) {
     this.endDate = endDate;
+  }
+
+
+  public InfoPush experiment(@javax.annotation.Nullable InfoPushExperiment experiment) {
+    this.experiment = experiment;
+    return this;
+  }
+
+  /**
+   * Get experiment
+   * @return experiment
+   */
+  @javax.annotation.Nullable
+  public InfoPushExperiment getExperiment() {
+    return experiment;
+  }
+
+  public void setExperiment(@javax.annotation.Nullable InfoPushExperiment experiment) {
+    this.experiment = experiment;
   }
 
 
@@ -245,6 +305,33 @@ public class InfoPush {
   }
 
 
+  public InfoPush regions(@javax.annotation.Nullable List<String> regions) {
+    this.regions = regions;
+    return this;
+  }
+
+  public InfoPush addRegionsItem(String regionsItem) {
+    if (this.regions == null) {
+      this.regions = new ArrayList<>();
+    }
+    this.regions.add(regionsItem);
+    return this;
+  }
+
+  /**
+   * Get regions
+   * @return regions
+   */
+  @javax.annotation.Nullable
+  public List<String> getRegions() {
+    return regions;
+  }
+
+  public void setRegions(@javax.annotation.Nullable List<String> regions) {
+    this.regions = regions;
+  }
+
+
   public InfoPush releaseStatus(@javax.annotation.Nonnull ReleaseStatus releaseStatus) {
     this.releaseStatus = releaseStatus;
     return this;
@@ -261,6 +348,33 @@ public class InfoPush {
 
   public void setReleaseStatus(@javax.annotation.Nonnull ReleaseStatus releaseStatus) {
     this.releaseStatus = releaseStatus;
+  }
+
+
+  public InfoPush requireClientTags(@javax.annotation.Nullable List<String> requireClientTags) {
+    this.requireClientTags = requireClientTags;
+    return this;
+  }
+
+  public InfoPush addRequireClientTagsItem(String requireClientTagsItem) {
+    if (this.requireClientTags == null) {
+      this.requireClientTags = new ArrayList<>();
+    }
+    this.requireClientTags.add(requireClientTagsItem);
+    return this;
+  }
+
+  /**
+   * Get requireClientTags
+   * @return requireClientTags
+   */
+  @javax.annotation.Nullable
+  public List<String> getRequireClientTags() {
+    return requireClientTags;
+  }
+
+  public void setRequireClientTags(@javax.annotation.Nullable List<String> requireClientTags) {
+    this.requireClientTags = requireClientTags;
   }
 
 
@@ -339,36 +453,55 @@ public class InfoPush {
       return false;
     }
     InfoPush infoPush = (InfoPush) o;
-    return Objects.equals(this.createdAt, infoPush.createdAt) &&
+    return Objects.equals(this.clientMinVersion, infoPush.clientMinVersion) &&
+        Objects.equals(this.createdAt, infoPush.createdAt) &&
         Objects.equals(this.data, infoPush.data) &&
         Objects.equals(this.endDate, infoPush.endDate) &&
+        Objects.equals(this.experiment, infoPush.experiment) &&
         Objects.equals(this.hash, infoPush.hash) &&
         Objects.equals(this.id, infoPush.id) &&
         Objects.equals(this.isEnabled, infoPush.isEnabled) &&
         Objects.equals(this.priority, infoPush.priority) &&
+        Objects.equals(this.regions, infoPush.regions) &&
         Objects.equals(this.releaseStatus, infoPush.releaseStatus) &&
+        Objects.equals(this.requireClientTags, infoPush.requireClientTags) &&
         Objects.equals(this.startDate, infoPush.startDate) &&
         Objects.equals(this.tags, infoPush.tags) &&
         Objects.equals(this.updatedAt, infoPush.updatedAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, data, endDate, hash, id, isEnabled, priority, releaseStatus, startDate, tags, updatedAt);
+    return Objects.hash(clientMinVersion, createdAt, data, endDate, experiment, hash, id, isEnabled, priority, regions, releaseStatus, requireClientTags, startDate, tags, updatedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfoPush {\n");
+    sb.append("    clientMinVersion: ").append(toIndentedString(clientMinVersion)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    experiment: ").append(toIndentedString(experiment)).append("\n");
     sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isEnabled: ").append(toIndentedString(isEnabled)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
     sb.append("    releaseStatus: ").append(toIndentedString(releaseStatus)).append("\n");
+    sb.append("    requireClientTags: ").append(toIndentedString(requireClientTags)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -390,7 +523,7 @@ public class InfoPush {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "data", "endDate", "hash", "id", "isEnabled", "priority", "releaseStatus", "startDate", "tags", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("clientMinVersion", "createdAt", "data", "endDate", "experiment", "hash", "id", "isEnabled", "priority", "regions", "releaseStatus", "requireClientTags", "startDate", "tags", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("createdAt", "data", "hash", "id", "isEnabled", "priority", "releaseStatus", "tags", "updatedAt"));
@@ -426,14 +559,26 @@ public class InfoPush {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `data`
       InfoPushData.validateJsonElement(jsonObj.get("data"));
+      // validate the optional field `experiment`
+      if (jsonObj.get("experiment") != null && !jsonObj.get("experiment").isJsonNull()) {
+        InfoPushExperiment.validateJsonElement(jsonObj.get("experiment"));
+      }
       if (!jsonObj.get("hash").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hash").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("regions") != null && !jsonObj.get("regions").isJsonNull() && !jsonObj.get("regions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `regions` to be an array in the JSON string but got `%s`", jsonObj.get("regions").toString()));
+      }
       // validate the required field `releaseStatus`
       ReleaseStatus.validateJsonElement(jsonObj.get("releaseStatus"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("requireClientTags") != null && !jsonObj.get("requireClientTags").isJsonNull() && !jsonObj.get("requireClientTags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `requireClientTags` to be an array in the JSON string but got `%s`", jsonObj.get("requireClientTags").toString()));
+      }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");

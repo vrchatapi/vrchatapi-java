@@ -19,8 +19,11 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.InfoPushDataArticleContent;
+import io.github.vrchatapi.model.InfoPushEmbeddedLink;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,13 +56,41 @@ public class InfoPushDataArticle {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
   @javax.annotation.Nullable
-  private InfoPushDataArticleContent content;
+  private List<InfoPushDataArticleContent> content = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_EMBEDDED_LINK_DATA = "embeddedLinkData";
+  @SerializedName(SERIALIZED_NAME_EMBEDDED_LINK_DATA)
+  @javax.annotation.Nullable
+  private List<InfoPushEmbeddedLink> embeddedLinkData = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_JUMP_LINKS = "jumpLinks";
+  @SerializedName(SERIALIZED_NAME_JUMP_LINKS)
+  @javax.annotation.Nullable
+  private List<String> jumpLinks = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_MORE_INFO_LINKS = "moreInfoLinks";
+  @SerializedName(SERIALIZED_NAME_MORE_INFO_LINKS)
+  @javax.annotation.Nullable
+  private List<InfoPushEmbeddedLink> moreInfoLinks = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SECTION_LINKS = "sectionLinks";
+  @SerializedName(SERIALIZED_NAME_SECTION_LINKS)
+  @javax.annotation.Nullable
+  private List<String> sectionLinks = new ArrayList<>();
 
   public InfoPushDataArticle() {
   }
 
-  public InfoPushDataArticle content(@javax.annotation.Nullable InfoPushDataArticleContent content) {
+  public InfoPushDataArticle content(@javax.annotation.Nullable List<InfoPushDataArticleContent> content) {
     this.content = content;
+    return this;
+  }
+
+  public InfoPushDataArticle addContentItem(InfoPushDataArticleContent contentItem) {
+    if (this.content == null) {
+      this.content = new ArrayList<>();
+    }
+    this.content.add(contentItem);
     return this;
   }
 
@@ -68,12 +99,120 @@ public class InfoPushDataArticle {
    * @return content
    */
   @javax.annotation.Nullable
-  public InfoPushDataArticleContent getContent() {
+  public List<InfoPushDataArticleContent> getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable InfoPushDataArticleContent content) {
+  public void setContent(@javax.annotation.Nullable List<InfoPushDataArticleContent> content) {
     this.content = content;
+  }
+
+
+  public InfoPushDataArticle embeddedLinkData(@javax.annotation.Nullable List<InfoPushEmbeddedLink> embeddedLinkData) {
+    this.embeddedLinkData = embeddedLinkData;
+    return this;
+  }
+
+  public InfoPushDataArticle addEmbeddedLinkDataItem(InfoPushEmbeddedLink embeddedLinkDataItem) {
+    if (this.embeddedLinkData == null) {
+      this.embeddedLinkData = new ArrayList<>();
+    }
+    this.embeddedLinkData.add(embeddedLinkDataItem);
+    return this;
+  }
+
+  /**
+   * Get embeddedLinkData
+   * @return embeddedLinkData
+   */
+  @javax.annotation.Nullable
+  public List<InfoPushEmbeddedLink> getEmbeddedLinkData() {
+    return embeddedLinkData;
+  }
+
+  public void setEmbeddedLinkData(@javax.annotation.Nullable List<InfoPushEmbeddedLink> embeddedLinkData) {
+    this.embeddedLinkData = embeddedLinkData;
+  }
+
+
+  public InfoPushDataArticle jumpLinks(@javax.annotation.Nullable List<String> jumpLinks) {
+    this.jumpLinks = jumpLinks;
+    return this;
+  }
+
+  public InfoPushDataArticle addJumpLinksItem(String jumpLinksItem) {
+    if (this.jumpLinks == null) {
+      this.jumpLinks = new ArrayList<>();
+    }
+    this.jumpLinks.add(jumpLinksItem);
+    return this;
+  }
+
+  /**
+   * Get jumpLinks
+   * @return jumpLinks
+   */
+  @javax.annotation.Nullable
+  public List<String> getJumpLinks() {
+    return jumpLinks;
+  }
+
+  public void setJumpLinks(@javax.annotation.Nullable List<String> jumpLinks) {
+    this.jumpLinks = jumpLinks;
+  }
+
+
+  public InfoPushDataArticle moreInfoLinks(@javax.annotation.Nullable List<InfoPushEmbeddedLink> moreInfoLinks) {
+    this.moreInfoLinks = moreInfoLinks;
+    return this;
+  }
+
+  public InfoPushDataArticle addMoreInfoLinksItem(InfoPushEmbeddedLink moreInfoLinksItem) {
+    if (this.moreInfoLinks == null) {
+      this.moreInfoLinks = new ArrayList<>();
+    }
+    this.moreInfoLinks.add(moreInfoLinksItem);
+    return this;
+  }
+
+  /**
+   * Get moreInfoLinks
+   * @return moreInfoLinks
+   */
+  @javax.annotation.Nullable
+  public List<InfoPushEmbeddedLink> getMoreInfoLinks() {
+    return moreInfoLinks;
+  }
+
+  public void setMoreInfoLinks(@javax.annotation.Nullable List<InfoPushEmbeddedLink> moreInfoLinks) {
+    this.moreInfoLinks = moreInfoLinks;
+  }
+
+
+  public InfoPushDataArticle sectionLinks(@javax.annotation.Nullable List<String> sectionLinks) {
+    this.sectionLinks = sectionLinks;
+    return this;
+  }
+
+  public InfoPushDataArticle addSectionLinksItem(String sectionLinksItem) {
+    if (this.sectionLinks == null) {
+      this.sectionLinks = new ArrayList<>();
+    }
+    this.sectionLinks.add(sectionLinksItem);
+    return this;
+  }
+
+  /**
+   * Get sectionLinks
+   * @return sectionLinks
+   */
+  @javax.annotation.Nullable
+  public List<String> getSectionLinks() {
+    return sectionLinks;
+  }
+
+  public void setSectionLinks(@javax.annotation.Nullable List<String> sectionLinks) {
+    this.sectionLinks = sectionLinks;
   }
 
 
@@ -87,12 +226,16 @@ public class InfoPushDataArticle {
       return false;
     }
     InfoPushDataArticle infoPushDataArticle = (InfoPushDataArticle) o;
-    return Objects.equals(this.content, infoPushDataArticle.content);
+    return Objects.equals(this.content, infoPushDataArticle.content) &&
+        Objects.equals(this.embeddedLinkData, infoPushDataArticle.embeddedLinkData) &&
+        Objects.equals(this.jumpLinks, infoPushDataArticle.jumpLinks) &&
+        Objects.equals(this.moreInfoLinks, infoPushDataArticle.moreInfoLinks) &&
+        Objects.equals(this.sectionLinks, infoPushDataArticle.sectionLinks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content);
+    return Objects.hash(content, embeddedLinkData, jumpLinks, moreInfoLinks, sectionLinks);
   }
 
   @Override
@@ -100,6 +243,10 @@ public class InfoPushDataArticle {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfoPushDataArticle {\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    embeddedLinkData: ").append(toIndentedString(embeddedLinkData)).append("\n");
+    sb.append("    jumpLinks: ").append(toIndentedString(jumpLinks)).append("\n");
+    sb.append("    moreInfoLinks: ").append(toIndentedString(moreInfoLinks)).append("\n");
+    sb.append("    sectionLinks: ").append(toIndentedString(sectionLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,7 +265,7 @@ public class InfoPushDataArticle {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("content"));
+    openapiFields = new HashSet<String>(Arrays.asList("content", "embeddedLinkData", "jumpLinks", "moreInfoLinks", "sectionLinks"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -145,9 +292,55 @@ public class InfoPushDataArticle {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `content`
       if (jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) {
-        InfoPushDataArticleContent.validateJsonElement(jsonObj.get("content"));
+        JsonArray jsonArraycontent = jsonObj.getAsJsonArray("content");
+        if (jsonArraycontent != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("content").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `content` to be an array in the JSON string but got `%s`", jsonObj.get("content").toString()));
+          }
+
+          // validate the optional field `content` (array)
+          for (int i = 0; i < jsonArraycontent.size(); i++) {
+            InfoPushDataArticleContent.validateJsonElement(jsonArraycontent.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("embeddedLinkData") != null && !jsonObj.get("embeddedLinkData").isJsonNull()) {
+        JsonArray jsonArrayembeddedLinkData = jsonObj.getAsJsonArray("embeddedLinkData");
+        if (jsonArrayembeddedLinkData != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("embeddedLinkData").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `embeddedLinkData` to be an array in the JSON string but got `%s`", jsonObj.get("embeddedLinkData").toString()));
+          }
+
+          // validate the optional field `embeddedLinkData` (array)
+          for (int i = 0; i < jsonArrayembeddedLinkData.size(); i++) {
+            InfoPushEmbeddedLink.validateJsonElement(jsonArrayembeddedLinkData.get(i));
+          };
+        }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("jumpLinks") != null && !jsonObj.get("jumpLinks").isJsonNull() && !jsonObj.get("jumpLinks").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jumpLinks` to be an array in the JSON string but got `%s`", jsonObj.get("jumpLinks").toString()));
+      }
+      if (jsonObj.get("moreInfoLinks") != null && !jsonObj.get("moreInfoLinks").isJsonNull()) {
+        JsonArray jsonArraymoreInfoLinks = jsonObj.getAsJsonArray("moreInfoLinks");
+        if (jsonArraymoreInfoLinks != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("moreInfoLinks").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `moreInfoLinks` to be an array in the JSON string but got `%s`", jsonObj.get("moreInfoLinks").toString()));
+          }
+
+          // validate the optional field `moreInfoLinks` (array)
+          for (int i = 0; i < jsonArraymoreInfoLinks.size(); i++) {
+            InfoPushEmbeddedLink.validateJsonElement(jsonArraymoreInfoLinks.get(i));
+          };
+        }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("sectionLinks") != null && !jsonObj.get("sectionLinks").isJsonNull() && !jsonObj.get("sectionLinks").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sectionLinks` to be an array in the JSON string but got `%s`", jsonObj.get("sectionLinks").toString()));
       }
   }
 

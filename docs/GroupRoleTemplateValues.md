@@ -10,7 +10,7 @@
 |**basePermissions** | **List&lt;GroupPermissions&gt;** |  |  |
 |**description** | **String** |  |  |
 |**name** | **String** |  |  |
-|**roles** | [**GroupRoleTemplateValuesRoles**](GroupRoleTemplateValuesRoles.md) |  |  |
+|**roles** | [**List&lt;GroupRoleTemplateRole&gt;**](GroupRoleTemplateRole.md) |  |  |
 
 
 

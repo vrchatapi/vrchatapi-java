@@ -14,6 +14,7 @@
 |**createdAt** | **OffsetDateTime** |  |  |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  |
+|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
 |**favorites** | **Integer** |  |  [optional] |
 |**featured** | **Boolean** |  |  |
 |**heat** | **Integer** |  |  |
@@ -32,6 +33,7 @@
 |**publicationDate** | **String** |  |  |
 |**recommendedCapacity** | **Integer** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
+|**slimInstances** | **List&lt;Object&gt;** |  |  [optional] |
 |**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  |
 |**thumbnailImageUrl** | **String** |  |  |

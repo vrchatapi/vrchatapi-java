@@ -22,6 +22,7 @@ import io.github.vrchatapi.model.PrivateProfileActivity;
 import io.github.vrchatapi.model.UserStatus;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class PrivateProfile {
   @SerializedName(SERIALIZED_NAME_ACTIVITY)
   @javax.annotation.Nullable
   private PrivateProfileActivity activity;
+
+  public static final String SERIALIZED_NAME_FRIEND_REQUEST_STATUS = "friendRequestStatus";
+  @SerializedName(SERIALIZED_NAME_FRIEND_REQUEST_STATUS)
+  @javax.annotation.Nullable
+  private String friendRequestStatus;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -100,6 +106,25 @@ public class PrivateProfile {
 
   public void setActivity(@javax.annotation.Nullable PrivateProfileActivity activity) {
     this.activity = activity;
+  }
+
+
+  public PrivateProfile friendRequestStatus(@javax.annotation.Nullable String friendRequestStatus) {
+    this.friendRequestStatus = friendRequestStatus;
+    return this;
+  }
+
+  /**
+   * State of a friend request between the caller and this user. VRChat sends the string &#x60;\&quot;null\&quot;&#x60;, not JSON &#x60;null&#x60;.
+   * @return friendRequestStatus
+   */
+  @javax.annotation.Nullable
+  public String getFriendRequestStatus() {
+    return friendRequestStatus;
+  }
+
+  public void setFriendRequestStatus(@javax.annotation.Nullable String friendRequestStatus) {
+    this.friendRequestStatus = friendRequestStatus;
   }
 
 
@@ -209,6 +234,7 @@ public class PrivateProfile {
     }
     PrivateProfile privateProfile = (PrivateProfile) o;
     return Objects.equals(this.activity, privateProfile.activity) &&
+        Objects.equals(this.friendRequestStatus, privateProfile.friendRequestStatus) &&
         Objects.equals(this.id, privateProfile.id) &&
         Objects.equals(this.isFriend, privateProfile.isFriend) &&
         Objects.equals(this.note, privateProfile.note) &&
@@ -216,9 +242,20 @@ public class PrivateProfile {
         Objects.equals(this.statusDescription, privateProfile.statusDescription);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(activity, id, isFriend, note, status, statusDescription);
+    return Objects.hash(activity, friendRequestStatus, id, isFriend, note, status, statusDescription);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -226,6 +263,7 @@ public class PrivateProfile {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrivateProfile {\n");
     sb.append("    activity: ").append(toIndentedString(activity)).append("\n");
+    sb.append("    friendRequestStatus: ").append(toIndentedString(friendRequestStatus)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isFriend: ").append(toIndentedString(isFriend)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
@@ -249,7 +287,7 @@ public class PrivateProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("activity", "id", "isFriend", "note", "status", "statusDescription"));
+    openapiFields = new HashSet<String>(Arrays.asList("activity", "friendRequestStatus", "id", "isFriend", "note", "status", "statusDescription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -279,6 +317,9 @@ public class PrivateProfile {
       // validate the optional field `activity`
       if (jsonObj.get("activity") != null && !jsonObj.get("activity").isJsonNull()) {
         PrivateProfileActivity.validateJsonElement(jsonObj.get("activity"));
+      }
+      if ((jsonObj.get("friendRequestStatus") != null && !jsonObj.get("friendRequestStatus").isJsonNull()) && !jsonObj.get("friendRequestStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendRequestStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendRequestStatus").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

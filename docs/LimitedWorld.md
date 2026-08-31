@@ -13,6 +13,7 @@
 |**capacity** | **Integer** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
+|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
 |**favorites** | **Integer** |  |  |
 |**heat** | **Integer** |  |  |
 |**id** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |

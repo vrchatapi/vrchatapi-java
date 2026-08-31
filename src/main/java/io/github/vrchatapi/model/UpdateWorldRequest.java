@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -82,6 +83,11 @@ public class UpdateWorldRequest {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<String> disabledPropAbilities = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
   @javax.annotation.Nullable
@@ -96,6 +102,16 @@ public class UpdateWorldRequest {
   @SerializedName(SERIALIZED_NAME_PLATFORM)
   @javax.annotation.Nullable
   private String platform;
+
+  public static final String SERIALIZED_NAME_PREVIEW_YOUTUBE_ID = "previewYoutubeId";
+  @SerializedName(SERIALIZED_NAME_PREVIEW_YOUTUBE_ID)
+  @javax.annotation.Nullable
+  private String previewYoutubeId;
+
+  public static final String SERIALIZED_NAME_RECOMMENDED_CAPACITY = "recommendedCapacity";
+  @SerializedName(SERIALIZED_NAME_RECOMMENDED_CAPACITY)
+  @javax.annotation.Nullable
+  private Integer recommendedCapacity;
 
   public static final String SERIALIZED_NAME_RELEASE_STATUS = "releaseStatus";
   @SerializedName(SERIALIZED_NAME_RELEASE_STATUS)
@@ -116,6 +132,11 @@ public class UpdateWorldRequest {
   @SerializedName(SERIALIZED_NAME_UNITY_VERSION)
   @javax.annotation.Nullable
   private String unityVersion = "5.3.4p1";
+
+  public static final String SERIALIZED_NAME_URL_LIST = "urlList";
+  @SerializedName(SERIALIZED_NAME_URL_LIST)
+  @javax.annotation.Nullable
+  private List<String> urlList = new ArrayList<>();
 
   public UpdateWorldRequest() {
   }
@@ -236,6 +257,33 @@ public class UpdateWorldRequest {
   }
 
 
+  public UpdateWorldRequest disabledPropAbilities(@javax.annotation.Nullable List<String> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public UpdateWorldRequest addDisabledPropAbilitiesItem(String disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<String> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<String> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+  }
+
+
   public UpdateWorldRequest imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
@@ -290,6 +338,44 @@ public class UpdateWorldRequest {
 
   public void setPlatform(@javax.annotation.Nullable String platform) {
     this.platform = platform;
+  }
+
+
+  public UpdateWorldRequest previewYoutubeId(@javax.annotation.Nullable String previewYoutubeId) {
+    this.previewYoutubeId = previewYoutubeId;
+    return this;
+  }
+
+  /**
+   * Get previewYoutubeId
+   * @return previewYoutubeId
+   */
+  @javax.annotation.Nullable
+  public String getPreviewYoutubeId() {
+    return previewYoutubeId;
+  }
+
+  public void setPreviewYoutubeId(@javax.annotation.Nullable String previewYoutubeId) {
+    this.previewYoutubeId = previewYoutubeId;
+  }
+
+
+  public UpdateWorldRequest recommendedCapacity(@javax.annotation.Nullable Integer recommendedCapacity) {
+    this.recommendedCapacity = recommendedCapacity;
+    return this;
+  }
+
+  /**
+   * Get recommendedCapacity
+   * @return recommendedCapacity
+   */
+  @javax.annotation.Nullable
+  public Integer getRecommendedCapacity() {
+    return recommendedCapacity;
+  }
+
+  public void setRecommendedCapacity(@javax.annotation.Nullable Integer recommendedCapacity) {
+    this.recommendedCapacity = recommendedCapacity;
   }
 
 
@@ -377,6 +463,33 @@ public class UpdateWorldRequest {
   }
 
 
+  public UpdateWorldRequest urlList(@javax.annotation.Nullable List<String> urlList) {
+    this.urlList = urlList;
+    return this;
+  }
+
+  public UpdateWorldRequest addUrlListItem(String urlListItem) {
+    if (this.urlList == null) {
+      this.urlList = new ArrayList<>();
+    }
+    this.urlList.add(urlListItem);
+    return this;
+  }
+
+  /**
+   * Get urlList
+   * @return urlList
+   */
+  @javax.annotation.Nullable
+  public List<String> getUrlList() {
+    return urlList;
+  }
+
+  public void setUrlList(@javax.annotation.Nullable List<String> urlList) {
+    this.urlList = urlList;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -393,18 +506,33 @@ public class UpdateWorldRequest {
         Objects.equals(this.authorName, updateWorldRequest.authorName) &&
         Objects.equals(this.capacity, updateWorldRequest.capacity) &&
         Objects.equals(this.description, updateWorldRequest.description) &&
+        Objects.equals(this.disabledPropAbilities, updateWorldRequest.disabledPropAbilities) &&
         Objects.equals(this.imageUrl, updateWorldRequest.imageUrl) &&
         Objects.equals(this.name, updateWorldRequest.name) &&
         Objects.equals(this.platform, updateWorldRequest.platform) &&
+        Objects.equals(this.previewYoutubeId, updateWorldRequest.previewYoutubeId) &&
+        Objects.equals(this.recommendedCapacity, updateWorldRequest.recommendedCapacity) &&
         Objects.equals(this.releaseStatus, updateWorldRequest.releaseStatus) &&
         Objects.equals(this.tags, updateWorldRequest.tags) &&
         Objects.equals(this.unityPackageUrl, updateWorldRequest.unityPackageUrl) &&
-        Objects.equals(this.unityVersion, updateWorldRequest.unityVersion);
+        Objects.equals(this.unityVersion, updateWorldRequest.unityVersion) &&
+        Objects.equals(this.urlList, updateWorldRequest.urlList);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetUrl, assetVersion, authorId, authorName, capacity, description, imageUrl, name, platform, releaseStatus, tags, unityPackageUrl, unityVersion);
+    return Objects.hash(assetUrl, assetVersion, authorId, authorName, capacity, description, disabledPropAbilities, imageUrl, name, platform, previewYoutubeId, recommendedCapacity, releaseStatus, tags, unityPackageUrl, unityVersion, urlList);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -417,13 +545,17 @@ public class UpdateWorldRequest {
     sb.append("    authorName: ").append(toIndentedString(authorName)).append("\n");
     sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    previewYoutubeId: ").append(toIndentedString(previewYoutubeId)).append("\n");
+    sb.append("    recommendedCapacity: ").append(toIndentedString(recommendedCapacity)).append("\n");
     sb.append("    releaseStatus: ").append(toIndentedString(releaseStatus)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    unityPackageUrl: ").append(toIndentedString(unityPackageUrl)).append("\n");
     sb.append("    unityVersion: ").append(toIndentedString(unityVersion)).append("\n");
+    sb.append("    urlList: ").append(toIndentedString(urlList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -442,7 +574,7 @@ public class UpdateWorldRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("assetUrl", "assetVersion", "authorId", "authorName", "capacity", "description", "imageUrl", "name", "platform", "releaseStatus", "tags", "unityPackageUrl", "unityVersion"));
+    openapiFields = new HashSet<String>(Arrays.asList("assetUrl", "assetVersion", "authorId", "authorName", "capacity", "description", "disabledPropAbilities", "imageUrl", "name", "platform", "previewYoutubeId", "recommendedCapacity", "releaseStatus", "tags", "unityPackageUrl", "unityVersion", "urlList"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -484,6 +616,10 @@ public class UpdateWorldRequest {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
+      }
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
@@ -492,6 +628,9 @@ public class UpdateWorldRequest {
       }
       if ((jsonObj.get("platform") != null && !jsonObj.get("platform").isJsonNull()) && !jsonObj.get("platform").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+      }
+      if ((jsonObj.get("previewYoutubeId") != null && !jsonObj.get("previewYoutubeId").isJsonNull()) && !jsonObj.get("previewYoutubeId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `previewYoutubeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previewYoutubeId").toString()));
       }
       // validate the optional field `releaseStatus`
       if (jsonObj.get("releaseStatus") != null && !jsonObj.get("releaseStatus").isJsonNull()) {
@@ -506,6 +645,10 @@ public class UpdateWorldRequest {
       }
       if ((jsonObj.get("unityVersion") != null && !jsonObj.get("unityVersion").isJsonNull()) && !jsonObj.get("unityVersion").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `unityVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unityVersion").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("urlList") != null && !jsonObj.get("urlList").isJsonNull() && !jsonObj.get("urlList").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `urlList` to be an array in the JSON string but got `%s`", jsonObj.get("urlList").toString()));
       }
   }
 

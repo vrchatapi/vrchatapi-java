@@ -30,7 +30,9 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -107,10 +109,20 @@ public class Instance {
   @javax.annotation.Nullable
   private String creatorId;
 
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<Object> disabledPropAbilities = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nullable
   private String displayName;
+
+  public static final String SERIALIZED_NAME_DOMINANT_LANGUAGE = "dominantLanguage";
+  @SerializedName(SERIALIZED_NAME_DOMINANT_LANGUAGE)
+  @javax.annotation.Nullable
+  private String dominantLanguage;
 
   public static final String SERIALIZED_NAME_FRIENDS = "friends";
   @SerializedName(SERIALIZED_NAME_FRIENDS)
@@ -162,10 +174,20 @@ public class Instance {
   @javax.annotation.Nullable
   private Boolean instancePersistenceEnabled;
 
+  public static final String SERIALIZED_NAME_LANGUAGE_RATIO = "languageRatio";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE_RATIO)
+  @javax.annotation.Nullable
+  private Map<String, Object> languageRatio = new HashMap<>();
+
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
   @javax.annotation.Nonnull
   private String location;
+
+  public static final String SERIALIZED_NAME_MINIMUM_AVATAR_PERFORMANCE = "minimumAvatarPerformance";
+  @SerializedName(SERIALIZED_NAME_MINIMUM_AVATAR_PERFORMANCE)
+  @javax.annotation.Nullable
+  private String minimumAvatarPerformance;
 
   public static final String SERIALIZED_NAME_N_USERS = "n_users";
   @SerializedName(SERIALIZED_NAME_N_USERS)
@@ -461,6 +483,33 @@ public class Instance {
   }
 
 
+  public Instance disabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public Instance addDisabledPropAbilitiesItem(Object disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<Object> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+  }
+
+
   public Instance displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
@@ -477,6 +526,25 @@ public class Instance {
 
   public void setDisplayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public Instance dominantLanguage(@javax.annotation.Nullable String dominantLanguage) {
+    this.dominantLanguage = dominantLanguage;
+    return this;
+  }
+
+  /**
+   * Get dominantLanguage
+   * @return dominantLanguage
+   */
+  @javax.annotation.Nullable
+  public String getDominantLanguage() {
+    return dominantLanguage;
+  }
+
+  public void setDominantLanguage(@javax.annotation.Nullable String dominantLanguage) {
+    this.dominantLanguage = dominantLanguage;
   }
 
 
@@ -670,6 +738,33 @@ public class Instance {
   }
 
 
+  public Instance languageRatio(@javax.annotation.Nullable Map<String, Object> languageRatio) {
+    this.languageRatio = languageRatio;
+    return this;
+  }
+
+  public Instance putLanguageRatioItem(String key, Object languageRatioItem) {
+    if (this.languageRatio == null) {
+      this.languageRatio = new HashMap<>();
+    }
+    this.languageRatio.put(key, languageRatioItem);
+    return this;
+  }
+
+  /**
+   * Get languageRatio
+   * @return languageRatio
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getLanguageRatio() {
+    return languageRatio;
+  }
+
+  public void setLanguageRatio(@javax.annotation.Nullable Map<String, Object> languageRatio) {
+    this.languageRatio = languageRatio;
+  }
+
+
   public Instance location(@javax.annotation.Nonnull String location) {
     this.location = location;
     return this;
@@ -686,6 +781,25 @@ public class Instance {
 
   public void setLocation(@javax.annotation.Nonnull String location) {
     this.location = location;
+  }
+
+
+  public Instance minimumAvatarPerformance(@javax.annotation.Nullable String minimumAvatarPerformance) {
+    this.minimumAvatarPerformance = minimumAvatarPerformance;
+    return this;
+  }
+
+  /**
+   * Get minimumAvatarPerformance
+   * @return minimumAvatarPerformance
+   */
+  @javax.annotation.Nullable
+  public String getMinimumAvatarPerformance() {
+    return minimumAvatarPerformance;
+  }
+
+  public void setMinimumAvatarPerformance(@javax.annotation.Nullable String minimumAvatarPerformance) {
+    this.minimumAvatarPerformance = minimumAvatarPerformance;
   }
 
 
@@ -1165,7 +1279,9 @@ public class Instance {
         Objects.equals(this.closedAt, instance.closedAt) &&
         Objects.equals(this.contentSettings, instance.contentSettings) &&
         Objects.equals(this.creatorId, instance.creatorId) &&
+        Objects.equals(this.disabledPropAbilities, instance.disabledPropAbilities) &&
         Objects.equals(this.displayName, instance.displayName) &&
+        Objects.equals(this.dominantLanguage, instance.dominantLanguage) &&
         Objects.equals(this.friends, instance.friends) &&
         Objects.equals(this.full, instance.full) &&
         Objects.equals(this.gameServerVersion, instance.gameServerVersion) &&
@@ -1176,7 +1292,9 @@ public class Instance {
         Objects.equals(this.id, instance.id) &&
         Objects.equals(this.instanceId, instance.instanceId) &&
         Objects.equals(this.instancePersistenceEnabled, instance.instancePersistenceEnabled) &&
+        Objects.equals(this.languageRatio, instance.languageRatio) &&
         Objects.equals(this.location, instance.location) &&
+        Objects.equals(this.minimumAvatarPerformance, instance.minimumAvatarPerformance) &&
         Objects.equals(this.nUsers, instance.nUsers) &&
         Objects.equals(this.name, instance.name) &&
         Objects.equals(this.nonce, instance.nonce) &&
@@ -1208,7 +1326,7 @@ public class Instance {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, ageGate, calendarEntryId, canRequestInvite, capacity, clientNumber, closedAt, contentSettings, creatorId, displayName, friends, full, gameServerVersion, groupAccessType, hardClose, hasCapacityForYou, hidden, id, instanceId, instancePersistenceEnabled, location, nUsers, name, nonce, ownerId, permanent, photonRegion, platforms, playerPersistenceEnabled, _private, queueEnabled, queueSize, recommendedCapacity, region, roleRestricted, secureName, shortName, strict, tags, type, userCount, users, world, worldId);
+    return Objects.hash(active, ageGate, calendarEntryId, canRequestInvite, capacity, clientNumber, closedAt, contentSettings, creatorId, disabledPropAbilities, displayName, dominantLanguage, friends, full, gameServerVersion, groupAccessType, hardClose, hasCapacityForYou, hidden, id, instanceId, instancePersistenceEnabled, languageRatio, location, minimumAvatarPerformance, nUsers, name, nonce, ownerId, permanent, photonRegion, platforms, playerPersistenceEnabled, _private, queueEnabled, queueSize, recommendedCapacity, region, roleRestricted, secureName, shortName, strict, tags, type, userCount, users, world, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1231,7 +1349,9 @@ public class Instance {
     sb.append("    closedAt: ").append(toIndentedString(closedAt)).append("\n");
     sb.append("    contentSettings: ").append(toIndentedString(contentSettings)).append("\n");
     sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    dominantLanguage: ").append(toIndentedString(dominantLanguage)).append("\n");
     sb.append("    friends: ").append(toIndentedString(friends)).append("\n");
     sb.append("    full: ").append(toIndentedString(full)).append("\n");
     sb.append("    gameServerVersion: ").append(toIndentedString(gameServerVersion)).append("\n");
@@ -1242,7 +1362,9 @@ public class Instance {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
     sb.append("    instancePersistenceEnabled: ").append(toIndentedString(instancePersistenceEnabled)).append("\n");
+    sb.append("    languageRatio: ").append(toIndentedString(languageRatio)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    minimumAvatarPerformance: ").append(toIndentedString(minimumAvatarPerformance)).append("\n");
     sb.append("    nUsers: ").append(toIndentedString(nUsers)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
@@ -1284,7 +1406,7 @@ public class Instance {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "ageGate", "calendarEntryId", "canRequestInvite", "capacity", "clientNumber", "closedAt", "contentSettings", "creatorId", "displayName", "friends", "full", "gameServerVersion", "groupAccessType", "hardClose", "hasCapacityForYou", "hidden", "id", "instanceId", "instancePersistenceEnabled", "location", "n_users", "name", "nonce", "ownerId", "permanent", "photonRegion", "platforms", "playerPersistenceEnabled", "private", "queueEnabled", "queueSize", "recommendedCapacity", "region", "roleRestricted", "secureName", "shortName", "strict", "tags", "type", "userCount", "users", "world", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "ageGate", "calendarEntryId", "canRequestInvite", "capacity", "clientNumber", "closedAt", "contentSettings", "creatorId", "disabledPropAbilities", "displayName", "dominantLanguage", "friends", "full", "gameServerVersion", "groupAccessType", "hardClose", "hasCapacityForYou", "hidden", "id", "instanceId", "instancePersistenceEnabled", "languageRatio", "location", "minimumAvatarPerformance", "n_users", "name", "nonce", "ownerId", "permanent", "photonRegion", "platforms", "playerPersistenceEnabled", "private", "queueEnabled", "queueSize", "recommendedCapacity", "region", "roleRestricted", "secureName", "shortName", "strict", "tags", "type", "userCount", "users", "world", "worldId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("clientNumber", "full", "id", "instanceId", "location", "n_users", "name", "permanent", "photonRegion", "platforms", "queueEnabled", "queueSize", "recommendedCapacity", "region", "secureName", "strict", "tags", "type", "userCount", "world", "worldId"));
@@ -1331,8 +1453,15 @@ public class Instance {
       if ((jsonObj.get("creatorId") != null && !jsonObj.get("creatorId").isJsonNull()) && !jsonObj.get("creatorId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `creatorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorId").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
+      }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      }
+      if ((jsonObj.get("dominantLanguage") != null && !jsonObj.get("dominantLanguage").isJsonNull()) && !jsonObj.get("dominantLanguage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dominantLanguage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dominantLanguage").toString()));
       }
       if ((jsonObj.get("friends") != null && !jsonObj.get("friends").isJsonNull()) && !jsonObj.get("friends").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friends` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friends").toString()));
@@ -1352,6 +1481,9 @@ public class Instance {
       }
       if (!jsonObj.get("location").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("location").toString()));
+      }
+      if ((jsonObj.get("minimumAvatarPerformance") != null && !jsonObj.get("minimumAvatarPerformance").isJsonNull()) && !jsonObj.get("minimumAvatarPerformance").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `minimumAvatarPerformance` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minimumAvatarPerformance").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

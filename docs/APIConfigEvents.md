@@ -17,6 +17,7 @@
 |**playerOrderFactor** | **Integer** | Unknown |  |
 |**slowUpdateFactorThreshold** | **Integer** | Unknown |  |
 |**useDirectPlayerSerialization** | **Boolean** | Unknown |  |
+|**useSparseRotationForPlayerSerialization** | **Boolean** |  |  [optional] |
 |**viewSegmentLength** | **Integer** | Unknown |  |
 
 

@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.github.vrchatapi.model.BareError;
 import io.github.vrchatapi.model.ChangeWorldTagsRequest;
 import io.github.vrchatapi.model.CreateWorldRequest;
 import io.github.vrchatapi.model.Error;
@@ -241,6 +242,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -318,6 +320,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -338,6 +341,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -360,6 +364,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user has persistence data for the given world. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -639,6 +644,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -716,6 +722,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -736,6 +743,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -758,6 +766,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The user&#39;s persistence data for the given world is deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The user does not have persistence data for the given world. </td><td>  -  </td></tr>
      </table>
      */
@@ -779,7 +788,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWorldCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
@@ -849,7 +858,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteWorld(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -868,7 +877,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deleteWorldWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -889,7 +898,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWorldAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<Void> _callback) throws ApiException {
@@ -911,7 +920,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWorldPlatformCall(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String publishedPlatform, final ApiCallback _callback) throws ApiException {
@@ -988,7 +997,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteWorldPlatform(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String publishedPlatform) throws ApiException {
@@ -1008,7 +1017,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deleteWorldPlatformWithHttpInfo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String publishedPlatform) throws ApiException {
@@ -1030,7 +1039,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWorldPlatformAsync(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull String publishedPlatform, final ApiCallback<Void> _callback) throws ApiException {
@@ -1733,7 +1742,7 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWorldCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
@@ -1803,7 +1812,7 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public World getWorld(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -1822,7 +1831,7 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<World> getWorldWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -1843,7 +1852,7 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWorldAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<World> _callback) throws ApiException {
@@ -2005,11 +2014,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getWorldMetadataCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -2055,7 +2062,6 @@ public class WorldsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
-    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getWorldMetadataValidateBeforeCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'worldId' is set
@@ -2078,11 +2084,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public WorldMetadata getWorldMetadata(@javax.annotation.Nonnull String worldId) throws ApiException {
         ApiResponse<WorldMetadata> localVarResp = getWorldMetadataWithHttpInfo(worldId);
         return localVarResp.getData();
@@ -2099,11 +2103,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public ApiResponse<WorldMetadata> getWorldMetadataWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
         okhttp3.Call localVarCall = getWorldMetadataValidateBeforeCall(worldId, null);
         Type localVarReturnType = new TypeToken<WorldMetadata>(){}.getType();
@@ -2122,11 +2124,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getWorldMetadataAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<WorldMetadata> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorldMetadataValidateBeforeCall(worldId, _callback);
@@ -2146,7 +2146,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single WorldPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWorldPublishStatusCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
@@ -2217,7 +2217,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single WorldPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public WorldPublishStatus getWorldPublishStatus(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2237,7 +2237,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single WorldPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<WorldPublishStatus> getWorldPublishStatusWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2259,7 +2259,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single WorldPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWorldPublishStatusAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<WorldPublishStatus> _callback) throws ApiException {
@@ -2281,7 +2281,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> TODO </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call publishWorldCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
@@ -2351,7 +2351,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> TODO </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void publishWorld(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2370,7 +2370,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> TODO </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> publishWorldWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2391,7 +2391,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> TODO </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call publishWorldAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<Void> _callback) throws ApiException {
@@ -2414,6 +2414,7 @@ public class WorldsApi {
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeWorldTagsCall(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback _callback) throws ApiException {
@@ -2433,7 +2434,7 @@ public class WorldsApi {
         Object localVarPostBody = changeWorldTagsRequest;
 
         // create path and map variables
-        String localVarPath = "/worlds/{worldId}/removeTags"
+        String localVarPath = "/worlds/{worldId}/deleteTags"
             .replace("{" + "worldId" + "}", localVarApiClient.escapeString(worldId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2480,7 +2481,7 @@ public class WorldsApi {
 
     /**
      * Remove World Tags
-     * Removes tags from the world&#39;s profile
+     * Remove tags from the world&#39;s profile.  The path is &#x60;deleteTags&#x60;, not &#x60;removeTags&#x60; as the user equivalent uses.
      * @param worldId Must be a valid world ID. (required)
      * @param changeWorldTagsRequest  (required)
      * @return World
@@ -2492,6 +2493,7 @@ public class WorldsApi {
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      */
     public World removeWorldTags(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
@@ -2501,7 +2503,7 @@ public class WorldsApi {
 
     /**
      * Remove World Tags
-     * Removes tags from the world&#39;s profile
+     * Remove tags from the world&#39;s profile.  The path is &#x60;deleteTags&#x60;, not &#x60;removeTags&#x60; as the user equivalent uses.
      * @param worldId Must be a valid world ID. (required)
      * @param changeWorldTagsRequest  (required)
      * @return ApiResponse&lt;World&gt;
@@ -2513,6 +2515,7 @@ public class WorldsApi {
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<World> removeWorldTagsWithHttpInfo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull ChangeWorldTagsRequest changeWorldTagsRequest) throws ApiException {
@@ -2523,7 +2526,7 @@ public class WorldsApi {
 
     /**
      * Remove World Tags (asynchronously)
-     * Removes tags from the world&#39;s profile
+     * Remove tags from the world&#39;s profile.  The path is &#x60;deleteTags&#x60;, not &#x60;removeTags&#x60; as the user equivalent uses.
      * @param worldId Must be a valid world ID. (required)
      * @param changeWorldTagsRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -2536,6 +2539,7 @@ public class WorldsApi {
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeWorldTagsAsync(@javax.annotation.Nonnull String worldId, @javax.annotation.Nonnull ChangeWorldTagsRequest changeWorldTagsRequest, final ApiCallback<World> _callback) throws ApiException {
@@ -2814,7 +2818,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unpublishWorldCall(@javax.annotation.Nonnull String worldId, final ApiCallback _callback) throws ApiException {
@@ -2884,7 +2888,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void unpublishWorld(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2903,7 +2907,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> unpublishWorldWithHttpInfo(@javax.annotation.Nonnull String worldId) throws ApiException {
@@ -2924,7 +2928,7 @@ public class WorldsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unpublishWorldAsync(@javax.annotation.Nonnull String worldId, final ApiCallback<Void> _callback) throws ApiException {
@@ -2945,8 +2949,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateWorldCall(@javax.annotation.Nonnull String worldId, @javax.annotation.Nullable UpdateWorldRequest updateWorldRequest, final ApiCallback _callback) throws ApiException {
@@ -3018,8 +3023,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public World updateWorld(@javax.annotation.Nonnull String worldId, @javax.annotation.Nullable UpdateWorldRequest updateWorldRequest) throws ApiException {
@@ -3039,8 +3045,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<World> updateWorldWithHttpInfo(@javax.annotation.Nonnull String worldId, @javax.annotation.Nullable UpdateWorldRequest updateWorldRequest) throws ApiException {
@@ -3062,8 +3069,9 @@ public class WorldsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single World object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateWorldAsync(@javax.annotation.Nonnull String worldId, @javax.annotation.Nullable UpdateWorldRequest updateWorldRequest, final ApiCallback<World> _callback) throws ApiException {

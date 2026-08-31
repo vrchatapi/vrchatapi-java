@@ -44,6 +44,7 @@ import io.github.vrchatapi.model.ProductListing;
 import io.github.vrchatapi.model.ProductPurchase;
 import io.github.vrchatapi.model.ProductPurchaseHistory;
 import io.github.vrchatapi.model.PurchaseProductListingRequest;
+import io.github.vrchatapi.model.RouteNotImplemented;
 import io.github.vrchatapi.model.SellerEligibility;
 import io.github.vrchatapi.model.SortOptionProductPurchase;
 import io.github.vrchatapi.model.Store;
@@ -831,7 +832,7 @@ public class EconomyApi {
 
     /**
      * Get Balance
-     * Gets the balance of a user
+     * Return the balance of a user.
      * @param userId Must be a valid user ID. (required)
      * @return Balance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -850,7 +851,7 @@ public class EconomyApi {
 
     /**
      * Get Balance
-     * Gets the balance of a user
+     * Return the balance of a user.
      * @param userId Must be a valid user ID. (required)
      * @return ApiResponse&lt;Balance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -870,7 +871,7 @@ public class EconomyApi {
 
     /**
      * Get Balance (asynchronously)
-     * Gets the balance of a user
+     * Return the balance of a user.
      * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -902,8 +903,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getBalanceEarningsCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -949,6 +953,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getBalanceEarningsValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
@@ -962,7 +967,7 @@ public class EconomyApi {
 
     /**
      * Get Balance Earnings
-     * Gets the balance of a user from earnings
+     * Return the user&#39;s balance from earnings.
      * @param userId Must be a valid user ID. (required)
      * @return Balance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -972,8 +977,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public Balance getBalanceEarnings(@javax.annotation.Nonnull String userId) throws ApiException {
         ApiResponse<Balance> localVarResp = getBalanceEarningsWithHttpInfo(userId);
         return localVarResp.getData();
@@ -981,7 +989,7 @@ public class EconomyApi {
 
     /**
      * Get Balance Earnings
-     * Gets the balance of a user from earnings
+     * Return the user&#39;s balance from earnings.
      * @param userId Must be a valid user ID. (required)
      * @return ApiResponse&lt;Balance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -991,8 +999,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<Balance> getBalanceEarningsWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getBalanceEarningsValidateBeforeCall(userId, null);
         Type localVarReturnType = new TypeToken<Balance>(){}.getType();
@@ -1001,7 +1012,7 @@ public class EconomyApi {
 
     /**
      * Get Balance Earnings (asynchronously)
-     * Gets the balance of a user from earnings
+     * Return the user&#39;s balance from earnings.
      * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1012,8 +1023,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getBalanceEarningsAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Balance> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBalanceEarningsValidateBeforeCall(userId, _callback);
@@ -1273,9 +1287,9 @@ public class EconomyApi {
     }
     /**
      * Build call for getEarningsMetrics
-     * @param sellerId Seller to retrieve economy metrics for. (required)
      * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
      * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param sellerId Filter results by seller. (optional)
      * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1288,7 +1302,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEarningsMetricsCall(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String groupByDuration, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEarningsMetricsCall(@javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable String groupByDuration, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1349,22 +1363,17 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEarningsMetricsValidateBeforeCall(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String groupByDuration, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'sellerId' is set
-        if (sellerId == null) {
-            throw new ApiException("Missing the required parameter 'sellerId' when calling getEarningsMetrics(Async)");
-        }
-
-        return getEarningsMetricsCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, _callback);
+    private okhttp3.Call getEarningsMetricsValidateBeforeCall(@javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable String groupByDuration, final ApiCallback _callback) throws ApiException {
+        return getEarningsMetricsCall(metricDateStart, metricDateEnd, sellerId, groupByDuration, _callback);
 
     }
 
     /**
      * Get Earnings Metrics
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
-     * @param sellerId Seller to retrieve economy metrics for. (required)
      * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
      * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param sellerId Filter results by seller. (optional)
      * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @return EarningsMetrics
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1376,17 +1385,17 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public EarningsMetrics getEarningsMetrics(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String groupByDuration) throws ApiException {
-        ApiResponse<EarningsMetrics> localVarResp = getEarningsMetricsWithHttpInfo(sellerId, metricDateStart, metricDateEnd, groupByDuration);
+    public EarningsMetrics getEarningsMetrics(@javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable String groupByDuration) throws ApiException {
+        ApiResponse<EarningsMetrics> localVarResp = getEarningsMetricsWithHttpInfo(metricDateStart, metricDateEnd, sellerId, groupByDuration);
         return localVarResp.getData();
     }
 
     /**
      * Get Earnings Metrics
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
-     * @param sellerId Seller to retrieve economy metrics for. (required)
      * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
      * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param sellerId Filter results by seller. (optional)
      * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @return ApiResponse&lt;EarningsMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1398,8 +1407,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EarningsMetrics> getEarningsMetricsWithHttpInfo(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String groupByDuration) throws ApiException {
-        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, null);
+    public ApiResponse<EarningsMetrics> getEarningsMetricsWithHttpInfo(@javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable String groupByDuration) throws ApiException {
+        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(metricDateStart, metricDateEnd, sellerId, groupByDuration, null);
         Type localVarReturnType = new TypeToken<EarningsMetrics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1407,9 +1416,9 @@ public class EconomyApi {
     /**
      * Get Earnings Metrics (asynchronously)
      * Gets earnings totals and breakdown metrics for the currently authenticated user.
-     * @param sellerId Seller to retrieve economy metrics for. (required)
      * @param metricDateStart Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
      * @param metricDateEnd Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. (optional)
+     * @param sellerId Filter results by seller. (optional)
      * @param groupByDuration Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1422,9 +1431,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEarningsMetricsAsync(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String groupByDuration, final ApiCallback<EarningsMetrics> _callback) throws ApiException {
+    public okhttp3.Call getEarningsMetricsAsync(@javax.annotation.Nullable String metricDateStart, @javax.annotation.Nullable String metricDateEnd, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable String groupByDuration, final ApiCallback<EarningsMetrics> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(sellerId, metricDateStart, metricDateEnd, groupByDuration, _callback);
+        okhttp3.Call localVarCall = getEarningsMetricsValidateBeforeCall(metricDateStart, metricDateEnd, sellerId, groupByDuration, _callback);
         Type localVarReturnType = new TypeToken<EarningsMetrics>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1702,6 +1711,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -1772,6 +1782,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -1791,6 +1802,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -1812,6 +1824,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns an EconomyPayoutStatus object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -2381,6 +2394,7 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of ProductListing objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when requesting another user&#39;s product listings. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getProductListingsCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean hydrate, @javax.annotation.Nullable String listingType, @javax.annotation.Nullable String groupId, @javax.annotation.Nullable Boolean active, final ApiCallback _callback) throws ApiException {
@@ -2481,6 +2495,7 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of ProductListing objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when requesting another user&#39;s product listings. </td><td>  -  </td></tr>
      </table>
      */
     public List<ProductListing> getProductListings(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean hydrate, @javax.annotation.Nullable String listingType, @javax.annotation.Nullable String groupId, @javax.annotation.Nullable Boolean active) throws ApiException {
@@ -2506,6 +2521,7 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of ProductListing objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when requesting another user&#39;s product listings. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<ProductListing>> getProductListingsWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean hydrate, @javax.annotation.Nullable String listingType, @javax.annotation.Nullable String groupId, @javax.annotation.Nullable Boolean active) throws ApiException {
@@ -2533,6 +2549,7 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of ProductListing objects. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when requesting another user&#39;s product listings. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getProductListingsAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean hydrate, @javax.annotation.Nullable String listingType, @javax.annotation.Nullable String groupId, @javax.annotation.Nullable Boolean active, final ApiCallback<List<ProductListing>> _callback) throws ApiException {
@@ -3305,8 +3322,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SellerEligibility object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getSellerEligibilityCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -3351,6 +3371,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getSellerEligibilityValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         return getSellerEligibilityCall(_callback);
@@ -3359,7 +3380,7 @@ public class EconomyApi {
 
     /**
      * Get Seller Eligibility
-     * Get the eligibility of the currently authenticated user to become a seller
+     * Return the current user&#39;s eligibility to become a seller.
      * @return SellerEligibility
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3368,8 +3389,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SellerEligibility object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public SellerEligibility getSellerEligibility() throws ApiException {
         ApiResponse<SellerEligibility> localVarResp = getSellerEligibilityWithHttpInfo();
         return localVarResp.getData();
@@ -3377,7 +3401,7 @@ public class EconomyApi {
 
     /**
      * Get Seller Eligibility
-     * Get the eligibility of the currently authenticated user to become a seller
+     * Return the current user&#39;s eligibility to become a seller.
      * @return ApiResponse&lt;SellerEligibility&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3386,8 +3410,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SellerEligibility object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<SellerEligibility> getSellerEligibilityWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getSellerEligibilityValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<SellerEligibility>(){}.getType();
@@ -3396,7 +3423,7 @@ public class EconomyApi {
 
     /**
      * Get Seller Eligibility (asynchronously)
-     * Get the eligibility of the currently authenticated user to become a seller
+     * Return the current user&#39;s eligibility to become a seller.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3406,8 +3433,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SellerEligibility object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getSellerEligibilityAsync(final ApiCallback<SellerEligibility> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSellerEligibilityValidateBeforeCall(_callback);
@@ -3428,9 +3458,7 @@ public class EconomyApi {
         <tr><td> 200 </td><td> Returns a single Transaction object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getSteamTransactionCall(@javax.annotation.Nonnull String transactionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -3476,7 +3504,6 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
-    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getSteamTransactionValidateBeforeCall(@javax.annotation.Nonnull String transactionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'transactionId' is set
@@ -3501,9 +3528,7 @@ public class EconomyApi {
         <tr><td> 200 </td><td> Returns a single Transaction object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public Transaction getSteamTransaction(@javax.annotation.Nonnull String transactionId) throws ApiException {
         ApiResponse<Transaction> localVarResp = getSteamTransactionWithHttpInfo(transactionId);
         return localVarResp.getData();
@@ -3522,9 +3547,7 @@ public class EconomyApi {
         <tr><td> 200 </td><td> Returns a single Transaction object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public ApiResponse<Transaction> getSteamTransactionWithHttpInfo(@javax.annotation.Nonnull String transactionId) throws ApiException {
         okhttp3.Call localVarCall = getSteamTransactionValidateBeforeCall(transactionId, null);
         Type localVarReturnType = new TypeToken<Transaction>(){}.getType();
@@ -3545,9 +3568,7 @@ public class EconomyApi {
         <tr><td> 200 </td><td> Returns a single Transaction object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
-     * @deprecated
      */
-    @Deprecated
     public okhttp3.Call getSteamTransactionAsync(@javax.annotation.Nonnull String transactionId, final ApiCallback<Transaction> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSteamTransactionValidateBeforeCall(transactionId, _callback);
@@ -3978,6 +3999,8 @@ public class EconomyApi {
     }
     /**
      * Build call for getSubscriptions
+     * @param gifts Return giftable subscriptions instead of standard ones. (optional)
+     * @param recurring Return recurring subscriptions instead of standard ones. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3989,7 +4012,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionsCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionsCall(@javax.annotation.Nullable Boolean gifts, @javax.annotation.Nullable Boolean recurring, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4014,6 +4037,14 @@ public class EconomyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (gifts != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("gifts", gifts));
+        }
+
+        if (recurring != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recurring", recurring));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -4034,14 +4065,16 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getSubscriptionsCall(_callback);
+    private okhttp3.Call getSubscriptionsValidateBeforeCall(@javax.annotation.Nullable Boolean gifts, @javax.annotation.Nullable Boolean recurring, final ApiCallback _callback) throws ApiException {
+        return getSubscriptionsCall(gifts, recurring, _callback);
 
     }
 
     /**
      * List Subscriptions
      * List all existing Subscriptions. For example, \&quot;vrchatplus-monthly\&quot; and \&quot;vrchatplus-yearly\&quot;.
+     * @param gifts Return giftable subscriptions instead of standard ones. (optional)
+     * @param recurring Return recurring subscriptions instead of standard ones. (optional)
      * @return List&lt;Subscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4052,14 +4085,16 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Subscription> getSubscriptions() throws ApiException {
-        ApiResponse<List<Subscription>> localVarResp = getSubscriptionsWithHttpInfo();
+    public List<Subscription> getSubscriptions(@javax.annotation.Nullable Boolean gifts, @javax.annotation.Nullable Boolean recurring) throws ApiException {
+        ApiResponse<List<Subscription>> localVarResp = getSubscriptionsWithHttpInfo(gifts, recurring);
         return localVarResp.getData();
     }
 
     /**
      * List Subscriptions
      * List all existing Subscriptions. For example, \&quot;vrchatplus-monthly\&quot; and \&quot;vrchatplus-yearly\&quot;.
+     * @param gifts Return giftable subscriptions instead of standard ones. (optional)
+     * @param recurring Return recurring subscriptions instead of standard ones. (optional)
      * @return ApiResponse&lt;List&lt;Subscription&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4070,8 +4105,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Subscription>> getSubscriptionsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(null);
+    public ApiResponse<List<Subscription>> getSubscriptionsWithHttpInfo(@javax.annotation.Nullable Boolean gifts, @javax.annotation.Nullable Boolean recurring) throws ApiException {
+        okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(gifts, recurring, null);
         Type localVarReturnType = new TypeToken<List<Subscription>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4079,6 +4114,8 @@ public class EconomyApi {
     /**
      * List Subscriptions (asynchronously)
      * List all existing Subscriptions. For example, \&quot;vrchatplus-monthly\&quot; and \&quot;vrchatplus-yearly\&quot;.
+     * @param gifts Return giftable subscriptions instead of standard ones. (optional)
+     * @param recurring Return recurring subscriptions instead of standard ones. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4090,9 +4127,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionsAsync(final ApiCallback<List<Subscription>> _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionsAsync(@javax.annotation.Nullable Boolean gifts, @javax.annotation.Nullable Boolean recurring, final ApiCallback<List<Subscription>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(gifts, recurring, _callback);
         Type localVarReturnType = new TypeToken<List<Subscription>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -4108,8 +4145,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getTiliaStatusCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -4154,6 +4194,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getTiliaStatusValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         return getTiliaStatusCall(_callback);
@@ -4162,7 +4203,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia Status
-     * Gets the status of Tilia integration
+     * Return the Tilia integration status.
      * @return TiliaStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4171,8 +4212,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public TiliaStatus getTiliaStatus() throws ApiException {
         ApiResponse<TiliaStatus> localVarResp = getTiliaStatusWithHttpInfo();
         return localVarResp.getData();
@@ -4180,7 +4224,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia Status
-     * Gets the status of Tilia integration
+     * Return the Tilia integration status.
      * @return ApiResponse&lt;TiliaStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4189,8 +4233,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<TiliaStatus> getTiliaStatusWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getTiliaStatusValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<TiliaStatus>(){}.getType();
@@ -4199,7 +4246,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia Status (asynchronously)
-     * Gets the status of Tilia integration
+     * Return the Tilia integration status.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4209,8 +4256,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getTiliaStatusAsync(final ApiCallback<TiliaStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTiliaStatusValidateBeforeCall(_callback);
@@ -4230,8 +4280,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaTOS object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getTiliaTosCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -4277,6 +4330,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getTiliaTosValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
@@ -4290,7 +4344,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia TOS Agreement Status
-     * Gets the status of the agreement of a user to the Tilia TOS
+     * Return the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @return TiliaTOS
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4300,8 +4354,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaTOS object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public TiliaTOS getTiliaTos(@javax.annotation.Nonnull String userId) throws ApiException {
         ApiResponse<TiliaTOS> localVarResp = getTiliaTosWithHttpInfo(userId);
         return localVarResp.getData();
@@ -4309,7 +4366,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia TOS Agreement Status
-     * Gets the status of the agreement of a user to the Tilia TOS
+     * Return the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @return ApiResponse&lt;TiliaTOS&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4319,8 +4376,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaTOS object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<TiliaTOS> getTiliaTosWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getTiliaTosValidateBeforeCall(userId, null);
         Type localVarReturnType = new TypeToken<TiliaTOS>(){}.getType();
@@ -4329,7 +4389,7 @@ public class EconomyApi {
 
     /**
      * Get Tilia TOS Agreement Status (asynchronously)
-     * Gets the status of the agreement of a user to the Tilia TOS
+     * Return the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4340,8 +4400,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single TiliaTOS object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getTiliaTosAsync(@javax.annotation.Nonnull String userId, final ApiCallback<TiliaTOS> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTiliaTosValidateBeforeCall(userId, _callback);
@@ -4483,8 +4546,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single UserCreditsEligible object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getUserCreditsEligibleCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String subscriptionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -4534,6 +4600,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getUserCreditsEligibleValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String subscriptionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
@@ -4552,7 +4619,7 @@ public class EconomyApi {
 
     /**
      * Get User Credits Eligibility
-     * Get the user&#39;s eligibility status for subscriptions based on available credits.
+     * Return the user&#39;s subscription credit eligibility.
      * @param userId Must be a valid user ID. (required)
      * @param subscriptionId  (required)
      * @return UserCreditsEligible
@@ -4563,8 +4630,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single UserCreditsEligible object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public UserCreditsEligible getUserCreditsEligible(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String subscriptionId) throws ApiException {
         ApiResponse<UserCreditsEligible> localVarResp = getUserCreditsEligibleWithHttpInfo(userId, subscriptionId);
         return localVarResp.getData();
@@ -4572,7 +4642,7 @@ public class EconomyApi {
 
     /**
      * Get User Credits Eligibility
-     * Get the user&#39;s eligibility status for subscriptions based on available credits.
+     * Return the user&#39;s subscription credit eligibility.
      * @param userId Must be a valid user ID. (required)
      * @param subscriptionId  (required)
      * @return ApiResponse&lt;UserCreditsEligible&gt;
@@ -4583,8 +4653,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single UserCreditsEligible object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<UserCreditsEligible> getUserCreditsEligibleWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String subscriptionId) throws ApiException {
         okhttp3.Call localVarCall = getUserCreditsEligibleValidateBeforeCall(userId, subscriptionId, null);
         Type localVarReturnType = new TypeToken<UserCreditsEligible>(){}.getType();
@@ -4593,7 +4666,7 @@ public class EconomyApi {
 
     /**
      * Get User Credits Eligibility (asynchronously)
-     * Get the user&#39;s eligibility status for subscriptions based on available credits.
+     * Return the user&#39;s subscription credit eligibility.
      * @param userId Must be a valid user ID. (required)
      * @param subscriptionId  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -4605,8 +4678,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single UserCreditsEligible object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getUserCreditsEligibleAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String subscriptionId, final ApiCallback<UserCreditsEligible> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserCreditsEligibleValidateBeforeCall(userId, subscriptionId, _callback);
@@ -4764,6 +4840,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -4834,6 +4911,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -4853,6 +4931,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -4874,6 +4953,7 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a TiliaKyc object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -4886,7 +4966,7 @@ public class EconomyApi {
     }
     /**
      * Build call for listStores
-     * @param sellerId Filter results by seller. (optional)
+     * @param sellerId Seller to scope the results to. (required)
      * @param managementPov Return stores from the seller management point of view. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -4898,10 +4978,12 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when the seller&#39;s stores are unavailable to the caller. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listStoresCall(@javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listStoresCall(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4962,15 +5044,20 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listStoresValidateBeforeCall(@javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listStoresValidateBeforeCall(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'sellerId' is set
+        if (sellerId == null) {
+            throw new ApiException("Missing the required parameter 'sellerId' when calling listStores(Async)");
+        }
+
         return listStoresCall(sellerId, managementPov, n, offset, _callback);
 
     }
 
     /**
      * List Stores
-     * Lists stores, optionally filtered to a seller and adjusted for management views.
-     * @param sellerId Filter results by seller. (optional)
+     * List a seller&#39;s stores, adjusted for management views.
+     * @param sellerId Seller to scope the results to. (required)
      * @param managementPov Return stores from the seller management point of view. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -4981,18 +5068,20 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when the seller&#39;s stores are unavailable to the caller. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Store> listStores(@javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public List<Store> listStores(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<List<Store>> localVarResp = listStoresWithHttpInfo(sellerId, managementPov, n, offset);
         return localVarResp.getData();
     }
 
     /**
      * List Stores
-     * Lists stores, optionally filtered to a seller and adjusted for management views.
-     * @param sellerId Filter results by seller. (optional)
+     * List a seller&#39;s stores, adjusted for management views.
+     * @param sellerId Seller to scope the results to. (required)
      * @param managementPov Return stores from the seller management point of view. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -5003,10 +5092,12 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when the seller&#39;s stores are unavailable to the caller. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Store>> listStoresWithHttpInfo(@javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<List<Store>> listStoresWithHttpInfo(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listStoresValidateBeforeCall(sellerId, managementPov, n, offset, null);
         Type localVarReturnType = new TypeToken<List<Store>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -5014,8 +5105,8 @@ public class EconomyApi {
 
     /**
      * List Stores (asynchronously)
-     * Lists stores, optionally filtered to a seller and adjusted for management views.
-     * @param sellerId Filter results by seller. (optional)
+     * List a seller&#39;s stores, adjusted for management views.
+     * @param sellerId Seller to scope the results to. (required)
      * @param managementPov Return stores from the seller management point of view. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -5027,10 +5118,12 @@ public class EconomyApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of Store objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Error response when the seller&#39;s stores are unavailable to the caller. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listStoresAsync(@javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<Store>> _callback) throws ApiException {
+    public okhttp3.Call listStoresAsync(@javax.annotation.Nonnull String sellerId, @javax.annotation.Nullable Boolean managementPov, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<Store>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listStoresValidateBeforeCall(sellerId, managementPov, n, offset, _callback);
         Type localVarReturnType = new TypeToken<List<Store>>(){}.getType();
@@ -5613,8 +5706,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a UserSubscription object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateTiliaTosCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateTiliaTOSRequest updateTiliaTOSRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -5661,6 +5757,7 @@ public class EconomyApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateTiliaTosValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateTiliaTOSRequest updateTiliaTOSRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
@@ -5674,7 +5771,7 @@ public class EconomyApi {
 
     /**
      * Update Tilia TOS Agreement Status
-     * Updates the status of the agreement of a user to the Tilia TOS
+     * Update the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @param updateTiliaTOSRequest  (optional)
      * @return Object
@@ -5685,8 +5782,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a UserSubscription object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public Object updateTiliaTos(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateTiliaTOSRequest updateTiliaTOSRequest) throws ApiException {
         ApiResponse<Object> localVarResp = updateTiliaTosWithHttpInfo(userId, updateTiliaTOSRequest);
         return localVarResp.getData();
@@ -5694,7 +5794,7 @@ public class EconomyApi {
 
     /**
      * Update Tilia TOS Agreement Status
-     * Updates the status of the agreement of a user to the Tilia TOS
+     * Update the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @param updateTiliaTOSRequest  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -5705,8 +5805,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a UserSubscription object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<Object> updateTiliaTosWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateTiliaTOSRequest updateTiliaTOSRequest) throws ApiException {
         okhttp3.Call localVarCall = updateTiliaTosValidateBeforeCall(userId, updateTiliaTOSRequest, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -5715,7 +5818,7 @@ public class EconomyApi {
 
     /**
      * Update Tilia TOS Agreement Status (asynchronously)
-     * Updates the status of the agreement of a user to the Tilia TOS
+     * Update the user&#39;s Tilia TOS agreement status.
      * @param userId Must be a valid user ID. (required)
      * @param updateTiliaTOSRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -5727,8 +5830,11 @@ public class EconomyApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a UserSubscription object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateTiliaTosAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateTiliaTOSRequest updateTiliaTOSRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTiliaTosValidateBeforeCall(userId, updateTiliaTOSRequest, _callback);

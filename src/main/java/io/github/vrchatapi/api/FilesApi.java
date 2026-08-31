@@ -356,7 +356,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to delete a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteFileCall(@javax.annotation.Nonnull String fileId, final ApiCallback _callback) throws ApiException {
@@ -426,7 +426,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to delete a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ModelFile deleteFile(@javax.annotation.Nonnull String fileId) throws ApiException {
@@ -445,7 +445,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to delete a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ModelFile> deleteFileWithHttpInfo(@javax.annotation.Nonnull String fileId) throws ApiException {
@@ -466,7 +466,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to delete a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteFileAsync(@javax.annotation.Nonnull String fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
@@ -633,7 +633,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Raw file </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call downloadFileVersionCall(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback _callback) throws ApiException {
@@ -711,7 +711,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Raw file </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public File downloadFileVersion(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -731,7 +731,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Raw file </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<File> downloadFileVersionWithHttpInfo(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -753,7 +753,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Raw file </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call downloadFileVersionAsync(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback<File> _callback) throws ApiException {
@@ -1213,7 +1213,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileCall(@javax.annotation.Nonnull String fileId, final ApiCallback _callback) throws ApiException {
@@ -1283,7 +1283,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ModelFile getFile(@javax.annotation.Nonnull String fileId) throws ApiException {
@@ -1302,7 +1302,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ModelFile> getFileWithHttpInfo(@javax.annotation.Nonnull String fileId) throws ApiException {
@@ -1323,7 +1323,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single File object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAsync(@javax.annotation.Nonnull String fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
@@ -1346,7 +1346,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisCall(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback _callback) throws ApiException {
@@ -1424,7 +1424,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public FileAnalysis getFileAnalysis(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1445,7 +1445,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<FileAnalysis> getFileAnalysisWithHttpInfo(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1468,7 +1468,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisAsync(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback<FileAnalysis> _callback) throws ApiException {
@@ -1491,7 +1491,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisSecurityCall(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback _callback) throws ApiException {
@@ -1569,7 +1569,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public FileAnalysis getFileAnalysisSecurity(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1590,7 +1590,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<FileAnalysis> getFileAnalysisSecurityWithHttpInfo(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1613,7 +1613,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisSecurityAsync(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback<FileAnalysis> _callback) throws ApiException {
@@ -1636,7 +1636,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisStandardCall(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback _callback) throws ApiException {
@@ -1714,7 +1714,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public FileAnalysis getFileAnalysisStandard(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1735,7 +1735,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<FileAnalysis> getFileAnalysisStandardWithHttpInfo(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId) throws ApiException {
@@ -1758,7 +1758,7 @@ public class FilesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single FileAnalysis object. </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Error response when requesting file Analysis that is not yet available. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getFileAnalysisStandardAsync(@javax.annotation.Nonnull String fileId, @javax.annotation.Nonnull Integer versionId, final ApiCallback<FileAnalysis> _callback) throws ApiException {
@@ -2075,7 +2075,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of File IDs. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call setGroupGalleryFileOrderCall(@javax.annotation.Nullable GroupGalleryFileOrderRequest groupGalleryFileOrderRequest, final ApiCallback _callback) throws ApiException {
@@ -2140,7 +2140,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of File IDs. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public GroupGalleryFileOrder setGroupGalleryFileOrder(@javax.annotation.Nullable GroupGalleryFileOrderRequest groupGalleryFileOrderRequest) throws ApiException {
@@ -2159,7 +2159,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of File IDs. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GroupGalleryFileOrder> setGroupGalleryFileOrderWithHttpInfo(@javax.annotation.Nullable GroupGalleryFileOrderRequest groupGalleryFileOrderRequest) throws ApiException {
@@ -2180,7 +2180,7 @@ public class FilesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of File IDs. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent file. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call setGroupGalleryFileOrderAsync(@javax.annotation.Nullable GroupGalleryFileOrderRequest groupGalleryFileOrderRequest, final ApiCallback<GroupGalleryFileOrder> _callback) throws ApiException {

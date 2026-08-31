@@ -506,8 +506,9 @@ public class FavoritesApi {
      * Build call for getFavoriteGroups
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param type Filter to a single favorite group type. (optional, default to friend)
      * @param userId Target user to see information on, admin-only. (optional)
-     * @param ownerId The owner whose favorite groups to return. Must be a UserID. (optional)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -519,7 +520,7 @@ public class FavoritesApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoriteGroupsCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFavoriteGroupsCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable FavoriteType type, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -552,6 +553,10 @@ public class FavoritesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (type != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("type", type));
+        }
+
         if (userId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("userId", userId));
         }
@@ -580,8 +585,8 @@ public class FavoritesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFavoriteGroupsValidateBeforeCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
-        return getFavoriteGroupsCall(n, offset, userId, ownerId, _callback);
+    private okhttp3.Call getFavoriteGroupsValidateBeforeCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable FavoriteType type, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+        return getFavoriteGroupsCall(n, offset, type, userId, ownerId, _callback);
 
     }
 
@@ -590,8 +595,9 @@ public class FavoritesApi {
      * Return a list of favorite groups owned by a user. Returns the same information as &#x60;getFavoriteGroups&#x60;.
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param type Filter to a single favorite group type. (optional, default to friend)
      * @param userId Target user to see information on, admin-only. (optional)
-     * @param ownerId The owner whose favorite groups to return. Must be a UserID. (optional)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
      * @return List&lt;FavoriteGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -602,8 +608,8 @@ public class FavoritesApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<FavoriteGroup> getFavoriteGroups(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId) throws ApiException {
-        ApiResponse<List<FavoriteGroup>> localVarResp = getFavoriteGroupsWithHttpInfo(n, offset, userId, ownerId);
+    public List<FavoriteGroup> getFavoriteGroups(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable FavoriteType type, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId) throws ApiException {
+        ApiResponse<List<FavoriteGroup>> localVarResp = getFavoriteGroupsWithHttpInfo(n, offset, type, userId, ownerId);
         return localVarResp.getData();
     }
 
@@ -612,8 +618,9 @@ public class FavoritesApi {
      * Return a list of favorite groups owned by a user. Returns the same information as &#x60;getFavoriteGroups&#x60;.
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param type Filter to a single favorite group type. (optional, default to friend)
      * @param userId Target user to see information on, admin-only. (optional)
-     * @param ownerId The owner whose favorite groups to return. Must be a UserID. (optional)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
      * @return ApiResponse&lt;List&lt;FavoriteGroup&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -624,8 +631,8 @@ public class FavoritesApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<FavoriteGroup>> getFavoriteGroupsWithHttpInfo(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId) throws ApiException {
-        okhttp3.Call localVarCall = getFavoriteGroupsValidateBeforeCall(n, offset, userId, ownerId, null);
+    public ApiResponse<List<FavoriteGroup>> getFavoriteGroupsWithHttpInfo(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable FavoriteType type, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId) throws ApiException {
+        okhttp3.Call localVarCall = getFavoriteGroupsValidateBeforeCall(n, offset, type, userId, ownerId, null);
         Type localVarReturnType = new TypeToken<List<FavoriteGroup>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -635,8 +642,9 @@ public class FavoritesApi {
      * Return a list of favorite groups owned by a user. Returns the same information as &#x60;getFavoriteGroups&#x60;.
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param type Filter to a single favorite group type. (optional, default to friend)
      * @param userId Target user to see information on, admin-only. (optional)
-     * @param ownerId The owner whose favorite groups to return. Must be a UserID. (optional)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -648,9 +656,9 @@ public class FavoritesApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFavoriteGroupsAsync(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback<List<FavoriteGroup>> _callback) throws ApiException {
+    public okhttp3.Call getFavoriteGroupsAsync(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable FavoriteType type, @javax.annotation.Nullable String userId, @javax.annotation.Nullable String ownerId, final ApiCallback<List<FavoriteGroup>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getFavoriteGroupsValidateBeforeCall(n, offset, userId, ownerId, _callback);
+        okhttp3.Call localVarCall = getFavoriteGroupsValidateBeforeCall(n, offset, type, userId, ownerId, _callback);
         Type localVarReturnType = new TypeToken<List<FavoriteGroup>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -940,8 +948,9 @@ public class FavoritesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success response after removing a favorite. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent favorite. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeFavoriteCall(@javax.annotation.Nonnull String favoriteId, final ApiCallback _callback) throws ApiException {
@@ -1011,8 +1020,9 @@ public class FavoritesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success response after removing a favorite. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent favorite. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success removeFavorite(@javax.annotation.Nonnull String favoriteId) throws ApiException {
@@ -1031,8 +1041,9 @@ public class FavoritesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success response after removing a favorite. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent favorite. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> removeFavoriteWithHttpInfo(@javax.annotation.Nonnull String favoriteId) throws ApiException {
@@ -1053,8 +1064,9 @@ public class FavoritesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success response after removing a favorite. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent favorite. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call removeFavoriteAsync(@javax.annotation.Nonnull String favoriteId, final ApiCallback<Success> _callback) throws ApiException {

@@ -89,7 +89,7 @@ public class JamsApi {
         <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteJamSubmissionCall(@javax.annotation.Nonnull String jamId, @javax.annotation.Nonnull String jamSubmissionId, final ApiCallback _callback) throws ApiException {
@@ -168,7 +168,7 @@ public class JamsApi {
         <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteJamSubmission(@javax.annotation.Nonnull String jamId, @javax.annotation.Nonnull String jamSubmissionId) throws ApiException {
@@ -190,7 +190,7 @@ public class JamsApi {
         <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteJamSubmissionWithHttpInfo(@javax.annotation.Nonnull String jamId, @javax.annotation.Nonnull String jamSubmissionId) throws ApiException {
@@ -214,7 +214,7 @@ public class JamsApi {
         <tr><td> 200 </td><td> Returns an Success object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteJamSubmissionAsync(@javax.annotation.Nonnull String jamId, @javax.annotation.Nonnull String jamSubmissionId, final ApiCallback<Success> _callback) throws ApiException {
@@ -235,7 +235,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Jam object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getJamCall(@javax.annotation.Nonnull String jamId, final ApiCallback _callback) throws ApiException {
@@ -305,7 +305,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Jam object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Jam getJam(@javax.annotation.Nonnull String jamId) throws ApiException {
@@ -324,7 +324,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Jam object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Jam> getJamWithHttpInfo(@javax.annotation.Nonnull String jamId) throws ApiException {
@@ -345,7 +345,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a Jam object. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getJamAsync(@javax.annotation.Nonnull String jamId, final ApiCallback<Jam> _callback) throws ApiException {
@@ -368,7 +368,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getJamSubmissionsCall(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable String submitterId, final ApiCallback _callback) throws ApiException {
@@ -448,7 +448,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public List<JamSubmission> getJamSubmissions(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable String submitterId) throws ApiException {
@@ -469,7 +469,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<JamSubmission>> getJamSubmissionsWithHttpInfo(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable String submitterId) throws ApiException {
@@ -492,7 +492,7 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a list of JamSubmission objects. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getJamSubmissionsAsync(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable String contentId, @javax.annotation.Nullable String submitterId, final ApiCallback<List<JamSubmission>> _callback) throws ApiException {
@@ -639,8 +639,9 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call submitJamContentCall(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable CreateJamSubmissionRequest createJamSubmissionRequest, final ApiCallback _callback) throws ApiException {
@@ -712,8 +713,9 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public JamSubmission submitJamContent(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable CreateJamSubmissionRequest createJamSubmissionRequest) throws ApiException {
@@ -733,8 +735,9 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<JamSubmission> submitJamContentWithHttpInfo(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable CreateJamSubmissionRequest createJamSubmissionRequest) throws ApiException {
@@ -756,8 +759,9 @@ public class JamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single JamSubmission object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to show information about a non-existent jam. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call submitJamContentAsync(@javax.annotation.Nonnull String jamId, @javax.annotation.Nullable CreateJamSubmissionRequest createJamSubmissionRequest, final ApiCallback<JamSubmission> _callback) throws ApiException {

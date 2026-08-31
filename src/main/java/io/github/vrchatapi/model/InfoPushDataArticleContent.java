@@ -50,6 +50,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InfoPushDataArticleContent {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
+  private String id;
+
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
   @javax.annotation.Nullable
@@ -65,8 +70,37 @@ public class InfoPushDataArticleContent {
   @javax.annotation.Nullable
   private String text;
 
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
+  private String title;
+
+  public static final String SERIALIZED_NAME_VIDEO_URL = "videoUrl";
+  @SerializedName(SERIALIZED_NAME_VIDEO_URL)
+  @javax.annotation.Nullable
+  private String videoUrl;
+
   public InfoPushDataArticleContent() {
   }
+
+  public InfoPushDataArticleContent id(@javax.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+   */
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
+  }
+
 
   public InfoPushDataArticleContent imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
@@ -125,6 +159,44 @@ public class InfoPushDataArticleContent {
   }
 
 
+  public InfoPushDataArticleContent title(@javax.annotation.Nullable String title) {
+    this.title = title;
+    return this;
+  }
+
+  /**
+   * Get title
+   * @return title
+   */
+  @javax.annotation.Nullable
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(@javax.annotation.Nullable String title) {
+    this.title = title;
+  }
+
+
+  public InfoPushDataArticleContent videoUrl(@javax.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
+    return this;
+  }
+
+  /**
+   * Get videoUrl
+   * @return videoUrl
+   */
+  @javax.annotation.Nullable
+  public String getVideoUrl() {
+    return videoUrl;
+  }
+
+  public void setVideoUrl(@javax.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,23 +207,29 @@ public class InfoPushDataArticleContent {
       return false;
     }
     InfoPushDataArticleContent infoPushDataArticleContent = (InfoPushDataArticleContent) o;
-    return Objects.equals(this.imageUrl, infoPushDataArticleContent.imageUrl) &&
+    return Objects.equals(this.id, infoPushDataArticleContent.id) &&
+        Objects.equals(this.imageUrl, infoPushDataArticleContent.imageUrl) &&
         Objects.equals(this.onPressed, infoPushDataArticleContent.onPressed) &&
-        Objects.equals(this.text, infoPushDataArticleContent.text);
+        Objects.equals(this.text, infoPushDataArticleContent.text) &&
+        Objects.equals(this.title, infoPushDataArticleContent.title) &&
+        Objects.equals(this.videoUrl, infoPushDataArticleContent.videoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(imageUrl, onPressed, text);
+    return Objects.hash(id, imageUrl, onPressed, text, title, videoUrl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InfoPushDataArticleContent {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    onPressed: ").append(toIndentedString(onPressed)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,7 +248,7 @@ public class InfoPushDataArticleContent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("imageUrl", "onPressed", "text"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "imageUrl", "onPressed", "text", "title", "videoUrl"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -197,6 +275,9 @@ public class InfoPushDataArticleContent {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
@@ -206,6 +287,12 @@ public class InfoPushDataArticleContent {
       }
       if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
+      }
+      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if ((jsonObj.get("videoUrl") != null && !jsonObj.get("videoUrl").isJsonNull()) && !jsonObj.get("videoUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `videoUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("videoUrl").toString()));
       }
   }
 

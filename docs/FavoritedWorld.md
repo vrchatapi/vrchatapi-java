@@ -14,6 +14,7 @@
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
 |**favoriteGroup** | **String** |  |  |
 |**favoriteId** | **String** |  |  |
 |**favorites** | **Integer** |  |  [optional] |

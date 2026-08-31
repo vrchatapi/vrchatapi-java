@@ -86,6 +86,11 @@ public class World {
   @javax.annotation.Nonnull
   private String description;
 
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<Object> disabledPropAbilities = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_FAVORITES = "favorites";
   @SerializedName(SERIALIZED_NAME_FAVORITES)
   @javax.annotation.Nullable
@@ -175,6 +180,11 @@ public class World {
   @SerializedName(SERIALIZED_NAME_RELEASE_STATUS)
   @javax.annotation.Nonnull
   private ReleaseStatus releaseStatus = ReleaseStatus.PUBLIC;
+
+  public static final String SERIALIZED_NAME_SLIM_INSTANCES = "slimInstances";
+  @SerializedName(SERIALIZED_NAME_SLIM_INSTANCES)
+  @javax.annotation.Nullable
+  private List<Object> slimInstances = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STORE_ID = "storeId";
   @SerializedName(SERIALIZED_NAME_STORE_ID)
@@ -335,6 +345,33 @@ public class World {
 
   public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
+  }
+
+
+  public World disabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public World addDisabledPropAbilitiesItem(Object disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<Object> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
   }
 
 
@@ -694,6 +731,33 @@ public class World {
   }
 
 
+  public World slimInstances(@javax.annotation.Nullable List<Object> slimInstances) {
+    this.slimInstances = slimInstances;
+    return this;
+  }
+
+  public World addSlimInstancesItem(Object slimInstancesItem) {
+    if (this.slimInstances == null) {
+      this.slimInstances = new ArrayList<>();
+    }
+    this.slimInstances.add(slimInstancesItem);
+    return this;
+  }
+
+  /**
+   * Get slimInstances
+   * @return slimInstances
+   */
+  @javax.annotation.Nullable
+  public List<Object> getSlimInstances() {
+    return slimInstances;
+  }
+
+  public void setSlimInstances(@javax.annotation.Nullable List<Object> slimInstances) {
+    this.slimInstances = slimInstances;
+  }
+
+
   public World storeId(@javax.annotation.Nullable String storeId) {
     this.storeId = storeId;
     return this;
@@ -915,6 +979,7 @@ public class World {
         Objects.equals(this.createdAt, world.createdAt) &&
         Objects.equals(this.defaultContentSettings, world.defaultContentSettings) &&
         Objects.equals(this.description, world.description) &&
+        Objects.equals(this.disabledPropAbilities, world.disabledPropAbilities) &&
         Objects.equals(this.favorites, world.favorites) &&
         Objects.equals(this.featured, world.featured) &&
         Objects.equals(this.heat, world.heat) &&
@@ -933,6 +998,7 @@ public class World {
         Objects.equals(this.publicationDate, world.publicationDate) &&
         Objects.equals(this.recommendedCapacity, world.recommendedCapacity) &&
         Objects.equals(this.releaseStatus, world.releaseStatus) &&
+        Objects.equals(this.slimInstances, world.slimInstances) &&
         Objects.equals(this.storeId, world.storeId) &&
         Objects.equals(this.tags, world.tags) &&
         Objects.equals(this.thumbnailImageUrl, world.thumbnailImageUrl) &&
@@ -950,7 +1016,7 @@ public class World {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, favorites, featured, heat, id, imageUrl, instances, labsPublicationDate, name, namespace, occupants, organization, popularity, previewYoutubeId, privateOccupants, publicOccupants, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favorites, featured, heat, id, imageUrl, instances, labsPublicationDate, name, namespace, occupants, organization, popularity, previewYoutubeId, privateOccupants, publicOccupants, publicationDate, recommendedCapacity, releaseStatus, slimInstances, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -970,6 +1036,7 @@ public class World {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    defaultContentSettings: ").append(toIndentedString(defaultContentSettings)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
     sb.append("    favorites: ").append(toIndentedString(favorites)).append("\n");
     sb.append("    featured: ").append(toIndentedString(featured)).append("\n");
     sb.append("    heat: ").append(toIndentedString(heat)).append("\n");
@@ -988,6 +1055,7 @@ public class World {
     sb.append("    publicationDate: ").append(toIndentedString(publicationDate)).append("\n");
     sb.append("    recommendedCapacity: ").append(toIndentedString(recommendedCapacity)).append("\n");
     sb.append("    releaseStatus: ").append(toIndentedString(releaseStatus)).append("\n");
+    sb.append("    slimInstances: ").append(toIndentedString(slimInstances)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    thumbnailImageUrl: ").append(toIndentedString(thumbnailImageUrl)).append("\n");
@@ -1015,7 +1083,7 @@ public class World {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "favorites", "featured", "heat", "id", "imageUrl", "instances", "labsPublicationDate", "name", "namespace", "occupants", "organization", "popularity", "previewYoutubeId", "privateOccupants", "publicOccupants", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favorites", "featured", "heat", "id", "imageUrl", "instances", "labsPublicationDate", "name", "namespace", "occupants", "organization", "popularity", "previewYoutubeId", "privateOccupants", "publicOccupants", "publicationDate", "recommendedCapacity", "releaseStatus", "slimInstances", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "description", "featured", "heat", "id", "imageUrl", "labsPublicationDate", "name", "organization", "popularity", "publicationDate", "recommendedCapacity", "releaseStatus", "tags", "thumbnailImageUrl", "updated_at", "version", "visits"));
@@ -1062,6 +1130,10 @@ public class World {
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
+      }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -1092,6 +1164,10 @@ public class World {
       }
       // validate the required field `releaseStatus`
       ReleaseStatus.validateJsonElement(jsonObj.get("releaseStatus"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("slimInstances") != null && !jsonObj.get("slimInstances").isJsonNull() && !jsonObj.get("slimInstances").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `slimInstances` to be an array in the JSON string but got `%s`", jsonObj.get("slimInstances").toString()));
+      }
       if ((jsonObj.get("storeId") != null && !jsonObj.get("storeId").isJsonNull()) && !jsonObj.get("storeId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeId").toString()));
       }

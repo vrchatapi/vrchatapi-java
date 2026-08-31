@@ -30,6 +30,7 @@ import io.github.vrchatapi.model.CreatePropRequest;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Prop;
 import io.github.vrchatapi.model.PropPublishStatus;
+import io.github.vrchatapi.model.RouteNotImplemented;
 import io.github.vrchatapi.model.UpdatePropRequest;
 
 import java.lang.reflect.Type;
@@ -223,7 +224,7 @@ public class PropsApi {
         <tr><td> 200 </td><td> The Prop is successfully deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePropCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
@@ -294,7 +295,7 @@ public class PropsApi {
         <tr><td> 200 </td><td> The Prop is successfully deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public void deleteProp(@javax.annotation.Nonnull String propId) throws ApiException {
@@ -314,7 +315,7 @@ public class PropsApi {
         <tr><td> 200 </td><td> The Prop is successfully deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> deletePropWithHttpInfo(@javax.annotation.Nonnull String propId) throws ApiException {
@@ -336,7 +337,7 @@ public class PropsApi {
         <tr><td> 200 </td><td> The Prop is successfully deleted. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePropAsync(@javax.annotation.Nonnull String propId, final ApiCallback<Void> _callback) throws ApiException {
@@ -357,7 +358,7 @@ public class PropsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPropCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
@@ -428,7 +429,7 @@ public class PropsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Prop getProp(@javax.annotation.Nonnull String propId) throws ApiException {
@@ -448,7 +449,7 @@ public class PropsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Prop> getPropWithHttpInfo(@javax.annotation.Nonnull String propId) throws ApiException {
@@ -470,7 +471,7 @@ public class PropsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPropAsync(@javax.annotation.Nonnull String propId, final ApiCallback<Prop> _callback) throws ApiException {
@@ -493,9 +494,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getPropPublishStatusCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -541,6 +544,7 @@ public class PropsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getPropPublishStatusValidateBeforeCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'propId' is set
@@ -554,7 +558,7 @@ public class PropsApi {
 
     /**
      * Get Prop Publish Status
-     * Returns a PropPublishStatus object.
+     * Return the PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return PropPublishStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -565,9 +569,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public PropPublishStatus getPropPublishStatus(@javax.annotation.Nonnull String propId) throws ApiException {
         ApiResponse<PropPublishStatus> localVarResp = getPropPublishStatusWithHttpInfo(propId);
         return localVarResp.getData();
@@ -575,7 +581,7 @@ public class PropsApi {
 
     /**
      * Get Prop Publish Status
-     * Returns a PropPublishStatus object.
+     * Return the PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return ApiResponse&lt;PropPublishStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -586,9 +592,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<PropPublishStatus> getPropPublishStatusWithHttpInfo(@javax.annotation.Nonnull String propId) throws ApiException {
         okhttp3.Call localVarCall = getPropPublishStatusValidateBeforeCall(propId, null);
         Type localVarReturnType = new TypeToken<PropPublishStatus>(){}.getType();
@@ -597,7 +605,7 @@ public class PropsApi {
 
     /**
      * Get Prop Publish Status (asynchronously)
-     * Returns a PropPublishStatus object.
+     * Return the PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -609,9 +617,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getPropPublishStatusAsync(@javax.annotation.Nonnull String propId, final ApiCallback<PropPublishStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPropPublishStatusValidateBeforeCall(propId, _callback);
@@ -786,9 +796,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call publishPropCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -834,6 +846,7 @@ public class PropsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call publishPropValidateBeforeCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'propId' is set
@@ -847,7 +860,7 @@ public class PropsApi {
 
     /**
      * Publish Prop
-     * Publish a Prop and return the updated PropPublishStatus object.
+     * Publish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return PropPublishStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -858,9 +871,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public PropPublishStatus publishProp(@javax.annotation.Nonnull String propId) throws ApiException {
         ApiResponse<PropPublishStatus> localVarResp = publishPropWithHttpInfo(propId);
         return localVarResp.getData();
@@ -868,7 +883,7 @@ public class PropsApi {
 
     /**
      * Publish Prop
-     * Publish a Prop and return the updated PropPublishStatus object.
+     * Publish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return ApiResponse&lt;PropPublishStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -879,9 +894,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<PropPublishStatus> publishPropWithHttpInfo(@javax.annotation.Nonnull String propId) throws ApiException {
         okhttp3.Call localVarCall = publishPropValidateBeforeCall(propId, null);
         Type localVarReturnType = new TypeToken<PropPublishStatus>(){}.getType();
@@ -890,7 +907,7 @@ public class PropsApi {
 
     /**
      * Publish Prop (asynchronously)
-     * Publish a Prop and return the updated PropPublishStatus object.
+     * Publish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -902,9 +919,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call publishPropAsync(@javax.annotation.Nonnull String propId, final ApiCallback<PropPublishStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = publishPropValidateBeforeCall(propId, _callback);
@@ -925,9 +944,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call unpublishPropCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -973,6 +994,7 @@ public class PropsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call unpublishPropValidateBeforeCall(@javax.annotation.Nonnull String propId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'propId' is set
@@ -986,7 +1008,7 @@ public class PropsApi {
 
     /**
      * Unpublish Prop
-     * Unpublish a Prop and return the updated PropPublishStatus object.
+     * Unpublish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return PropPublishStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -997,9 +1019,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public PropPublishStatus unpublishProp(@javax.annotation.Nonnull String propId) throws ApiException {
         ApiResponse<PropPublishStatus> localVarResp = unpublishPropWithHttpInfo(propId);
         return localVarResp.getData();
@@ -1007,7 +1031,7 @@ public class PropsApi {
 
     /**
      * Unpublish Prop
-     * Unpublish a Prop and return the updated PropPublishStatus object.
+     * Unpublish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @return ApiResponse&lt;PropPublishStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1018,9 +1042,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<PropPublishStatus> unpublishPropWithHttpInfo(@javax.annotation.Nonnull String propId) throws ApiException {
         okhttp3.Call localVarCall = unpublishPropValidateBeforeCall(propId, null);
         Type localVarReturnType = new TypeToken<PropPublishStatus>(){}.getType();
@@ -1029,7 +1055,7 @@ public class PropsApi {
 
     /**
      * Unpublish Prop (asynchronously)
-     * Unpublish a Prop and return the updated PropPublishStatus object.
+     * Unpublish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
      * @param propId Prop ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1041,9 +1067,11 @@ public class PropsApi {
         <tr><td> 200 </td><td> Returns a single PropPublishStatus object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> VRChat does not serve this route. A live route answers 200 or 401. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call unpublishPropAsync(@javax.annotation.Nonnull String propId, final ApiCallback<PropPublishStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = unpublishPropValidateBeforeCall(propId, _callback);
@@ -1063,9 +1091,10 @@ public class PropsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePropCall(@javax.annotation.Nonnull String propId, @javax.annotation.Nonnull UpdatePropRequest updatePropRequest, final ApiCallback _callback) throws ApiException {
@@ -1142,9 +1171,10 @@ public class PropsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Prop updateProp(@javax.annotation.Nonnull String propId, @javax.annotation.Nonnull UpdatePropRequest updatePropRequest) throws ApiException {
@@ -1164,9 +1194,10 @@ public class PropsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Prop> updatePropWithHttpInfo(@javax.annotation.Nonnull String propId, @javax.annotation.Nonnull UpdatePropRequest updatePropRequest) throws ApiException {
@@ -1188,9 +1219,10 @@ public class PropsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Prop object. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing prop. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePropAsync(@javax.annotation.Nonnull String propId, @javax.annotation.Nonnull UpdatePropRequest updatePropRequest, final ApiCallback<Prop> _callback) throws ApiException {

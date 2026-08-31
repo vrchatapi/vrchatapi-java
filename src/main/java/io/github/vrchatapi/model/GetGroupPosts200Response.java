@@ -57,6 +57,11 @@ public class GetGroupPosts200Response {
   @javax.annotation.Nullable
   private List<GroupPost> posts = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
+  @javax.annotation.Nullable
+  private Integer total;
+
   public GetGroupPosts200Response() {
   }
 
@@ -87,6 +92,25 @@ public class GetGroupPosts200Response {
   }
 
 
+  public GetGroupPosts200Response total(@javax.annotation.Nullable Integer total) {
+    this.total = total;
+    return this;
+  }
+
+  /**
+   * Get total
+   * @return total
+   */
+  @javax.annotation.Nullable
+  public Integer getTotal() {
+    return total;
+  }
+
+  public void setTotal(@javax.annotation.Nullable Integer total) {
+    this.total = total;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -97,12 +121,13 @@ public class GetGroupPosts200Response {
       return false;
     }
     GetGroupPosts200Response getGroupPosts200Response = (GetGroupPosts200Response) o;
-    return Objects.equals(this.posts, getGroupPosts200Response.posts);
+    return Objects.equals(this.posts, getGroupPosts200Response.posts) &&
+        Objects.equals(this.total, getGroupPosts200Response.total);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(posts);
+    return Objects.hash(posts, total);
   }
 
   @Override
@@ -110,6 +135,7 @@ public class GetGroupPosts200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetGroupPosts200Response {\n");
     sb.append("    posts: ").append(toIndentedString(posts)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -128,7 +154,7 @@ public class GetGroupPosts200Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("posts"));
+    openapiFields = new HashSet<String>(Arrays.asList("posts", "total"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

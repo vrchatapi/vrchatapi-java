@@ -26,6 +26,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InventoryTemplate {
+  public static final String SERIALIZED_NAME_ATTRIBUTION = "attribution";
+  @SerializedName(SERIALIZED_NAME_ATTRIBUTION)
+  @javax.annotation.Nullable
+  private Object attribution = null;
+
   public static final String SERIALIZED_NAME_AUTHOR_ID = "authorId";
   @SerializedName(SERIALIZED_NAME_AUTHOR_ID)
   @javax.annotation.Nonnull
@@ -79,6 +85,11 @@ public class InventoryTemplate {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nonnull
   private String description;
+
+  public static final String SERIALIZED_NAME_DROP_STATUS = "dropStatus";
+  @SerializedName(SERIALIZED_NAME_DROP_STATUS)
+  @javax.annotation.Nullable
+  private String dropStatus;
 
   public static final String SERIALIZED_NAME_EQUIP_SLOTS = "equipSlots";
   @SerializedName(SERIALIZED_NAME_EQUIP_SLOTS)
@@ -127,7 +138,7 @@ public class InventoryTemplate {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
@@ -147,6 +158,25 @@ public class InventoryTemplate {
 
   public InventoryTemplate() {
   }
+
+  public InventoryTemplate attribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
+    return this;
+  }
+
+  /**
+   * Get attribution
+   * @return attribution
+   */
+  @javax.annotation.Nullable
+  public Object getAttribution() {
+    return attribution;
+  }
+
+  public void setAttribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
+  }
+
 
   public InventoryTemplate authorId(@javax.annotation.Nonnull String authorId) {
     this.authorId = authorId;
@@ -248,6 +278,25 @@ public class InventoryTemplate {
 
   public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
+  }
+
+
+  public InventoryTemplate dropStatus(@javax.annotation.Nullable String dropStatus) {
+    this.dropStatus = dropStatus;
+    return this;
+  }
+
+  /**
+   * Get dropStatus
+   * @return dropStatus
+   */
+  @javax.annotation.Nullable
+  public String getDropStatus() {
+    return dropStatus;
+  }
+
+  public void setDropStatus(@javax.annotation.Nullable String dropStatus) {
+    this.dropStatus = dropStatus;
   }
 
 
@@ -438,7 +487,7 @@ public class InventoryTemplate {
   }
 
 
-  public InventoryTemplate status(@javax.annotation.Nonnull String status) {
+  public InventoryTemplate status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
@@ -447,12 +496,12 @@ public class InventoryTemplate {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
@@ -532,11 +581,13 @@ public class InventoryTemplate {
       return false;
     }
     InventoryTemplate inventoryTemplate = (InventoryTemplate) o;
-    return Objects.equals(this.authorId, inventoryTemplate.authorId) &&
+    return Objects.equals(this.attribution, inventoryTemplate.attribution) &&
+        Objects.equals(this.authorId, inventoryTemplate.authorId) &&
         Objects.equals(this.collections, inventoryTemplate.collections) &&
         Objects.equals(this.createdAt, inventoryTemplate.createdAt) &&
         Objects.equals(this.defaultAttributes, inventoryTemplate.defaultAttributes) &&
         Objects.equals(this.description, inventoryTemplate.description) &&
+        Objects.equals(this.dropStatus, inventoryTemplate.dropStatus) &&
         Objects.equals(this.equipSlots, inventoryTemplate.equipSlots) &&
         Objects.equals(this.flags, inventoryTemplate.flags) &&
         Objects.equals(this.id, inventoryTemplate.id) &&
@@ -552,20 +603,33 @@ public class InventoryTemplate {
         Objects.equals(this.validateUserAttributes, inventoryTemplate.validateUserAttributes);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, collections, createdAt, defaultAttributes, description, equipSlots, flags, id, imageUrl, itemType, itemTypeLabel, metadata, name, notificationDetails, status, tags, updatedAt, validateUserAttributes);
+    return Objects.hash(attribution, authorId, collections, createdAt, defaultAttributes, description, dropStatus, equipSlots, flags, id, imageUrl, itemType, itemTypeLabel, metadata, name, notificationDetails, status, tags, updatedAt, validateUserAttributes);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InventoryTemplate {\n");
+    sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
     sb.append("    collections: ").append(toIndentedString(collections)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    defaultAttributes: ").append(toIndentedString(defaultAttributes)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    dropStatus: ").append(toIndentedString(dropStatus)).append("\n");
     sb.append("    equipSlots: ").append(toIndentedString(equipSlots)).append("\n");
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -597,10 +661,10 @@ public class InventoryTemplate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "collections", "created_at", "defaultAttributes", "description", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "metadata", "name", "notificationDetails", "status", "tags", "updated_at", "validateUserAttributes"));
+    openapiFields = new HashSet<String>(Arrays.asList("attribution", "authorId", "collections", "created_at", "defaultAttributes", "description", "dropStatus", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "metadata", "name", "notificationDetails", "status", "tags", "updated_at", "validateUserAttributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "collections", "created_at", "defaultAttributes", "description", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "name", "status", "tags", "updated_at", "validateUserAttributes"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "collections", "created_at", "defaultAttributes", "description", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "name", "tags", "updated_at", "validateUserAttributes"));
   }
 
   /**
@@ -643,6 +707,9 @@ public class InventoryTemplate {
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      if ((jsonObj.get("dropStatus") != null && !jsonObj.get("dropStatus").isJsonNull()) && !jsonObj.get("dropStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dropStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dropStatus").toString()));
+      }
       // ensure the required json array is present
       if (jsonObj.get("equipSlots") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
@@ -677,7 +744,7 @@ public class InventoryTemplate {
       if (jsonObj.get("notificationDetails") != null && !jsonObj.get("notificationDetails").isJsonNull()) {
         InventoryNotificationDetails.validateJsonElement(jsonObj.get("notificationDetails"));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // ensure the required json array is present

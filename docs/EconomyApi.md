@@ -401,7 +401,7 @@ This endpoint does not need any parameter.
 
 Get Balance
 
-Gets the balance of a user
+Return the balance of a user.
 
 ### Example
 ```java
@@ -471,7 +471,7 @@ public class Example {
 
 Get Balance Earnings
 
-Gets the balance of a user from earnings
+Return the user&#39;s balance from earnings.
 
 ### Example
 ```java
@@ -534,6 +534,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Balance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getBulkGiftPurchases"></a>
 # **getBulkGiftPurchases**
@@ -673,7 +674,7 @@ This endpoint does not need any parameter.
 
 <a id="getEarningsMetrics"></a>
 # **getEarningsMetrics**
-> EarningsMetrics getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration)
+> EarningsMetrics getEarningsMetrics(metricDateStart, metricDateEnd, sellerId, groupByDuration)
 
 Get Earnings Metrics
 
@@ -701,12 +702,12 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String sellerId = "sellerId_example"; // String | Seller to retrieve economy metrics for.
     String metricDateStart = "2026-03-28T23:00:00.000Z"; // String | Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
     String metricDateEnd = "2026-04-04T21:59:59.999Z"; // String | Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+    String sellerId = "sellerId_example"; // String | Filter results by seller.
     String groupByDuration = "days"; // String | Time bucket size for economy metrics. Observed values include `days` and `years`.
     try {
-      EarningsMetrics result = apiInstance.getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration);
+      EarningsMetrics result = apiInstance.getEarningsMetrics(metricDateStart, metricDateEnd, sellerId, groupByDuration);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EconomyApi#getEarningsMetrics");
@@ -723,9 +724,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sellerId** | **String**| Seller to retrieve economy metrics for. | |
 | **metricDateStart** | **String**| Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] |
 | **metricDateEnd** | **String**| Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] |
+| **sellerId** | **String**| Filter results by seller. | [optional] |
 | **groupByDuration** | **String**| Time bucket size for economy metrics. Observed values include &#x60;days&#x60; and &#x60;years&#x60;. | [optional] |
 
 ### Return type
@@ -955,6 +956,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns an EconomyPayoutStatus object. |  -  |
+| **400** | Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getEconomyPayouts"></a>
@@ -1320,6 +1322,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a list of ProductListing objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when requesting another user&#39;s product listings. |  -  |
 
 <a id="getProductPurchase"></a>
 # **getProductPurchase**
@@ -1699,7 +1702,7 @@ This endpoint does not need any parameter.
 
 Get Seller Eligibility
 
-Get the eligibility of the currently authenticated user to become a seller
+Return the current user&#39;s eligibility to become a seller.
 
 ### Example
 ```java
@@ -1758,6 +1761,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Returns a single SellerEligibility object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getSteamTransaction"></a>
 # **getSteamTransaction**
@@ -2045,7 +2049,7 @@ public class Example {
 
 <a id="getSubscriptions"></a>
 # **getSubscriptions**
-> List&lt;Subscription&gt; getSubscriptions()
+> List&lt;Subscription&gt; getSubscriptions(gifts, recurring)
 
 List Subscriptions
 
@@ -2073,8 +2077,10 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
+    Boolean gifts = true; // Boolean | Return giftable subscriptions instead of standard ones.
+    Boolean recurring = true; // Boolean | Return recurring subscriptions instead of standard ones.
     try {
-      List<Subscription> result = apiInstance.getSubscriptions();
+      List<Subscription> result = apiInstance.getSubscriptions(gifts, recurring);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EconomyApi#getSubscriptions");
@@ -2088,7 +2094,11 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **gifts** | **Boolean**| Return giftable subscriptions instead of standard ones. | [optional] |
+| **recurring** | **Boolean**| Return recurring subscriptions instead of standard ones. | [optional] |
 
 ### Return type
 
@@ -2115,7 +2125,7 @@ This endpoint does not need any parameter.
 
 Get Tilia Status
 
-Gets the status of Tilia integration
+Return the Tilia integration status.
 
 ### Example
 ```java
@@ -2174,6 +2184,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Returns a single TiliaStatus object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getTiliaTos"></a>
 # **getTiliaTos**
@@ -2181,7 +2192,7 @@ This endpoint does not need any parameter.
 
 Get Tilia TOS Agreement Status
 
-Gets the status of the agreement of a user to the Tilia TOS
+Return the user&#39;s Tilia TOS agreement status.
 
 ### Example
 ```java
@@ -2244,6 +2255,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single TiliaTOS object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getTokenBundles"></a>
 # **getTokenBundles**
@@ -2317,7 +2329,7 @@ This endpoint does not need any parameter.
 
 Get User Credits Eligibility
 
-Get the user&#39;s eligibility status for subscriptions based on available credits.
+Return the user&#39;s subscription credit eligibility.
 
 ### Example
 ```java
@@ -2382,6 +2394,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single UserCreditsEligible object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getUserSubscriptionEligible"></a>
 # **getUserSubscriptionEligible**
@@ -2523,6 +2536,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a TiliaKyc object. |  -  |
+| **400** | Error response when the account is not in a state that supports the request, such as an account never onboarded for payouts. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="listStores"></a>
@@ -2531,7 +2545,7 @@ public class Example {
 
 List Stores
 
-Lists stores, optionally filtered to a seller and adjusted for management views.
+List a seller&#39;s stores, adjusted for management views.
 
 ### Example
 ```java
@@ -2555,7 +2569,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String sellerId = "sellerId_example"; // String | Filter results by seller.
+    String sellerId = "sellerId_example"; // String | Seller to scope the results to.
     Boolean managementPov = true; // Boolean | Return stores from the seller management point of view.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
@@ -2577,7 +2591,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sellerId** | **String**| Filter results by seller. | [optional] |
+| **sellerId** | **String**| Seller to scope the results to. | |
 | **managementPov** | **Boolean**| Return stores from the seller management point of view. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
@@ -2599,7 +2613,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of Store objects. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when the seller&#39;s stores are unavailable to the caller. |  -  |
 
 <a id="listUserProducts"></a>
 # **listUserProducts**
@@ -2897,7 +2913,7 @@ public class Example {
 
 Update Tilia TOS Agreement Status
 
-Updates the status of the agreement of a user to the Tilia TOS
+Update the user&#39;s Tilia TOS agreement status.
 
 ### Example
 ```java
@@ -2962,4 +2978,5 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a UserSubscription object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 

@@ -51,6 +51,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class Jam {
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime createdAt;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nonnull
@@ -96,6 +101,11 @@ public class Jam {
   @javax.annotation.Nonnull
   private String title;
 
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
+  private String type;
+
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nonnull
@@ -103,6 +113,25 @@ public class Jam {
 
   public Jam() {
   }
+
+  public Jam createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  /**
+   * Get createdAt
+   * @return createdAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
 
   public Jam description(@javax.annotation.Nonnull String description) {
     this.description = description;
@@ -275,6 +304,25 @@ public class Jam {
   }
 
 
+  public Jam type(@javax.annotation.Nonnull String type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nonnull
+  public String getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nonnull String type) {
+    this.type = type;
+  }
+
+
   public Jam updatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -304,7 +352,8 @@ public class Jam {
       return false;
     }
     Jam jam = (Jam) o;
-    return Objects.equals(this.description, jam.description) &&
+    return Objects.equals(this.createdAt, jam.createdAt) &&
+        Objects.equals(this.description, jam.description) &&
         Objects.equals(this.id, jam.id) &&
         Objects.equals(this.isVisible, jam.isVisible) &&
         Objects.equals(this.moreInfo, jam.moreInfo) &&
@@ -313,18 +362,20 @@ public class Jam {
         Objects.equals(this.submissionContentGateDate, jam.submissionContentGateDate) &&
         Objects.equals(this.submissionContentGated, jam.submissionContentGated) &&
         Objects.equals(this.title, jam.title) &&
+        Objects.equals(this.type, jam.type) &&
         Objects.equals(this.updatedAt, jam.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, isVisible, moreInfo, state, stateChangeDates, submissionContentGateDate, submissionContentGated, title, updatedAt);
+    return Objects.hash(createdAt, description, id, isVisible, moreInfo, state, stateChangeDates, submissionContentGateDate, submissionContentGated, title, type, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Jam {\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
@@ -334,6 +385,7 @@ public class Jam {
     sb.append("    submissionContentGateDate: ").append(toIndentedString(submissionContentGateDate)).append("\n");
     sb.append("    submissionContentGated: ").append(toIndentedString(submissionContentGated)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -353,10 +405,10 @@ public class Jam {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "id", "isVisible", "moreInfo", "state", "stateChangeDates", "submissionContentGateDate", "submissionContentGated", "title", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "isVisible", "moreInfo", "state", "stateChangeDates", "submissionContentGateDate", "submissionContentGated", "title", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("description", "id", "isVisible", "moreInfo", "state", "stateChangeDates", "submissionContentGateDate", "submissionContentGated", "title", "updated_at"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("description", "id", "isVisible", "moreInfo", "state", "stateChangeDates", "submissionContentGateDate", "submissionContentGated", "title", "type", "updated_at"));
   }
 
   /**
@@ -403,6 +455,9 @@ public class Jam {
       JamStateChangeDates.validateJsonElement(jsonObj.get("stateChangeDates"));
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if (!jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

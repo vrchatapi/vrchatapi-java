@@ -39,6 +39,7 @@
 |**physBoneTransformCount** | **Integer** |  |  |
 |**physicsColliders** | **Integer** |  |  |
 |**physicsRigidbodies** | **Integer** |  |  |
+|**raycastCount** | **Integer** |  |  [optional] |
 |**skinnedMeshCount** | **Integer** |  |  |
 |**skinnedMeshIndices** | **Integer** |  |  |
 |**skinnedMeshPolygons** | **Integer** |  |  |

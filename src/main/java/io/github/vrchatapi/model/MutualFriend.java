@@ -57,6 +57,16 @@ public class MutualFriend {
   @javax.annotation.Nullable
   private String avatarThumbnail;
 
+  public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
+  @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
+  @javax.annotation.Nullable
+  private String bannerColor;
+
+  public static final String SERIALIZED_NAME_BANNER_TYPE = "bannerType";
+  @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
+  @javax.annotation.Nullable
+  private String bannerType;
+
   public static final String SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL = "currentAvatarImageUrl";
   @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL)
   @javax.annotation.Nonnull
@@ -77,6 +87,16 @@ public class MutualFriend {
   @javax.annotation.Nonnull
   private String displayName;
 
+  public static final String SERIALIZED_NAME_ICON_FRAME = "iconFrame";
+  @SerializedName(SERIALIZED_NAME_ICON_FRAME)
+  @javax.annotation.Nullable
+  private String iconFrame;
+
+  public static final String SERIALIZED_NAME_ICON_URL = "iconUrl";
+  @SerializedName(SERIALIZED_NAME_ICON_URL)
+  @javax.annotation.Nullable
+  private String iconUrl;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nonnull
@@ -86,6 +106,16 @@ public class MutualFriend {
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
   @javax.annotation.Nonnull
   private String imageUrl;
+
+  public static final String SERIALIZED_NAME_NAMEPLATE_EFFECT = "nameplateEffect";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_EFFECT)
+  @javax.annotation.Nullable
+  private String nameplateEffect;
+
+  public static final String SERIALIZED_NAME_PROFILE_EFFECT = "profileEffect";
+  @SerializedName(SERIALIZED_NAME_PROFILE_EFFECT)
+  @javax.annotation.Nullable
+  private String profileEffect;
 
   public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
   @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
@@ -121,6 +151,44 @@ public class MutualFriend {
 
   public void setAvatarThumbnail(@javax.annotation.Nullable String avatarThumbnail) {
     this.avatarThumbnail = avatarThumbnail;
+  }
+
+
+  public MutualFriend bannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return bannerColor
+   */
+  @javax.annotation.Nullable
+  public String getBannerColor() {
+    return bannerColor;
+  }
+
+  public void setBannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
+  }
+
+
+  public MutualFriend bannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
+    return this;
+  }
+
+  /**
+   * Get bannerType
+   * @return bannerType
+   */
+  @javax.annotation.Nullable
+  public String getBannerType() {
+    return bannerType;
+  }
+
+  public void setBannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
   }
 
 
@@ -208,6 +276,44 @@ public class MutualFriend {
   }
 
 
+  public MutualFriend iconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+    return this;
+  }
+
+  /**
+   * Get iconFrame
+   * @return iconFrame
+   */
+  @javax.annotation.Nullable
+  public String getIconFrame() {
+    return iconFrame;
+  }
+
+  public void setIconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+  }
+
+
+  public MutualFriend iconUrl(@javax.annotation.Nullable String iconUrl) {
+    this.iconUrl = iconUrl;
+    return this;
+  }
+
+  /**
+   * Get iconUrl
+   * @return iconUrl
+   */
+  @javax.annotation.Nullable
+  public String getIconUrl() {
+    return iconUrl;
+  }
+
+  public void setIconUrl(@javax.annotation.Nullable String iconUrl) {
+    this.iconUrl = iconUrl;
+  }
+
+
   public MutualFriend id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
@@ -243,6 +349,44 @@ public class MutualFriend {
 
   public void setImageUrl(@javax.annotation.Nonnull String imageUrl) {
     this.imageUrl = imageUrl;
+  }
+
+
+  public MutualFriend nameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+    return this;
+  }
+
+  /**
+   * Get nameplateEffect
+   * @return nameplateEffect
+   */
+  @javax.annotation.Nullable
+  public String getNameplateEffect() {
+    return nameplateEffect;
+  }
+
+  public void setNameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+  }
+
+
+  public MutualFriend profileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
+    return this;
+  }
+
+  /**
+   * Get profileEffect
+   * @return profileEffect
+   */
+  @javax.annotation.Nullable
+  public String getProfileEffect() {
+    return profileEffect;
+  }
+
+  public void setProfileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
   }
 
 
@@ -314,12 +458,18 @@ public class MutualFriend {
     }
     MutualFriend mutualFriend = (MutualFriend) o;
     return Objects.equals(this.avatarThumbnail, mutualFriend.avatarThumbnail) &&
+        Objects.equals(this.bannerColor, mutualFriend.bannerColor) &&
+        Objects.equals(this.bannerType, mutualFriend.bannerType) &&
         Objects.equals(this.currentAvatarImageUrl, mutualFriend.currentAvatarImageUrl) &&
         Objects.equals(this.currentAvatarTags, mutualFriend.currentAvatarTags) &&
         Objects.equals(this.currentAvatarThumbnailImageUrl, mutualFriend.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.displayName, mutualFriend.displayName) &&
+        Objects.equals(this.iconFrame, mutualFriend.iconFrame) &&
+        Objects.equals(this.iconUrl, mutualFriend.iconUrl) &&
         Objects.equals(this.id, mutualFriend.id) &&
         Objects.equals(this.imageUrl, mutualFriend.imageUrl) &&
+        Objects.equals(this.nameplateEffect, mutualFriend.nameplateEffect) &&
+        Objects.equals(this.profileEffect, mutualFriend.profileEffect) &&
         Objects.equals(this.profilePicOverride, mutualFriend.profilePicOverride) &&
         Objects.equals(this.status, mutualFriend.status) &&
         Objects.equals(this.statusDescription, mutualFriend.statusDescription);
@@ -327,7 +477,7 @@ public class MutualFriend {
 
   @Override
   public int hashCode() {
-    return Objects.hash(avatarThumbnail, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, displayName, id, imageUrl, profilePicOverride, status, statusDescription);
+    return Objects.hash(avatarThumbnail, bannerColor, bannerType, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, displayName, iconFrame, iconUrl, id, imageUrl, nameplateEffect, profileEffect, profilePicOverride, status, statusDescription);
   }
 
   @Override
@@ -335,12 +485,18 @@ public class MutualFriend {
     StringBuilder sb = new StringBuilder();
     sb.append("class MutualFriend {\n");
     sb.append("    avatarThumbnail: ").append(toIndentedString(avatarThumbnail)).append("\n");
+    sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
+    sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
     sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
     sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
+    sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
+    sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
     sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
@@ -362,7 +518,7 @@ public class MutualFriend {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("avatarThumbnail", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "displayName", "id", "imageUrl", "profilePicOverride", "status", "statusDescription"));
+    openapiFields = new HashSet<String>(Arrays.asList("avatarThumbnail", "bannerColor", "bannerType", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "displayName", "iconFrame", "iconUrl", "id", "imageUrl", "nameplateEffect", "profileEffect", "profilePicOverride", "status", "statusDescription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("currentAvatarImageUrl", "displayName", "id", "imageUrl", "status", "statusDescription"));
@@ -399,6 +555,12 @@ public class MutualFriend {
       if ((jsonObj.get("avatarThumbnail") != null && !jsonObj.get("avatarThumbnail").isJsonNull()) && !jsonObj.get("avatarThumbnail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `avatarThumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatarThumbnail").toString()));
       }
+      if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
+      }
+      if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
       if (!jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
       }
@@ -412,11 +574,23 @@ public class MutualFriend {
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
       }
+      if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
+      }
+      if ((jsonObj.get("iconUrl") != null && !jsonObj.get("iconUrl").isJsonNull()) && !jsonObj.get("iconUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconUrl").toString()));
+      }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
+      }
+      if ((jsonObj.get("nameplateEffect") != null && !jsonObj.get("nameplateEffect").isJsonNull()) && !jsonObj.get("nameplateEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nameplateEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nameplateEffect").toString()));
+      }
+      if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
       if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));

@@ -89,10 +89,10 @@ public class GroupPost {
   @javax.annotation.Nullable
   private String imageUrl;
 
-  public static final String SERIALIZED_NAME_ROLE_ID = "roleId";
-  @SerializedName(SERIALIZED_NAME_ROLE_ID)
+  public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
+  @SerializedName(SERIALIZED_NAME_ROLE_IDS)
   @javax.annotation.Nullable
-  private List<String> roleId = new ArrayList<>();
+  private List<String> roleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
@@ -250,30 +250,30 @@ public class GroupPost {
   }
 
 
-  public GroupPost roleId(@javax.annotation.Nullable List<String> roleId) {
-    this.roleId = roleId;
+  public GroupPost roleIds(@javax.annotation.Nullable List<String> roleIds) {
+    this.roleIds = roleIds;
     return this;
   }
 
-  public GroupPost addRoleIdItem(String roleIdItem) {
-    if (this.roleId == null) {
-      this.roleId = new ArrayList<>();
+  public GroupPost addRoleIdsItem(String roleIdsItem) {
+    if (this.roleIds == null) {
+      this.roleIds = new ArrayList<>();
     }
-    this.roleId.add(roleIdItem);
+    this.roleIds.add(roleIdsItem);
     return this;
   }
 
   /**
    *  
-   * @return roleId
+   * @return roleIds
    */
   @javax.annotation.Nullable
-  public List<String> getRoleId() {
-    return roleId;
+  public List<String> getRoleIds() {
+    return roleIds;
   }
 
-  public void setRoleId(@javax.annotation.Nullable List<String> roleId) {
-    this.roleId = roleId;
+  public void setRoleIds(@javax.annotation.Nullable List<String> roleIds) {
+    this.roleIds = roleIds;
   }
 
 
@@ -370,7 +370,7 @@ public class GroupPost {
         Objects.equals(this.id, groupPost.id) &&
         Objects.equals(this.imageId, groupPost.imageId) &&
         Objects.equals(this.imageUrl, groupPost.imageUrl) &&
-        Objects.equals(this.roleId, groupPost.roleId) &&
+        Objects.equals(this.roleIds, groupPost.roleIds) &&
         Objects.equals(this.text, groupPost.text) &&
         Objects.equals(this.title, groupPost.title) &&
         Objects.equals(this.updatedAt, groupPost.updatedAt) &&
@@ -383,7 +383,7 @@ public class GroupPost {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, createdAt, editorId, groupId, id, imageId, imageUrl, roleId, text, title, updatedAt, visibility);
+    return Objects.hash(authorId, createdAt, editorId, groupId, id, imageId, imageUrl, roleIds, text, title, updatedAt, visibility);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -404,7 +404,7 @@ public class GroupPost {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-    sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -427,7 +427,7 @@ public class GroupPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "createdAt", "editorId", "groupId", "id", "imageId", "imageUrl", "roleId", "text", "title", "updatedAt", "visibility"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "createdAt", "editorId", "groupId", "id", "imageId", "imageUrl", "roleIds", "text", "title", "updatedAt", "visibility"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -473,8 +473,8 @@ public class GroupPost {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("roleId") != null && !jsonObj.get("roleId").isJsonNull() && !jsonObj.get("roleId").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `roleId` to be an array in the JSON string but got `%s`", jsonObj.get("roleId").toString()));
+      if (jsonObj.get("roleIds") != null && !jsonObj.get("roleIds").isJsonNull() && !jsonObj.get("roleIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `roleIds` to be an array in the JSON string but got `%s`", jsonObj.get("roleIds").toString()));
       }
       if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));

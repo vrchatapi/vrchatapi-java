@@ -19,7 +19,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,6 +51,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ReportReason {
+  public static final String SERIALIZED_NAME_POLICY = "policy";
+  @SerializedName(SERIALIZED_NAME_POLICY)
+  @javax.annotation.Nullable
+  private List<String> policy = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
   @javax.annotation.Nonnull
@@ -61,6 +68,33 @@ public class ReportReason {
 
   public ReportReason() {
   }
+
+  public ReportReason policy(@javax.annotation.Nullable List<String> policy) {
+    this.policy = policy;
+    return this;
+  }
+
+  public ReportReason addPolicyItem(String policyItem) {
+    if (this.policy == null) {
+      this.policy = new ArrayList<>();
+    }
+    this.policy.add(policyItem);
+    return this;
+  }
+
+  /**
+   * Get policy
+   * @return policy
+   */
+  @javax.annotation.Nullable
+  public List<String> getPolicy() {
+    return policy;
+  }
+
+  public void setPolicy(@javax.annotation.Nullable List<String> policy) {
+    this.policy = policy;
+  }
+
 
   public ReportReason text(@javax.annotation.Nonnull String text) {
     this.text = text;
@@ -110,19 +144,21 @@ public class ReportReason {
       return false;
     }
     ReportReason reportReason = (ReportReason) o;
-    return Objects.equals(this.text, reportReason.text) &&
+    return Objects.equals(this.policy, reportReason.policy) &&
+        Objects.equals(this.text, reportReason.text) &&
         Objects.equals(this.tooltip, reportReason.tooltip);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, tooltip);
+    return Objects.hash(policy, text, tooltip);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportReason {\n");
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    tooltip: ").append(toIndentedString(tooltip)).append("\n");
     sb.append("}");
@@ -143,7 +179,7 @@ public class ReportReason {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("text", "tooltip"));
+    openapiFields = new HashSet<String>(Arrays.asList("policy", "text", "tooltip"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("text", "tooltip"));
@@ -177,6 +213,10 @@ public class ReportReason {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("policy") != null && !jsonObj.get("policy").isJsonNull() && !jsonObj.get("policy").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `policy` to be an array in the JSON string but got `%s`", jsonObj.get("policy").toString()));
+      }
       if (!jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }

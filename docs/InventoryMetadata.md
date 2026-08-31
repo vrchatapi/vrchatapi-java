@@ -15,6 +15,7 @@
 |**inventoryItemsToInstantiate** | **List&lt;String&gt;** | Only in bundles |  [optional] |
 |**maskTag** | **String** |  |  [optional] |
 |**propId** | **String** |  |  [optional] |
+|**propKind** | **Integer** |  |  [optional] |
 
 
 

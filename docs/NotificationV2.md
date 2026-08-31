@@ -13,6 +13,7 @@
 |**createdAt** | **OffsetDateTime** |  |  |
 |**data** | **Map&lt;String, String&gt;** |  |  |
 |**details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  |  [optional] |
+|**displayData** | **Object** |  |  [optional] |
 |**expiresAt** | **OffsetDateTime** |  |  |
 |**expiryAfterSeen** | **Integer** |  |  |
 |**id** | **String** |  |  |

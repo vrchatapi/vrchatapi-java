@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.Product;
+import io.github.vrchatapi.model.ProductListingAttribution;
 import io.github.vrchatapi.model.ProductListingType;
 import io.github.vrchatapi.model.ProductListingVariant;
 import io.github.vrchatapi.model.ProductType;
@@ -67,10 +68,25 @@ public class ProductListing {
   @javax.annotation.Nullable
   private Boolean archived;
 
+  public static final String SERIALIZED_NAME_ATTRIBUTION = "attribution";
+  @SerializedName(SERIALIZED_NAME_ATTRIBUTION)
+  @javax.annotation.Nullable
+  private ProductListingAttribution attribution;
+
   public static final String SERIALIZED_NAME_BUYER_REFUNDABLE = "buyerRefundable";
   @SerializedName(SERIALIZED_NAME_BUYER_REFUNDABLE)
   @javax.annotation.Nonnull
   private Boolean buyerRefundable;
+
+  public static final String SERIALIZED_NAME_COLLAB_USER_DISPLAY_NAME = "collabUserDisplayName";
+  @SerializedName(SERIALIZED_NAME_COLLAB_USER_DISPLAY_NAME)
+  @javax.annotation.Nullable
+  private String collabUserDisplayName;
+
+  public static final String SERIALIZED_NAME_COLLAB_USER_ID = "collabUserId";
+  @SerializedName(SERIALIZED_NAME_COLLAB_USER_ID)
+  @javax.annotation.Nullable
+  private String collabUserId;
 
   public static final String SERIALIZED_NAME_CREATED = "created";
   @SerializedName(SERIALIZED_NAME_CREATED)
@@ -116,6 +132,16 @@ public class ProductListing {
   @SerializedName(SERIALIZED_NAME_HAS_AVATAR)
   @javax.annotation.Nonnull
   private Boolean hasAvatar;
+
+  public static final String SERIALIZED_NAME_HAS_COMPANION = "hasCompanion";
+  @SerializedName(SERIALIZED_NAME_HAS_COMPANION)
+  @javax.annotation.Nullable
+  private Boolean hasCompanion;
+
+  public static final String SERIALIZED_NAME_HAS_INVENTORY = "hasInventory";
+  @SerializedName(SERIALIZED_NAME_HAS_INVENTORY)
+  @javax.annotation.Nullable
+  private Boolean hasInventory;
 
   public static final String SERIALIZED_NAME_HAS_UDON = "hasUdon";
   @SerializedName(SERIALIZED_NAME_HAS_UDON)
@@ -172,10 +198,15 @@ public class ProductListing {
   @javax.annotation.Nonnull
   private ProductType productType = ProductType.UDON;
 
+  public static final String SERIALIZED_NAME_PRODUCT_TYPES = "productTypes";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_TYPES)
+  @javax.annotation.Nullable
+  private List<String> productTypes = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_PRODUCTS = "products";
   @SerializedName(SERIALIZED_NAME_PRODUCTS)
   @javax.annotation.Nonnull
-  private List<Object> products = new ArrayList<>();
+  private List<String> products = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PURCHASE_COUNT = "purchaseCount";
   @SerializedName(SERIALIZED_NAME_PURCHASE_COUNT)
@@ -293,6 +324,25 @@ public class ProductListing {
   }
 
 
+  public ProductListing attribution(@javax.annotation.Nullable ProductListingAttribution attribution) {
+    this.attribution = attribution;
+    return this;
+  }
+
+  /**
+   * Get attribution
+   * @return attribution
+   */
+  @javax.annotation.Nullable
+  public ProductListingAttribution getAttribution() {
+    return attribution;
+  }
+
+  public void setAttribution(@javax.annotation.Nullable ProductListingAttribution attribution) {
+    this.attribution = attribution;
+  }
+
+
   public ProductListing buyerRefundable(@javax.annotation.Nonnull Boolean buyerRefundable) {
     this.buyerRefundable = buyerRefundable;
     return this;
@@ -309,6 +359,44 @@ public class ProductListing {
 
   public void setBuyerRefundable(@javax.annotation.Nonnull Boolean buyerRefundable) {
     this.buyerRefundable = buyerRefundable;
+  }
+
+
+  public ProductListing collabUserDisplayName(@javax.annotation.Nullable String collabUserDisplayName) {
+    this.collabUserDisplayName = collabUserDisplayName;
+    return this;
+  }
+
+  /**
+   * Get collabUserDisplayName
+   * @return collabUserDisplayName
+   */
+  @javax.annotation.Nullable
+  public String getCollabUserDisplayName() {
+    return collabUserDisplayName;
+  }
+
+  public void setCollabUserDisplayName(@javax.annotation.Nullable String collabUserDisplayName) {
+    this.collabUserDisplayName = collabUserDisplayName;
+  }
+
+
+  public ProductListing collabUserId(@javax.annotation.Nullable String collabUserId) {
+    this.collabUserId = collabUserId;
+    return this;
+  }
+
+  /**
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return collabUserId
+   */
+  @javax.annotation.Nullable
+  public String getCollabUserId() {
+    return collabUserId;
+  }
+
+  public void setCollabUserId(@javax.annotation.Nullable String collabUserId) {
+    this.collabUserId = collabUserId;
   }
 
 
@@ -480,6 +568,44 @@ public class ProductListing {
 
   public void setHasAvatar(@javax.annotation.Nonnull Boolean hasAvatar) {
     this.hasAvatar = hasAvatar;
+  }
+
+
+  public ProductListing hasCompanion(@javax.annotation.Nullable Boolean hasCompanion) {
+    this.hasCompanion = hasCompanion;
+    return this;
+  }
+
+  /**
+   * Get hasCompanion
+   * @return hasCompanion
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasCompanion() {
+    return hasCompanion;
+  }
+
+  public void setHasCompanion(@javax.annotation.Nullable Boolean hasCompanion) {
+    this.hasCompanion = hasCompanion;
+  }
+
+
+  public ProductListing hasInventory(@javax.annotation.Nullable Boolean hasInventory) {
+    this.hasInventory = hasInventory;
+    return this;
+  }
+
+  /**
+   * Get hasInventory
+   * @return hasInventory
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasInventory() {
+    return hasInventory;
+  }
+
+  public void setHasInventory(@javax.annotation.Nullable Boolean hasInventory) {
+    this.hasInventory = hasInventory;
   }
 
 
@@ -716,12 +842,39 @@ public class ProductListing {
   }
 
 
-  public ProductListing products(@javax.annotation.Nonnull List<Object> products) {
+  public ProductListing productTypes(@javax.annotation.Nullable List<String> productTypes) {
+    this.productTypes = productTypes;
+    return this;
+  }
+
+  public ProductListing addProductTypesItem(String productTypesItem) {
+    if (this.productTypes == null) {
+      this.productTypes = new ArrayList<>();
+    }
+    this.productTypes.add(productTypesItem);
+    return this;
+  }
+
+  /**
+   * Get productTypes
+   * @return productTypes
+   */
+  @javax.annotation.Nullable
+  public List<String> getProductTypes() {
+    return productTypes;
+  }
+
+  public void setProductTypes(@javax.annotation.Nullable List<String> productTypes) {
+    this.productTypes = productTypes;
+  }
+
+
+  public ProductListing products(@javax.annotation.Nonnull List<String> products) {
     this.products = products;
     return this;
   }
 
-  public ProductListing addProductsItem(Object productsItem) {
+  public ProductListing addProductsItem(String productsItem) {
     if (this.products == null) {
       this.products = new ArrayList<>();
     }
@@ -730,15 +883,15 @@ public class ProductListing {
   }
 
   /**
-   * Get products
+   * Product ids. The products themselves arrive in &#x60;hydratedProducts&#x60;.
    * @return products
    */
   @javax.annotation.Nonnull
-  public List<Object> getProducts() {
+  public List<String> getProducts() {
     return products;
   }
 
-  public void setProducts(@javax.annotation.Nonnull List<Object> products) {
+  public void setProducts(@javax.annotation.Nonnull List<String> products) {
     this.products = products;
   }
 
@@ -1056,7 +1209,10 @@ public class ProductListing {
     ProductListing productListing = (ProductListing) o;
     return Objects.equals(this.active, productListing.active) &&
         Objects.equals(this.archived, productListing.archived) &&
+        Objects.equals(this.attribution, productListing.attribution) &&
         Objects.equals(this.buyerRefundable, productListing.buyerRefundable) &&
+        Objects.equals(this.collabUserDisplayName, productListing.collabUserDisplayName) &&
+        Objects.equals(this.collabUserId, productListing.collabUserId) &&
         Objects.equals(this.created, productListing.created) &&
         Objects.equals(this.description, productListing.description) &&
         Objects.equals(this.displayName, productListing.displayName) &&
@@ -1066,6 +1222,8 @@ public class ProductListing {
         Objects.equals(this.groupId, productListing.groupId) &&
         Objects.equals(this.groupName, productListing.groupName) &&
         Objects.equals(this.hasAvatar, productListing.hasAvatar) &&
+        Objects.equals(this.hasCompanion, productListing.hasCompanion) &&
+        Objects.equals(this.hasInventory, productListing.hasInventory) &&
         Objects.equals(this.hasUdon, productListing.hasUdon) &&
         Objects.equals(this.hydratedProducts, productListing.hydratedProducts) &&
         Objects.equals(this.id, productListing.id) &&
@@ -1077,6 +1235,7 @@ public class ProductListing {
         Objects.equals(this.priceTokens, productListing.priceTokens) &&
         Objects.equals(this.productIds, productListing.productIds) &&
         Objects.equals(this.productType, productListing.productType) &&
+        Objects.equals(this.productTypes, productListing.productTypes) &&
         Objects.equals(this.products, productListing.products) &&
         Objects.equals(this.purchaseCount, productListing.purchaseCount) &&
         Objects.equals(this.purchaseCountQuantity, productListing.purchaseCountQuantity) &&
@@ -1101,7 +1260,7 @@ public class ProductListing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, archived, buyerRefundable, created, description, displayName, duration, durationType, groupIcon, groupId, groupName, hasAvatar, hasUdon, hydratedProducts, id, imageId, imageUrl, listingType, listingVariants, permanent, priceTokens, productIds, productType, products, purchaseCount, purchaseCountQuantity, quantifiable, recurrable, refundable, sellerDisplayName, sellerId, soldByVrc, stackable, storeIds, subtitle, tags, updated, vrcPlusDiscountPrice, whenToExpire);
+    return Objects.hash(active, archived, attribution, buyerRefundable, collabUserDisplayName, collabUserId, created, description, displayName, duration, durationType, groupIcon, groupId, groupName, hasAvatar, hasCompanion, hasInventory, hasUdon, hydratedProducts, id, imageId, imageUrl, listingType, listingVariants, permanent, priceTokens, productIds, productType, productTypes, products, purchaseCount, purchaseCountQuantity, quantifiable, recurrable, refundable, sellerDisplayName, sellerId, soldByVrc, stackable, storeIds, subtitle, tags, updated, vrcPlusDiscountPrice, whenToExpire);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1117,7 +1276,10 @@ public class ProductListing {
     sb.append("class ProductListing {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
+    sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
     sb.append("    buyerRefundable: ").append(toIndentedString(buyerRefundable)).append("\n");
+    sb.append("    collabUserDisplayName: ").append(toIndentedString(collabUserDisplayName)).append("\n");
+    sb.append("    collabUserId: ").append(toIndentedString(collabUserId)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
@@ -1127,6 +1289,8 @@ public class ProductListing {
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
     sb.append("    hasAvatar: ").append(toIndentedString(hasAvatar)).append("\n");
+    sb.append("    hasCompanion: ").append(toIndentedString(hasCompanion)).append("\n");
+    sb.append("    hasInventory: ").append(toIndentedString(hasInventory)).append("\n");
     sb.append("    hasUdon: ").append(toIndentedString(hasUdon)).append("\n");
     sb.append("    hydratedProducts: ").append(toIndentedString(hydratedProducts)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -1138,6 +1302,7 @@ public class ProductListing {
     sb.append("    priceTokens: ").append(toIndentedString(priceTokens)).append("\n");
     sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+    sb.append("    productTypes: ").append(toIndentedString(productTypes)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("    purchaseCount: ").append(toIndentedString(purchaseCount)).append("\n");
     sb.append("    purchaseCountQuantity: ").append(toIndentedString(purchaseCountQuantity)).append("\n");
@@ -1172,7 +1337,7 @@ public class ProductListing {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "archived", "buyerRefundable", "created", "description", "displayName", "duration", "durationType", "groupIcon", "groupId", "groupName", "hasAvatar", "hasUdon", "hydratedProducts", "id", "imageId", "imageUrl", "listingType", "listingVariants", "permanent", "priceTokens", "productIds", "productType", "products", "purchaseCount", "purchaseCountQuantity", "quantifiable", "recurrable", "refundable", "sellerDisplayName", "sellerId", "soldByVrc", "stackable", "storeIds", "subtitle", "tags", "updated", "vrcPlusDiscountPrice", "whenToExpire"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "archived", "attribution", "buyerRefundable", "collabUserDisplayName", "collabUserId", "created", "description", "displayName", "duration", "durationType", "groupIcon", "groupId", "groupName", "hasAvatar", "hasCompanion", "hasInventory", "hasUdon", "hydratedProducts", "id", "imageId", "imageUrl", "listingType", "listingVariants", "permanent", "priceTokens", "productIds", "productType", "productTypes", "products", "purchaseCount", "purchaseCountQuantity", "quantifiable", "recurrable", "refundable", "sellerDisplayName", "sellerId", "soldByVrc", "stackable", "storeIds", "subtitle", "tags", "updated", "vrcPlusDiscountPrice", "whenToExpire"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("active", "buyerRefundable", "description", "displayName", "hasAvatar", "hasUdon", "id", "listingType", "priceTokens", "productIds", "productType", "products", "recurrable", "refundable", "sellerDisplayName", "sellerId", "stackable", "storeIds"));
@@ -1206,6 +1371,16 @@ public class ProductListing {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `attribution`
+      if (jsonObj.get("attribution") != null && !jsonObj.get("attribution").isJsonNull()) {
+        ProductListingAttribution.validateJsonElement(jsonObj.get("attribution"));
+      }
+      if ((jsonObj.get("collabUserDisplayName") != null && !jsonObj.get("collabUserDisplayName").isJsonNull()) && !jsonObj.get("collabUserDisplayName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `collabUserDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("collabUserDisplayName").toString()));
+      }
+      if ((jsonObj.get("collabUserId") != null && !jsonObj.get("collabUserId").isJsonNull()) && !jsonObj.get("collabUserId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `collabUserId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("collabUserId").toString()));
+      }
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
@@ -1271,6 +1446,10 @@ public class ProductListing {
       }
       // validate the required field `productType`
       ProductType.validateJsonElement(jsonObj.get("productType"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("productTypes") != null && !jsonObj.get("productTypes").isJsonNull() && !jsonObj.get("productTypes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productTypes` to be an array in the JSON string but got `%s`", jsonObj.get("productTypes").toString()));
+      }
       // ensure the required json array is present
       if (jsonObj.get("products") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");

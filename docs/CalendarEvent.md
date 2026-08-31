@@ -26,6 +26,7 @@ An event scheduled on a group's calendar
 |**isDraft** | **Boolean** |  |  [optional] |
 |**languages** | **List&lt;String&gt;** | Languages that might be spoken at this event |  [optional] |
 |**occurrenceKind** | **CalendarEventOccurrenceKind** |  |  [optional] |
+|**occurrenceModified** | **Boolean** |  |  [optional] |
 |**ownerId** | **String** |  |  [optional] |
 |**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
 |**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |

@@ -222,7 +222,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call acknowledgeNotificationV2Call(@javax.annotation.Nonnull String notificationId, final ApiCallback _callback) throws ApiException {
@@ -293,7 +293,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public NotificationV2 acknowledgeNotificationV2(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -313,7 +313,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<NotificationV2> acknowledgeNotificationV2WithHttpInfo(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -335,7 +335,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call acknowledgeNotificationV2Async(@javax.annotation.Nonnull String notificationId, final ApiCallback<NotificationV2> _callback) throws ApiException {
@@ -597,7 +597,7 @@ public class NotificationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Response from successfully hiding a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
@@ -661,18 +661,18 @@ public class NotificationsApi {
      * Delete Notification
      * Delete a notification.
      * @param notificationId Must be a valid notification ID. (required)
-     * @return Notification
+     * @return Success
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Response from successfully hiding a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public Notification deleteNotification(@javax.annotation.Nonnull String notificationId) throws ApiException {
-        ApiResponse<Notification> localVarResp = deleteNotificationWithHttpInfo(notificationId);
+    public Success deleteNotification(@javax.annotation.Nonnull String notificationId) throws ApiException {
+        ApiResponse<Success> localVarResp = deleteNotificationWithHttpInfo(notificationId);
         return localVarResp.getData();
     }
 
@@ -680,19 +680,19 @@ public class NotificationsApi {
      * Delete Notification
      * Delete a notification.
      * @param notificationId Must be a valid notification ID. (required)
-     * @return ApiResponse&lt;Notification&gt;
+     * @return ApiResponse&lt;Success&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Response from successfully hiding a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Notification> deleteNotificationWithHttpInfo(@javax.annotation.Nonnull String notificationId) throws ApiException {
+    public ApiResponse<Success> deleteNotificationWithHttpInfo(@javax.annotation.Nonnull String notificationId) throws ApiException {
         okhttp3.Call localVarCall = deleteNotificationValidateBeforeCall(notificationId, null);
-        Type localVarReturnType = new TypeToken<Notification>(){}.getType();
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -707,14 +707,14 @@ public class NotificationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Response from successfully hiding a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNotificationAsync(@javax.annotation.Nonnull String notificationId, final ApiCallback<Notification> _callback) throws ApiException {
+    public okhttp3.Call deleteNotificationAsync(@javax.annotation.Nonnull String notificationId, final ApiCallback<Success> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNotificationValidateBeforeCall(notificationId, _callback);
-        Type localVarReturnType = new TypeToken<Notification>(){}.getType();
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -731,7 +731,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Successful response after clearing a notification. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteNotificationV2Call(@javax.annotation.Nonnull String notificationId, final ApiCallback _callback) throws ApiException {
@@ -803,7 +803,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Successful response after clearing a notification. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Success deleteNotificationV2(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -824,7 +824,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Successful response after clearing a notification. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Success> deleteNotificationV2WithHttpInfo(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -847,7 +847,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Successful response after clearing a notification. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteNotificationV2Async(@javax.annotation.Nonnull String notificationId, final ApiCallback<Success> _callback) throws ApiException {
@@ -869,7 +869,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getNotificationCall(@javax.annotation.Nonnull String notificationId, final ApiCallback _callback) throws ApiException {
@@ -940,7 +940,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public Notification getNotification(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -960,7 +960,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Notification> getNotificationWithHttpInfo(@javax.annotation.Nonnull String notificationId) throws ApiException {
@@ -982,7 +982,7 @@ public class NotificationsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single Notification object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getNotificationAsync(@javax.annotation.Nonnull String notificationId, final ApiCallback<Notification> _callback) throws ApiException {
@@ -1005,7 +1005,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1080,7 +1080,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1103,7 +1103,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1128,7 +1128,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response due to missing Administrator credentials. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      * @deprecated
      */
@@ -1583,7 +1583,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call replyNotificationV2Call(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
@@ -1662,7 +1662,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public NotificationV2 replyNotificationV2(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull Object body) throws ApiException {
@@ -1684,7 +1684,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<NotificationV2> replyNotificationV2WithHttpInfo(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull Object body) throws ApiException {
@@ -1708,7 +1708,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call replyNotificationV2Async(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull Object body, final ApiCallback<NotificationV2> _callback) throws ApiException {
@@ -1732,7 +1732,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call respondNotificationV2Call(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull RespondNotificationV2Request respondNotificationV2Request, final ApiCallback _callback) throws ApiException {
@@ -1811,7 +1811,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public NotificationV2 respondNotificationV2(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull RespondNotificationV2Request respondNotificationV2Request) throws ApiException {
@@ -1833,7 +1833,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<NotificationV2> respondNotificationV2WithHttpInfo(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull RespondNotificationV2Request respondNotificationV2Request) throws ApiException {
@@ -1857,7 +1857,7 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> Returns a single NotificationV2 object. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when trying to perform an invalid operations on a notification. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Error response when trying to perform operations on a non-existing notification. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call respondNotificationV2Async(@javax.annotation.Nonnull String notificationId, @javax.annotation.Nonnull RespondNotificationV2Request respondNotificationV2Request, final ApiCallback<NotificationV2> _callback) throws ApiException {

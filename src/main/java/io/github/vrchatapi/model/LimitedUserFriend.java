@@ -54,6 +54,16 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class LimitedUserFriend {
+  public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
+  @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
+  @javax.annotation.Nullable
+  private String bannerColor;
+
+  public static final String SERIALIZED_NAME_BANNER_TYPE = "bannerType";
+  @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
+  @javax.annotation.Nullable
+  private String bannerType;
+
   public static final String SERIALIZED_NAME_BIO = "bio";
   @SerializedName(SERIALIZED_NAME_BIO)
   @javax.annotation.Nullable
@@ -84,6 +94,11 @@ public class LimitedUserFriend {
   @javax.annotation.Nonnull
   private DeveloperType developerType = DeveloperType.NONE;
 
+  public static final String SERIALIZED_NAME_DISCORD_ID = "discordId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_ID)
+  @javax.annotation.Nullable
+  private String discordId;
+
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nonnull
@@ -93,6 +108,16 @@ public class LimitedUserFriend {
   @SerializedName(SERIALIZED_NAME_FRIEND_KEY)
   @javax.annotation.Nonnull
   private String friendKey;
+
+  public static final String SERIALIZED_NAME_ICON_FRAME = "iconFrame";
+  @SerializedName(SERIALIZED_NAME_ICON_FRAME)
+  @javax.annotation.Nullable
+  private String iconFrame;
+
+  public static final String SERIALIZED_NAME_ICON_URL = "iconUrl";
+  @SerializedName(SERIALIZED_NAME_ICON_URL)
+  @javax.annotation.Nullable
+  private String iconUrl;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -134,10 +159,20 @@ public class LimitedUserFriend {
   @javax.annotation.Nonnull
   private String location;
 
+  public static final String SERIALIZED_NAME_NAMEPLATE_EFFECT = "nameplateEffect";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_EFFECT)
+  @javax.annotation.Nullable
+  private String nameplateEffect;
+
   public static final String SERIALIZED_NAME_PLATFORM = "platform";
   @SerializedName(SERIALIZED_NAME_PLATFORM)
   @javax.annotation.Nonnull
   private String platform;
+
+  public static final String SERIALIZED_NAME_PROFILE_EFFECT = "profileEffect";
+  @SerializedName(SERIALIZED_NAME_PROFILE_EFFECT)
+  @javax.annotation.Nullable
+  private String profileEffect;
 
   public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
   @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
@@ -171,6 +206,44 @@ public class LimitedUserFriend {
 
   public LimitedUserFriend() {
   }
+
+  public LimitedUserFriend bannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
+    return this;
+  }
+
+  /**
+   * Get bannerColor
+   * @return bannerColor
+   */
+  @javax.annotation.Nullable
+  public String getBannerColor() {
+    return bannerColor;
+  }
+
+  public void setBannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
+  }
+
+
+  public LimitedUserFriend bannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
+    return this;
+  }
+
+  /**
+   * Get bannerType
+   * @return bannerType
+   */
+  @javax.annotation.Nullable
+  public String getBannerType() {
+    return bannerType;
+  }
+
+  public void setBannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
+  }
+
 
   public LimitedUserFriend bio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
@@ -302,6 +375,25 @@ public class LimitedUserFriend {
   }
 
 
+  public LimitedUserFriend discordId(@javax.annotation.Nullable String discordId) {
+    this.discordId = discordId;
+    return this;
+  }
+
+  /**
+   * https://discord.com/developers/docs/reference#snowflakes
+   * @return discordId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordId() {
+    return discordId;
+  }
+
+  public void setDiscordId(@javax.annotation.Nullable String discordId) {
+    this.discordId = discordId;
+  }
+
+
   public LimitedUserFriend displayName(@javax.annotation.Nonnull String displayName) {
     this.displayName = displayName;
     return this;
@@ -337,6 +429,44 @@ public class LimitedUserFriend {
 
   public void setFriendKey(@javax.annotation.Nonnull String friendKey) {
     this.friendKey = friendKey;
+  }
+
+
+  public LimitedUserFriend iconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+    return this;
+  }
+
+  /**
+   * Get iconFrame
+   * @return iconFrame
+   */
+  @javax.annotation.Nullable
+  public String getIconFrame() {
+    return iconFrame;
+  }
+
+  public void setIconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+  }
+
+
+  public LimitedUserFriend iconUrl(@javax.annotation.Nullable String iconUrl) {
+    this.iconUrl = iconUrl;
+    return this;
+  }
+
+  /**
+   * Get iconUrl
+   * @return iconUrl
+   */
+  @javax.annotation.Nullable
+  public String getIconUrl() {
+    return iconUrl;
+  }
+
+  public void setIconUrl(@javax.annotation.Nullable String iconUrl) {
+    this.iconUrl = iconUrl;
   }
 
 
@@ -492,6 +622,25 @@ public class LimitedUserFriend {
   }
 
 
+  public LimitedUserFriend nameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+    return this;
+  }
+
+  /**
+   * Get nameplateEffect
+   * @return nameplateEffect
+   */
+  @javax.annotation.Nullable
+  public String getNameplateEffect() {
+    return nameplateEffect;
+  }
+
+  public void setNameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
+  }
+
+
   public LimitedUserFriend platform(@javax.annotation.Nonnull String platform) {
     this.platform = platform;
     return this;
@@ -508,6 +657,25 @@ public class LimitedUserFriend {
 
   public void setPlatform(@javax.annotation.Nonnull String platform) {
     this.platform = platform;
+  }
+
+
+  public LimitedUserFriend profileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
+    return this;
+  }
+
+  /**
+   * Get profileEffect
+   * @return profileEffect
+   */
+  @javax.annotation.Nullable
+  public String getProfileEffect() {
+    return profileEffect;
+  }
+
+  public void setProfileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
   }
 
 
@@ -643,14 +811,19 @@ public class LimitedUserFriend {
       return false;
     }
     LimitedUserFriend limitedUserFriend = (LimitedUserFriend) o;
-    return Objects.equals(this.bio, limitedUserFriend.bio) &&
+    return Objects.equals(this.bannerColor, limitedUserFriend.bannerColor) &&
+        Objects.equals(this.bannerType, limitedUserFriend.bannerType) &&
+        Objects.equals(this.bio, limitedUserFriend.bio) &&
         Objects.equals(this.bioLinks, limitedUserFriend.bioLinks) &&
         Objects.equals(this.currentAvatarImageUrl, limitedUserFriend.currentAvatarImageUrl) &&
         Objects.equals(this.currentAvatarTags, limitedUserFriend.currentAvatarTags) &&
         Objects.equals(this.currentAvatarThumbnailImageUrl, limitedUserFriend.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.developerType, limitedUserFriend.developerType) &&
+        Objects.equals(this.discordId, limitedUserFriend.discordId) &&
         Objects.equals(this.displayName, limitedUserFriend.displayName) &&
         Objects.equals(this.friendKey, limitedUserFriend.friendKey) &&
+        Objects.equals(this.iconFrame, limitedUserFriend.iconFrame) &&
+        Objects.equals(this.iconUrl, limitedUserFriend.iconUrl) &&
         Objects.equals(this.id, limitedUserFriend.id) &&
         Objects.equals(this.imageUrl, limitedUserFriend.imageUrl) &&
         Objects.equals(this.isFriend, limitedUserFriend.isFriend) &&
@@ -659,7 +832,9 @@ public class LimitedUserFriend {
         Objects.equals(this.lastMobile, limitedUserFriend.lastMobile) &&
         Objects.equals(this.lastPlatform, limitedUserFriend.lastPlatform) &&
         Objects.equals(this.location, limitedUserFriend.location) &&
+        Objects.equals(this.nameplateEffect, limitedUserFriend.nameplateEffect) &&
         Objects.equals(this.platform, limitedUserFriend.platform) &&
+        Objects.equals(this.profileEffect, limitedUserFriend.profileEffect) &&
         Objects.equals(this.profilePicOverride, limitedUserFriend.profilePicOverride) &&
         Objects.equals(this.profilePicOverrideThumbnail, limitedUserFriend.profilePicOverrideThumbnail) &&
         Objects.equals(this.status, limitedUserFriend.status) &&
@@ -670,21 +845,26 @@ public class LimitedUserFriend {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, developerType, displayName, friendKey, id, imageUrl, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, platform, profilePicOverride, profilePicOverrideThumbnail, status, statusDescription, tags, userIcon);
+    return Objects.hash(bannerColor, bannerType, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, developerType, discordId, displayName, friendKey, iconFrame, iconUrl, id, imageUrl, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, platform, profileEffect, profilePicOverride, profilePicOverrideThumbnail, status, statusDescription, tags, userIcon);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LimitedUserFriend {\n");
+    sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
+    sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
     sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
     sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
     sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
     sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    developerType: ").append(toIndentedString(developerType)).append("\n");
+    sb.append("    discordId: ").append(toIndentedString(discordId)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    friendKey: ").append(toIndentedString(friendKey)).append("\n");
+    sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
+    sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    isFriend: ").append(toIndentedString(isFriend)).append("\n");
@@ -693,7 +873,9 @@ public class LimitedUserFriend {
     sb.append("    lastMobile: ").append(toIndentedString(lastMobile)).append("\n");
     sb.append("    lastPlatform: ").append(toIndentedString(lastPlatform)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+    sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
     sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
     sb.append("    profilePicOverrideThumbnail: ").append(toIndentedString(profilePicOverrideThumbnail)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -718,7 +900,7 @@ public class LimitedUserFriend {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "developerType", "displayName", "friendKey", "id", "imageUrl", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "platform", "profilePicOverride", "profilePicOverrideThumbnail", "status", "statusDescription", "tags", "userIcon"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "developerType", "discordId", "displayName", "friendKey", "iconFrame", "iconUrl", "id", "imageUrl", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "platform", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "status", "statusDescription", "tags", "userIcon"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("developerType", "displayName", "friendKey", "id", "imageUrl", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "platform", "status", "statusDescription", "tags"));
@@ -752,6 +934,12 @@ public class LimitedUserFriend {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
+      }
+      if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
       if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
       }
@@ -771,11 +959,20 @@ public class LimitedUserFriend {
       }
       // validate the required field `developerType`
       DeveloperType.validateJsonElement(jsonObj.get("developerType"));
+      if ((jsonObj.get("discordId") != null && !jsonObj.get("discordId").isJsonNull()) && !jsonObj.get("discordId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `discordId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordId").toString()));
+      }
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
       }
       if (!jsonObj.get("friendKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendKey").toString()));
+      }
+      if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
+      }
+      if ((jsonObj.get("iconUrl") != null && !jsonObj.get("iconUrl").isJsonNull()) && !jsonObj.get("iconUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconUrl").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
@@ -789,8 +986,14 @@ public class LimitedUserFriend {
       if (!jsonObj.get("location").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("location").toString()));
       }
+      if ((jsonObj.get("nameplateEffect") != null && !jsonObj.get("nameplateEffect").isJsonNull()) && !jsonObj.get("nameplateEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nameplateEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nameplateEffect").toString()));
+      }
       if (!jsonObj.get("platform").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+      }
+      if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
       if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));

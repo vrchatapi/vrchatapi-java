@@ -22,6 +22,7 @@ import io.github.vrchatapi.model.SubscriptionPeriod;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,10 +62,20 @@ public class Subscription {
   @javax.annotation.Nullable
   private String appleProductId;
 
+  public static final String SERIALIZED_NAME_BULK_SIZE = "bulkSize";
+  @SerializedName(SERIALIZED_NAME_BULK_SIZE)
+  @javax.annotation.Nullable
+  private Integer bulkSize;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nonnull
   private String description;
+
+  public static final String SERIALIZED_NAME_DISCOUNT_PERCENTAGE = "discountPercentage";
+  @SerializedName(SERIALIZED_NAME_DISCOUNT_PERCENTAGE)
+  @javax.annotation.Nullable
+  private Integer discountPercentage;
 
   public static final String SERIALIZED_NAME_GOOGLE_PLAN_ID = "googlePlanId";
   @SerializedName(SERIALIZED_NAME_GOOGLE_PLAN_ID)
@@ -90,6 +101,11 @@ public class Subscription {
   @SerializedName(SERIALIZED_NAME_PERIOD)
   @javax.annotation.Nonnull
   private SubscriptionPeriod period = SubscriptionPeriod.MONTH;
+
+  public static final String SERIALIZED_NAME_PERIOD_AMOUNT = "periodAmount";
+  @SerializedName(SERIALIZED_NAME_PERIOD_AMOUNT)
+  @javax.annotation.Nullable
+  private Object periodAmount = null;
 
   public static final String SERIALIZED_NAME_PICO_SKU = "picoSku";
   @SerializedName(SERIALIZED_NAME_PICO_SKU)
@@ -147,6 +163,25 @@ public class Subscription {
   }
 
 
+  public Subscription bulkSize(@javax.annotation.Nullable Integer bulkSize) {
+    this.bulkSize = bulkSize;
+    return this;
+  }
+
+  /**
+   * How many subscriptions a gifted bundle grants.
+   * @return bulkSize
+   */
+  @javax.annotation.Nullable
+  public Integer getBulkSize() {
+    return bulkSize;
+  }
+
+  public void setBulkSize(@javax.annotation.Nullable Integer bulkSize) {
+    this.bulkSize = bulkSize;
+  }
+
+
   public Subscription description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
@@ -163,6 +198,25 @@ public class Subscription {
 
   public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
+  }
+
+
+  public Subscription discountPercentage(@javax.annotation.Nullable Integer discountPercentage) {
+    this.discountPercentage = discountPercentage;
+    return this;
+  }
+
+  /**
+   * Discount applied to a gifted bundle.
+   * @return discountPercentage
+   */
+  @javax.annotation.Nullable
+  public Integer getDiscountPercentage() {
+    return discountPercentage;
+  }
+
+  public void setDiscountPercentage(@javax.annotation.Nullable Integer discountPercentage) {
+    this.discountPercentage = discountPercentage;
   }
 
 
@@ -261,6 +315,25 @@ public class Subscription {
   }
 
 
+  public Subscription periodAmount(@javax.annotation.Nullable Object periodAmount) {
+    this.periodAmount = periodAmount;
+    return this;
+  }
+
+  /**
+   * Get periodAmount
+   * @return periodAmount
+   */
+  @javax.annotation.Nullable
+  public Object getPeriodAmount() {
+    return periodAmount;
+  }
+
+  public void setPeriodAmount(@javax.annotation.Nullable Object periodAmount) {
+    this.periodAmount = periodAmount;
+  }
+
+
   public Subscription picoSku(@javax.annotation.Nullable String picoSku) {
     this.picoSku = picoSku;
     return this;
@@ -330,20 +403,34 @@ public class Subscription {
     Subscription subscription = (Subscription) o;
     return Objects.equals(this.amount, subscription.amount) &&
         Objects.equals(this.appleProductId, subscription.appleProductId) &&
+        Objects.equals(this.bulkSize, subscription.bulkSize) &&
         Objects.equals(this.description, subscription.description) &&
+        Objects.equals(this.discountPercentage, subscription.discountPercentage) &&
         Objects.equals(this.googlePlanId, subscription.googlePlanId) &&
         Objects.equals(this.googleProductId, subscription.googleProductId) &&
         Objects.equals(this.id, subscription.id) &&
         Objects.equals(this.oculusSku, subscription.oculusSku) &&
         Objects.equals(this.period, subscription.period) &&
+        Objects.equals(this.periodAmount, subscription.periodAmount) &&
         Objects.equals(this.picoSku, subscription.picoSku) &&
         Objects.equals(this.steamItemId, subscription.steamItemId) &&
         Objects.equals(this.tier, subscription.tier);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(amount, appleProductId, description, googlePlanId, googleProductId, id, oculusSku, period, picoSku, steamItemId, tier);
+    return Objects.hash(amount, appleProductId, bulkSize, description, discountPercentage, googlePlanId, googleProductId, id, oculusSku, period, periodAmount, picoSku, steamItemId, tier);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -352,12 +439,15 @@ public class Subscription {
     sb.append("class Subscription {\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    appleProductId: ").append(toIndentedString(appleProductId)).append("\n");
+    sb.append("    bulkSize: ").append(toIndentedString(bulkSize)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    discountPercentage: ").append(toIndentedString(discountPercentage)).append("\n");
     sb.append("    googlePlanId: ").append(toIndentedString(googlePlanId)).append("\n");
     sb.append("    googleProductId: ").append(toIndentedString(googleProductId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    oculusSku: ").append(toIndentedString(oculusSku)).append("\n");
     sb.append("    period: ").append(toIndentedString(period)).append("\n");
+    sb.append("    periodAmount: ").append(toIndentedString(periodAmount)).append("\n");
     sb.append("    picoSku: ").append(toIndentedString(picoSku)).append("\n");
     sb.append("    steamItemId: ").append(toIndentedString(steamItemId)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
@@ -379,7 +469,7 @@ public class Subscription {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("amount", "appleProductId", "description", "googlePlanId", "googleProductId", "id", "oculusSku", "period", "picoSku", "steamItemId", "tier"));
+    openapiFields = new HashSet<String>(Arrays.asList("amount", "appleProductId", "bulkSize", "description", "discountPercentage", "googlePlanId", "googleProductId", "id", "oculusSku", "period", "periodAmount", "picoSku", "steamItemId", "tier"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("amount", "description", "id", "period", "steamItemId", "tier"));

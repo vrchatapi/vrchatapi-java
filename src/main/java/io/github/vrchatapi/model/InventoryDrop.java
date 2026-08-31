@@ -68,6 +68,11 @@ public class InventoryDrop {
   @javax.annotation.Nullable
   private OffsetDateTime dropExpiryDate;
 
+  public static final String SERIALIZED_NAME_DROP_STATUS = "dropStatus";
+  @SerializedName(SERIALIZED_NAME_DROP_STATUS)
+  @javax.annotation.Nullable
+  private String dropStatus;
+
   public static final String SERIALIZED_NAME_END_DROP_DATE = "endDropDate";
   @SerializedName(SERIALIZED_NAME_END_DROP_DATE)
   @javax.annotation.Nonnull
@@ -97,11 +102,6 @@ public class InventoryDrop {
   @SerializedName(SERIALIZED_NAME_START_DROP_DATE)
   @javax.annotation.Nonnull
   private OffsetDateTime startDropDate;
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
-  private String status;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -180,6 +180,25 @@ public class InventoryDrop {
 
   public void setDropExpiryDate(@javax.annotation.Nullable OffsetDateTime dropExpiryDate) {
     this.dropExpiryDate = dropExpiryDate;
+  }
+
+
+  public InventoryDrop dropStatus(@javax.annotation.Nullable String dropStatus) {
+    this.dropStatus = dropStatus;
+    return this;
+  }
+
+  /**
+   * Get dropStatus
+   * @return dropStatus
+   */
+  @javax.annotation.Nullable
+  public String getDropStatus() {
+    return dropStatus;
+  }
+
+  public void setDropStatus(@javax.annotation.Nullable String dropStatus) {
+    this.dropStatus = dropStatus;
   }
 
 
@@ -297,25 +316,6 @@ public class InventoryDrop {
   }
 
 
-  public InventoryDrop status(@javax.annotation.Nonnull String status) {
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Get status
-   * @return status
-   */
-  @javax.annotation.Nonnull
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nonnull String status) {
-    this.status = status;
-  }
-
-
   public InventoryDrop tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
@@ -421,13 +421,13 @@ public class InventoryDrop {
     return Objects.equals(this.authorId, inventoryDrop.authorId) &&
         Objects.equals(this.createdAt, inventoryDrop.createdAt) &&
         Objects.equals(this.dropExpiryDate, inventoryDrop.dropExpiryDate) &&
+        Objects.equals(this.dropStatus, inventoryDrop.dropStatus) &&
         Objects.equals(this.endDropDate, inventoryDrop.endDropDate) &&
         Objects.equals(this.id, inventoryDrop.id) &&
         Objects.equals(this.isDisabled, inventoryDrop.isDisabled) &&
         Objects.equals(this.name, inventoryDrop.name) &&
         Objects.equals(this.notificationDetails, inventoryDrop.notificationDetails) &&
         Objects.equals(this.startDropDate, inventoryDrop.startDropDate) &&
-        Objects.equals(this.status, inventoryDrop.status) &&
         Objects.equals(this.tags, inventoryDrop.tags) &&
         Objects.equals(this.targetGroup, inventoryDrop.targetGroup) &&
         Objects.equals(this.templateIds, inventoryDrop.templateIds) &&
@@ -436,7 +436,7 @@ public class InventoryDrop {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, createdAt, dropExpiryDate, endDropDate, id, isDisabled, name, notificationDetails, startDropDate, status, tags, targetGroup, templateIds, updatedAt);
+    return Objects.hash(authorId, createdAt, dropExpiryDate, dropStatus, endDropDate, id, isDisabled, name, notificationDetails, startDropDate, tags, targetGroup, templateIds, updatedAt);
   }
 
   @Override
@@ -446,13 +446,13 @@ public class InventoryDrop {
     sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    dropExpiryDate: ").append(toIndentedString(dropExpiryDate)).append("\n");
+    sb.append("    dropStatus: ").append(toIndentedString(dropStatus)).append("\n");
     sb.append("    endDropDate: ").append(toIndentedString(endDropDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isDisabled: ").append(toIndentedString(isDisabled)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    notificationDetails: ").append(toIndentedString(notificationDetails)).append("\n");
     sb.append("    startDropDate: ").append(toIndentedString(startDropDate)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    targetGroup: ").append(toIndentedString(targetGroup)).append("\n");
     sb.append("    templateIds: ").append(toIndentedString(templateIds)).append("\n");
@@ -475,10 +475,10 @@ public class InventoryDrop {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "created_at", "dropExpiryDate", "endDropDate", "id", "isDisabled", "name", "notificationDetails", "startDropDate", "status", "tags", "targetGroup", "templateIds", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "created_at", "dropExpiryDate", "dropStatus", "endDropDate", "id", "isDisabled", "name", "notificationDetails", "startDropDate", "tags", "targetGroup", "templateIds", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "created_at", "dropExpiryDate", "endDropDate", "id", "isDisabled", "name", "notificationDetails", "startDropDate", "status", "tags", "targetGroup", "templateIds", "updated_at"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "created_at", "dropExpiryDate", "endDropDate", "id", "isDisabled", "name", "notificationDetails", "startDropDate", "tags", "targetGroup", "templateIds", "updated_at"));
   }
 
   /**
@@ -512,6 +512,9 @@ public class InventoryDrop {
       if (!jsonObj.get("authorId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
       }
+      if ((jsonObj.get("dropStatus") != null && !jsonObj.get("dropStatus").isJsonNull()) && !jsonObj.get("dropStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dropStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dropStatus").toString()));
+      }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -520,9 +523,6 @@ public class InventoryDrop {
       }
       // validate the required field `notificationDetails`
       InventoryNotificationDetails.validateJsonElement(jsonObj.get("notificationDetails"));
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");

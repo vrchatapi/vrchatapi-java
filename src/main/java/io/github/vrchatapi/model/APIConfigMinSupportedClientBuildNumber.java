@@ -87,7 +87,7 @@ public class APIConfigMinSupportedClientBuildNumber {
 
   public static final String SERIALIZED_NAME_QUEST_APP_LAB = "QuestAppLab";
   @SerializedName(SERIALIZED_NAME_QUEST_APP_LAB)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private PlatformBuildInfo questAppLab;
 
   public static final String SERIALIZED_NAME_QUEST_STORE = "QuestStore";
@@ -241,7 +241,7 @@ public class APIConfigMinSupportedClientBuildNumber {
   }
 
 
-  public APIConfigMinSupportedClientBuildNumber questAppLab(@javax.annotation.Nonnull PlatformBuildInfo questAppLab) {
+  public APIConfigMinSupportedClientBuildNumber questAppLab(@javax.annotation.Nullable PlatformBuildInfo questAppLab) {
     this.questAppLab = questAppLab;
     return this;
   }
@@ -250,12 +250,12 @@ public class APIConfigMinSupportedClientBuildNumber {
    * Get questAppLab
    * @return questAppLab
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public PlatformBuildInfo getQuestAppLab() {
     return questAppLab;
   }
 
-  public void setQuestAppLab(@javax.annotation.Nonnull PlatformBuildInfo questAppLab) {
+  public void setQuestAppLab(@javax.annotation.Nullable PlatformBuildInfo questAppLab) {
     this.questAppLab = questAppLab;
   }
 
@@ -381,7 +381,7 @@ public class APIConfigMinSupportedClientBuildNumber {
     openapiFields = new HashSet<String>(Arrays.asList("AppStore", "Default", "Firebase", "FirebaseiOS", "GooglePlay", "PC", "PicoStore", "QuestAppLab", "QuestStore", "TestFlight", "XRElite"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("AppStore", "Default", "Firebase", "FirebaseiOS", "GooglePlay", "PC", "PicoStore", "QuestAppLab", "QuestStore", "TestFlight", "XRElite"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("AppStore", "Default", "Firebase", "FirebaseiOS", "GooglePlay", "PC", "PicoStore", "QuestStore", "TestFlight", "XRElite"));
   }
 
   /**
@@ -426,8 +426,10 @@ public class APIConfigMinSupportedClientBuildNumber {
       PlatformBuildInfo.validateJsonElement(jsonObj.get("PC"));
       // validate the required field `PicoStore`
       PlatformBuildInfo.validateJsonElement(jsonObj.get("PicoStore"));
-      // validate the required field `QuestAppLab`
-      PlatformBuildInfo.validateJsonElement(jsonObj.get("QuestAppLab"));
+      // validate the optional field `QuestAppLab`
+      if (jsonObj.get("QuestAppLab") != null && !jsonObj.get("QuestAppLab").isJsonNull()) {
+        PlatformBuildInfo.validateJsonElement(jsonObj.get("QuestAppLab"));
+      }
       // validate the required field `QuestStore`
       PlatformBuildInfo.validateJsonElement(jsonObj.get("QuestStore"));
       // validate the required field `TestFlight`

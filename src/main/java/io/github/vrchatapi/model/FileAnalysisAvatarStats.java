@@ -212,6 +212,11 @@ public class FileAnalysisAvatarStats {
   @javax.annotation.Nonnull
   private Integer physicsRigidbodies;
 
+  public static final String SERIALIZED_NAME_RAYCAST_COUNT = "raycastCount";
+  @SerializedName(SERIALIZED_NAME_RAYCAST_COUNT)
+  @javax.annotation.Nullable
+  private Integer raycastCount;
+
   public static final String SERIALIZED_NAME_SKINNED_MESH_COUNT = "skinnedMeshCount";
   @SerializedName(SERIALIZED_NAME_SKINNED_MESH_COUNT)
   @javax.annotation.Nonnull
@@ -891,6 +896,25 @@ public class FileAnalysisAvatarStats {
   }
 
 
+  public FileAnalysisAvatarStats raycastCount(@javax.annotation.Nullable Integer raycastCount) {
+    this.raycastCount = raycastCount;
+    return this;
+  }
+
+  /**
+   * Get raycastCount
+   * @return raycastCount
+   */
+  @javax.annotation.Nullable
+  public Integer getRaycastCount() {
+    return raycastCount;
+  }
+
+  public void setRaycastCount(@javax.annotation.Nullable Integer raycastCount) {
+    this.raycastCount = raycastCount;
+  }
+
+
   public FileAnalysisAvatarStats skinnedMeshCount(@javax.annotation.Nonnull Integer skinnedMeshCount) {
     this.skinnedMeshCount = skinnedMeshCount;
     return this;
@@ -1161,6 +1185,7 @@ public class FileAnalysisAvatarStats {
         Objects.equals(this.physBoneTransformCount, fileAnalysisAvatarStats.physBoneTransformCount) &&
         Objects.equals(this.physicsColliders, fileAnalysisAvatarStats.physicsColliders) &&
         Objects.equals(this.physicsRigidbodies, fileAnalysisAvatarStats.physicsRigidbodies) &&
+        Objects.equals(this.raycastCount, fileAnalysisAvatarStats.raycastCount) &&
         Objects.equals(this.skinnedMeshCount, fileAnalysisAvatarStats.skinnedMeshCount) &&
         Objects.equals(this.skinnedMeshIndices, fileAnalysisAvatarStats.skinnedMeshIndices) &&
         Objects.equals(this.skinnedMeshPolygons, fileAnalysisAvatarStats.skinnedMeshPolygons) &&
@@ -1177,7 +1202,7 @@ public class FileAnalysisAvatarStats {
 
   @Override
   public int hashCode() {
-    return Objects.hash(animatorCount, audioSourceCount, blendShapeCount, boneCount, bounds, cameraCount, clothCount, constraintCount, constraintDepth, contactCount, customExpressions, customizeAnimationLayers, enableEyeLook, lightCount, lineRendererCount, lipSync, materialCount, materialSlotsUsed, meshCount, meshIndices, meshParticleMaxPolygons, meshPolygons, meshVertices, particleCollisionEnabled, particleSystemCount, particleTrailsEnabled, physBoneColliderCount, physBoneCollisionCheckCount, physBoneComponentCount, physBoneTransformCount, physicsColliders, physicsRigidbodies, skinnedMeshCount, skinnedMeshIndices, skinnedMeshPolygons, skinnedMeshVertices, totalClothVertices, totalIndices, totalMaxParticles, totalPolygons, totalTextureUsage, totalVertices, trailRendererCount, writeDefaultsUsed);
+    return Objects.hash(animatorCount, audioSourceCount, blendShapeCount, boneCount, bounds, cameraCount, clothCount, constraintCount, constraintDepth, contactCount, customExpressions, customizeAnimationLayers, enableEyeLook, lightCount, lineRendererCount, lipSync, materialCount, materialSlotsUsed, meshCount, meshIndices, meshParticleMaxPolygons, meshPolygons, meshVertices, particleCollisionEnabled, particleSystemCount, particleTrailsEnabled, physBoneColliderCount, physBoneCollisionCheckCount, physBoneComponentCount, physBoneTransformCount, physicsColliders, physicsRigidbodies, raycastCount, skinnedMeshCount, skinnedMeshIndices, skinnedMeshPolygons, skinnedMeshVertices, totalClothVertices, totalIndices, totalMaxParticles, totalPolygons, totalTextureUsage, totalVertices, trailRendererCount, writeDefaultsUsed);
   }
 
   @Override
@@ -1216,6 +1241,7 @@ public class FileAnalysisAvatarStats {
     sb.append("    physBoneTransformCount: ").append(toIndentedString(physBoneTransformCount)).append("\n");
     sb.append("    physicsColliders: ").append(toIndentedString(physicsColliders)).append("\n");
     sb.append("    physicsRigidbodies: ").append(toIndentedString(physicsRigidbodies)).append("\n");
+    sb.append("    raycastCount: ").append(toIndentedString(raycastCount)).append("\n");
     sb.append("    skinnedMeshCount: ").append(toIndentedString(skinnedMeshCount)).append("\n");
     sb.append("    skinnedMeshIndices: ").append(toIndentedString(skinnedMeshIndices)).append("\n");
     sb.append("    skinnedMeshPolygons: ").append(toIndentedString(skinnedMeshPolygons)).append("\n");
@@ -1246,7 +1272,7 @@ public class FileAnalysisAvatarStats {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("animatorCount", "audioSourceCount", "blendShapeCount", "boneCount", "bounds", "cameraCount", "clothCount", "constraintCount", "constraintDepth", "contactCount", "customExpressions", "customizeAnimationLayers", "enableEyeLook", "lightCount", "lineRendererCount", "lipSync", "materialCount", "materialSlotsUsed", "meshCount", "meshIndices", "meshParticleMaxPolygons", "meshPolygons", "meshVertices", "particleCollisionEnabled", "particleSystemCount", "particleTrailsEnabled", "physBoneColliderCount", "physBoneCollisionCheckCount", "physBoneComponentCount", "physBoneTransformCount", "physicsColliders", "physicsRigidbodies", "skinnedMeshCount", "skinnedMeshIndices", "skinnedMeshPolygons", "skinnedMeshVertices", "totalClothVertices", "totalIndices", "totalMaxParticles", "totalPolygons", "totalTextureUsage", "totalVertices", "trailRendererCount", "writeDefaultsUsed"));
+    openapiFields = new HashSet<String>(Arrays.asList("animatorCount", "audioSourceCount", "blendShapeCount", "boneCount", "bounds", "cameraCount", "clothCount", "constraintCount", "constraintDepth", "contactCount", "customExpressions", "customizeAnimationLayers", "enableEyeLook", "lightCount", "lineRendererCount", "lipSync", "materialCount", "materialSlotsUsed", "meshCount", "meshIndices", "meshParticleMaxPolygons", "meshPolygons", "meshVertices", "particleCollisionEnabled", "particleSystemCount", "particleTrailsEnabled", "physBoneColliderCount", "physBoneCollisionCheckCount", "physBoneComponentCount", "physBoneTransformCount", "physicsColliders", "physicsRigidbodies", "raycastCount", "skinnedMeshCount", "skinnedMeshIndices", "skinnedMeshPolygons", "skinnedMeshVertices", "totalClothVertices", "totalIndices", "totalMaxParticles", "totalPolygons", "totalTextureUsage", "totalVertices", "trailRendererCount", "writeDefaultsUsed"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("animatorCount", "audioSourceCount", "blendShapeCount", "boneCount", "bounds", "clothCount", "constraintCount", "constraintDepth", "contactCount", "customExpressions", "customizeAnimationLayers", "enableEyeLook", "lightCount", "lineRendererCount", "lipSync", "materialCount", "materialSlotsUsed", "meshCount", "meshIndices", "meshParticleMaxPolygons", "meshPolygons", "meshVertices", "particleCollisionEnabled", "particleSystemCount", "particleTrailsEnabled", "physBoneColliderCount", "physBoneCollisionCheckCount", "physBoneComponentCount", "physBoneTransformCount", "physicsColliders", "physicsRigidbodies", "skinnedMeshCount", "skinnedMeshIndices", "skinnedMeshPolygons", "skinnedMeshVertices", "totalClothVertices", "totalIndices", "totalMaxParticles", "totalPolygons", "totalTextureUsage", "totalVertices", "trailRendererCount", "writeDefaultsUsed"));

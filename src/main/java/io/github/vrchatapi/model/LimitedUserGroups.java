@@ -126,6 +126,16 @@ public class LimitedUserGroups {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_NAMEPLATE_ID = "nameplateId";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_ID)
+  @javax.annotation.Nullable
+  private Object nameplateId = null;
+
+  public static final String SERIALIZED_NAME_NAMEPLATE_URL = "nameplateUrl";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_URL)
+  @javax.annotation.Nullable
+  private Object nameplateUrl = null;
+
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
   @javax.annotation.Nullable
@@ -429,6 +439,44 @@ public class LimitedUserGroups {
   }
 
 
+  public LimitedUserGroups nameplateId(@javax.annotation.Nullable Object nameplateId) {
+    this.nameplateId = nameplateId;
+    return this;
+  }
+
+  /**
+   * Get nameplateId
+   * @return nameplateId
+   */
+  @javax.annotation.Nullable
+  public Object getNameplateId() {
+    return nameplateId;
+  }
+
+  public void setNameplateId(@javax.annotation.Nullable Object nameplateId) {
+    this.nameplateId = nameplateId;
+  }
+
+
+  public LimitedUserGroups nameplateUrl(@javax.annotation.Nullable Object nameplateUrl) {
+    this.nameplateUrl = nameplateUrl;
+    return this;
+  }
+
+  /**
+   * Get nameplateUrl
+   * @return nameplateUrl
+   */
+  @javax.annotation.Nullable
+  public Object getNameplateUrl() {
+    return nameplateUrl;
+  }
+
+  public void setNameplateUrl(@javax.annotation.Nullable Object nameplateUrl) {
+    this.nameplateUrl = nameplateUrl;
+  }
+
+
   public LimitedUserGroups ownerId(@javax.annotation.Nullable String ownerId) {
     this.ownerId = ownerId;
     return this;
@@ -511,6 +559,8 @@ public class LimitedUserGroups {
         Objects.equals(this.memberVisibility, limitedUserGroups.memberVisibility) &&
         Objects.equals(this.mutualGroup, limitedUserGroups.mutualGroup) &&
         Objects.equals(this.name, limitedUserGroups.name) &&
+        Objects.equals(this.nameplateId, limitedUserGroups.nameplateId) &&
+        Objects.equals(this.nameplateUrl, limitedUserGroups.nameplateUrl) &&
         Objects.equals(this.ownerId, limitedUserGroups.ownerId) &&
         Objects.equals(this.privacy, limitedUserGroups.privacy) &&
         Objects.equals(this.shortCode, limitedUserGroups.shortCode);
@@ -522,7 +572,7 @@ public class LimitedUserGroups {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerId, bannerUrl, description, discriminator, groupId, iconId, iconUrl, id, isRepresenting, lastPostCreatedAt, lastPostReadAt, memberCount, memberVisibility, mutualGroup, name, ownerId, privacy, shortCode);
+    return Objects.hash(bannerId, bannerUrl, description, discriminator, groupId, iconId, iconUrl, id, isRepresenting, lastPostCreatedAt, lastPostReadAt, memberCount, memberVisibility, mutualGroup, name, nameplateId, nameplateUrl, ownerId, privacy, shortCode);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -551,6 +601,8 @@ public class LimitedUserGroups {
     sb.append("    memberVisibility: ").append(toIndentedString(memberVisibility)).append("\n");
     sb.append("    mutualGroup: ").append(toIndentedString(mutualGroup)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nameplateId: ").append(toIndentedString(nameplateId)).append("\n");
+    sb.append("    nameplateUrl: ").append(toIndentedString(nameplateUrl)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    privacy: ").append(toIndentedString(privacy)).append("\n");
     sb.append("    shortCode: ").append(toIndentedString(shortCode)).append("\n");
@@ -572,7 +624,7 @@ public class LimitedUserGroups {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerId", "bannerUrl", "description", "discriminator", "groupId", "iconId", "iconUrl", "id", "isRepresenting", "lastPostCreatedAt", "lastPostReadAt", "memberCount", "memberVisibility", "mutualGroup", "name", "ownerId", "privacy", "shortCode"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerId", "bannerUrl", "description", "discriminator", "groupId", "iconId", "iconUrl", "id", "isRepresenting", "lastPostCreatedAt", "lastPostReadAt", "memberCount", "memberVisibility", "mutualGroup", "name", "nameplateId", "nameplateUrl", "ownerId", "privacy", "shortCode"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

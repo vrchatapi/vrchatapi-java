@@ -84,7 +84,7 @@ public class Example {
 | **200** | Successful response after booping a user. |  -  |
 | **400** | Error response when trying to unfriend someone who is not a friend. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to send a friend request to a user which doesn&#39;t exist. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteFriendRequest"></a>
 # **deleteFriendRequest**
@@ -227,7 +227,7 @@ public class Example {
 | **200** | Returns a single Notification object. |  -  |
 | **400** | Bad request error response when sending a friend request |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-| **404** | Error response when trying to send a friend request to a user which doesn&#39;t exist. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFriendStatus"></a>
 # **getFriendStatus**

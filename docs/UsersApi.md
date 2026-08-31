@@ -106,6 +106,7 @@ public class Example {
 | **200** | Returns a single CurrentUser object. |  -  |
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing permissions. |  -  |
 
 <a id="checkUserPersistenceExists"></a>
 # **checkUserPersistenceExists**
@@ -177,6 +178,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | The user has persistence data for the given world. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
 <a id="deleteAllUserPersistenceData"></a>
@@ -318,6 +320,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | The user&#39;s persistence data for the given world is deleted. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
 
 <a id="getBlockedGroups"></a>
@@ -885,8 +888,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single User object. |  -  |
+| **200** | Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getUserAllGroupPermissions"></a>
 # **getUserAllGroupPermissions**
@@ -966,7 +970,7 @@ public class Example {
 
 Get User by Username
 
-~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
+Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
 
 ### Example
 ```java
@@ -1027,8 +1031,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single User object. |  -  |
+| **200** | Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing Administrator credentials. |  -  |
 
 <a id="getUserFeedback"></a>
 # **getUserFeedback**
@@ -1744,6 +1749,7 @@ public class Example {
 | **200** | Returns a single CurrentUser object. |  -  |
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response due to missing permissions. |  -  |
 
 <a id="searchUsers"></a>
 # **searchUsers**
@@ -1971,6 +1977,7 @@ public class Example {
 | **200** | Returns a single CurrentUser object. |  -  |
 | **400** | Error response when a user attempts to change a property without supplying their current password. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when updating a user other than yourself. |  -  |
 
 <a id="updateUserNote"></a>
 # **updateUserNote**

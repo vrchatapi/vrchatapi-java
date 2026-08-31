@@ -54,6 +54,16 @@ public class ReportCategory {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_IPS_ARTICLE = "ipsArticle";
+  @SerializedName(SERIALIZED_NAME_IPS_ARTICLE)
+  @javax.annotation.Nullable
+  private String ipsArticle;
+
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
+  private Integer order;
+
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
   @javax.annotation.Nonnull
@@ -88,6 +98,44 @@ public class ReportCategory {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public ReportCategory ipsArticle(@javax.annotation.Nullable String ipsArticle) {
+    this.ipsArticle = ipsArticle;
+    return this;
+  }
+
+  /**
+   * Get ipsArticle
+   * @return ipsArticle
+   */
+  @javax.annotation.Nullable
+  public String getIpsArticle() {
+    return ipsArticle;
+  }
+
+  public void setIpsArticle(@javax.annotation.Nullable String ipsArticle) {
+    this.ipsArticle = ipsArticle;
+  }
+
+
+  public ReportCategory order(@javax.annotation.Nullable Integer order) {
+    this.order = order;
+    return this;
+  }
+
+  /**
+   * Get order
+   * @return order
+   */
+  @javax.annotation.Nullable
+  public Integer getOrder() {
+    return order;
+  }
+
+  public void setOrder(@javax.annotation.Nullable Integer order) {
+    this.order = order;
   }
 
 
@@ -159,6 +207,8 @@ public class ReportCategory {
     }
     ReportCategory reportCategory = (ReportCategory) o;
     return Objects.equals(this.description, reportCategory.description) &&
+        Objects.equals(this.ipsArticle, reportCategory.ipsArticle) &&
+        Objects.equals(this.order, reportCategory.order) &&
         Objects.equals(this.text, reportCategory.text) &&
         Objects.equals(this.title, reportCategory.title) &&
         Objects.equals(this.tooltip, reportCategory.tooltip);
@@ -166,7 +216,7 @@ public class ReportCategory {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, text, title, tooltip);
+    return Objects.hash(description, ipsArticle, order, text, title, tooltip);
   }
 
   @Override
@@ -174,6 +224,8 @@ public class ReportCategory {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportCategory {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ipsArticle: ").append(toIndentedString(ipsArticle)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    tooltip: ").append(toIndentedString(tooltip)).append("\n");
@@ -195,7 +247,7 @@ public class ReportCategory {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "text", "title", "tooltip"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "ipsArticle", "order", "text", "title", "tooltip"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("text", "tooltip"));
@@ -231,6 +283,9 @@ public class ReportCategory {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("ipsArticle") != null && !jsonObj.get("ipsArticle").isJsonNull()) && !jsonObj.get("ipsArticle").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ipsArticle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipsArticle").toString()));
       }
       if (!jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));

@@ -81,6 +81,11 @@ public class LimitedWorld {
   @javax.annotation.Nullable
   private InstanceContentSettings defaultContentSettings;
 
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<Object> disabledPropAbilities = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_FAVORITES = "favorites";
   @SerializedName(SERIALIZED_NAME_FAVORITES)
   @javax.annotation.Nonnull
@@ -276,6 +281,33 @@ public class LimitedWorld {
 
   public void setDefaultContentSettings(@javax.annotation.Nullable InstanceContentSettings defaultContentSettings) {
     this.defaultContentSettings = defaultContentSettings;
+  }
+
+
+  public LimitedWorld disabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public LimitedWorld addDisabledPropAbilitiesItem(Object disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<Object> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
   }
 
 
@@ -703,6 +735,7 @@ public class LimitedWorld {
         Objects.equals(this.capacity, limitedWorld.capacity) &&
         Objects.equals(this.createdAt, limitedWorld.createdAt) &&
         Objects.equals(this.defaultContentSettings, limitedWorld.defaultContentSettings) &&
+        Objects.equals(this.disabledPropAbilities, limitedWorld.disabledPropAbilities) &&
         Objects.equals(this.favorites, limitedWorld.favorites) &&
         Objects.equals(this.heat, limitedWorld.heat) &&
         Objects.equals(this.id, limitedWorld.id) &&
@@ -731,7 +764,7 @@ public class LimitedWorld {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, favorites, heat, id, imageUrl, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, disabledPropAbilities, favorites, heat, id, imageUrl, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -750,6 +783,7 @@ public class LimitedWorld {
     sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    defaultContentSettings: ").append(toIndentedString(defaultContentSettings)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
     sb.append("    favorites: ").append(toIndentedString(favorites)).append("\n");
     sb.append("    heat: ").append(toIndentedString(heat)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -788,7 +822,7 @@ public class LimitedWorld {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "favorites", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "disabledPropAbilities", "favorites", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "visits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "favorites", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "publicationDate", "releaseStatus", "tags", "thumbnailImageUrl", "unityPackages", "updated_at"));
@@ -831,6 +865,10 @@ public class LimitedWorld {
       // validate the optional field `defaultContentSettings`
       if (jsonObj.get("defaultContentSettings") != null && !jsonObj.get("defaultContentSettings").isJsonNull()) {
         InstanceContentSettings.validateJsonElement(jsonObj.get("defaultContentSettings"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

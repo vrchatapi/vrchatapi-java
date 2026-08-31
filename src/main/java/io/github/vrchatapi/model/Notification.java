@@ -22,6 +22,7 @@ import io.github.vrchatapi.model.NotificationType;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -87,7 +88,6 @@ public class Notification {
   private String senderUserId;
 
   public static final String SERIALIZED_NAME_SENDER_USERNAME = "senderUsername";
-  @Deprecated
   @SerializedName(SERIALIZED_NAME_SENDER_USERNAME)
   @javax.annotation.Nullable
   private String senderUsername;
@@ -233,24 +233,20 @@ public class Notification {
   }
 
 
-  @Deprecated
   public Notification senderUsername(@javax.annotation.Nullable String senderUsername) {
     this.senderUsername = senderUsername;
     return this;
   }
 
   /**
-   * -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+   * The name of the user who sent the notification.
    * @return senderUsername
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   public String getSenderUsername() {
     return senderUsername;
   }
 
-  @Deprecated
   public void setSenderUsername(@javax.annotation.Nullable String senderUsername) {
     this.senderUsername = senderUsername;
   }
@@ -296,9 +292,20 @@ public class Notification {
         Objects.equals(this.type, notification.type);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(createdAt, details, id, message, receiverUserId, seen, senderUserId, senderUsername, type);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

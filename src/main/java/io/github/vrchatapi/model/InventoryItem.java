@@ -60,6 +60,16 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InventoryItem {
+  public static final String SERIALIZED_NAME_ACQUISITION = "acquisition";
+  @SerializedName(SERIALIZED_NAME_ACQUISITION)
+  @javax.annotation.Nullable
+  private String acquisition;
+
+  public static final String SERIALIZED_NAME_ATTRIBUTION = "attribution";
+  @SerializedName(SERIALIZED_NAME_ATTRIBUTION)
+  @javax.annotation.Nullable
+  private Object attribution = null;
+
   public static final String SERIALIZED_NAME_COLLECTIONS = "collections";
   @SerializedName(SERIALIZED_NAME_COLLECTIONS)
   @javax.annotation.Nonnull
@@ -135,6 +145,11 @@ public class InventoryItem {
   @javax.annotation.Nonnull
   private String itemTypeLabel;
 
+  public static final String SERIALIZED_NAME_LAST_EQUIPPED = "last_equipped";
+  @SerializedName(SERIALIZED_NAME_LAST_EQUIPPED)
+  @javax.annotation.Nullable
+  private Map<String, Object> lastEquipped = new HashMap<>();
+
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   @javax.annotation.Nonnull
@@ -187,6 +202,44 @@ public class InventoryItem {
 
   public InventoryItem() {
   }
+
+  public InventoryItem acquisition(@javax.annotation.Nullable String acquisition) {
+    this.acquisition = acquisition;
+    return this;
+  }
+
+  /**
+   * Get acquisition
+   * @return acquisition
+   */
+  @javax.annotation.Nullable
+  public String getAcquisition() {
+    return acquisition;
+  }
+
+  public void setAcquisition(@javax.annotation.Nullable String acquisition) {
+    this.acquisition = acquisition;
+  }
+
+
+  public InventoryItem attribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
+    return this;
+  }
+
+  /**
+   * Get attribution
+   * @return attribution
+   */
+  @javax.annotation.Nullable
+  public Object getAttribution() {
+    return attribution;
+  }
+
+  public void setAttribution(@javax.annotation.Nullable Object attribution) {
+    this.attribution = attribution;
+  }
+
 
   public InventoryItem collections(@javax.annotation.Nonnull List<String> collections) {
     this.collections = collections;
@@ -505,6 +558,33 @@ public class InventoryItem {
   }
 
 
+  public InventoryItem lastEquipped(@javax.annotation.Nullable Map<String, Object> lastEquipped) {
+    this.lastEquipped = lastEquipped;
+    return this;
+  }
+
+  public InventoryItem putLastEquippedItem(String key, Object lastEquippedItem) {
+    if (this.lastEquipped == null) {
+      this.lastEquipped = new HashMap<>();
+    }
+    this.lastEquipped.put(key, lastEquippedItem);
+    return this;
+  }
+
+  /**
+   * Get lastEquipped
+   * @return lastEquipped
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getLastEquipped() {
+    return lastEquipped;
+  }
+
+  public void setLastEquipped(@javax.annotation.Nullable Map<String, Object> lastEquipped) {
+    this.lastEquipped = lastEquipped;
+  }
+
+
   public InventoryItem metadata(@javax.annotation.Nonnull InventoryMetadata metadata) {
     this.metadata = metadata;
     return this;
@@ -713,7 +793,9 @@ public class InventoryItem {
       return false;
     }
     InventoryItem inventoryItem = (InventoryItem) o;
-    return Objects.equals(this.collections, inventoryItem.collections) &&
+    return Objects.equals(this.acquisition, inventoryItem.acquisition) &&
+        Objects.equals(this.attribution, inventoryItem.attribution) &&
+        Objects.equals(this.collections, inventoryItem.collections) &&
         Objects.equals(this.createdAt, inventoryItem.createdAt) &&
         Objects.equals(this.defaultAttributes, inventoryItem.defaultAttributes) &&
         Objects.equals(this.description, inventoryItem.description) &&
@@ -728,6 +810,7 @@ public class InventoryItem {
         Objects.equals(this.isSeen, inventoryItem.isSeen) &&
         Objects.equals(this.itemType, inventoryItem.itemType) &&
         Objects.equals(this.itemTypeLabel, inventoryItem.itemTypeLabel) &&
+        Objects.equals(this.lastEquipped, inventoryItem.lastEquipped) &&
         Objects.equals(this.metadata, inventoryItem.metadata) &&
         Objects.equals(this.name, inventoryItem.name) &&
         Objects.equals(this.quantifiable, inventoryItem.quantifiable) &&
@@ -746,7 +829,7 @@ public class InventoryItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(collections, createdAt, defaultAttributes, description, equipSlot, equipSlots, expiryDate, flags, holderId, id, imageUrl, isArchived, isSeen, itemType, itemTypeLabel, metadata, name, quantifiable, tags, templateId, templateCreatedAt, templateUpdatedAt, updatedAt, userAttributes, validateUserAttributes);
+    return Objects.hash(acquisition, attribution, collections, createdAt, defaultAttributes, description, equipSlot, equipSlots, expiryDate, flags, holderId, id, imageUrl, isArchived, isSeen, itemType, itemTypeLabel, lastEquipped, metadata, name, quantifiable, tags, templateId, templateCreatedAt, templateUpdatedAt, updatedAt, userAttributes, validateUserAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -760,6 +843,8 @@ public class InventoryItem {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InventoryItem {\n");
+    sb.append("    acquisition: ").append(toIndentedString(acquisition)).append("\n");
+    sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
     sb.append("    collections: ").append(toIndentedString(collections)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    defaultAttributes: ").append(toIndentedString(defaultAttributes)).append("\n");
@@ -775,6 +860,7 @@ public class InventoryItem {
     sb.append("    isSeen: ").append(toIndentedString(isSeen)).append("\n");
     sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
     sb.append("    itemTypeLabel: ").append(toIndentedString(itemTypeLabel)).append("\n");
+    sb.append("    lastEquipped: ").append(toIndentedString(lastEquipped)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    quantifiable: ").append(toIndentedString(quantifiable)).append("\n");
@@ -803,7 +889,7 @@ public class InventoryItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("collections", "created_at", "defaultAttributes", "description", "equipSlot", "equipSlots", "expiryDate", "flags", "holderId", "id", "imageUrl", "isArchived", "isSeen", "itemType", "itemTypeLabel", "metadata", "name", "quantifiable", "tags", "templateId", "template_created_at", "template_updated_at", "updated_at", "userAttributes", "validateUserAttributes"));
+    openapiFields = new HashSet<String>(Arrays.asList("acquisition", "attribution", "collections", "created_at", "defaultAttributes", "description", "equipSlot", "equipSlots", "expiryDate", "flags", "holderId", "id", "imageUrl", "isArchived", "isSeen", "itemType", "itemTypeLabel", "last_equipped", "metadata", "name", "quantifiable", "tags", "templateId", "template_created_at", "template_updated_at", "updated_at", "userAttributes", "validateUserAttributes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("collections", "created_at", "defaultAttributes", "description", "flags", "holderId", "id", "imageUrl", "isArchived", "isSeen", "itemType", "itemTypeLabel", "metadata", "name", "quantifiable", "tags", "templateId", "template_created_at", "template_updated_at", "updated_at", "userAttributes", "validateUserAttributes"));
@@ -837,6 +923,9 @@ public class InventoryItem {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("acquisition") != null && !jsonObj.get("acquisition").isJsonNull()) && !jsonObj.get("acquisition").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `acquisition` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acquisition").toString()));
+      }
       // ensure the required json array is present
       if (jsonObj.get("collections") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");

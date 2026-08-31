@@ -16,7 +16,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
 | [**getGlobalAvatarModerations**](AuthenticationApi.md#getGlobalAvatarModerations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations |
 | [**getModerationReports**](AuthenticationApi.md#getModerationReports) | **GET** /moderationReports | Get Moderation Reports |
+| [**getOAuthRedirectCode**](AuthenticationApi.md#getOAuthRedirectCode) | **GET** /oauth/redirectCode | Get OAuth Redirect Code |
 | [**getRecoveryCodes**](AuthenticationApi.md#getRecoveryCodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes |
+| [**getSsoToken**](AuthenticationApi.md#getSsoToken) | **GET** /sso/{provider} | Get SSO Token |
 | [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout |
 | [**registerUserAccount**](AuthenticationApi.md#registerUserAccount) | **POST** /auth/register | Register User Account |
 | [**resendEmailConfirmation**](AuthenticationApi.md#resendEmailConfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation |
@@ -864,6 +866,72 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
 
+<a id="getOAuthRedirectCode"></a>
+# **getOAuthRedirectCode**
+> OAuthRedirectCode getOAuthRedirectCode()
+
+Get OAuth Redirect Code
+
+Generate a short-lived OAuth redirect code for the current session.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      OAuthRedirectCode result = apiInstance.getOAuthRedirectCode();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getOAuthRedirectCode");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OAuthRedirectCode**](OAuthRedirectCode.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Return a short-lived redirect code for the current session. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a id="getRecoveryCodes"></a>
 # **getRecoveryCodes**
 > TwoFactorRecoveryCodes getRecoveryCodes()
@@ -928,6 +996,77 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns the two factor recovery codes |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getSsoToken"></a>
+# **getSsoToken**
+> SsoToken getSsoToken(provider)
+
+Get SSO Token
+
+Generate a token for the specified third-party service.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    SsoProvider provider = SsoProvider.fromValue("canny"); // SsoProvider | The third-party service to mint a token for.
+    try {
+      SsoToken result = apiInstance.getSsoToken(provider);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getSsoToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **provider** | [**SsoProvider**](.md)| The third-party service to mint a token for. | [enum: canny, furality] |
+
+### Return type
+
+[**SsoToken**](SsoToken.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Return a token for the service. |  -  |
+| **400** | Error response when the requested SSO provider is unsupported. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="logout"></a>
@@ -1002,7 +1141,7 @@ This endpoint does not need any parameter.
 
 Register User Account
 
-~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
 
 ### Example
 ```java
