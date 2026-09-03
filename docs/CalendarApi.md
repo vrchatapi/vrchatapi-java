@@ -623,6 +623,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single CalendarEvent object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getGroupCalendarEventICS"></a>
 # **getGroupCalendarEventICS**
