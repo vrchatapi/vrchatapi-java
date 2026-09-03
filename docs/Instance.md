@@ -13,10 +13,13 @@
 |**calendarEntryId** | **String** |  |  [optional] |
 |**canRequestInvite** | **Boolean** |  |  [optional] |
 |**capacity** | **Integer** |  |  [optional] |
+|**categoryId** | **String** |  |  [optional] |
 |**clientNumber** | **String** | Always returns \&quot;unknown\&quot;. |  |
 |**closedAt** | **OffsetDateTime** |  |  [optional] |
 |**contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
+|**creationLanguages** | **List&lt;Object&gt;** |  |  [optional] |
 |**creatorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
+|**description** | **String** |  |  [optional] |
 |**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**dominantLanguage** | **String** |  |  [optional] |
@@ -31,6 +34,8 @@
 |**instanceId** | **String** | InstanceID can be \&quot;offline\&quot; on User profiles if you are not friends with that user and \&quot;private\&quot; if you are friends and user is in private instance. |  |
 |**instancePersistenceEnabled** | **Boolean** |  |  [optional] |
 |**languageRatio** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**languages** | **List&lt;String&gt;** | The keys of languageRatio, ordered by their share of the instance. |  [optional] |
+|**languagesIso639** | **List&lt;String&gt;** |  |  [optional] |
 |**location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \&quot;offline\&quot; if the user is not on your friends list. |  |
 |**minimumAvatarPerformance** | **String** |  |  [optional] |
 |**nUsers** | **Integer** |  |  |
@@ -53,7 +58,9 @@
 |**tags** | **List&lt;String&gt;** | The tags array on Instances usually contain the language tags of the people in the instance.  |  |
 |**type** | **InstanceType** |  |  |
 |**userCount** | **Integer** |  |  |
+|**userIcons** | **List&lt;String&gt;** |  |  [optional] |
 |**users** | [**List&lt;LimitedUserInstance&gt;**](LimitedUserInstance.md) | The users field is present on instances created by the requesting user. |  [optional] |
+|**vibeIds** | **List&lt;String&gt;** |  |  [optional] |
 |**world** | [**World**](World.md) |  |  |
 |**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 

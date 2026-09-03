@@ -9,9 +9,11 @@
 |------------ | ------------- | ------------- | -------------|
 |**ageGate** | **Boolean** |  |  [optional] |
 |**calendarEntryId** | **String** |  |  [optional] |
-|**canRequestInvite** | **Boolean** | Only applies to invite type instances to make them invite+ |  [optional] |
+|**canRequestInvite** | **Boolean** | Makes a private instance invite+. A friends instance is rejected. |  [optional] |
+|**categoryId** | **String** |  |  [optional] |
 |**closedAt** | **OffsetDateTime** | The time after which users won&#39;t be allowed to join the instance. This doesn&#39;t work for public instances. |  [optional] |
 |**contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
+|**description** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**groupAccessType** | **GroupAccessType** |  |  [optional] |
 |**hardClose** | **Boolean** | Currently unused, but will eventually be a flag to set if the closing of the instance should kick people. |  [optional] |
@@ -23,6 +25,7 @@
 |**region** | **InstanceRegion** |  |  |
 |**roleIds** | **List&lt;String&gt;** | Group roleIds that are allowed to join if the type is \&quot;group\&quot; and groupAccessType is \&quot;member\&quot; |  [optional] |
 |**type** | **InstanceType** |  |  |
+|**vibeIds** | **List&lt;String&gt;** |  |  [optional] |
 |**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 
 

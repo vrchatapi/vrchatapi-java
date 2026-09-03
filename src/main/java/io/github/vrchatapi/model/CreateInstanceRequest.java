@@ -72,6 +72,11 @@ public class CreateInstanceRequest {
   @javax.annotation.Nullable
   private Boolean canRequestInvite = false;
 
+  public static final String SERIALIZED_NAME_CATEGORY_ID = "categoryId";
+  @SerializedName(SERIALIZED_NAME_CATEGORY_ID)
+  @javax.annotation.Nullable
+  private String categoryId;
+
   public static final String SERIALIZED_NAME_CLOSED_AT = "closedAt";
   @SerializedName(SERIALIZED_NAME_CLOSED_AT)
   @javax.annotation.Nullable
@@ -81,6 +86,11 @@ public class CreateInstanceRequest {
   @SerializedName(SERIALIZED_NAME_CONTENT_SETTINGS)
   @javax.annotation.Nullable
   private InstanceContentSettings contentSettings;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -137,6 +147,11 @@ public class CreateInstanceRequest {
   @javax.annotation.Nonnull
   private InstanceType type;
 
+  public static final String SERIALIZED_NAME_VIBE_IDS = "vibeIds";
+  @SerializedName(SERIALIZED_NAME_VIBE_IDS)
+  @javax.annotation.Nullable
+  private List<String> vibeIds = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_WORLD_ID = "worldId";
   @SerializedName(SERIALIZED_NAME_WORLD_ID)
   @javax.annotation.Nonnull
@@ -189,7 +204,7 @@ public class CreateInstanceRequest {
   }
 
   /**
-   * Only applies to invite type instances to make them invite+
+   * Makes a private instance invite+. A friends instance is rejected.
    * @return canRequestInvite
    */
   @javax.annotation.Nullable
@@ -199,6 +214,25 @@ public class CreateInstanceRequest {
 
   public void setCanRequestInvite(@javax.annotation.Nullable Boolean canRequestInvite) {
     this.canRequestInvite = canRequestInvite;
+  }
+
+
+  public CreateInstanceRequest categoryId(@javax.annotation.Nullable String categoryId) {
+    this.categoryId = categoryId;
+    return this;
+  }
+
+  /**
+   * Get categoryId
+   * @return categoryId
+   */
+  @javax.annotation.Nullable
+  public String getCategoryId() {
+    return categoryId;
+  }
+
+  public void setCategoryId(@javax.annotation.Nullable String categoryId) {
+    this.categoryId = categoryId;
   }
 
 
@@ -237,6 +271,25 @@ public class CreateInstanceRequest {
 
   public void setContentSettings(@javax.annotation.Nullable InstanceContentSettings contentSettings) {
     this.contentSettings = contentSettings;
+  }
+
+
+  public CreateInstanceRequest description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
   }
 
 
@@ -457,6 +510,33 @@ public class CreateInstanceRequest {
   }
 
 
+  public CreateInstanceRequest vibeIds(@javax.annotation.Nullable List<String> vibeIds) {
+    this.vibeIds = vibeIds;
+    return this;
+  }
+
+  public CreateInstanceRequest addVibeIdsItem(String vibeIdsItem) {
+    if (this.vibeIds == null) {
+      this.vibeIds = new ArrayList<>();
+    }
+    this.vibeIds.add(vibeIdsItem);
+    return this;
+  }
+
+  /**
+   * Get vibeIds
+   * @return vibeIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getVibeIds() {
+    return vibeIds;
+  }
+
+  public void setVibeIds(@javax.annotation.Nullable List<String> vibeIds) {
+    this.vibeIds = vibeIds;
+  }
+
+
   public CreateInstanceRequest worldId(@javax.annotation.Nonnull String worldId) {
     this.worldId = worldId;
     return this;
@@ -489,8 +569,10 @@ public class CreateInstanceRequest {
     return Objects.equals(this.ageGate, createInstanceRequest.ageGate) &&
         Objects.equals(this.calendarEntryId, createInstanceRequest.calendarEntryId) &&
         Objects.equals(this.canRequestInvite, createInstanceRequest.canRequestInvite) &&
+        Objects.equals(this.categoryId, createInstanceRequest.categoryId) &&
         Objects.equals(this.closedAt, createInstanceRequest.closedAt) &&
         Objects.equals(this.contentSettings, createInstanceRequest.contentSettings) &&
+        Objects.equals(this.description, createInstanceRequest.description) &&
         Objects.equals(this.displayName, createInstanceRequest.displayName) &&
         Objects.equals(this.groupAccessType, createInstanceRequest.groupAccessType) &&
         Objects.equals(this.hardClose, createInstanceRequest.hardClose) &&
@@ -502,6 +584,7 @@ public class CreateInstanceRequest {
         Objects.equals(this.region, createInstanceRequest.region) &&
         Objects.equals(this.roleIds, createInstanceRequest.roleIds) &&
         Objects.equals(this.type, createInstanceRequest.type) &&
+        Objects.equals(this.vibeIds, createInstanceRequest.vibeIds) &&
         Objects.equals(this.worldId, createInstanceRequest.worldId);
   }
 
@@ -511,7 +594,7 @@ public class CreateInstanceRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageGate, calendarEntryId, canRequestInvite, closedAt, contentSettings, displayName, groupAccessType, hardClose, instancePersistenceEnabled, inviteOnly, ownerId, playerPersistenceEnabled, queueEnabled, region, roleIds, type, worldId);
+    return Objects.hash(ageGate, calendarEntryId, canRequestInvite, categoryId, closedAt, contentSettings, description, displayName, groupAccessType, hardClose, instancePersistenceEnabled, inviteOnly, ownerId, playerPersistenceEnabled, queueEnabled, region, roleIds, type, vibeIds, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -528,8 +611,10 @@ public class CreateInstanceRequest {
     sb.append("    ageGate: ").append(toIndentedString(ageGate)).append("\n");
     sb.append("    calendarEntryId: ").append(toIndentedString(calendarEntryId)).append("\n");
     sb.append("    canRequestInvite: ").append(toIndentedString(canRequestInvite)).append("\n");
+    sb.append("    categoryId: ").append(toIndentedString(categoryId)).append("\n");
     sb.append("    closedAt: ").append(toIndentedString(closedAt)).append("\n");
     sb.append("    contentSettings: ").append(toIndentedString(contentSettings)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    groupAccessType: ").append(toIndentedString(groupAccessType)).append("\n");
     sb.append("    hardClose: ").append(toIndentedString(hardClose)).append("\n");
@@ -541,6 +626,7 @@ public class CreateInstanceRequest {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    vibeIds: ").append(toIndentedString(vibeIds)).append("\n");
     sb.append("    worldId: ").append(toIndentedString(worldId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -560,7 +646,7 @@ public class CreateInstanceRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageGate", "calendarEntryId", "canRequestInvite", "closedAt", "contentSettings", "displayName", "groupAccessType", "hardClose", "instancePersistenceEnabled", "inviteOnly", "ownerId", "playerPersistenceEnabled", "queueEnabled", "region", "roleIds", "type", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageGate", "calendarEntryId", "canRequestInvite", "categoryId", "closedAt", "contentSettings", "description", "displayName", "groupAccessType", "hardClose", "instancePersistenceEnabled", "inviteOnly", "ownerId", "playerPersistenceEnabled", "queueEnabled", "region", "roleIds", "type", "vibeIds", "worldId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("region", "type", "worldId"));
@@ -597,9 +683,15 @@ public class CreateInstanceRequest {
       if ((jsonObj.get("calendarEntryId") != null && !jsonObj.get("calendarEntryId").isJsonNull()) && !jsonObj.get("calendarEntryId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `calendarEntryId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("calendarEntryId").toString()));
       }
+      if ((jsonObj.get("categoryId") != null && !jsonObj.get("categoryId").isJsonNull()) && !jsonObj.get("categoryId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `categoryId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("categoryId").toString()));
+      }
       // validate the optional field `contentSettings`
       if (jsonObj.get("contentSettings") != null && !jsonObj.get("contentSettings").isJsonNull()) {
         InstanceContentSettings.validateJsonElement(jsonObj.get("contentSettings"));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
@@ -619,6 +711,10 @@ public class CreateInstanceRequest {
       }
       // validate the required field `type`
       InstanceType.validateJsonElement(jsonObj.get("type"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("vibeIds") != null && !jsonObj.get("vibeIds").isJsonNull() && !jsonObj.get("vibeIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `vibeIds` to be an array in the JSON string but got `%s`", jsonObj.get("vibeIds").toString()));
+      }
       if (!jsonObj.get("worldId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldId").toString()));
       }

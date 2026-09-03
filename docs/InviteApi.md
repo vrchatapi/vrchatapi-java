@@ -310,6 +310,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single SentNotification object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to invite someone whom you are not friends with. |  -  |
 
 <a id="inviteUserWithPhoto"></a>

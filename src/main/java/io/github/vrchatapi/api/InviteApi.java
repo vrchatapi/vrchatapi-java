@@ -545,6 +545,7 @@ public class InviteApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to invite someone whom you are not friends with. </td><td>  -  </td></tr>
      </table>
      */
@@ -622,6 +623,7 @@ public class InviteApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to invite someone whom you are not friends with. </td><td>  -  </td></tr>
      </table>
      */
@@ -642,6 +644,7 @@ public class InviteApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to invite someone whom you are not friends with. </td><td>  -  </td></tr>
      </table>
      */
@@ -664,6 +667,7 @@ public class InviteApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a single SentNotification object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Error response when trying to invite someone whom you are not friends with. </td><td>  -  </td></tr>
      </table>
      */

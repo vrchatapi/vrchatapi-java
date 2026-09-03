@@ -175,11 +175,13 @@ docs/InfoPushEmbeddedLink.md
 docs/InfoPushExperiment.md
 docs/InfoPushIpsQuery.md
 docs/Instance.md
+docs/InstanceCategory.md
 docs/InstanceContentSettings.md
 docs/InstancePlatforms.md
 docs/InstanceRegion.md
 docs/InstanceShortNameResponse.md
 docs/InstanceType.md
+docs/InstanceVibe.md
 docs/InstancesApi.md
 docs/Inventory.md
 docs/InventoryApi.md
@@ -586,11 +588,13 @@ src/main/java/io/github/vrchatapi/model/InfoPushEmbeddedLink.java
 src/main/java/io/github/vrchatapi/model/InfoPushExperiment.java
 src/main/java/io/github/vrchatapi/model/InfoPushIpsQuery.java
 src/main/java/io/github/vrchatapi/model/Instance.java
+src/main/java/io/github/vrchatapi/model/InstanceCategory.java
 src/main/java/io/github/vrchatapi/model/InstanceContentSettings.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InstanceRegion.java
 src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
+src/main/java/io/github/vrchatapi/model/InstanceVibe.java
 src/main/java/io/github/vrchatapi/model/Inventory.java
 src/main/java/io/github/vrchatapi/model/InventoryConsumptionResults.java
 src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValue.java

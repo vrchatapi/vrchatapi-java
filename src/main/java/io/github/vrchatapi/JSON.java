@@ -228,9 +228,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InfoPushExperiment.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InfoPushIpsQuery.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Instance.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InstanceCategory.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InstanceContentSettings.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InstancePlatforms.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InstanceShortNameResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InstanceVibe.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Inventory.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InventoryConsumptionResults.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.InventoryDefaultAttributesValue.CustomTypeAdapterFactory());

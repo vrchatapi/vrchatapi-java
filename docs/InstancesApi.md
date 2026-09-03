@@ -8,6 +8,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**createInstance**](InstancesApi.md#createInstance) | **POST** /instances | Create Instance |
 | [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
 | [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
+| [**getInstanceCategories**](InstancesApi.md#getInstanceCategories) | **GET** /instanceCategories | List Instance Categories |
+| [**getInstanceVibes**](InstancesApi.md#getInstanceVibes) | **GET** /instanceVibes | List Instance Vibes |
 | [**getRecentLocations**](InstancesApi.md#getRecentLocations) | **GET** /instances/recent | List Recent Locations |
 | [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name |
 
@@ -303,6 +305,136 @@ public class Example {
 | **200** | Returns a single Instance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
+
+<a id="getInstanceCategories"></a>
+# **getInstanceCategories**
+> List&lt;InstanceCategory&gt; getInstanceCategories()
+
+List Instance Categories
+
+Returns the categories an instance can be listed under.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    try {
+      List<InstanceCategory> result = apiInstance.getInstanceCategories();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getInstanceCategories");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;InstanceCategory&gt;**](InstanceCategory.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of InstanceCategory objects. |  -  |
+
+<a id="getInstanceVibes"></a>
+# **getInstanceVibes**
+> List&lt;InstanceVibe&gt; getInstanceVibes()
+
+List Instance Vibes
+
+Returns the vibes an instance can be tagged with.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    try {
+      List<InstanceVibe> result = apiInstance.getInstanceVibes();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getInstanceVibes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;InstanceVibe&gt;**](InstanceVibe.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a list of InstanceVibe objects. |  -  |
 
 <a id="getRecentLocations"></a>
 # **getRecentLocations**
