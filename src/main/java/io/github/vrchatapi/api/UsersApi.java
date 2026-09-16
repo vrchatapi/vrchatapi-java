@@ -1478,6 +1478,7 @@ public class UsersApi {
     /**
      * Build call for getPublicProfile
      * @param userId Must be a valid user ID. (required)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1489,7 +1490,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPublicProfileCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPublicProfileCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1515,6 +1516,10 @@ public class UsersApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (withGroupsAndWorlds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("withGroupsAndWorlds", withGroupsAndWorlds));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1535,13 +1540,13 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPublicProfileValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPublicProfileValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getPublicProfile(Async)");
         }
 
-        return getPublicProfileCall(userId, _callback);
+        return getPublicProfileCall(userId, withGroupsAndWorlds, _callback);
 
     }
 
@@ -1549,6 +1554,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
      * @return PublicProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1559,8 +1565,8 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public PublicProfile getPublicProfile(@javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<PublicProfile> localVarResp = getPublicProfileWithHttpInfo(userId);
+    public PublicProfile getPublicProfile(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
+        ApiResponse<PublicProfile> localVarResp = getPublicProfileWithHttpInfo(userId, withGroupsAndWorlds);
         return localVarResp.getData();
     }
 
@@ -1568,6 +1574,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
      * @return ApiResponse&lt;PublicProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1578,8 +1585,8 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PublicProfile> getPublicProfileWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
-        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, null);
+    public ApiResponse<PublicProfile> getPublicProfileWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
+        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, withGroupsAndWorlds, null);
         Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1588,6 +1595,7 @@ public class UsersApi {
      * Get Public Profile (asynchronously)
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1599,9 +1607,9 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPublicProfileAsync(@javax.annotation.Nonnull String userId, final ApiCallback<PublicProfile> _callback) throws ApiException {
+    public okhttp3.Call getPublicProfileAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback<PublicProfile> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, _callback);
+        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, withGroupsAndWorlds, _callback);
         Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

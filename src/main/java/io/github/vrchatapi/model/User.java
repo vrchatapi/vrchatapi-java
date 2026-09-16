@@ -120,31 +120,6 @@ public class User {
   @javax.annotation.Nullable
   private String bannerUrl;
 
-  public static final String SERIALIZED_NAME_BIO = "bio";
-  @SerializedName(SERIALIZED_NAME_BIO)
-  @javax.annotation.Nonnull
-  private String bio;
-
-  public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
-  @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  @javax.annotation.Nonnull
-  private List<String> bioLinks = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL = "currentAvatarImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL)
-  @javax.annotation.Nonnull
-  private String currentAvatarImageUrl;
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
-  @javax.annotation.Nonnull
-  private List<String> currentAvatarTags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
-  @javax.annotation.Nonnull
-  private String currentAvatarThumbnailImageUrl;
-
   public static final String SERIALIZED_NAME_DATE_JOINED = "date_joined";
   @SerializedName(SERIALIZED_NAME_DATE_JOINED)
   @javax.annotation.Nonnull
@@ -245,16 +220,6 @@ public class User {
   @javax.annotation.Nullable
   private String profileEffect;
 
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
-  @javax.annotation.Nonnull
-  private String profilePicOverride;
-
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL = "profilePicOverrideThumbnail";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL)
-  @javax.annotation.Nonnull
-  private String profilePicOverrideThumbnail;
-
   public static final String SERIALIZED_NAME_PRONOUNS = "pronouns";
   @SerializedName(SERIALIZED_NAME_PRONOUNS)
   @javax.annotation.Nonnull
@@ -294,11 +259,6 @@ public class User {
   @SerializedName(SERIALIZED_NAME_TRAVELING_TO_WORLD)
   @javax.annotation.Nullable
   private String travelingToWorld;
-
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nonnull
-  private String userIcon;
 
   public static final String SERIALIZED_NAME_WORLD_ID = "worldId";
   @SerializedName(SERIALIZED_NAME_WORLD_ID)
@@ -557,117 +517,6 @@ public class User {
 
   public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
     this.bannerUrl = bannerUrl;
-  }
-
-
-  public User bio(@javax.annotation.Nonnull String bio) {
-    this.bio = bio;
-    return this;
-  }
-
-  /**
-   * Get bio
-   * @return bio
-   */
-  @javax.annotation.Nonnull
-  public String getBio() {
-    return bio;
-  }
-
-  public void setBio(@javax.annotation.Nonnull String bio) {
-    this.bio = bio;
-  }
-
-
-  public User bioLinks(@javax.annotation.Nonnull List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-    return this;
-  }
-
-  public User addBioLinksItem(String bioLinksItem) {
-    if (this.bioLinks == null) {
-      this.bioLinks = new ArrayList<>();
-    }
-    this.bioLinks.add(bioLinksItem);
-    return this;
-  }
-
-  /**
-   * Get bioLinks
-   * @return bioLinks
-   */
-  @javax.annotation.Nonnull
-  public List<String> getBioLinks() {
-    return bioLinks;
-  }
-
-  public void setBioLinks(@javax.annotation.Nonnull List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-  }
-
-
-  public User currentAvatarImageUrl(@javax.annotation.Nonnull String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarImageUrl
-   */
-  @javax.annotation.Nonnull
-  public String getCurrentAvatarImageUrl() {
-    return currentAvatarImageUrl;
-  }
-
-  public void setCurrentAvatarImageUrl(@javax.annotation.Nonnull String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-  }
-
-
-  public User currentAvatarTags(@javax.annotation.Nonnull List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public User addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
-    return this;
-  }
-
-  /**
-   * Get currentAvatarTags
-   * @return currentAvatarTags
-   */
-  @javax.annotation.Nonnull
-  public List<String> getCurrentAvatarTags() {
-    return currentAvatarTags;
-  }
-
-  public void setCurrentAvatarTags(@javax.annotation.Nonnull List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-  }
-
-
-  public User currentAvatarThumbnailImageUrl(@javax.annotation.Nonnull String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarThumbnailImageUrl
-   */
-  @javax.annotation.Nonnull
-  public String getCurrentAvatarThumbnailImageUrl() {
-    return currentAvatarThumbnailImageUrl;
-  }
-
-  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nonnull String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
   }
 
 
@@ -1051,44 +900,6 @@ public class User {
   }
 
 
-  public User profilePicOverride(@javax.annotation.Nonnull String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverride
-   * @return profilePicOverride
-   */
-  @javax.annotation.Nonnull
-  public String getProfilePicOverride() {
-    return profilePicOverride;
-  }
-
-  public void setProfilePicOverride(@javax.annotation.Nonnull String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-  }
-
-
-  public User profilePicOverrideThumbnail(@javax.annotation.Nonnull String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverrideThumbnail
-   * @return profilePicOverrideThumbnail
-   */
-  @javax.annotation.Nonnull
-  public String getProfilePicOverrideThumbnail() {
-    return profilePicOverrideThumbnail;
-  }
-
-  public void setProfilePicOverrideThumbnail(@javax.annotation.Nonnull String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-  }
-
-
   public User pronouns(@javax.annotation.Nonnull String pronouns) {
     this.pronouns = pronouns;
     return this;
@@ -1249,25 +1060,6 @@ public class User {
   }
 
 
-  public User userIcon(@javax.annotation.Nonnull String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * Get userIcon
-   * @return userIcon
-   */
-  @javax.annotation.Nonnull
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nonnull String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
   public User worldId(@javax.annotation.Nullable String worldId) {
     this.worldId = worldId;
     return this;
@@ -1309,11 +1101,6 @@ public class User {
         Objects.equals(this.bannerColor, user.bannerColor) &&
         Objects.equals(this.bannerType, user.bannerType) &&
         Objects.equals(this.bannerUrl, user.bannerUrl) &&
-        Objects.equals(this.bio, user.bio) &&
-        Objects.equals(this.bioLinks, user.bioLinks) &&
-        Objects.equals(this.currentAvatarImageUrl, user.currentAvatarImageUrl) &&
-        Objects.equals(this.currentAvatarTags, user.currentAvatarTags) &&
-        Objects.equals(this.currentAvatarThumbnailImageUrl, user.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.dateJoined, user.dateJoined) &&
         Objects.equals(this.developerType, user.developerType) &&
         Objects.equals(this.displayName, user.displayName) &&
@@ -1334,8 +1121,6 @@ public class User {
         Objects.equals(this.note, user.note) &&
         Objects.equals(this.platform, user.platform) &&
         Objects.equals(this.profileEffect, user.profileEffect) &&
-        Objects.equals(this.profilePicOverride, user.profilePicOverride) &&
-        Objects.equals(this.profilePicOverrideThumbnail, user.profilePicOverrideThumbnail) &&
         Objects.equals(this.pronouns, user.pronouns) &&
         Objects.equals(this.state, user.state) &&
         Objects.equals(this.status, user.status) &&
@@ -1344,7 +1129,6 @@ public class User {
         Objects.equals(this.travelingToInstance, user.travelingToInstance) &&
         Objects.equals(this.travelingToLocation, user.travelingToLocation) &&
         Objects.equals(this.travelingToWorld, user.travelingToWorld) &&
-        Objects.equals(this.userIcon, user.userIcon) &&
         Objects.equals(this.worldId, user.worldId);
   }
 
@@ -1354,7 +1138,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, profilePicOverride, profilePicOverrideThumbnail, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, userIcon, worldId);
+    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, badges, bannerColor, bannerType, bannerUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1380,11 +1164,6 @@ public class User {
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
-    sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
-    sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
-    sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
-    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
-    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    dateJoined: ").append(toIndentedString(dateJoined)).append("\n");
     sb.append("    developerType: ").append(toIndentedString(developerType)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
@@ -1405,8 +1184,6 @@ public class User {
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
-    sb.append("    profilePicOverrideThumbnail: ").append(toIndentedString(profilePicOverrideThumbnail)).append("\n");
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -1415,7 +1192,6 @@ public class User {
     sb.append("    travelingToInstance: ").append(toIndentedString(travelingToInstance)).append("\n");
     sb.append("    travelingToLocation: ").append(toIndentedString(travelingToLocation)).append("\n");
     sb.append("    travelingToWorld: ").append(toIndentedString(travelingToWorld)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("    worldId: ").append(toIndentedString(worldId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1435,10 +1211,10 @@ public class User {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "userIcon", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "badges", "bannerColor", "bannerType", "bannerUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "worldId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "allowAvatarCopying", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_platform", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "state", "status", "statusDescription", "tags", "userIcon"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "allowAvatarCopying", "date_joined", "developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_platform", "pronouns", "state", "status", "statusDescription", "tags"));
   }
 
   /**
@@ -1501,27 +1277,6 @@ public class User {
       if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
-      if (!jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("bioLinks") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
-      }
-      if (!jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("currentAvatarTags") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
-      }
-      if (!jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
       // validate the required field `developerType`
       DeveloperType.validateJsonElement(jsonObj.get("developerType"));
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
@@ -1572,12 +1327,6 @@ public class User {
       if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
-      if (!jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if (!jsonObj.get("profilePicOverrideThumbnail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverrideThumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverrideThumbnail").toString()));
-      }
       if (!jsonObj.get("pronouns").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pronouns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pronouns").toString()));
       }
@@ -1602,9 +1351,6 @@ public class User {
       }
       if ((jsonObj.get("travelingToWorld") != null && !jsonObj.get("travelingToWorld").isJsonNull()) && !jsonObj.get("travelingToWorld").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `travelingToWorld` to be a primitive type in the JSON string but got `%s`", jsonObj.get("travelingToWorld").toString()));
-      }
-      if (!jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
       if ((jsonObj.get("worldId") != null && !jsonObj.get("worldId").isJsonNull()) && !jsonObj.get("worldId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldId").toString()));

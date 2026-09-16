@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.AgeVerificationStatus;
 import io.github.vrchatapi.model.Badge;
+import io.github.vrchatapi.model.ProfileGroups;
 import io.github.vrchatapi.model.ProfileRepresentedGroup;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -84,6 +85,11 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private String bannerType;
 
+  public static final String SERIALIZED_NAME_BANNER_URL = "bannerUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  @javax.annotation.Nullable
+  private String bannerUrl;
+
   public static final String SERIALIZED_NAME_BIO = "bio";
   @SerializedName(SERIALIZED_NAME_BIO)
   @javax.annotation.Nullable
@@ -98,6 +104,11 @@ public class PublicProfile {
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nullable
   private String displayName;
+
+  public static final String SERIALIZED_NAME_GROUPS = "groups";
+  @SerializedName(SERIALIZED_NAME_GROUPS)
+  @javax.annotation.Nullable
+  private ProfileGroups groups;
 
   public static final String SERIALIZED_NAME_HAS_VRC_PLUS = "hasVrcPlus";
   @SerializedName(SERIALIZED_NAME_HAS_VRC_PLUS)
@@ -144,6 +155,11 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private String pronouns;
 
+  public static final String SERIALIZED_NAME_PUBLIC_WORLDS = "publicWorlds";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_WORLDS)
+  @javax.annotation.Nullable
+  private List<Object> publicWorlds = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_REPRESENTED_GROUP = "representedGroup";
   @SerializedName(SERIALIZED_NAME_REPRESENTED_GROUP)
   @javax.annotation.Nullable
@@ -154,10 +170,20 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private String themeId;
 
+  public static final String SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT = "totalPublicWorldsCount";
+  @SerializedName(SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT)
+  @javax.annotation.Nullable
+  private Integer totalPublicWorldsCount;
+
   public static final String SERIALIZED_NAME_TRUST_TAGS = "trustTags";
   @SerializedName(SERIALIZED_NAME_TRUST_TAGS)
   @javax.annotation.Nullable
   private List<String> trustTags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_WORLD_FAVORITE_LISTS = "worldFavoriteLists";
+  @SerializedName(SERIALIZED_NAME_WORLD_FAVORITE_LISTS)
+  @javax.annotation.Nullable
+  private List<Object> worldFavoriteLists = new ArrayList<>();
 
   public PublicProfile() {
   }
@@ -284,6 +310,25 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile bannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerUrl
+   * @return bannerUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerUrl() {
+    return bannerUrl;
+  }
+
+  public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+  }
+
+
   public PublicProfile bio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
     return this;
@@ -346,6 +391,25 @@ public class PublicProfile {
 
   public void setDisplayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public PublicProfile groups(@javax.annotation.Nullable ProfileGroups groups) {
+    this.groups = groups;
+    return this;
+  }
+
+  /**
+   * Get groups
+   * @return groups
+   */
+  @javax.annotation.Nullable
+  public ProfileGroups getGroups() {
+    return groups;
+  }
+
+  public void setGroups(@javax.annotation.Nullable ProfileGroups groups) {
+    this.groups = groups;
   }
 
 
@@ -528,6 +592,33 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile publicWorlds(@javax.annotation.Nullable List<Object> publicWorlds) {
+    this.publicWorlds = publicWorlds;
+    return this;
+  }
+
+  public PublicProfile addPublicWorldsItem(Object publicWorldsItem) {
+    if (this.publicWorlds == null) {
+      this.publicWorlds = new ArrayList<>();
+    }
+    this.publicWorlds.add(publicWorldsItem);
+    return this;
+  }
+
+  /**
+   * Get publicWorlds
+   * @return publicWorlds
+   */
+  @javax.annotation.Nullable
+  public List<Object> getPublicWorlds() {
+    return publicWorlds;
+  }
+
+  public void setPublicWorlds(@javax.annotation.Nullable List<Object> publicWorlds) {
+    this.publicWorlds = publicWorlds;
+  }
+
+
   public PublicProfile representedGroup(@javax.annotation.Nullable ProfileRepresentedGroup representedGroup) {
     this.representedGroup = representedGroup;
     return this;
@@ -566,6 +657,25 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile totalPublicWorldsCount(@javax.annotation.Nullable Integer totalPublicWorldsCount) {
+    this.totalPublicWorldsCount = totalPublicWorldsCount;
+    return this;
+  }
+
+  /**
+   * Get totalPublicWorldsCount
+   * @return totalPublicWorldsCount
+   */
+  @javax.annotation.Nullable
+  public Integer getTotalPublicWorldsCount() {
+    return totalPublicWorldsCount;
+  }
+
+  public void setTotalPublicWorldsCount(@javax.annotation.Nullable Integer totalPublicWorldsCount) {
+    this.totalPublicWorldsCount = totalPublicWorldsCount;
+  }
+
+
   public PublicProfile trustTags(@javax.annotation.Nullable List<String> trustTags) {
     this.trustTags = trustTags;
     return this;
@@ -593,6 +703,33 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile worldFavoriteLists(@javax.annotation.Nullable List<Object> worldFavoriteLists) {
+    this.worldFavoriteLists = worldFavoriteLists;
+    return this;
+  }
+
+  public PublicProfile addWorldFavoriteListsItem(Object worldFavoriteListsItem) {
+    if (this.worldFavoriteLists == null) {
+      this.worldFavoriteLists = new ArrayList<>();
+    }
+    this.worldFavoriteLists.add(worldFavoriteListsItem);
+    return this;
+  }
+
+  /**
+   * Get worldFavoriteLists
+   * @return worldFavoriteLists
+   */
+  @javax.annotation.Nullable
+  public List<Object> getWorldFavoriteLists() {
+    return worldFavoriteLists;
+  }
+
+  public void setWorldFavoriteLists(@javax.annotation.Nullable List<Object> worldFavoriteLists) {
+    this.worldFavoriteLists = worldFavoriteLists;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -609,9 +746,11 @@ public class PublicProfile {
         Objects.equals(this.badges, publicProfile.badges) &&
         Objects.equals(this.bannerColor, publicProfile.bannerColor) &&
         Objects.equals(this.bannerType, publicProfile.bannerType) &&
+        Objects.equals(this.bannerUrl, publicProfile.bannerUrl) &&
         Objects.equals(this.bio, publicProfile.bio) &&
         Objects.equals(this.bioLinks, publicProfile.bioLinks) &&
         Objects.equals(this.displayName, publicProfile.displayName) &&
+        Objects.equals(this.groups, publicProfile.groups) &&
         Objects.equals(this.hasVrcPlus, publicProfile.hasVrcPlus) &&
         Objects.equals(this.iconFrame, publicProfile.iconFrame) &&
         Objects.equals(this.iconUrl, publicProfile.iconUrl) &&
@@ -621,14 +760,17 @@ public class PublicProfile {
         Objects.equals(this.nameplateEffect, publicProfile.nameplateEffect) &&
         Objects.equals(this.profileEffect, publicProfile.profileEffect) &&
         Objects.equals(this.pronouns, publicProfile.pronouns) &&
+        Objects.equals(this.publicWorlds, publicProfile.publicWorlds) &&
         Objects.equals(this.representedGroup, publicProfile.representedGroup) &&
         Objects.equals(this.themeId, publicProfile.themeId) &&
-        Objects.equals(this.trustTags, publicProfile.trustTags);
+        Objects.equals(this.totalPublicWorldsCount, publicProfile.totalPublicWorldsCount) &&
+        Objects.equals(this.trustTags, publicProfile.trustTags) &&
+        Objects.equals(this.worldFavoriteLists, publicProfile.worldFavoriteLists);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationStatus, ageVerified, backgroundType, badges, bannerColor, bannerType, bio, bioLinks, displayName, hasVrcPlus, iconFrame, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, representedGroup, themeId, trustTags);
+    return Objects.hash(ageVerificationStatus, ageVerified, backgroundType, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, displayName, groups, hasVrcPlus, iconFrame, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, publicWorlds, representedGroup, themeId, totalPublicWorldsCount, trustTags, worldFavoriteLists);
   }
 
   @Override
@@ -641,9 +783,11 @@ public class PublicProfile {
     sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
+    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
     sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    hasVrcPlus: ").append(toIndentedString(hasVrcPlus)).append("\n");
     sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
     sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
@@ -653,9 +797,12 @@ public class PublicProfile {
     sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
     sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
+    sb.append("    publicWorlds: ").append(toIndentedString(publicWorlds)).append("\n");
     sb.append("    representedGroup: ").append(toIndentedString(representedGroup)).append("\n");
     sb.append("    themeId: ").append(toIndentedString(themeId)).append("\n");
+    sb.append("    totalPublicWorldsCount: ").append(toIndentedString(totalPublicWorldsCount)).append("\n");
     sb.append("    trustTags: ").append(toIndentedString(trustTags)).append("\n");
+    sb.append("    worldFavoriteLists: ").append(toIndentedString(worldFavoriteLists)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -674,7 +821,7 @@ public class PublicProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundType", "badges", "bannerColor", "bannerType", "bio", "bioLinks", "displayName", "hasVrcPlus", "iconFrame", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "representedGroup", "themeId", "trustTags"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundType", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "displayName", "groups", "hasVrcPlus", "iconFrame", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "publicWorlds", "representedGroup", "themeId", "totalPublicWorldsCount", "trustTags", "worldFavoriteLists"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -728,6 +875,9 @@ public class PublicProfile {
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
       }
+      if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
+      }
       if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
       }
@@ -737,6 +887,10 @@ public class PublicProfile {
       }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      }
+      // validate the optional field `groups`
+      if (jsonObj.get("groups") != null && !jsonObj.get("groups").isJsonNull()) {
+        ProfileGroups.validateJsonElement(jsonObj.get("groups"));
       }
       if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
@@ -760,6 +914,10 @@ public class PublicProfile {
       if ((jsonObj.get("pronouns") != null && !jsonObj.get("pronouns").isJsonNull()) && !jsonObj.get("pronouns").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pronouns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pronouns").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("publicWorlds") != null && !jsonObj.get("publicWorlds").isJsonNull() && !jsonObj.get("publicWorlds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publicWorlds` to be an array in the JSON string but got `%s`", jsonObj.get("publicWorlds").toString()));
+      }
       // validate the optional field `representedGroup`
       if (jsonObj.get("representedGroup") != null && !jsonObj.get("representedGroup").isJsonNull()) {
         ProfileRepresentedGroup.validateJsonElement(jsonObj.get("representedGroup"));
@@ -770,6 +928,10 @@ public class PublicProfile {
       // ensure the optional json data is an array if present
       if (jsonObj.get("trustTags") != null && !jsonObj.get("trustTags").isJsonNull() && !jsonObj.get("trustTags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `trustTags` to be an array in the JSON string but got `%s`", jsonObj.get("trustTags").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("worldFavoriteLists") != null && !jsonObj.get("worldFavoriteLists").isJsonNull() && !jsonObj.get("worldFavoriteLists").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldFavoriteLists` to be an array in the JSON string but got `%s`", jsonObj.get("worldFavoriteLists").toString()));
       }
   }
 

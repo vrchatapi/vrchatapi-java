@@ -753,7 +753,7 @@ public class Example {
 
 <a id="getPublicProfile"></a>
 # **getPublicProfile**
-> PublicProfile getPublicProfile(userId)
+> PublicProfile getPublicProfile(userId, withGroupsAndWorlds)
 
 Get Public Profile
 
@@ -782,8 +782,9 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
+    Boolean withGroupsAndWorlds = true; // Boolean | Include `groups`, `publicWorlds` and `totalPublicWorldsCount` in the response.
     try {
-      PublicProfile result = apiInstance.getPublicProfile(userId);
+      PublicProfile result = apiInstance.getPublicProfile(userId, withGroupsAndWorlds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getPublicProfile");
@@ -801,6 +802,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
+| **withGroupsAndWorlds** | **Boolean**| Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. | [optional] |
 
 ### Return type
 

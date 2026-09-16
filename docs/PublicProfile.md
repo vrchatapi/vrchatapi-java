@@ -13,9 +13,11 @@
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
+|**bannerUrl** | **String** |  |  [optional] |
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
+|**groups** | [**ProfileGroups**](ProfileGroups.md) |  |  [optional] |
 |**hasVrcPlus** | **Boolean** |  |  [optional] |
 |**iconFrame** | **String** |  |  [optional] |
 |**iconUrl** | **String** |  |  [optional] |
@@ -25,9 +27,12 @@
 |**nameplateEffect** | **String** |  |  [optional] |
 |**profileEffect** | **String** |  |  [optional] |
 |**pronouns** | **String** |  |  [optional] |
+|**publicWorlds** | **List&lt;Object&gt;** |  |  [optional] |
 |**representedGroup** | [**ProfileRepresentedGroup**](ProfileRepresentedGroup.md) |  |  [optional] |
 |**themeId** | **String** |  |  [optional] |
+|**totalPublicWorldsCount** | **Integer** |  |  [optional] |
 |**trustTags** | **List&lt;String&gt;** |  |  [optional] |
+|**worldFavoriteLists** | **List&lt;Object&gt;** |  |  [optional] |
 
 
 

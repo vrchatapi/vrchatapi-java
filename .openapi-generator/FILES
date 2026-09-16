@@ -275,6 +275,8 @@ docs/ProductPurchaseProduct.md
 docs/ProductPurchasePurchaseContext.md
 docs/ProductPurchaseRecord.md
 docs/ProductType.md
+docs/ProfileGroup.md
+docs/ProfileGroups.md
 docs/ProfileRepresentedGroup.md
 docs/Prop.md
 docs/PropPublishStatus.md
@@ -680,6 +682,8 @@ src/main/java/io/github/vrchatapi/model/ProductPurchaseProduct.java
 src/main/java/io/github/vrchatapi/model/ProductPurchasePurchaseContext.java
 src/main/java/io/github/vrchatapi/model/ProductPurchaseRecord.java
 src/main/java/io/github/vrchatapi/model/ProductType.java
+src/main/java/io/github/vrchatapi/model/ProfileGroup.java
+src/main/java/io/github/vrchatapi/model/ProfileGroups.java
 src/main/java/io/github/vrchatapi/model/ProfileRepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/Prop.java
 src/main/java/io/github/vrchatapi/model/PropPublishStatus.java

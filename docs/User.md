@@ -19,11 +19,6 @@
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
-|**bio** | **String** |  |  |
-|**bioLinks** | **List&lt;String&gt;** |  |  |
-|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
-|**currentAvatarTags** | **List&lt;String&gt;** |  |  |
-|**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
 |**dateJoined** | **LocalDate** |  |  |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their &#x60;username&#x60;. Changing display name is restricted to a cooldown period. |  |
@@ -44,8 +39,6 @@
 |**note** | **String** |  |  [optional] |
 |**platform** | **String** |  |  [optional] |
 |**profileEffect** | **String** |  |  [optional] |
-|**profilePicOverride** | **String** |  |  |
-|**profilePicOverrideThumbnail** | **String** |  |  |
 |**pronouns** | **String** |  |  |
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
@@ -54,7 +47,6 @@
 |**travelingToInstance** | **String** |  |  [optional] |
 |**travelingToLocation** | **String** |  |  [optional] |
 |**travelingToWorld** | **String** |  |  [optional] |
-|**userIcon** | **String** |  |  |
 |**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 
 
