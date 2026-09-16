@@ -13,7 +13,7 @@
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
-|**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
+|**currentAvatarTags** | **String** |  |  [optional] |
 |**debugflag** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**groups** | **List&lt;String&gt;** |  |  [optional] |

@@ -85,7 +85,7 @@ public class CurrentUserPresence {
   public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
   @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
   @javax.annotation.Nullable
-  private List<String> currentAvatarTags = new ArrayList<>();
+  private String currentAvatarTags;
 
   public static final String SERIALIZED_NAME_DEBUGFLAG = "debugflag";
   @SerializedName(SERIALIZED_NAME_DEBUGFLAG)
@@ -294,16 +294,8 @@ public class CurrentUserPresence {
   }
 
 
-  public CurrentUserPresence currentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
+  public CurrentUserPresence currentAvatarTags(@javax.annotation.Nullable String currentAvatarTags) {
     this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public CurrentUserPresence addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
     return this;
   }
 
@@ -312,11 +304,11 @@ public class CurrentUserPresence {
    * @return currentAvatarTags
    */
   @javax.annotation.Nullable
-  public List<String> getCurrentAvatarTags() {
+  public String getCurrentAvatarTags() {
     return currentAvatarTags;
   }
 
-  public void setCurrentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
+  public void setCurrentAvatarTags(@javax.annotation.Nullable String currentAvatarTags) {
     this.currentAvatarTags = currentAvatarTags;
   }
 
@@ -816,9 +808,8 @@ public class CurrentUserPresence {
       if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
+      if ((jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull()) && !jsonObj.get("currentAvatarTags").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
       }
       if ((jsonObj.get("debugflag") != null && !jsonObj.get("debugflag").isJsonNull()) && !jsonObj.get("debugflag").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `debugflag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("debugflag").toString()));
