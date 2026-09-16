@@ -230,7 +230,7 @@ public class ProductListing {
 
   public static final String SERIALIZED_NAME_REFUNDABLE = "refundable";
   @SerializedName(SERIALIZED_NAME_REFUNDABLE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean refundable;
 
   public static final String SERIALIZED_NAME_SELLER_DISPLAY_NAME = "sellerDisplayName";
@@ -255,7 +255,7 @@ public class ProductListing {
 
   public static final String SERIALIZED_NAME_STORE_IDS = "storeIds";
   @SerializedName(SERIALIZED_NAME_STORE_IDS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<String> storeIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUBTITLE = "subtitle";
@@ -972,7 +972,7 @@ public class ProductListing {
   }
 
 
-  public ProductListing refundable(@javax.annotation.Nonnull Boolean refundable) {
+  public ProductListing refundable(@javax.annotation.Nullable Boolean refundable) {
     this.refundable = refundable;
     return this;
   }
@@ -981,12 +981,12 @@ public class ProductListing {
    * Get refundable
    * @return refundable
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getRefundable() {
     return refundable;
   }
 
-  public void setRefundable(@javax.annotation.Nonnull Boolean refundable) {
+  public void setRefundable(@javax.annotation.Nullable Boolean refundable) {
     this.refundable = refundable;
   }
 
@@ -1067,7 +1067,7 @@ public class ProductListing {
   }
 
 
-  public ProductListing storeIds(@javax.annotation.Nonnull List<String> storeIds) {
+  public ProductListing storeIds(@javax.annotation.Nullable List<String> storeIds) {
     this.storeIds = storeIds;
     return this;
   }
@@ -1084,12 +1084,12 @@ public class ProductListing {
    * Get storeIds
    * @return storeIds
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<String> getStoreIds() {
     return storeIds;
   }
 
-  public void setStoreIds(@javax.annotation.Nonnull List<String> storeIds) {
+  public void setStoreIds(@javax.annotation.Nullable List<String> storeIds) {
     this.storeIds = storeIds;
   }
 
@@ -1340,7 +1340,7 @@ public class ProductListing {
     openapiFields = new HashSet<String>(Arrays.asList("active", "archived", "attribution", "buyerRefundable", "collabUserDisplayName", "collabUserId", "created", "description", "displayName", "duration", "durationType", "groupIcon", "groupId", "groupName", "hasAvatar", "hasCompanion", "hasInventory", "hasUdon", "hydratedProducts", "id", "imageId", "imageUrl", "listingType", "listingVariants", "permanent", "priceTokens", "productIds", "productType", "productTypes", "products", "purchaseCount", "purchaseCountQuantity", "quantifiable", "recurrable", "refundable", "sellerDisplayName", "sellerId", "soldByVrc", "stackable", "storeIds", "subtitle", "tags", "updated", "vrcPlusDiscountPrice", "whenToExpire"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("active", "buyerRefundable", "description", "displayName", "hasAvatar", "hasUdon", "id", "listingType", "priceTokens", "productIds", "productType", "products", "recurrable", "refundable", "sellerDisplayName", "sellerId", "stackable", "storeIds"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("active", "buyerRefundable", "description", "displayName", "hasAvatar", "hasUdon", "id", "listingType", "priceTokens", "productIds", "productType", "products", "recurrable", "sellerDisplayName", "sellerId", "stackable"));
   }
 
   /**
@@ -1462,10 +1462,8 @@ public class ProductListing {
       if (!jsonObj.get("sellerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sellerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerId").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("storeIds") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("storeIds").isJsonArray()) {
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("storeIds") != null && !jsonObj.get("storeIds").isJsonNull() && !jsonObj.get("storeIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storeIds` to be an array in the JSON string but got `%s`", jsonObj.get("storeIds").toString()));
       }
       if ((jsonObj.get("subtitle") != null && !jsonObj.get("subtitle").isJsonNull()) && !jsonObj.get("subtitle").isJsonPrimitive()) {

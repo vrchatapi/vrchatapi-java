@@ -41,12 +41,12 @@
 |**purchaseCountQuantity** | **Integer** |  |  [optional] |
 |**quantifiable** | **Boolean** |  |  [optional] |
 |**recurrable** | **Boolean** |  |  |
-|**refundable** | **Boolean** |  |  |
+|**refundable** | **Boolean** |  |  [optional] |
 |**sellerDisplayName** | **String** |  |  |
 |**sellerId** | **String** |  |  |
 |**soldByVrc** | **Boolean** |  |  [optional] |
 |**stackable** | **Boolean** |  |  |
-|**storeIds** | **List&lt;String&gt;** |  |  |
+|**storeIds** | **List&lt;String&gt;** |  |  [optional] |
 |**subtitle** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**updated** | **OffsetDateTime** |  |  [optional] |

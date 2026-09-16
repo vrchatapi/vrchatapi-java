@@ -301,7 +301,7 @@ public class Example {
 
 <a id="listProps"></a>
 # **listProps**
-> List&lt;Prop&gt; listProps(authorId, n, offset)
+> List&lt;Prop&gt; listProps(n, offset, authorId)
 
 List Props
 
@@ -329,11 +329,11 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     PropsApi apiInstance = new PropsApi(defaultClient);
-    String authorId = "authorId_example"; // String | Must be a valid user ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    String authorId = "authorId_example"; // String | Must be a valid user ID.
     try {
-      List<Prop> result = apiInstance.listProps(authorId, n, offset);
+      List<Prop> result = apiInstance.listProps(n, offset, authorId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PropsApi#listProps");
@@ -350,9 +350,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorId** | **String**| Must be a valid user ID. | |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **authorId** | **String**| Must be a valid user ID. | [optional] |
 
 ### Return type
 

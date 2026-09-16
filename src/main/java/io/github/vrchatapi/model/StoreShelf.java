@@ -83,6 +83,11 @@ public class StoreShelf {
   @javax.annotation.Nullable
   private String shelfBackgroundImageId;
 
+  public static final String SERIALIZED_NAME_SHELF_CLIENT_BANNER_IMAGE_ID = "shelfClientBannerImageId";
+  @SerializedName(SERIALIZED_NAME_SHELF_CLIENT_BANNER_IMAGE_ID)
+  @javax.annotation.Nullable
+  private String shelfClientBannerImageId;
+
   public static final String SERIALIZED_NAME_SHELF_DESCRIPTION = "shelfDescription";
   @SerializedName(SERIALIZED_NAME_SHELF_DESCRIPTION)
   @javax.annotation.Nonnull
@@ -97,6 +102,21 @@ public class StoreShelf {
   @SerializedName(SERIALIZED_NAME_SHELF_LAYOUT)
   @javax.annotation.Nonnull
   private String shelfLayout;
+
+  public static final String SERIALIZED_NAME_SHELF_MOBILE_HERO_BANNER_IMAGE_ID = "shelfMobileHeroBannerImageId";
+  @SerializedName(SERIALIZED_NAME_SHELF_MOBILE_HERO_BANNER_IMAGE_ID)
+  @javax.annotation.Nullable
+  private String shelfMobileHeroBannerImageId;
+
+  public static final String SERIALIZED_NAME_SHELF_MOBILE_LOGO_IMAGE_ID = "shelfMobileLogoImageId";
+  @SerializedName(SERIALIZED_NAME_SHELF_MOBILE_LOGO_IMAGE_ID)
+  @javax.annotation.Nullable
+  private String shelfMobileLogoImageId;
+
+  public static final String SERIALIZED_NAME_SHELF_MOBILE_SECONDARY_BANNER_IMAGE_ID = "shelfMobileSecondaryBannerImageId";
+  @SerializedName(SERIALIZED_NAME_SHELF_MOBILE_SECONDARY_BANNER_IMAGE_ID)
+  @javax.annotation.Nullable
+  private String shelfMobileSecondaryBannerImageId;
 
   public static final String SERIALIZED_NAME_SHELF_TAB_BACKGROUND_IMAGE_ID = "shelfTabBackgroundImageId";
   @SerializedName(SERIALIZED_NAME_SHELF_TAB_BACKGROUND_IMAGE_ID)
@@ -246,6 +266,25 @@ public class StoreShelf {
   }
 
 
+  public StoreShelf shelfClientBannerImageId(@javax.annotation.Nullable String shelfClientBannerImageId) {
+    this.shelfClientBannerImageId = shelfClientBannerImageId;
+    return this;
+  }
+
+  /**
+   * Get shelfClientBannerImageId
+   * @return shelfClientBannerImageId
+   */
+  @javax.annotation.Nullable
+  public String getShelfClientBannerImageId() {
+    return shelfClientBannerImageId;
+  }
+
+  public void setShelfClientBannerImageId(@javax.annotation.Nullable String shelfClientBannerImageId) {
+    this.shelfClientBannerImageId = shelfClientBannerImageId;
+  }
+
+
   public StoreShelf shelfDescription(@javax.annotation.Nonnull String shelfDescription) {
     this.shelfDescription = shelfDescription;
     return this;
@@ -300,6 +339,63 @@ public class StoreShelf {
 
   public void setShelfLayout(@javax.annotation.Nonnull String shelfLayout) {
     this.shelfLayout = shelfLayout;
+  }
+
+
+  public StoreShelf shelfMobileHeroBannerImageId(@javax.annotation.Nullable String shelfMobileHeroBannerImageId) {
+    this.shelfMobileHeroBannerImageId = shelfMobileHeroBannerImageId;
+    return this;
+  }
+
+  /**
+   * Get shelfMobileHeroBannerImageId
+   * @return shelfMobileHeroBannerImageId
+   */
+  @javax.annotation.Nullable
+  public String getShelfMobileHeroBannerImageId() {
+    return shelfMobileHeroBannerImageId;
+  }
+
+  public void setShelfMobileHeroBannerImageId(@javax.annotation.Nullable String shelfMobileHeroBannerImageId) {
+    this.shelfMobileHeroBannerImageId = shelfMobileHeroBannerImageId;
+  }
+
+
+  public StoreShelf shelfMobileLogoImageId(@javax.annotation.Nullable String shelfMobileLogoImageId) {
+    this.shelfMobileLogoImageId = shelfMobileLogoImageId;
+    return this;
+  }
+
+  /**
+   * Get shelfMobileLogoImageId
+   * @return shelfMobileLogoImageId
+   */
+  @javax.annotation.Nullable
+  public String getShelfMobileLogoImageId() {
+    return shelfMobileLogoImageId;
+  }
+
+  public void setShelfMobileLogoImageId(@javax.annotation.Nullable String shelfMobileLogoImageId) {
+    this.shelfMobileLogoImageId = shelfMobileLogoImageId;
+  }
+
+
+  public StoreShelf shelfMobileSecondaryBannerImageId(@javax.annotation.Nullable String shelfMobileSecondaryBannerImageId) {
+    this.shelfMobileSecondaryBannerImageId = shelfMobileSecondaryBannerImageId;
+    return this;
+  }
+
+  /**
+   * Get shelfMobileSecondaryBannerImageId
+   * @return shelfMobileSecondaryBannerImageId
+   */
+  @javax.annotation.Nullable
+  public String getShelfMobileSecondaryBannerImageId() {
+    return shelfMobileSecondaryBannerImageId;
+  }
+
+  public void setShelfMobileSecondaryBannerImageId(@javax.annotation.Nullable String shelfMobileSecondaryBannerImageId) {
+    this.shelfMobileSecondaryBannerImageId = shelfMobileSecondaryBannerImageId;
   }
 
 
@@ -376,9 +472,13 @@ public class StoreShelf {
         Objects.equals(this.listingIds, storeShelf.listingIds) &&
         Objects.equals(this.listings, storeShelf.listings) &&
         Objects.equals(this.shelfBackgroundImageId, storeShelf.shelfBackgroundImageId) &&
+        Objects.equals(this.shelfClientBannerImageId, storeShelf.shelfClientBannerImageId) &&
         Objects.equals(this.shelfDescription, storeShelf.shelfDescription) &&
         Objects.equals(this.shelfIconImageId, storeShelf.shelfIconImageId) &&
         Objects.equals(this.shelfLayout, storeShelf.shelfLayout) &&
+        Objects.equals(this.shelfMobileHeroBannerImageId, storeShelf.shelfMobileHeroBannerImageId) &&
+        Objects.equals(this.shelfMobileLogoImageId, storeShelf.shelfMobileLogoImageId) &&
+        Objects.equals(this.shelfMobileSecondaryBannerImageId, storeShelf.shelfMobileSecondaryBannerImageId) &&
         Objects.equals(this.shelfTabBackgroundImageId, storeShelf.shelfTabBackgroundImageId) &&
         Objects.equals(this.shelfTitle, storeShelf.shelfTitle) &&
         Objects.equals(this.updatedAt, storeShelf.updatedAt);
@@ -386,7 +486,7 @@ public class StoreShelf {
 
   @Override
   public int hashCode() {
-    return Objects.hash(highlightListing, highlightListingId, id, listingIds, listings, shelfBackgroundImageId, shelfDescription, shelfIconImageId, shelfLayout, shelfTabBackgroundImageId, shelfTitle, updatedAt);
+    return Objects.hash(highlightListing, highlightListingId, id, listingIds, listings, shelfBackgroundImageId, shelfClientBannerImageId, shelfDescription, shelfIconImageId, shelfLayout, shelfMobileHeroBannerImageId, shelfMobileLogoImageId, shelfMobileSecondaryBannerImageId, shelfTabBackgroundImageId, shelfTitle, updatedAt);
   }
 
   @Override
@@ -399,9 +499,13 @@ public class StoreShelf {
     sb.append("    listingIds: ").append(toIndentedString(listingIds)).append("\n");
     sb.append("    listings: ").append(toIndentedString(listings)).append("\n");
     sb.append("    shelfBackgroundImageId: ").append(toIndentedString(shelfBackgroundImageId)).append("\n");
+    sb.append("    shelfClientBannerImageId: ").append(toIndentedString(shelfClientBannerImageId)).append("\n");
     sb.append("    shelfDescription: ").append(toIndentedString(shelfDescription)).append("\n");
     sb.append("    shelfIconImageId: ").append(toIndentedString(shelfIconImageId)).append("\n");
     sb.append("    shelfLayout: ").append(toIndentedString(shelfLayout)).append("\n");
+    sb.append("    shelfMobileHeroBannerImageId: ").append(toIndentedString(shelfMobileHeroBannerImageId)).append("\n");
+    sb.append("    shelfMobileLogoImageId: ").append(toIndentedString(shelfMobileLogoImageId)).append("\n");
+    sb.append("    shelfMobileSecondaryBannerImageId: ").append(toIndentedString(shelfMobileSecondaryBannerImageId)).append("\n");
     sb.append("    shelfTabBackgroundImageId: ").append(toIndentedString(shelfTabBackgroundImageId)).append("\n");
     sb.append("    shelfTitle: ").append(toIndentedString(shelfTitle)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -423,7 +527,7 @@ public class StoreShelf {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("highlightListing", "highlightListingId", "id", "listingIds", "listings", "shelfBackgroundImageId", "shelfDescription", "shelfIconImageId", "shelfLayout", "shelfTabBackgroundImageId", "shelfTitle", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("highlightListing", "highlightListingId", "id", "listingIds", "listings", "shelfBackgroundImageId", "shelfClientBannerImageId", "shelfDescription", "shelfIconImageId", "shelfLayout", "shelfMobileHeroBannerImageId", "shelfMobileLogoImageId", "shelfMobileSecondaryBannerImageId", "shelfTabBackgroundImageId", "shelfTitle", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "listingIds", "shelfDescription", "shelfLayout", "shelfTitle", "updatedAt"));
@@ -490,6 +594,9 @@ public class StoreShelf {
       if ((jsonObj.get("shelfBackgroundImageId") != null && !jsonObj.get("shelfBackgroundImageId").isJsonNull()) && !jsonObj.get("shelfBackgroundImageId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfBackgroundImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfBackgroundImageId").toString()));
       }
+      if ((jsonObj.get("shelfClientBannerImageId") != null && !jsonObj.get("shelfClientBannerImageId").isJsonNull()) && !jsonObj.get("shelfClientBannerImageId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfClientBannerImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfClientBannerImageId").toString()));
+      }
       if (!jsonObj.get("shelfDescription").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfDescription").toString()));
       }
@@ -498,6 +605,15 @@ public class StoreShelf {
       }
       if (!jsonObj.get("shelfLayout").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfLayout` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfLayout").toString()));
+      }
+      if ((jsonObj.get("shelfMobileHeroBannerImageId") != null && !jsonObj.get("shelfMobileHeroBannerImageId").isJsonNull()) && !jsonObj.get("shelfMobileHeroBannerImageId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfMobileHeroBannerImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfMobileHeroBannerImageId").toString()));
+      }
+      if ((jsonObj.get("shelfMobileLogoImageId") != null && !jsonObj.get("shelfMobileLogoImageId").isJsonNull()) && !jsonObj.get("shelfMobileLogoImageId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfMobileLogoImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfMobileLogoImageId").toString()));
+      }
+      if ((jsonObj.get("shelfMobileSecondaryBannerImageId") != null && !jsonObj.get("shelfMobileSecondaryBannerImageId").isJsonNull()) && !jsonObj.get("shelfMobileSecondaryBannerImageId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfMobileSecondaryBannerImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfMobileSecondaryBannerImageId").toString()));
       }
       if ((jsonObj.get("shelfTabBackgroundImageId") != null && !jsonObj.get("shelfTabBackgroundImageId").isJsonNull()) && !jsonObj.get("shelfTabBackgroundImageId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shelfTabBackgroundImageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shelfTabBackgroundImageId").toString()));

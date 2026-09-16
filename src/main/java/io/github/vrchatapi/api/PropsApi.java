@@ -631,9 +631,9 @@ public class PropsApi {
     }
     /**
      * Build call for listProps
-     * @param authorId Must be a valid user ID. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param authorId Must be a valid user ID. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -646,7 +646,7 @@ public class PropsApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPropsCall(@javax.annotation.Nonnull String authorId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPropsCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -703,22 +703,17 @@ public class PropsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPropsValidateBeforeCall(@javax.annotation.Nonnull String authorId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'authorId' is set
-        if (authorId == null) {
-            throw new ApiException("Missing the required parameter 'authorId' when calling listProps(Async)");
-        }
-
-        return listPropsCall(authorId, n, offset, _callback);
+    private okhttp3.Call listPropsValidateBeforeCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorId, final ApiCallback _callback) throws ApiException {
+        return listPropsCall(n, offset, authorId, _callback);
 
     }
 
     /**
      * List Props
      * Returns a list Prop objects.
-     * @param authorId Must be a valid user ID. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param authorId Must be a valid user ID. (optional)
      * @return List&lt;Prop&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -730,17 +725,17 @@ public class PropsApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Prop> listProps(@javax.annotation.Nonnull String authorId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<List<Prop>> localVarResp = listPropsWithHttpInfo(authorId, n, offset);
+    public List<Prop> listProps(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorId) throws ApiException {
+        ApiResponse<List<Prop>> localVarResp = listPropsWithHttpInfo(n, offset, authorId);
         return localVarResp.getData();
     }
 
     /**
      * List Props
      * Returns a list Prop objects.
-     * @param authorId Must be a valid user ID. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param authorId Must be a valid user ID. (optional)
      * @return ApiResponse&lt;List&lt;Prop&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -752,8 +747,8 @@ public class PropsApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Prop>> listPropsWithHttpInfo(@javax.annotation.Nonnull String authorId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = listPropsValidateBeforeCall(authorId, n, offset, null);
+    public ApiResponse<List<Prop>> listPropsWithHttpInfo(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorId) throws ApiException {
+        okhttp3.Call localVarCall = listPropsValidateBeforeCall(n, offset, authorId, null);
         Type localVarReturnType = new TypeToken<List<Prop>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -761,9 +756,9 @@ public class PropsApi {
     /**
      * List Props (asynchronously)
      * Returns a list Prop objects.
-     * @param authorId Must be a valid user ID. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param authorId Must be a valid user ID. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -776,9 +771,9 @@ public class PropsApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPropsAsync(@javax.annotation.Nonnull String authorId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<List<Prop>> _callback) throws ApiException {
+    public okhttp3.Call listPropsAsync(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorId, final ApiCallback<List<Prop>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listPropsValidateBeforeCall(authorId, n, offset, _callback);
+        okhttp3.Call localVarCall = listPropsValidateBeforeCall(n, offset, authorId, _callback);
         Type localVarReturnType = new TypeToken<List<Prop>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

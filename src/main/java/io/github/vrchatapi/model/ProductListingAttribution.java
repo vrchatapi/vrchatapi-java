@@ -50,6 +50,11 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ProductListingAttribution {
+  public static final String SERIALIZED_NAME_COLLABORATION_ID = "collaborationId";
+  @SerializedName(SERIALIZED_NAME_COLLABORATION_ID)
+  @javax.annotation.Nullable
+  private String collaborationId;
+
   public static final String SERIALIZED_NAME_CREATOR = "creator";
   @SerializedName(SERIALIZED_NAME_CREATOR)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class ProductListingAttribution {
 
   public ProductListingAttribution() {
   }
+
+  public ProductListingAttribution collaborationId(@javax.annotation.Nullable String collaborationId) {
+    this.collaborationId = collaborationId;
+    return this;
+  }
+
+  /**
+   * Get collaborationId
+   * @return collaborationId
+   */
+  @javax.annotation.Nullable
+  public String getCollaborationId() {
+    return collaborationId;
+  }
+
+  public void setCollaborationId(@javax.annotation.Nullable String collaborationId) {
+    this.collaborationId = collaborationId;
+  }
+
 
   public ProductListingAttribution creator(@javax.annotation.Nullable ProductListingAttributionCreator creator) {
     this.creator = creator;
@@ -111,19 +135,21 @@ public class ProductListingAttribution {
       return false;
     }
     ProductListingAttribution productListingAttribution = (ProductListingAttribution) o;
-    return Objects.equals(this.creator, productListingAttribution.creator) &&
+    return Objects.equals(this.collaborationId, productListingAttribution.collaborationId) &&
+        Objects.equals(this.creator, productListingAttribution.creator) &&
         Objects.equals(this.publisher, productListingAttribution.publisher);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(creator, publisher);
+    return Objects.hash(collaborationId, creator, publisher);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProductListingAttribution {\n");
+    sb.append("    collaborationId: ").append(toIndentedString(collaborationId)).append("\n");
     sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    publisher: ").append(toIndentedString(publisher)).append("\n");
     sb.append("}");
@@ -144,7 +170,7 @@ public class ProductListingAttribution {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("creator", "publisher"));
+    openapiFields = new HashSet<String>(Arrays.asList("collaborationId", "creator", "publisher"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -171,6 +197,9 @@ public class ProductListingAttribution {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("collaborationId") != null && !jsonObj.get("collaborationId").isJsonNull()) && !jsonObj.get("collaborationId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `collaborationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("collaborationId").toString()));
+      }
       // validate the optional field `creator`
       if (jsonObj.get("creator") != null && !jsonObj.get("creator").isJsonNull()) {
         ProductListingAttributionCreator.validateJsonElement(jsonObj.get("creator"));
