@@ -36,13 +36,19 @@ public enum InventoryFlag {
   
   EQUIPPABLE("equippable"),
   
+  GLOBAL("global"),
+  
+  GLOBAL_VISIBLE("global_visible"),
+  
   INSTANTIATABLE("instantiatable"),
   
   TRASHABLE("trashable"),
   
   UGC("ugc"),
   
-  UNIQUE("unique");
+  UNIQUE("unique"),
+  
+  VRC_PLUS_EXCLUSIVE("vrc_plus_exclusive");
 
   private String value;
 

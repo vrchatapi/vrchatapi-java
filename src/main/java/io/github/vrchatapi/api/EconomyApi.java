@@ -34,6 +34,7 @@ import io.github.vrchatapi.model.EconomyAccount;
 import io.github.vrchatapi.model.EconomyBalances;
 import io.github.vrchatapi.model.EconomyPayoutList;
 import io.github.vrchatapi.model.EconomyPayoutStatus;
+import io.github.vrchatapi.model.EconomyStatus;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.License;
 import io.github.vrchatapi.model.LicenseGroup;
@@ -1441,6 +1442,7 @@ public class EconomyApi {
     /**
      * Build call for getEconomyAccount
      * @param userId Must be a valid user ID. (required)
+     * @param getLimits Include the account&#39;s spending limits in the response. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1452,7 +1454,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEconomyAccountCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEconomyAccountCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean getLimits, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1470,6 +1472,144 @@ public class EconomyApi {
 
         // create path and map variables
         String localVarPath = "/user/{userId}/economy/account"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (getLimits != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("getLimits", getLimits));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEconomyAccountValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean getLimits, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyAccount(Async)");
+        }
+
+        return getEconomyAccountCall(userId, getLimits, _callback);
+
+    }
+
+    /**
+     * Get Economy Account
+     * Gets the economy account of a user
+     * @param userId Must be a valid user ID. (required)
+     * @param getLimits Include the account&#39;s spending limits in the response. (optional)
+     * @return EconomyAccount
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EconomyAccount getEconomyAccount(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean getLimits) throws ApiException {
+        ApiResponse<EconomyAccount> localVarResp = getEconomyAccountWithHttpInfo(userId, getLimits);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Economy Account
+     * Gets the economy account of a user
+     * @param userId Must be a valid user ID. (required)
+     * @param getLimits Include the account&#39;s spending limits in the response. (optional)
+     * @return ApiResponse&lt;EconomyAccount&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EconomyAccount> getEconomyAccountWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean getLimits) throws ApiException {
+        okhttp3.Call localVarCall = getEconomyAccountValidateBeforeCall(userId, getLimits, null);
+        Type localVarReturnType = new TypeToken<EconomyAccount>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Economy Account (asynchronously)
+     * Gets the economy account of a user
+     * @param userId Must be a valid user ID. (required)
+     * @param getLimits Include the account&#39;s spending limits in the response. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyAccountAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean getLimits, final ApiCallback<EconomyAccount> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEconomyAccountValidateBeforeCall(userId, getLimits, _callback);
+        Type localVarReturnType = new TypeToken<EconomyAccount>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEconomyBalance
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyBalanceCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/economy/balance"
             .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1498,58 +1638,58 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEconomyAccountValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEconomyBalanceValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyAccount(Async)");
+            throw new ApiException("Missing the required parameter 'userId' when calling getEconomyBalance(Async)");
         }
 
-        return getEconomyAccountCall(userId, _callback);
+        return getEconomyBalanceCall(userId, _callback);
 
     }
 
     /**
-     * Get Economy Account
-     * Gets the economy account of a user
+     * Get Economy Balance
+     * Return the balance of a user&#39;s economy account.
      * @param userId Must be a valid user ID. (required)
-     * @return EconomyAccount
+     * @return Balance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public EconomyAccount getEconomyAccount(@javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<EconomyAccount> localVarResp = getEconomyAccountWithHttpInfo(userId);
+    public Balance getEconomyBalance(@javax.annotation.Nonnull String userId) throws ApiException {
+        ApiResponse<Balance> localVarResp = getEconomyBalanceWithHttpInfo(userId);
         return localVarResp.getData();
     }
 
     /**
-     * Get Economy Account
-     * Gets the economy account of a user
+     * Get Economy Balance
+     * Return the balance of a user&#39;s economy account.
      * @param userId Must be a valid user ID. (required)
-     * @return ApiResponse&lt;EconomyAccount&gt;
+     * @return ApiResponse&lt;Balance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EconomyAccount> getEconomyAccountWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
-        okhttp3.Call localVarCall = getEconomyAccountValidateBeforeCall(userId, null);
-        Type localVarReturnType = new TypeToken<EconomyAccount>(){}.getType();
+    public ApiResponse<Balance> getEconomyBalanceWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+        okhttp3.Call localVarCall = getEconomyBalanceValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<Balance>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Economy Account (asynchronously)
-     * Gets the economy account of a user
+     * Get Economy Balance (asynchronously)
+     * Return the balance of a user&#39;s economy account.
      * @param userId Must be a valid user ID. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1558,14 +1698,14 @@ public class EconomyApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns a single EconomyAccount object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Returns a single Balance object. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEconomyAccountAsync(@javax.annotation.Nonnull String userId, final ApiCallback<EconomyAccount> _callback) throws ApiException {
+    public okhttp3.Call getEconomyBalanceAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Balance> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getEconomyAccountValidateBeforeCall(userId, _callback);
-        Type localVarReturnType = new TypeToken<EconomyAccount>(){}.getType();
+        okhttp3.Call localVarCall = getEconomyBalanceValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<Balance>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1963,6 +2103,127 @@ public class EconomyApi {
 
         okhttp3.Call localVarCall = getEconomyPayoutsValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<EconomyPayoutList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEconomyStatus
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyStatusCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/economy/status";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEconomyStatusValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getEconomyStatusCall(_callback);
+
+    }
+
+    /**
+     * Get Economy Status
+     * Get whether the economy is accepting requests.
+     * @return EconomyStatus
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EconomyStatus getEconomyStatus() throws ApiException {
+        ApiResponse<EconomyStatus> localVarResp = getEconomyStatusWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Economy Status
+     * Get whether the economy is accepting requests.
+     * @return ApiResponse&lt;EconomyStatus&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EconomyStatus> getEconomyStatusWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getEconomyStatusValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<EconomyStatus>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Economy Status (asynchronously)
+     * Get whether the economy is accepting requests.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single EconomyStatus object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEconomyStatusAsync(final ApiCallback<EconomyStatus> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEconomyStatusValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<EconomyStatus>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2373,6 +2634,137 @@ public class EconomyApi {
 
         okhttp3.Call localVarCall = getProductListingAlternateValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<ProductListing>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getProductListingProducts
+     * @param productId Must be a valid product ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getProductListingProductsCall(@javax.annotation.Nonnull String productId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/listing/{productId}/products"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getProductListingProductsValidateBeforeCall(@javax.annotation.Nonnull String productId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling getProductListingProducts(Async)");
+        }
+
+        return getProductListingProductsCall(productId, _callback);
+
+    }
+
+    /**
+     * Get Product Listing Products
+     * List the products a listing sells.
+     * @param productId Must be a valid product ID. (required)
+     * @return List&lt;Product&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Product> getProductListingProducts(@javax.annotation.Nonnull String productId) throws ApiException {
+        ApiResponse<List<Product>> localVarResp = getProductListingProductsWithHttpInfo(productId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Product Listing Products
+     * List the products a listing sells.
+     * @param productId Must be a valid product ID. (required)
+     * @return ApiResponse&lt;List&lt;Product&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Product>> getProductListingProductsWithHttpInfo(@javax.annotation.Nonnull String productId) throws ApiException {
+        okhttp3.Call localVarCall = getProductListingProductsValidateBeforeCall(productId, null);
+        Type localVarReturnType = new TypeToken<List<Product>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Product Listing Products (asynchronously)
+     * List the products a listing sells.
+     * @param productId Must be a valid product ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of Product objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getProductListingProductsAsync(@javax.annotation.Nonnull String productId, final ApiCallback<List<Product>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getProductListingProductsValidateBeforeCall(productId, _callback);
+        Type localVarReturnType = new TypeToken<List<Product>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3010,7 +3402,9 @@ public class EconomyApi {
     }
     /**
      * Build call for getProductPurchases
-     * @param buyerId Must be a valid user ID. (required)
+     * @param active Filter for users&#39; listings and inventory bundles. (optional)
+     * @param buyerId Must be a valid user ID. (optional)
+     * @param receiverId Must be a valid user ID. (optional)
      * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -3028,7 +3422,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPurchasesCall(@javax.annotation.Nonnull String buyerId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductPurchasesCall(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable String buyerId, @javax.annotation.Nullable String receiverId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3053,8 +3447,16 @@ public class EconomyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (active != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("active", active));
+        }
+
         if (buyerId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("buyerId", buyerId));
+        }
+
+        if (receiverId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("receiverId", receiverId));
         }
 
         if (sellerId != null) {
@@ -3101,20 +3503,17 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductPurchasesValidateBeforeCall(@javax.annotation.Nonnull String buyerId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'buyerId' is set
-        if (buyerId == null) {
-            throw new ApiException("Missing the required parameter 'buyerId' when calling getProductPurchases(Async)");
-        }
-
-        return getProductPurchasesCall(buyerId, sellerId, n, offset, mostRecent, sort, order, _callback);
+    private okhttp3.Call getProductPurchasesValidateBeforeCall(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable String buyerId, @javax.annotation.Nullable String receiverId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback _callback) throws ApiException {
+        return getProductPurchasesCall(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order, _callback);
 
     }
 
     /**
      * Get Product Purchases
      * Gets product purchases
-     * @param buyerId Must be a valid user ID. (required)
+     * @param active Filter for users&#39; listings and inventory bundles. (optional)
+     * @param buyerId Must be a valid user ID. (optional)
+     * @param receiverId Must be a valid user ID. (optional)
      * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -3131,15 +3530,17 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<ProductPurchase> getProductPurchases(@javax.annotation.Nonnull String buyerId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order) throws ApiException {
-        ApiResponse<List<ProductPurchase>> localVarResp = getProductPurchasesWithHttpInfo(buyerId, sellerId, n, offset, mostRecent, sort, order);
+    public List<ProductPurchase> getProductPurchases(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable String buyerId, @javax.annotation.Nullable String receiverId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order) throws ApiException {
+        ApiResponse<List<ProductPurchase>> localVarResp = getProductPurchasesWithHttpInfo(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order);
         return localVarResp.getData();
     }
 
     /**
      * Get Product Purchases
      * Gets product purchases
-     * @param buyerId Must be a valid user ID. (required)
+     * @param active Filter for users&#39; listings and inventory bundles. (optional)
+     * @param buyerId Must be a valid user ID. (optional)
+     * @param receiverId Must be a valid user ID. (optional)
      * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -3156,8 +3557,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ProductPurchase>> getProductPurchasesWithHttpInfo(@javax.annotation.Nonnull String buyerId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order) throws ApiException {
-        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, sellerId, n, offset, mostRecent, sort, order, null);
+    public ApiResponse<List<ProductPurchase>> getProductPurchasesWithHttpInfo(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable String buyerId, @javax.annotation.Nullable String receiverId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order) throws ApiException {
+        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order, null);
         Type localVarReturnType = new TypeToken<List<ProductPurchase>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3165,7 +3566,9 @@ public class EconomyApi {
     /**
      * Get Product Purchases (asynchronously)
      * Gets product purchases
-     * @param buyerId Must be a valid user ID. (required)
+     * @param active Filter for users&#39; listings and inventory bundles. (optional)
+     * @param buyerId Must be a valid user ID. (optional)
+     * @param receiverId Must be a valid user ID. (optional)
      * @param sellerId Filter results by seller. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -3183,15 +3586,16 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPurchasesAsync(@javax.annotation.Nonnull String buyerId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback<List<ProductPurchase>> _callback) throws ApiException {
+    public okhttp3.Call getProductPurchasesAsync(@javax.annotation.Nullable Boolean active, @javax.annotation.Nullable String buyerId, @javax.annotation.Nullable String receiverId, @javax.annotation.Nullable String sellerId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean mostRecent, @javax.annotation.Nullable SortOptionProductPurchase sort, @javax.annotation.Nullable OrderOptionShort order, final ApiCallback<List<ProductPurchase>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(buyerId, sellerId, n, offset, mostRecent, sort, order, _callback);
+        okhttp3.Call localVarCall = getProductPurchasesValidateBeforeCall(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order, _callback);
         Type localVarReturnType = new TypeToken<List<ProductPurchase>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getRecentSubscription
+     * @param userId Filter by UserID. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3203,7 +3607,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecentSubscriptionCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecentSubscriptionCall(@javax.annotation.Nullable String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3228,6 +3632,10 @@ public class EconomyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (userId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("userId", userId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3248,14 +3656,15 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecentSubscriptionValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getRecentSubscriptionCall(_callback);
+    private okhttp3.Call getRecentSubscriptionValidateBeforeCall(@javax.annotation.Nullable String userId, final ApiCallback _callback) throws ApiException {
+        return getRecentSubscriptionCall(userId, _callback);
 
     }
 
     /**
      * Get Recent Subscription
      * Get the most recent user subscription.
+     * @param userId Filter by UserID. (optional)
      * @return UserSubscription
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3266,14 +3675,15 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public UserSubscription getRecentSubscription() throws ApiException {
-        ApiResponse<UserSubscription> localVarResp = getRecentSubscriptionWithHttpInfo();
+    public UserSubscription getRecentSubscription(@javax.annotation.Nullable String userId) throws ApiException {
+        ApiResponse<UserSubscription> localVarResp = getRecentSubscriptionWithHttpInfo(userId);
         return localVarResp.getData();
     }
 
     /**
      * Get Recent Subscription
      * Get the most recent user subscription.
+     * @param userId Filter by UserID. (optional)
      * @return ApiResponse&lt;UserSubscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3284,8 +3694,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSubscription> getRecentSubscriptionWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getRecentSubscriptionValidateBeforeCall(null);
+    public ApiResponse<UserSubscription> getRecentSubscriptionWithHttpInfo(@javax.annotation.Nullable String userId) throws ApiException {
+        okhttp3.Call localVarCall = getRecentSubscriptionValidateBeforeCall(userId, null);
         Type localVarReturnType = new TypeToken<UserSubscription>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3293,6 +3703,7 @@ public class EconomyApi {
     /**
      * Get Recent Subscription (asynchronously)
      * Get the most recent user subscription.
+     * @param userId Filter by UserID. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3304,9 +3715,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecentSubscriptionAsync(final ApiCallback<UserSubscription> _callback) throws ApiException {
+    public okhttp3.Call getRecentSubscriptionAsync(@javax.annotation.Nullable String userId, final ApiCallback<UserSubscription> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecentSubscriptionValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getRecentSubscriptionValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<UserSubscription>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -3700,6 +4111,7 @@ public class EconomyApi {
     /**
      * Build call for getStore
      * @param storeId  (required)
+     * @param hydrateContext  (optional)
      * @param hydrateListings Listings fields will be populated. (optional)
      * @param hydrateProducts Products fields will be populated. (optional)
      * @param _callback Callback for upload/download progress
@@ -3713,7 +4125,7 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoreCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStoreCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateContext, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3740,6 +4152,10 @@ public class EconomyApi {
 
         if (storeId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("storeId", storeId));
+        }
+
+        if (hydrateContext != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("hydrateContext", hydrateContext));
         }
 
         if (hydrateListings != null) {
@@ -3770,13 +4186,13 @@ public class EconomyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStoreValidateBeforeCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStoreValidateBeforeCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateContext, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'storeId' is set
         if (storeId == null) {
             throw new ApiException("Missing the required parameter 'storeId' when calling getStore(Async)");
         }
 
-        return getStoreCall(storeId, hydrateListings, hydrateProducts, _callback);
+        return getStoreCall(storeId, hydrateContext, hydrateListings, hydrateProducts, _callback);
 
     }
 
@@ -3784,6 +4200,7 @@ public class EconomyApi {
      * Get Store
      * Gets a store
      * @param storeId  (required)
+     * @param hydrateContext  (optional)
      * @param hydrateListings Listings fields will be populated. (optional)
      * @param hydrateProducts Products fields will be populated. (optional)
      * @return Store
@@ -3796,8 +4213,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public Store getStore(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts) throws ApiException {
-        ApiResponse<Store> localVarResp = getStoreWithHttpInfo(storeId, hydrateListings, hydrateProducts);
+    public Store getStore(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateContext, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts) throws ApiException {
+        ApiResponse<Store> localVarResp = getStoreWithHttpInfo(storeId, hydrateContext, hydrateListings, hydrateProducts);
         return localVarResp.getData();
     }
 
@@ -3805,6 +4222,7 @@ public class EconomyApi {
      * Get Store
      * Gets a store
      * @param storeId  (required)
+     * @param hydrateContext  (optional)
      * @param hydrateListings Listings fields will be populated. (optional)
      * @param hydrateProducts Products fields will be populated. (optional)
      * @return ApiResponse&lt;Store&gt;
@@ -3817,8 +4235,8 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Store> getStoreWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts) throws ApiException {
-        okhttp3.Call localVarCall = getStoreValidateBeforeCall(storeId, hydrateListings, hydrateProducts, null);
+    public ApiResponse<Store> getStoreWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateContext, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts) throws ApiException {
+        okhttp3.Call localVarCall = getStoreValidateBeforeCall(storeId, hydrateContext, hydrateListings, hydrateProducts, null);
         Type localVarReturnType = new TypeToken<Store>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3827,6 +4245,7 @@ public class EconomyApi {
      * Get Store (asynchronously)
      * Gets a store
      * @param storeId  (required)
+     * @param hydrateContext  (optional)
      * @param hydrateListings Listings fields will be populated. (optional)
      * @param hydrateProducts Products fields will be populated. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -3840,9 +4259,9 @@ public class EconomyApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoreAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback<Store> _callback) throws ApiException {
+    public okhttp3.Call getStoreAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Boolean hydrateContext, @javax.annotation.Nullable Boolean hydrateListings, @javax.annotation.Nullable Boolean hydrateProducts, final ApiCallback<Store> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getStoreValidateBeforeCall(storeId, hydrateListings, hydrateProducts, _callback);
+        okhttp3.Call localVarCall = getStoreValidateBeforeCall(storeId, hydrateContext, hydrateListings, hydrateProducts, _callback);
         Type localVarReturnType = new TypeToken<Store>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

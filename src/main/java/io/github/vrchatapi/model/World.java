@@ -121,6 +121,11 @@ public class World {
   @javax.annotation.Nullable
   private List<List<Object>> instances = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE = "isHypeTrainEligible";
+  @SerializedName(SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE)
+  @javax.annotation.Nullable
+  private Boolean isHypeTrainEligible;
+
   public static final String SERIALIZED_NAME_LABS_PUBLICATION_DATE = "labsPublicationDate";
   @SerializedName(SERIALIZED_NAME_LABS_PUBLICATION_DATE)
   @javax.annotation.Nonnull
@@ -496,6 +501,25 @@ public class World {
 
   public void setInstances(@javax.annotation.Nullable List<List<Object>> instances) {
     this.instances = instances;
+  }
+
+
+  public World isHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
+    return this;
+  }
+
+  /**
+   * Get isHypeTrainEligible
+   * @return isHypeTrainEligible
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsHypeTrainEligible() {
+    return isHypeTrainEligible;
+  }
+
+  public void setIsHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
   }
 
 
@@ -986,6 +1010,7 @@ public class World {
         Objects.equals(this.id, world.id) &&
         Objects.equals(this.imageUrl, world.imageUrl) &&
         Objects.equals(this.instances, world.instances) &&
+        Objects.equals(this.isHypeTrainEligible, world.isHypeTrainEligible) &&
         Objects.equals(this.labsPublicationDate, world.labsPublicationDate) &&
         Objects.equals(this.name, world.name) &&
         Objects.equals(this.namespace, world.namespace) &&
@@ -1016,7 +1041,7 @@ public class World {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favorites, featured, heat, id, imageUrl, instances, labsPublicationDate, name, namespace, occupants, organization, popularity, previewYoutubeId, privateOccupants, publicOccupants, publicationDate, recommendedCapacity, releaseStatus, slimInstances, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favorites, featured, heat, id, imageUrl, instances, isHypeTrainEligible, labsPublicationDate, name, namespace, occupants, organization, popularity, previewYoutubeId, privateOccupants, publicOccupants, publicationDate, recommendedCapacity, releaseStatus, slimInstances, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1043,6 +1068,7 @@ public class World {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+    sb.append("    isHypeTrainEligible: ").append(toIndentedString(isHypeTrainEligible)).append("\n");
     sb.append("    labsPublicationDate: ").append(toIndentedString(labsPublicationDate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
@@ -1083,7 +1109,7 @@ public class World {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favorites", "featured", "heat", "id", "imageUrl", "instances", "labsPublicationDate", "name", "namespace", "occupants", "organization", "popularity", "previewYoutubeId", "privateOccupants", "publicOccupants", "publicationDate", "recommendedCapacity", "releaseStatus", "slimInstances", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favorites", "featured", "heat", "id", "imageUrl", "instances", "isHypeTrainEligible", "labsPublicationDate", "name", "namespace", "occupants", "organization", "popularity", "previewYoutubeId", "privateOccupants", "publicOccupants", "publicationDate", "recommendedCapacity", "releaseStatus", "slimInstances", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "description", "featured", "heat", "id", "imageUrl", "labsPublicationDate", "name", "organization", "popularity", "publicationDate", "recommendedCapacity", "releaseStatus", "tags", "thumbnailImageUrl", "updated_at", "version", "visits"));

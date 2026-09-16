@@ -220,6 +220,11 @@ public class Group {
   @javax.annotation.Nullable
   private String shortCode;
 
+  public static final String SERIALIZED_NAME_STORE_ID = "storeId";
+  @SerializedName(SERIALIZED_NAME_STORE_ID)
+  @javax.annotation.Nullable
+  private String storeId;
+
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nullable
@@ -886,6 +891,25 @@ public class Group {
   }
 
 
+  public Group storeId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+  /**
+   * Get storeId
+   * @return storeId
+   */
+  @javax.annotation.Nullable
+  public String getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
+  }
+
+
   public Group tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
@@ -993,6 +1017,7 @@ public class Group {
         Objects.equals(this.roles, group.roles) &&
         Objects.equals(this.rules, group.rules) &&
         Objects.equals(this.shortCode, group.shortCode) &&
+        Objects.equals(this.storeId, group.storeId) &&
         Objects.equals(this.tags, group.tags) &&
         Objects.equals(this.transferTargetId, group.transferTargetId) &&
         Objects.equals(this.updatedAt, group.updatedAt);
@@ -1004,7 +1029,7 @@ public class Group {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationBetaCode, ageVerificationBetaSlots, ageVerificationSlotsAvailable, allowGroupJoinPrompt, badges, bannerId, bannerUrl, createdAt, description, discriminator, galleries, iconId, iconUrl, id, isVerified, joinState, languages, lastPostCreatedAt, links, memberCount, memberCountSyncedAt, membershipStatus, myMember, name, nameplateId, nameplateUrl, onlineMemberCount, ownerId, privacy, roles, rules, shortCode, tags, transferTargetId, updatedAt);
+    return Objects.hash(ageVerificationBetaCode, ageVerificationBetaSlots, ageVerificationSlotsAvailable, allowGroupJoinPrompt, badges, bannerId, bannerUrl, createdAt, description, discriminator, galleries, iconId, iconUrl, id, isVerified, joinState, languages, lastPostCreatedAt, links, memberCount, memberCountSyncedAt, membershipStatus, myMember, name, nameplateId, nameplateUrl, onlineMemberCount, ownerId, privacy, roles, rules, shortCode, storeId, tags, transferTargetId, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1050,6 +1075,7 @@ public class Group {
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    shortCode: ").append(toIndentedString(shortCode)).append("\n");
+    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    transferTargetId: ").append(toIndentedString(transferTargetId)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -1071,7 +1097,7 @@ public class Group {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationBetaCode", "ageVerificationBetaSlots", "ageVerificationSlotsAvailable", "allowGroupJoinPrompt", "badges", "bannerId", "bannerUrl", "createdAt", "description", "discriminator", "galleries", "iconId", "iconUrl", "id", "isVerified", "joinState", "languages", "lastPostCreatedAt", "links", "memberCount", "memberCountSyncedAt", "membershipStatus", "myMember", "name", "nameplateId", "nameplateUrl", "onlineMemberCount", "ownerId", "privacy", "roles", "rules", "shortCode", "tags", "transferTargetId", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationBetaCode", "ageVerificationBetaSlots", "ageVerificationSlotsAvailable", "allowGroupJoinPrompt", "badges", "bannerId", "bannerUrl", "createdAt", "description", "discriminator", "galleries", "iconId", "iconUrl", "id", "isVerified", "joinState", "languages", "lastPostCreatedAt", "links", "memberCount", "memberCountSyncedAt", "membershipStatus", "myMember", "name", "nameplateId", "nameplateUrl", "onlineMemberCount", "ownerId", "privacy", "roles", "rules", "shortCode", "storeId", "tags", "transferTargetId", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1189,6 +1215,9 @@ public class Group {
       }
       if ((jsonObj.get("shortCode") != null && !jsonObj.get("shortCode").isJsonNull()) && !jsonObj.get("shortCode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortCode").toString()));
+      }
+      if ((jsonObj.get("storeId") != null && !jsonObj.get("storeId").isJsonNull()) && !jsonObj.get("storeId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeId").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {

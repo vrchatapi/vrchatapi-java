@@ -23,6 +23,7 @@
 |**name** | **String** |  |  |
 |**occupants** | **Integer** |  |  |
 |**organization** | **String** |  |  |
+|**pendingUpload** | **Boolean** |  |  [optional] |
 |**popularity** | **Integer** |  |  |
 |**previewYoutubeId** | **String** |  |  [optional] |
 |**publicationDate** | **String** |  |  |

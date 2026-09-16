@@ -1468,6 +1468,9 @@ public class CalendarApi {
      * @param date The month to search in. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param limit The maximum number of entries to get. (optional)
+     * @param after Only return events starting after this date. (optional)
+     * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1479,7 +1482,7 @@ public class CalendarApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupCalendarEventsCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getGroupCalendarEventsCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable OffsetDateTime after, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1517,6 +1520,18 @@ public class CalendarApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (after != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("after", after));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1537,13 +1552,13 @@ public class CalendarApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getGroupCalendarEventsValidateBeforeCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getGroupCalendarEventsValidateBeforeCall(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable OffsetDateTime after, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling getGroupCalendarEvents(Async)");
         }
 
-        return getGroupCalendarEventsCall(groupId, date, n, offset, _callback);
+        return getGroupCalendarEventsCall(groupId, date, n, offset, limit, after, sort, _callback);
 
     }
 
@@ -1554,6 +1569,9 @@ public class CalendarApi {
      * @param date The month to search in. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param limit The maximum number of entries to get. (optional)
+     * @param after Only return events starting after this date. (optional)
+     * @param sort  (optional)
      * @return PaginatedCalendarEventList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1564,8 +1582,8 @@ public class CalendarApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public PaginatedCalendarEventList getGroupCalendarEvents(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<PaginatedCalendarEventList> localVarResp = getGroupCalendarEventsWithHttpInfo(groupId, date, n, offset);
+    public PaginatedCalendarEventList getGroupCalendarEvents(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable OffsetDateTime after, @javax.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<PaginatedCalendarEventList> localVarResp = getGroupCalendarEventsWithHttpInfo(groupId, date, n, offset, limit, after, sort);
         return localVarResp.getData();
     }
 
@@ -1576,6 +1594,9 @@ public class CalendarApi {
      * @param date The month to search in. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param limit The maximum number of entries to get. (optional)
+     * @param after Only return events starting after this date. (optional)
+     * @param sort  (optional)
      * @return ApiResponse&lt;PaginatedCalendarEventList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1586,8 +1607,8 @@ public class CalendarApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaginatedCalendarEventList> getGroupCalendarEventsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = getGroupCalendarEventsValidateBeforeCall(groupId, date, n, offset, null);
+    public ApiResponse<PaginatedCalendarEventList> getGroupCalendarEventsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable OffsetDateTime after, @javax.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = getGroupCalendarEventsValidateBeforeCall(groupId, date, n, offset, limit, after, sort, null);
         Type localVarReturnType = new TypeToken<PaginatedCalendarEventList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1599,6 +1620,9 @@ public class CalendarApi {
      * @param date The month to search in. (optional)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
+     * @param limit The maximum number of entries to get. (optional)
+     * @param after Only return events starting after this date. (optional)
+     * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1610,9 +1634,9 @@ public class CalendarApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupCalendarEventsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<PaginatedCalendarEventList> _callback) throws ApiException {
+    public okhttp3.Call getGroupCalendarEventsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable OffsetDateTime date, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable OffsetDateTime after, @javax.annotation.Nullable String sort, final ApiCallback<PaginatedCalendarEventList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getGroupCalendarEventsValidateBeforeCall(groupId, date, n, offset, _callback);
+        okhttp3.Call localVarCall = getGroupCalendarEventsValidateBeforeCall(groupId, date, n, offset, limit, after, sort, _callback);
         Type localVarReturnType = new TypeToken<PaginatedCalendarEventList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

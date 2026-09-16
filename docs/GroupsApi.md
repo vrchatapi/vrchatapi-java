@@ -1530,7 +1530,7 @@ public class Example {
 
 <a id="getGroup"></a>
 # **getGroup**
-> Group getGroup(groupId, includeRoles)
+> Group getGroup(groupId, includeRoles, purpose)
 
 Get Group by ID
 
@@ -1560,8 +1560,9 @@ public class Example {
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean includeRoles = true; // Boolean | Include roles for the Group object. Defaults to false.
+    String purpose = "purpose_example"; // String | 
     try {
-      Group result = apiInstance.getGroup(groupId, includeRoles);
+      Group result = apiInstance.getGroup(groupId, includeRoles, purpose);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroup");
@@ -1580,6 +1581,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **groupId** | **String**| Must be a valid group ID. | |
 | **includeRoles** | **Boolean**| Include roles for the Group object. Defaults to false. | [optional] |
+| **purpose** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1909,7 +1911,7 @@ public class Example {
 
 <a id="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
-> List&lt;GroupGalleryImage&gt; getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved)
+> GetGroupGalleryImages200Response getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
 
 Get Group Gallery Images
 
@@ -1941,9 +1943,10 @@ public class Example {
     String groupGalleryId = "groupGalleryId_example"; // String | Must be a valid group gallery ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Integer v = 56; // Integer | Response version. `2` wraps the images in a paginated object.
     Boolean approved = true; // Boolean | If specified, only returns images that have been approved or not approved.
     try {
-      List<GroupGalleryImage> result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved);
+      GetGroupGalleryImages200Response result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupGalleryImages");
@@ -1964,11 +1967,12 @@ public class Example {
 | **groupGalleryId** | **String**| Must be a valid group gallery ID. | |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **v** | **Integer**| Response version. &#x60;2&#x60; wraps the images in a paginated object. | [optional] |
 | **approved** | **Boolean**| If specified, only returns images that have been approved or not approved. | [optional] |
 
 ### Return type
 
-[**List&lt;GroupGalleryImage&gt;**](GroupGalleryImage.md)
+[**GetGroupGalleryImages200Response**](GetGroupGalleryImages200Response.md)
 
 ### Authorization
 
@@ -1982,7 +1986,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of GroupGalleryImage objects. |  -  |
+| **200** | Returns a list of GroupGalleryImage objects, wrapped in a paginated object when &#x60;v&#x60; is &#x60;2&#x60;. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 

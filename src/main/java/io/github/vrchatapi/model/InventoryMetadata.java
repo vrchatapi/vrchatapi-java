@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.InventoryAsset;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,10 +67,25 @@ public class InventoryMetadata {
   @javax.annotation.Nullable
   private String assetBundleId;
 
+  public static final String SERIALIZED_NAME_ASSETS = "assets";
+  @SerializedName(SERIALIZED_NAME_ASSETS)
+  @javax.annotation.Nullable
+  private List<InventoryAsset> assets = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_FILE_ID = "fileId";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
   @javax.annotation.Nullable
   private String fileId;
+
+  public static final String SERIALIZED_NAME_GRADIENT_END = "gradientEnd";
+  @SerializedName(SERIALIZED_NAME_GRADIENT_END)
+  @javax.annotation.Nullable
+  private String gradientEnd;
+
+  public static final String SERIALIZED_NAME_GRADIENT_START = "gradientStart";
+  @SerializedName(SERIALIZED_NAME_GRADIENT_START)
+  @javax.annotation.Nullable
+  private String gradientStart;
 
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
@@ -95,6 +111,11 @@ public class InventoryMetadata {
   @SerializedName(SERIALIZED_NAME_PROP_KIND)
   @javax.annotation.Nullable
   private Integer propKind;
+
+  public static final String SERIALIZED_NAME_VIEWFINDER_BUNDLE_ID = "viewfinderBundleId";
+  @SerializedName(SERIALIZED_NAME_VIEWFINDER_BUNDLE_ID)
+  @javax.annotation.Nullable
+  private String viewfinderBundleId;
 
   public InventoryMetadata() {
   }
@@ -156,6 +177,33 @@ public class InventoryMetadata {
   }
 
 
+  public InventoryMetadata assets(@javax.annotation.Nullable List<InventoryAsset> assets) {
+    this.assets = assets;
+    return this;
+  }
+
+  public InventoryMetadata addAssetsItem(InventoryAsset assetsItem) {
+    if (this.assets == null) {
+      this.assets = new ArrayList<>();
+    }
+    this.assets.add(assetsItem);
+    return this;
+  }
+
+  /**
+   * Get assets
+   * @return assets
+   */
+  @javax.annotation.Nullable
+  public List<InventoryAsset> getAssets() {
+    return assets;
+  }
+
+  public void setAssets(@javax.annotation.Nullable List<InventoryAsset> assets) {
+    this.assets = assets;
+  }
+
+
   public InventoryMetadata fileId(@javax.annotation.Nullable String fileId) {
     this.fileId = fileId;
     return this;
@@ -172,6 +220,44 @@ public class InventoryMetadata {
 
   public void setFileId(@javax.annotation.Nullable String fileId) {
     this.fileId = fileId;
+  }
+
+
+  public InventoryMetadata gradientEnd(@javax.annotation.Nullable String gradientEnd) {
+    this.gradientEnd = gradientEnd;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return gradientEnd
+   */
+  @javax.annotation.Nullable
+  public String getGradientEnd() {
+    return gradientEnd;
+  }
+
+  public void setGradientEnd(@javax.annotation.Nullable String gradientEnd) {
+    this.gradientEnd = gradientEnd;
+  }
+
+
+  public InventoryMetadata gradientStart(@javax.annotation.Nullable String gradientStart) {
+    this.gradientStart = gradientStart;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return gradientStart
+   */
+  @javax.annotation.Nullable
+  public String getGradientStart() {
+    return gradientStart;
+  }
+
+  public void setGradientStart(@javax.annotation.Nullable String gradientStart) {
+    this.gradientStart = gradientStart;
   }
 
 
@@ -278,6 +364,25 @@ public class InventoryMetadata {
   }
 
 
+  public InventoryMetadata viewfinderBundleId(@javax.annotation.Nullable String viewfinderBundleId) {
+    this.viewfinderBundleId = viewfinderBundleId;
+    return this;
+  }
+
+  /**
+   * Get viewfinderBundleId
+   * @return viewfinderBundleId
+   */
+  @javax.annotation.Nullable
+  public String getViewfinderBundleId() {
+    return viewfinderBundleId;
+  }
+
+  public void setViewfinderBundleId(@javax.annotation.Nullable String viewfinderBundleId) {
+    this.viewfinderBundleId = viewfinderBundleId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -291,17 +396,21 @@ public class InventoryMetadata {
     return Objects.equals(this.animated, inventoryMetadata.animated) &&
         Objects.equals(this.animationStyle, inventoryMetadata.animationStyle) &&
         Objects.equals(this.assetBundleId, inventoryMetadata.assetBundleId) &&
+        Objects.equals(this.assets, inventoryMetadata.assets) &&
         Objects.equals(this.fileId, inventoryMetadata.fileId) &&
+        Objects.equals(this.gradientEnd, inventoryMetadata.gradientEnd) &&
+        Objects.equals(this.gradientStart, inventoryMetadata.gradientStart) &&
         Objects.equals(this.imageUrl, inventoryMetadata.imageUrl) &&
         Objects.equals(this.inventoryItemsToInstantiate, inventoryMetadata.inventoryItemsToInstantiate) &&
         Objects.equals(this.maskTag, inventoryMetadata.maskTag) &&
         Objects.equals(this.propId, inventoryMetadata.propId) &&
-        Objects.equals(this.propKind, inventoryMetadata.propKind);
+        Objects.equals(this.propKind, inventoryMetadata.propKind) &&
+        Objects.equals(this.viewfinderBundleId, inventoryMetadata.viewfinderBundleId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(animated, animationStyle, assetBundleId, fileId, imageUrl, inventoryItemsToInstantiate, maskTag, propId, propKind);
+    return Objects.hash(animated, animationStyle, assetBundleId, assets, fileId, gradientEnd, gradientStart, imageUrl, inventoryItemsToInstantiate, maskTag, propId, propKind, viewfinderBundleId);
   }
 
   @Override
@@ -311,12 +420,16 @@ public class InventoryMetadata {
     sb.append("    animated: ").append(toIndentedString(animated)).append("\n");
     sb.append("    animationStyle: ").append(toIndentedString(animationStyle)).append("\n");
     sb.append("    assetBundleId: ").append(toIndentedString(assetBundleId)).append("\n");
+    sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
     sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
+    sb.append("    gradientEnd: ").append(toIndentedString(gradientEnd)).append("\n");
+    sb.append("    gradientStart: ").append(toIndentedString(gradientStart)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    inventoryItemsToInstantiate: ").append(toIndentedString(inventoryItemsToInstantiate)).append("\n");
     sb.append("    maskTag: ").append(toIndentedString(maskTag)).append("\n");
     sb.append("    propId: ").append(toIndentedString(propId)).append("\n");
     sb.append("    propKind: ").append(toIndentedString(propKind)).append("\n");
+    sb.append("    viewfinderBundleId: ").append(toIndentedString(viewfinderBundleId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -335,7 +448,7 @@ public class InventoryMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("animated", "animationStyle", "assetBundleId", "fileId", "imageUrl", "inventoryItemsToInstantiate", "maskTag", "propId", "propKind"));
+    openapiFields = new HashSet<String>(Arrays.asList("animated", "animationStyle", "assetBundleId", "assets", "fileId", "gradientEnd", "gradientStart", "imageUrl", "inventoryItemsToInstantiate", "maskTag", "propId", "propKind", "viewfinderBundleId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -368,8 +481,28 @@ public class InventoryMetadata {
       if ((jsonObj.get("assetBundleId") != null && !jsonObj.get("assetBundleId").isJsonNull()) && !jsonObj.get("assetBundleId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assetBundleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetBundleId").toString()));
       }
+      if (jsonObj.get("assets") != null && !jsonObj.get("assets").isJsonNull()) {
+        JsonArray jsonArrayassets = jsonObj.getAsJsonArray("assets");
+        if (jsonArrayassets != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("assets").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assets` to be an array in the JSON string but got `%s`", jsonObj.get("assets").toString()));
+          }
+
+          // validate the optional field `assets` (array)
+          for (int i = 0; i < jsonArrayassets.size(); i++) {
+            InventoryAsset.validateJsonElement(jsonArrayassets.get(i));
+          };
+        }
+      }
       if ((jsonObj.get("fileId") != null && !jsonObj.get("fileId").isJsonNull()) && !jsonObj.get("fileId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `fileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileId").toString()));
+      }
+      if ((jsonObj.get("gradientEnd") != null && !jsonObj.get("gradientEnd").isJsonNull()) && !jsonObj.get("gradientEnd").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gradientEnd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gradientEnd").toString()));
+      }
+      if ((jsonObj.get("gradientStart") != null && !jsonObj.get("gradientStart").isJsonNull()) && !jsonObj.get("gradientStart").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gradientStart` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gradientStart").toString()));
       }
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
@@ -383,6 +516,9 @@ public class InventoryMetadata {
       }
       if ((jsonObj.get("propId") != null && !jsonObj.get("propId").isJsonNull()) && !jsonObj.get("propId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `propId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("propId").toString()));
+      }
+      if ((jsonObj.get("viewfinderBundleId") != null && !jsonObj.get("viewfinderBundleId").isJsonNull()) && !jsonObj.get("viewfinderBundleId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `viewfinderBundleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("viewfinderBundleId").toString()));
       }
   }
 

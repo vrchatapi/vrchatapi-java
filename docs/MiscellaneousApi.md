@@ -5,9 +5,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**getAssignedPermissions**](MiscellaneousApi.md#getAssignedPermissions) | **GET** /auth/permissions | Get Assigned Permissions |
+| [**getBeta**](MiscellaneousApi.md#getBeta) | **GET** /beta/{betaName} | Get Beta Program |
+| [**getBetaRegistration**](MiscellaneousApi.md#getBetaRegistration) | **GET** /beta/{betaName}/register | Get Beta Registration |
 | [**getCSS**](MiscellaneousApi.md#getCSS) | **GET** /css/app.css | Download CSS |
 | [**getConfig**](MiscellaneousApi.md#getConfig) | **GET** /config | Fetch API Config |
 | [**getCurrentOnlineUsers**](MiscellaneousApi.md#getCurrentOnlineUsers) | **GET** /visits | Current Online Users |
+| [**getFrontendBranches**](MiscellaneousApi.md#getFrontendBranches) | **GET** /frontend/branches | List Frontend Branches |
 | [**getHealth**](MiscellaneousApi.md#getHealth) | **GET** /health | Check API Health |
 | [**getInfoPush**](MiscellaneousApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
 | [**getJavaScript**](MiscellaneousApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
@@ -80,6 +83,138 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Returns a list of Permission objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getBeta"></a>
+# **getBeta**
+> Beta getBeta(betaName)
+
+Get Beta Program
+
+Get a beta program and the fields a registration must supply.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String betaName = "ios-closed-beta"; // String | The name of a beta program.
+    try {
+      Beta result = apiInstance.getBeta(betaName);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getBeta");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **betaName** | **String**| The name of a beta program. | |
+
+### Return type
+
+[**Beta**](Beta.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a Beta object. |  -  |
+| **404** | No beta program goes by that name. |  -  |
+
+<a id="getBetaRegistration"></a>
+# **getBetaRegistration**
+> getBetaRegistration(betaName)
+
+Get Beta Registration
+
+Get the currently authenticated user&#39;s registration for a beta program.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String betaName = "ios-closed-beta"; // String | The name of a beta program.
+    try {
+      apiInstance.getBetaRegistration(betaName);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getBetaRegistration");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **betaName** | **String**| The name of a beta program. | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The caller has no registration for this beta program. |  -  |
 
 <a id="getCSS"></a>
 # **getCSS**
@@ -261,6 +396,72 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+
+<a id="getFrontendBranches"></a>
+# **getFrontendBranches**
+> List&lt;Object&gt; getFrontendBranches()
+
+List Frontend Branches
+
+List the frontend branches the currently authenticated user may switch to.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    try {
+      List<Object> result = apiInstance.getFrontendBranches();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getFrontendBranches");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the frontend branches available to the caller. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getHealth"></a>
 # **getHealth**

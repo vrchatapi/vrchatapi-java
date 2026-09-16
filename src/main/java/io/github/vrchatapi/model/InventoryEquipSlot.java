@@ -32,7 +32,13 @@ public enum InventoryEquipSlot {
   
   DRONE("drone"),
   
+  ICON_FRAME("iconFrame"),
+  
+  NAMEPLATE_EFFECT("nameplateEffect"),
+  
   PORTAL("portal"),
+  
+  PROFILE_EFFECT("profileEffect"),
   
   WARP("warp");
 

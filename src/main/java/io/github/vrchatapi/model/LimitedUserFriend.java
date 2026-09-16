@@ -64,6 +64,11 @@ public class LimitedUserFriend {
   @javax.annotation.Nullable
   private String bannerType;
 
+  public static final String SERIALIZED_NAME_BANNER_URL = "bannerUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  @javax.annotation.Nullable
+  private String bannerUrl;
+
   public static final String SERIALIZED_NAME_DEVELOPER_TYPE = "developerType";
   @SerializedName(SERIALIZED_NAME_DEVELOPER_TYPE)
   @javax.annotation.Nonnull
@@ -197,6 +202,25 @@ public class LimitedUserFriend {
 
   public void setBannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
+  }
+
+
+  public LimitedUserFriend bannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerUrl
+   * @return bannerUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerUrl() {
+    return bannerUrl;
+  }
+
+  public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
   }
 
 
@@ -581,6 +605,7 @@ public class LimitedUserFriend {
     LimitedUserFriend limitedUserFriend = (LimitedUserFriend) o;
     return Objects.equals(this.bannerColor, limitedUserFriend.bannerColor) &&
         Objects.equals(this.bannerType, limitedUserFriend.bannerType) &&
+        Objects.equals(this.bannerUrl, limitedUserFriend.bannerUrl) &&
         Objects.equals(this.developerType, limitedUserFriend.developerType) &&
         Objects.equals(this.discordId, limitedUserFriend.discordId) &&
         Objects.equals(this.displayName, limitedUserFriend.displayName) &&
@@ -604,7 +629,7 @@ public class LimitedUserFriend {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerColor, bannerType, developerType, discordId, displayName, friendKey, iconFrame, iconUrl, id, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, platform, profileEffect, status, statusDescription, tags);
+    return Objects.hash(bannerColor, bannerType, bannerUrl, developerType, discordId, displayName, friendKey, iconFrame, iconUrl, id, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, platform, profileEffect, status, statusDescription, tags);
   }
 
   @Override
@@ -613,6 +638,7 @@ public class LimitedUserFriend {
     sb.append("class LimitedUserFriend {\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
+    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    developerType: ").append(toIndentedString(developerType)).append("\n");
     sb.append("    discordId: ").append(toIndentedString(discordId)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
@@ -650,7 +676,7 @@ public class LimitedUserFriend {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "developerType", "discordId", "displayName", "friendKey", "iconFrame", "iconUrl", "id", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "platform", "profileEffect", "status", "statusDescription", "tags"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bannerUrl", "developerType", "discordId", "displayName", "friendKey", "iconFrame", "iconUrl", "id", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "platform", "profileEffect", "status", "statusDescription", "tags"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "platform", "status", "statusDescription", "tags"));
@@ -689,6 +715,9 @@ public class LimitedUserFriend {
       }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
+      if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
       // validate the required field `developerType`
       DeveloperType.validateJsonElement(jsonObj.get("developerType"));

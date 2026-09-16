@@ -693,7 +693,7 @@ No authorization required
 
 <a id="getGroupCalendarEvents"></a>
 # **getGroupCalendarEvents**
-> PaginatedCalendarEventList getGroupCalendarEvents(groupId, date, n, offset)
+> PaginatedCalendarEventList getGroupCalendarEvents(groupId, date, n, offset, limit, after, sort)
 
 List a group&#39;s calendar events
 
@@ -725,8 +725,11 @@ public class Example {
     OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | The month to search in.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    Integer limit = 100; // Integer | The maximum number of entries to get.
+    OffsetDateTime after = OffsetDateTime.now(); // OffsetDateTime | Only return events starting after this date.
+    String sort = "startTime_ascending"; // String | 
     try {
-      PaginatedCalendarEventList result = apiInstance.getGroupCalendarEvents(groupId, date, n, offset);
+      PaginatedCalendarEventList result = apiInstance.getGroupCalendarEvents(groupId, date, n, offset, limit, after, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarApi#getGroupCalendarEvents");
@@ -747,6 +750,9 @@ public class Example {
 | **date** | **OffsetDateTime**| The month to search in. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+| **limit** | **Integer**| The maximum number of entries to get. | [optional] |
+| **after** | **OffsetDateTime**| Only return events starting after this date. | [optional] |
+| **sort** | **String**|  | [optional] |
 
 ### Return type
 

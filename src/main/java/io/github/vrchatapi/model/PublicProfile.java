@@ -23,6 +23,8 @@ import io.github.vrchatapi.model.Badge;
 import io.github.vrchatapi.model.LimitedWorld;
 import io.github.vrchatapi.model.ProfileGroups;
 import io.github.vrchatapi.model.ProfileRepresentedGroup;
+import io.github.vrchatapi.model.UserStatus;
+import io.github.vrchatapi.model.WorldFavoriteList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +68,21 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private Boolean ageVerified;
 
+  public static final String SERIALIZED_NAME_BACKGROUND_GRADIENT_BOTTOM = "backgroundGradientBottom";
+  @SerializedName(SERIALIZED_NAME_BACKGROUND_GRADIENT_BOTTOM)
+  @javax.annotation.Nullable
+  private String backgroundGradientBottom;
+
+  public static final String SERIALIZED_NAME_BACKGROUND_GRADIENT_TOP = "backgroundGradientTop";
+  @SerializedName(SERIALIZED_NAME_BACKGROUND_GRADIENT_TOP)
+  @javax.annotation.Nullable
+  private String backgroundGradientTop;
+
+  public static final String SERIALIZED_NAME_BACKGROUND_TEMPLATE_ID = "backgroundTemplateId";
+  @SerializedName(SERIALIZED_NAME_BACKGROUND_TEMPLATE_ID)
+  @javax.annotation.Nullable
+  private String backgroundTemplateId;
+
   public static final String SERIALIZED_NAME_BACKGROUND_TEXTURE_ID = "backgroundTextureId";
   @SerializedName(SERIALIZED_NAME_BACKGROUND_TEXTURE_ID)
   @javax.annotation.Nullable
@@ -85,6 +102,11 @@ public class PublicProfile {
   @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
   @javax.annotation.Nullable
   private String bannerColor;
+
+  public static final String SERIALIZED_NAME_BANNER_CUSTOM_URL = "bannerCustomUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_CUSTOM_URL)
+  @javax.annotation.Nullable
+  private String bannerCustomUrl;
 
   public static final String SERIALIZED_NAME_BANNER_TYPE = "bannerType";
   @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
@@ -106,6 +128,36 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private List<String> bioLinks = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR = "currentAvatar";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR)
+  @javax.annotation.Nullable
+  private String currentAvatar;
+
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR_AUTHOR_NAME = "currentAvatarAuthorName";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_AUTHOR_NAME)
+  @javax.annotation.Nullable
+  private String currentAvatarAuthorName;
+
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL = "currentAvatarImageUrl";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String currentAvatarImageUrl;
+
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR_NAME = "currentAvatarName";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_NAME)
+  @javax.annotation.Nullable
+  private String currentAvatarName;
+
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
+  @javax.annotation.Nullable
+  private List<String> currentAvatarTags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
+  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
+  @javax.annotation.Nullable
+  private String currentAvatarThumbnailImageUrl;
+
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nullable
@@ -125,6 +177,11 @@ public class PublicProfile {
   @SerializedName(SERIALIZED_NAME_ICON_FRAME)
   @javax.annotation.Nullable
   private String iconFrame;
+
+  public static final String SERIALIZED_NAME_ICON_TYPE = "iconType";
+  @SerializedName(SERIALIZED_NAME_ICON_TYPE)
+  @javax.annotation.Nullable
+  private String iconType;
 
   public static final String SERIALIZED_NAME_ICON_URL = "iconUrl";
   @SerializedName(SERIALIZED_NAME_ICON_URL)
@@ -171,6 +228,16 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private ProfileRepresentedGroup representedGroup;
 
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private UserStatus status = UserStatus.OFFLINE;
+
+  public static final String SERIALIZED_NAME_STATUS_DESCRIPTION = "statusDescription";
+  @SerializedName(SERIALIZED_NAME_STATUS_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String statusDescription;
+
   public static final String SERIALIZED_NAME_THEME_BUTTON_COLOR = "themeButtonColor";
   @SerializedName(SERIALIZED_NAME_THEME_BUTTON_COLOR)
   @javax.annotation.Nullable
@@ -191,6 +258,11 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private String themeSubtextColor;
 
+  public static final String SERIALIZED_NAME_THEMES = "themes";
+  @SerializedName(SERIALIZED_NAME_THEMES)
+  @javax.annotation.Nullable
+  private List<Object> themes = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT = "totalPublicWorldsCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT)
   @javax.annotation.Nullable
@@ -201,10 +273,15 @@ public class PublicProfile {
   @javax.annotation.Nullable
   private List<String> trustTags = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
+  @SerializedName(SERIALIZED_NAME_USER_ICON)
+  @javax.annotation.Nullable
+  private String userIcon;
+
   public static final String SERIALIZED_NAME_WORLD_FAVORITE_LISTS = "worldFavoriteLists";
   @SerializedName(SERIALIZED_NAME_WORLD_FAVORITE_LISTS)
   @javax.annotation.Nullable
-  private List<Object> worldFavoriteLists = new ArrayList<>();
+  private List<WorldFavoriteList> worldFavoriteLists = new ArrayList<>();
 
   public PublicProfile() {
   }
@@ -244,6 +321,63 @@ public class PublicProfile {
 
   public void setAgeVerified(@javax.annotation.Nullable Boolean ageVerified) {
     this.ageVerified = ageVerified;
+  }
+
+
+  public PublicProfile backgroundGradientBottom(@javax.annotation.Nullable String backgroundGradientBottom) {
+    this.backgroundGradientBottom = backgroundGradientBottom;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return backgroundGradientBottom
+   */
+  @javax.annotation.Nullable
+  public String getBackgroundGradientBottom() {
+    return backgroundGradientBottom;
+  }
+
+  public void setBackgroundGradientBottom(@javax.annotation.Nullable String backgroundGradientBottom) {
+    this.backgroundGradientBottom = backgroundGradientBottom;
+  }
+
+
+  public PublicProfile backgroundGradientTop(@javax.annotation.Nullable String backgroundGradientTop) {
+    this.backgroundGradientTop = backgroundGradientTop;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return backgroundGradientTop
+   */
+  @javax.annotation.Nullable
+  public String getBackgroundGradientTop() {
+    return backgroundGradientTop;
+  }
+
+  public void setBackgroundGradientTop(@javax.annotation.Nullable String backgroundGradientTop) {
+    this.backgroundGradientTop = backgroundGradientTop;
+  }
+
+
+  public PublicProfile backgroundTemplateId(@javax.annotation.Nullable String backgroundTemplateId) {
+    this.backgroundTemplateId = backgroundTemplateId;
+    return this;
+  }
+
+  /**
+   * Get backgroundTemplateId
+   * @return backgroundTemplateId
+   */
+  @javax.annotation.Nullable
+  public String getBackgroundTemplateId() {
+    return backgroundTemplateId;
+  }
+
+  public void setBackgroundTemplateId(@javax.annotation.Nullable String backgroundTemplateId) {
+    this.backgroundTemplateId = backgroundTemplateId;
   }
 
 
@@ -331,6 +465,25 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile bannerCustomUrl(@javax.annotation.Nullable String bannerCustomUrl) {
+    this.bannerCustomUrl = bannerCustomUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerCustomUrl
+   * @return bannerCustomUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerCustomUrl() {
+    return bannerCustomUrl;
+  }
+
+  public void setBannerCustomUrl(@javax.annotation.Nullable String bannerCustomUrl) {
+    this.bannerCustomUrl = bannerCustomUrl;
+  }
+
+
   public PublicProfile bannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
     return this;
@@ -415,6 +568,128 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile currentAvatar(@javax.annotation.Nullable String currentAvatar) {
+    this.currentAvatar = currentAvatar;
+    return this;
+  }
+
+  /**
+   * Get currentAvatar
+   * @return currentAvatar
+   */
+  @javax.annotation.Nullable
+  public String getCurrentAvatar() {
+    return currentAvatar;
+  }
+
+  public void setCurrentAvatar(@javax.annotation.Nullable String currentAvatar) {
+    this.currentAvatar = currentAvatar;
+  }
+
+
+  public PublicProfile currentAvatarAuthorName(@javax.annotation.Nullable String currentAvatarAuthorName) {
+    this.currentAvatarAuthorName = currentAvatarAuthorName;
+    return this;
+  }
+
+  /**
+   * Get currentAvatarAuthorName
+   * @return currentAvatarAuthorName
+   */
+  @javax.annotation.Nullable
+  public String getCurrentAvatarAuthorName() {
+    return currentAvatarAuthorName;
+  }
+
+  public void setCurrentAvatarAuthorName(@javax.annotation.Nullable String currentAvatarAuthorName) {
+    this.currentAvatarAuthorName = currentAvatarAuthorName;
+  }
+
+
+  public PublicProfile currentAvatarImageUrl(@javax.annotation.Nullable String currentAvatarImageUrl) {
+    this.currentAvatarImageUrl = currentAvatarImageUrl;
+    return this;
+  }
+
+  /**
+   * When profilePicOverride is not empty, use it instead.
+   * @return currentAvatarImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getCurrentAvatarImageUrl() {
+    return currentAvatarImageUrl;
+  }
+
+  public void setCurrentAvatarImageUrl(@javax.annotation.Nullable String currentAvatarImageUrl) {
+    this.currentAvatarImageUrl = currentAvatarImageUrl;
+  }
+
+
+  public PublicProfile currentAvatarName(@javax.annotation.Nullable String currentAvatarName) {
+    this.currentAvatarName = currentAvatarName;
+    return this;
+  }
+
+  /**
+   * Get currentAvatarName
+   * @return currentAvatarName
+   */
+  @javax.annotation.Nullable
+  public String getCurrentAvatarName() {
+    return currentAvatarName;
+  }
+
+  public void setCurrentAvatarName(@javax.annotation.Nullable String currentAvatarName) {
+    this.currentAvatarName = currentAvatarName;
+  }
+
+
+  public PublicProfile currentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
+    this.currentAvatarTags = currentAvatarTags;
+    return this;
+  }
+
+  public PublicProfile addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
+    if (this.currentAvatarTags == null) {
+      this.currentAvatarTags = new ArrayList<>();
+    }
+    this.currentAvatarTags.add(currentAvatarTagsItem);
+    return this;
+  }
+
+  /**
+   * Get currentAvatarTags
+   * @return currentAvatarTags
+   */
+  @javax.annotation.Nullable
+  public List<String> getCurrentAvatarTags() {
+    return currentAvatarTags;
+  }
+
+  public void setCurrentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
+    this.currentAvatarTags = currentAvatarTags;
+  }
+
+
+  public PublicProfile currentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
+    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
+    return this;
+  }
+
+  /**
+   * When profilePicOverride is not empty, use it instead.
+   * @return currentAvatarThumbnailImageUrl
+   */
+  @javax.annotation.Nullable
+  public String getCurrentAvatarThumbnailImageUrl() {
+    return currentAvatarThumbnailImageUrl;
+  }
+
+  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
+    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
+  }
+
+
   public PublicProfile displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
@@ -488,6 +763,25 @@ public class PublicProfile {
 
   public void setIconFrame(@javax.annotation.Nullable String iconFrame) {
     this.iconFrame = iconFrame;
+  }
+
+
+  public PublicProfile iconType(@javax.annotation.Nullable String iconType) {
+    this.iconType = iconType;
+    return this;
+  }
+
+  /**
+   * Get iconType
+   * @return iconType
+   */
+  @javax.annotation.Nullable
+  public String getIconType() {
+    return iconType;
+  }
+
+  public void setIconType(@javax.annotation.Nullable String iconType) {
+    this.iconType = iconType;
   }
 
 
@@ -678,6 +972,44 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile status(@javax.annotation.Nullable UserStatus status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public UserStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable UserStatus status) {
+    this.status = status;
+  }
+
+
+  public PublicProfile statusDescription(@javax.annotation.Nullable String statusDescription) {
+    this.statusDescription = statusDescription;
+    return this;
+  }
+
+  /**
+   * Get statusDescription
+   * @return statusDescription
+   */
+  @javax.annotation.Nullable
+  public String getStatusDescription() {
+    return statusDescription;
+  }
+
+  public void setStatusDescription(@javax.annotation.Nullable String statusDescription) {
+    this.statusDescription = statusDescription;
+  }
+
+
   public PublicProfile themeButtonColor(@javax.annotation.Nullable String themeButtonColor) {
     this.themeButtonColor = themeButtonColor;
     return this;
@@ -754,6 +1086,33 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile themes(@javax.annotation.Nullable List<Object> themes) {
+    this.themes = themes;
+    return this;
+  }
+
+  public PublicProfile addThemesItem(Object themesItem) {
+    if (this.themes == null) {
+      this.themes = new ArrayList<>();
+    }
+    this.themes.add(themesItem);
+    return this;
+  }
+
+  /**
+   * Get themes
+   * @return themes
+   */
+  @javax.annotation.Nullable
+  public List<Object> getThemes() {
+    return themes;
+  }
+
+  public void setThemes(@javax.annotation.Nullable List<Object> themes) {
+    this.themes = themes;
+  }
+
+
   public PublicProfile totalPublicWorldsCount(@javax.annotation.Nullable Integer totalPublicWorldsCount) {
     this.totalPublicWorldsCount = totalPublicWorldsCount;
     return this;
@@ -800,12 +1159,31 @@ public class PublicProfile {
   }
 
 
-  public PublicProfile worldFavoriteLists(@javax.annotation.Nullable List<Object> worldFavoriteLists) {
+  public PublicProfile userIcon(@javax.annotation.Nullable String userIcon) {
+    this.userIcon = userIcon;
+    return this;
+  }
+
+  /**
+   * Get userIcon
+   * @return userIcon
+   */
+  @javax.annotation.Nullable
+  public String getUserIcon() {
+    return userIcon;
+  }
+
+  public void setUserIcon(@javax.annotation.Nullable String userIcon) {
+    this.userIcon = userIcon;
+  }
+
+
+  public PublicProfile worldFavoriteLists(@javax.annotation.Nullable List<WorldFavoriteList> worldFavoriteLists) {
     this.worldFavoriteLists = worldFavoriteLists;
     return this;
   }
 
-  public PublicProfile addWorldFavoriteListsItem(Object worldFavoriteListsItem) {
+  public PublicProfile addWorldFavoriteListsItem(WorldFavoriteList worldFavoriteListsItem) {
     if (this.worldFavoriteLists == null) {
       this.worldFavoriteLists = new ArrayList<>();
     }
@@ -814,15 +1192,15 @@ public class PublicProfile {
   }
 
   /**
-   * Get worldFavoriteLists
+   * The owner&#39;s public world favorite groups.
    * @return worldFavoriteLists
    */
   @javax.annotation.Nullable
-  public List<Object> getWorldFavoriteLists() {
+  public List<WorldFavoriteList> getWorldFavoriteLists() {
     return worldFavoriteLists;
   }
 
-  public void setWorldFavoriteLists(@javax.annotation.Nullable List<Object> worldFavoriteLists) {
+  public void setWorldFavoriteLists(@javax.annotation.Nullable List<WorldFavoriteList> worldFavoriteLists) {
     this.worldFavoriteLists = worldFavoriteLists;
   }
 
@@ -839,18 +1217,29 @@ public class PublicProfile {
     PublicProfile publicProfile = (PublicProfile) o;
     return Objects.equals(this.ageVerificationStatus, publicProfile.ageVerificationStatus) &&
         Objects.equals(this.ageVerified, publicProfile.ageVerified) &&
+        Objects.equals(this.backgroundGradientBottom, publicProfile.backgroundGradientBottom) &&
+        Objects.equals(this.backgroundGradientTop, publicProfile.backgroundGradientTop) &&
+        Objects.equals(this.backgroundTemplateId, publicProfile.backgroundTemplateId) &&
         Objects.equals(this.backgroundTextureId, publicProfile.backgroundTextureId) &&
         Objects.equals(this.backgroundType, publicProfile.backgroundType) &&
         Objects.equals(this.badges, publicProfile.badges) &&
         Objects.equals(this.bannerColor, publicProfile.bannerColor) &&
+        Objects.equals(this.bannerCustomUrl, publicProfile.bannerCustomUrl) &&
         Objects.equals(this.bannerType, publicProfile.bannerType) &&
         Objects.equals(this.bannerUrl, publicProfile.bannerUrl) &&
         Objects.equals(this.bio, publicProfile.bio) &&
         Objects.equals(this.bioLinks, publicProfile.bioLinks) &&
+        Objects.equals(this.currentAvatar, publicProfile.currentAvatar) &&
+        Objects.equals(this.currentAvatarAuthorName, publicProfile.currentAvatarAuthorName) &&
+        Objects.equals(this.currentAvatarImageUrl, publicProfile.currentAvatarImageUrl) &&
+        Objects.equals(this.currentAvatarName, publicProfile.currentAvatarName) &&
+        Objects.equals(this.currentAvatarTags, publicProfile.currentAvatarTags) &&
+        Objects.equals(this.currentAvatarThumbnailImageUrl, publicProfile.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.displayName, publicProfile.displayName) &&
         Objects.equals(this.groups, publicProfile.groups) &&
         Objects.equals(this.hasVrcPlus, publicProfile.hasVrcPlus) &&
         Objects.equals(this.iconFrame, publicProfile.iconFrame) &&
+        Objects.equals(this.iconType, publicProfile.iconType) &&
         Objects.equals(this.iconUrl, publicProfile.iconUrl) &&
         Objects.equals(this.id, publicProfile.id) &&
         Objects.equals(this.isEconomyCreator, publicProfile.isEconomyCreator) &&
@@ -860,18 +1249,22 @@ public class PublicProfile {
         Objects.equals(this.pronouns, publicProfile.pronouns) &&
         Objects.equals(this.publicWorlds, publicProfile.publicWorlds) &&
         Objects.equals(this.representedGroup, publicProfile.representedGroup) &&
+        Objects.equals(this.status, publicProfile.status) &&
+        Objects.equals(this.statusDescription, publicProfile.statusDescription) &&
         Objects.equals(this.themeButtonColor, publicProfile.themeButtonColor) &&
         Objects.equals(this.themeIconColor, publicProfile.themeIconColor) &&
         Objects.equals(this.themeId, publicProfile.themeId) &&
         Objects.equals(this.themeSubtextColor, publicProfile.themeSubtextColor) &&
+        Objects.equals(this.themes, publicProfile.themes) &&
         Objects.equals(this.totalPublicWorldsCount, publicProfile.totalPublicWorldsCount) &&
         Objects.equals(this.trustTags, publicProfile.trustTags) &&
+        Objects.equals(this.userIcon, publicProfile.userIcon) &&
         Objects.equals(this.worldFavoriteLists, publicProfile.worldFavoriteLists);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationStatus, ageVerified, backgroundTextureId, backgroundType, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, displayName, groups, hasVrcPlus, iconFrame, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, publicWorlds, representedGroup, themeButtonColor, themeIconColor, themeId, themeSubtextColor, totalPublicWorldsCount, trustTags, worldFavoriteLists);
+    return Objects.hash(ageVerificationStatus, ageVerified, backgroundGradientBottom, backgroundGradientTop, backgroundTemplateId, backgroundTextureId, backgroundType, badges, bannerColor, bannerCustomUrl, bannerType, bannerUrl, bio, bioLinks, currentAvatar, currentAvatarAuthorName, currentAvatarImageUrl, currentAvatarName, currentAvatarTags, currentAvatarThumbnailImageUrl, displayName, groups, hasVrcPlus, iconFrame, iconType, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, publicWorlds, representedGroup, status, statusDescription, themeButtonColor, themeIconColor, themeId, themeSubtextColor, themes, totalPublicWorldsCount, trustTags, userIcon, worldFavoriteLists);
   }
 
   @Override
@@ -880,18 +1273,29 @@ public class PublicProfile {
     sb.append("class PublicProfile {\n");
     sb.append("    ageVerificationStatus: ").append(toIndentedString(ageVerificationStatus)).append("\n");
     sb.append("    ageVerified: ").append(toIndentedString(ageVerified)).append("\n");
+    sb.append("    backgroundGradientBottom: ").append(toIndentedString(backgroundGradientBottom)).append("\n");
+    sb.append("    backgroundGradientTop: ").append(toIndentedString(backgroundGradientTop)).append("\n");
+    sb.append("    backgroundTemplateId: ").append(toIndentedString(backgroundTemplateId)).append("\n");
     sb.append("    backgroundTextureId: ").append(toIndentedString(backgroundTextureId)).append("\n");
     sb.append("    backgroundType: ").append(toIndentedString(backgroundType)).append("\n");
     sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
+    sb.append("    bannerCustomUrl: ").append(toIndentedString(bannerCustomUrl)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
     sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
+    sb.append("    currentAvatar: ").append(toIndentedString(currentAvatar)).append("\n");
+    sb.append("    currentAvatarAuthorName: ").append(toIndentedString(currentAvatarAuthorName)).append("\n");
+    sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
+    sb.append("    currentAvatarName: ").append(toIndentedString(currentAvatarName)).append("\n");
+    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
+    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    hasVrcPlus: ").append(toIndentedString(hasVrcPlus)).append("\n");
     sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
+    sb.append("    iconType: ").append(toIndentedString(iconType)).append("\n");
     sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isEconomyCreator: ").append(toIndentedString(isEconomyCreator)).append("\n");
@@ -901,12 +1305,16 @@ public class PublicProfile {
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
     sb.append("    publicWorlds: ").append(toIndentedString(publicWorlds)).append("\n");
     sb.append("    representedGroup: ").append(toIndentedString(representedGroup)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    themeButtonColor: ").append(toIndentedString(themeButtonColor)).append("\n");
     sb.append("    themeIconColor: ").append(toIndentedString(themeIconColor)).append("\n");
     sb.append("    themeId: ").append(toIndentedString(themeId)).append("\n");
     sb.append("    themeSubtextColor: ").append(toIndentedString(themeSubtextColor)).append("\n");
+    sb.append("    themes: ").append(toIndentedString(themes)).append("\n");
     sb.append("    totalPublicWorldsCount: ").append(toIndentedString(totalPublicWorldsCount)).append("\n");
     sb.append("    trustTags: ").append(toIndentedString(trustTags)).append("\n");
+    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("    worldFavoriteLists: ").append(toIndentedString(worldFavoriteLists)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -926,7 +1334,7 @@ public class PublicProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundTextureId", "backgroundType", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "displayName", "groups", "hasVrcPlus", "iconFrame", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "publicWorlds", "representedGroup", "themeButtonColor", "themeIconColor", "themeId", "themeSubtextColor", "totalPublicWorldsCount", "trustTags", "worldFavoriteLists"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundGradientBottom", "backgroundGradientTop", "backgroundTemplateId", "backgroundTextureId", "backgroundType", "badges", "bannerColor", "bannerCustomUrl", "bannerType", "bannerUrl", "bio", "bioLinks", "currentAvatar", "currentAvatarAuthorName", "currentAvatarImageUrl", "currentAvatarName", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "displayName", "groups", "hasVrcPlus", "iconFrame", "iconType", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "publicWorlds", "representedGroup", "status", "statusDescription", "themeButtonColor", "themeIconColor", "themeId", "themeSubtextColor", "themes", "totalPublicWorldsCount", "trustTags", "userIcon", "worldFavoriteLists"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -957,6 +1365,15 @@ public class PublicProfile {
       if (jsonObj.get("ageVerificationStatus") != null && !jsonObj.get("ageVerificationStatus").isJsonNull()) {
         AgeVerificationStatus.validateJsonElement(jsonObj.get("ageVerificationStatus"));
       }
+      if ((jsonObj.get("backgroundGradientBottom") != null && !jsonObj.get("backgroundGradientBottom").isJsonNull()) && !jsonObj.get("backgroundGradientBottom").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundGradientBottom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundGradientBottom").toString()));
+      }
+      if ((jsonObj.get("backgroundGradientTop") != null && !jsonObj.get("backgroundGradientTop").isJsonNull()) && !jsonObj.get("backgroundGradientTop").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundGradientTop` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundGradientTop").toString()));
+      }
+      if ((jsonObj.get("backgroundTemplateId") != null && !jsonObj.get("backgroundTemplateId").isJsonNull()) && !jsonObj.get("backgroundTemplateId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundTemplateId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundTemplateId").toString()));
+      }
       if ((jsonObj.get("backgroundTextureId") != null && !jsonObj.get("backgroundTextureId").isJsonNull()) && !jsonObj.get("backgroundTextureId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundTextureId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundTextureId").toString()));
       }
@@ -980,6 +1397,9 @@ public class PublicProfile {
       if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
       }
+      if ((jsonObj.get("bannerCustomUrl") != null && !jsonObj.get("bannerCustomUrl").isJsonNull()) && !jsonObj.get("bannerCustomUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerCustomUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerCustomUrl").toString()));
+      }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
       }
@@ -993,6 +1413,25 @@ public class PublicProfile {
       if (jsonObj.get("bioLinks") != null && !jsonObj.get("bioLinks").isJsonNull() && !jsonObj.get("bioLinks").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
       }
+      if ((jsonObj.get("currentAvatar") != null && !jsonObj.get("currentAvatar").isJsonNull()) && !jsonObj.get("currentAvatar").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatar").toString()));
+      }
+      if ((jsonObj.get("currentAvatarAuthorName") != null && !jsonObj.get("currentAvatarAuthorName").isJsonNull()) && !jsonObj.get("currentAvatarAuthorName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarAuthorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarAuthorName").toString()));
+      }
+      if ((jsonObj.get("currentAvatarImageUrl") != null && !jsonObj.get("currentAvatarImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
+      }
+      if ((jsonObj.get("currentAvatarName") != null && !jsonObj.get("currentAvatarName").isJsonNull()) && !jsonObj.get("currentAvatarName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarName").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
+      }
+      if ((jsonObj.get("currentAvatarThumbnailImageUrl") != null && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
+      }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
       }
@@ -1002,6 +1441,9 @@ public class PublicProfile {
       }
       if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
+      }
+      if ((jsonObj.get("iconType") != null && !jsonObj.get("iconType").isJsonNull()) && !jsonObj.get("iconType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconType").toString()));
       }
       if ((jsonObj.get("iconUrl") != null && !jsonObj.get("iconUrl").isJsonNull()) && !jsonObj.get("iconUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconUrl").toString()));
@@ -1040,6 +1482,13 @@ public class PublicProfile {
       if (jsonObj.get("representedGroup") != null && !jsonObj.get("representedGroup").isJsonNull()) {
         ProfileRepresentedGroup.validateJsonElement(jsonObj.get("representedGroup"));
       }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        UserStatus.validateJsonElement(jsonObj.get("status"));
+      }
+      if ((jsonObj.get("statusDescription") != null && !jsonObj.get("statusDescription").isJsonNull()) && !jsonObj.get("statusDescription").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `statusDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("statusDescription").toString()));
+      }
       if ((jsonObj.get("themeButtonColor") != null && !jsonObj.get("themeButtonColor").isJsonNull()) && !jsonObj.get("themeButtonColor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeButtonColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeButtonColor").toString()));
       }
@@ -1053,12 +1502,29 @@ public class PublicProfile {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeSubtextColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeSubtextColor").toString()));
       }
       // ensure the optional json data is an array if present
+      if (jsonObj.get("themes") != null && !jsonObj.get("themes").isJsonNull() && !jsonObj.get("themes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themes` to be an array in the JSON string but got `%s`", jsonObj.get("themes").toString()));
+      }
+      // ensure the optional json data is an array if present
       if (jsonObj.get("trustTags") != null && !jsonObj.get("trustTags").isJsonNull() && !jsonObj.get("trustTags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `trustTags` to be an array in the JSON string but got `%s`", jsonObj.get("trustTags").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("worldFavoriteLists") != null && !jsonObj.get("worldFavoriteLists").isJsonNull() && !jsonObj.get("worldFavoriteLists").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldFavoriteLists` to be an array in the JSON string but got `%s`", jsonObj.get("worldFavoriteLists").toString()));
+      if ((jsonObj.get("userIcon") != null && !jsonObj.get("userIcon").isJsonNull()) && !jsonObj.get("userIcon").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
+      }
+      if (jsonObj.get("worldFavoriteLists") != null && !jsonObj.get("worldFavoriteLists").isJsonNull()) {
+        JsonArray jsonArrayworldFavoriteLists = jsonObj.getAsJsonArray("worldFavoriteLists");
+        if (jsonArrayworldFavoriteLists != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("worldFavoriteLists").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldFavoriteLists` to be an array in the JSON string but got `%s`", jsonObj.get("worldFavoriteLists").toString()));
+          }
+
+          // validate the optional field `worldFavoriteLists` (array)
+          for (int i = 0; i < jsonArrayworldFavoriteLists.size(); i++) {
+            WorldFavoriteList.validateJsonElement(jsonArrayworldFavoriteLists.get(i));
+          };
+        }
       }
   }
 

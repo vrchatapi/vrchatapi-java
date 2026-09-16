@@ -18,6 +18,7 @@
 |**name** | **String** |  |  [optional] |
 |**order** | **Integer** |  |  [optional] |
 |**permissions** | **List&lt;GroupPermissions&gt;** |  |  [optional] |
+|**productId** | **String** |  |  [optional] |
 |**requiresPurchase** | **Boolean** |  |  [optional] |
 |**requiresTwoFactor** | **Boolean** |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |

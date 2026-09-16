@@ -55,6 +55,11 @@ public class PastDisplayName {
   @javax.annotation.Nonnull
   private String displayName;
 
+  public static final String SERIALIZED_NAME_REVERTED = "reverted";
+  @SerializedName(SERIALIZED_NAME_REVERTED)
+  @javax.annotation.Nonnull
+  private Boolean reverted;
+
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nonnull
@@ -79,6 +84,25 @@ public class PastDisplayName {
 
   public void setDisplayName(@javax.annotation.Nonnull String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public PastDisplayName reverted(@javax.annotation.Nonnull Boolean reverted) {
+    this.reverted = reverted;
+    return this;
+  }
+
+  /**
+   * Get reverted
+   * @return reverted
+   */
+  @javax.annotation.Nonnull
+  public Boolean getReverted() {
+    return reverted;
+  }
+
+  public void setReverted(@javax.annotation.Nonnull Boolean reverted) {
+    this.reverted = reverted;
   }
 
 
@@ -112,12 +136,13 @@ public class PastDisplayName {
     }
     PastDisplayName pastDisplayName = (PastDisplayName) o;
     return Objects.equals(this.displayName, pastDisplayName.displayName) &&
+        Objects.equals(this.reverted, pastDisplayName.reverted) &&
         Objects.equals(this.updatedAt, pastDisplayName.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, updatedAt);
+    return Objects.hash(displayName, reverted, updatedAt);
   }
 
   @Override
@@ -125,6 +150,7 @@ public class PastDisplayName {
     StringBuilder sb = new StringBuilder();
     sb.append("class PastDisplayName {\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    reverted: ").append(toIndentedString(reverted)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -144,10 +170,10 @@ public class PastDisplayName {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("displayName", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("displayName", "reverted", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("displayName", "updated_at"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("displayName", "reverted", "updated_at"));
   }
 
   /**

@@ -131,6 +131,11 @@ public class LimitedWorld {
   @javax.annotation.Nonnull
   private String organization = "vrchat";
 
+  public static final String SERIALIZED_NAME_PENDING_UPLOAD = "pendingUpload";
+  @SerializedName(SERIALIZED_NAME_PENDING_UPLOAD)
+  @javax.annotation.Nullable
+  private Boolean pendingUpload;
+
   public static final String SERIALIZED_NAME_POPULARITY = "popularity";
   @SerializedName(SERIALIZED_NAME_POPULARITY)
   @javax.annotation.Nonnull
@@ -490,6 +495,25 @@ public class LimitedWorld {
   }
 
 
+  public LimitedWorld pendingUpload(@javax.annotation.Nullable Boolean pendingUpload) {
+    this.pendingUpload = pendingUpload;
+    return this;
+  }
+
+  /**
+   * Get pendingUpload
+   * @return pendingUpload
+   */
+  @javax.annotation.Nullable
+  public Boolean getPendingUpload() {
+    return pendingUpload;
+  }
+
+  public void setPendingUpload(@javax.annotation.Nullable Boolean pendingUpload) {
+    this.pendingUpload = pendingUpload;
+  }
+
+
   public LimitedWorld popularity(@javax.annotation.Nonnull Integer popularity) {
     this.popularity = popularity;
     return this;
@@ -769,6 +793,7 @@ public class LimitedWorld {
         Objects.equals(this.name, limitedWorld.name) &&
         Objects.equals(this.occupants, limitedWorld.occupants) &&
         Objects.equals(this.organization, limitedWorld.organization) &&
+        Objects.equals(this.pendingUpload, limitedWorld.pendingUpload) &&
         Objects.equals(this.popularity, limitedWorld.popularity) &&
         Objects.equals(this.previewYoutubeId, limitedWorld.previewYoutubeId) &&
         Objects.equals(this.publicationDate, limitedWorld.publicationDate) &&
@@ -789,7 +814,7 @@ public class LimitedWorld {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, disabledPropAbilities, favorites, heat, id, imageUrl, isHypeTrainEligible, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, disabledPropAbilities, favorites, heat, id, imageUrl, isHypeTrainEligible, labsPublicationDate, name, occupants, organization, pendingUpload, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -818,6 +843,7 @@ public class LimitedWorld {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    occupants: ").append(toIndentedString(occupants)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    pendingUpload: ").append(toIndentedString(pendingUpload)).append("\n");
     sb.append("    popularity: ").append(toIndentedString(popularity)).append("\n");
     sb.append("    previewYoutubeId: ").append(toIndentedString(previewYoutubeId)).append("\n");
     sb.append("    publicationDate: ").append(toIndentedString(publicationDate)).append("\n");
@@ -848,7 +874,7 @@ public class LimitedWorld {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "disabledPropAbilities", "favorites", "heat", "id", "imageUrl", "isHypeTrainEligible", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "disabledPropAbilities", "favorites", "heat", "id", "imageUrl", "isHypeTrainEligible", "labsPublicationDate", "name", "occupants", "organization", "pendingUpload", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "visits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "favorites", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "publicationDate", "releaseStatus", "tags", "thumbnailImageUrl", "unityPackages", "updated_at"));

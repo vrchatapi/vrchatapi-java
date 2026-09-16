@@ -28,6 +28,8 @@ import java.io.IOException;
 
 import io.github.vrchatapi.model.APIConfig;
 import io.github.vrchatapi.model.APIHealth;
+import io.github.vrchatapi.model.Beta;
+import io.github.vrchatapi.model.BetaRegistrationNotFoundError;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.InfoPush;
 import java.time.OffsetDateTime;
@@ -195,6 +197,264 @@ public class MiscellaneousApi {
         okhttp3.Call localVarCall = getAssignedPermissionsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<Permission>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getBeta
+     * @param betaName The name of a beta program. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a Beta object. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> No beta program goes by that name. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBetaCall(@javax.annotation.Nonnull String betaName, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/beta/{betaName}"
+            .replace("{" + "betaName" + "}", localVarApiClient.escapeString(betaName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getBetaValidateBeforeCall(@javax.annotation.Nonnull String betaName, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'betaName' is set
+        if (betaName == null) {
+            throw new ApiException("Missing the required parameter 'betaName' when calling getBeta(Async)");
+        }
+
+        return getBetaCall(betaName, _callback);
+
+    }
+
+    /**
+     * Get Beta Program
+     * Get a beta program and the fields a registration must supply.
+     * @param betaName The name of a beta program. (required)
+     * @return Beta
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a Beta object. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> No beta program goes by that name. </td><td>  -  </td></tr>
+     </table>
+     */
+    public Beta getBeta(@javax.annotation.Nonnull String betaName) throws ApiException {
+        ApiResponse<Beta> localVarResp = getBetaWithHttpInfo(betaName);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Beta Program
+     * Get a beta program and the fields a registration must supply.
+     * @param betaName The name of a beta program. (required)
+     * @return ApiResponse&lt;Beta&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a Beta object. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> No beta program goes by that name. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Beta> getBetaWithHttpInfo(@javax.annotation.Nonnull String betaName) throws ApiException {
+        okhttp3.Call localVarCall = getBetaValidateBeforeCall(betaName, null);
+        Type localVarReturnType = new TypeToken<Beta>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Beta Program (asynchronously)
+     * Get a beta program and the fields a registration must supply.
+     * @param betaName The name of a beta program. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a Beta object. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> No beta program goes by that name. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBetaAsync(@javax.annotation.Nonnull String betaName, final ApiCallback<Beta> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getBetaValidateBeforeCall(betaName, _callback);
+        Type localVarReturnType = new TypeToken<Beta>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getBetaRegistration
+     * @param betaName The name of a beta program. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The caller has no registration for this beta program. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBetaRegistrationCall(@javax.annotation.Nonnull String betaName, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/beta/{betaName}/register"
+            .replace("{" + "betaName" + "}", localVarApiClient.escapeString(betaName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getBetaRegistrationValidateBeforeCall(@javax.annotation.Nonnull String betaName, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'betaName' is set
+        if (betaName == null) {
+            throw new ApiException("Missing the required parameter 'betaName' when calling getBetaRegistration(Async)");
+        }
+
+        return getBetaRegistrationCall(betaName, _callback);
+
+    }
+
+    /**
+     * Get Beta Registration
+     * Get the currently authenticated user&#39;s registration for a beta program.
+     * @param betaName The name of a beta program. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The caller has no registration for this beta program. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void getBetaRegistration(@javax.annotation.Nonnull String betaName) throws ApiException {
+        getBetaRegistrationWithHttpInfo(betaName);
+    }
+
+    /**
+     * Get Beta Registration
+     * Get the currently authenticated user&#39;s registration for a beta program.
+     * @param betaName The name of a beta program. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The caller has no registration for this beta program. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> getBetaRegistrationWithHttpInfo(@javax.annotation.Nonnull String betaName) throws ApiException {
+        okhttp3.Call localVarCall = getBetaRegistrationValidateBeforeCall(betaName, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Get Beta Registration (asynchronously)
+     * Get the currently authenticated user&#39;s registration for a beta program.
+     * @param betaName The name of a beta program. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The caller has no registration for this beta program. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBetaRegistrationAsync(@javax.annotation.Nonnull String betaName, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getBetaRegistrationValidateBeforeCall(betaName, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
@@ -566,6 +826,127 @@ public class MiscellaneousApi {
 
         okhttp3.Call localVarCall = getCurrentOnlineUsersValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Integer>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getFrontendBranches
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the frontend branches available to the caller. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFrontendBranchesCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/frontend/branches";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getFrontendBranchesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getFrontendBranchesCall(_callback);
+
+    }
+
+    /**
+     * List Frontend Branches
+     * List the frontend branches the currently authenticated user may switch to.
+     * @return List&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the frontend branches available to the caller. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Object> getFrontendBranches() throws ApiException {
+        ApiResponse<List<Object>> localVarResp = getFrontendBranchesWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Frontend Branches
+     * List the frontend branches the currently authenticated user may switch to.
+     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the frontend branches available to the caller. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Object>> getFrontendBranchesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getFrontendBranchesValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Frontend Branches (asynchronously)
+     * List the frontend branches the currently authenticated user may switch to.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the frontend branches available to the caller. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFrontendBranchesAsync(final ApiCallback<List<Object>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getFrontendBranchesValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

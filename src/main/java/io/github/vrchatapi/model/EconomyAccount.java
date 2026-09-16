@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.EconomyAccountLimits;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -59,7 +60,7 @@ public class EconomyAccount {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   @javax.annotation.Nullable
-  private String accountId;
+  private Integer accountId;
 
   public static final String SERIALIZED_NAME_ACCOUNT_SELLER_REGISTERED_ON = "accountSellerRegisteredOn";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_SELLER_REGISTERED_ON)
@@ -90,6 +91,11 @@ public class EconomyAccount {
   @SerializedName(SERIALIZED_NAME_CAN_SPEND)
   @javax.annotation.Nonnull
   private Boolean canSpend;
+
+  public static final String SERIALIZED_NAME_LIMITS = "limits";
+  @SerializedName(SERIALIZED_NAME_LIMITS)
+  @javax.annotation.Nullable
+  private EconomyAccountLimits limits;
 
   public static final String SERIALIZED_NAME_SKRILL_EMAIL = "skrillEmail";
   @SerializedName(SERIALIZED_NAME_SKRILL_EMAIL)
@@ -138,7 +144,7 @@ public class EconomyAccount {
   }
 
 
-  public EconomyAccount accountId(@javax.annotation.Nullable String accountId) {
+  public EconomyAccount accountId(@javax.annotation.Nullable Integer accountId) {
     this.accountId = accountId;
     return this;
   }
@@ -148,11 +154,11 @@ public class EconomyAccount {
    * @return accountId
    */
   @javax.annotation.Nullable
-  public String getAccountId() {
+  public Integer getAccountId() {
     return accountId;
   }
 
-  public void setAccountId(@javax.annotation.Nullable String accountId) {
+  public void setAccountId(@javax.annotation.Nullable Integer accountId) {
     this.accountId = accountId;
   }
 
@@ -271,6 +277,25 @@ public class EconomyAccount {
   }
 
 
+  public EconomyAccount limits(@javax.annotation.Nullable EconomyAccountLimits limits) {
+    this.limits = limits;
+    return this;
+  }
+
+  /**
+   * Get limits
+   * @return limits
+   */
+  @javax.annotation.Nullable
+  public EconomyAccountLimits getLimits() {
+    return limits;
+  }
+
+  public void setLimits(@javax.annotation.Nullable EconomyAccountLimits limits) {
+    this.limits = limits;
+  }
+
+
   public EconomyAccount skrillEmail(@javax.annotation.Nullable String skrillEmail) {
     this.skrillEmail = skrillEmail;
     return this;
@@ -384,6 +409,7 @@ public class EconomyAccount {
         Objects.equals(this.canEarn, economyAccount.canEarn) &&
         Objects.equals(this.canPayout, economyAccount.canPayout) &&
         Objects.equals(this.canSpend, economyAccount.canSpend) &&
+        Objects.equals(this.limits, economyAccount.limits) &&
         Objects.equals(this.skrillEmail, economyAccount.skrillEmail) &&
         Objects.equals(this.source, economyAccount.source) &&
         Objects.equals(this.tiliaId, economyAccount.tiliaId) &&
@@ -397,7 +423,7 @@ public class EconomyAccount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountActivatedOn, accountId, accountSellerRegisteredOn, accountSellerStatus, blocked, canEarn, canPayout, canSpend, skrillEmail, source, tiliaId, tiliaType, userId);
+    return Objects.hash(accountActivatedOn, accountId, accountSellerRegisteredOn, accountSellerStatus, blocked, canEarn, canPayout, canSpend, limits, skrillEmail, source, tiliaId, tiliaType, userId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -419,6 +445,7 @@ public class EconomyAccount {
     sb.append("    canEarn: ").append(toIndentedString(canEarn)).append("\n");
     sb.append("    canPayout: ").append(toIndentedString(canPayout)).append("\n");
     sb.append("    canSpend: ").append(toIndentedString(canSpend)).append("\n");
+    sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
     sb.append("    skrillEmail: ").append(toIndentedString(skrillEmail)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    tiliaId: ").append(toIndentedString(tiliaId)).append("\n");
@@ -442,7 +469,7 @@ public class EconomyAccount {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("accountActivatedOn", "accountId", "accountSellerRegisteredOn", "accountSellerStatus", "blocked", "canEarn", "canPayout", "canSpend", "skrillEmail", "source", "tiliaId", "tiliaType", "userId"));
+    openapiFields = new HashSet<String>(Arrays.asList("accountActivatedOn", "accountId", "accountSellerRegisteredOn", "accountSellerStatus", "blocked", "canEarn", "canPayout", "canSpend", "limits", "skrillEmail", "source", "tiliaId", "tiliaType", "userId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("accountActivatedOn", "accountId", "blocked", "canSpend", "source", "userId"));
@@ -476,11 +503,12 @@ public class EconomyAccount {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("accountId") != null && !jsonObj.get("accountId").isJsonNull()) && !jsonObj.get("accountId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
-      }
       if ((jsonObj.get("accountSellerStatus") != null && !jsonObj.get("accountSellerStatus").isJsonNull()) && !jsonObj.get("accountSellerStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `accountSellerStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountSellerStatus").toString()));
+      }
+      // validate the optional field `limits`
+      if (jsonObj.get("limits") != null && !jsonObj.get("limits").isJsonNull()) {
+        EconomyAccountLimits.validateJsonElement(jsonObj.get("limits"));
       }
       if ((jsonObj.get("skrillEmail") != null && !jsonObj.get("skrillEmail").isJsonNull()) && !jsonObj.get("skrillEmail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `skrillEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("skrillEmail").toString()));

@@ -34,7 +34,13 @@ public enum InventoryItemType {
   
   EMOJI("emoji"),
   
+  ICON_FRAME("iconFrame"),
+  
+  NAMEPLATE_EFFECT("nameplateEffect"),
+  
   PORTALSKIN("portalskin"),
+  
+  PROFILE_EFFECT("profileEffect"),
   
   PROP("prop"),
   

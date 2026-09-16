@@ -43,6 +43,7 @@ import io.github.vrchatapi.model.RewardRedemptionResult;
 import io.github.vrchatapi.model.ShareInventoryItemDirectRequest;
 import io.github.vrchatapi.model.SuccessFlag;
 import io.github.vrchatapi.model.UpdateInventoryItemRequest;
+import io.github.vrchatapi.model.UserCosmetic;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -494,6 +495,141 @@ public class InventoryApi {
         return localVarCall;
     }
     /**
+     * Build call for getCosmeticIndex
+     * @param itemType The kind of cosmetic to list. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of InventoryTemplate objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCosmeticIndexCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/cosmetics/index/{itemType}"
+            .replace("{" + "itemType" + "}", localVarApiClient.escapeString(itemType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCosmeticIndexValidateBeforeCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'itemType' is set
+        if (itemType == null) {
+            throw new ApiException("Missing the required parameter 'itemType' when calling getCosmeticIndex(Async)");
+        }
+
+        return getCosmeticIndexCall(itemType, _callback);
+
+    }
+
+    /**
+     * List Cosmetics
+     * List every cosmetic of a kind that VRChat has published, whether or not the caller owns it.
+     * @param itemType The kind of cosmetic to list. (required)
+     * @return List&lt;InventoryTemplate&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of InventoryTemplate objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<InventoryTemplate> getCosmeticIndex(@javax.annotation.Nonnull String itemType) throws ApiException {
+        ApiResponse<List<InventoryTemplate>> localVarResp = getCosmeticIndexWithHttpInfo(itemType);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Cosmetics
+     * List every cosmetic of a kind that VRChat has published, whether or not the caller owns it.
+     * @param itemType The kind of cosmetic to list. (required)
+     * @return ApiResponse&lt;List&lt;InventoryTemplate&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of InventoryTemplate objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<InventoryTemplate>> getCosmeticIndexWithHttpInfo(@javax.annotation.Nonnull String itemType) throws ApiException {
+        okhttp3.Call localVarCall = getCosmeticIndexValidateBeforeCall(itemType, null);
+        Type localVarReturnType = new TypeToken<List<InventoryTemplate>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Cosmetics (asynchronously)
+     * List every cosmetic of a kind that VRChat has published, whether or not the caller owns it.
+     * @param itemType The kind of cosmetic to list. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of InventoryTemplate objects. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCosmeticIndexAsync(@javax.annotation.Nonnull String itemType, final ApiCallback<List<InventoryTemplate>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getCosmeticIndexValidateBeforeCall(itemType, _callback);
+        Type localVarReturnType = new TypeToken<List<InventoryTemplate>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getInventory
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -506,6 +642,8 @@ public class InventoryApi {
      * @param notTypes Filter out types for inventory retrieval (comma-separated). (optional, default to bundle)
      * @param notFlags Filter out flags for inventory retrieval (comma-separated). (optional, default to instantiatable)
      * @param archived Filter archived status for inventory retrieval. (optional)
+     * @param seen  (optional)
+     * @param isNavBar  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -518,7 +656,7 @@ public class InventoryApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInventoryCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInventoryCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean seen, @javax.annotation.Nullable Boolean isNavBar, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -587,6 +725,14 @@ public class InventoryApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("archived", archived));
         }
 
+        if (seen != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("seen", seen));
+        }
+
+        if (isNavBar != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("isNavBar", isNavBar));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -607,8 +753,8 @@ public class InventoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInventoryValidateBeforeCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, final ApiCallback _callback) throws ApiException {
-        return getInventoryCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, _callback);
+    private okhttp3.Call getInventoryValidateBeforeCall(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean seen, @javax.annotation.Nullable Boolean isNavBar, final ApiCallback _callback) throws ApiException {
+        return getInventoryCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar, _callback);
 
     }
 
@@ -626,6 +772,8 @@ public class InventoryApi {
      * @param notTypes Filter out types for inventory retrieval (comma-separated). (optional, default to bundle)
      * @param notFlags Filter out flags for inventory retrieval (comma-separated). (optional, default to instantiatable)
      * @param archived Filter archived status for inventory retrieval. (optional)
+     * @param seen  (optional)
+     * @param isNavBar  (optional)
      * @return Inventory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -637,8 +785,8 @@ public class InventoryApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public Inventory getInventory(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived) throws ApiException {
-        ApiResponse<Inventory> localVarResp = getInventoryWithHttpInfo(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived);
+    public Inventory getInventory(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean seen, @javax.annotation.Nullable Boolean isNavBar) throws ApiException {
+        ApiResponse<Inventory> localVarResp = getInventoryWithHttpInfo(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar);
         return localVarResp.getData();
     }
 
@@ -656,6 +804,8 @@ public class InventoryApi {
      * @param notTypes Filter out types for inventory retrieval (comma-separated). (optional, default to bundle)
      * @param notFlags Filter out flags for inventory retrieval (comma-separated). (optional, default to instantiatable)
      * @param archived Filter archived status for inventory retrieval. (optional)
+     * @param seen  (optional)
+     * @param isNavBar  (optional)
      * @return ApiResponse&lt;Inventory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -667,8 +817,8 @@ public class InventoryApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Inventory> getInventoryWithHttpInfo(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived) throws ApiException {
-        okhttp3.Call localVarCall = getInventoryValidateBeforeCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, null);
+    public ApiResponse<Inventory> getInventoryWithHttpInfo(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean seen, @javax.annotation.Nullable Boolean isNavBar) throws ApiException {
+        okhttp3.Call localVarCall = getInventoryValidateBeforeCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar, null);
         Type localVarReturnType = new TypeToken<Inventory>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -687,6 +837,8 @@ public class InventoryApi {
      * @param notTypes Filter out types for inventory retrieval (comma-separated). (optional, default to bundle)
      * @param notFlags Filter out flags for inventory retrieval (comma-separated). (optional, default to instantiatable)
      * @param archived Filter archived status for inventory retrieval. (optional)
+     * @param seen  (optional)
+     * @param isNavBar  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -699,9 +851,9 @@ public class InventoryApi {
         <tr><td> 403 </td><td> Error response due to missing permissions. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInventoryAsync(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, final ApiCallback<Inventory> _callback) throws ApiException {
+    public okhttp3.Call getInventoryAsync(@javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String holderId, @javax.annotation.Nullable InventoryEquipSlot equipSlot, @javax.annotation.Nullable String order, @javax.annotation.Nullable String tags, @javax.annotation.Nullable InventoryItemType types, @javax.annotation.Nullable InventoryFlag flags, @javax.annotation.Nullable InventoryItemType notTypes, @javax.annotation.Nullable InventoryFlag notFlags, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean seen, @javax.annotation.Nullable Boolean isNavBar, final ApiCallback<Inventory> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getInventoryValidateBeforeCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, _callback);
+        okhttp3.Call localVarCall = getInventoryValidateBeforeCall(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar, _callback);
         Type localVarReturnType = new TypeToken<Inventory>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1215,6 +1367,137 @@ public class InventoryApi {
 
         okhttp3.Call localVarCall = getOwnInventoryItemValidateBeforeCall(inventoryItemId, _callback);
         Type localVarReturnType = new TypeToken<InventoryItem>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUserCosmetics
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of UserCosmetic objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserCosmeticsCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/user/{userId}/cosmetics"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserCosmeticsValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserCosmetics(Async)");
+        }
+
+        return getUserCosmeticsCall(userId, _callback);
+
+    }
+
+    /**
+     * List User Cosmetics
+     * List the cosmetics a user holds.
+     * @param userId Must be a valid user ID. (required)
+     * @return List&lt;UserCosmetic&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of UserCosmetic objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<UserCosmetic> getUserCosmetics(@javax.annotation.Nonnull String userId) throws ApiException {
+        ApiResponse<List<UserCosmetic>> localVarResp = getUserCosmeticsWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List User Cosmetics
+     * List the cosmetics a user holds.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;List&lt;UserCosmetic&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of UserCosmetic objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<UserCosmetic>> getUserCosmeticsWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserCosmeticsValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<List<UserCosmetic>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List User Cosmetics (asynchronously)
+     * List the cosmetics a user holds.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a list of UserCosmetic objects. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserCosmeticsAsync(@javax.annotation.Nonnull String userId, final ApiCallback<List<UserCosmetic>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserCosmeticsValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<List<UserCosmetic>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

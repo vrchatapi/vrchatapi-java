@@ -7,7 +7,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**addFavorite**](FavoritesApi.md#addFavorite) | **POST** /favorites | Add Favorite |
 | [**clearFavoriteGroup**](FavoritesApi.md#clearFavoriteGroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group |
 | [**getFavoriteGroup**](FavoritesApi.md#getFavoriteGroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group |
+| [**getFavoriteGroupContents**](FavoritesApi.md#getFavoriteGroupContents) | **GET** /favorites/groups/{favoriteGroupType}/{favoriteGroupName} | List Favorite Group Contents |
 | [**getFavoriteGroups**](FavoritesApi.md#getFavoriteGroups) | **GET** /favorite/groups | List Favorite Groups |
+| [**getFavoriteGroupsByType**](FavoritesApi.md#getFavoriteGroupsByType) | **GET** /favorites/groups/{favoriteGroupType} | List Favorite Groups By Type |
 | [**getFavoriteLimits**](FavoritesApi.md#getFavoriteLimits) | **GET** /auth/user/favoritelimits | Get Favorite Limits |
 | [**getFavorites**](FavoritesApi.md#getFavorites) | **GET** /favorites | List Favorites |
 | [**removeFavorite**](FavoritesApi.md#removeFavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite |
@@ -231,6 +233,80 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single FavoriteGroup object. |  -  |
 
+<a id="getFavoriteGroupContents"></a>
+# **getFavoriteGroupContents**
+> FavoriteGroupContents getFavoriteGroupContents(favoriteGroupType, favoriteGroupName, ownerId)
+
+List Favorite Group Contents
+
+List the favorites in a group, each alongside the object it points at.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FavoritesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FavoritesApi apiInstance = new FavoritesApi(defaultClient);
+    FavoriteType favoriteGroupType = FavoriteType.fromValue("avatar"); // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+    String favoriteGroupName = "group_0"; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
+    String ownerId = "ownerId_example"; // String | The user whose favorite group to return. Must be a user ID.
+    try {
+      FavoriteGroupContents result = apiInstance.getFavoriteGroupContents(favoriteGroupType, favoriteGroupName, ownerId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FavoritesApi#getFavoriteGroupContents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
+| **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to group_0] |
+| **ownerId** | **String**| The user whose favorite group to return. Must be a user ID. | [optional] |
+
+### Return type
+
+[**FavoriteGroupContents**](FavoriteGroupContents.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the favorites in a group, each alongside the object it points at. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a id="getFavoriteGroups"></a>
 # **getFavoriteGroups**
 > List&lt;FavoriteGroup&gt; getFavoriteGroups(n, offset, type, userId, ownerId)
@@ -307,6 +383,78 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of FavoriteGroup objects. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getFavoriteGroupsByType"></a>
+# **getFavoriteGroupsByType**
+> FavoriteGroupList getFavoriteGroupsByType(favoriteGroupType, ownerId)
+
+List Favorite Groups By Type
+
+List a user&#39;s favorite groups of one type.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.FavoritesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    FavoritesApi apiInstance = new FavoritesApi(defaultClient);
+    FavoriteType favoriteGroupType = FavoriteType.fromValue("avatar"); // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+    String ownerId = "ownerId_example"; // String | The user whose favorite groups to return. Must be a user ID.
+    try {
+      FavoriteGroupList result = apiInstance.getFavoriteGroupsByType(favoriteGroupType, ownerId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FavoritesApi#getFavoriteGroupsByType");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | [default to friend] [enum: avatar, friend, vrcPlusWorld, world] |
+| **ownerId** | **String**| The user whose favorite groups to return. Must be a user ID. | [optional] |
+
+### Return type
+
+[**FavoriteGroupList**](FavoriteGroupList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single FavoriteGroupList object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteLimits"></a>

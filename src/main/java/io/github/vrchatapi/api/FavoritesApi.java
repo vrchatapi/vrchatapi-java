@@ -30,6 +30,8 @@ import io.github.vrchatapi.model.AddFavoriteRequest;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Favorite;
 import io.github.vrchatapi.model.FavoriteGroup;
+import io.github.vrchatapi.model.FavoriteGroupContents;
+import io.github.vrchatapi.model.FavoriteGroupList;
 import io.github.vrchatapi.model.FavoriteLimits;
 import io.github.vrchatapi.model.FavoriteType;
 import io.github.vrchatapi.model.Success;
@@ -503,6 +505,155 @@ public class FavoritesApi {
         return localVarCall;
     }
     /**
+     * Build call for getFavoriteGroupContents
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param favoriteGroupName The name of the group to fetch, must be a name of a FavoriteGroup. (required)
+     * @param ownerId The user whose favorite group to return. Must be a user ID. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the favorites in a group, each alongside the object it points at. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFavoriteGroupContentsCall(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nonnull String favoriteGroupName, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/favorites/groups/{favoriteGroupType}/{favoriteGroupName}"
+            .replace("{" + "favoriteGroupType" + "}", localVarApiClient.escapeString(favoriteGroupType.toString()))
+            .replace("{" + "favoriteGroupName" + "}", localVarApiClient.escapeString(favoriteGroupName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (ownerId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("ownerId", ownerId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getFavoriteGroupContentsValidateBeforeCall(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nonnull String favoriteGroupName, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'favoriteGroupType' is set
+        if (favoriteGroupType == null) {
+            throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling getFavoriteGroupContents(Async)");
+        }
+
+        // verify the required parameter 'favoriteGroupName' is set
+        if (favoriteGroupName == null) {
+            throw new ApiException("Missing the required parameter 'favoriteGroupName' when calling getFavoriteGroupContents(Async)");
+        }
+
+        return getFavoriteGroupContentsCall(favoriteGroupType, favoriteGroupName, ownerId, _callback);
+
+    }
+
+    /**
+     * List Favorite Group Contents
+     * List the favorites in a group, each alongside the object it points at.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param favoriteGroupName The name of the group to fetch, must be a name of a FavoriteGroup. (required)
+     * @param ownerId The user whose favorite group to return. Must be a user ID. (optional)
+     * @return FavoriteGroupContents
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the favorites in a group, each alongside the object it points at. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public FavoriteGroupContents getFavoriteGroupContents(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nonnull String favoriteGroupName, @javax.annotation.Nullable String ownerId) throws ApiException {
+        ApiResponse<FavoriteGroupContents> localVarResp = getFavoriteGroupContentsWithHttpInfo(favoriteGroupType, favoriteGroupName, ownerId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Favorite Group Contents
+     * List the favorites in a group, each alongside the object it points at.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param favoriteGroupName The name of the group to fetch, must be a name of a FavoriteGroup. (required)
+     * @param ownerId The user whose favorite group to return. Must be a user ID. (optional)
+     * @return ApiResponse&lt;FavoriteGroupContents&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the favorites in a group, each alongside the object it points at. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FavoriteGroupContents> getFavoriteGroupContentsWithHttpInfo(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nonnull String favoriteGroupName, @javax.annotation.Nullable String ownerId) throws ApiException {
+        okhttp3.Call localVarCall = getFavoriteGroupContentsValidateBeforeCall(favoriteGroupType, favoriteGroupName, ownerId, null);
+        Type localVarReturnType = new TypeToken<FavoriteGroupContents>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Favorite Group Contents (asynchronously)
+     * List the favorites in a group, each alongside the object it points at.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param favoriteGroupName The name of the group to fetch, must be a name of a FavoriteGroup. (required)
+     * @param ownerId The user whose favorite group to return. Must be a user ID. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns the favorites in a group, each alongside the object it points at. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFavoriteGroupContentsAsync(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nonnull String favoriteGroupName, @javax.annotation.Nullable String ownerId, final ApiCallback<FavoriteGroupContents> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getFavoriteGroupContentsValidateBeforeCall(favoriteGroupType, favoriteGroupName, ownerId, _callback);
+        Type localVarReturnType = new TypeToken<FavoriteGroupContents>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getFavoriteGroups
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
@@ -660,6 +811,145 @@ public class FavoritesApi {
 
         okhttp3.Call localVarCall = getFavoriteGroupsValidateBeforeCall(n, offset, type, userId, ownerId, _callback);
         Type localVarReturnType = new TypeToken<List<FavoriteGroup>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getFavoriteGroupsByType
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single FavoriteGroupList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFavoriteGroupsByTypeCall(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/favorites/groups/{favoriteGroupType}"
+            .replace("{" + "favoriteGroupType" + "}", localVarApiClient.escapeString(favoriteGroupType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (ownerId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("ownerId", ownerId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getFavoriteGroupsByTypeValidateBeforeCall(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nullable String ownerId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'favoriteGroupType' is set
+        if (favoriteGroupType == null) {
+            throw new ApiException("Missing the required parameter 'favoriteGroupType' when calling getFavoriteGroupsByType(Async)");
+        }
+
+        return getFavoriteGroupsByTypeCall(favoriteGroupType, ownerId, _callback);
+
+    }
+
+    /**
+     * List Favorite Groups By Type
+     * List a user&#39;s favorite groups of one type.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
+     * @return FavoriteGroupList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single FavoriteGroupList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public FavoriteGroupList getFavoriteGroupsByType(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nullable String ownerId) throws ApiException {
+        ApiResponse<FavoriteGroupList> localVarResp = getFavoriteGroupsByTypeWithHttpInfo(favoriteGroupType, ownerId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Favorite Groups By Type
+     * List a user&#39;s favorite groups of one type.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
+     * @return ApiResponse&lt;FavoriteGroupList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single FavoriteGroupList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FavoriteGroupList> getFavoriteGroupsByTypeWithHttpInfo(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nullable String ownerId) throws ApiException {
+        okhttp3.Call localVarCall = getFavoriteGroupsByTypeValidateBeforeCall(favoriteGroupType, ownerId, null);
+        Type localVarReturnType = new TypeToken<FavoriteGroupList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Favorite Groups By Type (asynchronously)
+     * List a user&#39;s favorite groups of one type.
+     * @param favoriteGroupType The type of group to fetch, must be a valid FavoriteType. (required)
+     * @param ownerId The user whose favorite groups to return. Must be a user ID. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single FavoriteGroupList object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getFavoriteGroupsByTypeAsync(@javax.annotation.Nonnull FavoriteType favoriteGroupType, @javax.annotation.Nullable String ownerId, final ApiCallback<FavoriteGroupList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getFavoriteGroupsByTypeValidateBeforeCall(favoriteGroupType, ownerId, _callback);
+        Type localVarReturnType = new TypeToken<FavoriteGroupList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

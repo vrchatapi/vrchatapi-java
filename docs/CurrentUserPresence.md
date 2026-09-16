@@ -10,11 +10,15 @@
 |**avatarImageUrl** | **String** |  |  [optional] |
 |**avatarThumbnail** | **String** |  |  [optional] |
 |**banner** | **String** |  |  [optional] |
+|**bannerColor** | **String** |  |  [optional] |
+|**bannerType** | **String** |  |  [optional] |
+|**bannerUrl** | **String** |  |  [optional] |
 |**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
 |**debugflag** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**groups** | **List&lt;String&gt;** |  |  [optional] |
 |**iconFrame** | **String** |  |  [optional] |
+|**iconUrl** | **String** |  |  [optional] |
 |**id** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
 |**instance** | **String** |  |  [optional] |
 |**instanceType** | **String** | either an InstanceType or an empty string |  [optional] |

@@ -8,6 +8,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**checkUserPersistenceExists**](UsersApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
 | [**deleteAllUserPersistenceData**](UsersApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
 | [**deleteUserPersistence**](UsersApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
+| [**getAgeVerificationStatus**](UsersApi.md#getAgeVerificationStatus) | **GET** /ageVerification/status | Get Age Verification Status |
 | [**getBlockedGroups**](UsersApi.md#getBlockedGroups) | **GET** /users/{userId}/groups/userblocked | Get User Group Blocks |
 | [**getInvitedGroups**](UsersApi.md#getInvitedGroups) | **GET** /users/{userId}/groups/invited | Get User Group Invited |
 | [**getMutualFriends**](UsersApi.md#getMutualFriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends |
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getUser**](UsersApi.md#getUser) | **GET** /users/{userId} | Get User by ID |
 | [**getUserAllGroupPermissions**](UsersApi.md#getUserAllGroupPermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups. |
 | [**getUserByName**](UsersApi.md#getUserByName) | **GET** /users/{username}/name | Get User by Username |
+| [**getUserClientConfig**](UsersApi.md#getUserClientConfig) | **GET** /users/{userId}/clientConfig | Get User Client Config |
 | [**getUserFeedback**](UsersApi.md#getUserFeedback) | **GET** /users/{userId}/feedback | Get User Feedback |
 | [**getUserGroupInstances**](UsersApi.md#getUserGroupInstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances |
 | [**getUserGroupInstancesForGroup**](UsersApi.md#getUserGroupInstancesForGroup) | **GET** /users/{userId}/instances/groups/{groupId} | Get User Group Instances for a specific Group |
@@ -30,7 +32,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**removeTags**](UsersApi.md#removeTags) | **POST** /users/{userId}/removeTags | Remove User Tags |
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
 | [**updateBadge**](UsersApi.md#updateBadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge |
+| [**updateProfile**](UsersApi.md#updateProfile) | **PUT** /profile/{userId} | Update Profile |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info |
+| [**updateUserClientConfig**](UsersApi.md#updateUserClientConfig) | **PUT** /users/{userId}/clientConfig | Update User Client Config |
 | [**updateUserNote**](UsersApi.md#updateUserNote) | **POST** /userNotes | Update User Note |
 
 
@@ -322,6 +326,72 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
+
+<a id="getAgeVerificationStatus"></a>
+# **getAgeVerificationStatus**
+> AgeVerificationStatusResult getAgeVerificationStatus()
+
+Get Age Verification Status
+
+Get the currently authenticated user&#39;s age verification status.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    try {
+      AgeVerificationStatusResult result = apiInstance.getAgeVerificationStatus();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getAgeVerificationStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AgeVerificationStatusResult**](AgeVerificationStatusResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single AgeVerificationStatusResult object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getBlockedGroups"></a>
 # **getBlockedGroups**
@@ -753,7 +823,7 @@ public class Example {
 
 <a id="getPublicProfile"></a>
 # **getPublicProfile**
-> PublicProfile getPublicProfile(userId, withGroupsAndWorlds)
+> PublicProfile getPublicProfile(userId, asSelf, withGroupsAndWorlds)
 
 Get Public Profile
 
@@ -782,9 +852,10 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
+    Boolean asSelf = true; // Boolean | Include the properties VRChat shows a user on their own profile. Ignored for any other user.
     Boolean withGroupsAndWorlds = true; // Boolean | Include `groups`, `publicWorlds`, `totalPublicWorldsCount` and `worldFavoriteLists` in the response.
     try {
-      PublicProfile result = apiInstance.getPublicProfile(userId, withGroupsAndWorlds);
+      PublicProfile result = apiInstance.getPublicProfile(userId, asSelf, withGroupsAndWorlds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getPublicProfile");
@@ -802,6 +873,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
+| **asSelf** | **Boolean**| Include the properties VRChat shows a user on their own profile. Ignored for any other user. | [optional] |
 | **withGroupsAndWorlds** | **Boolean**| Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. | [optional] |
 
 ### Return type
@@ -1036,6 +1108,76 @@ public class Example {
 | **200** | Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
+
+<a id="getUserClientConfig"></a>
+# **getUserClientConfig**
+> UserClientConfig getUserClientConfig(userId)
+
+Get User Client Config
+
+Get the client settings VRChat stores against a user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    try {
+      UserClientConfig result = apiInstance.getUserClientConfig(userId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUserClientConfig");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+
+### Return type
+
+[**UserClientConfig**](UserClientConfig.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a UserClientConfig object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserFeedback"></a>
 # **getUserFeedback**
@@ -1907,6 +2049,79 @@ null (empty response body)
 | **403** | Error response when trying get group instances of another user. |  -  |
 | **404** | The user does not have the badge. |  -  |
 
+<a id="updateProfile"></a>
+# **updateProfile**
+> PublicProfile updateProfile(userId, updateProfileRequest)
+
+Update Profile
+
+Update a user&#39;s profile. &#x60;pronouns&#x60;, &#x60;status&#x60; and &#x60;statusDescription&#x60; are written through &#x60;updateUser&#x60; instead.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    UpdateProfileRequest updateProfileRequest = new UpdateProfileRequest(); // UpdateProfileRequest | 
+    try {
+      PublicProfile result = apiInstance.updateProfile(userId, updateProfileRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#updateProfile");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **updateProfileRequest** | [**UpdateProfileRequest**](UpdateProfileRequest.md)|  | [optional] |
+
+### Return type
+
+[**PublicProfile**](PublicProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a user&#39;s public profile. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a id="updateUser"></a>
 # **updateUser**
 > CurrentUser updateUser(userId, updateUserRequest)
@@ -1980,6 +2195,78 @@ public class Example {
 | **400** | Error response when a user attempts to change a property without supplying their current password. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when updating a user other than yourself. |  -  |
+
+<a id="updateUserClientConfig"></a>
+# **updateUserClientConfig**
+> UserClientConfig updateUserClientConfig(userId, updateUserClientConfigRequest)
+
+Update User Client Config
+
+Update the client settings VRChat stores against a user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    UpdateUserClientConfigRequest updateUserClientConfigRequest = new UpdateUserClientConfigRequest(); // UpdateUserClientConfigRequest | 
+    try {
+      UserClientConfig result = apiInstance.updateUserClientConfig(userId, updateUserClientConfigRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#updateUserClientConfig");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **updateUserClientConfigRequest** | [**UpdateUserClientConfigRequest**](UpdateUserClientConfigRequest.md)|  | [optional] |
+
+### Return type
+
+[**UserClientConfig**](UserClientConfig.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a UserClientConfig object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="updateUserNote"></a>
 # **updateUserNote**

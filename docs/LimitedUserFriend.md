@@ -10,6 +10,7 @@ User object received when querying your friends list
 |------------ | ------------- | ------------- | -------------|
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
+|**bannerUrl** | **String** |  |  [optional] |
 |**developerType** | **DeveloperType** |  |  |
 |**discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes |  [optional] |
 |**displayName** | **String** |  |  |

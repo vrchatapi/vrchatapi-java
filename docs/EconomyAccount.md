@@ -8,13 +8,14 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**accountActivatedOn** | **OffsetDateTime** |  |  |
-|**accountId** | **String** |  |  |
+|**accountId** | **Integer** |  |  |
 |**accountSellerRegisteredOn** | **OffsetDateTime** |  |  [optional] |
 |**accountSellerStatus** | **String** |  |  [optional] |
 |**blocked** | **Boolean** |  |  |
 |**canEarn** | **Boolean** |  |  [optional] |
 |**canPayout** | **Boolean** |  |  [optional] |
 |**canSpend** | **Boolean** |  |  |
+|**limits** | [**EconomyAccountLimits**](EconomyAccountLimits.md) |  |  [optional] |
 |**skrillEmail** | **String** |  |  [optional] |
 |**source** | **String** |  |  |
 |**tiliaId** | **String** |  |  [optional] |

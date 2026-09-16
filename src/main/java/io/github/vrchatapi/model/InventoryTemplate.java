@@ -111,6 +111,11 @@ public class InventoryTemplate {
   @javax.annotation.Nonnull
   private String imageUrl;
 
+  public static final String SERIALIZED_NAME_INITIAL_TOGGLE_STATE = "initialToggleState";
+  @SerializedName(SERIALIZED_NAME_INITIAL_TOGGLE_STATE)
+  @javax.annotation.Nullable
+  private Boolean initialToggleState;
+
   public static final String SERIALIZED_NAME_ITEM_TYPE = "itemType";
   @SerializedName(SERIALIZED_NAME_ITEM_TYPE)
   @javax.annotation.Nonnull
@@ -135,6 +140,16 @@ public class InventoryTemplate {
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_DETAILS)
   @javax.annotation.Nullable
   private InventoryNotificationDetails notificationDetails;
+
+  public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
+  @javax.annotation.Nullable
+  private String productId;
+
+  public static final String SERIALIZED_NAME_PUBLISHED_LISTINGS = "publishedListings";
+  @SerializedName(SERIALIZED_NAME_PUBLISHED_LISTINGS)
+  @javax.annotation.Nullable
+  private List<String> publishedListings = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -392,6 +407,25 @@ public class InventoryTemplate {
   }
 
 
+  public InventoryTemplate initialToggleState(@javax.annotation.Nullable Boolean initialToggleState) {
+    this.initialToggleState = initialToggleState;
+    return this;
+  }
+
+  /**
+   * Get initialToggleState
+   * @return initialToggleState
+   */
+  @javax.annotation.Nullable
+  public Boolean getInitialToggleState() {
+    return initialToggleState;
+  }
+
+  public void setInitialToggleState(@javax.annotation.Nullable Boolean initialToggleState) {
+    this.initialToggleState = initialToggleState;
+  }
+
+
   public InventoryTemplate itemType(@javax.annotation.Nonnull InventoryItemType itemType) {
     this.itemType = itemType;
     return this;
@@ -484,6 +518,52 @@ public class InventoryTemplate {
 
   public void setNotificationDetails(@javax.annotation.Nullable InventoryNotificationDetails notificationDetails) {
     this.notificationDetails = notificationDetails;
+  }
+
+
+  public InventoryTemplate productId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+  /**
+   * Get productId
+   * @return productId
+   */
+  @javax.annotation.Nullable
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
+  }
+
+
+  public InventoryTemplate publishedListings(@javax.annotation.Nullable List<String> publishedListings) {
+    this.publishedListings = publishedListings;
+    return this;
+  }
+
+  public InventoryTemplate addPublishedListingsItem(String publishedListingsItem) {
+    if (this.publishedListings == null) {
+      this.publishedListings = new ArrayList<>();
+    }
+    this.publishedListings.add(publishedListingsItem);
+    return this;
+  }
+
+  /**
+   * Get publishedListings
+   * @return publishedListings
+   */
+  @javax.annotation.Nullable
+  public List<String> getPublishedListings() {
+    return publishedListings;
+  }
+
+  public void setPublishedListings(@javax.annotation.Nullable List<String> publishedListings) {
+    this.publishedListings = publishedListings;
   }
 
 
@@ -592,11 +672,14 @@ public class InventoryTemplate {
         Objects.equals(this.flags, inventoryTemplate.flags) &&
         Objects.equals(this.id, inventoryTemplate.id) &&
         Objects.equals(this.imageUrl, inventoryTemplate.imageUrl) &&
+        Objects.equals(this.initialToggleState, inventoryTemplate.initialToggleState) &&
         Objects.equals(this.itemType, inventoryTemplate.itemType) &&
         Objects.equals(this.itemTypeLabel, inventoryTemplate.itemTypeLabel) &&
         Objects.equals(this.metadata, inventoryTemplate.metadata) &&
         Objects.equals(this.name, inventoryTemplate.name) &&
         Objects.equals(this.notificationDetails, inventoryTemplate.notificationDetails) &&
+        Objects.equals(this.productId, inventoryTemplate.productId) &&
+        Objects.equals(this.publishedListings, inventoryTemplate.publishedListings) &&
         Objects.equals(this.status, inventoryTemplate.status) &&
         Objects.equals(this.tags, inventoryTemplate.tags) &&
         Objects.equals(this.updatedAt, inventoryTemplate.updatedAt) &&
@@ -609,7 +692,7 @@ public class InventoryTemplate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(attribution, authorId, collections, createdAt, defaultAttributes, description, dropStatus, equipSlots, flags, id, imageUrl, itemType, itemTypeLabel, metadata, name, notificationDetails, status, tags, updatedAt, validateUserAttributes);
+    return Objects.hash(attribution, authorId, collections, createdAt, defaultAttributes, description, dropStatus, equipSlots, flags, id, imageUrl, initialToggleState, itemType, itemTypeLabel, metadata, name, notificationDetails, productId, publishedListings, status, tags, updatedAt, validateUserAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -634,11 +717,14 @@ public class InventoryTemplate {
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    initialToggleState: ").append(toIndentedString(initialToggleState)).append("\n");
     sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
     sb.append("    itemTypeLabel: ").append(toIndentedString(itemTypeLabel)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    notificationDetails: ").append(toIndentedString(notificationDetails)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    sb.append("    publishedListings: ").append(toIndentedString(publishedListings)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -661,7 +747,7 @@ public class InventoryTemplate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("attribution", "authorId", "collections", "created_at", "defaultAttributes", "description", "dropStatus", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "metadata", "name", "notificationDetails", "status", "tags", "updated_at", "validateUserAttributes"));
+    openapiFields = new HashSet<String>(Arrays.asList("attribution", "authorId", "collections", "created_at", "defaultAttributes", "description", "dropStatus", "equipSlots", "flags", "id", "imageUrl", "initialToggleState", "itemType", "itemTypeLabel", "metadata", "name", "notificationDetails", "productId", "publishedListings", "status", "tags", "updated_at", "validateUserAttributes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("authorId", "collections", "created_at", "defaultAttributes", "description", "equipSlots", "flags", "id", "imageUrl", "itemType", "itemTypeLabel", "name", "tags", "updated_at", "validateUserAttributes"));
@@ -743,6 +829,13 @@ public class InventoryTemplate {
       // validate the optional field `notificationDetails`
       if (jsonObj.get("notificationDetails") != null && !jsonObj.get("notificationDetails").isJsonNull()) {
         InventoryNotificationDetails.validateJsonElement(jsonObj.get("notificationDetails"));
+      }
+      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("publishedListings") != null && !jsonObj.get("publishedListings").isJsonNull() && !jsonObj.get("publishedListings").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publishedListings` to be an array in the JSON string but got `%s`", jsonObj.get("publishedListings").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

@@ -128,6 +128,11 @@ public class CurrentUser {
   @javax.annotation.Nullable
   private String bannerType;
 
+  public static final String SERIALIZED_NAME_BANNER_URL = "bannerUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  @javax.annotation.Nullable
+  private String bannerUrl;
+
   public static final String SERIALIZED_NAME_COMPLETED_TUTORIALS = "completedTutorials";
   @SerializedName(SERIALIZED_NAME_COMPLETED_TUTORIALS)
   @javax.annotation.Nullable
@@ -809,6 +814,25 @@ public class CurrentUser {
 
   public void setBannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
+  }
+
+
+  public CurrentUser bannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerUrl
+   * @return bannerUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerUrl() {
+    return bannerUrl;
+  }
+
+  public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
   }
 
 
@@ -2512,6 +2536,7 @@ public class CurrentUser {
         Objects.equals(this.authToken, currentUser.authToken) &&
         Objects.equals(this.bannerColor, currentUser.bannerColor) &&
         Objects.equals(this.bannerType, currentUser.bannerType) &&
+        Objects.equals(this.bannerUrl, currentUser.bannerUrl) &&
         Objects.equals(this.completedTutorials, currentUser.completedTutorials) &&
         Objects.equals(this.contentFilters, currentUser.contentFilters) &&
         Objects.equals(this.currentAvatar, currentUser.currentAvatar) &&
@@ -2603,7 +2628,7 @@ public class CurrentUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, activeFriends, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, appleId, authToken, bannerColor, bannerType, completedTutorials, contentFilters, currentAvatar, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, discordDetails, discordId, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friendRequestStatus, friends, googleDetails, googleId, hasBirthday, hasDiscordFriendsOptOut, hasEmail, hasLoggedInFromClient, hasPendingEmail, hasSharedConnectionsOptOut, hideContentFilterSettings, homeLocation, iconFrame, iconUrl, id, instanceId, isAdult, isBoopingEnabled, isEconomyCreator, isFriend, isTemporary, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, obfuscatedEmail, obfuscatedPendingEmail, oculusId, offlineFriends, onlineFriends, pastDisplayNames, personalizationOptOut, picoId, platform, platformHistory, presence, profileEffect, pronouns, pronounsHistory, queuedInstance, receiveMobileInvitations, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, temporaryExpiryDate, travelingToInstance, travelingToLocation, travelingToWorld, twitchDetails, twitchId, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userLanguage, userLanguageCode, username, usesGeneratedPassword, viveId, worldId);
+    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, activeFriends, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, appleId, authToken, bannerColor, bannerType, bannerUrl, completedTutorials, contentFilters, currentAvatar, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, discordDetails, discordId, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friendRequestStatus, friends, googleDetails, googleId, hasBirthday, hasDiscordFriendsOptOut, hasEmail, hasLoggedInFromClient, hasPendingEmail, hasSharedConnectionsOptOut, hideContentFilterSettings, homeLocation, iconFrame, iconUrl, id, instanceId, isAdult, isBoopingEnabled, isEconomyCreator, isFriend, isTemporary, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, obfuscatedEmail, obfuscatedPendingEmail, oculusId, offlineFriends, onlineFriends, pastDisplayNames, personalizationOptOut, picoId, platform, platformHistory, presence, profileEffect, pronouns, pronounsHistory, queuedInstance, receiveMobileInvitations, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, temporaryExpiryDate, travelingToInstance, travelingToLocation, travelingToWorld, twitchDetails, twitchId, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userLanguage, userLanguageCode, username, usesGeneratedPassword, viveId, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2630,6 +2655,7 @@ public class CurrentUser {
     sb.append("    authToken: ").append(toIndentedString(authToken)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
+    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    completedTutorials: ").append(toIndentedString(completedTutorials)).append("\n");
     sb.append("    contentFilters: ").append(toIndentedString(contentFilters)).append("\n");
     sb.append("    currentAvatar: ").append(toIndentedString(currentAvatar)).append("\n");
@@ -2731,7 +2757,7 @@ public class CurrentUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "activeFriends", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "appleId", "authToken", "bannerColor", "bannerType", "completedTutorials", "contentFilters", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "discordDetails", "discordId", "displayName", "emailVerified", "fallbackAvatar", "friendGroupNames", "friendKey", "friendRequestStatus", "friends", "googleDetails", "googleId", "hasBirthday", "hasDiscordFriendsOptOut", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "hasSharedConnectionsOptOut", "hideContentFilterSettings", "homeLocation", "iconFrame", "iconUrl", "id", "instanceId", "isAdult", "isBoopingEnabled", "isEconomyCreator", "isFriend", "isTemporary", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "offlineFriends", "onlineFriends", "pastDisplayNames", "personalizationOptOut", "picoId", "platform", "platform_history", "presence", "profileEffect", "pronouns", "pronounsHistory", "queuedInstance", "receiveMobileInvitations", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "temporaryExpiryDate", "travelingToInstance", "travelingToLocation", "travelingToWorld", "twitchDetails", "twitchId", "twoFactorAuthEnabled", "twoFactorAuthEnabledDate", "unsubscribe", "updated_at", "userLanguage", "userLanguageCode", "username", "usesGeneratedPassword", "viveId", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "activeFriends", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "appleId", "authToken", "bannerColor", "bannerType", "bannerUrl", "completedTutorials", "contentFilters", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "discordDetails", "discordId", "displayName", "emailVerified", "fallbackAvatar", "friendGroupNames", "friendKey", "friendRequestStatus", "friends", "googleDetails", "googleId", "hasBirthday", "hasDiscordFriendsOptOut", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "hasSharedConnectionsOptOut", "hideContentFilterSettings", "homeLocation", "iconFrame", "iconUrl", "id", "instanceId", "isAdult", "isBoopingEnabled", "isEconomyCreator", "isFriend", "isTemporary", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "offlineFriends", "onlineFriends", "pastDisplayNames", "personalizationOptOut", "picoId", "platform", "platform_history", "presence", "profileEffect", "pronouns", "pronounsHistory", "queuedInstance", "receiveMobileInvitations", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "temporaryExpiryDate", "travelingToInstance", "travelingToLocation", "travelingToWorld", "twitchDetails", "twitchId", "twoFactorAuthEnabled", "twoFactorAuthEnabledDate", "unsubscribe", "updated_at", "userLanguage", "userLanguageCode", "username", "usesGeneratedPassword", "viveId", "worldId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("acceptedTOSVersion", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "emailVerified", "friendGroupNames", "friendKey", "friends", "hasBirthday", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "homeLocation", "id", "isAdult", "isFriend", "last_login", "last_mobile", "last_platform", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "pastDisplayNames", "pronouns", "pronounsHistory", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "twoFactorAuthEnabled", "unsubscribe", "usesGeneratedPassword"));
@@ -2796,6 +2822,9 @@ public class CurrentUser {
       }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
+      if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("completedTutorials") != null && !jsonObj.get("completedTutorials").isJsonNull() && !jsonObj.get("completedTutorials").isJsonArray()) {

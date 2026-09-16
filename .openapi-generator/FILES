@@ -31,6 +31,7 @@ docs/AddGroupGalleryImageRequest.md
 docs/AdminAssetBundle.md
 docs/AdminUnityPackage.md
 docs/AgeVerificationStatus.md
+docs/AgeVerificationStatusResult.md
 docs/Agreement.md
 docs/AgreementCode.md
 docs/AgreementRequest.md
@@ -50,6 +51,9 @@ docs/Badge.md
 docs/Balance.md
 docs/BanGroupMemberRequest.md
 docs/BareError.md
+docs/Beta.md
+docs/BetaRegistrationNotFoundError.md
+docs/BetaUserField.md
 docs/BoopRequest.md
 docs/CalendarApi.md
 docs/CalendarDayOfWeek.md
@@ -98,18 +102,25 @@ docs/DynamicContentRow.md
 docs/EarningsMetrics.md
 docs/EarningsMetricsTotals.md
 docs/EconomyAccount.md
+docs/EconomyAccountLimits.md
 docs/EconomyApi.md
 docs/EconomyBalances.md
 docs/EconomyPayout.md
 docs/EconomyPayoutEligibility.md
 docs/EconomyPayoutList.md
 docs/EconomyPayoutStatus.md
+docs/EconomyStatus.md
 docs/EditPrintRequest.md
 docs/EquipInventoryItemRequest.md
 docs/Error.md
 docs/Favorite.md
 docs/FavoriteGroup.md
+docs/FavoriteGroupContents.md
+docs/FavoriteGroupContentsEntry.md
+docs/FavoriteGroupContentsEntryWorld.md
 docs/FavoriteGroupLimits.md
+docs/FavoriteGroupList.md
+docs/FavoriteGroupSummary.md
 docs/FavoriteGroupVisibility.md
 docs/FavoriteLimits.md
 docs/FavoriteType.md
@@ -128,6 +139,7 @@ docs/FinishFileDataUploadRequest.md
 docs/FollowCalendarEventRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
+docs/GetGroupGalleryImages200Response.md
 docs/GetGroupPosts200Response.md
 docs/GetUserGroupInstances200Response.md
 docs/Group.md
@@ -138,6 +150,7 @@ docs/GroupGallery.md
 docs/GroupGalleryFileOrder.md
 docs/GroupGalleryFileOrderRequest.md
 docs/GroupGalleryImage.md
+docs/GroupGalleryImageList.md
 docs/GroupInstance.md
 docs/GroupJoinRequestAction.md
 docs/GroupJoinState.md
@@ -185,6 +198,7 @@ docs/InstanceVibe.md
 docs/InstancesApi.md
 docs/Inventory.md
 docs/InventoryApi.md
+docs/InventoryAsset.md
 docs/InventoryConsumptionResults.md
 docs/InventoryDefaultAttributesValue.md
 docs/InventoryDefaultAttributesValueValidator.md
@@ -339,6 +353,7 @@ docs/TwoFactorAuthCode.md
 docs/TwoFactorEmailCode.md
 docs/TwoFactorRecoveryCodes.md
 docs/TwoFactorRecoveryCodesOtpInner.md
+docs/UnavailableWorld.md
 docs/UnityPackage.md
 docs/UpdateAssetReviewNotesRequest.md
 docs/UpdateAvatarRequest.md
@@ -353,9 +368,11 @@ docs/UpdateInventoryItemRequest.md
 docs/UpdateInviteMessageRequest.md
 docs/UpdateListingRequest.md
 docs/UpdateProductRequest.md
+docs/UpdateProfileRequest.md
 docs/UpdatePropRequest.md
 docs/UpdateTiliaTOSRequest.md
 docs/UpdateUserBadgeRequest.md
+docs/UpdateUserClientConfigRequest.md
 docs/UpdateUserNoteRequest.md
 docs/UpdateUserRequest.md
 docs/UpdateWorldRequest.md
@@ -363,6 +380,8 @@ docs/UploadGalleryImageRequest.md
 docs/UploadImageRequest.md
 docs/UploadPrintRequest.md
 docs/User.md
+docs/UserClientConfig.md
+docs/UserCosmetic.md
 docs/UserCreditsEligible.md
 docs/UserExists.md
 docs/UserNote.md
@@ -376,6 +395,7 @@ docs/Verify2FAEmailCodeResult.md
 docs/Verify2FAResult.md
 docs/VerifyAuthTokenResult.md
 docs/World.md
+docs/WorldFavoriteList.md
 docs/WorldMetadata.md
 docs/WorldPublishStatus.md
 docs/WorldsApi.md
@@ -455,6 +475,7 @@ src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/AdminAssetBundle.java
 src/main/java/io/github/vrchatapi/model/AdminUnityPackage.java
 src/main/java/io/github/vrchatapi/model/AgeVerificationStatus.java
+src/main/java/io/github/vrchatapi/model/AgeVerificationStatusResult.java
 src/main/java/io/github/vrchatapi/model/Agreement.java
 src/main/java/io/github/vrchatapi/model/AgreementCode.java
 src/main/java/io/github/vrchatapi/model/AgreementRequest.java
@@ -472,6 +493,9 @@ src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/Balance.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
 src/main/java/io/github/vrchatapi/model/BareError.java
+src/main/java/io/github/vrchatapi/model/Beta.java
+src/main/java/io/github/vrchatapi/model/BetaRegistrationNotFoundError.java
+src/main/java/io/github/vrchatapi/model/BetaUserField.java
 src/main/java/io/github/vrchatapi/model/BoopRequest.java
 src/main/java/io/github/vrchatapi/model/CalendarDayOfWeek.java
 src/main/java/io/github/vrchatapi/model/CalendarEvent.java
@@ -518,17 +542,24 @@ src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
 src/main/java/io/github/vrchatapi/model/EarningsMetrics.java
 src/main/java/io/github/vrchatapi/model/EarningsMetricsTotals.java
 src/main/java/io/github/vrchatapi/model/EconomyAccount.java
+src/main/java/io/github/vrchatapi/model/EconomyAccountLimits.java
 src/main/java/io/github/vrchatapi/model/EconomyBalances.java
 src/main/java/io/github/vrchatapi/model/EconomyPayout.java
 src/main/java/io/github/vrchatapi/model/EconomyPayoutEligibility.java
 src/main/java/io/github/vrchatapi/model/EconomyPayoutList.java
 src/main/java/io/github/vrchatapi/model/EconomyPayoutStatus.java
+src/main/java/io/github/vrchatapi/model/EconomyStatus.java
 src/main/java/io/github/vrchatapi/model/EditPrintRequest.java
 src/main/java/io/github/vrchatapi/model/EquipInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroup.java
+src/main/java/io/github/vrchatapi/model/FavoriteGroupContents.java
+src/main/java/io/github/vrchatapi/model/FavoriteGroupContentsEntry.java
+src/main/java/io/github/vrchatapi/model/FavoriteGroupContentsEntryWorld.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroupLimits.java
+src/main/java/io/github/vrchatapi/model/FavoriteGroupList.java
+src/main/java/io/github/vrchatapi/model/FavoriteGroupSummary.java
 src/main/java/io/github/vrchatapi/model/FavoriteGroupVisibility.java
 src/main/java/io/github/vrchatapi/model/FavoriteLimits.java
 src/main/java/io/github/vrchatapi/model/FavoriteType.java
@@ -544,6 +575,7 @@ src/main/java/io/github/vrchatapi/model/FileVersionUploadStatus.java
 src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FollowCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
+src/main/java/io/github/vrchatapi/model/GetGroupGalleryImages200Response.java
 src/main/java/io/github/vrchatapi/model/GetGroupPosts200Response.java
 src/main/java/io/github/vrchatapi/model/GetUserGroupInstances200Response.java
 src/main/java/io/github/vrchatapi/model/Group.java
@@ -554,6 +586,7 @@ src/main/java/io/github/vrchatapi/model/GroupGallery.java
 src/main/java/io/github/vrchatapi/model/GroupGalleryFileOrder.java
 src/main/java/io/github/vrchatapi/model/GroupGalleryFileOrderRequest.java
 src/main/java/io/github/vrchatapi/model/GroupGalleryImage.java
+src/main/java/io/github/vrchatapi/model/GroupGalleryImageList.java
 src/main/java/io/github/vrchatapi/model/GroupInstance.java
 src/main/java/io/github/vrchatapi/model/GroupJoinRequestAction.java
 src/main/java/io/github/vrchatapi/model/GroupJoinState.java
@@ -598,6 +631,7 @@ src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
 src/main/java/io/github/vrchatapi/model/InstanceType.java
 src/main/java/io/github/vrchatapi/model/InstanceVibe.java
 src/main/java/io/github/vrchatapi/model/Inventory.java
+src/main/java/io/github/vrchatapi/model/InventoryAsset.java
 src/main/java/io/github/vrchatapi/model/InventoryConsumptionResults.java
 src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValue.java
 src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValueValidator.java
@@ -745,6 +779,7 @@ src/main/java/io/github/vrchatapi/model/TwoFactorAuthCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorEmailCode.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodes.java
 src/main/java/io/github/vrchatapi/model/TwoFactorRecoveryCodesOtpInner.java
+src/main/java/io/github/vrchatapi/model/UnavailableWorld.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAssetReviewNotesRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
@@ -759,9 +794,11 @@ src/main/java/io/github/vrchatapi/model/UpdateInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateListingRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateProductRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateProfileRequest.java
 src/main/java/io/github/vrchatapi/model/UpdatePropRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateTiliaTOSRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateUserClientConfigRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserNoteRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateWorldRequest.java
@@ -769,6 +806,8 @@ src/main/java/io/github/vrchatapi/model/UploadGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/UploadImageRequest.java
 src/main/java/io/github/vrchatapi/model/UploadPrintRequest.java
 src/main/java/io/github/vrchatapi/model/User.java
+src/main/java/io/github/vrchatapi/model/UserClientConfig.java
+src/main/java/io/github/vrchatapi/model/UserCosmetic.java
 src/main/java/io/github/vrchatapi/model/UserCreditsEligible.java
 src/main/java/io/github/vrchatapi/model/UserExists.java
 src/main/java/io/github/vrchatapi/model/UserNote.java
@@ -781,5 +820,6 @@ src/main/java/io/github/vrchatapi/model/Verify2FAEmailCodeResult.java
 src/main/java/io/github/vrchatapi/model/Verify2FAResult.java
 src/main/java/io/github/vrchatapi/model/VerifyAuthTokenResult.java
 src/main/java/io/github/vrchatapi/model/World.java
+src/main/java/io/github/vrchatapi/model/WorldFavoriteList.java
 src/main/java/io/github/vrchatapi/model/WorldMetadata.java
 src/main/java/io/github/vrchatapi/model/WorldPublishStatus.java

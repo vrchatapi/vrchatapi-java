@@ -10,6 +10,7 @@ User object received when querying mutual friends
 |------------ | ------------- | ------------- | -------------|
 |**bannerColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
+|**bannerUrl** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  |
 |**iconFrame** | **String** |  |  [optional] |
 |**iconUrl** | **String** |  |  [optional] |

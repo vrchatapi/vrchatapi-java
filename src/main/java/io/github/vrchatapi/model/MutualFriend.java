@@ -60,6 +60,11 @@ public class MutualFriend {
   @javax.annotation.Nullable
   private String bannerType;
 
+  public static final String SERIALIZED_NAME_BANNER_URL = "bannerUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  @javax.annotation.Nullable
+  private String bannerUrl;
+
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nonnull
@@ -138,6 +143,25 @@ public class MutualFriend {
 
   public void setBannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
+  }
+
+
+  public MutualFriend bannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerUrl
+   * @return bannerUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerUrl() {
+    return bannerUrl;
+  }
+
+  public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
   }
 
 
@@ -305,6 +329,7 @@ public class MutualFriend {
     MutualFriend mutualFriend = (MutualFriend) o;
     return Objects.equals(this.bannerColor, mutualFriend.bannerColor) &&
         Objects.equals(this.bannerType, mutualFriend.bannerType) &&
+        Objects.equals(this.bannerUrl, mutualFriend.bannerUrl) &&
         Objects.equals(this.displayName, mutualFriend.displayName) &&
         Objects.equals(this.iconFrame, mutualFriend.iconFrame) &&
         Objects.equals(this.iconUrl, mutualFriend.iconUrl) &&
@@ -317,7 +342,7 @@ public class MutualFriend {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerColor, bannerType, displayName, iconFrame, iconUrl, id, nameplateEffect, profileEffect, status, statusDescription);
+    return Objects.hash(bannerColor, bannerType, bannerUrl, displayName, iconFrame, iconUrl, id, nameplateEffect, profileEffect, status, statusDescription);
   }
 
   @Override
@@ -326,6 +351,7 @@ public class MutualFriend {
     sb.append("class MutualFriend {\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
+    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
     sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
@@ -352,7 +378,7 @@ public class MutualFriend {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "displayName", "iconFrame", "iconUrl", "id", "nameplateEffect", "profileEffect", "status", "statusDescription"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bannerUrl", "displayName", "iconFrame", "iconUrl", "id", "nameplateEffect", "profileEffect", "status", "statusDescription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("displayName", "id", "status", "statusDescription"));
@@ -391,6 +417,9 @@ public class MutualFriend {
       }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
+      if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));

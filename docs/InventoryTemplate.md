@@ -18,11 +18,14 @@
 |**flags** | **List&lt;String&gt;** |  |  |
 |**id** | **String** |  |  |
 |**imageUrl** | **String** |  |  |
+|**initialToggleState** | **Boolean** |  |  [optional] |
 |**itemType** | **InventoryItemType** |  |  |
 |**itemTypeLabel** | **String** |  |  |
 |**metadata** | [**InventoryMetadata**](InventoryMetadata.md) |  |  [optional] |
 |**name** | **String** |  |  |
 |**notificationDetails** | [**InventoryNotificationDetails**](InventoryNotificationDetails.md) |  |  [optional] |
+|**productId** | **String** |  |  [optional] |
+|**publishedListings** | **List&lt;String&gt;** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |

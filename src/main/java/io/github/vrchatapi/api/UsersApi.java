@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.github.vrchatapi.model.AgeVerificationStatusResult;
 import io.github.vrchatapi.model.BareError;
 import io.github.vrchatapi.model.ChangeUserTagsRequest;
 import io.github.vrchatapi.model.CurrentUser;
@@ -42,10 +43,13 @@ import io.github.vrchatapi.model.PrivateProfile;
 import io.github.vrchatapi.model.PublicProfile;
 import io.github.vrchatapi.model.RepresentedGroup;
 import io.github.vrchatapi.model.TutorialStatus;
+import io.github.vrchatapi.model.UpdateProfileRequest;
 import io.github.vrchatapi.model.UpdateUserBadgeRequest;
+import io.github.vrchatapi.model.UpdateUserClientConfigRequest;
 import io.github.vrchatapi.model.UpdateUserNoteRequest;
 import io.github.vrchatapi.model.UpdateUserRequest;
 import io.github.vrchatapi.model.User;
+import io.github.vrchatapi.model.UserClientConfig;
 import io.github.vrchatapi.model.UserNote;
 
 import java.lang.reflect.Type;
@@ -655,6 +659,127 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = deleteUserPersistenceValidateBeforeCall(userId, worldId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getAgeVerificationStatus
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single AgeVerificationStatusResult object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAgeVerificationStatusCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/ageVerification/status";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAgeVerificationStatusValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getAgeVerificationStatusCall(_callback);
+
+    }
+
+    /**
+     * Get Age Verification Status
+     * Get the currently authenticated user&#39;s age verification status.
+     * @return AgeVerificationStatusResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single AgeVerificationStatusResult object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public AgeVerificationStatusResult getAgeVerificationStatus() throws ApiException {
+        ApiResponse<AgeVerificationStatusResult> localVarResp = getAgeVerificationStatusWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Age Verification Status
+     * Get the currently authenticated user&#39;s age verification status.
+     * @return ApiResponse&lt;AgeVerificationStatusResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single AgeVerificationStatusResult object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AgeVerificationStatusResult> getAgeVerificationStatusWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getAgeVerificationStatusValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<AgeVerificationStatusResult>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Age Verification Status (asynchronously)
+     * Get the currently authenticated user&#39;s age verification status.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single AgeVerificationStatusResult object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAgeVerificationStatusAsync(final ApiCallback<AgeVerificationStatusResult> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAgeVerificationStatusValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<AgeVerificationStatusResult>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1478,6 +1603,7 @@ public class UsersApi {
     /**
      * Build call for getPublicProfile
      * @param userId Must be a valid user ID. (required)
+     * @param asSelf Include the properties VRChat shows a user on their own profile. Ignored for any other user. (optional)
      * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1490,7 +1616,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPublicProfileCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPublicProfileCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean asSelf, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1516,6 +1642,10 @@ public class UsersApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (asSelf != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("asSelf", asSelf));
+        }
+
         if (withGroupsAndWorlds != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("withGroupsAndWorlds", withGroupsAndWorlds));
         }
@@ -1540,13 +1670,13 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPublicProfileValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPublicProfileValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean asSelf, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getPublicProfile(Async)");
         }
 
-        return getPublicProfileCall(userId, withGroupsAndWorlds, _callback);
+        return getPublicProfileCall(userId, asSelf, withGroupsAndWorlds, _callback);
 
     }
 
@@ -1554,6 +1684,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param asSelf Include the properties VRChat shows a user on their own profile. Ignored for any other user. (optional)
      * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @return PublicProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1565,8 +1696,8 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public PublicProfile getPublicProfile(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
-        ApiResponse<PublicProfile> localVarResp = getPublicProfileWithHttpInfo(userId, withGroupsAndWorlds);
+    public PublicProfile getPublicProfile(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean asSelf, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
+        ApiResponse<PublicProfile> localVarResp = getPublicProfileWithHttpInfo(userId, asSelf, withGroupsAndWorlds);
         return localVarResp.getData();
     }
 
@@ -1574,6 +1705,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param asSelf Include the properties VRChat shows a user on their own profile. Ignored for any other user. (optional)
      * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @return ApiResponse&lt;PublicProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1585,8 +1717,8 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PublicProfile> getPublicProfileWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
-        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, withGroupsAndWorlds, null);
+    public ApiResponse<PublicProfile> getPublicProfileWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean asSelf, @javax.annotation.Nullable Boolean withGroupsAndWorlds) throws ApiException {
+        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, asSelf, withGroupsAndWorlds, null);
         Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1595,6 +1727,7 @@ public class UsersApi {
      * Get Public Profile (asynchronously)
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
+     * @param asSelf Include the properties VRChat shows a user on their own profile. Ignored for any other user. (optional)
      * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1607,9 +1740,9 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPublicProfileAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback<PublicProfile> _callback) throws ApiException {
+    public okhttp3.Call getPublicProfileAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable Boolean asSelf, @javax.annotation.Nullable Boolean withGroupsAndWorlds, final ApiCallback<PublicProfile> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, withGroupsAndWorlds, _callback);
+        okhttp3.Call localVarCall = getPublicProfileValidateBeforeCall(userId, asSelf, withGroupsAndWorlds, _callback);
         Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2029,6 +2162,137 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = getUserByNameValidateBeforeCall(username, _callback);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getUserClientConfig
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserClientConfigCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/clientConfig"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getUserClientConfigValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserClientConfig(Async)");
+        }
+
+        return getUserClientConfigCall(userId, _callback);
+
+    }
+
+    /**
+     * Get User Client Config
+     * Get the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return UserClientConfig
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public UserClientConfig getUserClientConfig(@javax.annotation.Nonnull String userId) throws ApiException {
+        ApiResponse<UserClientConfig> localVarResp = getUserClientConfigWithHttpInfo(userId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get User Client Config
+     * Get the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @return ApiResponse&lt;UserClientConfig&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<UserClientConfig> getUserClientConfigWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+        okhttp3.Call localVarCall = getUserClientConfigValidateBeforeCall(userId, null);
+        Type localVarReturnType = new TypeToken<UserClientConfig>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get User Client Config (asynchronously)
+     * Get the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getUserClientConfigAsync(@javax.annotation.Nonnull String userId, final ApiCallback<UserClientConfig> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getUserClientConfigValidateBeforeCall(userId, _callback);
+        Type localVarReturnType = new TypeToken<UserClientConfig>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3729,6 +3993,146 @@ public class UsersApi {
         return localVarCall;
     }
     /**
+     * Build call for updateProfile
+     * @param userId Must be a valid user ID. (required)
+     * @param updateProfileRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a user&#39;s public profile. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProfileCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateProfileRequest updateProfileRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateProfileRequest;
+
+        // create path and map variables
+        String localVarPath = "/profile/{userId}"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateProfileValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateProfileRequest updateProfileRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling updateProfile(Async)");
+        }
+
+        return updateProfileCall(userId, updateProfileRequest, _callback);
+
+    }
+
+    /**
+     * Update Profile
+     * Update a user&#39;s profile. &#x60;pronouns&#x60;, &#x60;status&#x60; and &#x60;statusDescription&#x60; are written through &#x60;updateUser&#x60; instead.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateProfileRequest  (optional)
+     * @return PublicProfile
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a user&#39;s public profile. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public PublicProfile updateProfile(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateProfileRequest updateProfileRequest) throws ApiException {
+        ApiResponse<PublicProfile> localVarResp = updateProfileWithHttpInfo(userId, updateProfileRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Profile
+     * Update a user&#39;s profile. &#x60;pronouns&#x60;, &#x60;status&#x60; and &#x60;statusDescription&#x60; are written through &#x60;updateUser&#x60; instead.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateProfileRequest  (optional)
+     * @return ApiResponse&lt;PublicProfile&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a user&#39;s public profile. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<PublicProfile> updateProfileWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateProfileRequest updateProfileRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateProfileValidateBeforeCall(userId, updateProfileRequest, null);
+        Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Profile (asynchronously)
+     * Update a user&#39;s profile. &#x60;pronouns&#x60;, &#x60;status&#x60; and &#x60;statusDescription&#x60; are written through &#x60;updateUser&#x60; instead.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateProfileRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a user&#39;s public profile. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateProfileAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateProfileRequest updateProfileRequest, final ApiCallback<PublicProfile> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateProfileValidateBeforeCall(userId, updateProfileRequest, _callback);
+        Type localVarReturnType = new TypeToken<PublicProfile>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for updateUser
      * @param userId Must be a valid user ID. (required)
      * @param updateUserRequest  (optional)
@@ -3869,6 +4273,142 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = updateUserValidateBeforeCall(userId, updateUserRequest, _callback);
         Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateUserClientConfig
+     * @param userId Must be a valid user ID. (required)
+     * @param updateUserClientConfigRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateUserClientConfigCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserClientConfigRequest updateUserClientConfigRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateUserClientConfigRequest;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/clientConfig"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateUserClientConfigValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserClientConfigRequest updateUserClientConfigRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling updateUserClientConfig(Async)");
+        }
+
+        return updateUserClientConfigCall(userId, updateUserClientConfigRequest, _callback);
+
+    }
+
+    /**
+     * Update User Client Config
+     * Update the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateUserClientConfigRequest  (optional)
+     * @return UserClientConfig
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public UserClientConfig updateUserClientConfig(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserClientConfigRequest updateUserClientConfigRequest) throws ApiException {
+        ApiResponse<UserClientConfig> localVarResp = updateUserClientConfigWithHttpInfo(userId, updateUserClientConfigRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update User Client Config
+     * Update the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateUserClientConfigRequest  (optional)
+     * @return ApiResponse&lt;UserClientConfig&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<UserClientConfig> updateUserClientConfigWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserClientConfigRequest updateUserClientConfigRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateUserClientConfigValidateBeforeCall(userId, updateUserClientConfigRequest, null);
+        Type localVarReturnType = new TypeToken<UserClientConfig>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update User Client Config (asynchronously)
+     * Update the client settings VRChat stores against a user.
+     * @param userId Must be a valid user ID. (required)
+     * @param updateUserClientConfigRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a UserClientConfig object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateUserClientConfigAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable UpdateUserClientConfigRequest updateUserClientConfigRequest, final ApiCallback<UserClientConfig> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateUserClientConfigValidateBeforeCall(userId, updateUserClientConfigRequest, _callback);
+        Type localVarReturnType = new TypeToken<UserClientConfig>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

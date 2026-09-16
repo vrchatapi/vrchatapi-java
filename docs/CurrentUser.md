@@ -20,6 +20,7 @@
 |**authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) |  [optional] |
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
+|**bannerUrl** | **String** |  |  [optional] |
 |**completedTutorials** | **List&lt;String&gt;** |  |  [optional] |
 |**contentFilters** | **List&lt;String&gt;** | These tags begin with &#x60;content_&#x60; and control content gating |  [optional] |
 |**currentAvatar** | **String** |  |  |

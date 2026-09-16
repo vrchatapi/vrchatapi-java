@@ -93,12 +93,12 @@ public class FavoritedWorld {
 
   public static final String SERIALIZED_NAME_FAVORITE_GROUP = "favoriteGroup";
   @SerializedName(SERIALIZED_NAME_FAVORITE_GROUP)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String favoriteGroup;
 
   public static final String SERIALIZED_NAME_FAVORITE_ID = "favoriteId";
   @SerializedName(SERIALIZED_NAME_FAVORITE_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String favoriteId;
 
   public static final String SERIALIZED_NAME_FAVORITES = "favorites";
@@ -126,6 +126,11 @@ public class FavoritedWorld {
   @javax.annotation.Nonnull
   private String imageUrl;
 
+  public static final String SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE = "isHypeTrainEligible";
+  @SerializedName(SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE)
+  @javax.annotation.Nullable
+  private Boolean isHypeTrainEligible;
+
   public static final String SERIALIZED_NAME_LABS_PUBLICATION_DATE = "labsPublicationDate";
   @SerializedName(SERIALIZED_NAME_LABS_PUBLICATION_DATE)
   @javax.annotation.Nullable
@@ -138,7 +143,7 @@ public class FavoritedWorld {
 
   public static final String SERIALIZED_NAME_OCCUPANTS = "occupants";
   @SerializedName(SERIALIZED_NAME_OCCUPANTS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer occupants = 0;
 
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
@@ -170,6 +175,11 @@ public class FavoritedWorld {
   @SerializedName(SERIALIZED_NAME_RELEASE_STATUS)
   @javax.annotation.Nonnull
   private ReleaseStatus releaseStatus = ReleaseStatus.PUBLIC;
+
+  public static final String SERIALIZED_NAME_STORE_ID = "storeId";
+  @SerializedName(SERIALIZED_NAME_STORE_ID)
+  @javax.annotation.Nullable
+  private String storeId;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -355,7 +365,7 @@ public class FavoritedWorld {
   }
 
 
-  public FavoritedWorld favoriteGroup(@javax.annotation.Nonnull String favoriteGroup) {
+  public FavoritedWorld favoriteGroup(@javax.annotation.Nullable String favoriteGroup) {
     this.favoriteGroup = favoriteGroup;
     return this;
   }
@@ -364,17 +374,17 @@ public class FavoritedWorld {
    * Get favoriteGroup
    * @return favoriteGroup
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getFavoriteGroup() {
     return favoriteGroup;
   }
 
-  public void setFavoriteGroup(@javax.annotation.Nonnull String favoriteGroup) {
+  public void setFavoriteGroup(@javax.annotation.Nullable String favoriteGroup) {
     this.favoriteGroup = favoriteGroup;
   }
 
 
-  public FavoritedWorld favoriteId(@javax.annotation.Nonnull String favoriteId) {
+  public FavoritedWorld favoriteId(@javax.annotation.Nullable String favoriteId) {
     this.favoriteId = favoriteId;
     return this;
   }
@@ -383,12 +393,12 @@ public class FavoritedWorld {
    * Get favoriteId
    * @return favoriteId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getFavoriteId() {
     return favoriteId;
   }
 
-  public void setFavoriteId(@javax.annotation.Nonnull String favoriteId) {
+  public void setFavoriteId(@javax.annotation.Nullable String favoriteId) {
     this.favoriteId = favoriteId;
   }
 
@@ -490,6 +500,25 @@ public class FavoritedWorld {
   }
 
 
+  public FavoritedWorld isHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
+    return this;
+  }
+
+  /**
+   * Get isHypeTrainEligible
+   * @return isHypeTrainEligible
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsHypeTrainEligible() {
+    return isHypeTrainEligible;
+  }
+
+  public void setIsHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
+  }
+
+
   public FavoritedWorld labsPublicationDate(@javax.annotation.Nullable String labsPublicationDate) {
     this.labsPublicationDate = labsPublicationDate;
     return this;
@@ -528,7 +557,7 @@ public class FavoritedWorld {
   }
 
 
-  public FavoritedWorld occupants(@javax.annotation.Nonnull Integer occupants) {
+  public FavoritedWorld occupants(@javax.annotation.Nullable Integer occupants) {
     this.occupants = occupants;
     return this;
   }
@@ -538,12 +567,12 @@ public class FavoritedWorld {
    * minimum: 0
    * @return occupants
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getOccupants() {
     return occupants;
   }
 
-  public void setOccupants(@javax.annotation.Nonnull Integer occupants) {
+  public void setOccupants(@javax.annotation.Nullable Integer occupants) {
     this.occupants = occupants;
   }
 
@@ -660,6 +689,25 @@ public class FavoritedWorld {
 
   public void setReleaseStatus(@javax.annotation.Nonnull ReleaseStatus releaseStatus) {
     this.releaseStatus = releaseStatus;
+  }
+
+
+  public FavoritedWorld storeId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+  /**
+   * Get storeId
+   * @return storeId
+   */
+  @javax.annotation.Nullable
+  public String getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
   }
 
 
@@ -873,6 +921,7 @@ public class FavoritedWorld {
         Objects.equals(this.heat, favoritedWorld.heat) &&
         Objects.equals(this.id, favoritedWorld.id) &&
         Objects.equals(this.imageUrl, favoritedWorld.imageUrl) &&
+        Objects.equals(this.isHypeTrainEligible, favoritedWorld.isHypeTrainEligible) &&
         Objects.equals(this.labsPublicationDate, favoritedWorld.labsPublicationDate) &&
         Objects.equals(this.name, favoritedWorld.name) &&
         Objects.equals(this.occupants, favoritedWorld.occupants) &&
@@ -882,6 +931,7 @@ public class FavoritedWorld {
         Objects.equals(this.publicationDate, favoritedWorld.publicationDate) &&
         Objects.equals(this.recommendedCapacity, favoritedWorld.recommendedCapacity) &&
         Objects.equals(this.releaseStatus, favoritedWorld.releaseStatus) &&
+        Objects.equals(this.storeId, favoritedWorld.storeId) &&
         Objects.equals(this.tags, favoritedWorld.tags) &&
         Objects.equals(this.thumbnailImageUrl, favoritedWorld.thumbnailImageUrl) &&
         Objects.equals(this.udonProducts, favoritedWorld.udonProducts) &&
@@ -898,7 +948,7 @@ public class FavoritedWorld {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favoriteGroup, favoriteId, favorites, featured, heat, id, imageUrl, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favoriteGroup, favoriteId, favorites, featured, heat, id, imageUrl, isHypeTrainEligible, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -926,6 +976,7 @@ public class FavoritedWorld {
     sb.append("    heat: ").append(toIndentedString(heat)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    isHypeTrainEligible: ").append(toIndentedString(isHypeTrainEligible)).append("\n");
     sb.append("    labsPublicationDate: ").append(toIndentedString(labsPublicationDate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    occupants: ").append(toIndentedString(occupants)).append("\n");
@@ -935,6 +986,7 @@ public class FavoritedWorld {
     sb.append("    publicationDate: ").append(toIndentedString(publicationDate)).append("\n");
     sb.append("    recommendedCapacity: ").append(toIndentedString(recommendedCapacity)).append("\n");
     sb.append("    releaseStatus: ").append(toIndentedString(releaseStatus)).append("\n");
+    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    thumbnailImageUrl: ").append(toIndentedString(thumbnailImageUrl)).append("\n");
     sb.append("    udonProducts: ").append(toIndentedString(udonProducts)).append("\n");
@@ -961,10 +1013,10 @@ public class FavoritedWorld {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favoriteGroup", "favoriteId", "favorites", "featured", "heat", "id", "imageUrl", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favoriteGroup", "favoriteId", "favorites", "featured", "heat", "id", "imageUrl", "isHypeTrainEligible", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorName", "capacity", "favoriteGroup", "favoriteId", "id", "imageUrl", "name", "occupants", "releaseStatus", "thumbnailImageUrl"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorName", "capacity", "id", "imageUrl", "name", "releaseStatus", "thumbnailImageUrl"));
   }
 
   /**
@@ -1012,10 +1064,10 @@ public class FavoritedWorld {
       if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
       }
-      if (!jsonObj.get("favoriteGroup").isJsonPrimitive()) {
+      if ((jsonObj.get("favoriteGroup") != null && !jsonObj.get("favoriteGroup").isJsonNull()) && !jsonObj.get("favoriteGroup").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `favoriteGroup` to be a primitive type in the JSON string but got `%s`", jsonObj.get("favoriteGroup").toString()));
       }
-      if (!jsonObj.get("favoriteId").isJsonPrimitive()) {
+      if ((jsonObj.get("favoriteId") != null && !jsonObj.get("favoriteId").isJsonNull()) && !jsonObj.get("favoriteId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `favoriteId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("favoriteId").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
@@ -1041,6 +1093,9 @@ public class FavoritedWorld {
       }
       // validate the required field `releaseStatus`
       ReleaseStatus.validateJsonElement(jsonObj.get("releaseStatus"));
+      if ((jsonObj.get("storeId") != null && !jsonObj.get("storeId").isJsonNull()) && !jsonObj.get("storeId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeId").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));

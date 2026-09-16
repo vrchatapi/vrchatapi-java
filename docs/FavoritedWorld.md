@@ -15,22 +15,24 @@
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
-|**favoriteGroup** | **String** |  |  |
-|**favoriteId** | **String** |  |  |
+|**favoriteGroup** | **String** |  |  [optional] |
+|**favoriteId** | **String** |  |  [optional] |
 |**favorites** | **Integer** |  |  [optional] |
 |**featured** | **Boolean** |  |  [optional] |
 |**heat** | **Integer** |  |  [optional] |
 |**id** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**imageUrl** | **String** |  |  |
+|**isHypeTrainEligible** | **Boolean** |  |  [optional] |
 |**labsPublicationDate** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
-|**occupants** | **Integer** |  |  |
+|**occupants** | **Integer** |  |  [optional] |
 |**organization** | **String** |  |  [optional] |
 |**popularity** | **Integer** |  |  [optional] |
 |**previewYoutubeId** | **String** |  |  [optional] |
 |**publicationDate** | **String** |  |  [optional] |
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  |
+|**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**thumbnailImageUrl** | **String** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |

@@ -108,6 +108,11 @@ public class GroupRole {
   @javax.annotation.Nullable
   private List<GroupPermissions> permissions = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
+  @javax.annotation.Nullable
+  private String productId;
+
   public static final String SERIALIZED_NAME_REQUIRES_PURCHASE = "requiresPurchase";
   @SerializedName(SERIALIZED_NAME_REQUIRES_PURCHASE)
   @javax.annotation.Nullable
@@ -343,6 +348,25 @@ public class GroupRole {
   }
 
 
+  public GroupRole productId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+  /**
+   * Get productId
+   * @return productId
+   */
+  @javax.annotation.Nullable
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
+  }
+
+
   public GroupRole requiresPurchase(@javax.annotation.Nullable Boolean requiresPurchase) {
     this.requiresPurchase = requiresPurchase;
     return this;
@@ -421,6 +445,7 @@ public class GroupRole {
         Objects.equals(this.name, groupRole.name) &&
         Objects.equals(this.order, groupRole.order) &&
         Objects.equals(this.permissions, groupRole.permissions) &&
+        Objects.equals(this.productId, groupRole.productId) &&
         Objects.equals(this.requiresPurchase, groupRole.requiresPurchase) &&
         Objects.equals(this.requiresTwoFactor, groupRole.requiresTwoFactor) &&
         Objects.equals(this.updatedAt, groupRole.updatedAt);
@@ -428,7 +453,7 @@ public class GroupRole {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, defaultRole, description, groupId, id, isAddedOnJoin, isManagementRole, isSelfAssignable, name, order, permissions, requiresPurchase, requiresTwoFactor, updatedAt);
+    return Objects.hash(createdAt, defaultRole, description, groupId, id, isAddedOnJoin, isManagementRole, isSelfAssignable, name, order, permissions, productId, requiresPurchase, requiresTwoFactor, updatedAt);
   }
 
   @Override
@@ -446,6 +471,7 @@ public class GroupRole {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    requiresPurchase: ").append(toIndentedString(requiresPurchase)).append("\n");
     sb.append("    requiresTwoFactor: ").append(toIndentedString(requiresTwoFactor)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -467,7 +493,7 @@ public class GroupRole {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "defaultRole", "description", "groupId", "id", "isAddedOnJoin", "isManagementRole", "isSelfAssignable", "name", "order", "permissions", "requiresPurchase", "requiresTwoFactor", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "defaultRole", "description", "groupId", "id", "isAddedOnJoin", "isManagementRole", "isSelfAssignable", "name", "order", "permissions", "productId", "requiresPurchase", "requiresTwoFactor", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -509,6 +535,9 @@ public class GroupRole {
       // ensure the optional json data is an array if present
       if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull() && !jsonObj.get("permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
+      }
+      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
   }
 
