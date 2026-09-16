@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | [**BackgroundTypeEnum**](#BackgroundTypeEnum) |  |  [optional] |
-|**bannerColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerType** | [**BannerTypeEnum**](#BannerTypeEnum) |  |  [optional] |
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |  |  [optional] |

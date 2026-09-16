@@ -94,7 +94,6 @@ docs/CurrentUser.md
 docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
 docs/DeclineGroupInviteRequest.md
-docs/DeprecatedApi.md
 docs/DeveloperType.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
@@ -424,7 +423,6 @@ src/main/java/io/github/vrchatapi/StringUtil.java
 src/main/java/io/github/vrchatapi/api/AuthenticationApi.java
 src/main/java/io/github/vrchatapi/api/AvatarsApi.java
 src/main/java/io/github/vrchatapi/api/CalendarApi.java
-src/main/java/io/github/vrchatapi/api/DeprecatedApi.java
 src/main/java/io/github/vrchatapi/api/EconomyApi.java
 src/main/java/io/github/vrchatapi/api/FavoritesApi.java
 src/main/java/io/github/vrchatapi/api/FilesApi.java

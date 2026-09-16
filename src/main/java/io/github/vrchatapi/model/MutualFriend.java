@@ -114,7 +114,7 @@ public class MutualFriend {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return bannerColor
    */
   @javax.annotation.Nullable

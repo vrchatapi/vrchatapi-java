@@ -103,7 +103,7 @@ public class GroupMemberLimitedUser {
   }
 
   /**
-   * Get bannerColor
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return bannerColor
    */
   @javax.annotation.Nullable

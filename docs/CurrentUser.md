@@ -18,7 +18,7 @@
 |**appleDetails** | **Object** |  |  [optional] |
 |**appleId** | **String** |  |  [optional] |
 |**authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) |  [optional] |
-|**bannerColor** | **String** |  |  [optional] |
+|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**completedTutorials** | **List&lt;String&gt;** |  |  [optional] |

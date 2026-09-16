@@ -330,7 +330,7 @@ public class PublicProfile {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return backgroundGradientBottom
    */
   @javax.annotation.Nullable
@@ -349,7 +349,7 @@ public class PublicProfile {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return backgroundGradientTop
    */
   @javax.annotation.Nullable
@@ -452,7 +452,7 @@ public class PublicProfile {
   }
 
   /**
-   * Get bannerColor
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return bannerColor
    */
   @javax.annotation.Nullable
@@ -1016,7 +1016,7 @@ public class PublicProfile {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeButtonColor
    */
   @javax.annotation.Nullable
@@ -1035,7 +1035,7 @@ public class PublicProfile {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeIconColor
    */
   @javax.annotation.Nullable
@@ -1073,7 +1073,7 @@ public class PublicProfile {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeSubtextColor
    */
   @javax.annotation.Nullable

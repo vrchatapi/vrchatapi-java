@@ -229,7 +229,7 @@ public class InventoryMetadata {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return gradientEnd
    */
   @javax.annotation.Nullable
@@ -248,7 +248,7 @@ public class InventoryMetadata {
   }
 
   /**
-   * Hex colour without a leading &#x60;#&#x60;.
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return gradientStart
    */
   @javax.annotation.Nullable

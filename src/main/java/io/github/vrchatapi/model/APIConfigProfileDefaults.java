@@ -83,7 +83,7 @@ public class APIConfigProfileDefaults {
   }
 
   /**
-   * Get backgroundGradientBottom
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return backgroundGradientBottom
    */
   @javax.annotation.Nullable
@@ -102,7 +102,7 @@ public class APIConfigProfileDefaults {
   }
 
   /**
-   * Get backgroundGradientTop
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return backgroundGradientTop
    */
   @javax.annotation.Nullable
@@ -121,7 +121,7 @@ public class APIConfigProfileDefaults {
   }
 
   /**
-   * Get themeButtonColor
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeButtonColor
    */
   @javax.annotation.Nullable
@@ -140,7 +140,7 @@ public class APIConfigProfileDefaults {
   }
 
   /**
-   * Get themeIconColor
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeIconColor
    */
   @javax.annotation.Nullable
@@ -159,7 +159,7 @@ public class APIConfigProfileDefaults {
   }
 
   /**
-   * Get themeSubtextColor
+   * Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty.
    * @return themeSubtextColor
    */
   @javax.annotation.Nullable

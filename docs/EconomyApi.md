@@ -10,7 +10,6 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteProductListingDirect**](EconomyApi.md#deleteProductListingDirect) | **DELETE** /listing/{productId} | Delete Product Listing |
 | [**getActiveLicenses**](EconomyApi.md#getActiveLicenses) | **GET** /economy/licenses/active | Get Active Licenses |
 | [**getBalance**](EconomyApi.md#getBalance) | **GET** /user/{userId}/balance | Get Balance |
-| [**getBalanceEarnings**](EconomyApi.md#getBalanceEarnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings |
 | [**getBulkGiftPurchases**](EconomyApi.md#getBulkGiftPurchases) | **GET** /user/bulk/gift/purchases | Get Bulk Gift Purchases |
 | [**getCurrentSubscriptions**](EconomyApi.md#getCurrentSubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions |
 | [**getEarningsMetrics**](EconomyApi.md#getEarningsMetrics) | **GET** /economy/metrics/earnings | Get Earnings Metrics |
@@ -30,16 +29,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getProductPurchaseStacks**](EconomyApi.md#getProductPurchaseStacks) | **GET** /economy/purchases/{productPurchaseId}/stacks | Get Product Purchase Stacks |
 | [**getProductPurchases**](EconomyApi.md#getProductPurchases) | **GET** /economy/purchases | Get Product Purchases |
 | [**getRecentSubscription**](EconomyApi.md#getRecentSubscription) | **GET** /user/subscription/recent | Get Recent Subscription |
-| [**getSellerEligibility**](EconomyApi.md#getSellerEligibility) | **GET** /economy/seller/eligibility | Get Seller Eligibility |
 | [**getSteamTransaction**](EconomyApi.md#getSteamTransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction |
 | [**getSteamTransactions**](EconomyApi.md#getSteamTransactions) | **GET** /Steam/transactions | List Steam Transactions |
 | [**getStore**](EconomyApi.md#getStore) | **GET** /economy/store | Get Store |
 | [**getStoreShelves**](EconomyApi.md#getStoreShelves) | **GET** /economy/store/shelves | Get Store Shelves |
 | [**getSubscriptions**](EconomyApi.md#getSubscriptions) | **GET** /subscriptions | List Subscriptions |
-| [**getTiliaStatus**](EconomyApi.md#getTiliaStatus) | **GET** /tilia/status | Get Tilia Status |
-| [**getTiliaTos**](EconomyApi.md#getTiliaTos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status |
 | [**getTokenBundles**](EconomyApi.md#getTokenBundles) | **GET** /tokenBundles | List Token Bundles |
-| [**getUserCreditsEligible**](EconomyApi.md#getUserCreditsEligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligibility |
 | [**getUserSubscriptionEligible**](EconomyApi.md#getUserSubscriptionEligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligibility |
 | [**getUserTiliaKyc**](EconomyApi.md#getUserTiliaKyc) | **GET** /user/{userId}/tilia/kyc | Get User Tilia KYC |
 | [**listStores**](EconomyApi.md#listStores) | **GET** /economy/stores | List Stores |
@@ -47,7 +42,6 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**purchaseProductListing**](EconomyApi.md#purchaseProductListing) | **POST** /economy/purchase/listing | Purchase Product Listing |
 | [**updateProduct**](EconomyApi.md#updateProduct) | **PUT** /products/{productId} | Update Product |
 | [**updateProductListingDirect**](EconomyApi.md#updateProductListingDirect) | **PUT** /listing/{productId} | Update Product Listing |
-| [**updateTiliaTos**](EconomyApi.md#updateTiliaTos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status |
 
 
 <a id="createProduct"></a>
@@ -467,77 +461,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single Balance object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-
-<a id="getBalanceEarnings"></a>
-# **getBalanceEarnings**
-> Balance getBalanceEarnings(userId)
-
-Get Balance Earnings
-
-Return the user&#39;s balance from earnings.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String userId = "userId_example"; // String | Must be a valid user ID.
-    try {
-      Balance result = apiInstance.getBalanceEarnings(userId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#getBalanceEarnings");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| Must be a valid user ID. | |
-
-### Return type
-
-[**Balance**](Balance.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single Balance object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getBulkGiftPurchases"></a>
 # **getBulkGiftPurchases**
@@ -1915,73 +1838,6 @@ public class Example {
 | **200** | Returns a UserSubscription object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a id="getSellerEligibility"></a>
-# **getSellerEligibility**
-> SellerEligibility getSellerEligibility()
-
-Get Seller Eligibility
-
-Return the current user&#39;s eligibility to become a seller.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    try {
-      SellerEligibility result = apiInstance.getSellerEligibility();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#getSellerEligibility");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**SellerEligibility**](SellerEligibility.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single SellerEligibility object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
-
 <a id="getSteamTransaction"></a>
 # **getSteamTransaction**
 > Transaction getSteamTransaction(transactionId)
@@ -2340,144 +2196,6 @@ public class Example {
 | **200** | Returns a list of Subscription objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a id="getTiliaStatus"></a>
-# **getTiliaStatus**
-> TiliaStatus getTiliaStatus()
-
-Get Tilia Status
-
-Return the Tilia integration status.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    try {
-      TiliaStatus result = apiInstance.getTiliaStatus();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#getTiliaStatus");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**TiliaStatus**](TiliaStatus.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single TiliaStatus object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
-
-<a id="getTiliaTos"></a>
-# **getTiliaTos**
-> TiliaTOS getTiliaTos(userId)
-
-Get Tilia TOS Agreement Status
-
-Return the user&#39;s Tilia TOS agreement status.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String userId = "userId_example"; // String | Must be a valid user ID.
-    try {
-      TiliaTOS result = apiInstance.getTiliaTos(userId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#getTiliaTos");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| Must be a valid user ID. | |
-
-### Return type
-
-[**TiliaTOS**](TiliaTOS.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single TiliaTOS object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
-
 <a id="getTokenBundles"></a>
 # **getTokenBundles**
 > List&lt;TokenBundle&gt; getTokenBundles()
@@ -2543,79 +2261,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Returns a list of TokenBundle objects. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-
-<a id="getUserCreditsEligible"></a>
-# **getUserCreditsEligible**
-> UserCreditsEligible getUserCreditsEligible(userId, subscriptionId)
-
-Get User Credits Eligibility
-
-Return the user&#39;s subscription credit eligibility.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String userId = "userId_example"; // String | Must be a valid user ID.
-    String subscriptionId = "subscriptionId_example"; // String | 
-    try {
-      UserCreditsEligible result = apiInstance.getUserCreditsEligible(userId, subscriptionId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#getUserCreditsEligible");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| Must be a valid user ID. | |
-| **subscriptionId** | **String**|  | |
-
-### Return type
-
-[**UserCreditsEligible**](UserCreditsEligible.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a single UserCreditsEligible object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 
 <a id="getUserSubscriptionEligible"></a>
 # **getUserSubscriptionEligible**
@@ -3127,77 +2772,4 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Returns a single ProductListing object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
-
-<a id="updateTiliaTos"></a>
-# **updateTiliaTos**
-> Object updateTiliaTos(userId, updateTiliaTOSRequest)
-
-Update Tilia TOS Agreement Status
-
-Update the user&#39;s Tilia TOS agreement status.
-
-### Example
-```java
-// Import classes:
-import io.github.vrchatapi.ApiClient;
-import io.github.vrchatapi.ApiException;
-import io.github.vrchatapi.Configuration;
-import io.github.vrchatapi.auth.*;
-import io.github.vrchatapi.models.*;
-import io.github.vrchatapi.api.EconomyApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
-    
-    // Configure API key authorization: authCookie
-    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
-    authCookie.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authCookie.setApiKeyPrefix("Token");
-
-    EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String userId = "userId_example"; // String | Must be a valid user ID.
-    UpdateTiliaTOSRequest updateTiliaTOSRequest = new UpdateTiliaTOSRequest(); // UpdateTiliaTOSRequest | 
-    try {
-      Object result = apiInstance.updateTiliaTos(userId, updateTiliaTOSRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EconomyApi#updateTiliaTos");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| Must be a valid user ID. | |
-| **updateTiliaTOSRequest** | [**UpdateTiliaTOSRequest**](UpdateTiliaTOSRequest.md)|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns a UserSubscription object. |  -  |
-| **401** | Error response due to missing auth cookie. |  -  |
-| **404** | VRChat does not serve this route. A live route answers 200 or 401. |  -  |
 

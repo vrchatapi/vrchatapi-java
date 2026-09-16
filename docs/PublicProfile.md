@@ -9,13 +9,13 @@
 |------------ | ------------- | ------------- | -------------|
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  [optional] |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  [optional] |
-|**backgroundGradientBottom** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
-|**backgroundGradientTop** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**backgroundTemplateId** | **String** |  |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | **String** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
-|**bannerColor** | **String** |  |  [optional] |
+|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
@@ -43,10 +43,10 @@
 |**representedGroup** | [**ProfileRepresentedGroup**](ProfileRepresentedGroup.md) |  |  [optional] |
 |**status** | **UserStatus** |  |  [optional] |
 |**statusDescription** | **String** |  |  [optional] |
-|**themeButtonColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
-|**themeIconColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**themeButtonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**themeIconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**themeId** | **String** |  |  [optional] |
-|**themeSubtextColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**themeSubtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**themes** | **List&lt;Object&gt;** |  |  [optional] |
 |**totalPublicWorldsCount** | **Integer** |  |  [optional] |
 |**trustTags** | **List&lt;String&gt;** |  |  [optional] |

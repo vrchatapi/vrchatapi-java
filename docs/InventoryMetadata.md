@@ -12,8 +12,8 @@
 |**assetBundleId** | **String** |  |  [optional] |
 |**assets** | [**List&lt;InventoryAsset&gt;**](InventoryAsset.md) |  |  [optional] |
 |**fileId** | **String** |  |  [optional] |
-|**gradientEnd** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
-|**gradientStart** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**gradientEnd** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**gradientStart** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
 |**inventoryItemsToInstantiate** | **List&lt;String&gt;** | Only in bundles |  [optional] |
 |**maskTag** | **String** |  |  [optional] |
