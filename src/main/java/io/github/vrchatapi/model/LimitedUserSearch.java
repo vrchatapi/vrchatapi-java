@@ -68,31 +68,6 @@ public class LimitedUserSearch {
   @javax.annotation.Nullable
   private String bannerUrl;
 
-  public static final String SERIALIZED_NAME_BIO = "bio";
-  @SerializedName(SERIALIZED_NAME_BIO)
-  @javax.annotation.Nullable
-  private String bio;
-
-  public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
-  @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  @javax.annotation.Nullable
-  private List<String> bioLinks = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL = "currentAvatarImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL)
-  @javax.annotation.Nonnull
-  private String currentAvatarImageUrl;
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
-  @javax.annotation.Nonnull
-  private List<String> currentAvatarTags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
-  @javax.annotation.Nonnull
-  private String currentAvatarThumbnailImageUrl;
-
   public static final String SERIALIZED_NAME_DEVELOPER_TYPE = "developerType";
   @SerializedName(SERIALIZED_NAME_DEVELOPER_TYPE)
   @javax.annotation.Nonnull
@@ -138,11 +113,6 @@ public class LimitedUserSearch {
   @javax.annotation.Nullable
   private String profileEffect;
 
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
-  @javax.annotation.Nullable
-  private String profilePicOverride;
-
   public static final String SERIALIZED_NAME_PRONOUNS = "pronouns";
   @SerializedName(SERIALIZED_NAME_PRONOUNS)
   @javax.annotation.Nullable
@@ -162,11 +132,6 @@ public class LimitedUserSearch {
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nullable
-  private String userIcon;
 
   public LimitedUserSearch() {
   }
@@ -225,117 +190,6 @@ public class LimitedUserSearch {
 
   public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
     this.bannerUrl = bannerUrl;
-  }
-
-
-  public LimitedUserSearch bio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-    return this;
-  }
-
-  /**
-   * Get bio
-   * @return bio
-   */
-  @javax.annotation.Nullable
-  public String getBio() {
-    return bio;
-  }
-
-  public void setBio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-  }
-
-
-  public LimitedUserSearch bioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-    return this;
-  }
-
-  public LimitedUserSearch addBioLinksItem(String bioLinksItem) {
-    if (this.bioLinks == null) {
-      this.bioLinks = new ArrayList<>();
-    }
-    this.bioLinks.add(bioLinksItem);
-    return this;
-  }
-
-  /**
-   *  
-   * @return bioLinks
-   */
-  @javax.annotation.Nullable
-  public List<String> getBioLinks() {
-    return bioLinks;
-  }
-
-  public void setBioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-  }
-
-
-  public LimitedUserSearch currentAvatarImageUrl(@javax.annotation.Nonnull String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarImageUrl
-   */
-  @javax.annotation.Nonnull
-  public String getCurrentAvatarImageUrl() {
-    return currentAvatarImageUrl;
-  }
-
-  public void setCurrentAvatarImageUrl(@javax.annotation.Nonnull String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-  }
-
-
-  public LimitedUserSearch currentAvatarTags(@javax.annotation.Nonnull List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public LimitedUserSearch addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
-    return this;
-  }
-
-  /**
-   * Get currentAvatarTags
-   * @return currentAvatarTags
-   */
-  @javax.annotation.Nonnull
-  public List<String> getCurrentAvatarTags() {
-    return currentAvatarTags;
-  }
-
-  public void setCurrentAvatarTags(@javax.annotation.Nonnull List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-  }
-
-
-  public LimitedUserSearch currentAvatarThumbnailImageUrl(@javax.annotation.Nonnull String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarThumbnailImageUrl
-   */
-  @javax.annotation.Nonnull
-  public String getCurrentAvatarThumbnailImageUrl() {
-    return currentAvatarThumbnailImageUrl;
-  }
-
-  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nonnull String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
   }
 
 
@@ -510,25 +364,6 @@ public class LimitedUserSearch {
   }
 
 
-  public LimitedUserSearch profilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverride
-   * @return profilePicOverride
-   */
-  @javax.annotation.Nullable
-  public String getProfilePicOverride() {
-    return profilePicOverride;
-  }
-
-  public void setProfilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-  }
-
-
   public LimitedUserSearch pronouns(@javax.annotation.Nullable String pronouns) {
     this.pronouns = pronouns;
     return this;
@@ -613,25 +448,6 @@ public class LimitedUserSearch {
   }
 
 
-  public LimitedUserSearch userIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * Get userIcon
-   * @return userIcon
-   */
-  @javax.annotation.Nullable
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -645,11 +461,6 @@ public class LimitedUserSearch {
     return Objects.equals(this.bannerColor, limitedUserSearch.bannerColor) &&
         Objects.equals(this.bannerType, limitedUserSearch.bannerType) &&
         Objects.equals(this.bannerUrl, limitedUserSearch.bannerUrl) &&
-        Objects.equals(this.bio, limitedUserSearch.bio) &&
-        Objects.equals(this.bioLinks, limitedUserSearch.bioLinks) &&
-        Objects.equals(this.currentAvatarImageUrl, limitedUserSearch.currentAvatarImageUrl) &&
-        Objects.equals(this.currentAvatarTags, limitedUserSearch.currentAvatarTags) &&
-        Objects.equals(this.currentAvatarThumbnailImageUrl, limitedUserSearch.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.developerType, limitedUserSearch.developerType) &&
         Objects.equals(this.displayName, limitedUserSearch.displayName) &&
         Objects.equals(this.iconFrame, limitedUserSearch.iconFrame) &&
@@ -659,17 +470,15 @@ public class LimitedUserSearch {
         Objects.equals(this.lastPlatform, limitedUserSearch.lastPlatform) &&
         Objects.equals(this.nameplateEffect, limitedUserSearch.nameplateEffect) &&
         Objects.equals(this.profileEffect, limitedUserSearch.profileEffect) &&
-        Objects.equals(this.profilePicOverride, limitedUserSearch.profilePicOverride) &&
         Objects.equals(this.pronouns, limitedUserSearch.pronouns) &&
         Objects.equals(this.status, limitedUserSearch.status) &&
         Objects.equals(this.statusDescription, limitedUserSearch.statusDescription) &&
-        Objects.equals(this.tags, limitedUserSearch.tags) &&
-        Objects.equals(this.userIcon, limitedUserSearch.userIcon);
+        Objects.equals(this.tags, limitedUserSearch.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerColor, bannerType, bannerUrl, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, developerType, displayName, iconFrame, iconUrl, id, isFriend, lastPlatform, nameplateEffect, profileEffect, profilePicOverride, pronouns, status, statusDescription, tags, userIcon);
+    return Objects.hash(bannerColor, bannerType, bannerUrl, developerType, displayName, iconFrame, iconUrl, id, isFriend, lastPlatform, nameplateEffect, profileEffect, pronouns, status, statusDescription, tags);
   }
 
   @Override
@@ -679,11 +488,6 @@ public class LimitedUserSearch {
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
-    sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
-    sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
-    sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
-    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
-    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    developerType: ").append(toIndentedString(developerType)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
@@ -693,12 +497,10 @@ public class LimitedUserSearch {
     sb.append("    lastPlatform: ").append(toIndentedString(lastPlatform)).append("\n");
     sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
     sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -717,10 +519,10 @@ public class LimitedUserSearch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "developerType", "displayName", "iconFrame", "iconUrl", "id", "isFriend", "last_platform", "nameplateEffect", "profileEffect", "profilePicOverride", "pronouns", "status", "statusDescription", "tags", "userIcon"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bannerUrl", "developerType", "displayName", "iconFrame", "iconUrl", "id", "isFriend", "last_platform", "nameplateEffect", "profileEffect", "pronouns", "status", "statusDescription", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "developerType", "displayName", "id", "isFriend", "last_platform", "status", "statusDescription", "tags"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("developerType", "displayName", "id", "isFriend", "last_platform", "status", "statusDescription", "tags"));
   }
 
   /**
@@ -760,25 +562,6 @@ public class LimitedUserSearch {
       if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
-      if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("bioLinks") != null && !jsonObj.get("bioLinks").isJsonNull() && !jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
-      }
-      if (!jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("currentAvatarTags") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
-      }
-      if (!jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
       // validate the required field `developerType`
       DeveloperType.validateJsonElement(jsonObj.get("developerType"));
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
@@ -802,9 +585,6 @@ public class LimitedUserSearch {
       if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
-      if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
       if ((jsonObj.get("pronouns") != null && !jsonObj.get("pronouns").isJsonNull()) && !jsonObj.get("pronouns").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pronouns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pronouns").toString()));
       }
@@ -818,9 +598,6 @@ public class LimitedUserSearch {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if ((jsonObj.get("userIcon") != null && !jsonObj.get("userIcon").isJsonNull()) && !jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
   }
 

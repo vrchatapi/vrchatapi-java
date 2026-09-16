@@ -19,10 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,20 +49,30 @@ import io.github.vrchatapi.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class GroupMemberLimitedUser {
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
+  public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
+  @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
   @javax.annotation.Nullable
-  private List<String> currentAvatarTags = new ArrayList<>();
+  private String bannerColor;
 
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
+  public static final String SERIALIZED_NAME_BANNER_TYPE = "bannerType";
+  @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
   @javax.annotation.Nullable
-  private String currentAvatarThumbnailImageUrl;
+  private String bannerType;
+
+  public static final String SERIALIZED_NAME_BANNER_URL = "bannerUrl";
+  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  @javax.annotation.Nullable
+  private String bannerUrl;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nullable
   private String displayName;
+
+  public static final String SERIALIZED_NAME_ICON_FRAME = "iconFrame";
+  @SerializedName(SERIALIZED_NAME_ICON_FRAME)
+  @javax.annotation.Nullable
+  private String iconFrame;
 
   public static final String SERIALIZED_NAME_ICON_URL = "iconUrl";
   @SerializedName(SERIALIZED_NAME_ICON_URL)
@@ -77,62 +84,73 @@ public class GroupMemberLimitedUser {
   @javax.annotation.Nullable
   private String id;
 
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
+  public static final String SERIALIZED_NAME_NAMEPLATE_EFFECT = "nameplateEffect";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_EFFECT)
   @javax.annotation.Nullable
-  private String profilePicOverride;
+  private String nameplateEffect;
 
-  public static final String SERIALIZED_NAME_THUMBNAIL_URL = "thumbnailUrl";
-  @SerializedName(SERIALIZED_NAME_THUMBNAIL_URL)
+  public static final String SERIALIZED_NAME_PROFILE_EFFECT = "profileEffect";
+  @SerializedName(SERIALIZED_NAME_PROFILE_EFFECT)
   @javax.annotation.Nullable
-  private String thumbnailUrl;
+  private String profileEffect;
 
   public GroupMemberLimitedUser() {
   }
 
-  public GroupMemberLimitedUser currentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public GroupMemberLimitedUser addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
+  public GroupMemberLimitedUser bannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
     return this;
   }
 
   /**
-   * Get currentAvatarTags
-   * @return currentAvatarTags
+   * Get bannerColor
+   * @return bannerColor
    */
   @javax.annotation.Nullable
-  public List<String> getCurrentAvatarTags() {
-    return currentAvatarTags;
+  public String getBannerColor() {
+    return bannerColor;
   }
 
-  public void setCurrentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
+  public void setBannerColor(@javax.annotation.Nullable String bannerColor) {
+    this.bannerColor = bannerColor;
   }
 
 
-  public GroupMemberLimitedUser currentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
+  public GroupMemberLimitedUser bannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
     return this;
   }
 
   /**
-   * Get currentAvatarThumbnailImageUrl
-   * @return currentAvatarThumbnailImageUrl
+   * Get bannerType
+   * @return bannerType
    */
   @javax.annotation.Nullable
-  public String getCurrentAvatarThumbnailImageUrl() {
-    return currentAvatarThumbnailImageUrl;
+  public String getBannerType() {
+    return bannerType;
   }
 
-  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
+  public void setBannerType(@javax.annotation.Nullable String bannerType) {
+    this.bannerType = bannerType;
+  }
+
+
+  public GroupMemberLimitedUser bannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
+    return this;
+  }
+
+  /**
+   * Get bannerUrl
+   * @return bannerUrl
+   */
+  @javax.annotation.Nullable
+  public String getBannerUrl() {
+    return bannerUrl;
+  }
+
+  public void setBannerUrl(@javax.annotation.Nullable String bannerUrl) {
+    this.bannerUrl = bannerUrl;
   }
 
 
@@ -152,6 +170,25 @@ public class GroupMemberLimitedUser {
 
   public void setDisplayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public GroupMemberLimitedUser iconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
+    return this;
+  }
+
+  /**
+   * Get iconFrame
+   * @return iconFrame
+   */
+  @javax.annotation.Nullable
+  public String getIconFrame() {
+    return iconFrame;
+  }
+
+  public void setIconFrame(@javax.annotation.Nullable String iconFrame) {
+    this.iconFrame = iconFrame;
   }
 
 
@@ -193,41 +230,41 @@ public class GroupMemberLimitedUser {
   }
 
 
-  public GroupMemberLimitedUser profilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
+  public GroupMemberLimitedUser nameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
     return this;
   }
 
   /**
-   * Get profilePicOverride
-   * @return profilePicOverride
+   * Get nameplateEffect
+   * @return nameplateEffect
    */
   @javax.annotation.Nullable
-  public String getProfilePicOverride() {
-    return profilePicOverride;
+  public String getNameplateEffect() {
+    return nameplateEffect;
   }
 
-  public void setProfilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
+  public void setNameplateEffect(@javax.annotation.Nullable String nameplateEffect) {
+    this.nameplateEffect = nameplateEffect;
   }
 
 
-  public GroupMemberLimitedUser thumbnailUrl(@javax.annotation.Nullable String thumbnailUrl) {
-    this.thumbnailUrl = thumbnailUrl;
+  public GroupMemberLimitedUser profileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
     return this;
   }
 
   /**
-   * Get thumbnailUrl
-   * @return thumbnailUrl
+   * Get profileEffect
+   * @return profileEffect
    */
   @javax.annotation.Nullable
-  public String getThumbnailUrl() {
-    return thumbnailUrl;
+  public String getProfileEffect() {
+    return profileEffect;
   }
 
-  public void setThumbnailUrl(@javax.annotation.Nullable String thumbnailUrl) {
-    this.thumbnailUrl = thumbnailUrl;
+  public void setProfileEffect(@javax.annotation.Nullable String profileEffect) {
+    this.profileEffect = profileEffect;
   }
 
 
@@ -241,42 +278,35 @@ public class GroupMemberLimitedUser {
       return false;
     }
     GroupMemberLimitedUser groupMemberLimitedUser = (GroupMemberLimitedUser) o;
-    return Objects.equals(this.currentAvatarTags, groupMemberLimitedUser.currentAvatarTags) &&
-        Objects.equals(this.currentAvatarThumbnailImageUrl, groupMemberLimitedUser.currentAvatarThumbnailImageUrl) &&
+    return Objects.equals(this.bannerColor, groupMemberLimitedUser.bannerColor) &&
+        Objects.equals(this.bannerType, groupMemberLimitedUser.bannerType) &&
+        Objects.equals(this.bannerUrl, groupMemberLimitedUser.bannerUrl) &&
         Objects.equals(this.displayName, groupMemberLimitedUser.displayName) &&
+        Objects.equals(this.iconFrame, groupMemberLimitedUser.iconFrame) &&
         Objects.equals(this.iconUrl, groupMemberLimitedUser.iconUrl) &&
         Objects.equals(this.id, groupMemberLimitedUser.id) &&
-        Objects.equals(this.profilePicOverride, groupMemberLimitedUser.profilePicOverride) &&
-        Objects.equals(this.thumbnailUrl, groupMemberLimitedUser.thumbnailUrl);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.nameplateEffect, groupMemberLimitedUser.nameplateEffect) &&
+        Objects.equals(this.profileEffect, groupMemberLimitedUser.profileEffect);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentAvatarTags, currentAvatarThumbnailImageUrl, displayName, iconUrl, id, profilePicOverride, thumbnailUrl);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(bannerColor, bannerType, bannerUrl, displayName, iconFrame, iconUrl, id, nameplateEffect, profileEffect);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupMemberLimitedUser {\n");
-    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
-    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
+    sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
+    sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
+    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
     sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
-    sb.append("    thumbnailUrl: ").append(toIndentedString(thumbnailUrl)).append("\n");
+    sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
+    sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -295,7 +325,7 @@ public class GroupMemberLimitedUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("currentAvatarTags", "currentAvatarThumbnailImageUrl", "displayName", "iconUrl", "id", "profilePicOverride", "thumbnailUrl"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bannerUrl", "displayName", "iconFrame", "iconUrl", "id", "nameplateEffect", "profileEffect"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -322,15 +352,20 @@ public class GroupMemberLimitedUser {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
+      if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
       }
-      if ((jsonObj.get("currentAvatarThumbnailImageUrl") != null && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
+      if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
+      }
+      if ((jsonObj.get("bannerUrl") != null && !jsonObj.get("bannerUrl").isJsonNull()) && !jsonObj.get("bannerUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerUrl").toString()));
       }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      }
+      if ((jsonObj.get("iconFrame") != null && !jsonObj.get("iconFrame").isJsonNull()) && !jsonObj.get("iconFrame").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconFrame` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconFrame").toString()));
       }
       if ((jsonObj.get("iconUrl") != null && !jsonObj.get("iconUrl").isJsonNull()) && !jsonObj.get("iconUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconUrl").toString()));
@@ -338,11 +373,11 @@ public class GroupMemberLimitedUser {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
+      if ((jsonObj.get("nameplateEffect") != null && !jsonObj.get("nameplateEffect").isJsonNull()) && !jsonObj.get("nameplateEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nameplateEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nameplateEffect").toString()));
       }
-      if ((jsonObj.get("thumbnailUrl") != null && !jsonObj.get("thumbnailUrl").isJsonNull()) && !jsonObj.get("thumbnailUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `thumbnailUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnailUrl").toString()));
+      if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
   }
 

@@ -8,8 +8,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**acceptedTOSVersion** | **Integer** |  |  [optional] |
-|**bio** | **String** |  |  [optional] |
-|**bioLinks** | **List&lt;String&gt;** |  |  [optional] |
 |**birthday** | **LocalDate** |  |  [optional] |
 |**contentFilters** | **List&lt;ContentFilter&gt;** | These tags begin with &#x60;content_&#x60; and control content gating |  [optional] |
 |**currentPassword** | **String** |  |  [optional] |
@@ -25,7 +23,6 @@
 |**statusDescription** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |   |  [optional] |
 |**unsubscribe** | **Boolean** |  |  [optional] |
-|**userIcon** | **String** | MUST be a valid VRChat /file/ url. |  [optional] |
 
 
 

@@ -1478,7 +1478,7 @@ public class UsersApi {
     /**
      * Build call for getPublicProfile
      * @param userId Must be a valid user ID. (required)
-     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1554,7 +1554,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
-     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @return PublicProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1574,7 +1574,7 @@ public class UsersApi {
      * Get Public Profile
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
-     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @return ApiResponse&lt;PublicProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1595,7 +1595,7 @@ public class UsersApi {
      * Get Public Profile (asynchronously)
      * Get a user&#39;s public profile information.
      * @param userId Must be a valid user ID. (required)
-     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. (optional)
+     * @param withGroupsAndWorlds Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

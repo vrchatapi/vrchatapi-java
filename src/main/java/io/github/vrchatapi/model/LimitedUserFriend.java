@@ -64,31 +64,6 @@ public class LimitedUserFriend {
   @javax.annotation.Nullable
   private String bannerType;
 
-  public static final String SERIALIZED_NAME_BIO = "bio";
-  @SerializedName(SERIALIZED_NAME_BIO)
-  @javax.annotation.Nullable
-  private String bio;
-
-  public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
-  @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  @javax.annotation.Nullable
-  private List<String> bioLinks = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL = "currentAvatarImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_IMAGE_URL)
-  @javax.annotation.Nullable
-  private String currentAvatarImageUrl;
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
-  @javax.annotation.Nullable
-  private List<String> currentAvatarTags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
-  @javax.annotation.Nullable
-  private String currentAvatarThumbnailImageUrl;
-
   public static final String SERIALIZED_NAME_DEVELOPER_TYPE = "developerType";
   @SerializedName(SERIALIZED_NAME_DEVELOPER_TYPE)
   @javax.annotation.Nonnull
@@ -123,11 +98,6 @@ public class LimitedUserFriend {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nonnull
   private String id;
-
-  public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
-  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
-  @javax.annotation.Nonnull
-  private String imageUrl;
 
   public static final String SERIALIZED_NAME_IS_FRIEND = "isFriend";
   @SerializedName(SERIALIZED_NAME_IS_FRIEND)
@@ -174,16 +144,6 @@ public class LimitedUserFriend {
   @javax.annotation.Nullable
   private String profileEffect;
 
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
-  @javax.annotation.Nullable
-  private String profilePicOverride;
-
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL = "profilePicOverrideThumbnail";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL)
-  @javax.annotation.Nullable
-  private String profilePicOverrideThumbnail;
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nonnull
@@ -198,11 +158,6 @@ public class LimitedUserFriend {
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nullable
-  private String userIcon;
 
   public LimitedUserFriend() {
   }
@@ -242,117 +197,6 @@ public class LimitedUserFriend {
 
   public void setBannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
-  }
-
-
-  public LimitedUserFriend bio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-    return this;
-  }
-
-  /**
-   * Get bio
-   * @return bio
-   */
-  @javax.annotation.Nullable
-  public String getBio() {
-    return bio;
-  }
-
-  public void setBio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-  }
-
-
-  public LimitedUserFriend bioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-    return this;
-  }
-
-  public LimitedUserFriend addBioLinksItem(String bioLinksItem) {
-    if (this.bioLinks == null) {
-      this.bioLinks = new ArrayList<>();
-    }
-    this.bioLinks.add(bioLinksItem);
-    return this;
-  }
-
-  /**
-   *  
-   * @return bioLinks
-   */
-  @javax.annotation.Nullable
-  public List<String> getBioLinks() {
-    return bioLinks;
-  }
-
-  public void setBioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-  }
-
-
-  public LimitedUserFriend currentAvatarImageUrl(@javax.annotation.Nullable String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarImageUrl
-   */
-  @javax.annotation.Nullable
-  public String getCurrentAvatarImageUrl() {
-    return currentAvatarImageUrl;
-  }
-
-  public void setCurrentAvatarImageUrl(@javax.annotation.Nullable String currentAvatarImageUrl) {
-    this.currentAvatarImageUrl = currentAvatarImageUrl;
-  }
-
-
-  public LimitedUserFriend currentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public LimitedUserFriend addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
-    return this;
-  }
-
-  /**
-   * Get currentAvatarTags
-   * @return currentAvatarTags
-   */
-  @javax.annotation.Nullable
-  public List<String> getCurrentAvatarTags() {
-    return currentAvatarTags;
-  }
-
-  public void setCurrentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-  }
-
-
-  public LimitedUserFriend currentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarThumbnailImageUrl
-   */
-  @javax.annotation.Nullable
-  public String getCurrentAvatarThumbnailImageUrl() {
-    return currentAvatarThumbnailImageUrl;
-  }
-
-  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
   }
 
 
@@ -486,25 +330,6 @@ public class LimitedUserFriend {
 
   public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
-  }
-
-
-  public LimitedUserFriend imageUrl(@javax.annotation.Nonnull String imageUrl) {
-    this.imageUrl = imageUrl;
-    return this;
-  }
-
-  /**
-   * Get imageUrl
-   * @return imageUrl
-   */
-  @javax.annotation.Nonnull
-  public String getImageUrl() {
-    return imageUrl;
-  }
-
-  public void setImageUrl(@javax.annotation.Nonnull String imageUrl) {
-    this.imageUrl = imageUrl;
   }
 
 
@@ -679,44 +504,6 @@ public class LimitedUserFriend {
   }
 
 
-  public LimitedUserFriend profilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverride
-   * @return profilePicOverride
-   */
-  @javax.annotation.Nullable
-  public String getProfilePicOverride() {
-    return profilePicOverride;
-  }
-
-  public void setProfilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-  }
-
-
-  public LimitedUserFriend profilePicOverrideThumbnail(@javax.annotation.Nullable String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverrideThumbnail
-   * @return profilePicOverrideThumbnail
-   */
-  @javax.annotation.Nullable
-  public String getProfilePicOverrideThumbnail() {
-    return profilePicOverrideThumbnail;
-  }
-
-  public void setProfilePicOverrideThumbnail(@javax.annotation.Nullable String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-  }
-
-
   public LimitedUserFriend status(@javax.annotation.Nonnull UserStatus status) {
     this.status = status;
     return this;
@@ -782,25 +569,6 @@ public class LimitedUserFriend {
   }
 
 
-  public LimitedUserFriend userIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * Get userIcon
-   * @return userIcon
-   */
-  @javax.annotation.Nullable
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -813,11 +581,6 @@ public class LimitedUserFriend {
     LimitedUserFriend limitedUserFriend = (LimitedUserFriend) o;
     return Objects.equals(this.bannerColor, limitedUserFriend.bannerColor) &&
         Objects.equals(this.bannerType, limitedUserFriend.bannerType) &&
-        Objects.equals(this.bio, limitedUserFriend.bio) &&
-        Objects.equals(this.bioLinks, limitedUserFriend.bioLinks) &&
-        Objects.equals(this.currentAvatarImageUrl, limitedUserFriend.currentAvatarImageUrl) &&
-        Objects.equals(this.currentAvatarTags, limitedUserFriend.currentAvatarTags) &&
-        Objects.equals(this.currentAvatarThumbnailImageUrl, limitedUserFriend.currentAvatarThumbnailImageUrl) &&
         Objects.equals(this.developerType, limitedUserFriend.developerType) &&
         Objects.equals(this.discordId, limitedUserFriend.discordId) &&
         Objects.equals(this.displayName, limitedUserFriend.displayName) &&
@@ -825,7 +588,6 @@ public class LimitedUserFriend {
         Objects.equals(this.iconFrame, limitedUserFriend.iconFrame) &&
         Objects.equals(this.iconUrl, limitedUserFriend.iconUrl) &&
         Objects.equals(this.id, limitedUserFriend.id) &&
-        Objects.equals(this.imageUrl, limitedUserFriend.imageUrl) &&
         Objects.equals(this.isFriend, limitedUserFriend.isFriend) &&
         Objects.equals(this.lastActivity, limitedUserFriend.lastActivity) &&
         Objects.equals(this.lastLogin, limitedUserFriend.lastLogin) &&
@@ -835,17 +597,14 @@ public class LimitedUserFriend {
         Objects.equals(this.nameplateEffect, limitedUserFriend.nameplateEffect) &&
         Objects.equals(this.platform, limitedUserFriend.platform) &&
         Objects.equals(this.profileEffect, limitedUserFriend.profileEffect) &&
-        Objects.equals(this.profilePicOverride, limitedUserFriend.profilePicOverride) &&
-        Objects.equals(this.profilePicOverrideThumbnail, limitedUserFriend.profilePicOverrideThumbnail) &&
         Objects.equals(this.status, limitedUserFriend.status) &&
         Objects.equals(this.statusDescription, limitedUserFriend.statusDescription) &&
-        Objects.equals(this.tags, limitedUserFriend.tags) &&
-        Objects.equals(this.userIcon, limitedUserFriend.userIcon);
+        Objects.equals(this.tags, limitedUserFriend.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerColor, bannerType, bio, bioLinks, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, developerType, discordId, displayName, friendKey, iconFrame, iconUrl, id, imageUrl, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, platform, profileEffect, profilePicOverride, profilePicOverrideThumbnail, status, statusDescription, tags, userIcon);
+    return Objects.hash(bannerColor, bannerType, developerType, discordId, displayName, friendKey, iconFrame, iconUrl, id, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, platform, profileEffect, status, statusDescription, tags);
   }
 
   @Override
@@ -854,11 +613,6 @@ public class LimitedUserFriend {
     sb.append("class LimitedUserFriend {\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
-    sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
-    sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
-    sb.append("    currentAvatarImageUrl: ").append(toIndentedString(currentAvatarImageUrl)).append("\n");
-    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
-    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    developerType: ").append(toIndentedString(developerType)).append("\n");
     sb.append("    discordId: ").append(toIndentedString(discordId)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
@@ -866,7 +620,6 @@ public class LimitedUserFriend {
     sb.append("    iconFrame: ").append(toIndentedString(iconFrame)).append("\n");
     sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    isFriend: ").append(toIndentedString(isFriend)).append("\n");
     sb.append("    lastActivity: ").append(toIndentedString(lastActivity)).append("\n");
     sb.append("    lastLogin: ").append(toIndentedString(lastLogin)).append("\n");
@@ -876,12 +629,9 @@ public class LimitedUserFriend {
     sb.append("    nameplateEffect: ").append(toIndentedString(nameplateEffect)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
-    sb.append("    profilePicOverrideThumbnail: ").append(toIndentedString(profilePicOverrideThumbnail)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -900,10 +650,10 @@ public class LimitedUserFriend {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "bio", "bioLinks", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "developerType", "discordId", "displayName", "friendKey", "iconFrame", "iconUrl", "id", "imageUrl", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "platform", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "status", "statusDescription", "tags", "userIcon"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerColor", "bannerType", "developerType", "discordId", "displayName", "friendKey", "iconFrame", "iconUrl", "id", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "platform", "profileEffect", "status", "statusDescription", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("developerType", "displayName", "friendKey", "id", "imageUrl", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "platform", "status", "statusDescription", "tags"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "platform", "status", "statusDescription", "tags"));
   }
 
   /**
@@ -940,23 +690,6 @@ public class LimitedUserFriend {
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
       }
-      if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("bioLinks") != null && !jsonObj.get("bioLinks").isJsonNull() && !jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
-      }
-      if ((jsonObj.get("currentAvatarImageUrl") != null && !jsonObj.get("currentAvatarImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarImageUrl").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
-      }
-      if ((jsonObj.get("currentAvatarThumbnailImageUrl") != null && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
       // validate the required field `developerType`
       DeveloperType.validateJsonElement(jsonObj.get("developerType"));
       if ((jsonObj.get("discordId") != null && !jsonObj.get("discordId").isJsonNull()) && !jsonObj.get("discordId").isJsonPrimitive()) {
@@ -977,9 +710,6 @@ public class LimitedUserFriend {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("imageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
-      }
       if (!jsonObj.get("last_platform").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_platform").toString()));
       }
@@ -995,12 +725,6 @@ public class LimitedUserFriend {
       if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
-      if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if ((jsonObj.get("profilePicOverrideThumbnail") != null && !jsonObj.get("profilePicOverrideThumbnail").isJsonNull()) && !jsonObj.get("profilePicOverrideThumbnail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverrideThumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverrideThumbnail").toString()));
-      }
       // validate the required field `status`
       UserStatus.validateJsonElement(jsonObj.get("status"));
       if (!jsonObj.get("statusDescription").isJsonPrimitive()) {
@@ -1011,9 +735,6 @@ public class LimitedUserFriend {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if ((jsonObj.get("userIcon") != null && !jsonObj.get("userIcon").isJsonNull()) && !jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
   }
 

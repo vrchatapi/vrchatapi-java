@@ -11,11 +11,6 @@ User object received when searching
 |**bannerColor** | **String** |  |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
-|**bio** | **String** |  |  [optional] |
-|**bioLinks** | **List&lt;String&gt;** |   |  [optional] |
-|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
-|**currentAvatarTags** | **List&lt;String&gt;** |  |  |
-|**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** |  |  |
 |**iconFrame** | **String** |  |  [optional] |
@@ -25,12 +20,10 @@ User object received when searching
 |**lastPlatform** | **String** | This is normally &#x60;android&#x60;, &#x60;ios&#x60;, &#x60;standalonewindows&#x60;, &#x60;web&#x60;, or the empty value &#x60;&#x60;, but also supposedly can be any random Unity version such as &#x60;2019.2.4-801-Release&#x60; or &#x60;2019.2.2-772-Release&#x60; or even &#x60;unknownplatform&#x60;. |  |
 |**nameplateEffect** | **String** |  |  [optional] |
 |**profileEffect** | **String** |  |  [optional] |
-|**profilePicOverride** | **String** |  |  [optional] |
 |**pronouns** | **String** |  |  [optional] |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** | &lt;- Always empty. |  |
-|**userIcon** | **String** |  |  [optional] |
 
 
 

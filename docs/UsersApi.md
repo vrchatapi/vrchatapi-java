@@ -782,7 +782,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    Boolean withGroupsAndWorlds = true; // Boolean | Include `groups`, `publicWorlds` and `totalPublicWorldsCount` in the response.
+    Boolean withGroupsAndWorlds = true; // Boolean | Include `groups`, `publicWorlds`, `totalPublicWorldsCount` and `worldFavoriteLists` in the response.
     try {
       PublicProfile result = apiInstance.getPublicProfile(userId, withGroupsAndWorlds);
       System.out.println(result);
@@ -802,7 +802,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
-| **withGroupsAndWorlds** | **Boolean**| Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60; and &#x60;totalPublicWorldsCount&#x60; in the response. | [optional] |
+| **withGroupsAndWorlds** | **Boolean**| Include &#x60;groups&#x60;, &#x60;publicWorlds&#x60;, &#x60;totalPublicWorldsCount&#x60; and &#x60;worldFavoriteLists&#x60; in the response. | [optional] |
 
 ### Return type
 

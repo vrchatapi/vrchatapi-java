@@ -59,16 +59,6 @@ public class UpdateUserRequest {
   @javax.annotation.Nullable
   private Integer acceptedTOSVersion;
 
-  public static final String SERIALIZED_NAME_BIO = "bio";
-  @SerializedName(SERIALIZED_NAME_BIO)
-  @javax.annotation.Nullable
-  private String bio;
-
-  public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
-  @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  @javax.annotation.Nullable
-  private List<String> bioLinks = new ArrayList<>();
-
   public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
   @SerializedName(SERIALIZED_NAME_BIRTHDAY)
   @javax.annotation.Nullable
@@ -144,11 +134,6 @@ public class UpdateUserRequest {
   @javax.annotation.Nullable
   private Boolean unsubscribe;
 
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nullable
-  private String userIcon;
-
   public UpdateUserRequest() {
   }
 
@@ -168,52 +153,6 @@ public class UpdateUserRequest {
 
   public void setAcceptedTOSVersion(@javax.annotation.Nullable Integer acceptedTOSVersion) {
     this.acceptedTOSVersion = acceptedTOSVersion;
-  }
-
-
-  public UpdateUserRequest bio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-    return this;
-  }
-
-  /**
-   * Get bio
-   * @return bio
-   */
-  @javax.annotation.Nullable
-  public String getBio() {
-    return bio;
-  }
-
-  public void setBio(@javax.annotation.Nullable String bio) {
-    this.bio = bio;
-  }
-
-
-  public UpdateUserRequest bioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-    return this;
-  }
-
-  public UpdateUserRequest addBioLinksItem(String bioLinksItem) {
-    if (this.bioLinks == null) {
-      this.bioLinks = new ArrayList<>();
-    }
-    this.bioLinks.add(bioLinksItem);
-    return this;
-  }
-
-  /**
-   * Get bioLinks
-   * @return bioLinks
-   */
-  @javax.annotation.Nullable
-  public List<String> getBioLinks() {
-    return bioLinks;
-  }
-
-  public void setBioLinks(@javax.annotation.Nullable List<String> bioLinks) {
-    this.bioLinks = bioLinks;
   }
 
 
@@ -518,25 +457,6 @@ public class UpdateUserRequest {
   }
 
 
-  public UpdateUserRequest userIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * MUST be a valid VRChat /file/ url.
-   * @return userIcon
-   */
-  @javax.annotation.Nullable
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -548,8 +468,6 @@ public class UpdateUserRequest {
     }
     UpdateUserRequest updateUserRequest = (UpdateUserRequest) o;
     return Objects.equals(this.acceptedTOSVersion, updateUserRequest.acceptedTOSVersion) &&
-        Objects.equals(this.bio, updateUserRequest.bio) &&
-        Objects.equals(this.bioLinks, updateUserRequest.bioLinks) &&
         Objects.equals(this.birthday, updateUserRequest.birthday) &&
         Objects.equals(this.contentFilters, updateUserRequest.contentFilters) &&
         Objects.equals(this.currentPassword, updateUserRequest.currentPassword) &&
@@ -564,13 +482,12 @@ public class UpdateUserRequest {
         Objects.equals(this.status, updateUserRequest.status) &&
         Objects.equals(this.statusDescription, updateUserRequest.statusDescription) &&
         Objects.equals(this.tags, updateUserRequest.tags) &&
-        Objects.equals(this.unsubscribe, updateUserRequest.unsubscribe) &&
-        Objects.equals(this.userIcon, updateUserRequest.userIcon);
+        Objects.equals(this.unsubscribe, updateUserRequest.unsubscribe);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedTOSVersion, bio, bioLinks, birthday, contentFilters, currentPassword, displayName, email, hasDiscordFriendsOptOut, hasSharedConnectionsOptOut, isBoopingEnabled, password, pronouns, revertDisplayName, status, statusDescription, tags, unsubscribe, userIcon);
+    return Objects.hash(acceptedTOSVersion, birthday, contentFilters, currentPassword, displayName, email, hasDiscordFriendsOptOut, hasSharedConnectionsOptOut, isBoopingEnabled, password, pronouns, revertDisplayName, status, statusDescription, tags, unsubscribe);
   }
 
   @Override
@@ -578,8 +495,6 @@ public class UpdateUserRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateUserRequest {\n");
     sb.append("    acceptedTOSVersion: ").append(toIndentedString(acceptedTOSVersion)).append("\n");
-    sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
-    sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
     sb.append("    birthday: ").append(toIndentedString(birthday)).append("\n");
     sb.append("    contentFilters: ").append(toIndentedString(contentFilters)).append("\n");
     sb.append("    currentPassword: ").append(toIndentedString(currentPassword)).append("\n");
@@ -595,7 +510,6 @@ public class UpdateUserRequest {
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    unsubscribe: ").append(toIndentedString(unsubscribe)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -614,7 +528,7 @@ public class UpdateUserRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acceptedTOSVersion", "bio", "bioLinks", "birthday", "contentFilters", "currentPassword", "displayName", "email", "hasDiscordFriendsOptOut", "hasSharedConnectionsOptOut", "isBoopingEnabled", "password", "pronouns", "revertDisplayName", "status", "statusDescription", "tags", "unsubscribe", "userIcon"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedTOSVersion", "birthday", "contentFilters", "currentPassword", "displayName", "email", "hasDiscordFriendsOptOut", "hasSharedConnectionsOptOut", "isBoopingEnabled", "password", "pronouns", "revertDisplayName", "status", "statusDescription", "tags", "unsubscribe"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -641,13 +555,6 @@ public class UpdateUserRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("bioLinks") != null && !jsonObj.get("bioLinks").isJsonNull() && !jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
-      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("contentFilters") != null && !jsonObj.get("contentFilters").isJsonNull() && !jsonObj.get("contentFilters").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `contentFilters` to be an array in the JSON string but got `%s`", jsonObj.get("contentFilters").toString()));
@@ -677,9 +584,6 @@ public class UpdateUserRequest {
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if ((jsonObj.get("userIcon") != null && !jsonObj.get("userIcon").isJsonNull()) && !jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
   }
 

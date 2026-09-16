@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  [optional] |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  [optional] |
+|**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | **String** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
 |**bannerColor** | **String** |  |  [optional] |
@@ -27,9 +28,12 @@
 |**nameplateEffect** | **String** |  |  [optional] |
 |**profileEffect** | **String** |  |  [optional] |
 |**pronouns** | **String** |  |  [optional] |
-|**publicWorlds** | **List&lt;Object&gt;** |  |  [optional] |
+|**publicWorlds** | [**List&lt;LimitedWorld&gt;**](LimitedWorld.md) |  |  [optional] |
 |**representedGroup** | [**ProfileRepresentedGroup**](ProfileRepresentedGroup.md) |  |  [optional] |
+|**themeButtonColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
+|**themeIconColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
 |**themeId** | **String** |  |  [optional] |
+|**themeSubtextColor** | **String** | Hex colour without a leading &#x60;#&#x60;. |  [optional] |
 |**totalPublicWorldsCount** | **Integer** |  |  [optional] |
 |**trustTags** | **List&lt;String&gt;** |  |  [optional] |
 |**worldFavoriteLists** | **List&lt;Object&gt;** |  |  [optional] |

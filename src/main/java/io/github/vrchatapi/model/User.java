@@ -19,7 +19,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.AgeVerificationStatus;
-import io.github.vrchatapi.model.Badge;
 import io.github.vrchatapi.model.DeveloperType;
 import io.github.vrchatapi.model.UserState;
 import io.github.vrchatapi.model.UserStatus;
@@ -99,11 +98,6 @@ public class User {
   @SerializedName(SERIALIZED_NAME_APPLE_DETAILS)
   @javax.annotation.Nullable
   private Map<String, Object> appleDetails = new HashMap<>();
-
-  public static final String SERIALIZED_NAME_BADGES = "badges";
-  @SerializedName(SERIALIZED_NAME_BADGES)
-  @javax.annotation.Nullable
-  private List<Badge> badges = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
   @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
@@ -433,33 +427,6 @@ public class User {
 
   public void setAppleDetails(@javax.annotation.Nullable Map<String, Object> appleDetails) {
     this.appleDetails = appleDetails;
-  }
-
-
-  public User badges(@javax.annotation.Nullable List<Badge> badges) {
-    this.badges = badges;
-    return this;
-  }
-
-  public User addBadgesItem(Badge badgesItem) {
-    if (this.badges == null) {
-      this.badges = new ArrayList<>();
-    }
-    this.badges.add(badgesItem);
-    return this;
-  }
-
-  /**
-   *  
-   * @return badges
-   */
-  @javax.annotation.Nullable
-  public List<Badge> getBadges() {
-    return badges;
-  }
-
-  public void setBadges(@javax.annotation.Nullable List<Badge> badges) {
-    this.badges = badges;
   }
 
 
@@ -1097,7 +1064,6 @@ public class User {
         Objects.equals(this.ageVerified, user.ageVerified) &&
         Objects.equals(this.allowAvatarCopying, user.allowAvatarCopying) &&
         Objects.equals(this.appleDetails, user.appleDetails) &&
-        Objects.equals(this.badges, user.badges) &&
         Objects.equals(this.bannerColor, user.bannerColor) &&
         Objects.equals(this.bannerType, user.bannerType) &&
         Objects.equals(this.bannerUrl, user.bannerUrl) &&
@@ -1138,7 +1104,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, badges, bannerColor, bannerType, bannerUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, worldId);
+    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, bannerColor, bannerType, bannerUrl, dateJoined, developerType, displayName, friendKey, friendRequestStatus, iconFrame, iconUrl, id, instanceId, isEconomyCreator, isFriend, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, platform, profileEffect, pronouns, state, status, statusDescription, tags, travelingToInstance, travelingToLocation, travelingToWorld, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1160,7 +1126,6 @@ public class User {
     sb.append("    ageVerified: ").append(toIndentedString(ageVerified)).append("\n");
     sb.append("    allowAvatarCopying: ").append(toIndentedString(allowAvatarCopying)).append("\n");
     sb.append("    appleDetails: ").append(toIndentedString(appleDetails)).append("\n");
-    sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
     sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
@@ -1211,7 +1176,7 @@ public class User {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "badges", "bannerColor", "bannerType", "bannerUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "bannerColor", "bannerType", "bannerUrl", "date_joined", "developerType", "displayName", "friendKey", "friendRequestStatus", "iconFrame", "iconUrl", "id", "instanceId", "isEconomyCreator", "isFriend", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "platform", "profileEffect", "pronouns", "state", "status", "statusDescription", "tags", "travelingToInstance", "travelingToLocation", "travelingToWorld", "worldId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "allowAvatarCopying", "date_joined", "developerType", "displayName", "friendKey", "id", "isFriend", "last_activity", "last_login", "last_platform", "pronouns", "state", "status", "statusDescription", "tags"));
@@ -1254,20 +1219,6 @@ public class User {
       }
       // validate the required field `ageVerificationStatus`
       AgeVerificationStatus.validateJsonElement(jsonObj.get("ageVerificationStatus"));
-      if (jsonObj.get("badges") != null && !jsonObj.get("badges").isJsonNull()) {
-        JsonArray jsonArraybadges = jsonObj.getAsJsonArray("badges");
-        if (jsonArraybadges != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("badges").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `badges` to be an array in the JSON string but got `%s`", jsonObj.get("badges").toString()));
-          }
-
-          // validate the optional field `badges` (array)
-          for (int i = 0; i < jsonArraybadges.size(); i++) {
-            Badge.validateJsonElement(jsonArraybadges.get(i));
-          };
-        }
-      }
       if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
       }

@@ -19,10 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,30 +54,10 @@ public class UserNoteTargetUser {
   @javax.annotation.Nullable
   private String id;
 
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_TAGS = "currentAvatarTags";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_TAGS)
-  @javax.annotation.Nullable
-  private List<String> currentAvatarTags = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL = "currentAvatarThumbnailImageUrl";
-  @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR_THUMBNAIL_IMAGE_URL)
-  @javax.annotation.Nullable
-  private String currentAvatarThumbnailImageUrl;
-
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nullable
   private String displayName;
-
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
-  @javax.annotation.Nullable
-  private String profilePicOverride;
-
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nullable
-  private String userIcon;
 
   public UserNoteTargetUser() {
   }
@@ -104,52 +81,6 @@ public class UserNoteTargetUser {
   }
 
 
-  public UserNoteTargetUser currentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-    return this;
-  }
-
-  public UserNoteTargetUser addCurrentAvatarTagsItem(String currentAvatarTagsItem) {
-    if (this.currentAvatarTags == null) {
-      this.currentAvatarTags = new ArrayList<>();
-    }
-    this.currentAvatarTags.add(currentAvatarTagsItem);
-    return this;
-  }
-
-  /**
-   * Get currentAvatarTags
-   * @return currentAvatarTags
-   */
-  @javax.annotation.Nullable
-  public List<String> getCurrentAvatarTags() {
-    return currentAvatarTags;
-  }
-
-  public void setCurrentAvatarTags(@javax.annotation.Nullable List<String> currentAvatarTags) {
-    this.currentAvatarTags = currentAvatarTags;
-  }
-
-
-  public UserNoteTargetUser currentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-    return this;
-  }
-
-  /**
-   * When profilePicOverride is not empty, use it instead.
-   * @return currentAvatarThumbnailImageUrl
-   */
-  @javax.annotation.Nullable
-  public String getCurrentAvatarThumbnailImageUrl() {
-    return currentAvatarThumbnailImageUrl;
-  }
-
-  public void setCurrentAvatarThumbnailImageUrl(@javax.annotation.Nullable String currentAvatarThumbnailImageUrl) {
-    this.currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-  }
-
-
   public UserNoteTargetUser displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
@@ -169,44 +100,6 @@ public class UserNoteTargetUser {
   }
 
 
-  public UserNoteTargetUser profilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverride
-   * @return profilePicOverride
-   */
-  @javax.annotation.Nullable
-  public String getProfilePicOverride() {
-    return profilePicOverride;
-  }
-
-  public void setProfilePicOverride(@javax.annotation.Nullable String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-  }
-
-
-  public UserNoteTargetUser userIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * Get userIcon
-   * @return userIcon
-   */
-  @javax.annotation.Nullable
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nullable String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -218,27 +111,12 @@ public class UserNoteTargetUser {
     }
     UserNoteTargetUser userNoteTargetUser = (UserNoteTargetUser) o;
     return Objects.equals(this.id, userNoteTargetUser.id) &&
-        Objects.equals(this.currentAvatarTags, userNoteTargetUser.currentAvatarTags) &&
-        Objects.equals(this.currentAvatarThumbnailImageUrl, userNoteTargetUser.currentAvatarThumbnailImageUrl) &&
-        Objects.equals(this.displayName, userNoteTargetUser.displayName) &&
-        Objects.equals(this.profilePicOverride, userNoteTargetUser.profilePicOverride) &&
-        Objects.equals(this.userIcon, userNoteTargetUser.userIcon);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.displayName, userNoteTargetUser.displayName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, currentAvatarTags, currentAvatarThumbnailImageUrl, displayName, profilePicOverride, userIcon);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, displayName);
   }
 
   @Override
@@ -246,11 +124,7 @@ public class UserNoteTargetUser {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserNoteTargetUser {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    currentAvatarTags: ").append(toIndentedString(currentAvatarTags)).append("\n");
-    sb.append("    currentAvatarThumbnailImageUrl: ").append(toIndentedString(currentAvatarThumbnailImageUrl)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,7 +143,7 @@ public class UserNoteTargetUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "displayName", "profilePicOverride", "userIcon"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "displayName"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -299,21 +173,8 @@ public class UserNoteTargetUser {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("currentAvatarTags") != null && !jsonObj.get("currentAvatarTags").isJsonNull() && !jsonObj.get("currentAvatarTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarTags` to be an array in the JSON string but got `%s`", jsonObj.get("currentAvatarTags").toString()));
-      }
-      if ((jsonObj.get("currentAvatarThumbnailImageUrl") != null && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonNull()) && !jsonObj.get("currentAvatarThumbnailImageUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `currentAvatarThumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currentAvatarThumbnailImageUrl").toString()));
-      }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
-      }
-      if ((jsonObj.get("profilePicOverride") != null && !jsonObj.get("profilePicOverride").isJsonNull()) && !jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if ((jsonObj.get("userIcon") != null && !jsonObj.get("userIcon").isJsonNull()) && !jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
   }
 

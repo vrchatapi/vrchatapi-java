@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.AgeVerificationStatus;
 import io.github.vrchatapi.model.Badge;
+import io.github.vrchatapi.model.LimitedWorld;
 import io.github.vrchatapi.model.ProfileGroups;
 import io.github.vrchatapi.model.ProfileRepresentedGroup;
 import java.io.IOException;
@@ -64,6 +65,11 @@ public class PublicProfile {
   @SerializedName(SERIALIZED_NAME_AGE_VERIFIED)
   @javax.annotation.Nullable
   private Boolean ageVerified;
+
+  public static final String SERIALIZED_NAME_BACKGROUND_TEXTURE_ID = "backgroundTextureId";
+  @SerializedName(SERIALIZED_NAME_BACKGROUND_TEXTURE_ID)
+  @javax.annotation.Nullable
+  private String backgroundTextureId;
 
   public static final String SERIALIZED_NAME_BACKGROUND_TYPE = "backgroundType";
   @SerializedName(SERIALIZED_NAME_BACKGROUND_TYPE)
@@ -158,17 +164,32 @@ public class PublicProfile {
   public static final String SERIALIZED_NAME_PUBLIC_WORLDS = "publicWorlds";
   @SerializedName(SERIALIZED_NAME_PUBLIC_WORLDS)
   @javax.annotation.Nullable
-  private List<Object> publicWorlds = new ArrayList<>();
+  private List<LimitedWorld> publicWorlds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REPRESENTED_GROUP = "representedGroup";
   @SerializedName(SERIALIZED_NAME_REPRESENTED_GROUP)
   @javax.annotation.Nullable
   private ProfileRepresentedGroup representedGroup;
 
+  public static final String SERIALIZED_NAME_THEME_BUTTON_COLOR = "themeButtonColor";
+  @SerializedName(SERIALIZED_NAME_THEME_BUTTON_COLOR)
+  @javax.annotation.Nullable
+  private String themeButtonColor;
+
+  public static final String SERIALIZED_NAME_THEME_ICON_COLOR = "themeIconColor";
+  @SerializedName(SERIALIZED_NAME_THEME_ICON_COLOR)
+  @javax.annotation.Nullable
+  private String themeIconColor;
+
   public static final String SERIALIZED_NAME_THEME_ID = "themeId";
   @SerializedName(SERIALIZED_NAME_THEME_ID)
   @javax.annotation.Nullable
   private String themeId;
+
+  public static final String SERIALIZED_NAME_THEME_SUBTEXT_COLOR = "themeSubtextColor";
+  @SerializedName(SERIALIZED_NAME_THEME_SUBTEXT_COLOR)
+  @javax.annotation.Nullable
+  private String themeSubtextColor;
 
   public static final String SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT = "totalPublicWorldsCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_PUBLIC_WORLDS_COUNT)
@@ -223,6 +244,25 @@ public class PublicProfile {
 
   public void setAgeVerified(@javax.annotation.Nullable Boolean ageVerified) {
     this.ageVerified = ageVerified;
+  }
+
+
+  public PublicProfile backgroundTextureId(@javax.annotation.Nullable String backgroundTextureId) {
+    this.backgroundTextureId = backgroundTextureId;
+    return this;
+  }
+
+  /**
+   * Get backgroundTextureId
+   * @return backgroundTextureId
+   */
+  @javax.annotation.Nullable
+  public String getBackgroundTextureId() {
+    return backgroundTextureId;
+  }
+
+  public void setBackgroundTextureId(@javax.annotation.Nullable String backgroundTextureId) {
+    this.backgroundTextureId = backgroundTextureId;
   }
 
 
@@ -592,12 +632,12 @@ public class PublicProfile {
   }
 
 
-  public PublicProfile publicWorlds(@javax.annotation.Nullable List<Object> publicWorlds) {
+  public PublicProfile publicWorlds(@javax.annotation.Nullable List<LimitedWorld> publicWorlds) {
     this.publicWorlds = publicWorlds;
     return this;
   }
 
-  public PublicProfile addPublicWorldsItem(Object publicWorldsItem) {
+  public PublicProfile addPublicWorldsItem(LimitedWorld publicWorldsItem) {
     if (this.publicWorlds == null) {
       this.publicWorlds = new ArrayList<>();
     }
@@ -610,11 +650,11 @@ public class PublicProfile {
    * @return publicWorlds
    */
   @javax.annotation.Nullable
-  public List<Object> getPublicWorlds() {
+  public List<LimitedWorld> getPublicWorlds() {
     return publicWorlds;
   }
 
-  public void setPublicWorlds(@javax.annotation.Nullable List<Object> publicWorlds) {
+  public void setPublicWorlds(@javax.annotation.Nullable List<LimitedWorld> publicWorlds) {
     this.publicWorlds = publicWorlds;
   }
 
@@ -638,6 +678,44 @@ public class PublicProfile {
   }
 
 
+  public PublicProfile themeButtonColor(@javax.annotation.Nullable String themeButtonColor) {
+    this.themeButtonColor = themeButtonColor;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return themeButtonColor
+   */
+  @javax.annotation.Nullable
+  public String getThemeButtonColor() {
+    return themeButtonColor;
+  }
+
+  public void setThemeButtonColor(@javax.annotation.Nullable String themeButtonColor) {
+    this.themeButtonColor = themeButtonColor;
+  }
+
+
+  public PublicProfile themeIconColor(@javax.annotation.Nullable String themeIconColor) {
+    this.themeIconColor = themeIconColor;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return themeIconColor
+   */
+  @javax.annotation.Nullable
+  public String getThemeIconColor() {
+    return themeIconColor;
+  }
+
+  public void setThemeIconColor(@javax.annotation.Nullable String themeIconColor) {
+    this.themeIconColor = themeIconColor;
+  }
+
+
   public PublicProfile themeId(@javax.annotation.Nullable String themeId) {
     this.themeId = themeId;
     return this;
@@ -654,6 +732,25 @@ public class PublicProfile {
 
   public void setThemeId(@javax.annotation.Nullable String themeId) {
     this.themeId = themeId;
+  }
+
+
+  public PublicProfile themeSubtextColor(@javax.annotation.Nullable String themeSubtextColor) {
+    this.themeSubtextColor = themeSubtextColor;
+    return this;
+  }
+
+  /**
+   * Hex colour without a leading &#x60;#&#x60;.
+   * @return themeSubtextColor
+   */
+  @javax.annotation.Nullable
+  public String getThemeSubtextColor() {
+    return themeSubtextColor;
+  }
+
+  public void setThemeSubtextColor(@javax.annotation.Nullable String themeSubtextColor) {
+    this.themeSubtextColor = themeSubtextColor;
   }
 
 
@@ -742,6 +839,7 @@ public class PublicProfile {
     PublicProfile publicProfile = (PublicProfile) o;
     return Objects.equals(this.ageVerificationStatus, publicProfile.ageVerificationStatus) &&
         Objects.equals(this.ageVerified, publicProfile.ageVerified) &&
+        Objects.equals(this.backgroundTextureId, publicProfile.backgroundTextureId) &&
         Objects.equals(this.backgroundType, publicProfile.backgroundType) &&
         Objects.equals(this.badges, publicProfile.badges) &&
         Objects.equals(this.bannerColor, publicProfile.bannerColor) &&
@@ -762,7 +860,10 @@ public class PublicProfile {
         Objects.equals(this.pronouns, publicProfile.pronouns) &&
         Objects.equals(this.publicWorlds, publicProfile.publicWorlds) &&
         Objects.equals(this.representedGroup, publicProfile.representedGroup) &&
+        Objects.equals(this.themeButtonColor, publicProfile.themeButtonColor) &&
+        Objects.equals(this.themeIconColor, publicProfile.themeIconColor) &&
         Objects.equals(this.themeId, publicProfile.themeId) &&
+        Objects.equals(this.themeSubtextColor, publicProfile.themeSubtextColor) &&
         Objects.equals(this.totalPublicWorldsCount, publicProfile.totalPublicWorldsCount) &&
         Objects.equals(this.trustTags, publicProfile.trustTags) &&
         Objects.equals(this.worldFavoriteLists, publicProfile.worldFavoriteLists);
@@ -770,7 +871,7 @@ public class PublicProfile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ageVerificationStatus, ageVerified, backgroundType, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, displayName, groups, hasVrcPlus, iconFrame, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, publicWorlds, representedGroup, themeId, totalPublicWorldsCount, trustTags, worldFavoriteLists);
+    return Objects.hash(ageVerificationStatus, ageVerified, backgroundTextureId, backgroundType, badges, bannerColor, bannerType, bannerUrl, bio, bioLinks, displayName, groups, hasVrcPlus, iconFrame, iconUrl, id, isEconomyCreator, languages, nameplateEffect, profileEffect, pronouns, publicWorlds, representedGroup, themeButtonColor, themeIconColor, themeId, themeSubtextColor, totalPublicWorldsCount, trustTags, worldFavoriteLists);
   }
 
   @Override
@@ -779,6 +880,7 @@ public class PublicProfile {
     sb.append("class PublicProfile {\n");
     sb.append("    ageVerificationStatus: ").append(toIndentedString(ageVerificationStatus)).append("\n");
     sb.append("    ageVerified: ").append(toIndentedString(ageVerified)).append("\n");
+    sb.append("    backgroundTextureId: ").append(toIndentedString(backgroundTextureId)).append("\n");
     sb.append("    backgroundType: ").append(toIndentedString(backgroundType)).append("\n");
     sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
@@ -799,7 +901,10 @@ public class PublicProfile {
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
     sb.append("    publicWorlds: ").append(toIndentedString(publicWorlds)).append("\n");
     sb.append("    representedGroup: ").append(toIndentedString(representedGroup)).append("\n");
+    sb.append("    themeButtonColor: ").append(toIndentedString(themeButtonColor)).append("\n");
+    sb.append("    themeIconColor: ").append(toIndentedString(themeIconColor)).append("\n");
     sb.append("    themeId: ").append(toIndentedString(themeId)).append("\n");
+    sb.append("    themeSubtextColor: ").append(toIndentedString(themeSubtextColor)).append("\n");
     sb.append("    totalPublicWorldsCount: ").append(toIndentedString(totalPublicWorldsCount)).append("\n");
     sb.append("    trustTags: ").append(toIndentedString(trustTags)).append("\n");
     sb.append("    worldFavoriteLists: ").append(toIndentedString(worldFavoriteLists)).append("\n");
@@ -821,7 +926,7 @@ public class PublicProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundType", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "displayName", "groups", "hasVrcPlus", "iconFrame", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "publicWorlds", "representedGroup", "themeId", "totalPublicWorldsCount", "trustTags", "worldFavoriteLists"));
+    openapiFields = new HashSet<String>(Arrays.asList("ageVerificationStatus", "ageVerified", "backgroundTextureId", "backgroundType", "badges", "bannerColor", "bannerType", "bannerUrl", "bio", "bioLinks", "displayName", "groups", "hasVrcPlus", "iconFrame", "iconUrl", "id", "isEconomyCreator", "languages", "nameplateEffect", "profileEffect", "pronouns", "publicWorlds", "representedGroup", "themeButtonColor", "themeIconColor", "themeId", "themeSubtextColor", "totalPublicWorldsCount", "trustTags", "worldFavoriteLists"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -851,6 +956,9 @@ public class PublicProfile {
       // validate the optional field `ageVerificationStatus`
       if (jsonObj.get("ageVerificationStatus") != null && !jsonObj.get("ageVerificationStatus").isJsonNull()) {
         AgeVerificationStatus.validateJsonElement(jsonObj.get("ageVerificationStatus"));
+      }
+      if ((jsonObj.get("backgroundTextureId") != null && !jsonObj.get("backgroundTextureId").isJsonNull()) && !jsonObj.get("backgroundTextureId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundTextureId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundTextureId").toString()));
       }
       if ((jsonObj.get("backgroundType") != null && !jsonObj.get("backgroundType").isJsonNull()) && !jsonObj.get("backgroundType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backgroundType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backgroundType").toString()));
@@ -914,16 +1022,35 @@ public class PublicProfile {
       if ((jsonObj.get("pronouns") != null && !jsonObj.get("pronouns").isJsonNull()) && !jsonObj.get("pronouns").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pronouns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pronouns").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("publicWorlds") != null && !jsonObj.get("publicWorlds").isJsonNull() && !jsonObj.get("publicWorlds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publicWorlds` to be an array in the JSON string but got `%s`", jsonObj.get("publicWorlds").toString()));
+      if (jsonObj.get("publicWorlds") != null && !jsonObj.get("publicWorlds").isJsonNull()) {
+        JsonArray jsonArraypublicWorlds = jsonObj.getAsJsonArray("publicWorlds");
+        if (jsonArraypublicWorlds != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("publicWorlds").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publicWorlds` to be an array in the JSON string but got `%s`", jsonObj.get("publicWorlds").toString()));
+          }
+
+          // validate the optional field `publicWorlds` (array)
+          for (int i = 0; i < jsonArraypublicWorlds.size(); i++) {
+            LimitedWorld.validateJsonElement(jsonArraypublicWorlds.get(i));
+          };
+        }
       }
       // validate the optional field `representedGroup`
       if (jsonObj.get("representedGroup") != null && !jsonObj.get("representedGroup").isJsonNull()) {
         ProfileRepresentedGroup.validateJsonElement(jsonObj.get("representedGroup"));
       }
+      if ((jsonObj.get("themeButtonColor") != null && !jsonObj.get("themeButtonColor").isJsonNull()) && !jsonObj.get("themeButtonColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeButtonColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeButtonColor").toString()));
+      }
+      if ((jsonObj.get("themeIconColor") != null && !jsonObj.get("themeIconColor").isJsonNull()) && !jsonObj.get("themeIconColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeIconColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeIconColor").toString()));
+      }
       if ((jsonObj.get("themeId") != null && !jsonObj.get("themeId").isJsonNull()) && !jsonObj.get("themeId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeId").toString()));
+      }
+      if ((jsonObj.get("themeSubtextColor") != null && !jsonObj.get("themeSubtextColor").isJsonNull()) && !jsonObj.get("themeSubtextColor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `themeSubtextColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("themeSubtextColor").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("trustTags") != null && !jsonObj.get("trustTags").isJsonNull() && !jsonObj.get("trustTags").isJsonArray()) {

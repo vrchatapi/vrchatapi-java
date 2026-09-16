@@ -18,6 +18,7 @@
 |**heat** | **Integer** |  |  |
 |**id** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**imageUrl** | **String** |  |  |
+|**isHypeTrainEligible** | **Boolean** |  |  [optional] |
 |**labsPublicationDate** | **String** |  |  |
 |**name** | **String** |  |  |
 |**occupants** | **Integer** |  |  |

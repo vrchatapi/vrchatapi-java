@@ -97,7 +97,7 @@ public class GroupMember {
 
   public static final String SERIALIZED_NAME_IS_SUBSCRIBED_TO_ANNOUNCEMENTS = "isSubscribedToAnnouncements";
   @SerializedName(SERIALIZED_NAME_IS_SUBSCRIBED_TO_ANNOUNCEMENTS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean isSubscribedToAnnouncements = false;
 
   public static final String SERIALIZED_NAME_IS_SUBSCRIBED_TO_EVENT_ANNOUNCEMENTS = "isSubscribedToEventAnnouncements";
@@ -127,7 +127,7 @@ public class GroupMember {
 
   public static final String SERIALIZED_NAME_MEMBERSHIP_STATUS = "membershipStatus";
   @SerializedName(SERIALIZED_NAME_MEMBERSHIP_STATUS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private GroupMemberStatus membershipStatus = GroupMemberStatus.INACTIVE;
 
   public static final String SERIALIZED_NAME_ROLE_IDS = "roleIds";
@@ -147,7 +147,7 @@ public class GroupMember {
 
   public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
   @SerializedName(SERIALIZED_NAME_VISIBILITY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String visibility;
 
   public GroupMember() {
@@ -305,7 +305,7 @@ public class GroupMember {
   }
 
 
-  public GroupMember isSubscribedToAnnouncements(@javax.annotation.Nonnull Boolean isSubscribedToAnnouncements) {
+  public GroupMember isSubscribedToAnnouncements(@javax.annotation.Nullable Boolean isSubscribedToAnnouncements) {
     this.isSubscribedToAnnouncements = isSubscribedToAnnouncements;
     return this;
   }
@@ -314,12 +314,12 @@ public class GroupMember {
    * Get isSubscribedToAnnouncements
    * @return isSubscribedToAnnouncements
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getIsSubscribedToAnnouncements() {
     return isSubscribedToAnnouncements;
   }
 
-  public void setIsSubscribedToAnnouncements(@javax.annotation.Nonnull Boolean isSubscribedToAnnouncements) {
+  public void setIsSubscribedToAnnouncements(@javax.annotation.Nullable Boolean isSubscribedToAnnouncements) {
     this.isSubscribedToAnnouncements = isSubscribedToAnnouncements;
   }
 
@@ -427,7 +427,7 @@ public class GroupMember {
   }
 
 
-  public GroupMember membershipStatus(@javax.annotation.Nonnull GroupMemberStatus membershipStatus) {
+  public GroupMember membershipStatus(@javax.annotation.Nullable GroupMemberStatus membershipStatus) {
     this.membershipStatus = membershipStatus;
     return this;
   }
@@ -436,12 +436,12 @@ public class GroupMember {
    * Get membershipStatus
    * @return membershipStatus
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public GroupMemberStatus getMembershipStatus() {
     return membershipStatus;
   }
 
-  public void setMembershipStatus(@javax.annotation.Nonnull GroupMemberStatus membershipStatus) {
+  public void setMembershipStatus(@javax.annotation.Nullable GroupMemberStatus membershipStatus) {
     this.membershipStatus = membershipStatus;
   }
 
@@ -511,7 +511,7 @@ public class GroupMember {
   }
 
 
-  public GroupMember visibility(@javax.annotation.Nonnull String visibility) {
+  public GroupMember visibility(@javax.annotation.Nullable String visibility) {
     this.visibility = visibility;
     return this;
   }
@@ -520,12 +520,12 @@ public class GroupMember {
    * Get visibility
    * @return visibility
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getVisibility() {
     return visibility;
   }
 
-  public void setVisibility(@javax.annotation.Nonnull String visibility) {
+  public void setVisibility(@javax.annotation.Nullable String visibility) {
     this.visibility = visibility;
   }
 
@@ -621,7 +621,7 @@ public class GroupMember {
     openapiFields = new HashSet<String>(Arrays.asList("acceptedByDisplayName", "acceptedById", "bannedAt", "createdAt", "groupId", "hasJoinedFromPurchase", "id", "isRepresenting", "isSubscribedToAnnouncements", "isSubscribedToEventAnnouncements", "joinedAt", "lastPostReadAt", "mRoleIds", "managerNotes", "membershipStatus", "roleIds", "user", "userId", "visibility"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("groupId", "id", "isRepresenting", "isSubscribedToAnnouncements", "joinedAt", "lastPostReadAt", "mRoleIds", "membershipStatus", "roleIds", "userId", "visibility"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("groupId", "id", "isRepresenting", "mRoleIds", "roleIds", "userId"));
   }
 
   /**
@@ -673,8 +673,10 @@ public class GroupMember {
       if ((jsonObj.get("managerNotes") != null && !jsonObj.get("managerNotes").isJsonNull()) && !jsonObj.get("managerNotes").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `managerNotes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managerNotes").toString()));
       }
-      // validate the required field `membershipStatus`
-      GroupMemberStatus.validateJsonElement(jsonObj.get("membershipStatus"));
+      // validate the optional field `membershipStatus`
+      if (jsonObj.get("membershipStatus") != null && !jsonObj.get("membershipStatus").isJsonNull()) {
+        GroupMemberStatus.validateJsonElement(jsonObj.get("membershipStatus"));
+      }
       // ensure the required json array is present
       if (jsonObj.get("roleIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
@@ -688,7 +690,7 @@ public class GroupMember {
       if (!jsonObj.get("userId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
       }
-      if (!jsonObj.get("visibility").isJsonPrimitive()) {
+      if ((jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) && !jsonObj.get("visibility").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `visibility` to be a primitive type in the JSON string but got `%s`", jsonObj.get("visibility").toString()));
       }
   }

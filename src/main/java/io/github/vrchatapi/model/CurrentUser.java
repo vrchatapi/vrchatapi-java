@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.AccountDeletionLog;
 import io.github.vrchatapi.model.AgeVerificationStatus;
-import io.github.vrchatapi.model.Badge;
 import io.github.vrchatapi.model.CurrentUserPlatformHistoryInner;
 import io.github.vrchatapi.model.CurrentUserPresence;
 import io.github.vrchatapi.model.DeveloperType;
@@ -119,11 +118,6 @@ public class CurrentUser {
   @javax.annotation.Nullable
   private String authToken;
 
-  public static final String SERIALIZED_NAME_BADGES = "badges";
-  @SerializedName(SERIALIZED_NAME_BADGES)
-  @javax.annotation.Nullable
-  private List<Badge> badges = new ArrayList<>();
-
   public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
   @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
   @javax.annotation.Nullable
@@ -133,16 +127,6 @@ public class CurrentUser {
   @SerializedName(SERIALIZED_NAME_BANNER_TYPE)
   @javax.annotation.Nullable
   private String bannerType;
-
-  public static final String SERIALIZED_NAME_BIO = "bio";
-  @SerializedName(SERIALIZED_NAME_BIO)
-  @javax.annotation.Nonnull
-  private String bio;
-
-  public static final String SERIALIZED_NAME_BIO_LINKS = "bioLinks";
-  @SerializedName(SERIALIZED_NAME_BIO_LINKS)
-  @javax.annotation.Nonnull
-  private List<String> bioLinks = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPLETED_TUTORIALS = "completedTutorials";
   @SerializedName(SERIALIZED_NAME_COMPLETED_TUTORIALS)
@@ -420,16 +404,6 @@ public class CurrentUser {
   @javax.annotation.Nullable
   private String profileEffect;
 
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE = "profilePicOverride";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE)
-  @javax.annotation.Nonnull
-  private String profilePicOverride;
-
-  public static final String SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL = "profilePicOverrideThumbnail";
-  @SerializedName(SERIALIZED_NAME_PROFILE_PIC_OVERRIDE_THUMBNAIL)
-  @javax.annotation.Nonnull
-  private String profilePicOverrideThumbnail;
-
   public static final String SERIALIZED_NAME_PRONOUNS = "pronouns";
   @SerializedName(SERIALIZED_NAME_PRONOUNS)
   @javax.annotation.Nonnull
@@ -539,11 +513,6 @@ public class CurrentUser {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_USER_ICON = "userIcon";
-  @SerializedName(SERIALIZED_NAME_USER_ICON)
-  @javax.annotation.Nonnull
-  private String userIcon;
 
   public static final String SERIALIZED_NAME_USER_LANGUAGE = "userLanguage";
   @SerializedName(SERIALIZED_NAME_USER_LANGUAGE)
@@ -805,33 +774,6 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser badges(@javax.annotation.Nullable List<Badge> badges) {
-    this.badges = badges;
-    return this;
-  }
-
-  public CurrentUser addBadgesItem(Badge badgesItem) {
-    if (this.badges == null) {
-      this.badges = new ArrayList<>();
-    }
-    this.badges.add(badgesItem);
-    return this;
-  }
-
-  /**
-   *  
-   * @return badges
-   */
-  @javax.annotation.Nullable
-  public List<Badge> getBadges() {
-    return badges;
-  }
-
-  public void setBadges(@javax.annotation.Nullable List<Badge> badges) {
-    this.badges = badges;
-  }
-
-
   public CurrentUser bannerColor(@javax.annotation.Nullable String bannerColor) {
     this.bannerColor = bannerColor;
     return this;
@@ -867,52 +809,6 @@ public class CurrentUser {
 
   public void setBannerType(@javax.annotation.Nullable String bannerType) {
     this.bannerType = bannerType;
-  }
-
-
-  public CurrentUser bio(@javax.annotation.Nonnull String bio) {
-    this.bio = bio;
-    return this;
-  }
-
-  /**
-   * Get bio
-   * @return bio
-   */
-  @javax.annotation.Nonnull
-  public String getBio() {
-    return bio;
-  }
-
-  public void setBio(@javax.annotation.Nonnull String bio) {
-    this.bio = bio;
-  }
-
-
-  public CurrentUser bioLinks(@javax.annotation.Nonnull List<String> bioLinks) {
-    this.bioLinks = bioLinks;
-    return this;
-  }
-
-  public CurrentUser addBioLinksItem(String bioLinksItem) {
-    if (this.bioLinks == null) {
-      this.bioLinks = new ArrayList<>();
-    }
-    this.bioLinks.add(bioLinksItem);
-    return this;
-  }
-
-  /**
-   *  
-   * @return bioLinks
-   */
-  @javax.annotation.Nonnull
-  public List<String> getBioLinks() {
-    return bioLinks;
-  }
-
-  public void setBioLinks(@javax.annotation.Nonnull List<String> bioLinks) {
-    this.bioLinks = bioLinks;
   }
 
 
@@ -2037,44 +1933,6 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser profilePicOverride(@javax.annotation.Nonnull String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverride
-   * @return profilePicOverride
-   */
-  @javax.annotation.Nonnull
-  public String getProfilePicOverride() {
-    return profilePicOverride;
-  }
-
-  public void setProfilePicOverride(@javax.annotation.Nonnull String profilePicOverride) {
-    this.profilePicOverride = profilePicOverride;
-  }
-
-
-  public CurrentUser profilePicOverrideThumbnail(@javax.annotation.Nonnull String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-    return this;
-  }
-
-  /**
-   * Get profilePicOverrideThumbnail
-   * @return profilePicOverrideThumbnail
-   */
-  @javax.annotation.Nonnull
-  public String getProfilePicOverrideThumbnail() {
-    return profilePicOverrideThumbnail;
-  }
-
-  public void setProfilePicOverrideThumbnail(@javax.annotation.Nonnull String profilePicOverrideThumbnail) {
-    this.profilePicOverrideThumbnail = profilePicOverrideThumbnail;
-  }
-
-
   public CurrentUser pronouns(@javax.annotation.Nonnull String pronouns) {
     this.pronouns = pronouns;
     return this;
@@ -2517,25 +2375,6 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser userIcon(@javax.annotation.Nonnull String userIcon) {
-    this.userIcon = userIcon;
-    return this;
-  }
-
-  /**
-   * Get userIcon
-   * @return userIcon
-   */
-  @javax.annotation.Nonnull
-  public String getUserIcon() {
-    return userIcon;
-  }
-
-  public void setUserIcon(@javax.annotation.Nonnull String userIcon) {
-    this.userIcon = userIcon;
-  }
-
-
   public CurrentUser userLanguage(@javax.annotation.Nullable String userLanguage) {
     this.userLanguage = userLanguage;
     return this;
@@ -2671,11 +2510,8 @@ public class CurrentUser {
         Objects.equals(this.appleDetails, currentUser.appleDetails) &&
         Objects.equals(this.appleId, currentUser.appleId) &&
         Objects.equals(this.authToken, currentUser.authToken) &&
-        Objects.equals(this.badges, currentUser.badges) &&
         Objects.equals(this.bannerColor, currentUser.bannerColor) &&
         Objects.equals(this.bannerType, currentUser.bannerType) &&
-        Objects.equals(this.bio, currentUser.bio) &&
-        Objects.equals(this.bioLinks, currentUser.bioLinks) &&
         Objects.equals(this.completedTutorials, currentUser.completedTutorials) &&
         Objects.equals(this.contentFilters, currentUser.contentFilters) &&
         Objects.equals(this.currentAvatar, currentUser.currentAvatar) &&
@@ -2731,8 +2567,6 @@ public class CurrentUser {
         Objects.equals(this.platformHistory, currentUser.platformHistory) &&
         Objects.equals(this.presence, currentUser.presence) &&
         Objects.equals(this.profileEffect, currentUser.profileEffect) &&
-        Objects.equals(this.profilePicOverride, currentUser.profilePicOverride) &&
-        Objects.equals(this.profilePicOverrideThumbnail, currentUser.profilePicOverrideThumbnail) &&
         Objects.equals(this.pronouns, currentUser.pronouns) &&
         Objects.equals(this.pronounsHistory, currentUser.pronounsHistory) &&
         Objects.equals(this.queuedInstance, currentUser.queuedInstance) &&
@@ -2755,7 +2589,6 @@ public class CurrentUser {
         Objects.equals(this.twoFactorAuthEnabledDate, currentUser.twoFactorAuthEnabledDate) &&
         Objects.equals(this.unsubscribe, currentUser.unsubscribe) &&
         Objects.equals(this.updatedAt, currentUser.updatedAt) &&
-        Objects.equals(this.userIcon, currentUser.userIcon) &&
         Objects.equals(this.userLanguage, currentUser.userLanguage) &&
         Objects.equals(this.userLanguageCode, currentUser.userLanguageCode) &&
         Objects.equals(this.username, currentUser.username) &&
@@ -2770,7 +2603,7 @@ public class CurrentUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, activeFriends, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, appleId, authToken, badges, bannerColor, bannerType, bio, bioLinks, completedTutorials, contentFilters, currentAvatar, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, discordDetails, discordId, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friendRequestStatus, friends, googleDetails, googleId, hasBirthday, hasDiscordFriendsOptOut, hasEmail, hasLoggedInFromClient, hasPendingEmail, hasSharedConnectionsOptOut, hideContentFilterSettings, homeLocation, iconFrame, iconUrl, id, instanceId, isAdult, isBoopingEnabled, isEconomyCreator, isFriend, isTemporary, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, obfuscatedEmail, obfuscatedPendingEmail, oculusId, offlineFriends, onlineFriends, pastDisplayNames, personalizationOptOut, picoId, platform, platformHistory, presence, profileEffect, profilePicOverride, profilePicOverrideThumbnail, pronouns, pronounsHistory, queuedInstance, receiveMobileInvitations, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, temporaryExpiryDate, travelingToInstance, travelingToLocation, travelingToWorld, twitchDetails, twitchId, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userIcon, userLanguage, userLanguageCode, username, usesGeneratedPassword, viveId, worldId);
+    return Objects.hash(acceptedPrivacyVersion, acceptedTOSVersion, accountDeletionDate, accountDeletionLog, activeFriends, ageVerificationStatus, ageVerified, allowAvatarCopying, appleDetails, appleId, authToken, bannerColor, bannerType, completedTutorials, contentFilters, currentAvatar, currentAvatarImageUrl, currentAvatarTags, currentAvatarThumbnailImageUrl, dateJoined, developerType, discordDetails, discordId, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friendRequestStatus, friends, googleDetails, googleId, hasBirthday, hasDiscordFriendsOptOut, hasEmail, hasLoggedInFromClient, hasPendingEmail, hasSharedConnectionsOptOut, hideContentFilterSettings, homeLocation, iconFrame, iconUrl, id, instanceId, isAdult, isBoopingEnabled, isEconomyCreator, isFriend, isTemporary, lastActivity, lastLogin, lastMobile, lastPlatform, location, nameplateEffect, note, obfuscatedEmail, obfuscatedPendingEmail, oculusId, offlineFriends, onlineFriends, pastDisplayNames, personalizationOptOut, picoId, platform, platformHistory, presence, profileEffect, pronouns, pronounsHistory, queuedInstance, receiveMobileInvitations, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, temporaryExpiryDate, travelingToInstance, travelingToLocation, travelingToWorld, twitchDetails, twitchId, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userLanguage, userLanguageCode, username, usesGeneratedPassword, viveId, worldId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2795,11 +2628,8 @@ public class CurrentUser {
     sb.append("    appleDetails: ").append(toIndentedString(appleDetails)).append("\n");
     sb.append("    appleId: ").append(toIndentedString(appleId)).append("\n");
     sb.append("    authToken: ").append(toIndentedString(authToken)).append("\n");
-    sb.append("    badges: ").append(toIndentedString(badges)).append("\n");
     sb.append("    bannerColor: ").append(toIndentedString(bannerColor)).append("\n");
     sb.append("    bannerType: ").append(toIndentedString(bannerType)).append("\n");
-    sb.append("    bio: ").append(toIndentedString(bio)).append("\n");
-    sb.append("    bioLinks: ").append(toIndentedString(bioLinks)).append("\n");
     sb.append("    completedTutorials: ").append(toIndentedString(completedTutorials)).append("\n");
     sb.append("    contentFilters: ").append(toIndentedString(contentFilters)).append("\n");
     sb.append("    currentAvatar: ").append(toIndentedString(currentAvatar)).append("\n");
@@ -2855,8 +2685,6 @@ public class CurrentUser {
     sb.append("    platformHistory: ").append(toIndentedString(platformHistory)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("    profileEffect: ").append(toIndentedString(profileEffect)).append("\n");
-    sb.append("    profilePicOverride: ").append(toIndentedString(profilePicOverride)).append("\n");
-    sb.append("    profilePicOverrideThumbnail: ").append(toIndentedString(profilePicOverrideThumbnail)).append("\n");
     sb.append("    pronouns: ").append(toIndentedString(pronouns)).append("\n");
     sb.append("    pronounsHistory: ").append(toIndentedString(pronounsHistory)).append("\n");
     sb.append("    queuedInstance: ").append(toIndentedString(queuedInstance)).append("\n");
@@ -2879,7 +2707,6 @@ public class CurrentUser {
     sb.append("    twoFactorAuthEnabledDate: ").append(toIndentedString(twoFactorAuthEnabledDate)).append("\n");
     sb.append("    unsubscribe: ").append(toIndentedString(unsubscribe)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("    userLanguage: ").append(toIndentedString(userLanguage)).append("\n");
     sb.append("    userLanguageCode: ").append(toIndentedString(userLanguageCode)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
@@ -2904,10 +2731,10 @@ public class CurrentUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "activeFriends", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "appleId", "authToken", "badges", "bannerColor", "bannerType", "bio", "bioLinks", "completedTutorials", "contentFilters", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "discordDetails", "discordId", "displayName", "emailVerified", "fallbackAvatar", "friendGroupNames", "friendKey", "friendRequestStatus", "friends", "googleDetails", "googleId", "hasBirthday", "hasDiscordFriendsOptOut", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "hasSharedConnectionsOptOut", "hideContentFilterSettings", "homeLocation", "iconFrame", "iconUrl", "id", "instanceId", "isAdult", "isBoopingEnabled", "isEconomyCreator", "isFriend", "isTemporary", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "offlineFriends", "onlineFriends", "pastDisplayNames", "personalizationOptOut", "picoId", "platform", "platform_history", "presence", "profileEffect", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "pronounsHistory", "queuedInstance", "receiveMobileInvitations", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "temporaryExpiryDate", "travelingToInstance", "travelingToLocation", "travelingToWorld", "twitchDetails", "twitchId", "twoFactorAuthEnabled", "twoFactorAuthEnabledDate", "unsubscribe", "updated_at", "userIcon", "userLanguage", "userLanguageCode", "username", "usesGeneratedPassword", "viveId", "worldId"));
+    openapiFields = new HashSet<String>(Arrays.asList("acceptedPrivacyVersion", "acceptedTOSVersion", "accountDeletionDate", "accountDeletionLog", "activeFriends", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "appleDetails", "appleId", "authToken", "bannerColor", "bannerType", "completedTutorials", "contentFilters", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "discordDetails", "discordId", "displayName", "emailVerified", "fallbackAvatar", "friendGroupNames", "friendKey", "friendRequestStatus", "friends", "googleDetails", "googleId", "hasBirthday", "hasDiscordFriendsOptOut", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "hasSharedConnectionsOptOut", "hideContentFilterSettings", "homeLocation", "iconFrame", "iconUrl", "id", "instanceId", "isAdult", "isBoopingEnabled", "isEconomyCreator", "isFriend", "isTemporary", "last_activity", "last_login", "last_mobile", "last_platform", "location", "nameplateEffect", "note", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "offlineFriends", "onlineFriends", "pastDisplayNames", "personalizationOptOut", "picoId", "platform", "platform_history", "presence", "profileEffect", "pronouns", "pronounsHistory", "queuedInstance", "receiveMobileInvitations", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "temporaryExpiryDate", "travelingToInstance", "travelingToLocation", "travelingToWorld", "twitchDetails", "twitchId", "twoFactorAuthEnabled", "twoFactorAuthEnabledDate", "unsubscribe", "updated_at", "userLanguage", "userLanguageCode", "username", "usesGeneratedPassword", "viveId", "worldId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("acceptedTOSVersion", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "bio", "bioLinks", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "emailVerified", "friendGroupNames", "friendKey", "friends", "hasBirthday", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "homeLocation", "id", "isAdult", "isFriend", "last_login", "last_mobile", "last_platform", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "pastDisplayNames", "profilePicOverride", "profilePicOverrideThumbnail", "pronouns", "pronounsHistory", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "twoFactorAuthEnabled", "unsubscribe", "userIcon", "usesGeneratedPassword"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("acceptedTOSVersion", "ageVerificationStatus", "ageVerified", "allowAvatarCopying", "currentAvatar", "currentAvatarImageUrl", "currentAvatarTags", "currentAvatarThumbnailImageUrl", "date_joined", "developerType", "displayName", "emailVerified", "friendGroupNames", "friendKey", "friends", "hasBirthday", "hasEmail", "hasLoggedInFromClient", "hasPendingEmail", "homeLocation", "id", "isAdult", "isFriend", "last_login", "last_mobile", "last_platform", "obfuscatedEmail", "obfuscatedPendingEmail", "oculusId", "pastDisplayNames", "pronouns", "pronounsHistory", "state", "status", "statusDescription", "statusFirstTime", "statusHistory", "steamDetails", "steamId", "tags", "twoFactorAuthEnabled", "unsubscribe", "usesGeneratedPassword"));
   }
 
   /**
@@ -2964,34 +2791,11 @@ public class CurrentUser {
       if ((jsonObj.get("authToken") != null && !jsonObj.get("authToken").isJsonNull()) && !jsonObj.get("authToken").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authToken").toString()));
       }
-      if (jsonObj.get("badges") != null && !jsonObj.get("badges").isJsonNull()) {
-        JsonArray jsonArraybadges = jsonObj.getAsJsonArray("badges");
-        if (jsonArraybadges != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("badges").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `badges` to be an array in the JSON string but got `%s`", jsonObj.get("badges").toString()));
-          }
-
-          // validate the optional field `badges` (array)
-          for (int i = 0; i < jsonArraybadges.size(); i++) {
-            Badge.validateJsonElement(jsonArraybadges.get(i));
-          };
-        }
-      }
       if ((jsonObj.get("bannerColor") != null && !jsonObj.get("bannerColor").isJsonNull()) && !jsonObj.get("bannerColor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerColor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerColor").toString()));
       }
       if ((jsonObj.get("bannerType") != null && !jsonObj.get("bannerType").isJsonNull()) && !jsonObj.get("bannerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerType").toString()));
-      }
-      if (!jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("bioLinks") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("bioLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bioLinks` to be an array in the JSON string but got `%s`", jsonObj.get("bioLinks").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("completedTutorials") != null && !jsonObj.get("completedTutorials").isJsonNull() && !jsonObj.get("completedTutorials").isJsonArray()) {
@@ -3133,12 +2937,6 @@ public class CurrentUser {
       if ((jsonObj.get("profileEffect") != null && !jsonObj.get("profileEffect").isJsonNull()) && !jsonObj.get("profileEffect").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profileEffect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileEffect").toString()));
       }
-      if (!jsonObj.get("profilePicOverride").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverride` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverride").toString()));
-      }
-      if (!jsonObj.get("profilePicOverrideThumbnail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profilePicOverrideThumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profilePicOverrideThumbnail").toString()));
-      }
       if (!jsonObj.get("pronouns").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pronouns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pronouns").toString()));
       }
@@ -3184,9 +2982,6 @@ public class CurrentUser {
       }
       if ((jsonObj.get("twitchId") != null && !jsonObj.get("twitchId").isJsonNull()) && !jsonObj.get("twitchId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `twitchId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitchId").toString()));
-      }
-      if (!jsonObj.get("userIcon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userIcon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userIcon").toString()));
       }
       if ((jsonObj.get("userLanguage") != null && !jsonObj.get("userLanguage").isJsonNull()) && !jsonObj.get("userLanguage").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userLanguage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userLanguage").toString()));
