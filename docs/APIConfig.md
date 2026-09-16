@@ -79,7 +79,7 @@ Global client configuration.  The response carries decoy properties: plausible-l
 |**downloadLinkWindows** | **String** | Download link for game on the Oculus Rift website. |  |
 |**downloadUrls** | [**APIConfigDownloadURLList**](APIConfigDownloadURLList.md) |  |  |
 |**dynamicWorldRows** | [**Set&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows |  |
-|**economyLedgerBackfill** | **Boolean** | Unknown |  |
+|**economyLedgerBackfill** | **Boolean** | Unknown |  [optional] |
 |**economyLedgerMigrationStop** | **String** | Unknown |  [optional] |
 |**economyLedgerMode** | **String** | Unknown |  |
 |**economyPauseEnd** | **OffsetDateTime** | Unknown |  |

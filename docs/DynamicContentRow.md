@@ -13,6 +13,7 @@
 |**bannersTag** | **String** |  |  [optional] |
 |**categories** | **List&lt;String&gt;** |  |  [optional] |
 |**featuredResults** | **String** |  |  [optional] |
+|**groupPool** | **String** |  |  [optional] |
 |**index** | **Integer** |  |  [optional] |
 |**marketplace** | **String** |  |  [optional] |
 |**maxPrice** | **Integer** |  |  [optional] |
@@ -39,6 +40,7 @@
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**type** | **String** | Type is not present if it is a world. |  [optional] |
 |**upcomingOffsetMinutes** | **Integer** |  |  [optional] |
+|**worldPool** | **String** |  |  [optional] |
 
 
 

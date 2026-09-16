@@ -26,6 +26,8 @@
 | OPEN_VRC_PLUS_MENU | &quot;OpenVRCPlusMenu&quot; |
 | OPEN_VR_CHAT_STORE | &quot;OpenVRChatStore&quot; |
 | OPEN_WORLD_DETAILS | &quot;OpenWorldDetails&quot; |
+| OPEN_WORLDS_MENU | &quot;OpenWorldsMenu&quot; |
+| SCROLL_TO_SHELF | &quot;scrollToShelf&quot; |
 
 
 

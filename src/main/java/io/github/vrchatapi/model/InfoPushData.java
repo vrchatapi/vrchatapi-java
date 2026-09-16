@@ -119,6 +119,11 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String finalName;
 
+  public static final String SERIALIZED_NAME_HOVER_TO_JOIN = "hoverToJoin";
+  @SerializedName(SERIALIZED_NAME_HOVER_TO_JOIN)
+  @javax.annotation.Nullable
+  private Boolean hoverToJoin;
+
   public static final String SERIALIZED_NAME_ICON_IMAGE_URL = "iconImageUrl";
   @SerializedName(SERIALIZED_NAME_ICON_IMAGE_URL)
   @javax.annotation.Nullable
@@ -448,6 +453,25 @@ public class InfoPushData {
 
   public void setFinalName(@javax.annotation.Nullable String finalName) {
     this.finalName = finalName;
+  }
+
+
+  public InfoPushData hoverToJoin(@javax.annotation.Nullable Boolean hoverToJoin) {
+    this.hoverToJoin = hoverToJoin;
+    return this;
+  }
+
+  /**
+   * Get hoverToJoin
+   * @return hoverToJoin
+   */
+  @javax.annotation.Nullable
+  public Boolean getHoverToJoin() {
+    return hoverToJoin;
+  }
+
+  public void setHoverToJoin(@javax.annotation.Nullable Boolean hoverToJoin) {
+    this.hoverToJoin = hoverToJoin;
   }
 
 
@@ -804,6 +828,7 @@ public class InfoPushData {
         Objects.equals(this.domainList, infoPushData.domainList) &&
         Objects.equals(this.featuredAvatarCategoryId, infoPushData.featuredAvatarCategoryId) &&
         Objects.equals(this.finalName, infoPushData.finalName) &&
+        Objects.equals(this.hoverToJoin, infoPushData.hoverToJoin) &&
         Objects.equals(this.iconImageUrl, infoPushData.iconImageUrl) &&
         Objects.equals(this.imageUrl, infoPushData.imageUrl) &&
         Objects.equals(this.ipsQuery, infoPushData.ipsQuery) &&
@@ -829,7 +854,7 @@ public class InfoPushData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(article, authorName, avatarId, bannerImageUrl, categories, category, contentList, description, disclaimerText, domainList, featuredAvatarCategoryId, finalName, iconImageUrl, imageUrl, ipsQuery, isNew, listingIds, name, onPressed, overrideName, rows, search, shortName, template, thumbnailImageUrl, tooltipDescription, version, weight, worldTag);
+    return Objects.hash(article, authorName, avatarId, bannerImageUrl, categories, category, contentList, description, disclaimerText, domainList, featuredAvatarCategoryId, finalName, hoverToJoin, iconImageUrl, imageUrl, ipsQuery, isNew, listingIds, name, onPressed, overrideName, rows, search, shortName, template, thumbnailImageUrl, tooltipDescription, version, weight, worldTag);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -855,6 +880,7 @@ public class InfoPushData {
     sb.append("    domainList: ").append(toIndentedString(domainList)).append("\n");
     sb.append("    featuredAvatarCategoryId: ").append(toIndentedString(featuredAvatarCategoryId)).append("\n");
     sb.append("    finalName: ").append(toIndentedString(finalName)).append("\n");
+    sb.append("    hoverToJoin: ").append(toIndentedString(hoverToJoin)).append("\n");
     sb.append("    iconImageUrl: ").append(toIndentedString(iconImageUrl)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    ipsQuery: ").append(toIndentedString(ipsQuery)).append("\n");
@@ -890,7 +916,7 @@ public class InfoPushData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("article", "authorName", "avatarId", "bannerImageUrl", "categories", "category", "contentList", "description", "disclaimerText", "domainList", "featuredAvatarCategoryId", "finalName", "iconImageUrl", "imageUrl", "ipsQuery", "isNew", "listingIds", "name", "onPressed", "overrideName", "rows", "search", "shortName", "template", "thumbnailImageUrl", "tooltipDescription", "version", "weight", "worldTag"));
+    openapiFields = new HashSet<String>(Arrays.asList("article", "authorName", "avatarId", "bannerImageUrl", "categories", "category", "contentList", "description", "disclaimerText", "domainList", "featuredAvatarCategoryId", "finalName", "hoverToJoin", "iconImageUrl", "imageUrl", "ipsQuery", "isNew", "listingIds", "name", "onPressed", "overrideName", "rows", "search", "shortName", "template", "thumbnailImageUrl", "tooltipDescription", "version", "weight", "worldTag"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

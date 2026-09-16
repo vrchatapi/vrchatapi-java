@@ -79,7 +79,11 @@ public class InfoPushDataClickable {
     
     OPEN_VR_CHAT_STORE("OpenVRChatStore"),
     
-    OPEN_WORLD_DETAILS("OpenWorldDetails");
+    OPEN_WORLD_DETAILS("OpenWorldDetails"),
+    
+    OPEN_WORLDS_MENU("OpenWorldsMenu"),
+    
+    SCROLL_TO_SHELF("scrollToShelf");
 
     private String value;
 

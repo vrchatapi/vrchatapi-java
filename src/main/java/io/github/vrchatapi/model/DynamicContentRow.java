@@ -84,6 +84,11 @@ public class DynamicContentRow {
   @javax.annotation.Nullable
   private String featuredResults;
 
+  public static final String SERIALIZED_NAME_GROUP_POOL = "groupPool";
+  @SerializedName(SERIALIZED_NAME_GROUP_POOL)
+  @javax.annotation.Nullable
+  private String groupPool;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   @javax.annotation.Nullable
@@ -213,6 +218,11 @@ public class DynamicContentRow {
   @SerializedName(SERIALIZED_NAME_UPCOMING_OFFSET_MINUTES)
   @javax.annotation.Nullable
   private Integer upcomingOffsetMinutes;
+
+  public static final String SERIALIZED_NAME_WORLD_POOL = "worldPool";
+  @SerializedName(SERIALIZED_NAME_WORLD_POOL)
+  @javax.annotation.Nullable
+  private String worldPool;
 
   public DynamicContentRow() {
   }
@@ -352,6 +362,25 @@ public class DynamicContentRow {
 
   public void setFeaturedResults(@javax.annotation.Nullable String featuredResults) {
     this.featuredResults = featuredResults;
+  }
+
+
+  public DynamicContentRow groupPool(@javax.annotation.Nullable String groupPool) {
+    this.groupPool = groupPool;
+    return this;
+  }
+
+  /**
+   * Get groupPool
+   * @return groupPool
+   */
+  @javax.annotation.Nullable
+  public String getGroupPool() {
+    return groupPool;
+  }
+
+  public void setGroupPool(@javax.annotation.Nullable String groupPool) {
+    this.groupPool = groupPool;
   }
 
 
@@ -874,6 +903,25 @@ public class DynamicContentRow {
   }
 
 
+  public DynamicContentRow worldPool(@javax.annotation.Nullable String worldPool) {
+    this.worldPool = worldPool;
+    return this;
+  }
+
+  /**
+   * Get worldPool
+   * @return worldPool
+   */
+  @javax.annotation.Nullable
+  public String getWorldPool() {
+    return worldPool;
+  }
+
+  public void setWorldPool(@javax.annotation.Nullable String worldPool) {
+    this.worldPool = worldPool;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -890,6 +938,7 @@ public class DynamicContentRow {
         Objects.equals(this.bannersTag, dynamicContentRow.bannersTag) &&
         Objects.equals(this.categories, dynamicContentRow.categories) &&
         Objects.equals(this.featuredResults, dynamicContentRow.featuredResults) &&
+        Objects.equals(this.groupPool, dynamicContentRow.groupPool) &&
         Objects.equals(this.index, dynamicContentRow.index) &&
         Objects.equals(this.marketplace, dynamicContentRow.marketplace) &&
         Objects.equals(this.maxPrice, dynamicContentRow.maxPrice) &&
@@ -915,7 +964,8 @@ public class DynamicContentRow {
         Objects.equals(this.tag, dynamicContentRow.tag) &&
         Objects.equals(this.tags, dynamicContentRow.tags) &&
         Objects.equals(this.type, dynamicContentRow.type) &&
-        Objects.equals(this.upcomingOffsetMinutes, dynamicContentRow.upcomingOffsetMinutes);
+        Objects.equals(this.upcomingOffsetMinutes, dynamicContentRow.upcomingOffsetMinutes) &&
+        Objects.equals(this.worldPool, dynamicContentRow.worldPool);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -924,7 +974,7 @@ public class DynamicContentRow {
 
   @Override
   public int hashCode() {
-    return Objects.hash(anyStyle, anyTag, avatarSpecific, bannersTag, categories, featuredResults, index, marketplace, maxPrice, minOccupants, minPrice, minimumInterestCount, minimumRemainingMinutes, mode, n, name, nonFeaturedResults, notag, params, personalizedResults, platform, region, scope, shortName, sortHeading, sortOrder, sortOwnership, style, tag, tags, type, upcomingOffsetMinutes);
+    return Objects.hash(anyStyle, anyTag, avatarSpecific, bannersTag, categories, featuredResults, groupPool, index, marketplace, maxPrice, minOccupants, minPrice, minimumInterestCount, minimumRemainingMinutes, mode, n, name, nonFeaturedResults, notag, params, personalizedResults, platform, region, scope, shortName, sortHeading, sortOrder, sortOwnership, style, tag, tags, type, upcomingOffsetMinutes, worldPool);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -944,6 +994,7 @@ public class DynamicContentRow {
     sb.append("    bannersTag: ").append(toIndentedString(bannersTag)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("    featuredResults: ").append(toIndentedString(featuredResults)).append("\n");
+    sb.append("    groupPool: ").append(toIndentedString(groupPool)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    marketplace: ").append(toIndentedString(marketplace)).append("\n");
     sb.append("    maxPrice: ").append(toIndentedString(maxPrice)).append("\n");
@@ -970,6 +1021,7 @@ public class DynamicContentRow {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    upcomingOffsetMinutes: ").append(toIndentedString(upcomingOffsetMinutes)).append("\n");
+    sb.append("    worldPool: ").append(toIndentedString(worldPool)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -988,7 +1040,7 @@ public class DynamicContentRow {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("anyStyle", "anyTag", "avatarSpecific", "bannersTag", "categories", "featuredResults", "index", "marketplace", "maxPrice", "minOccupants", "minPrice", "minimumInterestCount", "minimumRemainingMinutes", "mode", "n", "name", "nonFeaturedResults", "notag", "params", "personalizedResults", "platform", "region", "scope", "shortName", "sortHeading", "sortOrder", "sortOwnership", "style", "tag", "tags", "type", "upcomingOffsetMinutes"));
+    openapiFields = new HashSet<String>(Arrays.asList("anyStyle", "anyTag", "avatarSpecific", "bannersTag", "categories", "featuredResults", "groupPool", "index", "marketplace", "maxPrice", "minOccupants", "minPrice", "minimumInterestCount", "minimumRemainingMinutes", "mode", "n", "name", "nonFeaturedResults", "notag", "params", "personalizedResults", "platform", "region", "scope", "shortName", "sortHeading", "sortOrder", "sortOwnership", "style", "tag", "tags", "type", "upcomingOffsetMinutes", "worldPool"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "platform"));
@@ -1039,6 +1091,9 @@ public class DynamicContentRow {
       }
       if ((jsonObj.get("featuredResults") != null && !jsonObj.get("featuredResults").isJsonNull()) && !jsonObj.get("featuredResults").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `featuredResults` to be a primitive type in the JSON string but got `%s`", jsonObj.get("featuredResults").toString()));
+      }
+      if ((jsonObj.get("groupPool") != null && !jsonObj.get("groupPool").isJsonNull()) && !jsonObj.get("groupPool").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `groupPool` to be a primitive type in the JSON string but got `%s`", jsonObj.get("groupPool").toString()));
       }
       if ((jsonObj.get("marketplace") != null && !jsonObj.get("marketplace").isJsonNull()) && !jsonObj.get("marketplace").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `marketplace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("marketplace").toString()));
@@ -1092,6 +1147,9 @@ public class DynamicContentRow {
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      if ((jsonObj.get("worldPool") != null && !jsonObj.get("worldPool").isJsonNull()) && !jsonObj.get("worldPool").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldPool` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldPool").toString()));
       }
   }
 
