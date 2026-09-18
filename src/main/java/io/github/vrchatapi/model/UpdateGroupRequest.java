@@ -88,6 +88,11 @@ public class UpdateGroupRequest {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_NAMEPLATE_ID = "nameplateId";
+  @SerializedName(SERIALIZED_NAME_NAMEPLATE_ID)
+  @javax.annotation.Nullable
+  private String nameplateId;
+
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
   @javax.annotation.Nullable
@@ -255,6 +260,25 @@ public class UpdateGroupRequest {
   }
 
 
+  public UpdateGroupRequest nameplateId(@javax.annotation.Nullable String nameplateId) {
+    this.nameplateId = nameplateId;
+    return this;
+  }
+
+  /**
+   * Get nameplateId
+   * @return nameplateId
+   */
+  @javax.annotation.Nullable
+  public String getNameplateId() {
+    return nameplateId;
+  }
+
+  public void setNameplateId(@javax.annotation.Nullable String nameplateId) {
+    this.nameplateId = nameplateId;
+  }
+
+
   public UpdateGroupRequest rules(@javax.annotation.Nullable String rules) {
     this.rules = rules;
     return this;
@@ -337,6 +361,7 @@ public class UpdateGroupRequest {
         Objects.equals(this.languages, updateGroupRequest.languages) &&
         Objects.equals(this.links, updateGroupRequest.links) &&
         Objects.equals(this.name, updateGroupRequest.name) &&
+        Objects.equals(this.nameplateId, updateGroupRequest.nameplateId) &&
         Objects.equals(this.rules, updateGroupRequest.rules) &&
         Objects.equals(this.shortCode, updateGroupRequest.shortCode) &&
         Objects.equals(this.tags, updateGroupRequest.tags);
@@ -348,7 +373,7 @@ public class UpdateGroupRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bannerId, description, iconId, joinState, languages, links, name, rules, shortCode, tags);
+    return Objects.hash(bannerId, description, iconId, joinState, languages, links, name, nameplateId, rules, shortCode, tags);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -369,6 +394,7 @@ public class UpdateGroupRequest {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nameplateId: ").append(toIndentedString(nameplateId)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    shortCode: ").append(toIndentedString(shortCode)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
@@ -390,7 +416,7 @@ public class UpdateGroupRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bannerId", "description", "iconId", "joinState", "languages", "links", "name", "rules", "shortCode", "tags"));
+    openapiFields = new HashSet<String>(Arrays.asList("bannerId", "description", "iconId", "joinState", "languages", "links", "name", "nameplateId", "rules", "shortCode", "tags"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -440,6 +466,9 @@ public class UpdateGroupRequest {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("nameplateId") != null && !jsonObj.get("nameplateId").isJsonNull()) && !jsonObj.get("nameplateId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nameplateId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nameplateId").toString()));
       }
       if ((jsonObj.get("rules") != null && !jsonObj.get("rules").isJsonNull()) && !jsonObj.get("rules").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rules` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rules").toString()));
