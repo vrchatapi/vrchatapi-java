@@ -168,7 +168,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreatePropRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CreateWorldRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CurrentUser.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CurrentUserPlatformHistoryInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.CurrentUserPresence.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.DeclineGroupInviteRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Disable2FAResult.CustomTypeAdapterFactory());
@@ -301,6 +300,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Permission.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.PermissionData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.PlatformBuildInfo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.PlatformHistoryEntry.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.PlayerModeration.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.Print.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new io.github.vrchatapi.model.PrintFiles.CustomTypeAdapterFactory());

@@ -45,7 +45,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * Default profile theme colours, each a hex RGB triplet without a leading &#x60;#&#x60;.
+ * Default profile theme colors.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class APIConfigProfileDefaults {

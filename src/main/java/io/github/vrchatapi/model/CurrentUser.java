@@ -20,11 +20,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.AccountDeletionLog;
 import io.github.vrchatapi.model.AgeVerificationStatus;
-import io.github.vrchatapi.model.CurrentUserPlatformHistoryInner;
 import io.github.vrchatapi.model.CurrentUserPresence;
 import io.github.vrchatapi.model.DeveloperType;
 import io.github.vrchatapi.model.DiscordDetails;
 import io.github.vrchatapi.model.PastDisplayName;
+import io.github.vrchatapi.model.PlatformHistoryEntry;
 import io.github.vrchatapi.model.UserState;
 import io.github.vrchatapi.model.UserStatus;
 import java.io.IOException;
@@ -397,7 +397,7 @@ public class CurrentUser {
   public static final String SERIALIZED_NAME_PLATFORM_HISTORY = "platform_history";
   @SerializedName(SERIALIZED_NAME_PLATFORM_HISTORY)
   @javax.annotation.Nullable
-  private List<CurrentUserPlatformHistoryInner> platformHistory = new ArrayList<>();
+  private List<PlatformHistoryEntry> platformHistory = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRESENCE = "presence";
   @SerializedName(SERIALIZED_NAME_PRESENCE)
@@ -728,7 +728,7 @@ public class CurrentUser {
   }
 
   /**
-   * Get appleDetails
+   * Details of an account on another service linked to this one.
    * @return appleDetails
    */
   @javax.annotation.Nullable
@@ -1209,7 +1209,7 @@ public class CurrentUser {
   }
 
   /**
-   * Get googleDetails
+   * Details of an account on another service linked to this one.
    * @return googleDetails
    */
   @javax.annotation.Nullable
@@ -1892,12 +1892,12 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser platformHistory(@javax.annotation.Nullable List<CurrentUserPlatformHistoryInner> platformHistory) {
+  public CurrentUser platformHistory(@javax.annotation.Nullable List<PlatformHistoryEntry> platformHistory) {
     this.platformHistory = platformHistory;
     return this;
   }
 
-  public CurrentUser addPlatformHistoryItem(CurrentUserPlatformHistoryInner platformHistoryItem) {
+  public CurrentUser addPlatformHistoryItem(PlatformHistoryEntry platformHistoryItem) {
     if (this.platformHistory == null) {
       this.platformHistory = new ArrayList<>();
     }
@@ -1910,11 +1910,11 @@ public class CurrentUser {
    * @return platformHistory
    */
   @javax.annotation.Nullable
-  public List<CurrentUserPlatformHistoryInner> getPlatformHistory() {
+  public List<PlatformHistoryEntry> getPlatformHistory() {
     return platformHistory;
   }
 
-  public void setPlatformHistory(@javax.annotation.Nullable List<CurrentUserPlatformHistoryInner> platformHistory) {
+  public void setPlatformHistory(@javax.annotation.Nullable List<PlatformHistoryEntry> platformHistory) {
     this.platformHistory = platformHistory;
   }
 
@@ -2150,7 +2150,7 @@ public class CurrentUser {
   }
 
   /**
-   * Get steamDetails
+   * Details of an account on another service linked to this one.
    * @return steamDetails
    */
   @javax.annotation.Nonnull
@@ -2291,7 +2291,7 @@ public class CurrentUser {
   }
 
   /**
-   * Get twitchDetails
+   * Details of an account on another service linked to this one.
    * @return twitchDetails
    */
   @javax.annotation.Nullable
@@ -2955,7 +2955,7 @@ public class CurrentUser {
 
           // validate the optional field `platform_history` (array)
           for (int i = 0; i < jsonArrayplatformHistory.size(); i++) {
-            CurrentUserPlatformHistoryInner.validateJsonElement(jsonArrayplatformHistory.get(i));
+            PlatformHistoryEntry.validateJsonElement(jsonArrayplatformHistory.get(i));
           };
         }
       }

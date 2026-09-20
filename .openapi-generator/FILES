@@ -91,7 +91,6 @@ docs/CreateProductRequest.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
-docs/CurrentUserPlatformHistoryInner.md
 docs/CurrentUserPresence.md
 docs/DeclineGroupInviteRequest.md
 docs/DeveloperType.md
@@ -267,6 +266,7 @@ docs/PerformanceRatings.md
 docs/Permission.md
 docs/PermissionData.md
 docs/PlatformBuildInfo.md
+docs/PlatformHistoryEntry.md
 docs/PlayerModeration.md
 docs/PlayerModerationType.md
 docs/PlayermoderationApi.md
@@ -530,7 +530,6 @@ src/main/java/io/github/vrchatapi/model/CreateProductRequest.java
 src/main/java/io/github/vrchatapi/model/CreatePropRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
-src/main/java/io/github/vrchatapi/model/CurrentUserPlatformHistoryInner.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeclineGroupInviteRequest.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
@@ -695,6 +694,7 @@ src/main/java/io/github/vrchatapi/model/PerformanceRatings.java
 src/main/java/io/github/vrchatapi/model/Permission.java
 src/main/java/io/github/vrchatapi/model/PermissionData.java
 src/main/java/io/github/vrchatapi/model/PlatformBuildInfo.java
+src/main/java/io/github/vrchatapi/model/PlatformHistoryEntry.java
 src/main/java/io/github/vrchatapi/model/PlayerModeration.java
 src/main/java/io/github/vrchatapi/model/PlayerModerationType.java
 src/main/java/io/github/vrchatapi/model/Print.java

@@ -495,7 +495,7 @@ public class InventoryApi {
         return localVarCall;
     }
     /**
-     * Build call for getCosmeticIndex
+     * Build call for getCosmetics
      * @param itemType The kind of cosmetic to list. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -509,7 +509,7 @@ public class InventoryApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticIndexCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -555,13 +555,13 @@ public class InventoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCosmeticIndexValidateBeforeCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCosmeticsValidateBeforeCall(@javax.annotation.Nonnull String itemType, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'itemType' is set
         if (itemType == null) {
-            throw new ApiException("Missing the required parameter 'itemType' when calling getCosmeticIndex(Async)");
+            throw new ApiException("Missing the required parameter 'itemType' when calling getCosmetics(Async)");
         }
 
-        return getCosmeticIndexCall(itemType, _callback);
+        return getCosmeticsCall(itemType, _callback);
 
     }
 
@@ -580,8 +580,8 @@ public class InventoryApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public List<InventoryTemplate> getCosmeticIndex(@javax.annotation.Nonnull String itemType) throws ApiException {
-        ApiResponse<List<InventoryTemplate>> localVarResp = getCosmeticIndexWithHttpInfo(itemType);
+    public List<InventoryTemplate> getCosmetics(@javax.annotation.Nonnull String itemType) throws ApiException {
+        ApiResponse<List<InventoryTemplate>> localVarResp = getCosmeticsWithHttpInfo(itemType);
         return localVarResp.getData();
     }
 
@@ -600,8 +600,8 @@ public class InventoryApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<InventoryTemplate>> getCosmeticIndexWithHttpInfo(@javax.annotation.Nonnull String itemType) throws ApiException {
-        okhttp3.Call localVarCall = getCosmeticIndexValidateBeforeCall(itemType, null);
+    public ApiResponse<List<InventoryTemplate>> getCosmeticsWithHttpInfo(@javax.annotation.Nonnull String itemType) throws ApiException {
+        okhttp3.Call localVarCall = getCosmeticsValidateBeforeCall(itemType, null);
         Type localVarReturnType = new TypeToken<List<InventoryTemplate>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -622,9 +622,9 @@ public class InventoryApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCosmeticIndexAsync(@javax.annotation.Nonnull String itemType, final ApiCallback<List<InventoryTemplate>> _callback) throws ApiException {
+    public okhttp3.Call getCosmeticsAsync(@javax.annotation.Nonnull String itemType, final ApiCallback<List<InventoryTemplate>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCosmeticIndexValidateBeforeCall(itemType, _callback);
+        okhttp3.Call localVarCall = getCosmeticsValidateBeforeCall(itemType, _callback);
         Type localVarReturnType = new TypeToken<List<InventoryTemplate>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

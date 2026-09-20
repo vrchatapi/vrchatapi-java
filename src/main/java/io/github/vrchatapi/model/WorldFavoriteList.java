@@ -47,7 +47,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * A world favorite group summarised for a public profile, with a sample of its worlds&#39; thumbnails.
+ * A world favorite group as a public profile lists it, with a sample of its worlds&#39; thumbnails.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class WorldFavoriteList {

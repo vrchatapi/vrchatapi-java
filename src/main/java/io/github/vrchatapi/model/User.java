@@ -26,9 +26,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -97,7 +95,7 @@ public class User {
   public static final String SERIALIZED_NAME_APPLE_DETAILS = "appleDetails";
   @SerializedName(SERIALIZED_NAME_APPLE_DETAILS)
   @javax.annotation.Nullable
-  private Map<String, Object> appleDetails = new HashMap<>();
+  private Object appleDetails;
 
   public static final String SERIALIZED_NAME_BANNER_COLOR = "bannerColor";
   @SerializedName(SERIALIZED_NAME_BANNER_COLOR)
@@ -403,29 +401,21 @@ public class User {
   }
 
 
-  public User appleDetails(@javax.annotation.Nullable Map<String, Object> appleDetails) {
+  public User appleDetails(@javax.annotation.Nullable Object appleDetails) {
     this.appleDetails = appleDetails;
     return this;
   }
 
-  public User putAppleDetailsItem(String key, Object appleDetailsItem) {
-    if (this.appleDetails == null) {
-      this.appleDetails = new HashMap<>();
-    }
-    this.appleDetails.put(key, appleDetailsItem);
-    return this;
-  }
-
   /**
-   * Get appleDetails
+   * Details of an account on another service linked to this one.
    * @return appleDetails
    */
   @javax.annotation.Nullable
-  public Map<String, Object> getAppleDetails() {
+  public Object getAppleDetails() {
     return appleDetails;
   }
 
-  public void setAppleDetails(@javax.annotation.Nullable Map<String, Object> appleDetails) {
+  public void setAppleDetails(@javax.annotation.Nullable Object appleDetails) {
     this.appleDetails = appleDetails;
   }
 

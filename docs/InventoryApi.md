@@ -7,7 +7,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**consumeOwnInventoryItem**](InventoryApi.md#consumeOwnInventoryItem) | **PUT** /inventory/{inventoryItemId}/consume | Consume Own Inventory Item |
 | [**deleteOwnInventoryItem**](InventoryApi.md#deleteOwnInventoryItem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item |
 | [**equipOwnInventoryItem**](InventoryApi.md#equipOwnInventoryItem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item |
-| [**getCosmeticIndex**](InventoryApi.md#getCosmeticIndex) | **GET** /cosmetics/index/{itemType} | List Cosmetics |
+| [**getCosmetics**](InventoryApi.md#getCosmetics) | **GET** /cosmetics/index/{itemType} | List Cosmetics |
 | [**getInventory**](InventoryApi.md#getInventory) | **GET** /inventory | Get Inventory |
 | [**getInventoryCollections**](InventoryApi.md#getInventoryCollections) | **GET** /inventory/collections | List Inventory Collections |
 | [**getInventoryDrops**](InventoryApi.md#getInventoryDrops) | **GET** /inventory/drops | List Inventory Drops |
@@ -237,9 +237,9 @@ public class Example {
 | **400** | Error response when trying to equip an InventoryItem lacking the equippable flag. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
-<a id="getCosmeticIndex"></a>
-# **getCosmeticIndex**
-> List&lt;InventoryTemplate&gt; getCosmeticIndex(itemType)
+<a id="getCosmetics"></a>
+# **getCosmetics**
+> List&lt;InventoryTemplate&gt; getCosmetics(itemType)
 
 List Cosmetics
 
@@ -269,10 +269,10 @@ public class Example {
     InventoryApi apiInstance = new InventoryApi(defaultClient);
     String itemType = "droneskin"; // String | The kind of cosmetic to list.
     try {
-      List<InventoryTemplate> result = apiInstance.getCosmeticIndex(itemType);
+      List<InventoryTemplate> result = apiInstance.getCosmetics(itemType);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling InventoryApi#getCosmeticIndex");
+      System.err.println("Exception when calling InventoryApi#getCosmetics");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
