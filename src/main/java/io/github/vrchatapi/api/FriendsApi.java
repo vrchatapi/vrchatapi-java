@@ -374,6 +374,7 @@ public class FriendsApi {
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when sending friend requests faster than the account is allowed to. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call friendCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
@@ -446,6 +447,7 @@ public class FriendsApi {
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when sending friend requests faster than the account is allowed to. </td><td>  -  </td></tr>
      </table>
      */
     public Notification friend(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -467,6 +469,7 @@ public class FriendsApi {
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when sending friend requests faster than the account is allowed to. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Notification> friendWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
@@ -490,6 +493,7 @@ public class FriendsApi {
         <tr><td> 400 </td><td> Bad request error response when sending a friend request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when sending friend requests faster than the account is allowed to. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call friendAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Notification> _callback) throws ApiException {

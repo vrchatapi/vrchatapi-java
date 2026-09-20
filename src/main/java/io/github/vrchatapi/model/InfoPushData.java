@@ -20,8 +20,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.DynamicContentRow;
 import io.github.vrchatapi.model.InfoPushDataArticle;
+import io.github.vrchatapi.model.InfoPushDataCallToAction;
 import io.github.vrchatapi.model.InfoPushDataCategory;
 import io.github.vrchatapi.model.InfoPushDataClickable;
+import io.github.vrchatapi.model.InfoPushDataDeliveryBehavior;
 import io.github.vrchatapi.model.InfoPushDataDomainListInner;
 import io.github.vrchatapi.model.InfoPushDataSearch;
 import io.github.vrchatapi.model.InfoPushIpsQuery;
@@ -79,6 +81,11 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String bannerImageUrl;
 
+  public static final String SERIALIZED_NAME_BODY = "body";
+  @SerializedName(SERIALIZED_NAME_BODY)
+  @javax.annotation.Nullable
+  private String body;
+
   public static final String SERIALIZED_NAME_CATEGORIES = "categories";
   @SerializedName(SERIALIZED_NAME_CATEGORIES)
   @javax.annotation.Nullable
@@ -93,6 +100,16 @@ public class InfoPushData {
   @SerializedName(SERIALIZED_NAME_CONTENT_LIST)
   @javax.annotation.Nullable
   private DynamicContentRow contentList;
+
+  public static final String SERIALIZED_NAME_CTA = "cta";
+  @SerializedName(SERIALIZED_NAME_CTA)
+  @javax.annotation.Nullable
+  private InfoPushDataCallToAction cta;
+
+  public static final String SERIALIZED_NAME_DELIVERY_BEHAVIOR = "deliveryBehavior";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_BEHAVIOR)
+  @javax.annotation.Nullable
+  private InfoPushDataDeliveryBehavior deliveryBehavior;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -129,6 +146,11 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String iconImageUrl;
 
+  public static final String SERIALIZED_NAME_IMAGE_FILE_ID = "imageFileId";
+  @SerializedName(SERIALIZED_NAME_IMAGE_FILE_ID)
+  @javax.annotation.Nullable
+  private String imageFileId;
+
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
   @javax.annotation.Nullable
@@ -148,6 +170,11 @@ public class InfoPushData {
   @SerializedName(SERIALIZED_NAME_LISTING_IDS)
   @javax.annotation.Nullable
   private List<String> listingIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_MEDIA_TYPE = "mediaType";
+  @SerializedName(SERIALIZED_NAME_MEDIA_TYPE)
+  @javax.annotation.Nullable
+  private String mediaType;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -179,6 +206,11 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String shortName;
 
+  public static final String SERIALIZED_NAME_SHOW_IN_WORLD_IDS = "showInWorldIds";
+  @SerializedName(SERIALIZED_NAME_SHOW_IN_WORLD_IDS)
+  @javax.annotation.Nullable
+  private Object showInWorldIds = null;
+
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
   @javax.annotation.Nullable
@@ -189,6 +221,11 @@ public class InfoPushData {
   @javax.annotation.Nullable
   private String thumbnailImageUrl;
 
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
+  private String title;
+
   public static final String SERIALIZED_NAME_TOOLTIP_DESCRIPTION = "tooltipDescription";
   @SerializedName(SERIALIZED_NAME_TOOLTIP_DESCRIPTION)
   @javax.annotation.Nullable
@@ -198,6 +235,16 @@ public class InfoPushData {
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
   private String version;
+
+  public static final String SERIALIZED_NAME_VIDEO_FILE_ID = "videoFileId";
+  @SerializedName(SERIALIZED_NAME_VIDEO_FILE_ID)
+  @javax.annotation.Nullable
+  private String videoFileId;
+
+  public static final String SERIALIZED_NAME_VIDEO_URL = "videoUrl";
+  @SerializedName(SERIALIZED_NAME_VIDEO_URL)
+  @javax.annotation.Nullable
+  private String videoUrl;
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
@@ -288,6 +335,25 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData body(@javax.annotation.Nullable String body) {
+    this.body = body;
+    return this;
+  }
+
+  /**
+   * Get body
+   * @return body
+   */
+  @javax.annotation.Nullable
+  public String getBody() {
+    return body;
+  }
+
+  public void setBody(@javax.annotation.Nullable String body) {
+    this.body = body;
+  }
+
+
   public InfoPushData categories(@javax.annotation.Nullable List<InfoPushDataCategory> categories) {
     this.categories = categories;
     return this;
@@ -350,6 +416,44 @@ public class InfoPushData {
 
   public void setContentList(@javax.annotation.Nullable DynamicContentRow contentList) {
     this.contentList = contentList;
+  }
+
+
+  public InfoPushData cta(@javax.annotation.Nullable InfoPushDataCallToAction cta) {
+    this.cta = cta;
+    return this;
+  }
+
+  /**
+   * Get cta
+   * @return cta
+   */
+  @javax.annotation.Nullable
+  public InfoPushDataCallToAction getCta() {
+    return cta;
+  }
+
+  public void setCta(@javax.annotation.Nullable InfoPushDataCallToAction cta) {
+    this.cta = cta;
+  }
+
+
+  public InfoPushData deliveryBehavior(@javax.annotation.Nullable InfoPushDataDeliveryBehavior deliveryBehavior) {
+    this.deliveryBehavior = deliveryBehavior;
+    return this;
+  }
+
+  /**
+   * Get deliveryBehavior
+   * @return deliveryBehavior
+   */
+  @javax.annotation.Nullable
+  public InfoPushDataDeliveryBehavior getDeliveryBehavior() {
+    return deliveryBehavior;
+  }
+
+  public void setDeliveryBehavior(@javax.annotation.Nullable InfoPushDataDeliveryBehavior deliveryBehavior) {
+    this.deliveryBehavior = deliveryBehavior;
   }
 
 
@@ -494,6 +598,25 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData imageFileId(@javax.annotation.Nullable String imageFileId) {
+    this.imageFileId = imageFileId;
+    return this;
+  }
+
+  /**
+   * Get imageFileId
+   * @return imageFileId
+   */
+  @javax.annotation.Nullable
+  public String getImageFileId() {
+    return imageFileId;
+  }
+
+  public void setImageFileId(@javax.annotation.Nullable String imageFileId) {
+    this.imageFileId = imageFileId;
+  }
+
+
   public InfoPushData imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
@@ -575,6 +698,25 @@ public class InfoPushData {
 
   public void setListingIds(@javax.annotation.Nullable List<String> listingIds) {
     this.listingIds = listingIds;
+  }
+
+
+  public InfoPushData mediaType(@javax.annotation.Nullable String mediaType) {
+    this.mediaType = mediaType;
+    return this;
+  }
+
+  /**
+   * Get mediaType
+   * @return mediaType
+   */
+  @javax.annotation.Nullable
+  public String getMediaType() {
+    return mediaType;
+  }
+
+  public void setMediaType(@javax.annotation.Nullable String mediaType) {
+    this.mediaType = mediaType;
   }
 
 
@@ -692,6 +834,25 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData showInWorldIds(@javax.annotation.Nullable Object showInWorldIds) {
+    this.showInWorldIds = showInWorldIds;
+    return this;
+  }
+
+  /**
+   * Get showInWorldIds
+   * @return showInWorldIds
+   */
+  @javax.annotation.Nullable
+  public Object getShowInWorldIds() {
+    return showInWorldIds;
+  }
+
+  public void setShowInWorldIds(@javax.annotation.Nullable Object showInWorldIds) {
+    this.showInWorldIds = showInWorldIds;
+  }
+
+
   public InfoPushData template(@javax.annotation.Nullable String template) {
     this.template = template;
     return this;
@@ -730,6 +891,25 @@ public class InfoPushData {
   }
 
 
+  public InfoPushData title(@javax.annotation.Nullable String title) {
+    this.title = title;
+    return this;
+  }
+
+  /**
+   * Get title
+   * @return title
+   */
+  @javax.annotation.Nullable
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(@javax.annotation.Nullable String title) {
+    this.title = title;
+  }
+
+
   public InfoPushData tooltipDescription(@javax.annotation.Nullable String tooltipDescription) {
     this.tooltipDescription = tooltipDescription;
     return this;
@@ -765,6 +945,44 @@ public class InfoPushData {
 
   public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
+  }
+
+
+  public InfoPushData videoFileId(@javax.annotation.Nullable String videoFileId) {
+    this.videoFileId = videoFileId;
+    return this;
+  }
+
+  /**
+   * Get videoFileId
+   * @return videoFileId
+   */
+  @javax.annotation.Nullable
+  public String getVideoFileId() {
+    return videoFileId;
+  }
+
+  public void setVideoFileId(@javax.annotation.Nullable String videoFileId) {
+    this.videoFileId = videoFileId;
+  }
+
+
+  public InfoPushData videoUrl(@javax.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
+    return this;
+  }
+
+  /**
+   * Get videoUrl
+   * @return videoUrl
+   */
+  @javax.annotation.Nullable
+  public String getVideoUrl() {
+    return videoUrl;
+  }
+
+  public void setVideoUrl(@javax.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
   }
 
 
@@ -820,9 +1038,12 @@ public class InfoPushData {
         Objects.equals(this.authorName, infoPushData.authorName) &&
         Objects.equals(this.avatarId, infoPushData.avatarId) &&
         Objects.equals(this.bannerImageUrl, infoPushData.bannerImageUrl) &&
+        Objects.equals(this.body, infoPushData.body) &&
         Objects.equals(this.categories, infoPushData.categories) &&
         Objects.equals(this.category, infoPushData.category) &&
         Objects.equals(this.contentList, infoPushData.contentList) &&
+        Objects.equals(this.cta, infoPushData.cta) &&
+        Objects.equals(this.deliveryBehavior, infoPushData.deliveryBehavior) &&
         Objects.equals(this.description, infoPushData.description) &&
         Objects.equals(this.disclaimerText, infoPushData.disclaimerText) &&
         Objects.equals(this.domainList, infoPushData.domainList) &&
@@ -830,20 +1051,26 @@ public class InfoPushData {
         Objects.equals(this.finalName, infoPushData.finalName) &&
         Objects.equals(this.hoverToJoin, infoPushData.hoverToJoin) &&
         Objects.equals(this.iconImageUrl, infoPushData.iconImageUrl) &&
+        Objects.equals(this.imageFileId, infoPushData.imageFileId) &&
         Objects.equals(this.imageUrl, infoPushData.imageUrl) &&
         Objects.equals(this.ipsQuery, infoPushData.ipsQuery) &&
         Objects.equals(this.isNew, infoPushData.isNew) &&
         Objects.equals(this.listingIds, infoPushData.listingIds) &&
+        Objects.equals(this.mediaType, infoPushData.mediaType) &&
         Objects.equals(this.name, infoPushData.name) &&
         Objects.equals(this.onPressed, infoPushData.onPressed) &&
         Objects.equals(this.overrideName, infoPushData.overrideName) &&
         Objects.equals(this.rows, infoPushData.rows) &&
         Objects.equals(this.search, infoPushData.search) &&
         Objects.equals(this.shortName, infoPushData.shortName) &&
+        Objects.equals(this.showInWorldIds, infoPushData.showInWorldIds) &&
         Objects.equals(this.template, infoPushData.template) &&
         Objects.equals(this.thumbnailImageUrl, infoPushData.thumbnailImageUrl) &&
+        Objects.equals(this.title, infoPushData.title) &&
         Objects.equals(this.tooltipDescription, infoPushData.tooltipDescription) &&
         Objects.equals(this.version, infoPushData.version) &&
+        Objects.equals(this.videoFileId, infoPushData.videoFileId) &&
+        Objects.equals(this.videoUrl, infoPushData.videoUrl) &&
         Objects.equals(this.weight, infoPushData.weight) &&
         Objects.equals(this.worldTag, infoPushData.worldTag);
   }
@@ -854,7 +1081,7 @@ public class InfoPushData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(article, authorName, avatarId, bannerImageUrl, categories, category, contentList, description, disclaimerText, domainList, featuredAvatarCategoryId, finalName, hoverToJoin, iconImageUrl, imageUrl, ipsQuery, isNew, listingIds, name, onPressed, overrideName, rows, search, shortName, template, thumbnailImageUrl, tooltipDescription, version, weight, worldTag);
+    return Objects.hash(article, authorName, avatarId, bannerImageUrl, body, categories, category, contentList, cta, deliveryBehavior, description, disclaimerText, domainList, featuredAvatarCategoryId, finalName, hoverToJoin, iconImageUrl, imageFileId, imageUrl, ipsQuery, isNew, listingIds, mediaType, name, onPressed, overrideName, rows, search, shortName, showInWorldIds, template, thumbnailImageUrl, title, tooltipDescription, version, videoFileId, videoUrl, weight, worldTag);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -872,9 +1099,12 @@ public class InfoPushData {
     sb.append("    authorName: ").append(toIndentedString(authorName)).append("\n");
     sb.append("    avatarId: ").append(toIndentedString(avatarId)).append("\n");
     sb.append("    bannerImageUrl: ").append(toIndentedString(bannerImageUrl)).append("\n");
+    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    contentList: ").append(toIndentedString(contentList)).append("\n");
+    sb.append("    cta: ").append(toIndentedString(cta)).append("\n");
+    sb.append("    deliveryBehavior: ").append(toIndentedString(deliveryBehavior)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    disclaimerText: ").append(toIndentedString(disclaimerText)).append("\n");
     sb.append("    domainList: ").append(toIndentedString(domainList)).append("\n");
@@ -882,20 +1112,26 @@ public class InfoPushData {
     sb.append("    finalName: ").append(toIndentedString(finalName)).append("\n");
     sb.append("    hoverToJoin: ").append(toIndentedString(hoverToJoin)).append("\n");
     sb.append("    iconImageUrl: ").append(toIndentedString(iconImageUrl)).append("\n");
+    sb.append("    imageFileId: ").append(toIndentedString(imageFileId)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    ipsQuery: ").append(toIndentedString(ipsQuery)).append("\n");
     sb.append("    isNew: ").append(toIndentedString(isNew)).append("\n");
     sb.append("    listingIds: ").append(toIndentedString(listingIds)).append("\n");
+    sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    onPressed: ").append(toIndentedString(onPressed)).append("\n");
     sb.append("    overrideName: ").append(toIndentedString(overrideName)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    search: ").append(toIndentedString(search)).append("\n");
     sb.append("    shortName: ").append(toIndentedString(shortName)).append("\n");
+    sb.append("    showInWorldIds: ").append(toIndentedString(showInWorldIds)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    thumbnailImageUrl: ").append(toIndentedString(thumbnailImageUrl)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    tooltipDescription: ").append(toIndentedString(tooltipDescription)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    videoFileId: ").append(toIndentedString(videoFileId)).append("\n");
+    sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
     sb.append("    worldTag: ").append(toIndentedString(worldTag)).append("\n");
     sb.append("}");
@@ -916,7 +1152,7 @@ public class InfoPushData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("article", "authorName", "avatarId", "bannerImageUrl", "categories", "category", "contentList", "description", "disclaimerText", "domainList", "featuredAvatarCategoryId", "finalName", "hoverToJoin", "iconImageUrl", "imageUrl", "ipsQuery", "isNew", "listingIds", "name", "onPressed", "overrideName", "rows", "search", "shortName", "template", "thumbnailImageUrl", "tooltipDescription", "version", "weight", "worldTag"));
+    openapiFields = new HashSet<String>(Arrays.asList("article", "authorName", "avatarId", "bannerImageUrl", "body", "categories", "category", "contentList", "cta", "deliveryBehavior", "description", "disclaimerText", "domainList", "featuredAvatarCategoryId", "finalName", "hoverToJoin", "iconImageUrl", "imageFileId", "imageUrl", "ipsQuery", "isNew", "listingIds", "mediaType", "name", "onPressed", "overrideName", "rows", "search", "shortName", "showInWorldIds", "template", "thumbnailImageUrl", "title", "tooltipDescription", "version", "videoFileId", "videoUrl", "weight", "worldTag"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -956,6 +1192,9 @@ public class InfoPushData {
       if ((jsonObj.get("bannerImageUrl") != null && !jsonObj.get("bannerImageUrl").isJsonNull()) && !jsonObj.get("bannerImageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bannerImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bannerImageUrl").toString()));
       }
+      if ((jsonObj.get("body") != null && !jsonObj.get("body").isJsonNull()) && !jsonObj.get("body").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("body").toString()));
+      }
       if (jsonObj.get("categories") != null && !jsonObj.get("categories").isJsonNull()) {
         JsonArray jsonArraycategories = jsonObj.getAsJsonArray("categories");
         if (jsonArraycategories != null) {
@@ -976,6 +1215,14 @@ public class InfoPushData {
       // validate the optional field `contentList`
       if (jsonObj.get("contentList") != null && !jsonObj.get("contentList").isJsonNull()) {
         DynamicContentRow.validateJsonElement(jsonObj.get("contentList"));
+      }
+      // validate the optional field `cta`
+      if (jsonObj.get("cta") != null && !jsonObj.get("cta").isJsonNull()) {
+        InfoPushDataCallToAction.validateJsonElement(jsonObj.get("cta"));
+      }
+      // validate the optional field `deliveryBehavior`
+      if (jsonObj.get("deliveryBehavior") != null && !jsonObj.get("deliveryBehavior").isJsonNull()) {
+        InfoPushDataDeliveryBehavior.validateJsonElement(jsonObj.get("deliveryBehavior"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
@@ -1006,6 +1253,9 @@ public class InfoPushData {
       if ((jsonObj.get("iconImageUrl") != null && !jsonObj.get("iconImageUrl").isJsonNull()) && !jsonObj.get("iconImageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iconImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iconImageUrl").toString()));
       }
+      if ((jsonObj.get("imageFileId") != null && !jsonObj.get("imageFileId").isJsonNull()) && !jsonObj.get("imageFileId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageFileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageFileId").toString()));
+      }
       if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
@@ -1016,6 +1266,9 @@ public class InfoPushData {
       // ensure the optional json data is an array if present
       if (jsonObj.get("listingIds") != null && !jsonObj.get("listingIds").isJsonNull() && !jsonObj.get("listingIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `listingIds` to be an array in the JSON string but got `%s`", jsonObj.get("listingIds").toString()));
+      }
+      if ((jsonObj.get("mediaType") != null && !jsonObj.get("mediaType").isJsonNull()) && !jsonObj.get("mediaType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mediaType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mediaType").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -1037,11 +1290,20 @@ public class InfoPushData {
       if ((jsonObj.get("thumbnailImageUrl") != null && !jsonObj.get("thumbnailImageUrl").isJsonNull()) && !jsonObj.get("thumbnailImageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `thumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnailImageUrl").toString()));
       }
+      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
       if ((jsonObj.get("tooltipDescription") != null && !jsonObj.get("tooltipDescription").isJsonNull()) && !jsonObj.get("tooltipDescription").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tooltipDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tooltipDescription").toString()));
       }
       if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+      }
+      if ((jsonObj.get("videoFileId") != null && !jsonObj.get("videoFileId").isJsonNull()) && !jsonObj.get("videoFileId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `videoFileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("videoFileId").toString()));
+      }
+      if ((jsonObj.get("videoUrl") != null && !jsonObj.get("videoUrl").isJsonNull()) && !jsonObj.get("videoUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `videoUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("videoUrl").toString()));
       }
       if ((jsonObj.get("worldTag") != null && !jsonObj.get("worldTag").isJsonNull()) && !jsonObj.get("worldTag").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `worldTag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("worldTag").toString()));

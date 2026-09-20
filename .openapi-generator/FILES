@@ -178,8 +178,10 @@ docs/InfoPush.md
 docs/InfoPushData.md
 docs/InfoPushDataArticle.md
 docs/InfoPushDataArticleContent.md
+docs/InfoPushDataCallToAction.md
 docs/InfoPushDataCategory.md
 docs/InfoPushDataClickable.md
+docs/InfoPushDataDeliveryBehavior.md
 docs/InfoPushDataDomainListInner.md
 docs/InfoPushDataSearch.md
 docs/InfoPushEmbeddedLink.md
@@ -612,8 +614,10 @@ src/main/java/io/github/vrchatapi/model/InfoPush.java
 src/main/java/io/github/vrchatapi/model/InfoPushData.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticle.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataArticleContent.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataCallToAction.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataCategory.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataClickable.java
+src/main/java/io/github/vrchatapi/model/InfoPushDataDeliveryBehavior.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataDomainListInner.java
 src/main/java/io/github/vrchatapi/model/InfoPushDataSearch.java
 src/main/java/io/github/vrchatapi/model/InfoPushEmbeddedLink.java

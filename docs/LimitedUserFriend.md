@@ -11,6 +11,7 @@ User object received when querying your friends list
 |**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerType** | **String** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
+|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
 |**developerType** | **DeveloperType** |  |  |
 |**discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes |  [optional] |
 |**displayName** | **String** |  |  |
