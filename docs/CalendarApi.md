@@ -639,6 +639,7 @@ Returns the specified calendar in iCalendar (ICS) format.
 import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
 import io.github.vrchatapi.api.CalendarApi;
 
@@ -646,6 +647,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
     String groupId = "groupId_example"; // String | Must be a valid group ID.
@@ -677,7 +684,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

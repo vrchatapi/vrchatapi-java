@@ -111,6 +111,7 @@ Checks if a user by a given &#x60;username&#x60;, &#x60;displayName&#x60; or &#x
 import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
 import io.github.vrchatapi.api.AuthenticationApi;
 
@@ -118,6 +119,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     String email = "email_example"; // String | Filter by email.
@@ -153,7 +160,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

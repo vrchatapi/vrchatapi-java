@@ -3268,6 +3268,7 @@ Searches Groups by name or shortCode
 import io.github.vrchatapi.ApiClient;
 import io.github.vrchatapi.ApiException;
 import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
 import io.github.vrchatapi.models.*;
 import io.github.vrchatapi.api.GroupsApi;
 
@@ -3275,6 +3276,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
     String query = "query_example"; // String | Query to search for, can be either Group Name or Group shortCode
@@ -3308,7 +3315,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
