@@ -231,6 +231,7 @@ public class AuthenticationApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a response if a user exists or not. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when missing at least 1 of the required parameters. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when checking for users faster than the caller is allowed to. Carries no body. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call checkUserExistsCall(@javax.annotation.Nullable String email, @javax.annotation.Nullable String displayName, @javax.annotation.Nullable String username, @javax.annotation.Nullable String excludeUserId, final ApiCallback _callback) throws ApiException {
@@ -314,6 +315,7 @@ public class AuthenticationApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a response if a user exists or not. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when missing at least 1 of the required parameters. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when checking for users faster than the caller is allowed to. Carries no body. </td><td>  -  </td></tr>
      </table>
      */
     public UserExists checkUserExists(@javax.annotation.Nullable String email, @javax.annotation.Nullable String displayName, @javax.annotation.Nullable String username, @javax.annotation.Nullable String excludeUserId) throws ApiException {
@@ -336,6 +338,7 @@ public class AuthenticationApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a response if a user exists or not. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when missing at least 1 of the required parameters. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when checking for users faster than the caller is allowed to. Carries no body. </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<UserExists> checkUserExistsWithHttpInfo(@javax.annotation.Nullable String email, @javax.annotation.Nullable String displayName, @javax.annotation.Nullable String username, @javax.annotation.Nullable String excludeUserId) throws ApiException {
@@ -360,6 +363,7 @@ public class AuthenticationApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Returns a response if a user exists or not. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error response when missing at least 1 of the required parameters. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Error response when checking for users faster than the caller is allowed to. Carries no body. </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call checkUserExistsAsync(@javax.annotation.Nullable String email, @javax.annotation.Nullable String displayName, @javax.annotation.Nullable String username, @javax.annotation.Nullable String excludeUserId, final ApiCallback<UserExists> _callback) throws ApiException {

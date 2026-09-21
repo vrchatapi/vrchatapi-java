@@ -165,6 +165,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Returns a response if a user exists or not. |  -  |
 | **400** | Error response when missing at least 1 of the required parameters. |  -  |
+| **429** | Error response when checking for users faster than the caller is allowed to. Carries no body. |  -  |
 
 <a id="confirmEmail"></a>
 # **confirmEmail**
