@@ -71,7 +71,7 @@ public class CalendarEventDiscovery {
   }
 
   /**
-   * Base64-encoded JSON:   type: object   properties:     dataSource:       type: string       enum:         - featured         - personalized     dataIndex:       type: integer       format: int32     phase:       type: string       enum:         - all         - live         - upcoming       description: see CalendarEventDiscoveryScope     asOf:       type: integer       format: int64       description: milliseconds since Unix epoch     paramHash:       type: string       description: Base64-encoded 256-bit hash of the original query parameters
+   * Pass back as the &#x60;nextCursor&#x60; query parameter to read the page after this one.
    * @return nextCursor
    */
   @javax.annotation.Nullable

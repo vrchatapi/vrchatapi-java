@@ -684,7 +684,7 @@ public class CalendarEvent {
   }
 
   /**
-   * So far unused, always \&quot;null\&quot;
+   * Get seriesId
    * @return seriesId
    */
   @javax.annotation.Nullable

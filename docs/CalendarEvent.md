@@ -31,7 +31,7 @@ An event scheduled on a group's calendar
 |**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
 |**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** | Group roles that may join this event |  [optional] |
-|**seriesId** | **String** | So far unused, always \&quot;null\&quot; |  [optional] |
+|**seriesId** | **String** |  |  [optional] |
 |**startsAt** | **OffsetDateTime** |  |  |
 |**tags** | **List&lt;String&gt;** | Custom tags for this event |  [optional] |
 |**title** | **String** |  |  |

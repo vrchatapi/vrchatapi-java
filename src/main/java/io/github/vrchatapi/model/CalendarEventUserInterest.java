@@ -46,7 +46,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * CalendarEventUserInterest
+ * The currently logged in user&#39;s interest in an event.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class CalendarEventUserInterest {

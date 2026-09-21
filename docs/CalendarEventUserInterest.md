@@ -2,6 +2,7 @@
 
 # CalendarEventUserInterest
 
+The currently logged in user's interest in an event.
 
 ## Properties
 
