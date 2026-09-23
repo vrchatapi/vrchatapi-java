@@ -48,7 +48,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * Notification
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class Notification {
@@ -163,7 +163,7 @@ public class Notification {
   }
 
   /**
-   * 
+   * Get message
    * @return message
    */
   @javax.annotation.Nonnull

@@ -233,7 +233,7 @@ public class UpdateAvatarRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

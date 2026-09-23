@@ -351,7 +351,7 @@ public class CreateWorldRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

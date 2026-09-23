@@ -52,7 +52,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * InfoPush
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InfoPush {
@@ -384,7 +384,7 @@ public class InfoPush {
   }
 
   /**
-   * 
+   * Get startDate
    * @return startDate
    */
   @javax.annotation.Nullable
@@ -411,7 +411,7 @@ public class InfoPush {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nonnull

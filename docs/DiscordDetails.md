@@ -3,7 +3,6 @@
 # DiscordDetails
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

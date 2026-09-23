@@ -264,7 +264,7 @@ public class GroupPost {
   }
 
   /**
-   *  
+   * Get roleIds
    * @return roleIds
    */
   @javax.annotation.Nullable

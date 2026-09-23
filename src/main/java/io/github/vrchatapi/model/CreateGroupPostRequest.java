@@ -118,7 +118,7 @@ public class CreateGroupPostRequest {
   }
 
   /**
-   *  
+   * Get roleIds
    * @return roleIds
    */
   @javax.annotation.Nullable

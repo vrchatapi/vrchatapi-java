@@ -1911,7 +1911,7 @@ public class Example {
 
 <a id="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
-> GetGroupGalleryImages200Response getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
+> Object getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
 
 Get Group Gallery Images
 
@@ -1946,7 +1946,7 @@ public class Example {
     Integer v = 56; // Integer | Response version. `2` wraps the images in a paginated object.
     Boolean approved = true; // Boolean | If specified, only returns images that have been approved or not approved.
     try {
-      GetGroupGalleryImages200Response result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
+      Object result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupGalleryImages");
@@ -1972,7 +1972,7 @@ public class Example {
 
 ### Return type
 
-[**GetGroupGalleryImages200Response**](GetGroupGalleryImages200Response.md)
+**Object**
 
 ### Authorization
 
@@ -2367,7 +2367,7 @@ public class Example {
 
 <a id="getGroupPosts"></a>
 # **getGroupPosts**
-> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
+> GroupPostsResponse getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -2400,7 +2400,7 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean publicOnly = true; // Boolean | See public posts only.
     try {
-      GetGroupPosts200Response result = apiInstance.getGroupPosts(groupId, n, offset, publicOnly);
+      GroupPostsResponse result = apiInstance.getGroupPosts(groupId, n, offset, publicOnly);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupPosts");
@@ -2424,7 +2424,7 @@ public class Example {
 
 ### Return type
 
-[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
+[**GroupPostsResponse**](GroupPostsResponse.md)
 
 ### Authorization
 
@@ -3178,7 +3178,7 @@ null (empty response body)
 
 <a id="searchGroupMembers"></a>
 # **searchGroupMembers**
-> SearchGroupMembers200Response searchGroupMembers(groupId, query, n, offset)
+> GroupMemberSearchResponse searchGroupMembers(groupId, query, n, offset)
 
 Search Group Members
 
@@ -3211,7 +3211,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
-      SearchGroupMembers200Response result = apiInstance.searchGroupMembers(groupId, query, n, offset);
+      GroupMemberSearchResponse result = apiInstance.searchGroupMembers(groupId, query, n, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#searchGroupMembers");
@@ -3235,7 +3235,7 @@ public class Example {
 
 ### Return type
 
-[**SearchGroupMembers200Response**](SearchGroupMembers200Response.md)
+[**GroupMemberSearchResponse**](GroupMemberSearchResponse.md)
 
 ### Authorization
 

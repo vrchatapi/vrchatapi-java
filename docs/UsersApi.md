@@ -6,6 +6,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**addTags**](UsersApi.md#addTags) | **POST** /users/{userId}/addTags | Add User Tags |
 | [**checkUserPersistenceExists**](UsersApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
+| [**clearUserTutorials**](UsersApi.md#clearUserTutorials) | **DELETE** /users/{userId}/tutorial | Clear User Tutorials |
+| [**completeUserTutorial**](UsersApi.md#completeUserTutorial) | **POST** /users/{userId}/tutorial | Complete User Tutorial |
 | [**deleteAllUserPersistenceData**](UsersApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
 | [**deleteUserPersistence**](UsersApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**getAgeVerificationStatus**](UsersApi.md#getAgeVerificationStatus) | **GET** /ageVerification/status | Get Age Verification Status |
@@ -184,6 +186,156 @@ null (empty response body)
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when querying another user&#39;s persistence data. The body carries only a message string, without the nested &#x60;error&#x60; object every other response in this description uses. |  -  |
 | **404** | The user does not have persistence data for the given world. |  -  |
+
+<a id="clearUserTutorials"></a>
+# **clearUserTutorials**
+> CurrentUser clearUserTutorials(userId, xPlatform, xStore)
+
+Clear User Tutorials
+
+Clears every tutorial the user completed on a platform, whatever &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; name, and returns the current user. Tutorials of other kinds, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;, stay completed.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
+    try {
+      CurrentUser result = apiInstance.clearUserTutorials(userId, xPlatform, xStore);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#clearUserTutorials");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **xPlatform** | **String**| The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. | [optional] |
+| **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single CurrentUser object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | A user can clear only their own tutorials. |  -  |
+
+<a id="completeUserTutorial"></a>
+# **completeUserTutorial**
+> CurrentUser completeUserTutorial(userId, xPlatform, xStore)
+
+Complete User Tutorial
+
+Marks the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; completed, and returns the current user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
+    try {
+      CurrentUser result = apiInstance.completeUserTutorial(userId, xPlatform, xStore);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#completeUserTutorial");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **xPlatform** | **String**| The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. | [optional] |
+| **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] |
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single CurrentUser object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | A user can complete only their own tutorials. |  -  |
 
 <a id="deleteAllUserPersistenceData"></a>
 # **deleteAllUserPersistenceData**
@@ -897,7 +1049,7 @@ public class Example {
 
 <a id="getUser"></a>
 # **getUser**
-> User getUser(userId)
+> UserResponse getUser(userId)
 
 Get User by ID
 
@@ -927,7 +1079,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      User result = apiInstance.getUser(userId);
+      UserResponse result = apiInstance.getUser(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUser");
@@ -948,7 +1100,7 @@ public class Example {
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -1040,7 +1192,7 @@ public class Example {
 
 <a id="getUserByName"></a>
 # **getUserByName**
-> User getUserByName(username)
+> UserResponse getUserByName(username)
 
 Get User by Username
 
@@ -1070,7 +1222,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String username = "username_example"; // String | Username of the user
     try {
-      User result = apiInstance.getUserByName(username);
+      UserResponse result = apiInstance.getUserByName(username);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserByName");
@@ -1091,7 +1243,7 @@ public class Example {
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -1257,7 +1409,7 @@ public class Example {
 
 <a id="getUserGroupInstances"></a>
 # **getUserGroupInstances**
-> GetUserGroupInstances200Response getUserGroupInstances(userId)
+> UserGroupInstanceListResponse getUserGroupInstances(userId)
 
 Get User Group Instances
 
@@ -1287,7 +1439,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
     try {
-      GetUserGroupInstances200Response result = apiInstance.getUserGroupInstances(userId);
+      UserGroupInstanceListResponse result = apiInstance.getUserGroupInstances(userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserGroupInstances");
@@ -1308,7 +1460,7 @@ public class Example {
 
 ### Return type
 
-[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+[**UserGroupInstanceListResponse**](UserGroupInstanceListResponse.md)
 
 ### Authorization
 
@@ -1328,7 +1480,7 @@ public class Example {
 
 <a id="getUserGroupInstancesForGroup"></a>
 # **getUserGroupInstancesForGroup**
-> GetUserGroupInstances200Response getUserGroupInstancesForGroup(userId, groupId)
+> UserGroupInstanceListResponse getUserGroupInstancesForGroup(userId, groupId)
 
 Get User Group Instances for a specific Group
 
@@ -1359,7 +1511,7 @@ public class Example {
     String userId = "userId_example"; // String | Must be a valid user ID.
     String groupId = "groupId_example"; // String | Must be a valid group ID.
     try {
-      GetUserGroupInstances200Response result = apiInstance.getUserGroupInstancesForGroup(userId, groupId);
+      UserGroupInstanceListResponse result = apiInstance.getUserGroupInstancesForGroup(userId, groupId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserGroupInstancesForGroup");
@@ -1381,7 +1533,7 @@ public class Example {
 
 ### Return type
 
-[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+[**UserGroupInstanceListResponse**](UserGroupInstanceListResponse.md)
 
 ### Authorization
 
@@ -1753,11 +1905,11 @@ public class Example {
 
 <a id="getUserTutorialStatus"></a>
 # **getUserTutorialStatus**
-> TutorialStatus getUserTutorialStatus(userId)
+> TutorialStatus getUserTutorialStatus(userId, xPlatform, xStore)
 
 Get User Tutorial Status
 
-Gets the status of completed or outstanding tutorials for the specified user.
+Gets the status of completed or outstanding tutorials for the specified user. &#x60;tutorialKey&#x60; and &#x60;completed&#x60; describe the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60;.
 
 ### Example
 ```java
@@ -1782,8 +1934,10 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
+    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
     try {
-      TutorialStatus result = apiInstance.getUserTutorialStatus(userId);
+      TutorialStatus result = apiInstance.getUserTutorialStatus(userId, xPlatform, xStore);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUserTutorialStatus");
@@ -1801,6 +1955,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| Must be a valid user ID. | |
+| **xPlatform** | **String**| The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. | [optional] |
+| **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] |
 
 ### Return type
 

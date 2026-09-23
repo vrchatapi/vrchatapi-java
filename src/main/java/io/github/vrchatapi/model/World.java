@@ -52,7 +52,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * World
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class World {
@@ -815,7 +815,7 @@ public class World {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nonnull

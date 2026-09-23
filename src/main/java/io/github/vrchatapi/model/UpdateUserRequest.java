@@ -425,7 +425,7 @@ public class UpdateUserRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

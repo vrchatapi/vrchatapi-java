@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.vrchatapi.model.NotificationV2Data;
 import io.github.vrchatapi.model.NotificationV2DetailsBoop;
 import io.github.vrchatapi.model.NotificationV2Response;
 import io.github.vrchatapi.model.NotificationV2Type;
@@ -25,9 +26,7 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -54,7 +53,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * NotificationV2
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class NotificationV2 {
@@ -76,7 +75,7 @@ public class NotificationV2 {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nonnull
-  private Map<String, String> data = new HashMap<>();
+  private NotificationV2Data data;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
@@ -263,16 +262,8 @@ public class NotificationV2 {
   }
 
 
-  public NotificationV2 data(@javax.annotation.Nonnull Map<String, String> data) {
+  public NotificationV2 data(@javax.annotation.Nonnull NotificationV2Data data) {
     this.data = data;
-    return this;
-  }
-
-  public NotificationV2 putDataItem(String key, String dataItem) {
-    if (this.data == null) {
-      this.data = new HashMap<>();
-    }
-    this.data.put(key, dataItem);
     return this;
   }
 
@@ -281,11 +272,11 @@ public class NotificationV2 {
    * @return data
    */
   @javax.annotation.Nonnull
-  public Map<String, String> getData() {
+  public NotificationV2Data getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull Map<String, String> data) {
+  public void setData(@javax.annotation.Nonnull NotificationV2Data data) {
     this.data = data;
   }
 
@@ -918,6 +909,8 @@ public class NotificationV2 {
       if (!jsonObj.get("category").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
+      // validate the required field `data`
+      NotificationV2Data.validateJsonElement(jsonObj.get("data"));
       // validate the optional field `details`
       if (jsonObj.get("details") != null && !jsonObj.get("details").isJsonNull()) {
         NotificationV2DetailsBoop.validateJsonElement(jsonObj.get("details"));

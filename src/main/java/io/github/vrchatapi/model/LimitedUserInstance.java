@@ -285,7 +285,7 @@ public class LimitedUserInstance {
   }
 
   /**
-   *  
+   * Get bioLinks
    * @return bioLinks
    */
   @javax.annotation.Nullable

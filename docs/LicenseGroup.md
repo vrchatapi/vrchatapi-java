@@ -3,7 +3,6 @@
 # LicenseGroup
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

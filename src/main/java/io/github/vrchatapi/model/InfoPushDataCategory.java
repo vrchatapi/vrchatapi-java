@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -70,7 +71,7 @@ public class InfoPushDataCategory {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
-  private String name;
+  private Object name = null;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -145,7 +146,7 @@ public class InfoPushDataCategory {
   }
 
 
-  public InfoPushDataCategory name(@javax.annotation.Nullable String name) {
+  public InfoPushDataCategory name(@javax.annotation.Nullable Object name) {
     this.name = name;
     return this;
   }
@@ -155,11 +156,11 @@ public class InfoPushDataCategory {
    * @return name
    */
   @javax.annotation.Nullable
-  public String getName() {
+  public Object getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nullable Object name) {
     this.name = name;
   }
 
@@ -200,9 +201,20 @@ public class InfoPushDataCategory {
         Objects.equals(this.type, infoPushDataCategory.type);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(ids, ipsQuery, maxCells, name, type);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -266,9 +278,6 @@ public class InfoPushDataCategory {
       // validate the optional field `ipsQuery`
       if (jsonObj.get("ipsQuery") != null && !jsonObj.get("ipsQuery").isJsonNull()) {
         InfoPushIpsQuery.validateJsonElement(jsonObj.get("ipsQuery"));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

@@ -36,16 +36,16 @@ import io.github.vrchatapi.model.CreateGroupRequest;
 import io.github.vrchatapi.model.CreateGroupRoleRequest;
 import io.github.vrchatapi.model.DeclineGroupInviteRequest;
 import io.github.vrchatapi.model.Error;
-import io.github.vrchatapi.model.GetGroupGalleryImages200Response;
-import io.github.vrchatapi.model.GetGroupPosts200Response;
 import io.github.vrchatapi.model.Group;
 import io.github.vrchatapi.model.GroupAnnouncement;
 import io.github.vrchatapi.model.GroupGallery;
 import io.github.vrchatapi.model.GroupGalleryImage;
 import io.github.vrchatapi.model.GroupInstance;
 import io.github.vrchatapi.model.GroupMember;
+import io.github.vrchatapi.model.GroupMemberSearchResponse;
 import io.github.vrchatapi.model.GroupPermission;
 import io.github.vrchatapi.model.GroupPost;
+import io.github.vrchatapi.model.GroupPostsResponse;
 import io.github.vrchatapi.model.GroupRole;
 import io.github.vrchatapi.model.GroupRoleTemplateValues;
 import io.github.vrchatapi.model.GroupSearchSort;
@@ -55,7 +55,6 @@ import io.github.vrchatapi.model.LimitedGroup;
 import java.time.OffsetDateTime;
 import io.github.vrchatapi.model.PaginatedGroupAuditLogEntryList;
 import io.github.vrchatapi.model.RespondGroupJoinRequest;
-import io.github.vrchatapi.model.SearchGroupMembers200Response;
 import io.github.vrchatapi.model.Success;
 import io.github.vrchatapi.model.TransferGroupRequest;
 import io.github.vrchatapi.model.UpdateGroupGalleryRequest;
@@ -3926,7 +3925,7 @@ public class GroupsApi {
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param v Response version. &#x60;2&#x60; wraps the images in a paginated object. (optional)
      * @param approved If specified, only returns images that have been approved or not approved. (optional)
-     * @return GetGroupGalleryImages200Response
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -3937,8 +3936,8 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public GetGroupGalleryImages200Response getGroupGalleryImages(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved) throws ApiException {
-        ApiResponse<GetGroupGalleryImages200Response> localVarResp = getGroupGalleryImagesWithHttpInfo(groupId, groupGalleryId, n, offset, v, approved);
+    public Object getGroupGalleryImages(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved) throws ApiException {
+        ApiResponse<Object> localVarResp = getGroupGalleryImagesWithHttpInfo(groupId, groupGalleryId, n, offset, v, approved);
         return localVarResp.getData();
     }
 
@@ -3951,7 +3950,7 @@ public class GroupsApi {
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param v Response version. &#x60;2&#x60; wraps the images in a paginated object. (optional)
      * @param approved If specified, only returns images that have been approved or not approved. (optional)
-     * @return ApiResponse&lt;GetGroupGalleryImages200Response&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -3962,9 +3961,9 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetGroupGalleryImages200Response> getGroupGalleryImagesWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved) throws ApiException {
+    public ApiResponse<Object> getGroupGalleryImagesWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved) throws ApiException {
         okhttp3.Call localVarCall = getGroupGalleryImagesValidateBeforeCall(groupId, groupGalleryId, n, offset, v, approved, null);
-        Type localVarReturnType = new TypeToken<GetGroupGalleryImages200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3989,10 +3988,10 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupGalleryImagesAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved, final ApiCallback<GetGroupGalleryImages200Response> _callback) throws ApiException {
+    public okhttp3.Call getGroupGalleryImagesAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String groupGalleryId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer v, @javax.annotation.Nullable Boolean approved, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getGroupGalleryImagesValidateBeforeCall(groupId, groupGalleryId, n, offset, v, approved, _callback);
-        Type localVarReturnType = new TypeToken<GetGroupGalleryImages200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4845,7 +4844,7 @@ public class GroupsApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param publicOnly See public posts only. (optional)
-     * @return GetGroupPosts200Response
+     * @return GroupPostsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -4855,8 +4854,8 @@ public class GroupsApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public GetGroupPosts200Response getGroupPosts(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly) throws ApiException {
-        ApiResponse<GetGroupPosts200Response> localVarResp = getGroupPostsWithHttpInfo(groupId, n, offset, publicOnly);
+    public GroupPostsResponse getGroupPosts(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly) throws ApiException {
+        ApiResponse<GroupPostsResponse> localVarResp = getGroupPostsWithHttpInfo(groupId, n, offset, publicOnly);
         return localVarResp.getData();
     }
 
@@ -4867,7 +4866,7 @@ public class GroupsApi {
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
      * @param publicOnly See public posts only. (optional)
-     * @return ApiResponse&lt;GetGroupPosts200Response&gt;
+     * @return ApiResponse&lt;GroupPostsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -4877,9 +4876,9 @@ public class GroupsApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetGroupPosts200Response> getGroupPostsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly) throws ApiException {
+    public ApiResponse<GroupPostsResponse> getGroupPostsWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly) throws ApiException {
         okhttp3.Call localVarCall = getGroupPostsValidateBeforeCall(groupId, n, offset, publicOnly, null);
-        Type localVarReturnType = new TypeToken<GetGroupPosts200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupPostsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4901,10 +4900,10 @@ public class GroupsApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getGroupPostsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly, final ApiCallback<GetGroupPosts200Response> _callback) throws ApiException {
+    public okhttp3.Call getGroupPostsAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean publicOnly, final ApiCallback<GroupPostsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getGroupPostsValidateBeforeCall(groupId, n, offset, publicOnly, _callback);
-        Type localVarReturnType = new TypeToken<GetGroupPosts200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupPostsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -6467,7 +6466,7 @@ public class GroupsApi {
      * @param query Filter for member displayName. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
-     * @return SearchGroupMembers200Response
+     * @return GroupMemberSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -6479,8 +6478,8 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public SearchGroupMembers200Response searchGroupMembers(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<SearchGroupMembers200Response> localVarResp = searchGroupMembersWithHttpInfo(groupId, query, n, offset);
+    public GroupMemberSearchResponse searchGroupMembers(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<GroupMemberSearchResponse> localVarResp = searchGroupMembersWithHttpInfo(groupId, query, n, offset);
         return localVarResp.getData();
     }
 
@@ -6491,7 +6490,7 @@ public class GroupsApi {
      * @param query Filter for member displayName. (required)
      * @param n The number of objects to return. (optional, default to 60)
      * @param offset A zero-based offset from the default object sorting from where search results start. (optional)
-     * @return ApiResponse&lt;SearchGroupMembers200Response&gt;
+     * @return ApiResponse&lt;GroupMemberSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -6503,9 +6502,9 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SearchGroupMembers200Response> searchGroupMembersWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<GroupMemberSearchResponse> searchGroupMembersWithHttpInfo(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = searchGroupMembersValidateBeforeCall(groupId, query, n, offset, null);
-        Type localVarReturnType = new TypeToken<SearchGroupMembers200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMemberSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -6529,10 +6528,10 @@ public class GroupsApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchGroupMembersAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<SearchGroupMembers200Response> _callback) throws ApiException {
+    public okhttp3.Call searchGroupMembersAsync(@javax.annotation.Nonnull String groupId, @javax.annotation.Nonnull String query, @javax.annotation.Nullable Integer n, @javax.annotation.Nullable Integer offset, final ApiCallback<GroupMemberSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchGroupMembersValidateBeforeCall(groupId, query, n, offset, _callback);
-        Type localVarReturnType = new TypeToken<SearchGroupMembers200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<GroupMemberSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

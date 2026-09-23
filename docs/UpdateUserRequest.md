@@ -21,7 +21,7 @@
 |**revertDisplayName** | **Boolean** | MUST specify currentPassword as well to revert display name |  [optional] |
 |**status** | **UserStatus** |  |  [optional] |
 |**statusDescription** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**unsubscribe** | **Boolean** |  |  [optional] |
 
 

@@ -3,7 +3,6 @@
 # UserSubscription
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

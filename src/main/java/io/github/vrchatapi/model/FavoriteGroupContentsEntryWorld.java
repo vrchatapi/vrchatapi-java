@@ -18,10 +18,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.github.vrchatapi.model.FavoritedWorld;
 import io.github.vrchatapi.model.InstanceContentSettings;
 import io.github.vrchatapi.model.ReleaseStatus;
-import io.github.vrchatapi.model.UnavailableWorld;
 import io.github.vrchatapi.model.UnityPackage;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -30,254 +28,1179 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-
-
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import io.github.vrchatapi.JSON;
 
+/**
+ * FavoriteGroupContentsEntryWorld
+ */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class FavoriteGroupContentsEntryWorld extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(FavoriteGroupContentsEntryWorld.class.getName());
+public class FavoriteGroupContentsEntryWorld {
+  public static final String SERIALIZED_NAME_AUTHOR_ID = "authorId";
+  @SerializedName(SERIALIZED_NAME_AUTHOR_ID)
+  @javax.annotation.Nullable
+  private String authorId;
 
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!FavoriteGroupContentsEntryWorld.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'FavoriteGroupContentsEntryWorld' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<FavoritedWorld> adapterFavoritedWorld = gson.getDelegateAdapter(this, TypeToken.get(FavoritedWorld.class));
-            final TypeAdapter<UnavailableWorld> adapterUnavailableWorld = gson.getDelegateAdapter(this, TypeToken.get(UnavailableWorld.class));
+  public static final String SERIALIZED_NAME_AUTHOR_NAME = "authorName";
+  @SerializedName(SERIALIZED_NAME_AUTHOR_NAME)
+  @javax.annotation.Nonnull
+  private String authorName;
 
-            return (TypeAdapter<T>) new TypeAdapter<FavoriteGroupContentsEntryWorld>() {
-                @Override
-                public void write(JsonWriter out, FavoriteGroupContentsEntryWorld value) throws IOException {
-                    if (value == null || value.getActualInstance() == null) {
-                        elementAdapter.write(out, null);
-                        return;
-                    }
+  public static final String SERIALIZED_NAME_CAPACITY = "capacity";
+  @SerializedName(SERIALIZED_NAME_CAPACITY)
+  @javax.annotation.Nonnull
+  private Integer capacity;
 
-                    // check if the actual instance is of the type `FavoritedWorld`
-                    if (value.getActualInstance() instanceof FavoritedWorld) {
-                        JsonElement element = adapterFavoritedWorld.toJsonTree((FavoritedWorld)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `UnavailableWorld`
-                    if (value.getActualInstance() instanceof UnavailableWorld) {
-                        JsonElement element = adapterUnavailableWorld.toJsonTree((UnavailableWorld)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: FavoritedWorld, UnavailableWorld");
-                }
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime createdAt;
 
-                @Override
-                public FavoriteGroupContentsEntryWorld read(JsonReader in) throws IOException {
-                    Object deserialized = null;
-                    JsonElement jsonElement = elementAdapter.read(in);
+  public static final String SERIALIZED_NAME_DEFAULT_CONTENT_SETTINGS = "defaultContentSettings";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_CONTENT_SETTINGS)
+  @javax.annotation.Nullable
+  private InstanceContentSettings defaultContentSettings;
 
-                    int match = 0;
-                    ArrayList<String> errorMessages = new ArrayList<>();
-                    TypeAdapter actualAdapter = elementAdapter;
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
 
-                    // deserialize FavoritedWorld
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        FavoritedWorld.validateJsonElement(jsonElement);
-                        actualAdapter = adapterFavoritedWorld;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'FavoritedWorld'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FavoritedWorld failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'FavoritedWorld'", e);
-                    }
-                    // deserialize UnavailableWorld
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        UnavailableWorld.validateJsonElement(jsonElement);
-                        actualAdapter = adapterUnavailableWorld;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'UnavailableWorld'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UnavailableWorld failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'UnavailableWorld'", e);
-                    }
+  public static final String SERIALIZED_NAME_DISABLED_PROP_ABILITIES = "disabledPropAbilities";
+  @SerializedName(SERIALIZED_NAME_DISABLED_PROP_ABILITIES)
+  @javax.annotation.Nullable
+  private List<Object> disabledPropAbilities = new ArrayList<>();
 
-                    if (match == 1) {
-                        FavoriteGroupContentsEntryWorld ret = new FavoriteGroupContentsEntryWorld();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
-                    }
+  public static final String SERIALIZED_NAME_FAVORITE_GROUP = "favoriteGroup";
+  @SerializedName(SERIALIZED_NAME_FAVORITE_GROUP)
+  @javax.annotation.Nullable
+  private String favoriteGroup;
 
-                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for FavoriteGroupContentsEntryWorld: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
-                }
-            }.nullSafe();
+  public static final String SERIALIZED_NAME_FAVORITE_ID = "favoriteId";
+  @SerializedName(SERIALIZED_NAME_FAVORITE_ID)
+  @javax.annotation.Nullable
+  private String favoriteId;
+
+  public static final String SERIALIZED_NAME_FAVORITES = "favorites";
+  @SerializedName(SERIALIZED_NAME_FAVORITES)
+  @javax.annotation.Nullable
+  private Integer favorites = 0;
+
+  public static final String SERIALIZED_NAME_FEATURED = "featured";
+  @SerializedName(SERIALIZED_NAME_FEATURED)
+  @javax.annotation.Nullable
+  private Boolean featured = false;
+
+  public static final String SERIALIZED_NAME_HEAT = "heat";
+  @SerializedName(SERIALIZED_NAME_HEAT)
+  @javax.annotation.Nullable
+  private Integer heat = 0;
+
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
+  private String id;
+
+  public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  @javax.annotation.Nonnull
+  private String imageUrl;
+
+  public static final String SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE = "isHypeTrainEligible";
+  @SerializedName(SERIALIZED_NAME_IS_HYPE_TRAIN_ELIGIBLE)
+  @javax.annotation.Nullable
+  private Boolean isHypeTrainEligible;
+
+  public static final String SERIALIZED_NAME_LABS_PUBLICATION_DATE = "labsPublicationDate";
+  @SerializedName(SERIALIZED_NAME_LABS_PUBLICATION_DATE)
+  @javax.annotation.Nullable
+  private String labsPublicationDate;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
+  private String name;
+
+  public static final String SERIALIZED_NAME_OCCUPANTS = "occupants";
+  @SerializedName(SERIALIZED_NAME_OCCUPANTS)
+  @javax.annotation.Nullable
+  private Integer occupants;
+
+  public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION)
+  @javax.annotation.Nullable
+  private String organization = "vrchat";
+
+  public static final String SERIALIZED_NAME_POPULARITY = "popularity";
+  @SerializedName(SERIALIZED_NAME_POPULARITY)
+  @javax.annotation.Nullable
+  private Integer popularity = 0;
+
+  public static final String SERIALIZED_NAME_PREVIEW_YOUTUBE_ID = "previewYoutubeId";
+  @SerializedName(SERIALIZED_NAME_PREVIEW_YOUTUBE_ID)
+  @javax.annotation.Nullable
+  private String previewYoutubeId;
+
+  public static final String SERIALIZED_NAME_PUBLICATION_DATE = "publicationDate";
+  @SerializedName(SERIALIZED_NAME_PUBLICATION_DATE)
+  @javax.annotation.Nullable
+  private String publicationDate;
+
+  public static final String SERIALIZED_NAME_RECOMMENDED_CAPACITY = "recommendedCapacity";
+  @SerializedName(SERIALIZED_NAME_RECOMMENDED_CAPACITY)
+  @javax.annotation.Nullable
+  private Integer recommendedCapacity;
+
+  public static final String SERIALIZED_NAME_RELEASE_STATUS = "releaseStatus";
+  @SerializedName(SERIALIZED_NAME_RELEASE_STATUS)
+  @javax.annotation.Nullable
+  private ReleaseStatus releaseStatus = ReleaseStatus.PUBLIC;
+
+  public static final String SERIALIZED_NAME_STORE_ID = "storeId";
+  @SerializedName(SERIALIZED_NAME_STORE_ID)
+  @javax.annotation.Nullable
+  private String storeId;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_THUMBNAIL_IMAGE_URL = "thumbnailImageUrl";
+  @SerializedName(SERIALIZED_NAME_THUMBNAIL_IMAGE_URL)
+  @javax.annotation.Nonnull
+  private String thumbnailImageUrl;
+
+  public static final String SERIALIZED_NAME_UDON_PRODUCTS = "udonProducts";
+  @SerializedName(SERIALIZED_NAME_UDON_PRODUCTS)
+  @javax.annotation.Nullable
+  private List<String> udonProducts = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_UNITY_PACKAGES = "unityPackages";
+  @SerializedName(SERIALIZED_NAME_UNITY_PACKAGES)
+  @javax.annotation.Nullable
+  private List<UnityPackage> unityPackages = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_URL_LIST = "urlList";
+  @SerializedName(SERIALIZED_NAME_URL_LIST)
+  @javax.annotation.Nullable
+  private List<String> urlList = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
+  public static final String SERIALIZED_NAME_VISITS = "visits";
+  @SerializedName(SERIALIZED_NAME_VISITS)
+  @javax.annotation.Nullable
+  private Integer visits = 0;
+
+  public static final String SERIALIZED_NAME_IS_SECURE = "isSecure";
+  @SerializedName(SERIALIZED_NAME_IS_SECURE)
+  @javax.annotation.Nullable
+  private Boolean isSecure;
+
+  public FavoriteGroupContentsEntryWorld() {
+  }
+
+  public FavoriteGroupContentsEntryWorld authorId(@javax.annotation.Nullable String authorId) {
+    this.authorId = authorId;
+    return this;
+  }
+
+  /**
+   * A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed.
+   * @return authorId
+   */
+  @javax.annotation.Nullable
+  public String getAuthorId() {
+    return authorId;
+  }
+
+  public void setAuthorId(@javax.annotation.Nullable String authorId) {
+    this.authorId = authorId;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld authorName(@javax.annotation.Nonnull String authorName) {
+    this.authorName = authorName;
+    return this;
+  }
+
+  /**
+   * Get authorName
+   * @return authorName
+   */
+  @javax.annotation.Nonnull
+  public String getAuthorName() {
+    return authorName;
+  }
+
+  public void setAuthorName(@javax.annotation.Nonnull String authorName) {
+    this.authorName = authorName;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld capacity(@javax.annotation.Nonnull Integer capacity) {
+    this.capacity = capacity;
+    return this;
+  }
+
+  /**
+   * Get capacity
+   * @return capacity
+   */
+  @javax.annotation.Nonnull
+  public Integer getCapacity() {
+    return capacity;
+  }
+
+  public void setCapacity(@javax.annotation.Nonnull Integer capacity) {
+    this.capacity = capacity;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  /**
+   * Get createdAt
+   * @return createdAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld defaultContentSettings(@javax.annotation.Nullable InstanceContentSettings defaultContentSettings) {
+    this.defaultContentSettings = defaultContentSettings;
+    return this;
+  }
+
+  /**
+   * Get defaultContentSettings
+   * @return defaultContentSettings
+   */
+  @javax.annotation.Nullable
+  public InstanceContentSettings getDefaultContentSettings() {
+    return defaultContentSettings;
+  }
+
+  public void setDefaultContentSettings(@javax.annotation.Nullable InstanceContentSettings defaultContentSettings) {
+    this.defaultContentSettings = defaultContentSettings;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld disabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+    return this;
+  }
+
+  public FavoriteGroupContentsEntryWorld addDisabledPropAbilitiesItem(Object disabledPropAbilitiesItem) {
+    if (this.disabledPropAbilities == null) {
+      this.disabledPropAbilities = new ArrayList<>();
+    }
+    this.disabledPropAbilities.add(disabledPropAbilitiesItem);
+    return this;
+  }
+
+  /**
+   * Get disabledPropAbilities
+   * @return disabledPropAbilities
+   */
+  @javax.annotation.Nullable
+  public List<Object> getDisabledPropAbilities() {
+    return disabledPropAbilities;
+  }
+
+  public void setDisabledPropAbilities(@javax.annotation.Nullable List<Object> disabledPropAbilities) {
+    this.disabledPropAbilities = disabledPropAbilities;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld favoriteGroup(@javax.annotation.Nullable String favoriteGroup) {
+    this.favoriteGroup = favoriteGroup;
+    return this;
+  }
+
+  /**
+   * Get favoriteGroup
+   * @return favoriteGroup
+   */
+  @javax.annotation.Nullable
+  public String getFavoriteGroup() {
+    return favoriteGroup;
+  }
+
+  public void setFavoriteGroup(@javax.annotation.Nullable String favoriteGroup) {
+    this.favoriteGroup = favoriteGroup;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld favoriteId(@javax.annotation.Nullable String favoriteId) {
+    this.favoriteId = favoriteId;
+    return this;
+  }
+
+  /**
+   * Get favoriteId
+   * @return favoriteId
+   */
+  @javax.annotation.Nullable
+  public String getFavoriteId() {
+    return favoriteId;
+  }
+
+  public void setFavoriteId(@javax.annotation.Nullable String favoriteId) {
+    this.favoriteId = favoriteId;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld favorites(@javax.annotation.Nullable Integer favorites) {
+    this.favorites = favorites;
+    return this;
+  }
+
+  /**
+   * Get favorites
+   * minimum: 0
+   * @return favorites
+   */
+  @javax.annotation.Nullable
+  public Integer getFavorites() {
+    return favorites;
+  }
+
+  public void setFavorites(@javax.annotation.Nullable Integer favorites) {
+    this.favorites = favorites;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld featured(@javax.annotation.Nullable Boolean featured) {
+    this.featured = featured;
+    return this;
+  }
+
+  /**
+   * Get featured
+   * @return featured
+   */
+  @javax.annotation.Nullable
+  public Boolean getFeatured() {
+    return featured;
+  }
+
+  public void setFeatured(@javax.annotation.Nullable Boolean featured) {
+    this.featured = featured;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld heat(@javax.annotation.Nullable Integer heat) {
+    this.heat = heat;
+    return this;
+  }
+
+  /**
+   * Get heat
+   * minimum: 0
+   * @return heat
+   */
+  @javax.annotation.Nullable
+  public Integer getHeat() {
+    return heat;
+  }
+
+  public void setHeat(@javax.annotation.Nullable Integer heat) {
+    this.heat = heat;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld id(@javax.annotation.Nonnull String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user.
+   * @return id
+   */
+  @javax.annotation.Nonnull
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nonnull String id) {
+    this.id = id;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld imageUrl(@javax.annotation.Nonnull String imageUrl) {
+    this.imageUrl = imageUrl;
+    return this;
+  }
+
+  /**
+   * Get imageUrl
+   * @return imageUrl
+   */
+  @javax.annotation.Nonnull
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(@javax.annotation.Nonnull String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld isHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
+    return this;
+  }
+
+  /**
+   * Get isHypeTrainEligible
+   * @return isHypeTrainEligible
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsHypeTrainEligible() {
+    return isHypeTrainEligible;
+  }
+
+  public void setIsHypeTrainEligible(@javax.annotation.Nullable Boolean isHypeTrainEligible) {
+    this.isHypeTrainEligible = isHypeTrainEligible;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld labsPublicationDate(@javax.annotation.Nullable String labsPublicationDate) {
+    this.labsPublicationDate = labsPublicationDate;
+    return this;
+  }
+
+  /**
+   * Get labsPublicationDate
+   * @return labsPublicationDate
+   */
+  @javax.annotation.Nullable
+  public String getLabsPublicationDate() {
+    return labsPublicationDate;
+  }
+
+  public void setLabsPublicationDate(@javax.annotation.Nullable String labsPublicationDate) {
+    this.labsPublicationDate = labsPublicationDate;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld name(@javax.annotation.Nonnull String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nonnull String name) {
+    this.name = name;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld occupants(@javax.annotation.Nullable Integer occupants) {
+    this.occupants = occupants;
+    return this;
+  }
+
+  /**
+   * Get occupants
+   * @return occupants
+   */
+  @javax.annotation.Nullable
+  public Integer getOccupants() {
+    return occupants;
+  }
+
+  public void setOccupants(@javax.annotation.Nullable Integer occupants) {
+    this.occupants = occupants;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld organization(@javax.annotation.Nullable String organization) {
+    this.organization = organization;
+    return this;
+  }
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  public String getOrganization() {
+    return organization;
+  }
+
+  public void setOrganization(@javax.annotation.Nullable String organization) {
+    this.organization = organization;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld popularity(@javax.annotation.Nullable Integer popularity) {
+    this.popularity = popularity;
+    return this;
+  }
+
+  /**
+   * Get popularity
+   * minimum: 0
+   * @return popularity
+   */
+  @javax.annotation.Nullable
+  public Integer getPopularity() {
+    return popularity;
+  }
+
+  public void setPopularity(@javax.annotation.Nullable Integer popularity) {
+    this.popularity = popularity;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld previewYoutubeId(@javax.annotation.Nullable String previewYoutubeId) {
+    this.previewYoutubeId = previewYoutubeId;
+    return this;
+  }
+
+  /**
+   * Get previewYoutubeId
+   * @return previewYoutubeId
+   */
+  @javax.annotation.Nullable
+  public String getPreviewYoutubeId() {
+    return previewYoutubeId;
+  }
+
+  public void setPreviewYoutubeId(@javax.annotation.Nullable String previewYoutubeId) {
+    this.previewYoutubeId = previewYoutubeId;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld publicationDate(@javax.annotation.Nullable String publicationDate) {
+    this.publicationDate = publicationDate;
+    return this;
+  }
+
+  /**
+   * Get publicationDate
+   * @return publicationDate
+   */
+  @javax.annotation.Nullable
+  public String getPublicationDate() {
+    return publicationDate;
+  }
+
+  public void setPublicationDate(@javax.annotation.Nullable String publicationDate) {
+    this.publicationDate = publicationDate;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld recommendedCapacity(@javax.annotation.Nullable Integer recommendedCapacity) {
+    this.recommendedCapacity = recommendedCapacity;
+    return this;
+  }
+
+  /**
+   * Get recommendedCapacity
+   * @return recommendedCapacity
+   */
+  @javax.annotation.Nullable
+  public Integer getRecommendedCapacity() {
+    return recommendedCapacity;
+  }
+
+  public void setRecommendedCapacity(@javax.annotation.Nullable Integer recommendedCapacity) {
+    this.recommendedCapacity = recommendedCapacity;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld releaseStatus(@javax.annotation.Nullable ReleaseStatus releaseStatus) {
+    this.releaseStatus = releaseStatus;
+    return this;
+  }
+
+  /**
+   * Get releaseStatus
+   * @return releaseStatus
+   */
+  @javax.annotation.Nullable
+  public ReleaseStatus getReleaseStatus() {
+    return releaseStatus;
+  }
+
+  public void setReleaseStatus(@javax.annotation.Nullable ReleaseStatus releaseStatus) {
+    this.releaseStatus = releaseStatus;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld storeId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+  /**
+   * Get storeId
+   * @return storeId
+   */
+  @javax.annotation.Nullable
+  public String getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(@javax.annotation.Nullable String storeId) {
+    this.storeId = storeId;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public FavoriteGroupContentsEntryWorld addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld thumbnailImageUrl(@javax.annotation.Nonnull String thumbnailImageUrl) {
+    this.thumbnailImageUrl = thumbnailImageUrl;
+    return this;
+  }
+
+  /**
+   * Get thumbnailImageUrl
+   * @return thumbnailImageUrl
+   */
+  @javax.annotation.Nonnull
+  public String getThumbnailImageUrl() {
+    return thumbnailImageUrl;
+  }
+
+  public void setThumbnailImageUrl(@javax.annotation.Nonnull String thumbnailImageUrl) {
+    this.thumbnailImageUrl = thumbnailImageUrl;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld udonProducts(@javax.annotation.Nullable List<String> udonProducts) {
+    this.udonProducts = udonProducts;
+    return this;
+  }
+
+  public FavoriteGroupContentsEntryWorld addUdonProductsItem(String udonProductsItem) {
+    if (this.udonProducts == null) {
+      this.udonProducts = new ArrayList<>();
+    }
+    this.udonProducts.add(udonProductsItem);
+    return this;
+  }
+
+  /**
+   * Get udonProducts
+   * @return udonProducts
+   */
+  @javax.annotation.Nullable
+  public List<String> getUdonProducts() {
+    return udonProducts;
+  }
+
+  public void setUdonProducts(@javax.annotation.Nullable List<String> udonProducts) {
+    this.udonProducts = udonProducts;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld unityPackages(@javax.annotation.Nullable List<UnityPackage> unityPackages) {
+    this.unityPackages = unityPackages;
+    return this;
+  }
+
+  public FavoriteGroupContentsEntryWorld addUnityPackagesItem(UnityPackage unityPackagesItem) {
+    if (this.unityPackages == null) {
+      this.unityPackages = new ArrayList<>();
+    }
+    this.unityPackages.add(unityPackagesItem);
+    return this;
+  }
+
+  /**
+   * Get unityPackages
+   * @return unityPackages
+   */
+  @javax.annotation.Nullable
+  public List<UnityPackage> getUnityPackages() {
+    return unityPackages;
+  }
+
+  public void setUnityPackages(@javax.annotation.Nullable List<UnityPackage> unityPackages) {
+    this.unityPackages = unityPackages;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  /**
+   * Get updatedAt
+   * @return updatedAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld urlList(@javax.annotation.Nullable List<String> urlList) {
+    this.urlList = urlList;
+    return this;
+  }
+
+  public FavoriteGroupContentsEntryWorld addUrlListItem(String urlListItem) {
+    if (this.urlList == null) {
+      this.urlList = new ArrayList<>();
+    }
+    this.urlList.add(urlListItem);
+    return this;
+  }
+
+  /**
+   * Get urlList
+   * @return urlList
+   */
+  @javax.annotation.Nullable
+  public List<String> getUrlList() {
+    return urlList;
+  }
+
+  public void setUrlList(@javax.annotation.Nullable List<String> urlList) {
+    this.urlList = urlList;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * minimum: 1
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld visits(@javax.annotation.Nullable Integer visits) {
+    this.visits = visits;
+    return this;
+  }
+
+  /**
+   * Get visits
+   * minimum: 0
+   * @return visits
+   */
+  @javax.annotation.Nullable
+  public Integer getVisits() {
+    return visits;
+  }
+
+  public void setVisits(@javax.annotation.Nullable Integer visits) {
+    this.visits = visits;
+  }
+
+
+  public FavoriteGroupContentsEntryWorld isSecure(@javax.annotation.Nullable Boolean isSecure) {
+    this.isSecure = isSecure;
+    return this;
+  }
+
+  /**
+   * Get isSecure
+   * @return isSecure
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsSecure() {
+    return isSecure;
+  }
+
+  public void setIsSecure(@javax.annotation.Nullable Boolean isSecure) {
+    this.isSecure = isSecure;
+  }
+
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    FavoriteGroupContentsEntryWorld favoriteGroupContentsEntryWorld = (FavoriteGroupContentsEntryWorld) o;
+    return Objects.equals(this.authorId, favoriteGroupContentsEntryWorld.authorId) &&
+        Objects.equals(this.authorName, favoriteGroupContentsEntryWorld.authorName) &&
+        Objects.equals(this.capacity, favoriteGroupContentsEntryWorld.capacity) &&
+        Objects.equals(this.createdAt, favoriteGroupContentsEntryWorld.createdAt) &&
+        Objects.equals(this.defaultContentSettings, favoriteGroupContentsEntryWorld.defaultContentSettings) &&
+        Objects.equals(this.description, favoriteGroupContentsEntryWorld.description) &&
+        Objects.equals(this.disabledPropAbilities, favoriteGroupContentsEntryWorld.disabledPropAbilities) &&
+        Objects.equals(this.favoriteGroup, favoriteGroupContentsEntryWorld.favoriteGroup) &&
+        Objects.equals(this.favoriteId, favoriteGroupContentsEntryWorld.favoriteId) &&
+        Objects.equals(this.favorites, favoriteGroupContentsEntryWorld.favorites) &&
+        Objects.equals(this.featured, favoriteGroupContentsEntryWorld.featured) &&
+        Objects.equals(this.heat, favoriteGroupContentsEntryWorld.heat) &&
+        Objects.equals(this.id, favoriteGroupContentsEntryWorld.id) &&
+        Objects.equals(this.imageUrl, favoriteGroupContentsEntryWorld.imageUrl) &&
+        Objects.equals(this.isHypeTrainEligible, favoriteGroupContentsEntryWorld.isHypeTrainEligible) &&
+        Objects.equals(this.labsPublicationDate, favoriteGroupContentsEntryWorld.labsPublicationDate) &&
+        Objects.equals(this.name, favoriteGroupContentsEntryWorld.name) &&
+        Objects.equals(this.occupants, favoriteGroupContentsEntryWorld.occupants) &&
+        Objects.equals(this.organization, favoriteGroupContentsEntryWorld.organization) &&
+        Objects.equals(this.popularity, favoriteGroupContentsEntryWorld.popularity) &&
+        Objects.equals(this.previewYoutubeId, favoriteGroupContentsEntryWorld.previewYoutubeId) &&
+        Objects.equals(this.publicationDate, favoriteGroupContentsEntryWorld.publicationDate) &&
+        Objects.equals(this.recommendedCapacity, favoriteGroupContentsEntryWorld.recommendedCapacity) &&
+        Objects.equals(this.releaseStatus, favoriteGroupContentsEntryWorld.releaseStatus) &&
+        Objects.equals(this.storeId, favoriteGroupContentsEntryWorld.storeId) &&
+        Objects.equals(this.tags, favoriteGroupContentsEntryWorld.tags) &&
+        Objects.equals(this.thumbnailImageUrl, favoriteGroupContentsEntryWorld.thumbnailImageUrl) &&
+        Objects.equals(this.udonProducts, favoriteGroupContentsEntryWorld.udonProducts) &&
+        Objects.equals(this.unityPackages, favoriteGroupContentsEntryWorld.unityPackages) &&
+        Objects.equals(this.updatedAt, favoriteGroupContentsEntryWorld.updatedAt) &&
+        Objects.equals(this.urlList, favoriteGroupContentsEntryWorld.urlList) &&
+        Objects.equals(this.version, favoriteGroupContentsEntryWorld.version) &&
+        Objects.equals(this.visits, favoriteGroupContentsEntryWorld.visits) &&
+        Objects.equals(this.isSecure, favoriteGroupContentsEntryWorld.isSecure);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(authorId, authorName, capacity, createdAt, defaultContentSettings, description, disabledPropAbilities, favoriteGroup, favoriteId, favorites, featured, heat, id, imageUrl, isHypeTrainEligible, labsPublicationDate, name, occupants, organization, popularity, previewYoutubeId, publicationDate, recommendedCapacity, releaseStatus, storeId, tags, thumbnailImageUrl, udonProducts, unityPackages, updatedAt, urlList, version, visits, isSecure);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class FavoriteGroupContentsEntryWorld {\n");
+    sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
+    sb.append("    authorName: ").append(toIndentedString(authorName)).append("\n");
+    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    defaultContentSettings: ").append(toIndentedString(defaultContentSettings)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabledPropAbilities: ").append(toIndentedString(disabledPropAbilities)).append("\n");
+    sb.append("    favoriteGroup: ").append(toIndentedString(favoriteGroup)).append("\n");
+    sb.append("    favoriteId: ").append(toIndentedString(favoriteId)).append("\n");
+    sb.append("    favorites: ").append(toIndentedString(favorites)).append("\n");
+    sb.append("    featured: ").append(toIndentedString(featured)).append("\n");
+    sb.append("    heat: ").append(toIndentedString(heat)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    isHypeTrainEligible: ").append(toIndentedString(isHypeTrainEligible)).append("\n");
+    sb.append("    labsPublicationDate: ").append(toIndentedString(labsPublicationDate)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    occupants: ").append(toIndentedString(occupants)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    popularity: ").append(toIndentedString(popularity)).append("\n");
+    sb.append("    previewYoutubeId: ").append(toIndentedString(previewYoutubeId)).append("\n");
+    sb.append("    publicationDate: ").append(toIndentedString(publicationDate)).append("\n");
+    sb.append("    recommendedCapacity: ").append(toIndentedString(recommendedCapacity)).append("\n");
+    sb.append("    releaseStatus: ").append(toIndentedString(releaseStatus)).append("\n");
+    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    thumbnailImageUrl: ").append(toIndentedString(thumbnailImageUrl)).append("\n");
+    sb.append("    udonProducts: ").append(toIndentedString(udonProducts)).append("\n");
+    sb.append("    unityPackages: ").append(toIndentedString(unityPackages)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    urlList: ").append(toIndentedString(urlList)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    visits: ").append(toIndentedString(visits)).append("\n");
+    sb.append("    isSecure: ").append(toIndentedString(isSecure)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
+  }
+
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>(Arrays.asList("authorId", "authorName", "capacity", "created_at", "defaultContentSettings", "description", "disabledPropAbilities", "favoriteGroup", "favoriteId", "favorites", "featured", "heat", "id", "imageUrl", "isHypeTrainEligible", "labsPublicationDate", "name", "occupants", "organization", "popularity", "previewYoutubeId", "publicationDate", "recommendedCapacity", "releaseStatus", "storeId", "tags", "thumbnailImageUrl", "udonProducts", "unityPackages", "updated_at", "urlList", "version", "visits", "isSecure"));
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("authorName", "capacity", "id", "imageUrl", "name", "thumbnailImageUrl"));
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FavoriteGroupContentsEntryWorld
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FavoriteGroupContentsEntryWorld.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in FavoriteGroupContentsEntryWorld is not found in the empty JSON string", FavoriteGroupContentsEntryWorld.openapiRequiredFields.toString()));
         }
-    }
+      }
 
-    // store a list of schema names defined in oneOf
-    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
-
-    public FavoriteGroupContentsEntryWorld() {
-        super("oneOf", Boolean.FALSE);
-    }
-
-    public FavoriteGroupContentsEntryWorld(Object o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    static {
-        schemas.put("FavoritedWorld", FavoritedWorld.class);
-        schemas.put("UnavailableWorld", UnavailableWorld.class);
-    }
-
-    @Override
-    public Map<String, Class<?>> getSchemas() {
-        return FavoriteGroupContentsEntryWorld.schemas;
-    }
-
-    /**
-     * Set the instance that matches the oneOf child schema, check
-     * the instance parameter is valid against the oneOf child schemas:
-     * FavoritedWorld, UnavailableWorld
-     *
-     * It could be an instance of the 'oneOf' schemas.
-     */
-    @Override
-    public void setActualInstance(Object instance) {
-        if (instance instanceof FavoritedWorld) {
-            super.setActualInstance(instance);
-            return;
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!FavoriteGroupContentsEntryWorld.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FavoriteGroupContentsEntryWorld` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
+      }
 
-        if (instance instanceof UnavailableWorld) {
-            super.setActualInstance(instance);
-            return;
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FavoriteGroupContentsEntryWorld.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("authorId") != null && !jsonObj.get("authorId").isJsonNull()) && !jsonObj.get("authorId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorId").toString()));
+      }
+      if (!jsonObj.get("authorName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `authorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authorName").toString()));
+      }
+      // validate the optional field `defaultContentSettings`
+      if (jsonObj.get("defaultContentSettings") != null && !jsonObj.get("defaultContentSettings").isJsonNull()) {
+        InstanceContentSettings.validateJsonElement(jsonObj.get("defaultContentSettings"));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("disabledPropAbilities") != null && !jsonObj.get("disabledPropAbilities").isJsonNull() && !jsonObj.get("disabledPropAbilities").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disabledPropAbilities` to be an array in the JSON string but got `%s`", jsonObj.get("disabledPropAbilities").toString()));
+      }
+      if ((jsonObj.get("favoriteGroup") != null && !jsonObj.get("favoriteGroup").isJsonNull()) && !jsonObj.get("favoriteGroup").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `favoriteGroup` to be a primitive type in the JSON string but got `%s`", jsonObj.get("favoriteGroup").toString()));
+      }
+      if ((jsonObj.get("favoriteId") != null && !jsonObj.get("favoriteId").isJsonNull()) && !jsonObj.get("favoriteId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `favoriteId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("favoriteId").toString()));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if (!jsonObj.get("imageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
+      }
+      if ((jsonObj.get("labsPublicationDate") != null && !jsonObj.get("labsPublicationDate").isJsonNull()) && !jsonObj.get("labsPublicationDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `labsPublicationDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labsPublicationDate").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) && !jsonObj.get("organization").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+      }
+      if ((jsonObj.get("previewYoutubeId") != null && !jsonObj.get("previewYoutubeId").isJsonNull()) && !jsonObj.get("previewYoutubeId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `previewYoutubeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previewYoutubeId").toString()));
+      }
+      if ((jsonObj.get("publicationDate") != null && !jsonObj.get("publicationDate").isJsonNull()) && !jsonObj.get("publicationDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `publicationDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("publicationDate").toString()));
+      }
+      // validate the optional field `releaseStatus`
+      if (jsonObj.get("releaseStatus") != null && !jsonObj.get("releaseStatus").isJsonNull()) {
+        ReleaseStatus.validateJsonElement(jsonObj.get("releaseStatus"));
+      }
+      if ((jsonObj.get("storeId") != null && !jsonObj.get("storeId").isJsonNull()) && !jsonObj.get("storeId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storeId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storeId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      if (!jsonObj.get("thumbnailImageUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `thumbnailImageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnailImageUrl").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("udonProducts") != null && !jsonObj.get("udonProducts").isJsonNull() && !jsonObj.get("udonProducts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `udonProducts` to be an array in the JSON string but got `%s`", jsonObj.get("udonProducts").toString()));
+      }
+      if (jsonObj.get("unityPackages") != null && !jsonObj.get("unityPackages").isJsonNull()) {
+        JsonArray jsonArrayunityPackages = jsonObj.getAsJsonArray("unityPackages");
+        if (jsonArrayunityPackages != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("unityPackages").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `unityPackages` to be an array in the JSON string but got `%s`", jsonObj.get("unityPackages").toString()));
+          }
 
-        throw new RuntimeException("Invalid instance type. Must be FavoritedWorld, UnavailableWorld");
-    }
+          // validate the optional field `unityPackages` (array)
+          for (int i = 0; i < jsonArrayunityPackages.size(); i++) {
+            UnityPackage.validateJsonElement(jsonArrayunityPackages.get(i));
+          };
+        }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("urlList") != null && !jsonObj.get("urlList").isJsonNull() && !jsonObj.get("urlList").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `urlList` to be an array in the JSON string but got `%s`", jsonObj.get("urlList").toString()));
+      }
+  }
 
-    /**
-     * Get the actual instance, which can be the following:
-     * FavoritedWorld, UnavailableWorld
-     *
-     * @return The actual instance (FavoritedWorld, UnavailableWorld)
-     */
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
-    public Object getActualInstance() {
-        return super.getActualInstance();
-    }
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!FavoriteGroupContentsEntryWorld.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'FavoriteGroupContentsEntryWorld' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<FavoriteGroupContentsEntryWorld> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(FavoriteGroupContentsEntryWorld.class));
 
-    /**
-     * Get the actual instance of `FavoritedWorld`. If the actual instance is not `FavoritedWorld`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `FavoritedWorld`
-     * @throws ClassCastException if the instance is not `FavoritedWorld`
-     */
-    @SuppressWarnings("unchecked")
-    public FavoritedWorld getFavoritedWorld() throws ClassCastException {
-        return (FavoritedWorld)super.getActualInstance();
-    }
+       return (TypeAdapter<T>) new TypeAdapter<FavoriteGroupContentsEntryWorld>() {
+           @Override
+           public void write(JsonWriter out, FavoriteGroupContentsEntryWorld value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
 
-    /**
-     * Get the actual instance of `UnavailableWorld`. If the actual instance is not `UnavailableWorld`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `UnavailableWorld`
-     * @throws ClassCastException if the instance is not `UnavailableWorld`
-     */
-    @SuppressWarnings("unchecked")
-    public UnavailableWorld getUnavailableWorld() throws ClassCastException {
-        return (UnavailableWorld)super.getActualInstance();
-    }
+           @Override
+           public FavoriteGroupContentsEntryWorld read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
 
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to FavoriteGroupContentsEntryWorld
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with FavoritedWorld
-        try {
-            FavoritedWorld.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FavoritedWorld failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with UnavailableWorld
-        try {
-            UnavailableWorld.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UnavailableWorld failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for FavoriteGroupContentsEntryWorld with oneOf schemas: FavoritedWorld, UnavailableWorld. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-        }
+       }.nullSafe();
     }
+  }
 
-    /**
-     * Create an instance of FavoriteGroupContentsEntryWorld given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of FavoriteGroupContentsEntryWorld
-     * @throws IOException if the JSON string is invalid with respect to FavoriteGroupContentsEntryWorld
-     */
-    public static FavoriteGroupContentsEntryWorld fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, FavoriteGroupContentsEntryWorld.class);
-    }
+  /**
+   * Create an instance of FavoriteGroupContentsEntryWorld given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FavoriteGroupContentsEntryWorld
+   * @throws IOException if the JSON string is invalid with respect to FavoriteGroupContentsEntryWorld
+   */
+  public static FavoriteGroupContentsEntryWorld fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, FavoriteGroupContentsEntryWorld.class);
+  }
 
-    /**
-     * Convert an instance of FavoriteGroupContentsEntryWorld to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
+  /**
+   * Convert an instance of FavoriteGroupContentsEntryWorld to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

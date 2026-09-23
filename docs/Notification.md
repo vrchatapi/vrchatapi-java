@@ -3,7 +3,6 @@
 # Notification
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

@@ -10,7 +10,7 @@
 |**extension** | **String** |  |  |
 |**mimeType** | **MIMEType** |  |  |
 |**name** | **String** |  |  |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

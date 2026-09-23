@@ -3,7 +3,6 @@
 # InfoPush
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -21,7 +20,7 @@
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**requireClientTags** | **List&lt;String&gt;** |  |  [optional] |
 |**startDate** | **OffsetDateTime** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  |
+|**tags** | **List&lt;String&gt;** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
 
 

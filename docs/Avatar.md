@@ -3,7 +3,6 @@
 # Avatar
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -32,7 +31,7 @@
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**searchable** | **Boolean** |  |  [optional] |
 |**styles** | [**AvatarStyles**](AvatarStyles.md) |  |  |
-|**tags** | **List&lt;String&gt;** |   |  |
+|**tags** | **List&lt;String&gt;** |  |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**unityPackageUrl** | **String** |  |  |
 |**unityPackageUrlObject** | [**AvatarUnityPackageUrlObject**](AvatarUnityPackageUrlObject.md) |  |  |

@@ -145,7 +145,7 @@ public class TutorialStatus {
   }
 
   /**
-   * The ID of a tutorial, in the format &#x60;{platform}:{tutorial}:{version}&#x60;. &#x60;undefined:undefined:v1&#x60; is used as a null-ish or sentinel value.
+   * The ID of a tutorial. A platform tutorial is &#x60;{platform}:{store}:v1&#x60;, taken from the &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; headers, with &#x60;undefined&#x60; for a header the request left out. Other tutorials take a longer form, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;.
    * @return tutorialKey
    */
   @javax.annotation.Nonnull

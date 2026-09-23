@@ -3,7 +3,6 @@
 # JamSubmission
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

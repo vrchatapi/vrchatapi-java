@@ -263,7 +263,7 @@ public class GroupAnnouncement {
   }
 
   /**
-   *  
+   * Get roleIds
    * @return roleIds
    */
   @javax.annotation.Nullable

@@ -17,7 +17,7 @@
 |**nameplateId** | **String** |  |  [optional] |
 |**rules** | **String** |  |  [optional] |
 |**shortCode** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

@@ -52,7 +52,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * FavoritedWorld
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class FavoritedWorld {
@@ -725,7 +725,7 @@ public class FavoritedWorld {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable
@@ -798,7 +798,7 @@ public class FavoritedWorld {
   }
 
   /**
-   *  
+   * Get unityPackages
    * @return unityPackages
    */
   @javax.annotation.Nullable

@@ -3,7 +3,6 @@
 # InfoPushData
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -18,7 +17,7 @@
 |**contentList** | [**DynamicContentRow**](DynamicContentRow.md) |  |  [optional] |
 |**cta** | [**InfoPushDataCallToAction**](InfoPushDataCallToAction.md) |  |  [optional] |
 |**deliveryBehavior** | [**InfoPushDataDeliveryBehavior**](InfoPushDataDeliveryBehavior.md) |  |  [optional] |
-|**description** | **String** |  |  [optional] |
+|**description** | **Object** |  |  [optional] |
 |**disclaimerText** | **String** |  |  [optional] |
 |**domainList** | [**List&lt;InfoPushDataDomainListInner&gt;**](InfoPushDataDomainListInner.md) |  |  [optional] |
 |**featuredAvatarCategoryId** | **String** |  |  [optional] |
@@ -31,17 +30,17 @@
 |**isNew** | **Boolean** |  |  [optional] |
 |**listingIds** | **List&lt;String&gt;** |  |  [optional] |
 |**mediaType** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
+|**name** | **Object** |  |  [optional] |
 |**onPressed** | [**InfoPushDataClickable**](InfoPushDataClickable.md) |  |  [optional] |
 |**overrideName** | **Object** |  |  [optional] |
 |**rows** | **Integer** | Number of rows to render. |  [optional] |
 |**search** | [**InfoPushDataSearch**](InfoPushDataSearch.md) |  |  [optional] |
-|**shortName** | **String** |  |  [optional] |
+|**shortName** | **Object** |  |  [optional] |
 |**showInWorldIds** | **Object** |  |  [optional] |
 |**template** | **String** |  |  [optional] |
 |**thumbnailImageUrl** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
-|**tooltipDescription** | **String** |  |  [optional] |
+|**tooltipDescription** | **Object** |  |  [optional] |
 |**version** | **String** |  |  [optional] |
 |**videoFileId** | **String** |  |  [optional] |
 |**videoUrl** | **String** |  |  [optional] |

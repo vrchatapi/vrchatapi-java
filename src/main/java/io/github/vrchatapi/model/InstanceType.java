@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * 
+ * Gets or Sets InstanceType
  */
 @JsonAdapter(InstanceType.Adapter.class)
 public enum InstanceType {

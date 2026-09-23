@@ -32,7 +32,6 @@ import io.github.vrchatapi.model.ChangeUserTagsRequest;
 import io.github.vrchatapi.model.CurrentUser;
 import io.github.vrchatapi.model.Error;
 import io.github.vrchatapi.model.Feedback;
-import io.github.vrchatapi.model.GetUserGroupInstances200Response;
 import io.github.vrchatapi.model.Group;
 import io.github.vrchatapi.model.GroupPermissions;
 import io.github.vrchatapi.model.LimitedUserGroups;
@@ -48,9 +47,10 @@ import io.github.vrchatapi.model.UpdateUserBadgeRequest;
 import io.github.vrchatapi.model.UpdateUserClientConfigRequest;
 import io.github.vrchatapi.model.UpdateUserNoteRequest;
 import io.github.vrchatapi.model.UpdateUserRequest;
-import io.github.vrchatapi.model.User;
 import io.github.vrchatapi.model.UserClientConfig;
+import io.github.vrchatapi.model.UserGroupInstanceListResponse;
 import io.github.vrchatapi.model.UserNote;
+import io.github.vrchatapi.model.UserResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -387,6 +387,312 @@ public class UsersApi {
 
         okhttp3.Call localVarCall = checkUserPersistenceExistsValidateBeforeCall(userId, worldId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for clearUserTutorials
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can clear only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call clearUserTutorialsCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/tutorial"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (xPlatform != null) {
+            localVarHeaderParams.put("X-Platform", localVarApiClient.parameterToString(xPlatform));
+        }
+
+
+        if (xStore != null) {
+            localVarHeaderParams.put("X-Store", localVarApiClient.parameterToString(xStore));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call clearUserTutorialsValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling clearUserTutorials(Async)");
+        }
+
+        return clearUserTutorialsCall(userId, xPlatform, xStore, _callback);
+
+    }
+
+    /**
+     * Clear User Tutorials
+     * Clears every tutorial the user completed on a platform, whatever &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; name, and returns the current user. Tutorials of other kinds, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;, stay completed.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @return CurrentUser
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can clear only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public CurrentUser clearUserTutorials(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        ApiResponse<CurrentUser> localVarResp = clearUserTutorialsWithHttpInfo(userId, xPlatform, xStore);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Clear User Tutorials
+     * Clears every tutorial the user completed on a platform, whatever &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; name, and returns the current user. Tutorials of other kinds, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;, stay completed.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @return ApiResponse&lt;CurrentUser&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can clear only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CurrentUser> clearUserTutorialsWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        okhttp3.Call localVarCall = clearUserTutorialsValidateBeforeCall(userId, xPlatform, xStore, null);
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Clear User Tutorials (asynchronously)
+     * Clears every tutorial the user completed on a platform, whatever &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; name, and returns the current user. Tutorials of other kinds, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;, stay completed.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can clear only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call clearUserTutorialsAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback<CurrentUser> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = clearUserTutorialsValidateBeforeCall(userId, xPlatform, xStore, _callback);
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for completeUserTutorial
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can complete only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call completeUserTutorialCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/users/{userId}/tutorial"
+            .replace("{" + "userId" + "}", localVarApiClient.escapeString(userId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (xPlatform != null) {
+            localVarHeaderParams.put("X-Platform", localVarApiClient.parameterToString(xPlatform));
+        }
+
+
+        if (xStore != null) {
+            localVarHeaderParams.put("X-Store", localVarApiClient.parameterToString(xStore));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call completeUserTutorialValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling completeUserTutorial(Async)");
+        }
+
+        return completeUserTutorialCall(userId, xPlatform, xStore, _callback);
+
+    }
+
+    /**
+     * Complete User Tutorial
+     * Marks the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; completed, and returns the current user.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @return CurrentUser
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can complete only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public CurrentUser completeUserTutorial(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        ApiResponse<CurrentUser> localVarResp = completeUserTutorialWithHttpInfo(userId, xPlatform, xStore);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Complete User Tutorial
+     * Marks the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; completed, and returns the current user.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @return ApiResponse&lt;CurrentUser&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can complete only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CurrentUser> completeUserTutorialWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        okhttp3.Call localVarCall = completeUserTutorialValidateBeforeCall(userId, xPlatform, xStore, null);
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Complete User Tutorial (asynchronously)
+     * Marks the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; completed, and returns the current user.
+     * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns a single CurrentUser object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> A user can complete only their own tutorials. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call completeUserTutorialAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback<CurrentUser> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = completeUserTutorialValidateBeforeCall(userId, xPlatform, xStore, _callback);
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1822,7 +2128,7 @@ public class UsersApi {
      * Get User by ID
      * Get public user information about a specific user using their ID.
      * @param userId Must be a valid user ID. (required)
-     * @return User
+     * @return UserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1833,8 +2139,8 @@ public class UsersApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public User getUser(@javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<User> localVarResp = getUserWithHttpInfo(userId);
+    public UserResponse getUser(@javax.annotation.Nonnull String userId) throws ApiException {
+        ApiResponse<UserResponse> localVarResp = getUserWithHttpInfo(userId);
         return localVarResp.getData();
     }
 
@@ -1842,7 +2148,7 @@ public class UsersApi {
      * Get User by ID
      * Get public user information about a specific user using their ID.
      * @param userId Must be a valid user ID. (required)
-     * @return ApiResponse&lt;User&gt;
+     * @return ApiResponse&lt;UserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1853,9 +2159,9 @@ public class UsersApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<User> getUserWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    public ApiResponse<UserResponse> getUserWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getUserValidateBeforeCall(userId, null);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1875,10 +2181,10 @@ public class UsersApi {
         <tr><td> 404 </td><td> The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserAsync(@javax.annotation.Nonnull String userId, final ApiCallback<User> _callback) throws ApiException {
+    public okhttp3.Call getUserAsync(@javax.annotation.Nonnull String userId, final ApiCallback<UserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserValidateBeforeCall(userId, _callback);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2099,7 +2405,7 @@ public class UsersApi {
      * Get User by Username
      * Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
      * @param username Username of the user (required)
-     * @return User
+     * @return UserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2112,8 +2418,8 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public User getUserByName(@javax.annotation.Nonnull String username) throws ApiException {
-        ApiResponse<User> localVarResp = getUserByNameWithHttpInfo(username);
+    public UserResponse getUserByName(@javax.annotation.Nonnull String username) throws ApiException {
+        ApiResponse<UserResponse> localVarResp = getUserByNameWithHttpInfo(username);
         return localVarResp.getData();
     }
 
@@ -2121,7 +2427,7 @@ public class UsersApi {
      * Get User by Username
      * Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
      * @param username Username of the user (required)
-     * @return ApiResponse&lt;User&gt;
+     * @return ApiResponse&lt;UserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2134,9 +2440,9 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<User> getUserByNameWithHttpInfo(@javax.annotation.Nonnull String username) throws ApiException {
+    public ApiResponse<UserResponse> getUserByNameWithHttpInfo(@javax.annotation.Nonnull String username) throws ApiException {
         okhttp3.Call localVarCall = getUserByNameValidateBeforeCall(username, null);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2158,10 +2464,10 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserByNameAsync(@javax.annotation.Nonnull String username, final ApiCallback<User> _callback) throws ApiException {
+    public okhttp3.Call getUserByNameAsync(@javax.annotation.Nonnull String username, final ApiCallback<UserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserByNameValidateBeforeCall(username, _callback);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2526,7 +2832,7 @@ public class UsersApi {
      * Get User Group Instances
      * Returns a list of group instances for a user
      * @param userId Must be a valid user ID. (required)
-     * @return GetUserGroupInstances200Response
+     * @return UserGroupInstanceListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2537,8 +2843,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public GetUserGroupInstances200Response getUserGroupInstances(@javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<GetUserGroupInstances200Response> localVarResp = getUserGroupInstancesWithHttpInfo(userId);
+    public UserGroupInstanceListResponse getUserGroupInstances(@javax.annotation.Nonnull String userId) throws ApiException {
+        ApiResponse<UserGroupInstanceListResponse> localVarResp = getUserGroupInstancesWithHttpInfo(userId);
         return localVarResp.getData();
     }
 
@@ -2546,7 +2852,7 @@ public class UsersApi {
      * Get User Group Instances
      * Returns a list of group instances for a user
      * @param userId Must be a valid user ID. (required)
-     * @return ApiResponse&lt;GetUserGroupInstances200Response&gt;
+     * @return ApiResponse&lt;UserGroupInstanceListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2557,9 +2863,9 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetUserGroupInstances200Response> getUserGroupInstancesWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    public ApiResponse<UserGroupInstanceListResponse> getUserGroupInstancesWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getUserGroupInstancesValidateBeforeCall(userId, null);
-        Type localVarReturnType = new TypeToken<GetUserGroupInstances200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserGroupInstanceListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2579,10 +2885,10 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserGroupInstancesAsync(@javax.annotation.Nonnull String userId, final ApiCallback<GetUserGroupInstances200Response> _callback) throws ApiException {
+    public okhttp3.Call getUserGroupInstancesAsync(@javax.annotation.Nonnull String userId, final ApiCallback<UserGroupInstanceListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserGroupInstancesValidateBeforeCall(userId, _callback);
-        Type localVarReturnType = new TypeToken<GetUserGroupInstances200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserGroupInstanceListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2669,7 +2975,7 @@ public class UsersApi {
      * Returns a list of a group&#39;s instances for a user
      * @param userId Must be a valid user ID. (required)
      * @param groupId Must be a valid group ID. (required)
-     * @return GetUserGroupInstances200Response
+     * @return UserGroupInstanceListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2680,8 +2986,8 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public GetUserGroupInstances200Response getUserGroupInstancesForGroup(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId) throws ApiException {
-        ApiResponse<GetUserGroupInstances200Response> localVarResp = getUserGroupInstancesForGroupWithHttpInfo(userId, groupId);
+    public UserGroupInstanceListResponse getUserGroupInstancesForGroup(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId) throws ApiException {
+        ApiResponse<UserGroupInstanceListResponse> localVarResp = getUserGroupInstancesForGroupWithHttpInfo(userId, groupId);
         return localVarResp.getData();
     }
 
@@ -2690,7 +2996,7 @@ public class UsersApi {
      * Returns a list of a group&#39;s instances for a user
      * @param userId Must be a valid user ID. (required)
      * @param groupId Must be a valid group ID. (required)
-     * @return ApiResponse&lt;GetUserGroupInstances200Response&gt;
+     * @return ApiResponse&lt;UserGroupInstanceListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2701,9 +3007,9 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetUserGroupInstances200Response> getUserGroupInstancesForGroupWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId) throws ApiException {
+    public ApiResponse<UserGroupInstanceListResponse> getUserGroupInstancesForGroupWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId) throws ApiException {
         okhttp3.Call localVarCall = getUserGroupInstancesForGroupValidateBeforeCall(userId, groupId, null);
-        Type localVarReturnType = new TypeToken<GetUserGroupInstances200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserGroupInstanceListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2724,10 +3030,10 @@ public class UsersApi {
         <tr><td> 403 </td><td> Error response when trying get group instances of another user. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserGroupInstancesForGroupAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId, final ApiCallback<GetUserGroupInstances200Response> _callback) throws ApiException {
+    public okhttp3.Call getUserGroupInstancesForGroupAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String groupId, final ApiCallback<UserGroupInstanceListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserGroupInstancesForGroupValidateBeforeCall(userId, groupId, _callback);
-        Type localVarReturnType = new TypeToken<GetUserGroupInstances200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserGroupInstanceListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3395,6 +3701,8 @@ public class UsersApi {
     /**
      * Build call for getUserTutorialStatus
      * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3406,7 +3714,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserTutorialStatusCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserTutorialStatusCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3447,25 +3755,37 @@ public class UsersApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (xPlatform != null) {
+            localVarHeaderParams.put("X-Platform", localVarApiClient.parameterToString(xPlatform));
+        }
+
+
+        if (xStore != null) {
+            localVarHeaderParams.put("X-Store", localVarApiClient.parameterToString(xStore));
+        }
+
+
         String[] localVarAuthNames = new String[] { "authCookie" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserTutorialStatusValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserTutorialStatusValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getUserTutorialStatus(Async)");
         }
 
-        return getUserTutorialStatusCall(userId, _callback);
+        return getUserTutorialStatusCall(userId, xPlatform, xStore, _callback);
 
     }
 
     /**
      * Get User Tutorial Status
-     * Gets the status of completed or outstanding tutorials for the specified user.
+     * Gets the status of completed or outstanding tutorials for the specified user. &#x60;tutorialKey&#x60; and &#x60;completed&#x60; describe the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60;.
      * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
      * @return TutorialStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3476,15 +3796,17 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public TutorialStatus getUserTutorialStatus(@javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<TutorialStatus> localVarResp = getUserTutorialStatusWithHttpInfo(userId);
+    public TutorialStatus getUserTutorialStatus(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        ApiResponse<TutorialStatus> localVarResp = getUserTutorialStatusWithHttpInfo(userId, xPlatform, xStore);
         return localVarResp.getData();
     }
 
     /**
      * Get User Tutorial Status
-     * Gets the status of completed or outstanding tutorials for the specified user.
+     * Gets the status of completed or outstanding tutorials for the specified user. &#x60;tutorialKey&#x60; and &#x60;completed&#x60; describe the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60;.
      * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
      * @return ApiResponse&lt;TutorialStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3495,16 +3817,18 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TutorialStatus> getUserTutorialStatusWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
-        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, null);
+    public ApiResponse<TutorialStatus> getUserTutorialStatusWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore) throws ApiException {
+        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, xPlatform, xStore, null);
         Type localVarReturnType = new TypeToken<TutorialStatus>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get User Tutorial Status (asynchronously)
-     * Gets the status of completed or outstanding tutorials for the specified user.
+     * Gets the status of completed or outstanding tutorials for the specified user. &#x60;tutorialKey&#x60; and &#x60;completed&#x60; describe the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60;.
      * @param userId Must be a valid user ID. (required)
+     * @param xPlatform The platform the tutorial belongs to. &#x60;standalonewindows&#x60;, &#x60;android&#x60; and &#x60;ios&#x60; are kept; any other value is recorded as &#x60;null&#x60;. (optional)
+     * @param xStore The store the tutorial belongs to, recorded as sent. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3516,9 +3840,9 @@ public class UsersApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserTutorialStatusAsync(@javax.annotation.Nonnull String userId, final ApiCallback<TutorialStatus> _callback) throws ApiException {
+    public okhttp3.Call getUserTutorialStatusAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String xPlatform, @javax.annotation.Nullable String xStore, final ApiCallback<TutorialStatus> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, _callback);
+        okhttp3.Call localVarCall = getUserTutorialStatusValidateBeforeCall(userId, xPlatform, xStore, _callback);
         Type localVarReturnType = new TypeToken<TutorialStatus>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

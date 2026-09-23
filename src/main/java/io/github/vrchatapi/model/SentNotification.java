@@ -19,11 +19,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.NotificationType;
+import io.github.vrchatapi.model.SentNotificationDetails;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +48,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * SentNotification
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class SentNotification {
@@ -61,7 +60,7 @@ public class SentNotification {
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
   @javax.annotation.Nonnull
-  private Map<String, String> details = new HashMap<>();
+  private SentNotificationDetails details;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -115,16 +114,8 @@ public class SentNotification {
   }
 
 
-  public SentNotification details(@javax.annotation.Nonnull Map<String, String> details) {
+  public SentNotification details(@javax.annotation.Nonnull SentNotificationDetails details) {
     this.details = details;
-    return this;
-  }
-
-  public SentNotification putDetailsItem(String key, String detailsItem) {
-    if (this.details == null) {
-      this.details = new HashMap<>();
-    }
-    this.details.put(key, detailsItem);
     return this;
   }
 
@@ -133,11 +124,11 @@ public class SentNotification {
    * @return details
    */
   @javax.annotation.Nonnull
-  public Map<String, String> getDetails() {
+  public SentNotificationDetails getDetails() {
     return details;
   }
 
-  public void setDetails(@javax.annotation.Nonnull Map<String, String> details) {
+  public void setDetails(@javax.annotation.Nonnull SentNotificationDetails details) {
     this.details = details;
   }
 
@@ -167,7 +158,7 @@ public class SentNotification {
   }
 
   /**
-   * 
+   * Get message
    * @return message
    */
   @javax.annotation.Nonnull
@@ -345,6 +336,8 @@ public class SentNotification {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `details`
+      SentNotificationDetails.validateJsonElement(jsonObj.get("details"));
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }

@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * 
+ * Gets or Sets InviteMessageType
  */
 @JsonAdapter(InviteMessageType.Adapter.class)
 public enum InviteMessageType {

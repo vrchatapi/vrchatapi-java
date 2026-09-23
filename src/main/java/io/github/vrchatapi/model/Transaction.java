@@ -19,12 +19,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.github.vrchatapi.model.Subscription;
-import io.github.vrchatapi.model.TransactionAgreement;
 import io.github.vrchatapi.model.TransactionStatus;
 import io.github.vrchatapi.model.TransactionSteamInfo;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,14 +50,14 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * Transaction
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class Transaction {
   public static final String SERIALIZED_NAME_AGREEMENT = "agreement";
   @SerializedName(SERIALIZED_NAME_AGREEMENT)
   @javax.annotation.Nullable
-  private TransactionAgreement agreement;
+  private Object agreement = null;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -122,7 +122,7 @@ public class Transaction {
   public Transaction() {
   }
 
-  public Transaction agreement(@javax.annotation.Nullable TransactionAgreement agreement) {
+  public Transaction agreement(@javax.annotation.Nullable Object agreement) {
     this.agreement = agreement;
     return this;
   }
@@ -132,11 +132,11 @@ public class Transaction {
    * @return agreement
    */
   @javax.annotation.Nullable
-  public TransactionAgreement getAgreement() {
+  public Object getAgreement() {
     return agreement;
   }
 
-  public void setAgreement(@javax.annotation.Nullable TransactionAgreement agreement) {
+  public void setAgreement(@javax.annotation.Nullable Object agreement) {
     this.agreement = agreement;
   }
 
@@ -394,9 +394,20 @@ public class Transaction {
         Objects.equals(this.userId, transaction.userId);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(agreement, createdAt, error, id, isGift, isTokens, sandbox, status, steam, subscription, updatedAt, userDisplayName, userId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -468,10 +479,6 @@ public class Transaction {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `agreement`
-      if (jsonObj.get("agreement") != null && !jsonObj.get("agreement").isJsonNull()) {
-        TransactionAgreement.validateJsonElement(jsonObj.get("agreement"));
-      }
       if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
       }

@@ -3,12 +3,11 @@
 # Transaction
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**agreement** | [**TransactionAgreement**](TransactionAgreement.md) |  |  [optional] |
+|**agreement** | **Object** |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**error** | **String** |  |  |
 |**id** | **String** |  |  |

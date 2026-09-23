@@ -57,7 +57,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * InfoPushData
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class InfoPushData {
@@ -114,7 +114,7 @@ public class InfoPushData {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
-  private String description;
+  private Object description = null;
 
   public static final String SERIALIZED_NAME_DISCLAIMER_TEXT = "disclaimerText";
   @SerializedName(SERIALIZED_NAME_DISCLAIMER_TEXT)
@@ -179,7 +179,7 @@ public class InfoPushData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
-  private String name;
+  private Object name = null;
 
   public static final String SERIALIZED_NAME_ON_PRESSED = "onPressed";
   @SerializedName(SERIALIZED_NAME_ON_PRESSED)
@@ -204,7 +204,7 @@ public class InfoPushData {
   public static final String SERIALIZED_NAME_SHORT_NAME = "shortName";
   @SerializedName(SERIALIZED_NAME_SHORT_NAME)
   @javax.annotation.Nullable
-  private String shortName;
+  private Object shortName = null;
 
   public static final String SERIALIZED_NAME_SHOW_IN_WORLD_IDS = "showInWorldIds";
   @SerializedName(SERIALIZED_NAME_SHOW_IN_WORLD_IDS)
@@ -229,7 +229,7 @@ public class InfoPushData {
   public static final String SERIALIZED_NAME_TOOLTIP_DESCRIPTION = "tooltipDescription";
   @SerializedName(SERIALIZED_NAME_TOOLTIP_DESCRIPTION)
   @javax.annotation.Nullable
-  private String tooltipDescription;
+  private Object tooltipDescription = null;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -457,7 +457,7 @@ public class InfoPushData {
   }
 
 
-  public InfoPushData description(@javax.annotation.Nullable String description) {
+  public InfoPushData description(@javax.annotation.Nullable Object description) {
     this.description = description;
     return this;
   }
@@ -467,11 +467,11 @@ public class InfoPushData {
    * @return description
    */
   @javax.annotation.Nullable
-  public String getDescription() {
+  public Object getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@javax.annotation.Nullable Object description) {
     this.description = description;
   }
 
@@ -720,7 +720,7 @@ public class InfoPushData {
   }
 
 
-  public InfoPushData name(@javax.annotation.Nullable String name) {
+  public InfoPushData name(@javax.annotation.Nullable Object name) {
     this.name = name;
     return this;
   }
@@ -730,11 +730,11 @@ public class InfoPushData {
    * @return name
    */
   @javax.annotation.Nullable
-  public String getName() {
+  public Object getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nullable Object name) {
     this.name = name;
   }
 
@@ -815,7 +815,7 @@ public class InfoPushData {
   }
 
 
-  public InfoPushData shortName(@javax.annotation.Nullable String shortName) {
+  public InfoPushData shortName(@javax.annotation.Nullable Object shortName) {
     this.shortName = shortName;
     return this;
   }
@@ -825,11 +825,11 @@ public class InfoPushData {
    * @return shortName
    */
   @javax.annotation.Nullable
-  public String getShortName() {
+  public Object getShortName() {
     return shortName;
   }
 
-  public void setShortName(@javax.annotation.Nullable String shortName) {
+  public void setShortName(@javax.annotation.Nullable Object shortName) {
     this.shortName = shortName;
   }
 
@@ -910,7 +910,7 @@ public class InfoPushData {
   }
 
 
-  public InfoPushData tooltipDescription(@javax.annotation.Nullable String tooltipDescription) {
+  public InfoPushData tooltipDescription(@javax.annotation.Nullable Object tooltipDescription) {
     this.tooltipDescription = tooltipDescription;
     return this;
   }
@@ -920,11 +920,11 @@ public class InfoPushData {
    * @return tooltipDescription
    */
   @javax.annotation.Nullable
-  public String getTooltipDescription() {
+  public Object getTooltipDescription() {
     return tooltipDescription;
   }
 
-  public void setTooltipDescription(@javax.annotation.Nullable String tooltipDescription) {
+  public void setTooltipDescription(@javax.annotation.Nullable Object tooltipDescription) {
     this.tooltipDescription = tooltipDescription;
   }
 
@@ -1224,9 +1224,6 @@ public class InfoPushData {
       if (jsonObj.get("deliveryBehavior") != null && !jsonObj.get("deliveryBehavior").isJsonNull()) {
         InfoPushDataDeliveryBehavior.validateJsonElement(jsonObj.get("deliveryBehavior"));
       }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
       if ((jsonObj.get("disclaimerText") != null && !jsonObj.get("disclaimerText").isJsonNull()) && !jsonObj.get("disclaimerText").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `disclaimerText` to be a primitive type in the JSON string but got `%s`", jsonObj.get("disclaimerText").toString()));
       }
@@ -1270,9 +1267,6 @@ public class InfoPushData {
       if ((jsonObj.get("mediaType") != null && !jsonObj.get("mediaType").isJsonNull()) && !jsonObj.get("mediaType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mediaType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mediaType").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       // validate the optional field `onPressed`
       if (jsonObj.get("onPressed") != null && !jsonObj.get("onPressed").isJsonNull()) {
         InfoPushDataClickable.validateJsonElement(jsonObj.get("onPressed"));
@@ -1280,9 +1274,6 @@ public class InfoPushData {
       // validate the optional field `search`
       if (jsonObj.get("search") != null && !jsonObj.get("search").isJsonNull()) {
         InfoPushDataSearch.validateJsonElement(jsonObj.get("search"));
-      }
-      if ((jsonObj.get("shortName") != null && !jsonObj.get("shortName").isJsonNull()) && !jsonObj.get("shortName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortName").toString()));
       }
       if ((jsonObj.get("template") != null && !jsonObj.get("template").isJsonNull()) && !jsonObj.get("template").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template").toString()));
@@ -1292,9 +1283,6 @@ public class InfoPushData {
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
-      }
-      if ((jsonObj.get("tooltipDescription") != null && !jsonObj.get("tooltipDescription").isJsonNull()) && !jsonObj.get("tooltipDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tooltipDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tooltipDescription").toString()));
       }
       if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));

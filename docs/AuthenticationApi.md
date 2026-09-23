@@ -15,6 +15,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**enable2FA**](AuthenticationApi.md#enable2FA) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes |
 | [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
 | [**getGlobalAvatarModerations**](AuthenticationApi.md#getGlobalAvatarModerations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations |
+| [**getInterestsAndPreferences**](AuthenticationApi.md#getInterestsAndPreferences) | **GET** /auth/user/interestsAndPreferences | Get Interests and Preferences |
 | [**getModerationReports**](AuthenticationApi.md#getModerationReports) | **GET** /moderationReports | Get Moderation Reports |
 | [**getOAuthRedirectCode**](AuthenticationApi.md#getOAuthRedirectCode) | **GET** /oauth/redirectCode | Get OAuth Redirect Code |
 | [**getRecoveryCodes**](AuthenticationApi.md#getRecoveryCodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes |
@@ -23,6 +24,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**registerUserAccount**](AuthenticationApi.md#registerUserAccount) | **POST** /auth/register | Register User Account |
 | [**resendEmailConfirmation**](AuthenticationApi.md#resendEmailConfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation |
 | [**submitModerationReport**](AuthenticationApi.md#submitModerationReport) | **POST** /moderationReports | Submit Moderation Report |
+| [**updateInterestsAndPreferences**](AuthenticationApi.md#updateInterestsAndPreferences) | **PUT** /auth/user/interestsAndPreferences | Update Interests and Preferences |
 | [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code |
 | [**verify2FAEmailCode**](AuthenticationApi.md#verify2FAEmailCode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code |
 | [**verifyAuthToken**](AuthenticationApi.md#verifyAuthToken) | **GET** /auth | Verify Auth Token |
@@ -654,7 +656,7 @@ This endpoint does not need any parameter.
 
 <a id="getCurrentUser"></a>
 # **getCurrentUser**
-> CurrentUser getCurrentUser()
+> CurrentUserLoginResponse getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -694,7 +696,7 @@ public class Example {
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     try {
-      CurrentUser result = apiInstance.getCurrentUser();
+      CurrentUserLoginResponse result = apiInstance.getCurrentUser();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getCurrentUser");
@@ -712,7 +714,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**CurrentUserLoginResponse**](CurrentUserLoginResponse.md)
 
 ### Authorization
 
@@ -793,6 +795,72 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns list of globally blocked avatars with timestamps |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getInterestsAndPreferences"></a>
+# **getInterestsAndPreferences**
+> InterestsAndPreferences getInterestsAndPreferences()
+
+Get Interests and Preferences
+
+Returns the interests and preferences the current user has turned on.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      InterestsAndPreferences result = apiInstance.getInterestsAndPreferences();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getInterestsAndPreferences");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InterestsAndPreferences**](InterestsAndPreferences.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getModerationReports"></a>
@@ -1145,7 +1213,7 @@ This endpoint does not need any parameter.
 
 <a id="registerUserAccount"></a>
 # **registerUserAccount**
-> CurrentUser registerUserAccount(registerUserAccountRequest)
+> CurrentUserLoginResponse registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -1168,7 +1236,7 @@ public class Example {
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     RegisterUserAccountRequest registerUserAccountRequest = new RegisterUserAccountRequest(); // RegisterUserAccountRequest | 
     try {
-      CurrentUser result = apiInstance.registerUserAccount(registerUserAccountRequest);
+      CurrentUserLoginResponse result = apiInstance.registerUserAccount(registerUserAccountRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#registerUserAccount");
@@ -1189,7 +1257,7 @@ public class Example {
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**CurrentUserLoginResponse**](CurrentUserLoginResponse.md)
 
 ### Authorization
 
@@ -1340,6 +1408,77 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single ModerationReport object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="updateInterestsAndPreferences"></a>
+# **updateInterestsAndPreferences**
+> Success updateInterestsAndPreferences(interestsAndPreferences)
+
+Update Interests and Preferences
+
+Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value, and an unknown key or a value that is not a boolean is ignored.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    InterestsAndPreferences interestsAndPreferences = new InterestsAndPreferences(); // InterestsAndPreferences | 
+    try {
+      Success result = apiInstance.updateInterestsAndPreferences(interestsAndPreferences);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#updateInterestsAndPreferences");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **interestsAndPreferences** | [**InterestsAndPreferences**](InterestsAndPreferences.md)|  | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | The body is not a JSON object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="verify2FA"></a>

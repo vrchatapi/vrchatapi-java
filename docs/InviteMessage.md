@@ -3,7 +3,6 @@
 # InviteMessage
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |

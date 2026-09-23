@@ -45,7 +45,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * FileUploadURL
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class FileUploadURL {
@@ -63,7 +63,7 @@ public class FileUploadURL {
   }
 
   /**
-   * 
+   * Get url
    * @return url
    */
   @javax.annotation.Nonnull

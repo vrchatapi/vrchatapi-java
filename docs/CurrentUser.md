@@ -10,8 +10,8 @@
 |**acceptedPrivacyVersion** | **Integer** |  |  [optional] |
 |**acceptedTOSVersion** | **Integer** |  |  |
 |**accountDeletionDate** | **LocalDate** |  |  [optional] |
-|**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   |  [optional] |
-|**activeFriends** | **List&lt;String&gt;** |   |  [optional] |
+|**accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |  |  [optional] |
+|**activeFriends** | **List&lt;String&gt;** |  |  [optional] |
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
@@ -69,7 +69,7 @@
 |**oculusId** | **String** |  |  |
 |**offlineFriends** | **List&lt;String&gt;** |  |  [optional] |
 |**onlineFriends** | **List&lt;String&gt;** |  |  [optional] |
-|**pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   |  |
+|**pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |  |  |
 |**personalizationOptOut** | **Boolean** |  |  [optional] |
 |**picoId** | **String** |  |  [optional] |
 |**platform** | **String** |  |  [optional] |

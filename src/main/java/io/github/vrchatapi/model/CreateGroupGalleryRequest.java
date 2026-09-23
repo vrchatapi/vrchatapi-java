@@ -161,7 +161,7 @@ public class CreateGroupGalleryRequest {
   }
 
   /**
-   *  
+   * Get roleIdsToAutoApprove
    * @return roleIdsToAutoApprove
    */
   @javax.annotation.Nullable
@@ -188,7 +188,7 @@ public class CreateGroupGalleryRequest {
   }
 
   /**
-   *  
+   * Get roleIdsToManage
    * @return roleIdsToManage
    */
   @javax.annotation.Nullable
@@ -215,7 +215,7 @@ public class CreateGroupGalleryRequest {
   }
 
   /**
-   *  
+   * Get roleIdsToSubmit
    * @return roleIdsToSubmit
    */
   @javax.annotation.Nullable
@@ -242,7 +242,7 @@ public class CreateGroupGalleryRequest {
   }
 
   /**
-   *  
+   * Get roleIdsToView
    * @return roleIdsToView
    */
   @javax.annotation.Nullable

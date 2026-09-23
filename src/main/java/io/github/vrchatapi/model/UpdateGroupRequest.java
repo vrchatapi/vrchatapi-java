@@ -331,7 +331,7 @@ public class UpdateGroupRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

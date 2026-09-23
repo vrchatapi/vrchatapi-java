@@ -947,7 +947,7 @@ public class User {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nonnull

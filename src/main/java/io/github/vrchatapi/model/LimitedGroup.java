@@ -262,7 +262,7 @@ public class LimitedGroup {
   }
 
   /**
-   *  
+   * Get galleries
    * @return galleries
    */
   @javax.annotation.Nullable
@@ -517,7 +517,7 @@ public class LimitedGroup {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

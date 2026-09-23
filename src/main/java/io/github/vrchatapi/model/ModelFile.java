@@ -54,7 +54,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * ModelFile
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelFile {
@@ -307,7 +307,7 @@ public class ModelFile {
   }
 
   /**
-   * 
+   * Get name
    * @return name
    */
   @javax.annotation.Nonnull
@@ -353,7 +353,7 @@ public class ModelFile {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nonnull
@@ -380,7 +380,7 @@ public class ModelFile {
   }
 
   /**
-   *  
+   * Get versions
    * @return versions
    */
   @javax.annotation.Nonnull

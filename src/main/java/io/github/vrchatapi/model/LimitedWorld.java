@@ -52,7 +52,7 @@ import java.util.Set;
 import io.github.vrchatapi.JSON;
 
 /**
- * 
+ * LimitedWorld
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class LimitedWorld {
@@ -643,7 +643,7 @@ public class LimitedWorld {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nonnull
@@ -716,7 +716,7 @@ public class LimitedWorld {
   }
 
   /**
-   *  
+   * Get unityPackages
    * @return unityPackages
    */
   @javax.annotation.Nonnull

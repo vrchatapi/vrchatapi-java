@@ -3,7 +3,6 @@
 # NotificationV2
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -11,7 +10,7 @@
 |**canDelete** | **Boolean** |  |  |
 |**category** | **String** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
-|**data** | **Map&lt;String, String&gt;** |  |  |
+|**data** | [**NotificationV2Data**](NotificationV2Data.md) |  |  |
 |**details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  |  [optional] |
 |**displayData** | **Object** |  |  [optional] |
 |**expiresAt** | **OffsetDateTime** |  |  |

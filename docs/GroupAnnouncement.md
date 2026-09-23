@@ -15,7 +15,7 @@ An announcement is stored as a group post, so `POST /groups/{groupId}/announceme
 |**id** | **String** |  |  [optional] |
 |**imageId** | **String** |  |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
-|**roleIds** | **List&lt;String&gt;** |   |  [optional] |
+|**roleIds** | **List&lt;String&gt;** |  |  [optional] |
 |**text** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |

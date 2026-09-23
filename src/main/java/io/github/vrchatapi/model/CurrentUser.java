@@ -625,7 +625,7 @@ public class CurrentUser {
   }
 
   /**
-   *  
+   * Get accountDeletionLog
    * @return accountDeletionLog
    */
   @javax.annotation.Nullable
@@ -652,7 +652,7 @@ public class CurrentUser {
   }
 
   /**
-   *  
+   * Get activeFriends
    * @return activeFriends
    */
   @javax.annotation.Nullable
@@ -1822,7 +1822,7 @@ public class CurrentUser {
   }
 
   /**
-   *  
+   * Get pastDisplayNames
    * @return pastDisplayNames
    */
   @javax.annotation.Nonnull

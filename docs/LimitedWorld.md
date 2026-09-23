@@ -3,7 +3,6 @@
 # LimitedWorld
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -30,10 +29,10 @@
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**storeId** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  |
+|**tags** | **List&lt;String&gt;** |  |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
-|**unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |   |  |
+|**unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
 |**visits** | **Integer** |  |  [optional] |
 

@@ -3,7 +3,6 @@
 # FavoritedWorld
 
 
-
 ## Properties
 
 | Name | Type | Description | Notes |
@@ -33,10 +32,10 @@
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**storeId** | **String** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**thumbnailImageUrl** | **String** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
-|**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |   |  [optional] |
+|**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |
 |**urlList** | **List&lt;String&gt;** |  |  [optional] |
 |**version** | **Integer** |  |  [optional] |

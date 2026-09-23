@@ -103,7 +103,7 @@ public class PaginatedCalendarEventList {
   }
 
   /**
-   *  
+   * Get results
    * @return results
    */
   @javax.annotation.Nullable

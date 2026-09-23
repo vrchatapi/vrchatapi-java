@@ -136,8 +136,8 @@ public class DynamicContentRow {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
-  private String name;
+  @javax.annotation.Nullable
+  private Object name = null;
 
   public static final String SERIALIZED_NAME_NON_FEATURED_RESULTS = "nonFeaturedResults";
   @SerializedName(SERIALIZED_NAME_NON_FEATURED_RESULTS)
@@ -177,7 +177,7 @@ public class DynamicContentRow {
   public static final String SERIALIZED_NAME_SHORT_NAME = "shortName";
   @SerializedName(SERIALIZED_NAME_SHORT_NAME)
   @javax.annotation.Nullable
-  private String shortName;
+  private Object shortName = null;
 
   public static final String SERIALIZED_NAME_SORT_HEADING = "sortHeading";
   @SerializedName(SERIALIZED_NAME_SORT_HEADING)
@@ -556,7 +556,7 @@ public class DynamicContentRow {
   }
 
 
-  public DynamicContentRow name(@javax.annotation.Nonnull String name) {
+  public DynamicContentRow name(@javax.annotation.Nullable Object name) {
     this.name = name;
     return this;
   }
@@ -565,12 +565,12 @@ public class DynamicContentRow {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
-  public String getName() {
+  @javax.annotation.Nullable
+  public Object getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@javax.annotation.Nullable Object name) {
     this.name = name;
   }
 
@@ -673,7 +673,7 @@ public class DynamicContentRow {
   }
 
   /**
-   * This is normally &#x60;android&#x60;, &#x60;ios&#x60;, &#x60;standalonewindows&#x60;, &#x60;web&#x60;, or the empty value &#x60;&#x60;, but also supposedly can be any random Unity version such as &#x60;2019.2.4-801-Release&#x60; or &#x60;2019.2.2-772-Release&#x60; or even &#x60;unknownplatform&#x60;.
+   * Usually \&quot;ThisPlatformSupported\&quot;, but can also be other values such as \&quot;all\&quot; or platform specific identifiers.
    * @return platform
    */
   @javax.annotation.Nonnull
@@ -724,7 +724,7 @@ public class DynamicContentRow {
   }
 
 
-  public DynamicContentRow shortName(@javax.annotation.Nullable String shortName) {
+  public DynamicContentRow shortName(@javax.annotation.Nullable Object shortName) {
     this.shortName = shortName;
     return this;
   }
@@ -734,11 +734,11 @@ public class DynamicContentRow {
    * @return shortName
    */
   @javax.annotation.Nullable
-  public String getShortName() {
+  public Object getShortName() {
     return shortName;
   }
 
-  public void setShortName(@javax.annotation.Nullable String shortName) {
+  public void setShortName(@javax.annotation.Nullable Object shortName) {
     this.shortName = shortName;
   }
 
@@ -1101,9 +1101,6 @@ public class DynamicContentRow {
       if ((jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull()) && !jsonObj.get("mode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("nonFeaturedResults") != null && !jsonObj.get("nonFeaturedResults").isJsonNull()) && !jsonObj.get("nonFeaturedResults").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nonFeaturedResults` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nonFeaturedResults").toString()));
       }
@@ -1122,9 +1119,6 @@ public class DynamicContentRow {
       }
       if ((jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) && !jsonObj.get("scope").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scope").toString()));
-      }
-      if ((jsonObj.get("shortName") != null && !jsonObj.get("shortName").isJsonNull()) && !jsonObj.get("shortName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shortName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortName").toString()));
       }
       if ((jsonObj.get("sortHeading") != null && !jsonObj.get("sortHeading").isJsonNull()) && !jsonObj.get("sortHeading").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sortHeading` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sortHeading").toString()));

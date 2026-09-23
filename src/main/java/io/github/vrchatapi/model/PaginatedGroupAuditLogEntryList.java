@@ -103,7 +103,7 @@ public class PaginatedGroupAuditLogEntryList {
   }
 
   /**
-   *  
+   * Get results
    * @return results
    */
   @javax.annotation.Nullable

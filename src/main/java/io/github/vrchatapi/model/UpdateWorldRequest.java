@@ -412,7 +412,7 @@ public class UpdateWorldRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable

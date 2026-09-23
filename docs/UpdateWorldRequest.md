@@ -20,7 +20,7 @@
 |**previewYoutubeId** | **String** |  |  [optional] |
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |   |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
 |**unityVersion** | **String** |  |  [optional] |
 |**urlList** | **List&lt;String&gt;** |  |  [optional] |

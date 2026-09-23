@@ -42,7 +42,7 @@
 |**state** | **UserState** |  |  |
 |**status** | **UserStatus** |  |  |
 |**statusDescription** | **String** |  |  |
-|**tags** | **List&lt;String&gt;** |   |  |
+|**tags** | **List&lt;String&gt;** |  |  |
 |**travelingToInstance** | **String** |  |  [optional] |
 |**travelingToLocation** | **String** |  |  [optional] |
 |**travelingToWorld** | **String** |  |  [optional] |

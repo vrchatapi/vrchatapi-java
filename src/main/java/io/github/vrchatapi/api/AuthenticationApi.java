@@ -31,8 +31,10 @@ import io.github.vrchatapi.model.AvatarModerationCreated;
 import io.github.vrchatapi.model.AvatarModerationType;
 import io.github.vrchatapi.model.CreateAvatarModerationRequest;
 import io.github.vrchatapi.model.CurrentUser;
+import io.github.vrchatapi.model.CurrentUserLoginResponse;
 import io.github.vrchatapi.model.Disable2FAResult;
 import io.github.vrchatapi.model.Error;
+import io.github.vrchatapi.model.InterestsAndPreferences;
 import io.github.vrchatapi.model.ModerationReport;
 import io.github.vrchatapi.model.OAuthRedirectCode;
 import io.github.vrchatapi.model.OkStatus2;
@@ -1363,7 +1365,7 @@ public class AuthenticationApi {
     /**
      * Login and/or Get Current User Info
      * This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid &#x60;auth&#x60; cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the &#x60;Authorization&#x60; header and set the &#x60;auth&#x60; cookie. The &#x60;auth&#x60; cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after &#x60;Authorization: Basic {string}&#x60; is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.  &gt; base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the &#x60;auth&#x60; cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
-     * @return CurrentUser
+     * @return CurrentUserLoginResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1373,15 +1375,15 @@ public class AuthenticationApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public CurrentUser getCurrentUser() throws ApiException {
-        ApiResponse<CurrentUser> localVarResp = getCurrentUserWithHttpInfo();
+    public CurrentUserLoginResponse getCurrentUser() throws ApiException {
+        ApiResponse<CurrentUserLoginResponse> localVarResp = getCurrentUserWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Login and/or Get Current User Info
      * This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid &#x60;auth&#x60; cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the &#x60;Authorization&#x60; header and set the &#x60;auth&#x60; cookie. The &#x60;auth&#x60; cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after &#x60;Authorization: Basic {string}&#x60; is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.  &gt; base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the &#x60;auth&#x60; cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
-     * @return ApiResponse&lt;CurrentUser&gt;
+     * @return ApiResponse&lt;CurrentUserLoginResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1391,9 +1393,9 @@ public class AuthenticationApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CurrentUser> getCurrentUserWithHttpInfo() throws ApiException {
+    public ApiResponse<CurrentUserLoginResponse> getCurrentUserWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getCurrentUserValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUserLoginResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1411,10 +1413,10 @@ public class AuthenticationApi {
         <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCurrentUserAsync(final ApiCallback<CurrentUser> _callback) throws ApiException {
+    public okhttp3.Call getCurrentUserAsync(final ApiCallback<CurrentUserLoginResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCurrentUserValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUserLoginResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1536,6 +1538,127 @@ public class AuthenticationApi {
 
         okhttp3.Call localVarCall = getGlobalAvatarModerationsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<AvatarModeration>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getInterestsAndPreferences
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getInterestsAndPreferencesCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/auth/user/interestsAndPreferences";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getInterestsAndPreferencesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getInterestsAndPreferencesCall(_callback);
+
+    }
+
+    /**
+     * Get Interests and Preferences
+     * Returns the interests and preferences the current user has turned on.
+     * @return InterestsAndPreferences
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public InterestsAndPreferences getInterestsAndPreferences() throws ApiException {
+        ApiResponse<InterestsAndPreferences> localVarResp = getInterestsAndPreferencesWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Interests and Preferences
+     * Returns the interests and preferences the current user has turned on.
+     * @return ApiResponse&lt;InterestsAndPreferences&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<InterestsAndPreferences> getInterestsAndPreferencesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getInterestsAndPreferencesValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<InterestsAndPreferences>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Interests and Preferences (asynchronously)
+     * Returns the interests and preferences the current user has turned on.
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getInterestsAndPreferencesAsync(final ApiCallback<InterestsAndPreferences> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getInterestsAndPreferencesValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<InterestsAndPreferences>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2279,7 +2402,7 @@ public class AuthenticationApi {
      * Register User Account
      * Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
      * @param registerUserAccountRequest  (required)
-     * @return CurrentUser
+     * @return CurrentUserLoginResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2291,8 +2414,8 @@ public class AuthenticationApi {
      * @deprecated
      */
     @Deprecated
-    public CurrentUser registerUserAccount(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest) throws ApiException {
-        ApiResponse<CurrentUser> localVarResp = registerUserAccountWithHttpInfo(registerUserAccountRequest);
+    public CurrentUserLoginResponse registerUserAccount(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest) throws ApiException {
+        ApiResponse<CurrentUserLoginResponse> localVarResp = registerUserAccountWithHttpInfo(registerUserAccountRequest);
         return localVarResp.getData();
     }
 
@@ -2300,7 +2423,7 @@ public class AuthenticationApi {
      * Register User Account
      * Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
      * @param registerUserAccountRequest  (required)
-     * @return ApiResponse&lt;CurrentUser&gt;
+     * @return ApiResponse&lt;CurrentUserLoginResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -2312,9 +2435,9 @@ public class AuthenticationApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CurrentUser> registerUserAccountWithHttpInfo(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest) throws ApiException {
+    public ApiResponse<CurrentUserLoginResponse> registerUserAccountWithHttpInfo(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest) throws ApiException {
         okhttp3.Call localVarCall = registerUserAccountValidateBeforeCall(registerUserAccountRequest, null);
-        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUserLoginResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2335,10 +2458,10 @@ public class AuthenticationApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call registerUserAccountAsync(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest, final ApiCallback<CurrentUser> _callback) throws ApiException {
+    public okhttp3.Call registerUserAccountAsync(@javax.annotation.Nonnull RegisterUserAccountRequest registerUserAccountRequest, final ApiCallback<CurrentUserLoginResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerUserAccountValidateBeforeCall(registerUserAccountRequest, _callback);
-        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUserLoginResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2591,6 +2714,141 @@ public class AuthenticationApi {
 
         okhttp3.Call localVarCall = submitModerationReportValidateBeforeCall(submitModerationReportRequest, _callback);
         Type localVarReturnType = new TypeToken<ModerationReport>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateInterestsAndPreferences
+     * @param interestsAndPreferences  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The body is not a JSON object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateInterestsAndPreferencesCall(@javax.annotation.Nonnull InterestsAndPreferences interestsAndPreferences, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = interestsAndPreferences;
+
+        // create path and map variables
+        String localVarPath = "/auth/user/interestsAndPreferences";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "authCookie" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateInterestsAndPreferencesValidateBeforeCall(@javax.annotation.Nonnull InterestsAndPreferences interestsAndPreferences, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'interestsAndPreferences' is set
+        if (interestsAndPreferences == null) {
+            throw new ApiException("Missing the required parameter 'interestsAndPreferences' when calling updateInterestsAndPreferences(Async)");
+        }
+
+        return updateInterestsAndPreferencesCall(interestsAndPreferences, _callback);
+
+    }
+
+    /**
+     * Update Interests and Preferences
+     * Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value, and an unknown key or a value that is not a boolean is ignored.
+     * @param interestsAndPreferences  (required)
+     * @return Success
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The body is not a JSON object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public Success updateInterestsAndPreferences(@javax.annotation.Nonnull InterestsAndPreferences interestsAndPreferences) throws ApiException {
+        ApiResponse<Success> localVarResp = updateInterestsAndPreferencesWithHttpInfo(interestsAndPreferences);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Interests and Preferences
+     * Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value, and an unknown key or a value that is not a boolean is ignored.
+     * @param interestsAndPreferences  (required)
+     * @return ApiResponse&lt;Success&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The body is not a JSON object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Success> updateInterestsAndPreferencesWithHttpInfo(@javax.annotation.Nonnull InterestsAndPreferences interestsAndPreferences) throws ApiException {
+        okhttp3.Call localVarCall = updateInterestsAndPreferencesValidateBeforeCall(interestsAndPreferences, null);
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Interests and Preferences (asynchronously)
+     * Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value, and an unknown key or a value that is not a boolean is ignored.
+     * @param interestsAndPreferences  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The body is not a JSON object. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Error response due to missing auth cookie. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateInterestsAndPreferencesAsync(@javax.annotation.Nonnull InterestsAndPreferences interestsAndPreferences, final ApiCallback<Success> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateInterestsAndPreferencesValidateBeforeCall(interestsAndPreferences, _callback);
+        Type localVarReturnType = new TypeToken<Success>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

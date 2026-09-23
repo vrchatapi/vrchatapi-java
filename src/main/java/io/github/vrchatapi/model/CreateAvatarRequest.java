@@ -315,7 +315,7 @@ public class CreateAvatarRequest {
   }
 
   /**
-   *  
+   * Get tags
    * @return tags
    */
   @javax.annotation.Nullable
