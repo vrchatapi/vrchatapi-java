@@ -109,7 +109,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single CurrentUser object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
@@ -258,7 +258,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single CurrentUser object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | A user can clear only their own tutorials. |  -  |
 
@@ -333,7 +333,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single CurrentUser object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | A user can complete only their own tutorials. |  -  |
 
@@ -542,7 +542,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single AgeVerificationStatusResult object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getBlockedGroups"></a>
@@ -612,7 +612,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Group objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getInvitedGroups"></a>
@@ -682,7 +682,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Group objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getMutualFriends"></a>
@@ -756,7 +756,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of MutualFriend objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getMutualGroups"></a>
@@ -830,7 +830,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedUserGroups objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getMutuals"></a>
@@ -900,7 +900,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Mutuals object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getPrivateProfile"></a>
@@ -1044,7 +1044,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a user&#39;s public profile. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUser"></a>
@@ -1114,7 +1114,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
+| **200** | Requesting your own ID returns your full &#x60;CurrentUser&#x60; record, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -1257,7 +1257,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Return a single User object.  Requesting your own ID returns your full &#x60;CurrentUser&#x60; record instead, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
+| **200** | Requesting your own ID returns your full &#x60;CurrentUser&#x60; record, carrying the private fields (&#x60;emailVerified&#x60;, &#x60;steamDetails&#x60;, &#x60;twoFactorAuthEnabled&#x60;, …) that never appear in responses for another user. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
 
@@ -1328,7 +1328,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a UserClientConfig object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserFeedback"></a>
@@ -1404,7 +1404,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Feedback objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserGroupInstances"></a>
@@ -1474,7 +1474,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Instance objects with a fetched at time. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying get group instances of another user. |  -  |
 
@@ -1547,7 +1547,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Instance objects with a fetched at time. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying get group instances of another user. |  -  |
 
@@ -1618,7 +1618,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Group objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserGroups"></a>
@@ -1688,7 +1688,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedUserGroups objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserNote"></a>
@@ -1758,7 +1758,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single UserNote object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserNotes"></a>
@@ -1830,7 +1830,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of UserNote objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserRepresentedGroup"></a>
@@ -1900,7 +1900,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserTutorialStatus"></a>
@@ -1974,7 +1974,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single TutorialStatus object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="removeTags"></a>
@@ -2046,7 +2046,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single CurrentUser object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when a user attempts to add an invalid, restricted, or duplicate tag to their profile, attempts to add tags above the limit for their profile, or attempts to remove invalid, restricted, or absent tag from their profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
@@ -2126,7 +2126,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedUserSearch objects. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when trying to search list of users with an invalid request. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
@@ -2274,7 +2274,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a user&#39;s public profile. |  -  |
+| **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
@@ -2347,7 +2347,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single CurrentUser object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when a user attempts to change a property without supplying their current password. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when updating a user other than yourself. |  -  |
@@ -2421,7 +2421,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a UserClientConfig object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="updateUserNote"></a>
@@ -2491,6 +2491,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single UserNote object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 

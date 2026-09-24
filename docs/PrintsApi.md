@@ -151,7 +151,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Print object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getPrint"></a>
@@ -221,7 +221,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Print object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getUserPrints"></a>
@@ -291,7 +291,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Print objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to request another user&#39;s prints. |  -  |
 
@@ -370,6 +370,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Print object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 

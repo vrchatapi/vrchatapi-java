@@ -86,7 +86,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response after friending a user. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | Error response when trying to accept a non-existent friend request. |  -  |
 
@@ -224,7 +224,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response after clearing all notifications. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="deleteAllNotificationV2s"></a>
@@ -290,7 +290,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response after clearing all notifications. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="deleteNotification"></a>
@@ -430,7 +430,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response after clearing a notification. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when trying to perform an invalid operations on a notification. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
@@ -502,7 +502,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notification object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -725,7 +725,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Notification objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="markNotificationAsRead"></a>
@@ -795,7 +795,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Notification object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="replyNotificationV2"></a>

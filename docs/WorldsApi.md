@@ -94,7 +94,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single World object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
@@ -238,7 +238,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single World object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when trying create a world without having the necessary Trust rank yet. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
@@ -386,7 +386,7 @@ null (empty response body)
 
 <a id="deleteWorld"></a>
 # **deleteWorld**
-> deleteWorld(worldId)
+> Object deleteWorld(worldId)
 
 Delete World
 
@@ -416,7 +416,8 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     String worldId = "worldId_example"; // String | Must be a valid world ID.
     try {
-      apiInstance.deleteWorld(worldId);
+      Object result = apiInstance.deleteWorld(worldId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorldsApi#deleteWorld");
       System.err.println("Status code: " + e.getCode());
@@ -436,7 +437,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -450,7 +451,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -522,7 +523,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -617,7 +618,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedWorld objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoritedWorlds"></a>
@@ -711,7 +712,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of FavoritedWorld objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see favorited worlds of another user without sufficient admin permissions. |  -  |
 
@@ -806,7 +807,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedWorld objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response when trying to see recently visited worlds of another user without sufficient admin permissions. |  -  |
 
@@ -870,7 +871,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single World object. |  -  |
+| **200** |  |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getWorldInstance"></a>
@@ -942,7 +943,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Instance object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getWorldMetadata"></a>
@@ -1005,7 +1006,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getWorldPublishStatus"></a>
@@ -1075,7 +1076,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single WorldPublishStatus object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -1218,7 +1219,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single World object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing Administrator credentials. |  -  |
@@ -1322,7 +1323,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of LimitedWorld objects. |  -  |
+| **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
@@ -1392,7 +1393,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -1465,7 +1466,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single World object. |  -  |
+| **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |

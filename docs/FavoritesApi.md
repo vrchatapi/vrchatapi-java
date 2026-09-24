@@ -83,7 +83,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Favorite object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when trying favorite someone or something when already having it/them favorited. |  -  |
 | **403** | Error response when trying favorite someone whom you are not friends with. |  -  |
 
@@ -231,7 +231,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FavoriteGroup object. |  -  |
+| **200** |  |  -  |
 
 <a id="getFavoriteGroupContents"></a>
 # **getFavoriteGroupContents**
@@ -382,7 +382,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of FavoriteGroup objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteGroupsByType"></a>
@@ -454,7 +454,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FavoriteGroupList object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteLimits"></a>
@@ -520,7 +520,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FavoriteLimits object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavorites"></a>
@@ -596,7 +596,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of Favorite objects. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="removeFavorite"></a>
@@ -673,7 +673,7 @@ public class Example {
 
 <a id="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**
-> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
+> Object updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
 
 Update Favorite Group
 
@@ -706,7 +706,8 @@ public class Example {
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateFavoriteGroupRequest updateFavoriteGroupRequest = new UpdateFavoriteGroupRequest(); // UpdateFavoriteGroupRequest | 
     try {
-      apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
+      Object result = apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#updateFavoriteGroup");
       System.err.println("Status code: " + e.getCode());
@@ -729,7 +730,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -738,10 +739,10 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 

@@ -94,7 +94,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
 <a id="createFileVersion"></a>
 # **createFileVersion**
@@ -165,7 +165,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
 <a id="deleteFile"></a>
 # **deleteFile**
@@ -234,7 +234,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteFileVersion"></a>
@@ -306,7 +306,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 | **400** | Error response when trying to delete the initial version of a file. Delete the main File object instead. |  -  |
 | **500** | Error response when trying to delete any version of a file that is not the last one. |  -  |
 
@@ -455,7 +455,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
 <a id="getAdminAssetBundle"></a>
 # **getAdminAssetBundle**
@@ -524,7 +524,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single AdminAssetBundle object. |  -  |
+| **200** |  |  -  |
 
 <a id="getContentAgreementStatus"></a>
 # **getContentAgreementStatus**
@@ -597,7 +597,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single AgreementStatus object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFile"></a>
@@ -667,7 +667,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getFileAnalysis"></a>
@@ -739,7 +739,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FileAnalysis object. |  -  |
+| **200** |  |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -812,7 +812,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FileAnalysis object. |  -  |
+| **200** |  |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -885,7 +885,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single FileAnalysis object. |  -  |
+| **200** |  |  -  |
 | **202** | Error response when requesting file Analysis that is not yet available. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
@@ -1035,7 +1035,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of File objects. |  -  |
+| **200** |  |  -  |
 
 <a id="setGroupGalleryFileOrder"></a>
 # **setGroupGalleryFileOrder**
@@ -1104,7 +1104,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a list of File IDs. |  -  |
+| **200** |  |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="startFileDataUpload"></a>
@@ -1250,7 +1250,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single Agreement object. |  -  |
+| **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="updateAssetReviewNotes"></a>
@@ -1391,7 +1391,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
 <a id="uploadIcon"></a>
 # **uploadIcon**
@@ -1460,7 +1460,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
 <a id="uploadImage"></a>
 # **uploadImage**
@@ -1541,5 +1541,5 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a single File object. |  -  |
+| **200** |  |  -  |
 
