@@ -12,7 +12,7 @@
 |**createdAt** | **OffsetDateTime** |  |  |
 |**data** | [**NotificationV2Data**](NotificationV2Data.md) |  |  |
 |**details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  |  [optional] |
-|**displayData** | **Object** |  |  [optional] |
+|**displayData** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**expiresAt** | **OffsetDateTime** |  |  |
 |**expiryAfterSeen** | **Integer** |  |  |
 |**id** | **String** |  |  |

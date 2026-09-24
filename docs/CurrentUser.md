@@ -88,7 +88,7 @@
 |**steamDetails** | **Object** | Details of an account on another service linked to this one. |  |
 |**steamId** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
-|**temporaryExpiryDate** | **Object** |  |  [optional] |
+|**temporaryExpiryDate** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**travelingToInstance** | **String** |  |  [optional] |
 |**travelingToLocation** | **String** |  |  [optional] |
 |**travelingToWorld** | **String** |  |  [optional] |

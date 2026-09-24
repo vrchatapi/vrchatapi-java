@@ -32,11 +32,11 @@
 |**mediaType** | **String** |  |  [optional] |
 |**name** | **Object** |  |  [optional] |
 |**onPressed** | [**InfoPushDataClickable**](InfoPushDataClickable.md) |  |  [optional] |
-|**overrideName** | **Object** |  |  [optional] |
+|**overrideName** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**rows** | **Integer** | Number of rows to render. |  [optional] |
 |**search** | [**InfoPushDataSearch**](InfoPushDataSearch.md) |  |  [optional] |
 |**shortName** | **Object** |  |  [optional] |
-|**showInWorldIds** | **Object** |  |  [optional] |
+|**showInWorldIds** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**template** | **String** |  |  [optional] |
 |**thumbnailImageUrl** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |

@@ -92,7 +92,7 @@
 |**statusHistory** | **List&lt;String&gt;** |  |  [optional] |
 |**steamDetails** | **Object** | Details of an account on another service linked to this one. |  [optional] |
 |**steamId** | **String** |  |  [optional] |
-|**temporaryExpiryDate** | **Object** |  |  [optional] |
+|**temporaryExpiryDate** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**twitchDetails** | **Object** | Details of an account on another service linked to this one. |  [optional] |
 |**twitchId** | **String** |  |  [optional] |
 |**twoFactorAuthEnabled** | **Boolean** |  |  [optional] |

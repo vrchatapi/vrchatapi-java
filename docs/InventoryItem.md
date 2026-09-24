@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**acquisition** | **String** |  |  [optional] |
-|**attribution** | **Object** |  |  [optional] |
+|**attribution** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**collections** | **List&lt;String&gt;** |  |  |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**defaultAttributes** | [**Map&lt;String, InventoryDefaultAttributesValue&gt;**](InventoryDefaultAttributesValue.md) |  |  |

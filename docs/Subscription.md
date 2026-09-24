@@ -17,7 +17,7 @@
 |**id** | **String** |  |  |
 |**oculusSku** | **String** |  |  [optional] |
 |**period** | **SubscriptionPeriod** |  |  |
-|**periodAmount** | **Object** |  |  [optional] |
+|**periodAmount** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**picoSku** | **String** |  |  [optional] |
 |**steamItemId** | **String** |  |  |
 |**tier** | **Integer** |  |  |

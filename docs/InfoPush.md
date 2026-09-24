@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**clientMinVersion** | **Object** |  |  [optional] |
+|**clientMinVersion** | **Object** | An unknown value. Consider [contributing](https://vrchat.community/contributing). |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**data** | [**InfoPushData**](InfoPushData.md) |  |  |
 |**endDate** | **OffsetDateTime** |  |  [optional] |
