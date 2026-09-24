@@ -1564,7 +1564,7 @@ public class Example {
     OffsetDateTime dateMax = OffsetDateTime.now(); // OffsetDateTime | The end date of the search range.
     String fromUserId = "fromUserId_example"; // String | Must be a valid user ID.
     String toUserId = "toUserId_example"; // String | Must be a valid user ID.
-    SortOptionProductPurchase sort = SortOptionProductPurchase.fromValue("purchaseDate"); // SortOptionProductPurchase | The sort order of the results.
+    SortOptionProductPurchase sort = SortOptionProductPurchase.fromValue("expireDate"); // SortOptionProductPurchase | The sort order of the results.
     OrderOptionShort order = OrderOptionShort.fromValue("asc"); // OrderOptionShort | Result ordering
     try {
       ProductPurchaseHistory result = apiInstance.getProductPurchaseHistory(userId, n, dateMin, dateMax, fromUserId, toUserId, sort, order);
@@ -1590,7 +1590,7 @@ public class Example {
 | **dateMax** | **OffsetDateTime**| The end date of the search range. | [optional] |
 | **fromUserId** | **String**| Must be a valid user ID. | [optional] |
 | **toUserId** | **String**| Must be a valid user ID. | [optional] |
-| **sort** | [**SortOptionProductPurchase**](.md)| The sort order of the results. | [optional] [default to purchaseDate] [enum: purchaseDate] |
+| **sort** | [**SortOptionProductPurchase**](.md)| The sort order of the results. | [optional] [default to purchaseDate] [enum: expireDate, name, purchaseDate] |
 | **order** | [**OrderOptionShort**](.md)| Result ordering | [optional] [default to desc] [enum: asc, desc] |
 
 ### Return type
@@ -1719,7 +1719,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean mostRecent = true; // Boolean | 
-    SortOptionProductPurchase sort = SortOptionProductPurchase.fromValue("purchaseDate"); // SortOptionProductPurchase | The sort order of the results.
+    SortOptionProductPurchase sort = SortOptionProductPurchase.fromValue("expireDate"); // SortOptionProductPurchase | The sort order of the results.
     OrderOptionShort order = OrderOptionShort.fromValue("asc"); // OrderOptionShort | Result ordering
     try {
       List<ProductPurchase> result = apiInstance.getProductPurchases(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order);
@@ -1746,7 +1746,7 @@ public class Example {
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **mostRecent** | **Boolean**|  | [optional] |
-| **sort** | [**SortOptionProductPurchase**](.md)| The sort order of the results. | [optional] [default to purchaseDate] [enum: purchaseDate] |
+| **sort** | [**SortOptionProductPurchase**](.md)| The sort order of the results. | [optional] [default to purchaseDate] [enum: expireDate, name, purchaseDate] |
 | **order** | [**OrderOptionShort**](.md)| Result ordering | [optional] [default to desc] [enum: asc, desc] |
 
 ### Return type
@@ -1766,6 +1766,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a list of ProductPurchase objects. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getRecentSubscription"></a>
