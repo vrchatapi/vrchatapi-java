@@ -48,6 +48,7 @@
 |**travelingToWorld** | **String** |  |  [optional] |
 |**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
 |**activeFriends** | **List&lt;String&gt;** |  |  [optional] |
+|**allowWorldsToCountFriendsInInstance** | **Boolean** | The \&quot;Allow Worlds to Count Friends in Instance\&quot; setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026. |  [optional] |
 |**appleId** | **String** |  |  [optional] |
 |**authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) |  [optional] |
 |**completedTutorials** | **List&lt;String&gt;** |  |  [optional] |

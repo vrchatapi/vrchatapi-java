@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**acceptedTOSVersion** | **Integer** |  |  [optional] |
+|**allowWorldsToCountFriendsInInstance** | **Boolean** | The \&quot;Allow Worlds to Count Friends in Instance\&quot; setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026. |  [optional] |
 |**birthday** | **LocalDate** |  |  [optional] |
 |**contentFilters** | **List&lt;ContentFilter&gt;** | These tags begin with &#x60;content_&#x60; and control content gating |  [optional] |
 |**currentPassword** | **String** |  |  [optional] |
