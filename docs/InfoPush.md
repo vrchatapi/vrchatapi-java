@@ -21,6 +21,7 @@
 |**requireClientTags** | **List&lt;String&gt;** |  |  [optional] |
 |**startDate** | **OffsetDateTime** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  |
+|**type** | **String** |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  |
 
 

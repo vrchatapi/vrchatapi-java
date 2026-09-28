@@ -1417,7 +1417,7 @@ public class Example {
 
 Update Interests and Preferences
 
-Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value, and an unknown key or a value that is not a boolean is ignored.
+Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value.
 
 ### Example
 ```java
