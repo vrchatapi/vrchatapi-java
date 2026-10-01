@@ -20,6 +20,7 @@
 |**bannerUrl** | **String** |  |  [optional] |
 |**dateJoined** | **LocalDate** |  |  |
 |**developerType** | **DeveloperType** |  |  |
+|**discordId** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  |
 |**friendKey** | **String** |  |  |
 |**friendRequestStatus** | **String** | State of a friend request between the caller and this user. VRChat sends the string &#x60;\&quot;null\&quot;&#x60;, not JSON &#x60;null&#x60;. |  [optional] |
@@ -58,7 +59,6 @@
 |**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
 |**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
 |**discordDetails** | [**DiscordDetails**](DiscordDetails.md) |  |  [optional] |
-|**discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes |  [optional] |
 |**emailVerified** | **Boolean** |  |  [optional] |
 |**fallbackAvatar** | **String** |  |  [optional] |
 |**friendGroupNames** | **List&lt;String&gt;** | Always empty array. |  [optional] |

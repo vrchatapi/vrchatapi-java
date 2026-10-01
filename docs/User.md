@@ -20,6 +20,7 @@
 |**bannerUrl** | **String** |  |  [optional] |
 |**dateJoined** | **LocalDate** |  |  |
 |**developerType** | **DeveloperType** |  |  |
+|**discordId** | **String** |  |  [optional] |
 |**displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their &#x60;username&#x60;. Changing display name is restricted to a cooldown period. |  |
 |**friendKey** | **String** |  |  |
 |**friendRequestStatus** | **String** | State of a friend request between the caller and this user. VRChat sends the string &#x60;\&quot;null\&quot;&#x60;, not JSON &#x60;null&#x60;. |  [optional] |

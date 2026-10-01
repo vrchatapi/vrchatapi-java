@@ -2426,7 +2426,7 @@ public class Example {
 
 <a id="updateUserNote"></a>
 # **updateUserNote**
-> UserNote updateUserNote(updateUserNoteRequest)
+> Object updateUserNote(updateUserNoteRequest)
 
 Update User Note
 
@@ -2456,7 +2456,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     UpdateUserNoteRequest updateUserNoteRequest = new UpdateUserNoteRequest(); // UpdateUserNoteRequest | 
     try {
-      UserNote result = apiInstance.updateUserNote(updateUserNoteRequest);
+      Object result = apiInstance.updateUserNote(updateUserNoteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#updateUserNote");
@@ -2477,7 +2477,7 @@ public class Example {
 
 ### Return type
 
-[**UserNote**](UserNote.md)
+**Object**
 
 ### Authorization
 
@@ -2491,6 +2491,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | An empty &#x60;note&#x60; clears the note and returns a string in place of the &#x60;UserNote&#x60;. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
