@@ -15,7 +15,7 @@ A group audit log entry. The shape of `data` depends on `eventType`.
 |**eventType** | **String** |  |  |
 |**groupId** | **String** |  |  |
 |**id** | **String** |  |  |
-|**data** | [**GroupAuditLogEntryEventData**](GroupAuditLogEntryEventData.md) |  |  |
+|**data** | [**GroupAuditLogEntryData**](GroupAuditLogEntryData.md) |  |  |
 |**targetId** | **String** |  |  |
 
 

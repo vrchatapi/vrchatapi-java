@@ -144,6 +144,7 @@ docs/GroupAnnouncement.md
 docs/GroupAuditLogEntry.md
 docs/GroupAuditLogEntryBase.md
 docs/GroupAuditLogEntryBooleanChange.md
+docs/GroupAuditLogEntryData.md
 docs/GroupAuditLogEntryDataGroupAnnouncement.md
 docs/GroupAuditLogEntryDataGroupCalendarEventCreate.md
 docs/GroupAuditLogEntryDataGroupCalendarEventDelete.md
@@ -165,8 +166,6 @@ docs/GroupAuditLogEntryDataGroupRoleCreate.md
 docs/GroupAuditLogEntryDataGroupRoleDelete.md
 docs/GroupAuditLogEntryDataGroupRoleUpdate.md
 docs/GroupAuditLogEntryDataGroupUpdate.md
-docs/GroupAuditLogEntryEvent.md
-docs/GroupAuditLogEntryEventData.md
 docs/GroupAuditLogEntryFileIDChange.md
 docs/GroupAuditLogEntryGroupAnnouncement.md
 docs/GroupAuditLogEntryGroupCalendarEventCreate.md
@@ -666,6 +665,7 @@ src/main/java/io/github/vrchatapi/model/GroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntry.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryBase.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryBooleanChange.java
+src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryData.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCalendarEventCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCalendarEventDelete.java
@@ -687,8 +687,6 @@ src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupRoleCreate.ja
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupRoleDelete.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupRoleUpdate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupUpdate.java
-src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryEvent.java
-src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryEventData.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryFileIDChange.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupCalendarEventCreate.java
