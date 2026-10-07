@@ -18,7 +18,7 @@ public class CookiesLoad {
 		defaultClient.setUserAgent("ExampleProgram/0.0.1 my@email.com");
 		defaultClient.addDefaultHeader("Cookie", "auth=[AUTH_COOKIE_HERE]; twoFactorAuth=[TWO_FACTOR_AUTH_COOKIE_HERE]");
 
-		CurrentUser user = authApi.getCurrentUser();
+		CurrentUser user = authApi.getCurrentUser().getCurrentUser();
 		System.out.println("Logged in as: " + user.getDisplayName());
 	}
 	

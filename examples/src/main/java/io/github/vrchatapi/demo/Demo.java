@@ -44,7 +44,7 @@ public class Demo {
 				authApi.verify2FA(code);
 			}
 		}
-		CurrentUser user = authApi.getCurrentUser();
+		CurrentUser user = authApi.getCurrentUser().getCurrentUser();
 		System.out.println("Logged in as: " + user.getDisplayName());
 	}
 	

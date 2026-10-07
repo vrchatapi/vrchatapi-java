@@ -41,7 +41,7 @@ public class CookiesStore {
 				authApi.verify2FA(code);
 			}
 		}
-		CurrentUser user = authApi.getCurrentUser();
+		CurrentUser user = authApi.getCurrentUser().getCurrentUser();
 		System.out.println("Logged in as: " + user.getDisplayName());
 
 		List<Cookie> cookies = defaultClient.getHttpClient().cookieJar().loadForRequest(new okhttp3.HttpUrl.Builder().scheme("http").host("api.vrchat.cloud").build());

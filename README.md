@@ -83,7 +83,7 @@ catch (IllegalArgumentException e){
     }
 }
 
-CurrentUser user = authApi.getCurrentUser();
+CurrentUser user = authApi.getCurrentUser().getCurrentUser();
 System.out.println("Logged in as: " + user.getDisplayName());
 ```
 
