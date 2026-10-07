@@ -13,9 +13,9 @@ User object received when querying your own instance
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |  |  [optional] |
-|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
-|**currentAvatarTags** | **List&lt;String&gt;** |  |  |
-|**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  |
+|**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
+|**currentAvatarTags** | **List&lt;String&gt;** |  |  [optional] |
+|**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |
 |**dateJoined** | **OffsetDateTime** |  |  |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** |  |  |
