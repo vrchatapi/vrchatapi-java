@@ -1,0 +1,22 @@
+
+
+# GroupAuditLogEntryDataGroupPostDelete
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**authorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
+|**imageId** | **String** |  |  |
+|**text** | **String** | The text content of the post. |  |
+|**title** | **String** | The title of the post. |  |
+|**visibility** | **GroupPostVisibility** |  |  |
+|**createdAt** | **OffsetDateTime** | The creation timestamp of the post. |  |
+|**editorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  |
+|**imageUrl** | **URI** | The URL of the post image. |  |
+|**roleIds** | **List&lt;String&gt;** |  |  |
+|**updatedAt** | **OffsetDateTime** | The last update timestamp of the post. |  |
+
+
+
