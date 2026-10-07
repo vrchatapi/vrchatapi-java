@@ -89,6 +89,11 @@ jobs:
         with:
           repository: vrchatapi/vrchatapi-java
 
+      # The artifact is overlaid onto the checkout rather than replacing it, so anything the
+      # generator stops emitting would otherwise survive in main forever. These are the paths
+      # generate.sh regenerates; util/ is hand-written and stays.
+      - run: rm -rf docs src/main/java/io/github/vrchatapi/{api,auth,model} src/main/java/io/github/vrchatapi/*.java
+
       - uses: actions/download-artifact@v8
         with:
           name: java-generated
