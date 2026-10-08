@@ -11,10 +11,10 @@
 |**actorId** | **String** | The ID of the user who performed the action. |  |
 |**createdAt** | **OffsetDateTime** | When the action was performed. |  |
 |**description** | **String** | A human-readable description of the event. |  |
-|**eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  |
 |**groupId** | **String** | The ID of the group the entry belongs to. |  |
 |**id** | **String** | The unique ID of this audit log entry. |  |
 |**data** | [**GroupAuditLogEntryDataGroupGalleryCreate**](GroupAuditLogEntryDataGroupGalleryCreate.md) |  |  |
+|**eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  |
 |**targetId** | **String** |  |  |
 
 
