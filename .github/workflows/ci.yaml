@@ -7,10 +7,11 @@ on:
     types: [release]
   workflow_dispatch:
     inputs:
-      json:
-        description: Passed json from repository_dispatch
-        required: true
+      tag:
+        description: Release to build, such as v1.22.1 or nightly. Defaults to the latest release.
+        required: false
         type: string
+        default: ''
       version_postfix:
         description: Additional string to concatenate onto the existing version before release
         required: false
@@ -27,12 +28,13 @@ on:
 name: CI
 
 env:
-  PASSED_VERSION: ${{ (github.event_name == 'repository_dispatch' && github.event.client_payload || fromJSON(inputs.json || '{}'))['version'] }}
   VERSION_POSTPEND: ${{ github.event_name == 'workflow_dispatch' && inputs.version_postfix || '' }}
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -44,9 +46,13 @@ jobs:
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-3.1.yaml
+          tag: ${{ inputs.tag }}
+
+      - id: version
+        run: echo "version=$(yq -r '.info.version' openapi-3.1.yaml)${VERSION_POSTPEND}" >> $GITHUB_OUTPUT
 
       - if: env.VERSION_POSTPEND != ''
-        run: yq '--inplace' ".info.version |= \"${PASSED_VERSION}${VERSION_POSTPEND}\"" openapi-3.1.yaml
+        run: yq '--inplace' ".info.version |= \"${{ steps.version.outputs.version }}\"" openapi-3.1.yaml
 
       - run: bash ./generate.sh openapi-3.1.yaml
 
@@ -104,5 +110,5 @@ jobs:
         with:
           branch: main
           folder: .
-          commit-message: Upgrade Java SDK to spec ${{ env.PASSED_VERSION }}${{ env.VERSION_POSTPEND }}
-          tag: ${{ env.PASSED_VERSION }}${{ env.VERSION_POSTPEND }}
+          commit-message: Upgrade Java SDK to spec ${{ needs.generate.outputs.version }}
+          tag: ${{ needs.generate.outputs.version }}
