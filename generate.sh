@@ -2,7 +2,7 @@
 
 if [ ${#} -le 0 ]
 then
-  echo "Usage: generate.sh <openapi.yaml>" >&2
+  echo "Usage: generate.sh <openapi.json>" >&2
   exit 1
 fi
 

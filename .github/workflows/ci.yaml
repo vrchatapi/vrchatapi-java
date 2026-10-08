@@ -45,16 +45,16 @@ jobs:
 
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
-          bundle: openapi-3.1.yaml
+          bundle: openapi-3.1.json
           tag: ${{ inputs.tag }}
 
       - id: version
-        run: echo "version=$(yq -r '.info.version' openapi-3.1.yaml)${VERSION_POSTPEND}" >> $GITHUB_OUTPUT
+        run: echo "version=$(yq -r '.info.version' openapi-3.1.json)${VERSION_POSTPEND}" >> $GITHUB_OUTPUT
 
       - if: env.VERSION_POSTPEND != ''
-        run: yq '--inplace' ".info.version |= \"${{ steps.version.outputs.version }}\"" openapi-3.1.yaml
+        run: yq '--inplace' ".info.version |= \"${{ steps.version.outputs.version }}\"" openapi-3.1.json
 
-      - run: bash ./generate.sh openapi-3.1.yaml
+      - run: bash ./generate.sh openapi-3.1.json
 
       - uses: actions/upload-artifact@v7
         with:
@@ -104,7 +104,7 @@ jobs:
         with:
           name: java-generated
 
-      - run: rm -f openapi-3.1.yaml
+      - run: rm -f openapi-3.1.json
 
       - uses: JamesIves/github-pages-deploy-action@v4.9.0
         with:
