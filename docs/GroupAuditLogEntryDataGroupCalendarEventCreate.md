@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**accessType** | **CalendarEventAccess** |  |  |
 |**description** | **String** | The description of the calendar event. |  |
-|**imageId** | **String** |  |  |
+|**imageId** | **String** | The image file ID for the event. |  |
 |**title** | **String** | The title of the calendar event. |  |
 |**type** | **String** | The type of calendar entry. |  |
 

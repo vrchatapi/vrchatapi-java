@@ -10,7 +10,7 @@
 |**created** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  |
 |**displayName** | **String** |  |  |
-|**groupId** | **String** |  |  [optional] |
+|**groupId** | **String** | Only for store type group |  [optional] |
 |**id** | **String** |  |  |
 |**listingIds** | **List&lt;String&gt;** | Only for store type world and group |  [optional] |
 |**listings** | [**List&lt;ProductListing&gt;**](ProductListing.md) | Only for store type world and group |  [optional] |
@@ -24,7 +24,7 @@
 |**storeType** | **StoreType** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**updated** | **OffsetDateTime** |  |  [optional] |
-|**worldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  [optional] |
+|**worldId** | **String** | Only for store type world |  [optional] |
 
 
 

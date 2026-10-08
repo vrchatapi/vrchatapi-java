@@ -2,7 +2,6 @@
 
 # TransactionAgreement
 
-Represents a single Transaction, which is likely between VRChat and Steam.
 
 ## Properties
 

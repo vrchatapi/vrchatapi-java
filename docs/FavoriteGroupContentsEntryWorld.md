@@ -24,13 +24,13 @@
 |**isHypeTrainEligible** | **Boolean** |  |  [optional] |
 |**labsPublicationDate** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
-|**occupants** | **Integer** |  |  [optional] |
+|**occupants** | **Integer** |  |  |
 |**organization** | **String** |  |  [optional] |
 |**popularity** | **Integer** |  |  [optional] |
 |**previewYoutubeId** | **String** |  |  [optional] |
 |**publicationDate** | **String** |  |  [optional] |
 |**recommendedCapacity** | **Integer** |  |  [optional] |
-|**releaseStatus** | **ReleaseStatus** |  |  [optional] |
+|**releaseStatus** | **ReleaseStatus** |  |  |
 |**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**thumbnailImageUrl** | **String** |  |  |
@@ -40,7 +40,7 @@
 |**urlList** | **List&lt;String&gt;** |  |  [optional] |
 |**version** | **Integer** |  |  [optional] |
 |**visits** | **Integer** |  |  [optional] |
-|**isSecure** | **Boolean** |  |  [optional] |
+|**isSecure** | **Boolean** |  |  |
 
 
 

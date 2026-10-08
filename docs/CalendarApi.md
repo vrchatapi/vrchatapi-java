@@ -197,14 +197,14 @@ public class Example {
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
     CalendarEventDiscoveryScope scope = CalendarEventDiscoveryScope.fromValue("all"); // CalendarEventDiscoveryScope | Scope for calendar event discovery.
-    String categories = "avatars,exploration,gaming,roleplaying,music,performance"; // String | Filter for calendar event discovery.
-    String tags = "vrc_event_group_fair"; // String | Filter for calendar event discovery.
+    String categories = "categories_example"; // String | Filter for calendar event discovery.
+    String tags = "tags_example"; // String | Filter for calendar event discovery.
     CalendarEventDiscoveryInclusion featuredResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
     CalendarEventDiscoveryInclusion nonFeaturedResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
     CalendarEventDiscoveryInclusion personalizedResults = CalendarEventDiscoveryInclusion.fromValue("exclude"); // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
-    Integer minimumInterestCount = 5; // Integer | Filter for calendar event discovery.
-    Integer minimumRemainingMinutes = 10; // Integer | Filter for calendar event discovery.
-    Integer upcomingOffsetMinutes = 10080; // Integer | Filter for calendar event discovery.
+    Integer minimumInterestCount = 56; // Integer | Filter for calendar event discovery.
+    Integer minimumRemainingMinutes = 56; // Integer | Filter for calendar event discovery.
+    Integer upcomingOffsetMinutes = 56; // Integer | Filter for calendar event discovery.
     Integer n = 60; // Integer | The number of objects to return.
     String nextCursor = "nextCursor_example"; // String | Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery).
     try {
@@ -732,9 +732,9 @@ public class Example {
     OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | The month to search in.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    Integer limit = 100; // Integer | The maximum number of entries to get.
+    Integer limit = 56; // Integer | The maximum number of entries to get.
     OffsetDateTime after = OffsetDateTime.now(); // OffsetDateTime | Only return events starting after this date.
-    String sort = "startTime_ascending"; // String | 
+    String sort = "sort_example"; // String | 
     try {
       PaginatedCalendarEventList result = apiInstance.getGroupCalendarEvents(groupId, date, n, offset, limit, after, sort);
       System.out.println(result);
@@ -881,11 +881,11 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     CalendarApi apiInstance = new CalendarApi(defaultClient);
-    String searchTerm = "game night"; // String | Search term for calendar events.
+    String searchTerm = "searchTerm_example"; // String | Search term for calendar events.
     Integer utcOffset = 56; // Integer | The offset from UTC in hours of the client or authenticated user.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
+    Boolean isInternalVariant = true; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
       PaginatedCalendarEventList result = apiInstance.searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant);
       System.out.println(result);

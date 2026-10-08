@@ -200,7 +200,7 @@ public class Example {
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
     String id = "id_example"; // String | Target user for which to verify email.
-    String verifyEmail = "eml_00000000-0000-0000-0000-000000000000"; // String | Token to verify email.
+    String verifyEmail = "verifyEmail_example"; // String | Token to verify email.
     try {
       apiInstance.confirmEmail(id, verifyEmail);
     } catch (ApiException e) {

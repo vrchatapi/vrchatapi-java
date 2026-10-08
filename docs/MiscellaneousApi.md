@@ -107,7 +107,7 @@ public class Example {
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
     MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
-    String betaName = "ios-closed-beta"; // String | The name of a beta program.
+    String betaName = "betaName_example"; // String | The name of a beta program.
     try {
       Beta result = apiInstance.getBeta(betaName);
       System.out.println(result);
@@ -177,7 +177,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
-    String betaName = "ios-closed-beta"; // String | The name of a beta program.
+    String betaName = "betaName_example"; // String | The name of a beta program.
     try {
       apiInstance.getBetaRegistration(betaName);
     } catch (ApiException e) {

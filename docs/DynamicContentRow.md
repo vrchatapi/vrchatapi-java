@@ -23,7 +23,7 @@
 |**minimumRemainingMinutes** | **Integer** |  |  [optional] |
 |**mode** | **String** |  |  [optional] |
 |**n** | **Integer** |  |  [optional] |
-|**name** | **Object** |  |  |
+|**name** | [**DynamicContentRowName**](DynamicContentRowName.md) |  |  |
 |**nonFeaturedResults** | **String** |  |  [optional] |
 |**notag** | **List&lt;String&gt;** |  |  [optional] |
 |**params** | **Map&lt;String, Object&gt;** |  |  [optional] |
@@ -31,7 +31,7 @@
 |**platform** | **String** | Usually \&quot;ThisPlatformSupported\&quot;, but can also be other values such as \&quot;all\&quot; or platform specific identifiers. |  |
 |**region** | **String** |  |  [optional] |
 |**scope** | **String** |  |  [optional] |
-|**shortName** | **Object** |  |  [optional] |
+|**shortName** | [**DynamicContentRowShortName**](DynamicContentRowShortName.md) |  |  [optional] |
 |**sortHeading** | **String** |  |  [optional] |
 |**sortOrder** | **String** |  |  [optional] |
 |**sortOwnership** | **String** |  |  [optional] |

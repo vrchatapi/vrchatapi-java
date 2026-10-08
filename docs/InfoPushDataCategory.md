@@ -10,7 +10,7 @@
 |**ids** | **List&lt;String&gt;** |  |  [optional] |
 |**ipsQuery** | [**InfoPushIpsQuery**](InfoPushIpsQuery.md) |  |  [optional] |
 |**maxCells** | **Integer** |  |  [optional] |
-|**name** | **Object** |  |  [optional] |
+|**name** | [**InfoPushDataCategoryName**](InfoPushDataCategoryName.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

@@ -1,6 +1,6 @@
 
 
-# GetGroupGalleryImages200Response
+# GroupGalleryImageListResponse
 
 
 ## Properties

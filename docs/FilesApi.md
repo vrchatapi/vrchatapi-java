@@ -268,7 +268,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     try {
       ModelFile result = apiInstance.deleteFileVersion(fileId, versionId);
       System.out.println(result);
@@ -341,7 +341,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     try {
       File result = apiInstance.downloadFileVersion(fileId, versionId);
       System.out.println(result);
@@ -413,7 +413,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
     FinishFileDataUploadRequest finishFileDataUploadRequest = new FinishFileDataUploadRequest(); // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
     try {
@@ -487,7 +487,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     FilesApi apiInstance = new FilesApi(defaultClient);
-    String adminAssetBundleId = "aab_e159e72c-ce54-4fbe-8c37-96af02f6d18d"; // String | Must be a valid admin asset bundle ID.
+    String adminAssetBundleId = "adminAssetBundleId_example"; // String | Must be a valid admin asset bundle ID.
     try {
       AdminAssetBundle result = apiInstance.getAdminAssetBundle(adminAssetBundleId);
       System.out.println(result);
@@ -557,8 +557,8 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     AgreementCode agreementCode = AgreementCode.fromValue("content.copyright.owned"); // AgreementCode | The type of agreement (currently content.copyright.owned)
-    String contentId = "avtr_c38a1615-5bf5-42b4-84eb-a8b6c37cbd11"; // String | The id of the content being uploaded, such as a WorldID, AvatarID, or PropID
-    Integer version = 1; // Integer | The version of the agreement (currently 1)
+    String contentId = "contentId_example"; // String | The id of the content being uploaded, such as a WorldID, AvatarID, or PropID
+    Integer version = 56; // Integer | The version of the agreement (currently 1)
     try {
       AgreementStatus result = apiInstance.getContentAgreementStatus(agreementCode, contentId, version);
       System.out.println(result);
@@ -701,7 +701,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysis(fileId, versionId);
       System.out.println(result);
@@ -774,7 +774,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysisSecurity(fileId, versionId);
       System.out.println(result);
@@ -847,7 +847,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     try {
       FileAnalysis result = apiInstance.getFileAnalysisStandard(fileId, versionId);
       System.out.println(result);
@@ -920,7 +920,7 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
     try {
       FileVersionUploadStatus result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
@@ -1138,9 +1138,9 @@ public class Example {
 
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
-    Integer versionId = 1; // Integer | Version ID of the asset.
+    Integer versionId = 56; // Integer | Version ID of the asset.
     String fileType = "delta"; // String | Type of file.
-    Integer partNumber = 1; // Integer | The part number to start uploading. If not provided, the first part will be started.
+    Integer partNumber = 56; // Integer | The part number to start uploading. If not provided, the first part will be started.
     try {
       FileUploadURL result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
       System.out.println(result);

@@ -1784,9 +1784,9 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | The start date of the search range.
     OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | The end date of the search range.
-    String actorIds = "usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111"; // String | The comma-separated actor ids to search for.
-    String eventTypes = "group.member.remove,group.instance.kick"; // String | The comma-separated event types to search for.
-    String targetIds = "usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111"; // String | The comma-separated target ids to search for.
+    String actorIds = "actorIds_example"; // String | The comma-separated actor ids to search for.
+    String eventTypes = "eventTypes_example"; // String | The comma-separated event types to search for.
+    String targetIds = "targetIds_example"; // String | The comma-separated target ids to search for.
     try {
       PaginatedGroupAuditLogEntryList result = apiInstance.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
       System.out.println(result);
@@ -1913,7 +1913,7 @@ public class Example {
 
 <a id="getGroupGalleryImages"></a>
 # **getGroupGalleryImages**
-> Object getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
+> GroupGalleryImageListResponse getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
 
 Get Group Gallery Images
 
@@ -1948,7 +1948,7 @@ public class Example {
     Integer v = 56; // Integer | Response version. `2` wraps the images in a paginated object.
     Boolean approved = true; // Boolean | If specified, only returns images that have been approved or not approved.
     try {
-      Object result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
+      GroupGalleryImageListResponse result = apiInstance.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupGalleryImages");
@@ -1974,7 +1974,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**GroupGalleryImageListResponse**](GroupGalleryImageListResponse.md)
 
 ### Authorization
 
@@ -3180,7 +3180,7 @@ null (empty response body)
 
 <a id="searchGroupMembers"></a>
 # **searchGroupMembers**
-> GroupMemberSearchResponse searchGroupMembers(groupId, query, n, offset)
+> GroupMemberSearchResponse searchGroupMembers(query, groupId, n, offset)
 
 Search Group Members
 
@@ -3208,12 +3208,12 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     GroupsApi apiInstance = new GroupsApi(defaultClient);
-    String groupId = "groupId_example"; // String | Must be a valid group ID.
     String query = "query_example"; // String | Filter for member displayName.
+    String groupId = "groupId_example"; // String | Must be a valid group ID.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
-      GroupMemberSearchResponse result = apiInstance.searchGroupMembers(groupId, query, n, offset);
+      GroupMemberSearchResponse result = apiInstance.searchGroupMembers(query, groupId, n, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#searchGroupMembers");
@@ -3230,8 +3230,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **groupId** | **String**| Must be a valid group ID. | |
 | **query** | **String**| Filter for member displayName. | |
+| **groupId** | **String**| Must be a valid group ID. | |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 

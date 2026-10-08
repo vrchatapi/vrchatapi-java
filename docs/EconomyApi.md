@@ -628,10 +628,10 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
-    String metricDateStart = "2026-03-28T23:00:00.000Z"; // String | Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
-    String metricDateEnd = "2026-04-04T21:59:59.999Z"; // String | Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+    String metricDateStart = "metricDateStart_example"; // String | Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+    String metricDateEnd = "metricDateEnd_example"; // String | Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
     String sellerId = "sellerId_example"; // String | Filter results by seller.
-    String groupByDuration = "days"; // String | Time bucket size for economy metrics. Observed values include `days` and `years`.
+    String groupByDuration = "groupByDuration_example"; // String | Time bucket size for economy metrics. Observed values include `days` and `years`.
     try {
       EarningsMetrics result = apiInstance.getEarningsMetrics(metricDateStart, metricDateEnd, sellerId, groupByDuration);
       System.out.println(result);
@@ -1409,7 +1409,7 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean hydrate = true; // Boolean | Populates some fields and changes types of others for certain objects.
-    String listingType = "otp"; // String | Filter user listings by category. Observed values include `otp` and `subscription`.
+    String listingType = "listingType_example"; // String | Filter user listings by category. Observed values include `otp` and `subscription`.
     String groupId = "groupId_example"; // String | Must be a valid group ID.
     Boolean active = true; // Boolean | Filter for users' listings and inventory bundles.
     try {
@@ -2294,7 +2294,7 @@ public class Example {
 
     EconomyApi apiInstance = new EconomyApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String steamId = "game night"; // String | The Steam ID of the user.
+    String steamId = "steamId_example"; // String | The Steam ID of the user.
     try {
       UserSubscriptionEligible result = apiInstance.getUserSubscriptionEligible(userId, steamId);
       System.out.println(result);

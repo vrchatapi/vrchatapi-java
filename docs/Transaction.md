@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**agreement** | **Object** |  |  [optional] |
+|**agreement** | [**TransactionAgreement**](TransactionAgreement.md) |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**error** | **String** |  |  |
 |**id** | **String** |  |  |

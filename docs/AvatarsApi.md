@@ -786,7 +786,7 @@ public class Example {
     String maxUnityVersion = "maxUnityVersion_example"; // String | The maximum Unity version supported by the asset.
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
-    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
+    Boolean isInternalVariant = true; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
       List<Avatar> result = apiInstance.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant);
       System.out.println(result);

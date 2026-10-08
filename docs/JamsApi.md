@@ -259,7 +259,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     JamsApi apiInstance = new JamsApi(defaultClient);
-    String type = "avatar"; // String | Only show jams of this type (`avatar` or `world`).
+    String type = "type_example"; // String | Only show jams of this type (`avatar` or `world`).
     try {
       List<Jam> result = apiInstance.getJams(type);
       System.out.println(result);

@@ -218,8 +218,8 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
-    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
+    String xPlatform = "xPlatform_example"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "xStore_example"; // String | The store the tutorial belongs to, recorded as sent.
     try {
       CurrentUser result = apiInstance.clearUserTutorials(userId, xPlatform, xStore);
       System.out.println(result);
@@ -293,8 +293,8 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
-    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
+    String xPlatform = "xPlatform_example"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "xStore_example"; // String | The store the tutorial belongs to, recorded as sent.
     try {
       CurrentUser result = apiInstance.completeUserTutorial(userId, xPlatform, xStore);
       System.out.println(result);
@@ -1149,7 +1149,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String groupIds = "grp_00000000-0000-0000-0000-000000000000,grp_11111111-1111-1111-1111-111111111111"; // String | Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for.
+    String groupIds = "groupIds_example"; // String | Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for.
     try {
       Map<String, List<GroupPermissions>> result = apiInstance.getUserAllGroupPermissions(userId, groupIds);
       System.out.println(result);
@@ -1934,8 +1934,8 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     String userId = "userId_example"; // String | Must be a valid user ID.
-    String xPlatform = "standalonewindows"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
-    String xStore = "steam"; // String | The store the tutorial belongs to, recorded as sent.
+    String xPlatform = "xPlatform_example"; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+    String xStore = "xStore_example"; // String | The store the tutorial belongs to, recorded as sent.
     try {
       TutorialStatus result = apiInstance.getUserTutorialStatus(userId, xPlatform, xStore);
       System.out.println(result);
@@ -2085,7 +2085,7 @@ public class Example {
     String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
-    Boolean isInternalVariant = false; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
+    Boolean isInternalVariant = true; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
       List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, n, offset, isInternalVariant);
       System.out.println(result);
@@ -2426,7 +2426,7 @@ public class Example {
 
 <a id="updateUserNote"></a>
 # **updateUserNote**
-> Object updateUserNote(updateUserNoteRequest)
+> UpdateUserNoteResponse updateUserNote(updateUserNoteRequest)
 
 Update User Note
 
@@ -2456,7 +2456,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     UpdateUserNoteRequest updateUserNoteRequest = new UpdateUserNoteRequest(); // UpdateUserNoteRequest | 
     try {
-      Object result = apiInstance.updateUserNote(updateUserNoteRequest);
+      UpdateUserNoteResponse result = apiInstance.updateUserNote(updateUserNoteRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#updateUserNote");
@@ -2477,7 +2477,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**UpdateUserNoteResponse**](UpdateUserNoteResponse.md)
 
 ### Authorization
 

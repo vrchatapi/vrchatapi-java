@@ -608,7 +608,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
-    Integer limit = 100; // Integer | The maximum number of entries to get.
+    Integer limit = 56; // Integer | The maximum number of entries to get.
     try {
       List<NotificationV2> result = apiInstance.getNotificationV2s(limit);
       System.out.println(result);
@@ -678,10 +678,10 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
-    String type = "all"; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
+    String type = "type_example"; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
     Boolean sent = true; // Boolean | Return notifications sent by the user. Must be false or omitted.
     Boolean hidden = true; // Boolean | Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`.
-    String after = "five_minutes_ago"; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
+    String after = "after_example"; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     try {
