@@ -6,6 +6,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**closeInstance**](InstancesApi.md#closeInstance) | **DELETE** /instances/{worldId}:{instanceId} | Close Instance |
 | [**createInstance**](InstancesApi.md#createInstance) | **POST** /instances | Create Instance |
+| [**discoverInstances**](InstancesApi.md#discoverInstances) | **GET** /instances/discover | Discover Instances |
 | [**getActiveInstances**](InstancesApi.md#getActiveInstances) | **GET** /instances/active | List Active Instances |
 | [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
 | [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
@@ -156,6 +157,89 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="discoverInstances"></a>
+# **discoverInstances**
+> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category)
+
+Discover Instances
+
+Returns instances to discover, in an order that changes between requests.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    Integer n = 56; // Integer | The number of instances to return.
+    CreateInstanceRequestRegion region = CreateInstanceRequestRegion.fromValue("eu"); // CreateInstanceRequestRegion | Return only instances in this region.
+    InstanceDiscoveryPlatform platform = InstanceDiscoveryPlatform.fromValue("android"); // InstanceDiscoveryPlatform | The platform to discover instances for.
+    List<String> worldId = Arrays.asList(); // List<String> | Return only instances of these worlds.
+    List<String> groupId = Arrays.asList(); // List<String> | Return only instances of these groups.
+    List<String> vibe = Arrays.asList(); // List<String> | 
+    String category = "category_example"; // String | 
+    try {
+      InstanceDiscovery result = apiInstance.discoverInstances(n, region, platform, worldId, groupId, vibe, category);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#discoverInstances");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of instances to return. | [optional] |
+| **region** | [**CreateInstanceRequestRegion**](.md)| Return only instances in this region. | [optional] [enum: eu, jp, us, use] |
+| **platform** | [**InstanceDiscoveryPlatform**](.md)| The platform to discover instances for. | [optional] [enum: android, ios, standalonewindows, web] |
+| **worldId** | [**List&lt;String&gt;**](String.md)| Return only instances of these worlds. | [optional] |
+| **groupId** | [**List&lt;String&gt;**](String.md)| Return only instances of these groups. | [optional] |
+| **vibe** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **category** | **String**|  | [optional] |
+
+### Return type
+
+[**InstanceDiscovery**](InstanceDiscovery.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

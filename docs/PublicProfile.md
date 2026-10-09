@@ -45,9 +45,9 @@
 |**statusDescription** | **String** |  |  [optional] |
 |**themeButtonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**themeIconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**themeId** | **String** |  |  [optional] |
+|**themeId** | [**PublicProfileThemeID**](PublicProfileThemeID.md) |  |  [optional] |
 |**themeSubtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**themes** | **List&lt;Object&gt;** |  |  [optional] |
+|**themes** | [**List&lt;ProfileTheme&gt;**](ProfileTheme.md) |  |  [optional] |
 |**totalPublicWorldsCount** | **Integer** |  |  [optional] |
 |**trustTags** | **List&lt;String&gt;** |  |  [optional] |
 |**userIcon** | **String** |  |  [optional] |
