@@ -9,7 +9,7 @@ User object received when searching
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**bannerType** | **String** |  |  [optional] |
+|**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**developerType** | **DeveloperType** |  |  |
 |**displayName** | **String** |  |  |

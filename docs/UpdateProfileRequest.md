@@ -10,7 +10,7 @@
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | [**BackgroundTypeEnum**](#BackgroundTypeEnum) |  |  [optional] |
 |**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**bannerType** | [**BannerTypeEnum**](#BannerTypeEnum) |  |  [optional] |
+|**bannerType** | **BannerType** |  |  [optional] |
 |**bio** | **String** |  |  [optional] |
 |**bioLinks** | **List&lt;String&gt;** |  |  [optional] |
 |**iconFrame** | **String** |  |  [optional] |
@@ -30,16 +30,6 @@
 | GRADIENT | &quot;gradient&quot; |
 | INVENTORY | &quot;inventory&quot; |
 | TEXTURE | &quot;texture&quot; |
-
-
-
-## Enum: BannerTypeEnum
-
-| Name | Value |
-|---- | -----|
-| AVATAR_BANNER | &quot;avatarBanner&quot; |
-| COLOR | &quot;color&quot; |
-| CUSTOM_IMAGE | &quot;customImage&quot; |
 
 
 

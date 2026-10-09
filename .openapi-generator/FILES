@@ -50,6 +50,7 @@ docs/AvatarsApi.md
 docs/Badge.md
 docs/Balance.md
 docs/BanGroupMemberRequest.md
+docs/BannerType.md
 docs/BareError.md
 docs/Beta.md
 docs/BetaRegistrationNotFoundError.md
@@ -659,6 +660,7 @@ src/main/java/io/github/vrchatapi/model/AvatarUnityPackageUrlObject.java
 src/main/java/io/github/vrchatapi/model/Badge.java
 src/main/java/io/github/vrchatapi/model/Balance.java
 src/main/java/io/github/vrchatapi/model/BanGroupMemberRequest.java
+src/main/java/io/github/vrchatapi/model/BannerType.java
 src/main/java/io/github/vrchatapi/model/BareError.java
 src/main/java/io/github/vrchatapi/model/Beta.java
 src/main/java/io/github/vrchatapi/model/BetaRegistrationNotFoundError.java
