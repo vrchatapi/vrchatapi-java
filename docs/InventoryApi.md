@@ -342,7 +342,7 @@ public class Example {
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String holderId = "holderId_example"; // String | The UserID of the owner of the inventory; defaults to the currently authenticated user.
     InventoryEquipSlot equipSlot = InventoryEquipSlot.fromValue(""); // InventoryEquipSlot | Filter for inventory retrieval.
-    String order = "newest"; // String | Sort order for inventory retrieval.
+    InventorySortOrder order = InventorySortOrder.fromValue("alphabetic"); // InventorySortOrder | Sort order for inventory retrieval.
     String tags = "tags_example"; // String | Filter tags for inventory retrieval (comma-separated).
     InventoryItemType types = InventoryItemType.fromValue("bundle"); // InventoryItemType | Filter for inventory retrieval.
     InventoryFlag flags = InventoryFlag.fromValue("archivable"); // InventoryFlag | Filter flags for inventory retrieval (comma-separated).
@@ -373,7 +373,7 @@ public class Example {
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **holderId** | **String**| The UserID of the owner of the inventory; defaults to the currently authenticated user. | [optional] |
 | **equipSlot** | [**InventoryEquipSlot**](.md)| Filter for inventory retrieval. | [optional] [default to ] [enum: , drone, iconFrame, nameplateEffect, portal, profileEffect, warp] |
-| **order** | **String**| Sort order for inventory retrieval. | [optional] [enum: newest, newest_created, oldest, oldest_created] |
+| **order** | [**InventorySortOrder**](.md)| Sort order for inventory retrieval. | [optional] [enum: alphabetic, angry, happy, newest, newest_created, newest_template_created, newest_updated, oldest, oldest_created, oldest_template_created, oldest_updated, reverse-orthographic] |
 | **tags** | **String**| Filter tags for inventory retrieval (comma-separated). | [optional] |
 | **types** | [**InventoryItemType**](.md)| Filter for inventory retrieval. | [optional] [default to bundle] [enum: bundle, droneskin, emoji, iconFrame, nameplateEffect, portalskin, profileEffect, prop, sticker, warpeffect] |
 | **flags** | [**InventoryFlag**](.md)| Filter flags for inventory retrieval (comma-separated). | [optional] [default to instantiatable] [enum: archivable, cloneable, consumable, equippable, global, global_visible, instantiatable, trashable, ugc, unique, vrc_plus_exclusive] |
@@ -400,6 +400,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | Error response due to missing permissions. |  -  |
 

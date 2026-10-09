@@ -2053,7 +2053,7 @@ public class Example {
 
 <a id="searchUsers"></a>
 # **searchUsers**
-> List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, n, offset, isInternalVariant)
+> List&lt;LimitedUserSearch&gt; searchUsers(search, developerType, sort, customFields, n, offset, isInternalVariant)
 
 Search All Users
 
@@ -2083,11 +2083,13 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String search = "search_example"; // String | Searches by `displayName`. Will return empty array if search query is empty or missing.
     String developerType = "developerType_example"; // String | Active user by developer type, none for normal users and internal for moderators
+    UserSearchSort sort = UserSearchSort.fromValue("_created_at"); // UserSearchSort | The order to return users in.
+    String customFields = "customFields_example"; // String | A comma-separated list of field names.
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     Boolean isInternalVariant = true; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
     try {
-      List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, n, offset, isInternalVariant);
+      List<LimitedUserSearch> result = apiInstance.searchUsers(search, developerType, sort, customFields, n, offset, isInternalVariant);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#searchUsers");
@@ -2106,6 +2108,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **search** | **String**| Searches by &#x60;displayName&#x60;. Will return empty array if search query is empty or missing. | [optional] |
 | **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional] |
+| **sort** | [**UserSearchSort**](.md)| The order to return users in. | [optional] [enum: _created_at, contains, created, exact, last_login, magic, name, nuisanceFactor, relevance, trust] |
+| **customFields** | **String**| A comma-separated list of field names. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **isInternalVariant** | **Boolean**| Not quite sure what this actually does (exists on the website but doesn&#39;t seem to be used) | [optional] |

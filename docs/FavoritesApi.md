@@ -305,6 +305,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns the favorites in a group, each alongside the object it points at. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteGroups"></a>
@@ -383,6 +384,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteGroupsByType"></a>
@@ -455,6 +457,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteLimits"></a>
@@ -745,4 +748,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 

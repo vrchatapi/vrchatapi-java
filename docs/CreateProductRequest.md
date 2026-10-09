@@ -10,7 +10,7 @@
 |**description** | **String** |  |  |
 |**displayName** | **String** |  |  |
 |**imageId** | **String** |  |  |
-|**productType** | **ProductType** |  |  |
+|**productType** | **CreateProductRequestType** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**useForSubscriberList** | **Boolean** |  |  |
 

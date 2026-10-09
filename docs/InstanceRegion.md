@@ -9,11 +9,11 @@
 
 * `JP` (value: `"jp"`)
 
-* `UNKNOWN` (value: `"unknown"`)
-
 * `US` (value: `"us"`)
 
 * `USE` (value: `"use"`)
+
+* `UNKNOWN` (value: `"unknown"`)
 
 
 

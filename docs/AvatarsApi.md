@@ -470,7 +470,7 @@ public class Example {
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
+    SortOptionAvatar sort = SortOptionAvatar.fromValue("_created_at"); // SortOptionAvatar | The sort order of the results.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
@@ -501,7 +501,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOptionAvatar**](.md)| The sort order of the results. | [optional] [enum: _created_at, _updated_at, contains, countMonthlySales, created, exact, listingDate, name, order, performance, random, relevance, shuffle, trendRank, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
@@ -774,7 +774,7 @@ public class Example {
 
     AvatarsApi apiInstance = new AvatarsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
-    SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
+    SortOptionAvatar sort = SortOptionAvatar.fromValue("_created_at"); // SortOptionAvatar | The sort order of the results.
     String user = "me"; // String | Set to `me` for searching own avatars.
     String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
@@ -806,7 +806,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOptionAvatar**](.md)| The sort order of the results. | [optional] [enum: _created_at, _updated_at, contains, countMonthlySales, created, exact, listingDate, name, order, performance, random, relevance, shuffle, trendRank, updated] |
 | **user** | **String**| Set to &#x60;me&#x60; for searching own avatars. | [optional] [enum: me] |
 | **userId** | **String**| Filter by UserID. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |

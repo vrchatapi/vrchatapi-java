@@ -95,6 +95,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 
 <a id="createFileVersion"></a>
 # **createFileVersion**

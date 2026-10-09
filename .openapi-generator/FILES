@@ -75,8 +75,10 @@ docs/ChangeWorldTagsRequest.md
 docs/ContentFilter.md
 docs/CreateAvatarModerationRequest.md
 docs/CreateAvatarRequest.md
+docs/CreateAvatarRequestReleaseStatus.md
 docs/CreateCalendarEventRequest.md
 docs/CreateFileRequest.md
+docs/CreateFileRequestMIMEType.md
 docs/CreateFileVersionRequest.md
 docs/CreateGroupAnnouncementRequest.md
 docs/CreateGroupGalleryRequest.md
@@ -85,11 +87,14 @@ docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
+docs/CreateInstanceRequestRegion.md
 docs/CreateJamSubmissionRequest.md
 docs/CreateListingRequest.md
 docs/CreateProductRequest.md
+docs/CreateProductRequestType.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
+docs/CreateWorldRequestReleaseStatus.md
 docs/CurrentUser.md
 docs/CurrentUserLoginResponse.md
 docs/CurrentUserPresence.md
@@ -283,6 +288,7 @@ docs/InventoryItem.md
 docs/InventoryItemType.md
 docs/InventoryMetadata.md
 docs/InventoryNotificationDetails.md
+docs/InventorySortOrder.md
 docs/InventorySpawn.md
 docs/InventoryTemplate.md
 docs/InventoryUserAttributes.md
@@ -420,6 +426,7 @@ docs/ServiceQueueStats.md
 docs/ServiceStatus.md
 docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
+docs/SortOptionAvatar.md
 docs/SortOptionProductPurchase.md
 docs/SsoProvider.md
 docs/SsoToken.md
@@ -454,6 +461,7 @@ docs/UnavailableWorld.md
 docs/UnityPackage.md
 docs/UpdateAssetReviewNotesRequest.md
 docs/UpdateAvatarRequest.md
+docs/UpdateAvatarRequestReleaseStatus.md
 docs/UpdateCalendarEventRequest.md
 docs/UpdateFavoriteGroupRequest.md
 docs/UpdateGroupGalleryRequest.md
@@ -487,6 +495,7 @@ docs/UserGroupInstanceListResponse.md
 docs/UserNote.md
 docs/UserNoteTargetUser.md
 docs/UserResponse.md
+docs/UserSearchSort.md
 docs/UserState.md
 docs/UserStatus.md
 docs/UserSubscription.md
@@ -674,8 +683,10 @@ src/main/java/io/github/vrchatapi/model/ChangeWorldTagsRequest.java
 src/main/java/io/github/vrchatapi/model/ContentFilter.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarModerationRequest.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarRequest.java
+src/main/java/io/github/vrchatapi/model/CreateAvatarRequestReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/CreateCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/CreateFileRequest.java
+src/main/java/io/github/vrchatapi/model/CreateFileRequestMIMEType.java
 src/main/java/io/github/vrchatapi/model/CreateFileVersionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupAnnouncementRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupGalleryRequest.java
@@ -684,11 +695,14 @@ src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
+src/main/java/io/github/vrchatapi/model/CreateInstanceRequestRegion.java
 src/main/java/io/github/vrchatapi/model/CreateJamSubmissionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateListingRequest.java
 src/main/java/io/github/vrchatapi/model/CreateProductRequest.java
+src/main/java/io/github/vrchatapi/model/CreateProductRequestType.java
 src/main/java/io/github/vrchatapi/model/CreatePropRequest.java
 src/main/java/io/github/vrchatapi/model/CreateWorldRequest.java
+src/main/java/io/github/vrchatapi/model/CreateWorldRequestReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/CurrentUser.java
 src/main/java/io/github/vrchatapi/model/CurrentUserLoginResponse.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
@@ -875,6 +889,7 @@ src/main/java/io/github/vrchatapi/model/InventoryItem.java
 src/main/java/io/github/vrchatapi/model/InventoryItemType.java
 src/main/java/io/github/vrchatapi/model/InventoryMetadata.java
 src/main/java/io/github/vrchatapi/model/InventoryNotificationDetails.java
+src/main/java/io/github/vrchatapi/model/InventorySortOrder.java
 src/main/java/io/github/vrchatapi/model/InventorySpawn.java
 src/main/java/io/github/vrchatapi/model/InventoryTemplate.java
 src/main/java/io/github/vrchatapi/model/InventoryUserAttributes.java
@@ -1005,6 +1020,7 @@ src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
 src/main/java/io/github/vrchatapi/model/ServiceStatus.java
 src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
+src/main/java/io/github/vrchatapi/model/SortOptionAvatar.java
 src/main/java/io/github/vrchatapi/model/SortOptionProductPurchase.java
 src/main/java/io/github/vrchatapi/model/SsoProvider.java
 src/main/java/io/github/vrchatapi/model/SsoToken.java
@@ -1039,6 +1055,7 @@ src/main/java/io/github/vrchatapi/model/UnavailableWorld.java
 src/main/java/io/github/vrchatapi/model/UnityPackage.java
 src/main/java/io/github/vrchatapi/model/UpdateAssetReviewNotesRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateAvatarRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateAvatarRequestReleaseStatus.java
 src/main/java/io/github/vrchatapi/model/UpdateCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateFavoriteGroupRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateGroupGalleryRequest.java
@@ -1072,6 +1089,7 @@ src/main/java/io/github/vrchatapi/model/UserGroupInstanceListResponse.java
 src/main/java/io/github/vrchatapi/model/UserNote.java
 src/main/java/io/github/vrchatapi/model/UserNoteTargetUser.java
 src/main/java/io/github/vrchatapi/model/UserResponse.java
+src/main/java/io/github/vrchatapi/model/UserSearchSort.java
 src/main/java/io/github/vrchatapi/model/UserState.java
 src/main/java/io/github/vrchatapi/model/UserStatus.java
 src/main/java/io/github/vrchatapi/model/UserSubscription.java

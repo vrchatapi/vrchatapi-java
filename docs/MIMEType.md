@@ -29,7 +29,7 @@
 
 * `IMAGE_PNG` (value: `"image/png"`)
 
-* `IMAGE_SVG_XML` (value: `"image/svg＋xml"`)
+* `IMAGE_SVG_XML` (value: `"image/svg+xml"`)
 
 * `IMAGE_TIFF` (value: `"image/tiff"`)
 

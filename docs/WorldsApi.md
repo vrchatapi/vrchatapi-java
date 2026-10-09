@@ -589,7 +589,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, contains, created, exact, favorites, heat, hotness, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trending, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
@@ -619,6 +619,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoritedWorlds"></a>
@@ -683,7 +684,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, contains, created, exact, favorites, heat, hotness, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trending, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
@@ -778,7 +779,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, contains, created, exact, favorites, heat, hotness, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trending, trust, updated] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
@@ -1290,7 +1291,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
-| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, created, favorites, heat, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trust, updated] |
+| **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, contains, created, exact, favorites, heat, hotness, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trending, trust, updated] |
 | **user** | **String**| Set to &#x60;me&#x60; for searching own worlds. | [optional] [enum: friends, me] |
 | **userId** | **String**| Filter by UserID. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |

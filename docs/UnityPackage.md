@@ -19,6 +19,7 @@
 |**pluginUrl** | **String** |  |  [optional] |
 |**pluginUrlObject** | **Object** |  |  [optional] |
 |**scanStatus** | **String** |  |  [optional] |
+|**transpilerVersion** | **String** |  |  [optional] |
 |**unitySortNumber** | **Long** |  |  [optional] |
 |**unityVersion** | **String** |  |  |
 |**variant** | **String** |  |  [optional] |

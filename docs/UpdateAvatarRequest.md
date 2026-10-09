@@ -12,7 +12,7 @@
 |**id** | **String** |  |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**releaseStatus** | **ReleaseStatus** |  |  [optional] |
+|**releaseStatus** | **UpdateAvatarRequestReleaseStatus** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**unityPackageUrl** | **String** |  |  [optional] |
 |**unityVersion** | **String** |  |  [optional] |

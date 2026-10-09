@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**extension** | **String** |  |  |
-|**mimeType** | **MIMEType** |  |  |
+|**mimeType** | **CreateFileRequestMIMEType** |  |  |
 |**name** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 

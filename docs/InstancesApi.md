@@ -6,6 +6,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**closeInstance**](InstancesApi.md#closeInstance) | **DELETE** /instances/{worldId}:{instanceId} | Close Instance |
 | [**createInstance**](InstancesApi.md#createInstance) | **POST** /instances | Create Instance |
+| [**getActiveInstances**](InstancesApi.md#getActiveInstances) | **GET** /instances/active | List Active Instances |
 | [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
 | [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
 | [**getInstanceCategories**](InstancesApi.md#getInstanceCategories) | **GET** /instanceCategories | List Instance Categories |
@@ -155,6 +156,79 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getActiveInstances"></a>
+# **getActiveInstances**
+> List&lt;Instance&gt; getActiveInstances(n, offset)
+
+List Active Instances
+
+Returns active instances, the most populated first.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    Integer n = 56; // Integer | The number of instances to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<Instance> result = apiInstance.getActiveInstances(n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getActiveInstances");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **n** | **Integer**| The number of instances to return. | [optional] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+[**List&lt;Instance&gt;**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

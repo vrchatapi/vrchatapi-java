@@ -22,7 +22,7 @@
 |**ownerId** | **String** | A groupId if the instance type is \&quot;group\&quot;, null if instance type is public, or a userId otherwise |  [optional] |
 |**playerPersistenceEnabled** | **Boolean** |  |  [optional] |
 |**queueEnabled** | **Boolean** |  |  [optional] |
-|**region** | **InstanceRegion** |  |  |
+|**region** | **CreateInstanceRequestRegion** |  |  |
 |**roleIds** | **List&lt;String&gt;** | Group roleIds that are allowed to join if the type is \&quot;group\&quot; and groupAccessType is \&quot;member\&quot; |  [optional] |
 |**type** | **InstanceType** |  |  |
 |**vibeIds** | **List&lt;String&gt;** |  |  [optional] |
