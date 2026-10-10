@@ -26,6 +26,7 @@ docs/APIConfigOfflineAnalysis.md
 docs/APIConfigProfileDefaults.md
 docs/APIHealth.md
 docs/AccountDeletionLog.md
+docs/AccountStanding.md
 docs/AddFavoriteRequest.md
 docs/AddGroupGalleryImageRequest.md
 docs/AdminAssetBundle.md
@@ -155,6 +156,9 @@ docs/GroupAuditLogEntryBooleanChange.md
 docs/GroupAuditLogEntryDataGroupAnnouncement.md
 docs/GroupAuditLogEntryDataGroupCalendarEventCreate.md
 docs/GroupAuditLogEntryDataGroupCalendarEventDelete.md
+docs/GroupAuditLogEntryDataGroupCreate.md
+docs/GroupAuditLogEntryDataGroupCreateDiscoverability.md
+docs/GroupAuditLogEntryDataGroupCreateGallery.md
 docs/GroupAuditLogEntryDataGroupGalleryCreate.md
 docs/GroupAuditLogEntryDataGroupGalleryDelete.md
 docs/GroupAuditLogEntryDataGroupGalleryUpdate.md
@@ -177,6 +181,7 @@ docs/GroupAuditLogEntryFileIDChange.md
 docs/GroupAuditLogEntryGroupAnnouncement.md
 docs/GroupAuditLogEntryGroupCalendarEventCreate.md
 docs/GroupAuditLogEntryGroupCalendarEventDelete.md
+docs/GroupAuditLogEntryGroupCreate.md
 docs/GroupAuditLogEntryGroupGalleryCreate.md
 docs/GroupAuditLogEntryGroupGalleryDelete.md
 docs/GroupAuditLogEntryGroupGalleryUpdate.md
@@ -643,6 +648,7 @@ src/main/java/io/github/vrchatapi/model/APIConfigProfileDefaults.java
 src/main/java/io/github/vrchatapi/model/APIHealth.java
 src/main/java/io/github/vrchatapi/model/AbstractOpenApiSchema.java
 src/main/java/io/github/vrchatapi/model/AccountDeletionLog.java
+src/main/java/io/github/vrchatapi/model/AccountStanding.java
 src/main/java/io/github/vrchatapi/model/AddFavoriteRequest.java
 src/main/java/io/github/vrchatapi/model/AddGroupGalleryImageRequest.java
 src/main/java/io/github/vrchatapi/model/AdminAssetBundle.java
@@ -765,6 +771,9 @@ src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryBooleanChange.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCalendarEventCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCalendarEventDelete.java
+src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCreate.java
+src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCreateDiscoverability.java
+src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupCreateGallery.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupGalleryCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupGalleryDelete.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryDataGroupGalleryUpdate.java
@@ -787,6 +796,7 @@ src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryFileIDChange.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupAnnouncement.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupCalendarEventCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupCalendarEventDelete.java
+src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupGalleryCreate.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupGalleryDelete.java
 src/main/java/io/github/vrchatapi/model/GroupAuditLogEntryGroupGalleryUpdate.java

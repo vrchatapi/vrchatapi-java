@@ -8,10 +8,12 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**description** | **String** |  |  [optional] |
-|**id** | **String** |  |  [optional] |
+|**isAddedOnJoin** | **Boolean** |  |  [optional] |
 |**isSelfAssignable** | **Boolean** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
+|**name** | **String** |  |  |
 |**permissions** | **List&lt;GroupPermissions&gt;** |  |  [optional] |
+|**requiresPurchase** | **Boolean** |  |  [optional] |
+|**requiresTwoFactor** | **Boolean** |  |  [optional] |
 
 
 

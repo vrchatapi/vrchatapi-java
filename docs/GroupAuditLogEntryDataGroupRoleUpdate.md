@@ -14,6 +14,7 @@ Carries only the fields the update changed.
 |**name** | [**GroupAuditLogEntryStringChange**](GroupAuditLogEntryStringChange.md) |  |  [optional] |
 |**order** | [**GroupAuditLogEntryIntegerChange**](GroupAuditLogEntryIntegerChange.md) |  |  [optional] |
 |**permissions** | [**GroupAuditLogEntryStringListChange**](GroupAuditLogEntryStringListChange.md) |  |  [optional] |
+|**requiresTwoFactor** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  |  [optional] |
 
 
 
