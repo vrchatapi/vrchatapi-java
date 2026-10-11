@@ -21,10 +21,10 @@
 |**groupIcon** | **String** |  |  [optional] |
 |**groupId** | **String** |  |  [optional] |
 |**groupName** | **String** |  |  [optional] |
-|**hasAvatar** | **Boolean** |  |  |
+|**hasAvatar** | **Boolean** |  |  [optional] |
 |**hasCompanion** | **Boolean** |  |  [optional] |
 |**hasInventory** | **Boolean** |  |  [optional] |
-|**hasUdon** | **Boolean** |  |  |
+|**hasUdon** | **Boolean** |  |  [optional] |
 |**hydratedProducts** | [**List&lt;Product&gt;**](Product.md) |  |  [optional] |
 |**id** | **String** |  |  |
 |**imageId** | **String** |  |  [optional] |
@@ -36,16 +36,16 @@
 |**productIds** | **List&lt;String&gt;** |  |  |
 |**productType** | **ProductType** |  |  |
 |**productTypes** | **List&lt;String&gt;** |  |  [optional] |
-|**products** | **List&lt;String&gt;** | Product ids. The products themselves arrive in &#x60;hydratedProducts&#x60;. |  |
+|**products** | **List&lt;String&gt;** | Product ids. The products themselves arrive in &#x60;hydratedProducts&#x60;. |  [optional] |
 |**purchaseCount** | **Integer** |  |  [optional] |
 |**purchaseCountQuantity** | **Integer** |  |  [optional] |
 |**quantifiable** | **Boolean** |  |  [optional] |
-|**recurrable** | **Boolean** |  |  |
+|**recurrable** | **Boolean** |  |  [optional] |
 |**refundable** | **Boolean** |  |  [optional] |
 |**sellerDisplayName** | **String** |  |  |
 |**sellerId** | **String** |  |  |
 |**soldByVrc** | **Boolean** |  |  [optional] |
-|**stackable** | **Boolean** |  |  |
+|**stackable** | **Boolean** |  |  [optional] |
 |**storeIds** | **List&lt;String&gt;** |  |  [optional] |
 |**subtitle** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
