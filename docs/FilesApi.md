@@ -167,6 +167,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 
 <a id="deleteFile"></a>
 # **deleteFile**
@@ -457,6 +458,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getAdminAssetBundle"></a>
 # **getAdminAssetBundle**
@@ -526,6 +528,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getContentAgreementStatus"></a>
 # **getContentAgreementStatus**
@@ -962,6 +965,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Current FileVersion upload status. Contains the uploadId needed for uploading, as well as the already uploaded parts. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFiles"></a>
 # **getFiles**
@@ -1037,6 +1041,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="setGroupGalleryFileOrder"></a>
 # **setGroupGalleryFileOrder**
@@ -1393,6 +1398,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="uploadIcon"></a>
 # **uploadIcon**
@@ -1462,6 +1468,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="uploadImage"></a>
 # **uploadImage**
@@ -1543,4 +1550,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 

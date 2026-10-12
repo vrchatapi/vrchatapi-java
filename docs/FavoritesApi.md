@@ -159,6 +159,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success response after clearing a favorite group. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteGroup"></a>
 # **getFavoriteGroup**
@@ -232,6 +233,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getFavoriteGroupContents"></a>
 # **getFavoriteGroupContents**

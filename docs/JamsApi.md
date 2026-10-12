@@ -297,6 +297,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="submitJamContent"></a>
 # **submitJamContent**
