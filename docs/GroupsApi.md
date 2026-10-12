@@ -1754,7 +1754,7 @@ public class Example {
 
 <a id="getGroupAuditLogs"></a>
 # **getGroupAuditLogs**
-> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
+> PaginatedGroupAuditLogList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
 
 Get Group Audit Logs
 
@@ -1791,7 +1791,7 @@ public class Example {
     String eventTypes = "eventTypes_example"; // String | The comma-separated event types to search for.
     String targetIds = "targetIds_example"; // String | The comma-separated target ids to search for.
     try {
-      PaginatedGroupAuditLogEntryList result = apiInstance.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
+      PaginatedGroupAuditLogList result = apiInstance.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupsApi#getGroupAuditLogs");
@@ -1819,7 +1819,7 @@ public class Example {
 
 ### Return type
 
-[**PaginatedGroupAuditLogEntryList**](PaginatedGroupAuditLogEntryList.md)
+[**PaginatedGroupAuditLogList**](PaginatedGroupAuditLogList.md)
 
 ### Authorization
 

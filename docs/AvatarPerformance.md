@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**android** | **String** |  |  [optional] |
+|**android** | **PerformanceRatings** |  |  [optional] |
 |**androidSort** | **Integer** |  |  [optional] |
-|**ios** | **String** |  |  [optional] |
+|**ios** | **PerformanceRatings** |  |  [optional] |
 |**iosSort** | **Integer** |  |  [optional] |
-|**standalonewindows** | **String** |  |  [optional] |
+|**standalonewindows** | **PerformanceRatings** |  |  [optional] |
 |**standalonewindowsSort** | **Integer** |  |  [optional] |
 
 

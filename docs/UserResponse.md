@@ -85,7 +85,7 @@
 |**pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |  |  |
 |**personalizationOptOut** | **Boolean** |  |  [optional] |
 |**picoId** | **String** |  |  [optional] |
-|**platformHistory** | [**List&lt;PlatformHistoryEntry&gt;**](PlatformHistoryEntry.md) |  |  [optional] |
+|**platformHistory** | [**List&lt;PlatformHistoryItem&gt;**](PlatformHistoryItem.md) |  |  [optional] |
 |**presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  |  [optional] |
 |**pronounsHistory** | **List&lt;String&gt;** |  |  |
 |**queuedInstance** | **String** |  |  [optional] |

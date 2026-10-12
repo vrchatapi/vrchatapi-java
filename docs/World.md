@@ -13,7 +13,7 @@
 |**createdAt** | **OffsetDateTime** |  |  |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  |
-|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
+|**disabledPropAbilities** | **List&lt;String&gt;** |  |  [optional] |
 |**favorites** | **Integer** |  |  [optional] |
 |**featured** | **Boolean** |  |  |
 |**heat** | **Integer** |  |  |
@@ -33,7 +33,7 @@
 |**publicationDate** | **String** |  |  |
 |**recommendedCapacity** | **Integer** |  |  |
 |**releaseStatus** | **ReleaseStatus** |  |  |
-|**slimInstances** | **List&lt;Object&gt;** |  |  [optional] |
+|**slimInstances** | [**List&lt;WorldSlimInstance&gt;**](WorldSlimInstance.md) |  |  [optional] |
 |**storeId** | **String** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**thumbnailImageUrl** | **String** |  |  |

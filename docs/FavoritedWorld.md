@@ -13,7 +13,7 @@
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  [optional] |
+|**disabledPropAbilities** | **List&lt;String&gt;** |  |  [optional] |
 |**favoriteGroup** | **String** |  |  [optional] |
 |**favoriteId** | **String** |  |  [optional] |
 |**favorites** | **Integer** |  |  [optional] |

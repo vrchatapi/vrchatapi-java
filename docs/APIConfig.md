@@ -13,7 +13,7 @@ Global client configuration.  The response carries decoy properties: plausible-l
 |**locationGiftingNonSubPrioEnabled** | **Boolean** | Toggles whether users without a current VRC+ subscription are priority recipients for gift drops |  |
 |**voiceEnableDegradation** | **Boolean** | Unknown, probably voice optimization testing |  |
 |**voiceEnableReceiverLimiting** | **Boolean** | Unknown, probably voice optimization testing |  |
-|**accessLogsUrls** | [**APIConfigAccessLogsUrls**](APIConfigAccessLogsUrls.md) |  |  |
+|**accessLogsUrls** | [**APIConfigAccessLogsURLs**](APIConfigAccessLogsURLs.md) |  |  |
 |**address** | **String** | VRChat&#39;s office address |  |
 |**ageVerificationInviteVisible** | **Boolean** |  |  |
 |**ageVerificationP** | **Boolean** |  |  |
@@ -100,18 +100,18 @@ Global client configuration.  The response carries decoy properties: plausible-l
 |**hubWorldId** | **String** | WorldID be \&quot;offline\&quot; on User profiles if you are not friends with that user. |  |
 |**imageHostUrlList** | **List&lt;String&gt;** | A list of explicitly allowed origins that worlds can request images from via the Udon&#39;s [VRCImageDownloader#DownloadImage](https://creators.vrchat.com/worlds/udon/image-loading/#downloadimage). |  |
 |**iosAppVersion** | **List&lt;String&gt;** | Current app version for iOS |  |
-|**iosVersion** | [**APIConfigIosVersion**](APIConfigIosVersion.md) |  |  |
+|**iosVersion** | [**APIConfigIOSVersion**](APIConfigIOSVersion.md) | Current version for iOS |  |
 |**jobsEmail** | **String** | VRChat&#39;s job application email |  |
 |**loadingScreenWeights** | [**Map&lt;String, APIConfigLoadingScreenWeights&gt;**](APIConfigLoadingScreenWeights.md) | Relative weight of each info-push category on the loading screen, per audience. |  [optional] |
 |**lowMemoryGoHomeTimeout** | [**Map&lt;String, APIConfigLowMemoryGoHomeTimeoutValue&gt;**](APIConfigLowMemoryGoHomeTimeoutValue.md) | Low-memory timeout, keyed by platform. |  [optional] |
 |**maxUserEmoji** | **Integer** | The maximum number of custom emoji each user may have at a given time. |  |
 |**maxUserStickers** | **Integer** | The maximum number of custom stickers each user may have at a given time. |  |
 |**maximumUnityVersionForUploads** | **String** |  |  [optional] |
-|**minSupportedClientBuildNumber** | [**APIConfigMinSupportedClientBuildNumber**](APIConfigMinSupportedClientBuildNumber.md) |  |  |
+|**minSupportedClientBuildNumber** | [**APIConfigMinSupportedClientBuildNumber**](APIConfigMinSupportedClientBuildNumber.md) | Minimum supported client build number for various platforms |  |
 |**minimumUnityVersionForUploads** | **String** | Minimum Unity version required for uploading assets |  |
 |**moderationEmail** | **String** | VRChat&#39;s moderation related email |  |
 |**notAllowedToSelectAvatarInPrivateWorldMessage** | **String** | Used in-game to notify a user they aren&#39;t allowed to select avatars in private worlds |  |
-|**offlineAnalysis** | [**APIConfigOfflineAnalysis**](APIConfigOfflineAnalysis.md) |  |  |
+|**offlineAnalysis** | [**APIConfigOfflineAnalysis**](APIConfigOfflineAnalysis.md) | Whether to allow offline analysis |  |
 |**photonNameserverOverrides** | **List&lt;String&gt;** | Unknown |  |
 |**photonPublicKeys** | **List&lt;String&gt;** | Unknown |  |
 |**playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format |  |

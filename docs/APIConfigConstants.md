@@ -8,9 +8,9 @@ Constants
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**GROUPS** | [**APIConfigConstantsGROUPS**](APIConfigConstantsGROUPS.md) |  |  |
-|**INSTANCE** | [**APIConfigConstantsINSTANCE**](APIConfigConstantsINSTANCE.md) |  |  |
-|**LANGUAGE** | [**APIConfigConstantsLANGUAGE**](APIConfigConstantsLANGUAGE.md) |  |  |
+|**GROUPS** | [**APIConfigConstantsGroups**](APIConfigConstantsGroups.md) | Group-related constants |  |
+|**INSTANCE** | [**APIConfigConstantsInstance**](APIConfigConstantsInstance.md) | Instance-related constants |  |
+|**LANGUAGE** | [**APIConfigConstantsLanguage**](APIConfigConstantsLanguage.md) | Language-related constants |  |
 
 
 

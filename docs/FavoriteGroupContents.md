@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**favorites** | [**List&lt;FavoriteGroupContentsEntry&gt;**](FavoriteGroupContentsEntry.md) |  |  |
+|**favorites** | [**List&lt;FavoriteGroupContentsItem&gt;**](FavoriteGroupContentsItem.md) |  |  |
 |**totalCount** | **Integer** |  |  |
 
 

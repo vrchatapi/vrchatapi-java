@@ -676,7 +676,7 @@ public class Example {
 
 <a id="updateFavoriteGroup"></a>
 # **updateFavoriteGroup**
-> Object updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
+> Map&lt;String, Object&gt; updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
 
 Update Favorite Group
 
@@ -709,7 +709,7 @@ public class Example {
     String userId = "userId_example"; // String | Must be a valid user ID.
     UpdateFavoriteGroupRequest updateFavoriteGroupRequest = new UpdateFavoriteGroupRequest(); // UpdateFavoriteGroupRequest | 
     try {
-      Object result = apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
+      Map<String, Object> result = apiInstance.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FavoritesApi#updateFavoriteGroup");
@@ -733,7 +733,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, Object&gt;**
 
 ### Authorization
 

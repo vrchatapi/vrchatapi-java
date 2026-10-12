@@ -75,7 +75,7 @@
 |**personalizationOptOut** | **Boolean** |  |  [optional] |
 |**picoId** | **String** |  |  [optional] |
 |**platform** | **String** |  |  [optional] |
-|**platformHistory** | [**List&lt;PlatformHistoryEntry&gt;**](PlatformHistoryEntry.md) |  |  [optional] |
+|**platformHistory** | [**List&lt;PlatformHistoryItem&gt;**](PlatformHistoryItem.md) |  |  [optional] |
 |**presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  |  [optional] |
 |**profileEffect** | **String** |  |  [optional] |
 |**pronouns** | **String** |  |  |

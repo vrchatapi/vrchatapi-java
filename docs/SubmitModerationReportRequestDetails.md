@@ -2,7 +2,6 @@
 
 # SubmitModerationReportRequestDetails
 
-Relevant details specific to the type of the report. `fileId` is for the image file attached to an inventory item, such as an emoji. `holderId` is for the user who owns an inventory item, such as a emoji.
 
 ## Properties
 

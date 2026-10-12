@@ -24,7 +24,7 @@
 |**listingType** | **ProductListingType** |  |  |
 |**products** | [**List&lt;ProductPurchaseProduct&gt;**](ProductPurchaseProduct.md) |  |  |
 |**purchaseActive** | **Boolean** |  |  |
-|**purchaseContext** | [**ProductPurchasePurchaseContext**](ProductPurchasePurchaseContext.md) |  |  |
+|**purchaseContext** | [**ProductPurchaseContext**](ProductPurchaseContext.md) |  |  |
 |**purchaseCurrentStatus** | **String** |  |  |
 |**purchaseDate** | **OffsetDateTime** |  |  |
 |**purchaseDuration** | **Integer** |  |  [optional] |

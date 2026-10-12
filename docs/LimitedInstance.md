@@ -12,7 +12,7 @@
 |**categoryId** | **String** |  |  |
 |**creationLanguages** | **List&lt;Object&gt;** |  |  |
 |**description** | **String** |  |  |
-|**disabledPropAbilities** | **List&lt;Object&gt;** |  |  |
+|**disabledPropAbilities** | **List&lt;String&gt;** |  |  |
 |**displayName** | **String** |  |  |
 |**displayVibeId** | **String** |  |  |
 |**dominantLanguage** | **String** |  |  |

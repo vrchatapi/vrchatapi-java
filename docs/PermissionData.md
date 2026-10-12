@@ -2,7 +2,6 @@
 
 # PermissionData
 
-Specific values afforded the user by this permission
 
 ## Properties
 

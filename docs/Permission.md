@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**data** | [**PermissionData**](PermissionData.md) |  |  [optional] |
+|**data** | [**PermissionData**](PermissionData.md) | Specific values afforded the user by this permission |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**id** | **String** |  |  |

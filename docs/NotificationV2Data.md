@@ -14,7 +14,6 @@
 |**ownerId** | **String** |  |  |
 |**ownerName** | **String** |  |  |
 |**title** | **String** |  |  |
-|**announcementTitle** | **String** |  |  |
 |**groupId** | **String** |  |  |
 |**groupName** | **String** |  |  |
 |**transferTargetDisplayName** | **String** |  |  [optional] |

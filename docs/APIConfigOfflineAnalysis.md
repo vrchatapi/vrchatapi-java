@@ -2,7 +2,6 @@
 
 # APIConfigOfflineAnalysis
 
-Whether to allow offline analysis
 
 ## Properties
 

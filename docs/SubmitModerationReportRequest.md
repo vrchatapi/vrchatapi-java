@@ -11,7 +11,7 @@ Pseudocode steps to build a request with a valid combination: request = {} confi
 |**category** | **String** | Valid values are the keys of the object &#x60;$.reportOptions[type]&#x60; from &#x60;GET /config&#x60;. Descriptions of these are found at &#x60;$.reportCategories[type]&#x60;. |  |
 |**contentId** | **String** | The id of the user, group, world, avatar, inventory item, print, etc. being reported. |  |
 |**description** | **String** | The subjective reason for the report |  [optional] |
-|**details** | [**SubmitModerationReportRequestDetails**](SubmitModerationReportRequestDetails.md) |  |  [optional] |
+|**details** | [**SubmitModerationReportRequestDetails**](SubmitModerationReportRequestDetails.md) | Relevant details specific to the type of the report. &#x60;fileId&#x60; is for the image file attached to an inventory item, such as an emoji. &#x60;holderId&#x60; is for the user who owns an inventory item, such as a emoji. |  [optional] |
 |**reason** | **String** | Valid values are the strings in the array &#x60;$.reportOptions[type][category]&#x60; from &#x60;GET /config&#x60;. Descriptions of these are found at &#x60;$.reportReasons[type]&#x60;. |  |
 |**type** | **String** | Valid values are the keys of the object &#x60;$.reportOptions&#x60; from &#x60;GET /config&#x60;. |  |
 
