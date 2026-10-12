@@ -1342,6 +1342,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** |  |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Registration is refused on this host. |  -  |
 
 <a id="resendEmailConfirmation"></a>
 # **resendEmailConfirmation**

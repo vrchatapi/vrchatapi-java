@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**message** | **String** |  |  [optional] |
 |**statusCode** | **Integer** |  |  |
+|**wafCode** | **Integer** |  |  [optional] |
 
 
 

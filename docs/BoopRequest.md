@@ -8,7 +8,7 @@ See NotificationDetailBoop; either inventoryItemId (accessed through .id) by its
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**emojiId** | **String** | Either a FileID or a string constant for default emojis |  [optional] |
+|**emojiId** | [**EmojiID**](EmojiID.md) |  |  [optional] |
 |**emojiVersion** | **Integer** |  |  [optional] |
 |**inventoryItemId** | **String** |  |  [optional] |
 

@@ -115,6 +115,7 @@ docs/EconomyPayoutList.md
 docs/EconomyPayoutStatus.md
 docs/EconomyStatus.md
 docs/EditPrintRequest.md
+docs/EmojiID.md
 docs/EquipInventoryItemRequest.md
 docs/Error.md
 docs/Favorite.md
@@ -753,6 +754,7 @@ src/main/java/io/github/vrchatapi/model/EconomyPayoutList.java
 src/main/java/io/github/vrchatapi/model/EconomyPayoutStatus.java
 src/main/java/io/github/vrchatapi/model/EconomyStatus.java
 src/main/java/io/github/vrchatapi/model/EditPrintRequest.java
+src/main/java/io/github/vrchatapi/model/EmojiID.java
 src/main/java/io/github/vrchatapi/model/EquipInventoryItemRequest.java
 src/main/java/io/github/vrchatapi/model/Error.java
 src/main/java/io/github/vrchatapi/model/Favorite.java

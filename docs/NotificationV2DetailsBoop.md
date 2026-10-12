@@ -8,7 +8,7 @@ Either inventoryItemId by itself, or emojiId with optional emojiVersion
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**emojiId** | **String** | Either a FileID or a string constant for default emojis |  |
+|**emojiId** | [**EmojiID**](EmojiID.md) |  |  |
 |**emojiVersion** | **Integer** |  |  |
 |**inventoryItemId** | **String** |  |  |
 

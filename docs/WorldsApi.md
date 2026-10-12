@@ -453,6 +453,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | The caller does not own the world. A world that does not exist answers the same. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteWorldPlatform"></a>
@@ -1470,5 +1471,6 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | The caller does not own the world. A world that does not exist answers the same. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 

@@ -29,8 +29,8 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getProductPurchaseStacks**](EconomyApi.md#getProductPurchaseStacks) | **GET** /economy/purchases/{productPurchaseId}/stacks | Get Product Purchase Stacks |
 | [**getProductPurchases**](EconomyApi.md#getProductPurchases) | **GET** /economy/purchases | Get Product Purchases |
 | [**getRecentSubscription**](EconomyApi.md#getRecentSubscription) | **GET** /user/subscription/recent | Get Recent Subscription |
-| [**getSteamTransaction**](EconomyApi.md#getSteamTransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction |
-| [**getSteamTransactions**](EconomyApi.md#getSteamTransactions) | **GET** /Steam/transactions | List Steam Transactions |
+| [**getSteamTransaction**](EconomyApi.md#getSteamTransaction) | **GET** /steam/transactions/{transactionId} | Get Steam Transaction |
+| [**getSteamTransactions**](EconomyApi.md#getSteamTransactions) | **GET** /steam/transactions | List Steam Transactions |
 | [**getStore**](EconomyApi.md#getStore) | **GET** /economy/store | Get Store |
 | [**getStoreShelves**](EconomyApi.md#getStoreShelves) | **GET** /economy/store/shelves | Get Store Shelves |
 | [**getSubscriptions**](EconomyApi.md#getSubscriptions) | **GET** /subscriptions | List Subscriptions |
@@ -2125,6 +2125,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getSubscriptions"></a>
