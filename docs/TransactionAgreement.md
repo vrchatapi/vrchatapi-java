@@ -21,7 +21,7 @@ Represents a single Transaction, which is likely between VRChat and Steam.
 |**lastPayment** | **String** |  |  |
 |**nextPayment** | **String** |  |  |
 |**outstanding** | **Integer** |  |  |
-|**period** | **String** |  |  |
+|**period** | **SubscriptionPeriod** |  |  |
 |**recurringAmt** | **BigDecimal** |  |  |
 |**startDate** | **String** |  |  |
 |**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |

@@ -7,23 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**category** | [**CategoryEnum**](#CategoryEnum) |  |  |
+|**category** | **FileDataCategory** |  |  |
 |**fileName** | **String** |  |  |
 |**md5** | **String** |  |  [optional] |
 |**sizeInBytes** | **Integer** |  |  |
 |**status** | **FileStatus** |  |  |
 |**uploadId** | **String** |  |  |
 |**url** | **String** |  |  |
-
-
-
-## Enum: CategoryEnum
-
-| Name | Value |
-|---- | -----|
-| MULTIPART | &quot;multipart&quot; |
-| QUEUED | &quot;queued&quot; |
-| SIMPLE | &quot;simple&quot; |
 
 
 

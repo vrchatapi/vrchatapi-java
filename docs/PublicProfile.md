@@ -13,7 +13,7 @@
 |**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**backgroundTemplateId** | **String** |  |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
-|**backgroundType** | **String** |  |  [optional] |
+|**backgroundType** | **ProfileBackgroundType** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
 |**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |

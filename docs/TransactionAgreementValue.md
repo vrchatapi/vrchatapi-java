@@ -20,7 +20,7 @@
 |**lastPayment** | **String** |  |  |
 |**nextPayment** | **String** |  |  |
 |**outstanding** | **Integer** |  |  |
-|**period** | **String** |  |  |
+|**period** | **SubscriptionPeriod** |  |  |
 |**recurringAmt** | **BigDecimal** |  |  |
 |**startDate** | **String** |  |  |
 |**status** | **String** | This is NOT TransactionStatus, but whatever Steam return. |  |

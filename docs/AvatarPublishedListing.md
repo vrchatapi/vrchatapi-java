@@ -11,7 +11,7 @@
 |**displayName** | **String** |  |  [optional] |
 |**imageId** | **String** |  |  [optional] |
 |**listingId** | **String** |  |  [optional] |
-|**listingType** | **String** |  |  [optional] |
+|**listingType** | **ProductListingType** |  |  [optional] |
 |**priceTokens** | **Integer** |  |  [optional] |
 
 

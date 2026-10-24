@@ -11,7 +11,7 @@
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**encryptionKey** | **String** |  |  [optional] |
 |**fileSize** | **Integer** |  |  |
-|**performanceRating** | **String** |  |  [optional] |
+|**performanceRating** | **PerformanceRatings** |  |  [optional] |
 |**success** | **Boolean** |  |  |
 |**uncompressedSize** | **Integer** |  |  |
 

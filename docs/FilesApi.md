@@ -416,7 +416,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 56; // Integer | Version ID of the asset.
-    String fileType = "delta"; // String | Type of file.
+    FileDataType fileType = FileDataType.fromValue("delta"); // FileDataType | Type of file.
     FinishFileDataUploadRequest finishFileDataUploadRequest = new FinishFileDataUploadRequest(); // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
     try {
       ModelFile result = apiInstance.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
@@ -438,7 +438,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
+| **fileType** | [**FileDataType**](.md)| Type of file. | [enum: delta, file, signature] |
 | **finishFileDataUploadRequest** | [**FinishFileDataUploadRequest**](FinishFileDataUploadRequest.md)| Please see documentation on ETag&#39;s: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag&#39;s should NOT be present when uploading a &#x60;signature&#x60;. | [optional] |
 
 ### Return type
@@ -925,7 +925,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 56; // Integer | Version ID of the asset.
-    String fileType = "delta"; // String | Type of file.
+    FileDataType fileType = FileDataType.fromValue("delta"); // FileDataType | Type of file.
     try {
       FileVersionUploadStatus result = apiInstance.getFileDataUploadStatus(fileId, versionId, fileType);
       System.out.println(result);
@@ -946,7 +946,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
+| **fileType** | [**FileDataType**](.md)| Type of file. | [enum: delta, file, signature] |
 
 ### Return type
 
@@ -1146,7 +1146,7 @@ public class Example {
     FilesApi apiInstance = new FilesApi(defaultClient);
     String fileId = "fileId_example"; // String | Must be a valid file ID.
     Integer versionId = 56; // Integer | Version ID of the asset.
-    String fileType = "delta"; // String | Type of file.
+    FileDataType fileType = FileDataType.fromValue("delta"); // FileDataType | Type of file.
     Integer partNumber = 56; // Integer | The part number to start uploading. If not provided, the first part will be started.
     try {
       FileUploadURL result = apiInstance.startFileDataUpload(fileId, versionId, fileType, partNumber);
@@ -1168,7 +1168,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **fileId** | **String**| Must be a valid file ID. | |
 | **versionId** | **Integer**| Version ID of the asset. | |
-| **fileType** | **String**| Type of file. | [enum: delta, file, signature] |
+| **fileType** | [**FileDataType**](.md)| Type of file. | [enum: delta, file, signature] |
 | **partNumber** | **Integer**| The part number to start uploading. If not provided, the first part will be started. | [optional] |
 
 ### Return type

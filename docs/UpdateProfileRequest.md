@@ -10,7 +10,7 @@
 |**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
-|**backgroundType** | [**BackgroundTypeEnum**](#BackgroundTypeEnum) |  |  [optional] |
+|**backgroundType** | **ProfileBackgroundType** |  |  [optional] |
 |**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
@@ -22,17 +22,6 @@
 |**profileEffect** | **String** |  |  [optional] |
 |**themeId** | [**PublicProfileThemeID**](PublicProfileThemeID.md) |  |  [optional] |
 |**userIcon** | **String** |  |  [optional] |
-
-
-
-## Enum: BackgroundTypeEnum
-
-| Name | Value |
-|---- | -----|
-| DEFAULT | &quot;default&quot; |
-| GRADIENT | &quot;gradient&quot; |
-| INVENTORY | &quot;inventory&quot; |
-| TEXTURE | &quot;texture&quot; |
 
 
 

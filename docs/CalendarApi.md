@@ -168,7 +168,7 @@ public class Example {
 
 <a id="discoverCalendarEvents"></a>
 # **discoverCalendarEvents**
-> CalendarEventDiscovery discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor)
+> CalendarEventDiscovery discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor, requireLinkedInstance, upcomingSort)
 
 Discover calendar events
 
@@ -207,8 +207,10 @@ public class Example {
     Integer upcomingOffsetMinutes = 56; // Integer | Filter for calendar event discovery.
     Integer n = 60; // Integer | The number of objects to return.
     String nextCursor = "nextCursor_example"; // String | Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery).
+    Boolean requireLinkedInstance = true; // Boolean | 
+    CalendarEventDiscoverySort upcomingSort = CalendarEventDiscoverySort.fromValue("follows_descending"); // CalendarEventDiscoverySort | 
     try {
-      CalendarEventDiscovery result = apiInstance.discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor);
+      CalendarEventDiscovery result = apiInstance.discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor, requireLinkedInstance, upcomingSort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CalendarApi#discoverCalendarEvents");
@@ -236,6 +238,8 @@ public class Example {
 | **upcomingOffsetMinutes** | **Integer**| Filter for calendar event discovery. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **nextCursor** | **String**| Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery). | [optional] |
+| **requireLinkedInstance** | **Boolean**|  | [optional] |
+| **upcomingSort** | [**CalendarEventDiscoverySort**](.md)|  | [optional] [enum: follows_descending, startTime_ascending, startTime_descending] |
 
 ### Return type
 

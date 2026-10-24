@@ -1258,7 +1258,7 @@ public class Example {
     WorldsApi apiInstance = new WorldsApi(defaultClient);
     Boolean featured = true; // Boolean | Filters on featured results.
     SortOption sort = SortOption.fromValue("_created_at"); // SortOption | The sort order of the results.
-    String user = "friends"; // String | Set to `me` for searching own worlds.
+    SearchWorldsUser user = SearchWorldsUser.fromValue("friends"); // SearchWorldsUser | Set to `me` for searching own worlds.
     String userId = "userId_example"; // String | Filter by UserID.
     Integer n = 60; // Integer | The number of objects to return.
     OrderOption order = OrderOption.fromValue("ascending"); // OrderOption | Result ordering
@@ -1293,7 +1293,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **featured** | **Boolean**| Filters on featured results. | [optional] |
 | **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] [default to popularity] [enum: _created_at, _updated_at, contains, created, exact, favorites, heat, hotness, labsPublicationDate, magic, name, order, popularity, publicationDate, random, relevance, reportCount, reportScore, shuffle, trending, trust, updated] |
-| **user** | **String**| Set to &#x60;me&#x60; for searching own worlds. | [optional] [enum: friends, me] |
+| **user** | [**SearchWorldsUser**](.md)| Set to &#x60;me&#x60; for searching own worlds. | [optional] [enum: friends, me] |
 | **userId** | **String**| Filter by UserID. | [optional] |
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **order** | [**OrderOption**](.md)| Result ordering | [optional] [default to descending] [enum: ascending, descending] |

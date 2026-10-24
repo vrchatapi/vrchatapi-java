@@ -267,7 +267,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    String itemType = "droneskin"; // String | The kind of cosmetic to list.
+    CosmeticItemType itemType = CosmeticItemType.fromValue("droneskin"); // CosmeticItemType | The kind of cosmetic to list.
     try {
       List<InventoryTemplate> result = apiInstance.getCosmetics(itemType);
       System.out.println(result);
@@ -286,7 +286,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **itemType** | **String**| The kind of cosmetic to list. | [enum: droneskin, iconFrame, nameplateEffect, portalskin, profileBackground, profileEffect, warpeffect] |
+| **itemType** | [**CosmeticItemType**](.md)| The kind of cosmetic to list. | [enum: droneskin, iconFrame, nameplateEffect, portalskin, profileBackground, profileEffect, warpeffect] |
 
 ### Return type
 

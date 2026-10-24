@@ -13,6 +13,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getFrontendBranches**](MiscellaneousApi.md#getFrontendBranches) | **GET** /frontend/branches | List Frontend Branches |
 | [**getHealth**](MiscellaneousApi.md#getHealth) | **GET** /health | Check API Health |
 | [**getInfoPush**](MiscellaneousApi.md#getInfoPush) | **GET** /infoPush | Show Information Notices |
+| [**getInfoPushContent**](MiscellaneousApi.md#getInfoPushContent) | **GET** /infoPush/{entryId}/content | Get Content Shelf Results |
 | [**getJavaScript**](MiscellaneousApi.md#getJavaScript) | **GET** /js/app.js | Download JavaScript |
 | [**getPermission**](MiscellaneousApi.md#getPermission) | **GET** /permissions/{permissionId} | Get Permission |
 | [**getSystemTime**](MiscellaneousApi.md#getSystemTime) | **GET** /time | Current System Time |
@@ -239,7 +240,7 @@ public class Example {
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
     MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
-    String variant = "internal"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+    FrontendVariant variant = FrontendVariant.fromValue("internal"); // FrontendVariant | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
     String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
     try {
       String result = apiInstance.getCSS(variant, branch);
@@ -259,7 +260,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: internal, public] |
+| **variant** | [**FrontendVariant**](.md)| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: internal, public] |
 | **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main] |
 
 ### Return type
@@ -596,6 +597,82 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 
+<a id="getInfoPushContent"></a>
+# **getInfoPushContent**
+> InfoPushContent getInfoPushContent(entryId, n, nextCursor)
+
+Get Content Shelf Results
+
+Runs the &#x60;contentSource&#x60; of a &#x60;ContentShelf&#x60; entry and returns its results. It runs the source&#39;s own &#x60;params&#x60;, including filters the account may not pass to the source&#39;s endpoint directly.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.MiscellaneousApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
+    String entryId = "entryId_example"; // String | The ID of a `ContentShelf` entry.
+    Integer n = 56; // Integer | The number of results to return. Only a content source with `pagination` pages.
+    String nextCursor = "nextCursor_example"; // String | The `nextCursor` of the previous page. Only a content source with `pagination` pages.
+    try {
+      InfoPushContent result = apiInstance.getInfoPushContent(entryId, n, nextCursor);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MiscellaneousApi#getInfoPushContent");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **entryId** | **String**| The ID of a &#x60;ContentShelf&#x60; entry. | |
+| **n** | **Integer**| The number of results to return. Only a content source with &#x60;pagination&#x60; pages. | [optional] |
+| **nextCursor** | **String**| The &#x60;nextCursor&#x60; of the previous page. Only a content source with &#x60;pagination&#x60; pages. | [optional] |
+
+### Return type
+
+[**InfoPushContent**](InfoPushContent.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The results of a content shelf. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | No content shelf has that ID. |  -  |
+
 <a id="getJavaScript"></a>
 # **getJavaScript**
 > String getJavaScript(variant, branch)
@@ -619,7 +696,7 @@ public class Example {
     defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
 
     MiscellaneousApi apiInstance = new MiscellaneousApi(defaultClient);
-    String variant = "internal"; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+    FrontendVariant variant = FrontendVariant.fromValue("internal"); // FrontendVariant | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
     String branch = "main"; // String | Specifies which git branch the site should load frontend source code from.
     try {
       String result = apiInstance.getJavaScript(variant, branch);
@@ -639,7 +716,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **variant** | **String**| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: internal, public] |
+| **variant** | [**FrontendVariant**](.md)| Specifies which &#x60;variant&#x60; of the site. Public is the end-user site, while &#x60;internal&#x60; is the staff-only site with special pages for moderation and management. | [optional] [default to public] [enum: internal, public] |
 | **branch** | **String**| Specifies which git branch the site should load frontend source code from. | [optional] [default to main] |
 
 ### Return type

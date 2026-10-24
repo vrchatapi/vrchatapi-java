@@ -168,7 +168,7 @@ public class Example {
 
 <a id="discoverInstances"></a>
 # **discoverInstances**
-> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category)
+> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool)
 
 Discover Instances
 
@@ -203,8 +203,17 @@ public class Example {
     List<String> groupId = Arrays.asList(); // List<String> | Return only instances of these groups.
     List<String> vibe = Arrays.asList(); // List<String> | 
     String category = "category_example"; // String | 
+    List<String> anyWorldTag = Arrays.asList(); // List<String> | Not every account may use it; the others are answered 403.
+    List<InstanceDiscoveryBoost> boost = Arrays.asList(); // List<InstanceDiscoveryBoost> | Only `GET /infoPush/{entryId}/content` accepts it; this route answers 400 to any value.
+    Boolean groupHosted = true; // Boolean | 
+    Integer maxOccupants = 56; // Integer | 
+    Integer minOccupants = 56; // Integer | 
+    Integer minSpotsLeft = 56; // Integer | Not every account may use it; the others are answered 403.
+    InstanceDiscoveryMode mode = InstanceDiscoveryMode.fromValue("active"); // InstanceDiscoveryMode | 
+    List<String> notWorldTag = Arrays.asList(); // List<String> | Not every account may use it; the others are answered 403.
+    InstanceDiscoveryWorldPool worldPool = InstanceDiscoveryWorldPool.fromValue("trending"); // InstanceDiscoveryWorldPool | 
     try {
-      InstanceDiscovery result = apiInstance.discoverInstances(n, region, platform, worldId, groupId, vibe, category);
+      InstanceDiscovery result = apiInstance.discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#discoverInstances");
@@ -228,6 +237,15 @@ public class Example {
 | **groupId** | [**List&lt;String&gt;**](String.md)| Return only instances of these groups. | [optional] |
 | **vibe** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **category** | **String**|  | [optional] |
+| **anyWorldTag** | [**List&lt;String&gt;**](String.md)| Not every account may use it; the others are answered 403. | [optional] |
+| **boost** | [**List&lt;InstanceDiscoveryBoost&gt;**](InstanceDiscoveryBoost.md)| Only &#x60;GET /infoPush/{entryId}/content&#x60; accepts it; this route answers 400 to any value. | [optional] |
+| **groupHosted** | **Boolean**|  | [optional] |
+| **maxOccupants** | **Integer**|  | [optional] |
+| **minOccupants** | **Integer**|  | [optional] |
+| **minSpotsLeft** | **Integer**| Not every account may use it; the others are answered 403. | [optional] |
+| **mode** | [**InstanceDiscoveryMode**](.md)|  | [optional] [enum: active, match, population, random] |
+| **notWorldTag** | [**List&lt;String&gt;**](String.md)| Not every account may use it; the others are answered 403. | [optional] |
+| **worldPool** | [**InstanceDiscoveryWorldPool**](.md)|  | [optional] [enum: trending] |
 
 ### Return type
 
@@ -248,6 +266,7 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+| **403** | The account may not use one of the filters it passed. |  -  |
 
 <a id="getActiveInstances"></a>
 # **getActiveInstances**
