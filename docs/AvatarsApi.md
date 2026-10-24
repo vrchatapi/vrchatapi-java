@@ -746,11 +746,11 @@ public class Example {
 
 <a id="searchAvatars"></a>
 # **searchAvatars**
-> List&lt;Avatar&gt; searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant)
+> SearchAvatarsResult searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant, marketplace, search, metadata, minPrice, maxPrice, performanceAtLeast, minAssetVersion, maxAssetVersion)
 
 Search Avatars
 
-Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
+Search and list avatars by query filters. Without &#x60;marketplace&#x60;, you can only search your own or featured avatars.
 
 ### Example
 ```java
@@ -788,8 +788,16 @@ public class Example {
     String minUnityVersion = "minUnityVersion_example"; // String | The minimum Unity version supported by the asset.
     String platform = "platform_example"; // String | The platform the asset supports.
     Boolean isInternalVariant = true; // Boolean | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
+    SearchAvatarsMarketplace marketplace = SearchAvatarsMarketplace.fromValue("all"); // SearchAvatarsMarketplace | Search avatars listed in the marketplace.
+    String search = "search_example"; // String | Text to search for. Requires `marketplace`.
+    Boolean metadata = true; // Boolean | Wrap the results in an AvatarList.
+    Integer minPrice = 56; // Integer | 
+    Integer maxPrice = 56; // Integer | 
+    Integer performanceAtLeast = 56; // Integer | 
+    Integer minAssetVersion = 56; // Integer | 
+    Integer maxAssetVersion = 56; // Integer | 
     try {
-      List<Avatar> result = apiInstance.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant);
+      SearchAvatarsResult result = apiInstance.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, isInternalVariant, marketplace, search, metadata, minPrice, maxPrice, performanceAtLeast, minAssetVersion, maxAssetVersion);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AvatarsApi#searchAvatars");
@@ -820,10 +828,18 @@ public class Example {
 | **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] |
 | **platform** | **String**| The platform the asset supports. | [optional] |
 | **isInternalVariant** | **Boolean**| Not quite sure what this actually does (exists on the website but doesn&#39;t seem to be used) | [optional] |
+| **marketplace** | [**SearchAvatarsMarketplace**](.md)| Search avatars listed in the marketplace. | [optional] [enum: all, free, paid] |
+| **search** | **String**| Text to search for. Requires &#x60;marketplace&#x60;. | [optional] |
+| **metadata** | **Boolean**| Wrap the results in an AvatarList. | [optional] |
+| **minPrice** | **Integer**|  | [optional] |
+| **maxPrice** | **Integer**|  | [optional] |
+| **performanceAtLeast** | **Integer**|  | [optional] |
+| **minAssetVersion** | **Integer**|  | [optional] |
+| **maxAssetVersion** | **Integer**|  | [optional] |
 
 ### Return type
 
-[**List&lt;Avatar&gt;**](Avatar.md)
+[**SearchAvatarsResult**](SearchAvatarsResult.md)
 
 ### Authorization
 
@@ -837,7 +853,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | Returns a list of Avatar objects, wrapped in a paginated object when &#x60;metadata&#x60; is &#x60;true&#x60;. |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 

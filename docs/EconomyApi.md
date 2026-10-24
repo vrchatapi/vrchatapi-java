@@ -19,6 +19,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getEconomyPayoutStatus**](EconomyApi.md#getEconomyPayoutStatus) | **GET** /user/{userId}/economy/payouts/status | Get Economy Payout Status |
 | [**getEconomyPayouts**](EconomyApi.md#getEconomyPayouts) | **GET** /user/{userId}/economy/payouts/list | Get Economy Payouts |
 | [**getEconomyStatus**](EconomyApi.md#getEconomyStatus) | **GET** /economy/status | Get Economy Status |
+| [**getEconomySubscriptions**](EconomyApi.md#getEconomySubscriptions) | **GET** /economy/subscriptions | List Economy Subscriptions |
 | [**getLicenseGroup**](EconomyApi.md#getLicenseGroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group |
 | [**getProductListing**](EconomyApi.md#getProductListing) | **GET** /listing/{productId} | Get Product Listing |
 | [**getProductListingAlternate**](EconomyApi.md#getProductListingAlternate) | **GET** /products/{productId} | Get Product Listing (alternate) |
@@ -1094,6 +1095,82 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getEconomySubscriptions"></a>
+# **getEconomySubscriptions**
+> List&lt;Object&gt; getEconomySubscriptions(subscriberId, n, offset)
+
+List Economy Subscriptions
+
+List a subscriber&#39;s economy subscriptions.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.EconomyApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    EconomyApi apiInstance = new EconomyApi(defaultClient);
+    String subscriberId = "subscriberId_example"; // String | 
+    Integer n = 60; // Integer | The number of objects to return.
+    Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
+    try {
+      List<Object> result = apiInstance.getEconomySubscriptions(subscriberId, n, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EconomyApi#getEconomySubscriptions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **subscriberId** | **String**|  | |
+| **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
+| **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when requesting another user&#39;s economy subscriptions. |  -  |
 
 <a id="getLicenseGroup"></a>
 # **getLicenseGroup**

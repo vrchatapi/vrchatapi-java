@@ -11,6 +11,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
 | [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
 | [**getInstanceCategories**](InstancesApi.md#getInstanceCategories) | **GET** /instanceCategories | List Instance Categories |
+| [**getInstanceCount**](InstancesApi.md#getInstanceCount) | **GET** /instances/count | Get Instance Count |
 | [**getInstanceVibes**](InstancesApi.md#getInstanceVibes) | **GET** /instanceVibes | List Instance Vibes |
 | [**getRecentLocations**](InstancesApi.md#getRecentLocations) | **GET** /instances/recent | List Recent Locations |
 | [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name |
@@ -548,6 +549,72 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+
+<a id="getInstanceCount"></a>
+# **getInstanceCount**
+> InstanceCount getInstanceCount()
+
+Get Instance Count
+
+Returns instance and event counts as of &#x60;asOf&#x60;.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    try {
+      InstanceCount result = apiInstance.getInstanceCount();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getInstanceCount");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InstanceCount**](InstanceCount.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single InstanceCount object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getInstanceVibes"></a>
 # **getInstanceVibes**

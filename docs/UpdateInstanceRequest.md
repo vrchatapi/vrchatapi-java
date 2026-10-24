@@ -7,7 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**calendarEntryId** | **String** | Calendar event to link to the instance. Send null to remove the current link. |  |
+|**calendarEntryId** | **String** | Calendar event to link to the instance. Send null to remove the current link. |  [optional] |
+|**displayName** | **String** |  |  [optional] |
 
 
 

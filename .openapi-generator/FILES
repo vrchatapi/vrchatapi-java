@@ -37,6 +37,7 @@ docs/AgreementRequest.md
 docs/AgreementStatus.md
 docs/AuthenticationApi.md
 docs/Avatar.md
+docs/AvatarList.md
 docs/AvatarModeration.md
 docs/AvatarModerationCreated.md
 docs/AvatarModerationType.md
@@ -321,6 +322,7 @@ docs/InfoPushWorldCategoryData.md
 docs/Instance.md
 docs/InstanceCategory.md
 docs/InstanceContentSettings.md
+docs/InstanceCount.md
 docs/InstanceDiscovery.md
 docs/InstanceDiscoveryBoost.md
 docs/InstanceDiscoveryMode.md
@@ -485,6 +487,8 @@ docs/RewardRedemptionData.md
 docs/RewardRedemptionRequest.md
 docs/RewardRedemptionResult.md
 docs/RouteNotImplemented.md
+docs/SearchAvatarsMarketplace.md
+docs/SearchAvatarsResult.md
 docs/SearchWorldsUser.md
 docs/SellerEligibility.md
 docs/SentNotification.md
@@ -729,6 +733,7 @@ src/main/java/io/github/vrchatapi/model/AgreementCode.java
 src/main/java/io/github/vrchatapi/model/AgreementRequest.java
 src/main/java/io/github/vrchatapi/model/AgreementStatus.java
 src/main/java/io/github/vrchatapi/model/Avatar.java
+src/main/java/io/github/vrchatapi/model/AvatarList.java
 src/main/java/io/github/vrchatapi/model/AvatarModeration.java
 src/main/java/io/github/vrchatapi/model/AvatarModerationCreated.java
 src/main/java/io/github/vrchatapi/model/AvatarModerationType.java
@@ -1006,6 +1011,7 @@ src/main/java/io/github/vrchatapi/model/InfoPushWorldCategoryData.java
 src/main/java/io/github/vrchatapi/model/Instance.java
 src/main/java/io/github/vrchatapi/model/InstanceCategory.java
 src/main/java/io/github/vrchatapi/model/InstanceContentSettings.java
+src/main/java/io/github/vrchatapi/model/InstanceCount.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscovery.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryBoost.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryMode.java
@@ -1161,6 +1167,8 @@ src/main/java/io/github/vrchatapi/model/RewardRedemptionData.java
 src/main/java/io/github/vrchatapi/model/RewardRedemptionRequest.java
 src/main/java/io/github/vrchatapi/model/RewardRedemptionResult.java
 src/main/java/io/github/vrchatapi/model/RouteNotImplemented.java
+src/main/java/io/github/vrchatapi/model/SearchAvatarsMarketplace.java
+src/main/java/io/github/vrchatapi/model/SearchAvatarsResult.java
 src/main/java/io/github/vrchatapi/model/SearchWorldsUser.java
 src/main/java/io/github/vrchatapi/model/SellerEligibility.java
 src/main/java/io/github/vrchatapi/model/SentNotification.java
