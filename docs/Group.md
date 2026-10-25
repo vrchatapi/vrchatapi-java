@@ -18,6 +18,7 @@
 |**description** | **String** |  |  [optional] |
 |**discriminator** | **String** |  |  [optional] |
 |**galleries** | [**List&lt;GroupGallery&gt;**](GroupGallery.md) |  |  [optional] |
+|**groupId** | **String** |  |  [optional] |
 |**iconId** | **String** |  |  [optional] |
 |**iconUrl** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |

@@ -27,6 +27,8 @@
 
 * `OPEN_WORLDS_MENU` (value: `"OpenWorldsMenu"`)
 
+* `EVENT` (value: `"event"`)
+
 * `SCROLL_TO_SHELF` (value: `"scrollToShelf"`)
 
 

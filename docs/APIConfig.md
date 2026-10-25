@@ -82,8 +82,8 @@ Global client configuration.  The response carries decoy properties: plausible-l
 |**economyLedgerBackfill** | **Boolean** | Unknown |  [optional] |
 |**economyLedgerMigrationStop** | **String** | Unknown |  [optional] |
 |**economyLedgerMode** | **String** | Unknown |  |
-|**economyPauseEnd** | **OffsetDateTime** | Unknown |  |
-|**economyPauseStart** | **OffsetDateTime** | Unknown |  |
+|**economyPauseEnd** | **OffsetDateTime** | A date and time in the form of an RFC 3339 &#x60;date-time&#x60;, except that the UTC offset can be written without its colon, as in &#x60;+0000&#x60;. |  |
+|**economyPauseStart** | **OffsetDateTime** | A date and time in the form of an RFC 3339 &#x60;date-time&#x60;, except that the UTC offset can be written without its colon, as in &#x60;+0000&#x60;. |  |
 |**economyPurchaseRepairEnabled** | **Boolean** | Unknown |  |
 |**economyState** | **Integer** | Unknown |  |
 |**enableVRCPlusWorldLists** | **Boolean** |  |  [optional] |
