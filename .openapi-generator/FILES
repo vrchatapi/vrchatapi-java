@@ -74,6 +74,7 @@ docs/CalendarEventRecurrenceEndType.md
 docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
 docs/ChangeWorldTagsRequest.md
+docs/CheckDeviceCodeRequest.md
 docs/ContentFilter.md
 docs/CosmeticItemType.md
 docs/CreateAvatarModerationRequest.md
@@ -103,6 +104,12 @@ docs/CurrentUserLoginResponse.md
 docs/CurrentUserPresence.md
 docs/DeclineGroupInviteRequest.md
 docs/DeveloperType.md
+docs/DeviceAuthApproveRequest.md
+docs/DeviceAuthApproveResponse.md
+docs/DeviceAuthInfo.md
+docs/DeviceAuthInfoGeolocation.md
+docs/DeviceCode.md
+docs/DeviceCodeStatus.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
 docs/DynamicContentRow.md
@@ -477,6 +484,7 @@ docs/RepresentedGroup.md
 docs/RequestInviteRequest.md
 docs/RequestInviteWithPhotoRequest.md
 docs/RequiresTwoFactorAuth.md
+docs/ResetPasswordRequest.md
 docs/RespondGroupJoinRequest.md
 docs/RespondInviteWithPhotoRequest.md
 docs/RespondNotificationV2Request.md
@@ -768,6 +776,7 @@ src/main/java/io/github/vrchatapi/model/CalendarEventRecurrenceEndType.java
 src/main/java/io/github/vrchatapi/model/CalendarEventUserInterest.java
 src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
 src/main/java/io/github/vrchatapi/model/ChangeWorldTagsRequest.java
+src/main/java/io/github/vrchatapi/model/CheckDeviceCodeRequest.java
 src/main/java/io/github/vrchatapi/model/ContentFilter.java
 src/main/java/io/github/vrchatapi/model/CosmeticItemType.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarModerationRequest.java
@@ -797,6 +806,12 @@ src/main/java/io/github/vrchatapi/model/CurrentUserLoginResponse.java
 src/main/java/io/github/vrchatapi/model/CurrentUserPresence.java
 src/main/java/io/github/vrchatapi/model/DeclineGroupInviteRequest.java
 src/main/java/io/github/vrchatapi/model/DeveloperType.java
+src/main/java/io/github/vrchatapi/model/DeviceAuthApproveRequest.java
+src/main/java/io/github/vrchatapi/model/DeviceAuthApproveResponse.java
+src/main/java/io/github/vrchatapi/model/DeviceAuthInfo.java
+src/main/java/io/github/vrchatapi/model/DeviceAuthInfoGeolocation.java
+src/main/java/io/github/vrchatapi/model/DeviceCode.java
+src/main/java/io/github/vrchatapi/model/DeviceCodeStatus.java
 src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DiscordDetails.java
 src/main/java/io/github/vrchatapi/model/DynamicContentRow.java
@@ -1157,6 +1172,7 @@ src/main/java/io/github/vrchatapi/model/RepresentedGroup.java
 src/main/java/io/github/vrchatapi/model/RequestInviteRequest.java
 src/main/java/io/github/vrchatapi/model/RequestInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RequiresTwoFactorAuth.java
+src/main/java/io/github/vrchatapi/model/ResetPasswordRequest.java
 src/main/java/io/github/vrchatapi/model/RespondGroupJoinRequest.java
 src/main/java/io/github/vrchatapi/model/RespondInviteWithPhotoRequest.java
 src/main/java/io/github/vrchatapi/model/RespondNotificationV2Request.java

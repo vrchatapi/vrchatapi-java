@@ -4,9 +4,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**approveDeviceAuth**](AuthenticationApi.md#approveDeviceAuth) | **POST** /auth/device/approve | Approve Device Code |
 | [**cancelPending2FA**](AuthenticationApi.md#cancelPending2FA) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes |
+| [**checkDeviceCode**](AuthenticationApi.md#checkDeviceCode) | **POST** /auth/device/status | Check Device Code |
 | [**checkUserExists**](AuthenticationApi.md#checkUserExists) | **GET** /auth/exists | Check User Exists |
 | [**confirmEmail**](AuthenticationApi.md#confirmEmail) | **GET** /auth/confirmEmail | Confirm Email |
+| [**createDeviceCode**](AuthenticationApi.md#createDeviceCode) | **POST** /auth/device/code | Create Device Code |
 | [**createGlobalAvatarModeration**](AuthenticationApi.md#createGlobalAvatarModeration) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation |
 | [**deleteGlobalAvatarModeration**](AuthenticationApi.md#deleteGlobalAvatarModeration) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation |
 | [**deleteModerationReport**](AuthenticationApi.md#deleteModerationReport) | **DELETE** /moderationReports/{moderationReportId} | Delete Moderation Report |
@@ -15,6 +18,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**enable2FA**](AuthenticationApi.md#enable2FA) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes |
 | [**getAccountStanding**](AuthenticationApi.md#getAccountStanding) | **GET** /auth/user/accountStanding | Get Account Standing |
 | [**getCurrentUser**](AuthenticationApi.md#getCurrentUser) | **GET** /auth/user | Login and/or Get Current User Info |
+| [**getDeviceAuthInfo**](AuthenticationApi.md#getDeviceAuthInfo) | **GET** /auth/device/info | Get Device Code Info |
 | [**getGlobalAvatarModerations**](AuthenticationApi.md#getGlobalAvatarModerations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations |
 | [**getInterestsAndPreferences**](AuthenticationApi.md#getInterestsAndPreferences) | **GET** /auth/user/interestsAndPreferences | Get Interests and Preferences |
 | [**getModerationReports**](AuthenticationApi.md#getModerationReports) | **GET** /moderationReports | Get Moderation Reports |
@@ -24,6 +28,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout |
 | [**registerUserAccount**](AuthenticationApi.md#registerUserAccount) | **POST** /auth/register | Register User Account |
 | [**resendEmailConfirmation**](AuthenticationApi.md#resendEmailConfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation |
+| [**resetPassword**](AuthenticationApi.md#resetPassword) | **PUT** /auth/password | Reset Password |
 | [**submitModerationReport**](AuthenticationApi.md#submitModerationReport) | **POST** /moderationReports | Submit Moderation Report |
 | [**updateInterestsAndPreferences**](AuthenticationApi.md#updateInterestsAndPreferences) | **PUT** /auth/user/interestsAndPreferences | Update Interests and Preferences |
 | [**verify2FA**](AuthenticationApi.md#verify2FA) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code |
@@ -33,6 +38,77 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**verifyPending2FA**](AuthenticationApi.md#verifyPending2FA) | **POST** /auth/twofactorauth/totp/pending/verify | Verify Pending 2FA code |
 | [**verifyRecoveryCode**](AuthenticationApi.md#verifyRecoveryCode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code |
 
+
+<a id="approveDeviceAuth"></a>
+# **approveDeviceAuth**
+> DeviceAuthApproveResponse approveDeviceAuth(deviceAuthApproveRequest)
+
+Approve Device Code
+
+Approves a device code from &#x60;createDeviceCode&#x60;, logging the device that created it in as the current user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    DeviceAuthApproveRequest deviceAuthApproveRequest = new DeviceAuthApproveRequest(); // DeviceAuthApproveRequest | 
+    try {
+      DeviceAuthApproveResponse result = apiInstance.approveDeviceAuth(deviceAuthApproveRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#approveDeviceAuth");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **deviceAuthApproveRequest** | [**DeviceAuthApproveRequest**](DeviceAuthApproveRequest.md)|  | |
+
+### Return type
+
+[**DeviceAuthApproveResponse**](DeviceAuthApproveResponse.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The device code is approved, and the device that created it can now log in with &#x60;checkDeviceCode&#x60;. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when no unexpired device code has this &#x60;userCode&#x60;. |  -  |
 
 <a id="cancelPending2FA"></a>
 # **cancelPending2FA**
@@ -99,6 +175,69 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="checkDeviceCode"></a>
+# **checkDeviceCode**
+> DeviceCodeStatus checkDeviceCode(checkDeviceCodeRequest)
+
+Check Device Code
+
+Returns whether a device code from &#x60;createDeviceCode&#x60; has been approved.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    CheckDeviceCodeRequest checkDeviceCodeRequest = new CheckDeviceCodeRequest(); // CheckDeviceCodeRequest | 
+    try {
+      DeviceCodeStatus result = apiInstance.checkDeviceCode(checkDeviceCodeRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#checkDeviceCode");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **checkDeviceCodeRequest** | [**CheckDeviceCodeRequest**](CheckDeviceCodeRequest.md)|  | |
+
+### Return type
+
+[**DeviceCodeStatus**](DeviceCodeStatus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns whether the device code has been approved. |  -  |
+| **400** | Error response when the device code is missing, not a string, unknown or expired. |  -  |
 
 <a id="checkUserExists"></a>
 # **checkUserExists**
@@ -240,6 +379,71 @@ No authorization required
 |-------------|-------------|------------------|
 | **302** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+
+<a id="createDeviceCode"></a>
+# **createDeviceCode**
+> DeviceCode createDeviceCode()
+
+Create Device Code
+
+Creates a code to log this device in from another one, where a logged-in person approves it. Poll &#x60;checkDeviceCode&#x60; until it is approved.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    try {
+      DeviceCode result = apiInstance.createDeviceCode();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#createDeviceCode");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeviceCode**](DeviceCode.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a new device code. |  -  |
 
 <a id="createGlobalAvatarModeration"></a>
 # **createGlobalAvatarModeration**
@@ -799,6 +1003,77 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** |  |  * Set-Cookie - Successful authentication returns an &#x60;auth&#x60; cookie. <br>  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getDeviceAuthInfo"></a>
+# **getDeviceAuthInfo**
+> DeviceAuthInfo getDeviceAuthInfo(userCode)
+
+Get Device Code Info
+
+Returns where a device code was created, for the person about to approve it with &#x60;approveDeviceAuth&#x60;.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    String userCode = "userCode_example"; // String | The `userCode` of a device code.
+    try {
+      DeviceAuthInfo result = apiInstance.getDeviceAuthInfo(userCode);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#getDeviceAuthInfo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userCode** | **String**| The &#x60;userCode&#x60; of a device code. | |
+
+### Return type
+
+[**DeviceAuthInfo**](DeviceAuthInfo.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns where the device code was created. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | Error response when no unexpired device code has this &#x60;userCode&#x60;. |  -  |
 
 <a id="getGlobalAvatarModerations"></a>
 # **getGlobalAvatarModerations**
@@ -1409,6 +1684,69 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="resetPassword"></a>
+# **resetPassword**
+> Success resetPassword(resetPasswordRequest)
+
+Reset Password
+
+Sends a password recovery email.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.AuthenticationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+
+    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    ResetPasswordRequest resetPasswordRequest = new ResetPasswordRequest(); // ResetPasswordRequest | 
+    try {
+      Success result = apiInstance.resetPassword(resetPasswordRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthenticationApi#resetPassword");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **resetPasswordRequest** | [**ResetPasswordRequest**](ResetPasswordRequest.md)|  | |
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a success message, whether or not the address belongs to an account. |  -  |
+| **400** | Error response when the request has no &#x60;email&#x60;. |  -  |
 
 <a id="submitModerationReport"></a>
 # **submitModerationReport**
