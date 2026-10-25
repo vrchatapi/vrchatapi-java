@@ -109,6 +109,8 @@ docs/DeviceAuthApproveResponse.md
 docs/DeviceAuthInfo.md
 docs/DeviceAuthInfoGeolocation.md
 docs/DeviceCode.md
+docs/DeviceCodeApproved.md
+docs/DeviceCodePending.md
 docs/DeviceCodeStatus.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
@@ -811,6 +813,8 @@ src/main/java/io/github/vrchatapi/model/DeviceAuthApproveResponse.java
 src/main/java/io/github/vrchatapi/model/DeviceAuthInfo.java
 src/main/java/io/github/vrchatapi/model/DeviceAuthInfoGeolocation.java
 src/main/java/io/github/vrchatapi/model/DeviceCode.java
+src/main/java/io/github/vrchatapi/model/DeviceCodeApproved.java
+src/main/java/io/github/vrchatapi/model/DeviceCodePending.java
 src/main/java/io/github/vrchatapi/model/DeviceCodeStatus.java
 src/main/java/io/github/vrchatapi/model/Disable2FAResult.java
 src/main/java/io/github/vrchatapi/model/DiscordDetails.java
