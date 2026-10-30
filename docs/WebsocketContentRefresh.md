@@ -11,7 +11,7 @@
 |**contentType** | **String** |  |  |
 |**fileId** | **String** |  |  |
 |**itemId** | **String** |  |  |
-|**itemType** | **InventoryItemType** |  |  |
+|**itemType** | **String** |  |  |
 
 
 

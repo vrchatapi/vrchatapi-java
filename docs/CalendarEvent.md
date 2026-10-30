@@ -22,9 +22,11 @@ An event scheduled on a group's calendar
 |**id** | **String** |  |  |
 |**imageId** | **String** |  |  [optional] |
 |**imageUrl** | **String** |  |  [optional] |
+|**interestedFriendCount** | **Integer** |  |  [optional] |
 |**interestedUserCount** | **Integer** |  |  [optional] |
 |**isDraft** | **Boolean** |  |  [optional] |
 |**languages** | **List&lt;String&gt;** | Languages that might be spoken at this event |  [optional] |
+|**linkedInstanceCount** | **Integer** |  |  [optional] |
 |**occurrenceKind** | **CalendarEventOccurrenceKind** |  |  [optional] |
 |**occurrenceModified** | **Boolean** |  |  [optional] |
 |**ownerId** | **String** |  |  [optional] |

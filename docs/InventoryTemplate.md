@@ -19,7 +19,7 @@
 |**id** | **String** |  |  |
 |**imageUrl** | **String** |  |  |
 |**initialToggleState** | **Boolean** |  |  [optional] |
-|**itemType** | **InventoryItemType** |  |  |
+|**itemType** | **String** |  |  |
 |**itemTypeLabel** | **String** |  |  |
 |**metadata** | [**InventoryMetadata**](InventoryMetadata.md) |  |  [optional] |
 |**name** | **String** |  |  |

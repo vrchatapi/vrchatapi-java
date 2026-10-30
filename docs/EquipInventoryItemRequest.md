@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**equipSlot** | **InventoryEquipSlot** |  |  |
+|**equipSlot** | **String** |  |  |
 
 
 

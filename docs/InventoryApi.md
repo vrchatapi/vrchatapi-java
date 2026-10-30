@@ -8,6 +8,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteOwnInventoryItem**](InventoryApi.md#deleteOwnInventoryItem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item |
 | [**equipOwnInventoryItem**](InventoryApi.md#equipOwnInventoryItem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item |
 | [**getCosmetics**](InventoryApi.md#getCosmetics) | **GET** /cosmetics/index/{itemType} | List Cosmetics |
+| [**getGlobalInventory**](InventoryApi.md#getGlobalInventory) | **GET** /inventory/global | Get Global Inventory |
 | [**getInventory**](InventoryApi.md#getInventory) | **GET** /inventory | Get Inventory |
 | [**getInventoryCollections**](InventoryApi.md#getInventoryCollections) | **GET** /inventory/collections | List Inventory Collections |
 | [**getInventoryDrops**](InventoryApi.md#getInventoryDrops) | **GET** /inventory/drops | List Inventory Drops |
@@ -308,6 +309,72 @@ public class Example {
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
+<a id="getGlobalInventory"></a>
+# **getGlobalInventory**
+> List&lt;GlobalInventoryItem&gt; getGlobalInventory()
+
+Get Global Inventory
+
+Returns the inventory items flagged &#x60;global&#x60;.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InventoryApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InventoryApi apiInstance = new InventoryApi(defaultClient);
+    try {
+      List<GlobalInventoryItem> result = apiInstance.getGlobalInventory();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InventoryApi#getGlobalInventory");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;GlobalInventoryItem&gt;**](GlobalInventoryItem.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the inventory items flagged &#x60;global&#x60;. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a id="getInventory"></a>
 # **getInventory**
 > Inventory getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar)
@@ -341,12 +408,12 @@ public class Example {
     Integer n = 60; // Integer | The number of objects to return.
     Integer offset = 56; // Integer | A zero-based offset from the default object sorting from where search results start.
     String holderId = "holderId_example"; // String | The UserID of the owner of the inventory; defaults to the currently authenticated user.
-    InventoryEquipSlot equipSlot = InventoryEquipSlot.fromValue(""); // InventoryEquipSlot | Filter for inventory retrieval.
+    String equipSlot = ""; // String | Filter for inventory retrieval.
     InventorySortOrder order = InventorySortOrder.fromValue("alphabetic"); // InventorySortOrder | Sort order for inventory retrieval.
     String tags = "tags_example"; // String | Filter tags for inventory retrieval (comma-separated).
-    InventoryItemType types = InventoryItemType.fromValue("bundle"); // InventoryItemType | Filter for inventory retrieval.
+    String types = "bundle"; // String | Filter for inventory retrieval.
     InventoryFlag flags = InventoryFlag.fromValue("archivable"); // InventoryFlag | Filter flags for inventory retrieval (comma-separated).
-    InventoryItemType notTypes = InventoryItemType.fromValue("bundle"); // InventoryItemType | Filter out types for inventory retrieval (comma-separated).
+    String notTypes = "bundle"; // String | Filter out types for inventory retrieval (comma-separated).
     InventoryFlag notFlags = InventoryFlag.fromValue("archivable"); // InventoryFlag | Filter out flags for inventory retrieval (comma-separated).
     Boolean archived = true; // Boolean | Filter archived status for inventory retrieval.
     Boolean seen = true; // Boolean | 
@@ -372,12 +439,12 @@ public class Example {
 | **n** | **Integer**| The number of objects to return. | [optional] [default to 60] |
 | **offset** | **Integer**| A zero-based offset from the default object sorting from where search results start. | [optional] |
 | **holderId** | **String**| The UserID of the owner of the inventory; defaults to the currently authenticated user. | [optional] |
-| **equipSlot** | [**InventoryEquipSlot**](.md)| Filter for inventory retrieval. | [optional] [default to ] [enum: , drone, iconFrame, nameplateEffect, portal, profileEffect, warp] |
+| **equipSlot** | **String**| Filter for inventory retrieval. | [optional] [default to ] |
 | **order** | [**InventorySortOrder**](.md)| Sort order for inventory retrieval. | [optional] [enum: alphabetic, angry, happy, newest, newest_created, newest_template_created, newest_updated, oldest, oldest_created, oldest_template_created, oldest_updated, reverse-orthographic] |
 | **tags** | **String**| Filter tags for inventory retrieval (comma-separated). | [optional] |
-| **types** | [**InventoryItemType**](.md)| Filter for inventory retrieval. | [optional] [default to bundle] [enum: bundle, droneskin, emoji, iconFrame, nameplateEffect, portalskin, profileEffect, prop, sticker, warpeffect] |
+| **types** | **String**| Filter for inventory retrieval. | [optional] [default to bundle] |
 | **flags** | [**InventoryFlag**](.md)| Filter flags for inventory retrieval (comma-separated). | [optional] [default to instantiatable] [enum: archivable, cloneable, consumable, equippable, global, global_visible, instantiatable, trashable, ugc, unique, vrc_plus_exclusive] |
-| **notTypes** | [**InventoryItemType**](.md)| Filter out types for inventory retrieval (comma-separated). | [optional] [default to bundle] [enum: bundle, droneskin, emoji, iconFrame, nameplateEffect, portalskin, profileEffect, prop, sticker, warpeffect] |
+| **notTypes** | **String**| Filter out types for inventory retrieval (comma-separated). | [optional] [default to bundle] |
 | **notFlags** | [**InventoryFlag**](.md)| Filter out flags for inventory retrieval (comma-separated). | [optional] [default to instantiatable] [enum: archivable, cloneable, consumable, equippable, global, global_visible, instantiatable, trashable, ugc, unique, vrc_plus_exclusive] |
 | **archived** | **Boolean**| Filter archived status for inventory retrieval. | [optional] |
 | **seen** | **Boolean**|  | [optional] |
@@ -1138,7 +1205,7 @@ public class Example {
     //authCookie.setApiKeyPrefix("Token");
 
     InventoryApi apiInstance = new InventoryApi(defaultClient);
-    InventoryEquipSlot inventoryItemId = InventoryEquipSlot.fromValue(""); // InventoryEquipSlot | Selector for inventory slot management.
+    String inventoryItemId = ""; // String | Selector for inventory slot management.
     try {
       String result = apiInstance.unequipOwnInventorySlot(inventoryItemId);
       System.out.println(result);
@@ -1157,7 +1224,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **inventoryItemId** | [**InventoryEquipSlot**](.md)| Selector for inventory slot management. | [default to ] [enum: , drone, iconFrame, nameplateEffect, portal, profileEffect, warp] |
+| **inventoryItemId** | **String**| Selector for inventory slot management. | [default to ] |
 
 ### Return type
 

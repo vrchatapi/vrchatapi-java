@@ -170,6 +170,9 @@ docs/FollowCalendarEventRequest.md
 docs/FriendStatus.md
 docs/FriendsApi.md
 docs/FrontendVariant.md
+docs/GlobalInventoryItem.md
+docs/GlobalInventoryItemAttribution.md
+docs/GlobalInventoryItemAttributionCreator.md
 docs/Group.md
 docs/GroupAccessType.md
 docs/GroupAnnouncement.md
@@ -351,10 +354,8 @@ docs/InventoryConsumptionResults.md
 docs/InventoryDefaultAttributesValue.md
 docs/InventoryDefaultAttributesValueValidator.md
 docs/InventoryDrop.md
-docs/InventoryEquipSlot.md
 docs/InventoryFlag.md
 docs/InventoryItem.md
-docs/InventoryItemType.md
 docs/InventoryMetadata.md
 docs/InventoryNotificationDetails.md
 docs/InventorySortOrder.md
@@ -870,6 +871,9 @@ src/main/java/io/github/vrchatapi/model/FinishFileDataUploadRequest.java
 src/main/java/io/github/vrchatapi/model/FollowCalendarEventRequest.java
 src/main/java/io/github/vrchatapi/model/FriendStatus.java
 src/main/java/io/github/vrchatapi/model/FrontendVariant.java
+src/main/java/io/github/vrchatapi/model/GlobalInventoryItem.java
+src/main/java/io/github/vrchatapi/model/GlobalInventoryItemAttribution.java
+src/main/java/io/github/vrchatapi/model/GlobalInventoryItemAttributionCreator.java
 src/main/java/io/github/vrchatapi/model/Group.java
 src/main/java/io/github/vrchatapi/model/GroupAccessType.java
 src/main/java/io/github/vrchatapi/model/GroupAnnouncement.java
@@ -1048,10 +1052,8 @@ src/main/java/io/github/vrchatapi/model/InventoryConsumptionResults.java
 src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValue.java
 src/main/java/io/github/vrchatapi/model/InventoryDefaultAttributesValueValidator.java
 src/main/java/io/github/vrchatapi/model/InventoryDrop.java
-src/main/java/io/github/vrchatapi/model/InventoryEquipSlot.java
 src/main/java/io/github/vrchatapi/model/InventoryFlag.java
 src/main/java/io/github/vrchatapi/model/InventoryItem.java
-src/main/java/io/github/vrchatapi/model/InventoryItemType.java
 src/main/java/io/github/vrchatapi/model/InventoryMetadata.java
 src/main/java/io/github/vrchatapi/model/InventoryNotificationDetails.java
 src/main/java/io/github/vrchatapi/model/InventorySortOrder.java

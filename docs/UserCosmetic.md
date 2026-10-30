@@ -11,7 +11,7 @@ A cosmetic a user holds, without the template's presentation fields.
 |**acquiredOn** | **OffsetDateTime** |  |  |
 |**acquisition** | **String** |  |  |
 |**id** | **String** |  |  |
-|**itemType** | **InventoryItemType** |  |  |
+|**itemType** | **String** |  |  |
 |**templateId** | **String** |  |  |
 |**userAttributes** | [**InventoryUserAttributes**](InventoryUserAttributes.md) |  |  |
 
