@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**createdAt** | **OffsetDateTime** |  |  |
+|**displayCategory** | **String** |  |  |
 |**id** | **String** |  |  |
 |**message** | **String** |  |  |
 |**receiverUserId** | **String** | Not included in notification objects received from the REST API |  [optional] |

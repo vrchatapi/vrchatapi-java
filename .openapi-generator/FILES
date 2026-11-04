@@ -337,6 +337,7 @@ docs/InstanceContentSettings.md
 docs/InstanceCount.md
 docs/InstanceDiscovery.md
 docs/InstanceDiscoveryBoost.md
+docs/InstanceDiscoveryCapacityLimit.md
 docs/InstanceDiscoveryMode.md
 docs/InstanceDiscoveryPlatform.md
 docs/InstanceDiscoveryWorldPool.md
@@ -1037,6 +1038,7 @@ src/main/java/io/github/vrchatapi/model/InstanceContentSettings.java
 src/main/java/io/github/vrchatapi/model/InstanceCount.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscovery.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryBoost.java
+src/main/java/io/github/vrchatapi/model/InstanceDiscoveryCapacityLimit.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryMode.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryPlatform.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryWorldPool.java

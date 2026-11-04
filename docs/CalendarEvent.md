@@ -29,7 +29,9 @@ An event scheduled on a group's calendar
 |**linkedInstanceCount** | **Integer** |  |  [optional] |
 |**occurrenceKind** | **CalendarEventOccurrenceKind** |  |  [optional] |
 |**occurrenceModified** | **Boolean** |  |  [optional] |
+|**ownerIconUrl** | **String** | The icon of the group &#x60;ownerId&#x60; names. |  [optional] |
 |**ownerId** | **String** |  |  [optional] |
+|**ownerName** | **String** | The &#x60;name&#x60; of the group &#x60;ownerId&#x60; names. |  [optional] |
 |**platforms** | **List&lt;CalendarEventPlatform&gt;** |  |  [optional] |
 |**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  |  [optional] |
 |**roleIds** | **List&lt;String&gt;** | Group roles that may join this event |  [optional] |

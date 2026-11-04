@@ -169,7 +169,7 @@ public class Example {
 
 <a id="discoverInstances"></a>
 # **discoverInstances**
-> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool)
+> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, capacityLimit, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool)
 
 Discover Instances
 
@@ -206,6 +206,7 @@ public class Example {
     String category = "category_example"; // String | 
     List<String> anyWorldTag = Arrays.asList(); // List<String> | Not every account may use it; the others are answered 403.
     List<InstanceDiscoveryBoost> boost = Arrays.asList(); // List<InstanceDiscoveryBoost> | Only `GET /infoPush/{entryId}/content` accepts it; this route answers 400 to any value.
+    InstanceDiscoveryCapacityLimit capacityLimit = InstanceDiscoveryCapacityLimit.fromValue("hard"); // InstanceDiscoveryCapacityLimit | Not every account may use it; the others are answered 403.
     Boolean groupHosted = true; // Boolean | 
     Integer maxOccupants = 56; // Integer | 
     Integer minOccupants = 56; // Integer | 
@@ -214,7 +215,7 @@ public class Example {
     List<String> notWorldTag = Arrays.asList(); // List<String> | Not every account may use it; the others are answered 403.
     InstanceDiscoveryWorldPool worldPool = InstanceDiscoveryWorldPool.fromValue("trending"); // InstanceDiscoveryWorldPool | 
     try {
-      InstanceDiscovery result = apiInstance.discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool);
+      InstanceDiscovery result = apiInstance.discoverInstances(n, region, platform, worldId, groupId, vibe, category, anyWorldTag, boost, capacityLimit, groupHosted, maxOccupants, minOccupants, minSpotsLeft, mode, notWorldTag, worldPool);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#discoverInstances");
@@ -240,6 +241,7 @@ public class Example {
 | **category** | **String**|  | [optional] |
 | **anyWorldTag** | [**List&lt;String&gt;**](String.md)| Not every account may use it; the others are answered 403. | [optional] |
 | **boost** | [**List&lt;InstanceDiscoveryBoost&gt;**](InstanceDiscoveryBoost.md)| Only &#x60;GET /infoPush/{entryId}/content&#x60; accepts it; this route answers 400 to any value. | [optional] |
+| **capacityLimit** | [**InstanceDiscoveryCapacityLimit**](.md)| Not every account may use it; the others are answered 403. | [optional] [enum: hard, recommended] |
 | **groupHosted** | **Boolean**|  | [optional] |
 | **maxOccupants** | **Integer**|  | [optional] |
 | **minOccupants** | **Integer**|  | [optional] |

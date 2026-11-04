@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**anyWorldTag** | **List&lt;String&gt;** |  |  [optional] |
 |**boost** | **List&lt;InstanceDiscoveryBoost&gt;** |  |  [optional] |
+|**capacityLimit** | **InstanceDiscoveryCapacityLimit** |  |  [optional] |
 |**groupHosted** | **Boolean** |  |  [optional] |
 |**maxOccupants** | **Integer** |  |  [optional] |
 |**minOccupants** | **Integer** |  |  [optional] |

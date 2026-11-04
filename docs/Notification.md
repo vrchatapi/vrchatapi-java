@@ -9,6 +9,7 @@ A notification. The shape of `details` depends on `type`.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**createdAt** | **OffsetDateTime** |  |  |
+|**displayCategory** | **String** |  |  |
 |**id** | **String** |  |  |
 |**message** | **String** |  |  |
 |**receiverUserId** | **String** | Not included in notification objects received from the REST API |  [optional] |
