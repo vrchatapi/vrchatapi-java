@@ -5,6 +5,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**clearAllPlayerModerations**](PlayermoderationApi.md#clearAllPlayerModerations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations |
+| [**createUserModeration**](PlayermoderationApi.md#createUserModeration) | **POST** /user/{userId}/moderations | Create User Moderation |
 | [**getPlayerModerations**](PlayermoderationApi.md#getPlayerModerations) | **GET** /auth/user/playermoderations | Search Player Moderations |
 | [**moderateUser**](PlayermoderationApi.md#moderateUser) | **POST** /auth/user/playermoderations | Moderate User |
 | [**unmoderateUser**](PlayermoderationApi.md#unmoderateUser) | **PUT** /auth/user/unplayermoderate | Unmoderate User |
@@ -75,6 +76,81 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Success response after e.g. clearing all player moderations. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="createUserModeration"></a>
+# **createUserModeration**
+> CreateUserModerationResponse createUserModeration(userId, createUserModerationRequest)
+
+Create User Moderation
+
+With &#x60;type&#x60; &#x60;kick&#x60;, bans the user in the path from the instance given by &#x60;worldId&#x60; and &#x60;instanceId&#x60;. The user is not removed from the instance, but cannot join it again, even by invite.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.PlayermoderationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    PlayermoderationApi apiInstance = new PlayermoderationApi(defaultClient);
+    String userId = "userId_example"; // String | Must be a valid user ID.
+    CreateUserModerationRequest createUserModerationRequest = new CreateUserModerationRequest(); // CreateUserModerationRequest | 
+    try {
+      CreateUserModerationResponse result = apiInstance.createUserModeration(userId, createUserModerationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PlayermoderationApi#createUserModeration");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **String**| Must be a valid user ID. | |
+| **createUserModerationRequest** | [**CreateUserModerationRequest**](CreateUserModerationRequest.md)|  | |
+
+### Return type
+
+[**CreateUserModerationResponse**](CreateUserModerationResponse.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the ID of the created moderation. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when the user in the path can&#39;t be moderated, such as when they aren&#39;t in the instance given by &#x60;worldId&#x60; and &#x60;instanceId&#x60;, either of those is missing, or the user is you. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="getPlayerModerations"></a>
 # **getPlayerModerations**
