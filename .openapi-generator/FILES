@@ -91,6 +91,7 @@ docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
+docs/CreateInstanceRequestMinimumAvatarPerformance.md
 docs/CreateInstanceRequestRegion.md
 docs/CreateJamSubmissionRequest.md
 docs/CreateListingRequest.md
@@ -519,6 +520,7 @@ docs/SentNotificationUnknown.md
 docs/SentNotificationVoteToKick.md
 docs/ServiceQueueStats.md
 docs/ServiceStatus.md
+docs/SetWorldRatingRequest.md
 docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
 docs/SortOptionAvatar.md
@@ -675,6 +677,8 @@ docs/WorldFavoriteList.md
 docs/WorldMetadata.md
 docs/WorldMetadataValue.md
 docs/WorldPublishStatus.md
+docs/WorldRating.md
+docs/WorldRatingValue.md
 docs/WorldSlimInstance.md
 docs/WorldsApi.md
 git_push.sh
@@ -809,6 +813,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
+src/main/java/io/github/vrchatapi/model/CreateInstanceRequestMinimumAvatarPerformance.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequestRegion.java
 src/main/java/io/github/vrchatapi/model/CreateJamSubmissionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateListingRequest.java
@@ -1223,6 +1228,7 @@ src/main/java/io/github/vrchatapi/model/SentNotificationUnknown.java
 src/main/java/io/github/vrchatapi/model/SentNotificationVoteToKick.java
 src/main/java/io/github/vrchatapi/model/ServiceQueueStats.java
 src/main/java/io/github/vrchatapi/model/ServiceStatus.java
+src/main/java/io/github/vrchatapi/model/SetWorldRatingRequest.java
 src/main/java/io/github/vrchatapi/model/ShareInventoryItemDirectRequest.java
 src/main/java/io/github/vrchatapi/model/SortOption.java
 src/main/java/io/github/vrchatapi/model/SortOptionAvatar.java
@@ -1378,4 +1384,6 @@ src/main/java/io/github/vrchatapi/model/WorldFavoriteList.java
 src/main/java/io/github/vrchatapi/model/WorldMetadata.java
 src/main/java/io/github/vrchatapi/model/WorldMetadataValue.java
 src/main/java/io/github/vrchatapi/model/WorldPublishStatus.java
+src/main/java/io/github/vrchatapi/model/WorldRating.java
+src/main/java/io/github/vrchatapi/model/WorldRatingValue.java
 src/main/java/io/github/vrchatapi/model/WorldSlimInstance.java

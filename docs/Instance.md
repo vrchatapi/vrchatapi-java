@@ -18,13 +18,13 @@
 |**clientNumber** | **String** | Always returns \&quot;unknown\&quot;. |  |
 |**closedAt** | **OffsetDateTime** |  |  [optional] |
 |**contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  |  [optional] |
-|**creationLanguages** | **List&lt;Object&gt;** |  |  [optional] |
+|**creationLanguages** | **List&lt;String&gt;** | The &#x60;languages&#x60; the instance was created with. |  [optional] |
 |**creatorId** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**disabledPropAbilities** | **List&lt;String&gt;** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
 |**displayVibeId** | **String** |  |  [optional] |
-|**dominantLanguage** | **String** |  |  [optional] |
+|**dominantLanguage** | **String** | Empty while the instance has no users. |  [optional] |
 |**friends** | **String** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. |  [optional] |
 |**full** | **Boolean** |  |  |
 |**gameServerVersion** | **Integer** |  |  [optional] |

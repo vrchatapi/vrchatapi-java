@@ -11,6 +11,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**deleteUserPersistence**](WorldsApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**deleteWorld**](WorldsApi.md#deleteWorld) | **DELETE** /worlds/{worldId} | Delete World |
 | [**deleteWorldPlatform**](WorldsApi.md#deleteWorldPlatform) | **DELETE** /worlds/{worldId}/platform/{publishedPlatform} | Delete World Platform |
+| [**deleteWorldRating**](WorldsApi.md#deleteWorldRating) | **DELETE** /worlds/{worldId}/rating | Delete World Rating |
 | [**getActiveWorlds**](WorldsApi.md#getActiveWorlds) | **GET** /worlds/active | List Active Worlds |
 | [**getFavoritedWorlds**](WorldsApi.md#getFavoritedWorlds) | **GET** /worlds/favorites | List Favorited Worlds |
 | [**getRecentWorlds**](WorldsApi.md#getRecentWorlds) | **GET** /worlds/recent | List Recent Worlds |
@@ -18,9 +19,11 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**getWorldInstance**](WorldsApi.md#getWorldInstance) | **GET** /worlds/{worldId}/{instanceId} | Get World Instance |
 | [**getWorldMetadata**](WorldsApi.md#getWorldMetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata |
 | [**getWorldPublishStatus**](WorldsApi.md#getWorldPublishStatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status |
+| [**getWorldRating**](WorldsApi.md#getWorldRating) | **GET** /worlds/{worldId}/rating | Get World Rating |
 | [**publishWorld**](WorldsApi.md#publishWorld) | **PUT** /worlds/{worldId}/publish | Publish World |
 | [**removeWorldTags**](WorldsApi.md#removeWorldTags) | **POST** /worlds/{worldId}/deleteTags | Remove World Tags |
 | [**searchWorlds**](WorldsApi.md#searchWorlds) | **GET** /worlds | Search All Worlds |
+| [**setWorldRating**](WorldsApi.md#setWorldRating) | **PUT** /worlds/{worldId}/rating | Set World Rating |
 | [**unpublishWorld**](WorldsApi.md#unpublishWorld) | **DELETE** /worlds/{worldId}/publish | Unpublish World |
 | [**updateWorld**](WorldsApi.md#updateWorld) | **PUT** /worlds/{worldId} | Update World |
 
@@ -511,6 +514,77 @@ public class Example {
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
+
+<a id="deleteWorldRating"></a>
+# **deleteWorldRating**
+> WorldRating deleteWorldRating(worldId)
+
+Delete World Rating
+
+Removes the rating the current user has given a world.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      WorldRating result = apiInstance.deleteWorldRating(worldId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#deleteWorldRating");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+[**WorldRating**](WorldRating.md)
 
 ### Authorization
 
@@ -1082,6 +1156,77 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
+<a id="getWorldRating"></a>
+# **getWorldRating**
+> WorldRating getWorldRating(worldId)
+
+Get World Rating
+
+Returns the rating the current user has given a world. &#x60;value&#x60; is &#x60;null&#x60; for a world they have not rated, and for a world ID no world carries.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    try {
+      WorldRating result = apiInstance.getWorldRating(worldId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#getWorldRating");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+
+### Return type
+
+[**WorldRating**](WorldRating.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
+
 <a id="publishWorld"></a>
 # **publishWorld**
 > publishWorld(worldId)
@@ -1328,6 +1473,80 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="setWorldRating"></a>
+# **setWorldRating**
+> WorldRating setWorldRating(worldId, setWorldRatingRequest)
+
+Set World Rating
+
+Rates a world as the current user, replacing any rating they gave it before.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.WorldsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    WorldsApi apiInstance = new WorldsApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    SetWorldRatingRequest setWorldRatingRequest = new SetWorldRatingRequest(); // SetWorldRatingRequest | 
+    try {
+      WorldRating result = apiInstance.setWorldRating(worldId, setWorldRatingRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorldsApi#setWorldRating");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **setWorldRatingRequest** | [**SetWorldRatingRequest**](SetWorldRatingRequest.md)|  | |
+
+### Return type
+
+[**WorldRating**](WorldRating.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="unpublishWorld"></a>
 # **unpublishWorld**

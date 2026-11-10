@@ -19,6 +19,8 @@
 |**hardClose** | **Boolean** | Currently unused, but will eventually be a flag to set if the closing of the instance should kick people. |  [optional] |
 |**instancePersistenceEnabled** | **Boolean** |  |  [optional] |
 |**inviteOnly** | **Boolean** |  |  [optional] |
+|**languages** | **List&lt;String&gt;** | Returned as the instance&#39;s &#x60;creationLanguages&#x60;. |  [optional] |
+|**minimumAvatarPerformance** | **CreateInstanceRequestMinimumAvatarPerformance** |  |  [optional] |
 |**ownerId** | **String** | A groupId if the instance type is \&quot;group\&quot;, null if instance type is public, or a userId otherwise |  [optional] |
 |**playerPersistenceEnabled** | **Boolean** |  |  [optional] |
 |**queueEnabled** | **Boolean** |  |  [optional] |

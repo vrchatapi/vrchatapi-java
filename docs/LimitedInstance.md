@@ -12,12 +12,12 @@
 |**calendarEntryId** | **String** |  |  |
 |**capacity** | **Integer** |  |  |
 |**categoryId** | **String** |  |  |
-|**creationLanguages** | **List&lt;Object&gt;** |  |  |
+|**creationLanguages** | **List&lt;String&gt;** | The &#x60;languages&#x60; the instance was created with. |  |
 |**description** | **String** |  |  |
 |**disabledPropAbilities** | **List&lt;String&gt;** |  |  |
 |**displayName** | **String** |  |  [optional] |
 |**displayVibeId** | **String** |  |  |
-|**dominantLanguage** | **String** |  |  |
+|**dominantLanguage** | **String** | Empty while the instance has no users. |  |
 |**friendIcons** | **List&lt;Object&gt;** |  |  |
 |**full** | **Boolean** |  |  |
 |**groupAccessType** | **GroupAccessType** |  |  [optional] |
