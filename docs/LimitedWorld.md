@@ -29,6 +29,7 @@
 |**recommendedCapacity** | **Integer** |  |  [optional] |
 |**releaseStatus** | **ReleaseStatus** |  |  |
 |**storeId** | **String** |  |  [optional] |
+|**supportedPlatforms** | **List&lt;String&gt;** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  |
 |**thumbnailImageUrl** | **String** |  |  |
 |**udonProducts** | **List&lt;String&gt;** |  |  [optional] |
