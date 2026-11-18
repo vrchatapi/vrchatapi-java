@@ -19,6 +19,7 @@
 |**displayVibeId** | **String** |  |  |
 |**dominantLanguage** | **String** | Empty while the instance has no users. |  |
 |**friendIcons** | **List&lt;Object&gt;** |  |  |
+|**friendOccupants** | **List&lt;Object&gt;** |  |  |
 |**full** | **Boolean** |  |  |
 |**groupAccessType** | **GroupAccessType** |  |  [optional] |
 |**id** | **String** | InstanceID can be \&quot;offline\&quot; on User profiles if you are not friends with that user and \&quot;private\&quot; if you are friends and user is in private instance. |  |
