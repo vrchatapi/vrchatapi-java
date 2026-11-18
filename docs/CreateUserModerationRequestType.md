@@ -39,6 +39,8 @@
 
 * `STICKER` (value: `"sticker"`)
 
+* `USERIMAGE` (value: `"userimage"`)
+
 * `VOICE` (value: `"voice"`)
 
 * `WARN` (value: `"warn"`)
