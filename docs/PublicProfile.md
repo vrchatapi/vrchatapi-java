@@ -9,13 +9,13 @@
 |------------ | ------------- | ------------- | -------------|
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  [optional] |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  [optional] |
-|**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**backgroundGradientBottom** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**backgroundGradientTop** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
 |**backgroundTemplateId** | **String** |  |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | **ProfileBackgroundType** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
-|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
@@ -43,10 +43,10 @@
 |**representedGroup** | [**ProfileRepresentedGroup**](ProfileRepresentedGroup.md) |  |  [optional] |
 |**status** | **UserStatus** |  |  [optional] |
 |**statusDescription** | **String** |  |  [optional] |
-|**themeButtonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**themeIconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**themeButtonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
+|**themeIconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
 |**themeId** | [**PublicProfileThemeID**](PublicProfileThemeID.md) |  |  [optional] |
-|**themeSubtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**themeSubtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
 |**themes** | [**List&lt;ProfileTheme&gt;**](ProfileTheme.md) |  |  [optional] |
 |**totalPublicWorldsCount** | **Integer** |  |  [optional] |
 |**trustTags** | **List&lt;String&gt;** |  |  [optional] |

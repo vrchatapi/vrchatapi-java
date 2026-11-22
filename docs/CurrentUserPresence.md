@@ -10,7 +10,7 @@
 |**avatarImageUrl** | **String** |  |  [optional] |
 |**avatarThumbnail** | **String** |  |  [optional] |
 |**banner** | **String** |  |  [optional] |
-|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**currentAvatarTags** | **String** |  |  [optional] |

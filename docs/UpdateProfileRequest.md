@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
-|**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
+|**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | **ProfileBackgroundType** |  |  [optional] |
-|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bio** | **String** |  |  [optional] |

@@ -15,7 +15,7 @@
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  |
 |**allowAvatarCopying** | **Boolean** |  |  |
 |**appleDetails** | **Object** | Details of an account on another service linked to this one. |  [optional] |
-|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**dateJoined** | **LocalDate** |  |  |

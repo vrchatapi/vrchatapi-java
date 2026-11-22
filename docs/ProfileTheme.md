@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**buttonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  |
-|**iconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  |
+|**buttonColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  |
+|**iconColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  |
 |**id** | **String** |  |  |
 |**name** | **String** |  |  |
-|**subtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  |
+|**subtextColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. |  |
 
 
 

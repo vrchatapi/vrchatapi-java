@@ -8,7 +8,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**checkUserPersistenceExists**](UsersApi.md#checkUserPersistenceExists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists |
 | [**clearUserTutorials**](UsersApi.md#clearUserTutorials) | **DELETE** /users/{userId}/tutorial | Clear User Tutorials |
 | [**completeUserTutorial**](UsersApi.md#completeUserTutorial) | **POST** /users/{userId}/tutorial | Complete User Tutorial |
+| [**createProfileTheme**](UsersApi.md#createProfileTheme) | **POST** /profile/theme | Create Profile Theme |
 | [**deleteAllUserPersistenceData**](UsersApi.md#deleteAllUserPersistenceData) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data |
+| [**deleteProfileTheme**](UsersApi.md#deleteProfileTheme) | **DELETE** /profile/theme/{themeId} | Delete Profile Theme |
 | [**deleteUserPersistence**](UsersApi.md#deleteUserPersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence |
 | [**getAgeVerificationStatus**](UsersApi.md#getAgeVerificationStatus) | **GET** /ageVerification/status | Get Age Verification Status |
 | [**getBlockedGroups**](UsersApi.md#getBlockedGroups) | **GET** /users/{userId}/groups/userblocked | Get User Group Blocks |
@@ -35,6 +37,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 | [**searchUsers**](UsersApi.md#searchUsers) | **GET** /users | Search All Users |
 | [**updateBadge**](UsersApi.md#updateBadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge |
 | [**updateProfile**](UsersApi.md#updateProfile) | **PUT** /profile/{userId} | Update Profile |
+| [**updateProfileTheme**](UsersApi.md#updateProfileTheme) | **PUT** /profile/theme/{themeId} | Update Profile Theme |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{userId} | Update User Info |
 | [**updateUserClientConfig**](UsersApi.md#updateUserClientConfig) | **PUT** /users/{userId}/clientConfig | Update User Client Config |
 | [**updateUserNote**](UsersApi.md#updateUserNote) | **POST** /userNotes | Update User Note |
@@ -337,6 +340,77 @@ public class Example {
 | **401** | Error response due to missing auth cookie. |  -  |
 | **403** | A user can complete only their own tutorials. |  -  |
 
+<a id="createProfileTheme"></a>
+# **createProfileTheme**
+> ProfileTheme createProfileTheme(createProfileThemeRequest)
+
+Create Profile Theme
+
+Creates a profile theme owned by the current user. &#x60;updateProfile&#x60; selects it by &#x60;themeId&#x60;, and its response lists the user&#39;s themes.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    CreateProfileThemeRequest createProfileThemeRequest = new CreateProfileThemeRequest(); // CreateProfileThemeRequest | 
+    try {
+      ProfileTheme result = apiInstance.createProfileTheme(createProfileThemeRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#createProfileTheme");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createProfileThemeRequest** | [**CreateProfileThemeRequest**](CreateProfileThemeRequest.md)|  | |
+
+### Return type
+
+[**ProfileTheme**](ProfileTheme.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single ProfileTheme object. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
 <a id="deleteAllUserPersistenceData"></a>
 # **deleteAllUserPersistenceData**
 > deleteAllUserPersistenceData(userId)
@@ -405,6 +479,78 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | The user&#39;s persistence data for all worlds is deleted. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="deleteProfileTheme"></a>
+# **deleteProfileTheme**
+> String deleteProfileTheme(themeId)
+
+Delete Profile Theme
+
+Deletes a profile theme owned by the current user.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String themeId = "themeId_example"; // String | Must be a valid profile theme ID.
+    try {
+      String result = apiInstance.deleteProfileTheme(themeId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#deleteProfileTheme");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **themeId** | **String**| Must be a valid profile theme ID. | |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The profile theme was changed. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="deleteUserPersistence"></a>
 # **deleteUserPersistence**
@@ -2281,6 +2427,80 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="updateProfileTheme"></a>
+# **updateProfileTheme**
+> String updateProfileTheme(themeId, updateProfileThemeRequest)
+
+Update Profile Theme
+
+Updates a profile theme owned by the current user. Properties left out keep their value.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.UsersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String themeId = "themeId_example"; // String | Must be a valid profile theme ID.
+    UpdateProfileThemeRequest updateProfileThemeRequest = new UpdateProfileThemeRequest(); // UpdateProfileThemeRequest | 
+    try {
+      String result = apiInstance.updateProfileTheme(themeId, updateProfileThemeRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#updateProfileTheme");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **themeId** | **String**| Must be a valid profile theme ID. | |
+| **updateProfileThemeRequest** | [**UpdateProfileThemeRequest**](UpdateProfileThemeRequest.md)|  | [optional] |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The profile theme was changed. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **404** | The requested resource does not exist. The message varies by resource and by route, and only some name the id. Worlds sometimes answer &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId&gt; not found&#x60;. |  -  |
 
 <a id="updateUser"></a>
 # **updateUser**

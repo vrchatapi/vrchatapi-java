@@ -75,6 +75,7 @@ docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
 docs/ChangeWorldTagsRequest.md
 docs/CheckDeviceCodeRequest.md
+docs/ColorOrEmpty.md
 docs/ContentFilter.md
 docs/CosmeticItemType.md
 docs/CreateAvatarModerationRequest.md
@@ -90,6 +91,7 @@ docs/CreateGroupInviteRequest.md
 docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
+docs/CreateInstanceAnnouncementRequest.md
 docs/CreateInstanceRequest.md
 docs/CreateInstanceRequestMinimumAvatarPerformance.md
 docs/CreateInstanceRequestRegion.md
@@ -97,6 +99,7 @@ docs/CreateJamSubmissionRequest.md
 docs/CreateListingRequest.md
 docs/CreateProductRequest.md
 docs/CreateProductRequestType.md
+docs/CreateProfileThemeRequest.md
 docs/CreatePropRequest.md
 docs/CreateUserModerationRequest.md
 docs/CreateUserModerationRequestType.md
@@ -345,6 +348,7 @@ docs/InstanceDiscoveryCapacityLimit.md
 docs/InstanceDiscoveryMode.md
 docs/InstanceDiscoveryPlatform.md
 docs/InstanceDiscoveryWorldPool.md
+docs/InstanceOptions.md
 docs/InstancePlatforms.md
 docs/InstanceRegion.md
 docs/InstanceShortNameResponse.md
@@ -573,6 +577,7 @@ docs/UpdateInviteMessageRequest.md
 docs/UpdateListingRequest.md
 docs/UpdateProductRequest.md
 docs/UpdateProfileRequest.md
+docs/UpdateProfileThemeRequest.md
 docs/UpdatePropRequest.md
 docs/UpdateTiliaTOSRequest.md
 docs/UpdateUserBadgeRequest.md
@@ -797,6 +802,7 @@ src/main/java/io/github/vrchatapi/model/CalendarEventUserInterest.java
 src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
 src/main/java/io/github/vrchatapi/model/ChangeWorldTagsRequest.java
 src/main/java/io/github/vrchatapi/model/CheckDeviceCodeRequest.java
+src/main/java/io/github/vrchatapi/model/ColorOrEmpty.java
 src/main/java/io/github/vrchatapi/model/ContentFilter.java
 src/main/java/io/github/vrchatapi/model/CosmeticItemType.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarModerationRequest.java
@@ -812,6 +818,7 @@ src/main/java/io/github/vrchatapi/model/CreateGroupInviteRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupPostRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRequest.java
 src/main/java/io/github/vrchatapi/model/CreateGroupRoleRequest.java
+src/main/java/io/github/vrchatapi/model/CreateInstanceAnnouncementRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequest.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequestMinimumAvatarPerformance.java
 src/main/java/io/github/vrchatapi/model/CreateInstanceRequestRegion.java
@@ -819,6 +826,7 @@ src/main/java/io/github/vrchatapi/model/CreateJamSubmissionRequest.java
 src/main/java/io/github/vrchatapi/model/CreateListingRequest.java
 src/main/java/io/github/vrchatapi/model/CreateProductRequest.java
 src/main/java/io/github/vrchatapi/model/CreateProductRequestType.java
+src/main/java/io/github/vrchatapi/model/CreateProfileThemeRequest.java
 src/main/java/io/github/vrchatapi/model/CreatePropRequest.java
 src/main/java/io/github/vrchatapi/model/CreateUserModerationRequest.java
 src/main/java/io/github/vrchatapi/model/CreateUserModerationRequestType.java
@@ -1062,6 +1070,7 @@ src/main/java/io/github/vrchatapi/model/InstanceDiscoveryCapacityLimit.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryMode.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryPlatform.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryWorldPool.java
+src/main/java/io/github/vrchatapi/model/InstanceOptions.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InstanceRegion.java
 src/main/java/io/github/vrchatapi/model/InstanceShortNameResponse.java
@@ -1281,6 +1290,7 @@ src/main/java/io/github/vrchatapi/model/UpdateInviteMessageRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateListingRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateProductRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateProfileRequest.java
+src/main/java/io/github/vrchatapi/model/UpdateProfileThemeRequest.java
 src/main/java/io/github/vrchatapi/model/UpdatePropRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateTiliaTOSRequest.java
 src/main/java/io/github/vrchatapi/model/UpdateUserBadgeRequest.java

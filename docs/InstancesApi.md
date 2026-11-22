@@ -6,12 +6,14 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 |------------- | ------------- | -------------|
 | [**closeInstance**](InstancesApi.md#closeInstance) | **DELETE** /instances/{worldId}:{instanceId} | Close Instance |
 | [**createInstance**](InstancesApi.md#createInstance) | **POST** /instances | Create Instance |
+| [**createInstanceAnnouncement**](InstancesApi.md#createInstanceAnnouncement) | **POST** /instances/{worldId}:{instanceId}/announce | Create Instance Announcement |
 | [**discoverInstances**](InstancesApi.md#discoverInstances) | **GET** /instances/discover | Discover Instances |
 | [**getActiveInstances**](InstancesApi.md#getActiveInstances) | **GET** /instances/active | List Active Instances |
 | [**getInstance**](InstancesApi.md#getInstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance |
 | [**getInstanceByShortName**](InstancesApi.md#getInstanceByShortName) | **GET** /instances/s/{shortName} | Get Instance By Short Name |
 | [**getInstanceCategories**](InstancesApi.md#getInstanceCategories) | **GET** /instanceCategories | List Instance Categories |
 | [**getInstanceCount**](InstancesApi.md#getInstanceCount) | **GET** /instances/count | Get Instance Count |
+| [**getInstanceOptions**](InstancesApi.md#getInstanceOptions) | **GET** /instanceOptions | Get Instance Options |
 | [**getInstanceVibes**](InstancesApi.md#getInstanceVibes) | **GET** /instanceVibes | List Instance Vibes |
 | [**getRecentLocations**](InstancesApi.md#getRecentLocations) | **GET** /instances/recent | List Recent Locations |
 | [**getShortName**](InstancesApi.md#getShortName) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name |
@@ -166,6 +168,82 @@ public class Example {
 | **200** |  |  -  |
 | **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="createInstanceAnnouncement"></a>
+# **createInstanceAnnouncement**
+> Object createInstanceAnnouncement(worldId, instanceId, createInstanceAnnouncementRequest)
+
+Create Instance Announcement
+
+Sends an announcement to a group instance. The caller must be present in the instance.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    String worldId = "worldId_example"; // String | Must be a valid world ID.
+    String instanceId = "instanceId_example"; // String | Must be a valid instance ID.
+    CreateInstanceAnnouncementRequest createInstanceAnnouncementRequest = new CreateInstanceAnnouncementRequest(); // CreateInstanceAnnouncementRequest | 
+    try {
+      Object result = apiInstance.createInstanceAnnouncement(worldId, instanceId, createInstanceAnnouncementRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#createInstanceAnnouncement");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **worldId** | **String**| Must be a valid world ID. | |
+| **instanceId** | **String**| Must be a valid instance ID. | |
+| **createInstanceAnnouncementRequest** | [**CreateInstanceAnnouncementRequest**](CreateInstanceAnnouncementRequest.md)|  | |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The announcement was sent. |  -  |
+| **400** | The request failed validation. VRChat validates the request before it looks up the resource, so this response is returned even when the ID in the path does not exist. The message names the offending field or parameter. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+| **403** | Error response when an announcement cannot be sent to the instance |  -  |
 
 <a id="discoverInstances"></a>
 # **discoverInstances**
@@ -616,6 +694,72 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a single InstanceCount object. |  -  |
+| **401** | Error response due to missing auth cookie. |  -  |
+
+<a id="getInstanceOptions"></a>
+# **getInstanceOptions**
+> InstanceOptions getInstanceOptions()
+
+Get Instance Options
+
+Returns the categories an instance can be listed under and the vibes it can be tagged with, in one response.
+
+### Example
+```java
+// Import classes:
+import io.github.vrchatapi.ApiClient;
+import io.github.vrchatapi.ApiException;
+import io.github.vrchatapi.Configuration;
+import io.github.vrchatapi.auth.*;
+import io.github.vrchatapi.models.*;
+import io.github.vrchatapi.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.vrchat.cloud/api/1");
+    
+    // Configure API key authorization: authCookie
+    ApiKeyAuth authCookie = (ApiKeyAuth) defaultClient.getAuthentication("authCookie");
+    authCookie.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //authCookie.setApiKeyPrefix("Token");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    try {
+      InstanceOptions result = apiInstance.getInstanceOptions();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#getInstanceOptions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InstanceOptions**](InstanceOptions.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a single InstanceOptions object. |  -  |
 | **401** | Error response due to missing auth cookie. |  -  |
 
 <a id="getInstanceVibes"></a>

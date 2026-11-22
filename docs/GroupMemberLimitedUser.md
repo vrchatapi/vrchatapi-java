@@ -8,7 +8,7 @@ Only visible via the /groups/:groupId/members endpoint, **not** when fetching a 
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bannerColor** | **String** | Six hexadecimal digits, without a leading &#x60;#&#x60;. May be empty. |  [optional] |
+|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
