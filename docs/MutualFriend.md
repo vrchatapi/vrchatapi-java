@@ -8,7 +8,7 @@ User object received when querying mutual friends
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**bannerColor** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  |

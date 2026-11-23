@@ -9,13 +9,13 @@
 |------------ | ------------- | ------------- | -------------|
 |**ageVerificationStatus** | **AgeVerificationStatus** |  |  [optional] |
 |**ageVerified** | **Boolean** | &#x60;true&#x60; if, user is age verified (not 18+). |  [optional] |
-|**backgroundGradientBottom** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
-|**backgroundGradientTop** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**backgroundGradientBottom** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
+|**backgroundGradientTop** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**backgroundTemplateId** | **String** |  |  [optional] |
 |**backgroundTextureId** | **String** |  |  [optional] |
 |**backgroundType** | **ProfileBackgroundType** |  |  [optional] |
 |**badges** | [**List&lt;Badge&gt;**](Badge.md) |  |  [optional] |
-|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**bannerColor** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**bannerCustomUrl** | **String** |  |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |

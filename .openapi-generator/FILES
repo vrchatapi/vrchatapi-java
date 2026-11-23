@@ -75,7 +75,6 @@ docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
 docs/ChangeWorldTagsRequest.md
 docs/CheckDeviceCodeRequest.md
-docs/ColorOrEmpty.md
 docs/ContentFilter.md
 docs/CosmeticItemType.md
 docs/CreateAvatarModerationRequest.md
@@ -802,7 +801,6 @@ src/main/java/io/github/vrchatapi/model/CalendarEventUserInterest.java
 src/main/java/io/github/vrchatapi/model/ChangeUserTagsRequest.java
 src/main/java/io/github/vrchatapi/model/ChangeWorldTagsRequest.java
 src/main/java/io/github/vrchatapi/model/CheckDeviceCodeRequest.java
-src/main/java/io/github/vrchatapi/model/ColorOrEmpty.java
 src/main/java/io/github/vrchatapi/model/ContentFilter.java
 src/main/java/io/github/vrchatapi/model/CosmeticItemType.java
 src/main/java/io/github/vrchatapi/model/CreateAvatarModerationRequest.java

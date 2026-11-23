@@ -10,7 +10,7 @@
 |**avatarImageUrl** | **String** |  |  [optional] |
 |**avatarThumbnail** | **String** |  |  [optional] |
 |**banner** | **String** |  |  [optional] |
-|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**bannerColor** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**currentAvatarTags** | **String** |  |  [optional] |

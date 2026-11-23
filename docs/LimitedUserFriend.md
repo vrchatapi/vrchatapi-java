@@ -8,7 +8,7 @@ User object received when querying your friends list
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**bannerColor** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. |  [optional] |

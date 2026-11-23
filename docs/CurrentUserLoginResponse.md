@@ -20,7 +20,7 @@
 |**appleDetails** | **Object** | Details of an account on another service linked to this one. |  [optional] |
 |**appleId** | **String** |  |  [optional] |
 |**authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) |  [optional] |
-|**bannerColor** | [**ColorOrEmpty**](ColorOrEmpty.md) |  |  [optional] |
+|**bannerColor** | **String** | A &#x60;Color&#x60;, or an empty string. |  [optional] |
 |**bannerType** | **BannerType** |  |  [optional] |
 |**bannerUrl** | **String** |  |  [optional] |
 |**completedTutorials** | **List&lt;String&gt;** |  |  [optional] |
