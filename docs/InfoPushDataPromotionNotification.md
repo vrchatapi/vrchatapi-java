@@ -10,7 +10,7 @@
 |**body** | **String** |  |  |
 |**command** | **String** |  |  |
 |**imageUrl** | **String** |  |  |
-|**parameter** | **String** |  |  |
+|**parameter** | **String** |  |  [optional] |
 |**title** | **String** |  |  |
 
 

@@ -278,6 +278,8 @@ docs/GroupTransferable.md
 docs/GroupTransferableRequirements.md
 docs/GroupUserVisibility.md
 docs/GroupsApi.md
+docs/HypeTrain.md
+docs/HypeTrainLevel.md
 docs/ImageAnimationStyle.md
 docs/ImageLoopStyle.md
 docs/ImageMask.md
@@ -347,6 +349,7 @@ docs/InstanceDiscoveryCapacityLimit.md
 docs/InstanceDiscoveryMode.md
 docs/InstanceDiscoveryPlatform.md
 docs/InstanceDiscoveryWorldPool.md
+docs/InstanceHypeTrain.md
 docs/InstanceOptions.md
 docs/InstancePlatforms.md
 docs/InstanceRegion.md
@@ -999,6 +1002,8 @@ src/main/java/io/github/vrchatapi/model/GroupSearchSort.java
 src/main/java/io/github/vrchatapi/model/GroupTransferable.java
 src/main/java/io/github/vrchatapi/model/GroupTransferableRequirements.java
 src/main/java/io/github/vrchatapi/model/GroupUserVisibility.java
+src/main/java/io/github/vrchatapi/model/HypeTrain.java
+src/main/java/io/github/vrchatapi/model/HypeTrainLevel.java
 src/main/java/io/github/vrchatapi/model/ImageAnimationStyle.java
 src/main/java/io/github/vrchatapi/model/ImageLoopStyle.java
 src/main/java/io/github/vrchatapi/model/ImageMask.java
@@ -1068,6 +1073,7 @@ src/main/java/io/github/vrchatapi/model/InstanceDiscoveryCapacityLimit.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryMode.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryPlatform.java
 src/main/java/io/github/vrchatapi/model/InstanceDiscoveryWorldPool.java
+src/main/java/io/github/vrchatapi/model/InstanceHypeTrain.java
 src/main/java/io/github/vrchatapi/model/InstanceOptions.java
 src/main/java/io/github/vrchatapi/model/InstancePlatforms.java
 src/main/java/io/github/vrchatapi/model/InstanceRegion.java
